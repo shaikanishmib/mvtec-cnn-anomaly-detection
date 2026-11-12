@@ -1,0 +1,254 @@
+{
+  "experiment_id": "02-final-mse-wood-s2028-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "wood"
+  ],
+  "hypothesis": "Frozen category-specific confirmation",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2028,
+    "map_kind": "squared"
+  },
+  "seed": 2028,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": true
+  },
+  "metrics": {
+    "experiment_id": "02-final-mse-wood-s2028-v1",
+    "category": "wood",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2028,
+      "map_kind": "squared"
+    },
+    "configuration_sha256": "4a0dda41be0ac8ef6b8439345e8ccb0b7c91e31133950929ece780ba72123622",
+    "gradient_normal_images": 173,
+    "probe_normal_sources": 0,
+    "parameters": 31499,
+    "metrics": {},
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.014018155766295733,
+        "normal_development_loss": 0.00691889738664031,
+        "train_seconds": 1.4217769999995653,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.00491199294923444,
+        "normal_development_loss": 0.004366279114037752,
+        "train_seconds": 1.42263770000136,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.00391343550761957,
+        "normal_development_loss": 0.004099082667380571,
+        "train_seconds": 1.4237935000001016,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.0037310608498472182,
+        "normal_development_loss": 0.003955396823585033,
+        "train_seconds": 1.4246972999990248,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.003676938242951914,
+        "normal_development_loss": 0.003936800640076399,
+        "train_seconds": 1.4302277999995567,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.0036378243515494068,
+        "normal_development_loss": 0.003923044539988041,
+        "train_seconds": 1.4229180000002088,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.0036318203167871417,
+        "normal_development_loss": 0.003877834649756551,
+        "train_seconds": 1.416448699999819,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.003594182361714068,
+        "normal_development_loss": 0.003855561837553978,
+        "train_seconds": 1.4271836999996594,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.00356949047411582,
+        "normal_development_loss": 0.00382026843726635,
+        "train_seconds": 1.4082672000004095,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.00352994819586246,
+        "normal_development_loss": 0.0037642864044755697,
+        "train_seconds": 1.4296580999998696,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.003484373517883565,
+        "normal_development_loss": 0.0037159707862883806,
+        "train_seconds": 1.389391099999557,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.0034567339472321933,
+        "normal_development_loss": 0.0035355843137949705,
+        "train_seconds": 1.4176303000003827,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.0032436468347777866,
+        "normal_development_loss": 0.003228752641007304,
+        "train_seconds": 1.3997390999993513,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.0029002071043336495,
+        "normal_development_loss": 0.0030144944321364164,
+        "train_seconds": 1.4233543999998801,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.0028887580208092757,
+        "normal_development_loss": 0.0027102224994450808,
+        "train_seconds": 1.402208999999857,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.002591691554572455,
+        "normal_development_loss": 0.00209780759178102,
+        "train_seconds": 1.4245277999998507,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.0021782269313759197,
+        "normal_development_loss": 0.0020866773556917906,
+        "train_seconds": 1.4200474999997823,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.0018909102792964677,
+        "normal_development_loss": 0.0017010362353175879,
+        "train_seconds": 1.4134357000002638,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.0017753910001453465,
+        "normal_development_loss": 0.0016424146015197039,
+        "train_seconds": 1.4331212999986747,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.0017219128731821227,
+        "normal_development_loss": 0.0016024961369112134,
+        "train_seconds": 1.423156499999095,
+        "peak_allocated_bytes": 627325440,
+        "peak_reserved_bytes": 979369984
+      }
+    ],
+    "training_seconds_including_loading_validation": 30.49697599999854,
+    "peak_allocated_bytes": 627325440,
+    "peak_reserved_bytes": 979369984,
+    "checkpoint": "checkpoints\\autoencoder\\02-final-mse-wood-s2028-v1\\last.pt",
+    "checkpoint_sha256": "32b679b0c51e27b649873ed16861f7c70de13dfc91a9fd18f697e8bfd903240c",
+    "checkpoint_bytes": 131133
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-final-mse-wood-s2028-v1"
+  },
+  "interpretation": "No calibration or official test access",
+  "decision": "frozen fit complete",
+  "status": "completed",
+  "recorded_at": "2026-11-12T16:13:59.450767+00:00",
+  "config_sha256": "2ed0991baeac4040363dee7a273e083ad540cfec20ea84da56213a7e4438676b"
+}

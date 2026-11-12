@@ -1,0 +1,327 @@
+{
+  "experiment_id": "02-test-mse-capsule-s2028-v1",
+  "category": "capsule",
+  "seed": 2028,
+  "training_experiment": "02-final-mse-capsule-s2028-v1",
+  "checkpoint_sha256": "fabeece0a41341d017db54d112c350d0a41c2f8f28c55616526650a464274059",
+  "image_auroc": 0.6422018348623852,
+  "image_ap": 0.8694585003654001,
+  "recall": 0.13761467889908258,
+  "fpr": 0.13043478260869565,
+  "precision": 0.8333333333333334,
+  "f1": 0.2362204724409449,
+  "confusion_matrix": [
+    [
+      20,
+      3
+    ],
+    [
+      94,
+      15
+    ]
+  ],
+  "tn": 20,
+  "fp": 3,
+  "fn": 94,
+  "tp": 15,
+  "pixel_auroc": 0.6319049928324516,
+  "pixel_ap": 0.03376171085583917,
+  "au_pro": 0.48193816404596423,
+  "positive_pixels": 1208676,
+  "negative_pixels": 130791324,
+  "regions": 114,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      130167965,
+      623359
+    ],
+    [
+      1158019,
+      50657
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.07515696956748802,
+    "recall": 0.04191114905897031,
+    "fpr": 0.004766057724134668,
+    "f1": 0.0538133693668428,
+    "tp": 50657,
+    "fp": 623359,
+    "tn": 130167965,
+    "fn": 1158019
+  },
+  "secondary_image_q99": {
+    "auroc": 0.6422018348623852,
+    "ap": 0.8694585003654001,
+    "recall": 0.13761467889908258,
+    "fpr": 0.13043478260869565,
+    "precision": 0.8333333333333334,
+    "f1": 0.2362204724409449,
+    "confusion_matrix": [
+      [
+        20,
+        3
+      ],
+      [
+        94,
+        15
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "capsule",
+    "images": 32,
+    "image_threshold": 0.018889032304286957,
+    "secondary_image_threshold_q99": 0.018903132528066635,
+    "pixel_threshold": 0.0132293701171875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2097152,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.01647311821579933,
+      0.018903132528066635
+    ],
+    "calibration_scores": [
+      0.013080108910799026,
+      0.012688081711530685,
+      0.014647893607616425,
+      0.014473380520939827,
+      0.01435592956840992,
+      0.014339662156999111,
+      0.014002478681504726,
+      0.014386716298758984,
+      0.01737246848642826,
+      0.015214012935757637,
+      0.018889032304286957,
+      0.01647311821579933,
+      0.01686047948896885,
+      0.01296735368669033,
+      0.01748439110815525,
+      0.013968133367598057,
+      0.013196689076721668,
+      0.018903132528066635,
+      0.01301567442715168,
+      0.014698117040097713,
+      0.01384043414145708,
+      0.015200053341686726,
+      0.015275144018232822,
+      0.012983622029423714,
+      0.01478829886764288,
+      0.014227346517145634,
+      0.014606853947043419,
+      0.013435689732432365,
+      0.016115887090563774,
+      0.014461468905210495,
+      0.015167954377830029,
+      0.015038459561765194
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "abedb86f7cd61affea88189843c4837f9d785abf9cf40848bc436607a658c69e"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.6784999992960365,
+      "p95_ms": 4.192449998299708
+    },
+    "host_to_device": {
+      "p50_ms": 0.42655000106606167,
+      "p95_ms": 0.7601449999128818
+    },
+    "model": {
+      "p50_ms": 1.8399000000499655,
+      "p95_ms": 4.456665000907377
+    },
+    "postprocessing": {
+      "p50_ms": 2.5040999989869306,
+      "p95_ms": 3.9219700005560294
+    },
+    "end_to_end": {
+      "p50_ms": 8.66995000069437,
+      "p95_ms": 11.345745001017349
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 510 MHz, 40"
+    },
+    "peak_inference_allocated_bytes": 32143872,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.5036752136752137,
+        0.7765006260191007
+      ],
+      "image_ap": [
+        0.7860761147624147,
+        0.9451216112895672
+      ],
+      "recall": [
+        0.0761904761904762,
+        0.20561434854315555
+      ],
+      "fpr": [
+        0.0,
+        0.2916666666666667
+      ],
+      "precision": [
+        0.6399090909090909,
+        1.0
+      ],
+      "f1": [
+        0.13790156203949308,
+        0.33333333333333337
+      ],
+      "pixel_auroc": [
+        0.588233575519648,
+        0.6821285285879943
+      ],
+      "pixel_ap": [
+        0.021536021321219855,
+        0.04941787133421993
+      ],
+      "au_pro": [
+        0.4338329929210916,
+        0.5216017971045276
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.6330095035116837,
+    "pixel_ap": 0.03288771267483962,
+    "au_pro": 0.48079792528250953
+  },
+  "training_seconds": 27.181722200000877,
+  "training_peak_allocated_bytes": 622803456,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 50.29087029999937,
+  "per_defect": [
+    {
+      "category": "capsule",
+      "seed": 2028,
+      "defect": "crack",
+      "defective_images": 23,
+      "auroc": 0.7391304347826088,
+      "ap": 0.7148685254258744,
+      "recall": 0.30434782608695654,
+      "fpr": 0.13043478260869565,
+      "precision": 0.7,
+      "f1": 0.42424242424242425,
+      "confusion_matrix": [
+        [
+          20,
+          3
+        ],
+        [
+          16,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "capsule",
+      "seed": 2028,
+      "defect": "faulty_imprint",
+      "defective_images": 22,
+      "auroc": 0.5612648221343873,
+      "ap": 0.5278731501405759,
+      "recall": 0.09090909090909091,
+      "fpr": 0.13043478260869565,
+      "precision": 0.4,
+      "f1": 0.14814814814814814,
+      "confusion_matrix": [
+        [
+          20,
+          3
+        ],
+        [
+          20,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "capsule",
+      "seed": 2028,
+      "defect": "poke",
+      "defective_images": 21,
+      "auroc": 0.6252587991718426,
+      "ap": 0.552803266072532,
+      "recall": 0.09523809523809523,
+      "fpr": 0.13043478260869565,
+      "precision": 0.4,
+      "f1": 0.15384615384615385,
+      "confusion_matrix": [
+        [
+          20,
+          3
+        ],
+        [
+          19,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "capsule",
+      "seed": 2028,
+      "defect": "scratch",
+      "defective_images": 23,
+      "auroc": 0.6143667296786389,
+      "ap": 0.5773908346153581,
+      "recall": 0.08695652173913043,
+      "fpr": 0.13043478260869565,
+      "precision": 0.4,
+      "f1": 0.14285714285714285,
+      "confusion_matrix": [
+        [
+          20,
+          3
+        ],
+        [
+          21,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "capsule",
+      "seed": 2028,
+      "defect": "squeeze",
+      "defective_images": 20,
+      "auroc": 0.6695652173913044,
+      "ap": 0.5747157879187068,
+      "recall": 0.1,
+      "fpr": 0.13043478260869565,
+      "precision": 0.4,
+      "f1": 0.16000000000000003,
+      "confusion_matrix": [
+        [
+          20,
+          3
+        ],
+        [
+          18,
+          2
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-capsule-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "9268add728fa685bc1653850bf662b90e4b39df13ff42d3894147cb6c6cef4f1",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 132,
+  "evaluated_at_utc": "2026-11-12T17:05:50.698023+00:00"
+}

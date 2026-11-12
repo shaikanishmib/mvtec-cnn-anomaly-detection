@@ -1,0 +1,254 @@
+{
+  "experiment_id": "02-final-mse-toothbrush-s2028-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "Frozen category-specific confirmation",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2028,
+    "map_kind": "squared"
+  },
+  "seed": 2028,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": true
+  },
+  "metrics": {
+    "experiment_id": "02-final-mse-toothbrush-s2028-v1",
+    "category": "toothbrush",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2028,
+      "map_kind": "squared"
+    },
+    "configuration_sha256": "4a0dda41be0ac8ef6b8439345e8ccb0b7c91e31133950929ece780ba72123622",
+    "gradient_normal_images": 42,
+    "probe_normal_sources": 0,
+    "parameters": 31499,
+    "metrics": {},
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.1333224737928027,
+        "normal_development_loss": 0.13330170512199402,
+        "train_seconds": 0.3563506000009511,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.1291443563642956,
+        "normal_development_loss": 0.12687279284000397,
+        "train_seconds": 0.3634096000005229,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.12156787869476136,
+        "normal_development_loss": 0.11477251350879669,
+        "train_seconds": 0.35717490000024554,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.10764545557044801,
+        "normal_development_loss": 0.09429658949375153,
+        "train_seconds": 0.36573820000012347,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.08640267416125252,
+        "normal_development_loss": 0.0699554905295372,
+        "train_seconds": 0.3530234999998356,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.06413015173304648,
+        "normal_development_loss": 0.046372294425964355,
+        "train_seconds": 0.3507503999990149,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.03873570680263497,
+        "normal_development_loss": 0.019496290013194084,
+        "train_seconds": 0.3513242999997601,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.01678182796708175,
+        "normal_development_loss": 0.013144062831997871,
+        "train_seconds": 0.34317319999900064,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.011906765046573821,
+        "normal_development_loss": 0.012277833186089993,
+        "train_seconds": 0.3530579000016587,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.011699353167343707,
+        "normal_development_loss": 0.012591954320669174,
+        "train_seconds": 0.3383646000002045,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.011907680226223809,
+        "normal_development_loss": 0.012406857684254646,
+        "train_seconds": 0.3504012999983388,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.011660224403299037,
+        "normal_development_loss": 0.011926817707717419,
+        "train_seconds": 0.34581769999931566,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.011185283329160441,
+        "normal_development_loss": 0.011426686309278011,
+        "train_seconds": 0.35044809999999416,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.010750864011545977,
+        "normal_development_loss": 0.011027713306248188,
+        "train_seconds": 0.35996650000015507,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.01042825271863313,
+        "normal_development_loss": 0.01070133876055479,
+        "train_seconds": 0.35301540000000386,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.010130261470164572,
+        "normal_development_loss": 0.01027687918394804,
+        "train_seconds": 0.34927740000057383,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.009715560779330275,
+        "normal_development_loss": 0.009596263989806175,
+        "train_seconds": 0.3571983000001637,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.009046645923739388,
+        "normal_development_loss": 0.008050717413425446,
+        "train_seconds": 0.35886670000036247,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.007694656406307504,
+        "normal_development_loss": 0.006578255910426378,
+        "train_seconds": 0.3522947000001295,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.006360394614083427,
+        "normal_development_loss": 0.005452420562505722,
+        "train_seconds": 0.3560249999991356,
+        "peak_allocated_bytes": 596064768,
+        "peak_reserved_bytes": 979369984
+      }
+    ],
+    "training_seconds_including_loading_validation": 7.749817699999767,
+    "peak_allocated_bytes": 596064768,
+    "peak_reserved_bytes": 979369984,
+    "checkpoint": "checkpoints\\autoencoder\\02-final-mse-toothbrush-s2028-v1\\last.pt",
+    "checkpoint_sha256": "01152d9e45260cba1da330d2ab148f06cd6de51367676f9e7be1caec0c8dff01",
+    "checkpoint_bytes": 131133
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-final-mse-toothbrush-s2028-v1"
+  },
+  "interpretation": "No calibration or official test access",
+  "decision": "frozen fit complete",
+  "status": "completed",
+  "recorded_at": "2026-11-12T16:13:02.101081+00:00",
+  "config_sha256": "0117261c7bb1d6c5147697227f41a60bc8bdad0b00e96a0855a4ca44624773a3"
+}

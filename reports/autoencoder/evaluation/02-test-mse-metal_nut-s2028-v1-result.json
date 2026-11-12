@@ -1,0 +1,306 @@
+{
+  "experiment_id": "02-test-mse-metal_nut-s2028-v1",
+  "category": "metal_nut",
+  "seed": 2028,
+  "training_experiment": "02-final-mse-metal_nut-s2028-v1",
+  "checkpoint_sha256": "0e50b35458f0c0348c318534673272359fb91ad90b1b54ab7a7bffb3e13ffe15",
+  "image_auroc": 0.24437927663734113,
+  "image_ap": 0.689117910446051,
+  "recall": 0.021505376344086023,
+  "fpr": 0.13636363636363635,
+  "precision": 0.4,
+  "f1": 0.040816326530612256,
+  "confusion_matrix": [
+    [
+      19,
+      3
+    ],
+    [
+      91,
+      2
+    ]
+  ],
+  "tn": 19,
+  "fp": 3,
+  "fn": 91,
+  "tp": 2,
+  "pixel_auroc": 0.6667047928010007,
+  "pixel_ap": 0.16350387329215024,
+  "au_pro": 0.2976985899353077,
+  "positive_pixels": 6602541,
+  "negative_pixels": 49747459,
+  "regions": 132,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      49590539,
+      156920
+    ],
+    [
+      6585185,
+      17356
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.09958915742844683,
+    "recall": 0.0026286849260004595,
+    "fpr": 0.003154331962965184,
+    "f1": 0.00512216871135815,
+    "tp": 17356,
+    "fp": 156920,
+    "tn": 49590539,
+    "fn": 6585185
+  },
+  "secondary_image_q99": {
+    "auroc": 0.24437927663734113,
+    "ap": 0.689117910446051,
+    "recall": 0.010752688172043012,
+    "fpr": 0.045454545454545456,
+    "precision": 0.5,
+    "f1": 0.02105263157894737,
+    "confusion_matrix": [
+      [
+        21,
+        1
+      ],
+      [
+        92,
+        1
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "metal_nut",
+    "images": 33,
+    "image_threshold": 0.0659584179520607,
+    "secondary_image_threshold_q99": 0.07329345494508743,
+    "pixel_threshold": 0.040924072265625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2162688,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.05732893943786621,
+      0.07329345494508743
+    ],
+    "calibration_scores": [
+      0.042892202734947205,
+      0.033863555639982224,
+      0.048065878450870514,
+      0.0659584179520607,
+      0.04231290519237518,
+      0.04187474772334099,
+      0.04663415625691414,
+      0.0451335608959198,
+      0.05792655050754547,
+      0.04274667799472809,
+      0.04643727466464043,
+      0.055277448147535324,
+      0.0647130087018013,
+      0.07329345494508743,
+      0.04082051292061806,
+      0.043328750878572464,
+      0.05160259082913399,
+      0.04796595871448517,
+      0.0412394255399704,
+      0.042585473507642746,
+      0.03315586596727371,
+      0.04932374507188797,
+      0.04291609302163124,
+      0.038251154124736786,
+      0.04339231923222542,
+      0.06318601965904236,
+      0.05732893943786621,
+      0.05345478281378746,
+      0.04286859557032585,
+      0.037791892886161804,
+      0.04330779239535332,
+      0.038080886006355286,
+      0.03952030465006828
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "cc1747febb28a5abbc432aa746810619a423d7b4405eed6dc9036186772adf26"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 2.2640999995928723,
+      "p95_ms": 2.675239998825418
+    },
+    "host_to_device": {
+      "p50_ms": 0.5603000026894733,
+      "p95_ms": 0.7257950010171043
+    },
+    "model": {
+      "p50_ms": 1.7239000007975847,
+      "p95_ms": 3.6704149979414056
+    },
+    "postprocessing": {
+      "p50_ms": 1.6620000005787006,
+      "p95_ms": 2.56775500238291
+    },
+    "end_to_end": {
+      "p50_ms": 6.301150000581401,
+      "p95_ms": 8.511495000493596
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 540 MHz, 41"
+    },
+    "peak_inference_allocated_bytes": 28801536,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.12359693877551023,
+        0.3773343559301122
+      ],
+      "image_ap": [
+        0.5992147571710875,
+        0.8026086756774818
+      ],
+      "recall": [
+        0.0,
+        0.05555555555555555
+      ],
+      "fpr": [
+        0.0,
+        0.3076923076923077
+      ],
+      "precision": [
+        0.0,
+        1.0
+      ],
+      "f1": [
+        0.0,
+        0.10101010101010101
+      ],
+      "pixel_auroc": [
+        0.6333431683326989,
+        0.6655275560794837
+      ],
+      "pixel_ap": [
+        0.11462671675323592,
+        0.20912909127463758
+      ],
+      "au_pro": [
+        0.25374298137641754,
+        0.3517103118985914
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.6499965632189704,
+    "pixel_ap": 0.15825189742902826,
+    "au_pro": 0.2976438216571581
+  },
+  "training_seconds": 27.43941570000061,
+  "training_peak_allocated_bytes": 622803456,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 23.739651600000798,
+  "per_defect": [
+    {
+      "category": "metal_nut",
+      "seed": 2028,
+      "defect": "bent",
+      "defective_images": 25,
+      "auroc": 0.29454545454545455,
+      "ap": 0.4132793513074123,
+      "recall": 0.0,
+      "fpr": 0.13636363636363635,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          19,
+          3
+        ],
+        [
+          25,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "metal_nut",
+      "seed": 2028,
+      "defect": "color",
+      "defective_images": 22,
+      "auroc": 0.3822314049586777,
+      "ap": 0.46754763507742886,
+      "recall": 0.09090909090909091,
+      "fpr": 0.13636363636363635,
+      "precision": 0.4,
+      "f1": 0.14814814814814814,
+      "confusion_matrix": [
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "metal_nut",
+      "seed": 2028,
+      "defect": "flip",
+      "defective_images": 23,
+      "auroc": 0.041501976284584984,
+      "ap": 0.3316343213214602,
+      "recall": 0.0,
+      "fpr": 0.13636363636363635,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          19,
+          3
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "metal_nut",
+      "seed": 2028,
+      "defect": "scratch",
+      "defective_images": 23,
+      "auroc": 0.26086956521739135,
+      "ap": 0.385188740722362,
+      "recall": 0.0,
+      "fpr": 0.13636363636363635,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          19,
+          3
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-metal_nut-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "c6d0944f1bf55a5a8b41ec47e1dbdc0eee3ef5bc93012bff4be88d6b154198a4",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 115,
+  "evaluated_at_utc": "2026-11-12T17:09:17.813546+00:00"
+}

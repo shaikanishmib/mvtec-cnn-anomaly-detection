@@ -1,0 +1,139 @@
+{
+  "categories": 15,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "development_runs": 20,
+  "frozen_configuration_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "macro": {
+    "image_auroc": {
+      "mean": 0.6346229363826998,
+      "seed_std": 0.011248194668725236,
+      "image_bootstrap_95ci": [
+        0.6095824815370963,
+        0.6611760556399333
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    },
+    "image_ap": {
+      "mean": 0.8279160960828529,
+      "seed_std": 0.005180156536309372,
+      "image_bootstrap_95ci": [
+        0.8117201031926112,
+        0.8492309227297066
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    },
+    "pixel_auroc": {
+      "mean": 0.6900016595147532,
+      "seed_std": 0.007081212824467789,
+      "image_bootstrap_95ci": [
+        0.6739146102428983,
+        0.6889388511347951
+      ],
+      "bootstrap_target": "4096-bin pixel approximation",
+      "valid_macro_replicates": 2000
+    },
+    "pixel_ap": {
+      "mean": 0.11089730876186221,
+      "seed_std": 0.0025241444540539844,
+      "image_bootstrap_95ci": [
+        0.10133039650423581,
+        0.11696832259357834
+      ],
+      "bootstrap_target": "4096-bin pixel approximation",
+      "valid_macro_replicates": 2000
+    },
+    "au_pro": {
+      "mean": 0.4493500481437425,
+      "seed_std": 0.004383852172405538,
+      "image_bootstrap_95ci": [
+        0.438008137214079,
+        0.45876289470500986
+      ],
+      "bootstrap_target": "4096-bin pixel approximation",
+      "valid_macro_replicates": 2000
+    },
+    "recall": {
+      "mean": 0.2349998383912093,
+      "seed_std": 0.014227986410826511,
+      "image_bootstrap_95ci": [
+        0.2166953001730197,
+        0.2551896609888607
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    },
+    "fpr": {
+      "mean": 0.0939441058275391,
+      "seed_std": 0.010820472114284534,
+      "image_bootstrap_95ci": [
+        0.07744291972834004,
+        0.11198537879766333
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    },
+    "precision": {
+      "mean": 0.7896201233392369,
+      "seed_std": 0.009643001271171814,
+      "image_bootstrap_95ci": [
+        0.7072274756395822,
+        0.8458505715485567
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    },
+    "f1": {
+      "mean": 0.31463515629216676,
+      "seed_std": 0.01601637191883076,
+      "image_bootstrap_95ci": [
+        0.28903706880621316,
+        0.33839579077934273
+      ],
+      "bootstrap_target": "exact image metric",
+      "valid_macro_replicates": 2000
+    }
+  },
+  "bootstrap_scope": "whole-image within category; same resamples across seeds, independent categories; pixel CI 4096-bin approximation, point estimates exact",
+  "pixel_bootstrap_quantization_bias": {
+    "pixel_auroc": {
+      "mean_binned_minus_exact": -0.008928350329203255,
+      "maximum_absolute_run_difference": 0.04708950814756141
+    },
+    "pixel_ap": {
+      "mean_binned_minus_exact": -0.0026009227003515076,
+      "maximum_absolute_run_difference": 0.01288567866485374
+    },
+    "au_pro": {
+      "mean_binned_minus_exact": -0.0004772055283897659,
+      "maximum_absolute_run_difference": 0.005008667302193404
+    }
+  },
+  "mean_model_p50_ms": 2.8705922221383338,
+  "mean_model_p95_ms": 4.984814777599239,
+  "mean_end_to_end_p50_ms": 13.27213555555823,
+  "peak_training_vram_gib": 0.6071915626525879,
+  "total_training_seconds": 1359.690036899996,
+  "total_evaluation_seconds": 3522.1353739999977,
+  "peak_training_reserved_vram_gib": 0.912109375,
+  "parameters": 31499,
+  "max_checkpoint_bytes": 131133,
+  "artifact_manifest_sha256": "3e8bb458e8c304e2d95f0576d613a59276eeda2c8b78bd6d5027ce918b0fa67d",
+  "configuration_changed_after_test": false,
+  "test_evaluations_per_category_seed": 1,
+  "metric_edge_cases": {
+    "image_runs_with_no_alarms": 2,
+    "pixel_runs_with_no_alarms": 0,
+    "precision_convention": "Immutable foundation binary_metrics uses zero_division=0; undefined cases explicitly flagged. Do not mistake zero-alert precision for a measured probability.",
+    "image_precision_defined_run_mean": 0.8263466407038528,
+    "pixel_precision_defined_run_mean": 0.1989217592724944,
+    "f1": "Zero when no predicted positives and actual positives exist; directly 2TP/(2TP+FP+FN)",
+    "ranking_metrics": "All category test sets contain both classes; no AUROC/AP/AU-PRO undefined cases"
+  }
+}

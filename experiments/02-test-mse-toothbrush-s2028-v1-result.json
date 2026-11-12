@@ -1,0 +1,318 @@
+{
+  "experiment_id": "02-test-mse-toothbrush-s2028-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "Frozen normal-only reconstruction baseline; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2028,
+    "map_kind": "squared"
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "02-final-mse-toothbrush-s2028-v1",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+        "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+      },
+      "git_sha": "076b52bf2bdc90f5fdce289a982700e99ec0a9c4"
+    },
+    "evaluation_source_sha256": "4d5cfd2505fdbc7b3b77fff317bd43a8937acc545d4802eb9e0494f006b3b8ed",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "02-test-mse-toothbrush-s2028-v1",
+    "category": "toothbrush",
+    "seed": 2028,
+    "training_experiment": "02-final-mse-toothbrush-s2028-v1",
+    "checkpoint_sha256": "01152d9e45260cba1da330d2ab148f06cd6de51367676f9e7be1caec0c8dff01",
+    "image_auroc": 0.5083333333333333,
+    "image_ap": 0.7506371997026527,
+    "recall": 0.1,
+    "fpr": 0.08333333333333333,
+    "precision": 0.75,
+    "f1": 0.17647058823529416,
+    "confusion_matrix": [
+      [
+        11,
+        1
+      ],
+      [
+        27,
+        3
+      ]
+    ],
+    "tn": 11,
+    "fp": 1,
+    "fn": 27,
+    "tp": 3,
+    "pixel_auroc": 0.784250023061298,
+    "pixel_ap": 0.03727620280558587,
+    "au_pro": 0.5067472777558502,
+    "positive_pixels": 673493,
+    "negative_pixels": 43366699,
+    "regions": 66,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        43206694,
+        160005
+      ],
+      [
+        668115,
+        5378
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.032518457157023395,
+      "recall": 0.007985235184330053,
+      "fpr": 0.003689582183785766,
+      "f1": 0.01282191885332278,
+      "tp": 5378,
+      "fp": 160005,
+      "tn": 43206694,
+      "fn": 668115
+    },
+    "secondary_image_q99": {
+      "auroc": 0.5083333333333333,
+      "ap": 0.7506371997026527,
+      "recall": 0.1,
+      "fpr": 0.08333333333333333,
+      "precision": 0.75,
+      "f1": 0.17647058823529416,
+      "confusion_matrix": [
+        [
+          11,
+          1
+        ],
+        [
+          27,
+          3
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "toothbrush",
+      "images": 9,
+      "image_threshold": 0.06640457361936569,
+      "secondary_image_threshold_q99": 0.06640457361936569,
+      "pixel_threshold": 0.0580291748046875,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 589824,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.06287295371294022,
+        0.06640457361936569
+      ],
+      "calibration_scores": [
+        0.06287295371294022,
+        0.06409509479999542,
+        0.06640457361936569,
+        0.05997200682759285,
+        0.06424324959516525,
+        0.06107188016176224,
+        0.05530767887830734,
+        0.057301249355077744,
+        0.05848623439669609
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.9687000007688766,
+        "p95_ms": 4.552770001464523
+      },
+      "host_to_device": {
+        "p50_ms": 0.43560000085562933,
+        "p95_ms": 0.7426600010148832
+      },
+      "model": {
+        "p50_ms": 1.9888999995600898,
+        "p95_ms": 4.409864999979617
+      },
+      "postprocessing": {
+        "p50_ms": 2.6381499992567115,
+        "p95_ms": 4.003590002685085
+      },
+      "end_to_end": {
+        "p50_ms": 9.40919999993639,
+        "p95_ms": 12.161570001808284
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 40"
+      },
+      "peak_inference_allocated_bytes": 14594048,
+      "peak_inference_reserved_bytes": 171966464
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.3093708881578947,
+          0.7068181818181815
+        ],
+        "image_ap": [
+          0.5856489135268054,
+          0.9116817633109031
+        ],
+        "recall": [
+          0.0,
+          0.22580645161290322
+        ],
+        "fpr": [
+          0.0,
+          0.266818181818181
+        ],
+        "precision": [
+          0.0,
+          1.0
+        ],
+        "f1": [
+          0.0,
+          0.358974358974359
+        ],
+        "pixel_auroc": [
+          0.7647423337122063,
+          0.8038286132919902
+        ],
+        "pixel_ap": [
+          0.022456351714492437,
+          0.05843073151309456
+        ],
+        "au_pro": [
+          0.44300159582351856,
+          0.5656439804161026
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.7841454882025748,
+      "pixel_ap": 0.03713872722424012,
+      "au_pro": 0.5067421550518644
+    },
+    "training_seconds": 7.749817699999767,
+    "training_peak_allocated_bytes": 596064768,
+    "checkpoint_bytes": 131133,
+    "parameters": 31499,
+    "evaluation_seconds": 17.33356360000107,
+    "per_defect": [
+      {
+        "category": "toothbrush",
+        "seed": 2028,
+        "defect": "defective",
+        "defective_images": 30,
+        "auroc": 0.5083333333333333,
+        "ap": 0.7506371997026527,
+        "recall": 0.1,
+        "fpr": 0.08333333333333333,
+        "precision": 0.75,
+        "f1": 0.17647058823529416,
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            27,
+            3
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/autoencoder/02-test-mse-toothbrush-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "b24a4dfbe211dad48322482424d0c96585dfbbee60db4ebfac8d1f0dd152de28",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "image_rows": 42,
+    "evaluated_at_utc": "2026-11-12T17:11:59.523085+00:00"
+  },
+  "calibration": {
+    "category": "toothbrush",
+    "images": 9,
+    "image_threshold": 0.06640457361936569,
+    "secondary_image_threshold_q99": 0.06640457361936569,
+    "pixel_threshold": 0.0580291748046875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 589824,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.06287295371294022,
+      0.06640457361936569
+    ],
+    "calibration_scores": [
+      0.06287295371294022,
+      0.06409509479999542,
+      0.06640457361936569,
+      0.05997200682759285,
+      0.06424324959516525,
+      0.06107188016176224,
+      0.05530767887830734,
+      0.057301249355077744,
+      0.05848623439669609
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e"
+  },
+  "paths": {
+    "local": "outputs/autoencoder/02-test-mse-toothbrush-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T17:11:59.525107+00:00",
+  "config_sha256": "a3cf3a28a4505241959cf86a834e260d4193564452897d66b4bcf5b1144ef462"
+}

@@ -1,0 +1,331 @@
+{
+  "experiment_id": "02-test-mse-leather-s2026-v1",
+  "category": "leather",
+  "seed": 2026,
+  "training_experiment": "02-final-mse-leather-s2026-v1",
+  "checkpoint_sha256": "374fa42f954f337a84defb91fe2df685eb6f05236c5bec412ef14ab4c91b9296",
+  "image_auroc": 0.7231657608695652,
+  "image_ap": 0.9023226759201817,
+  "recall": 0.9891304347826086,
+  "fpr": 1.0,
+  "precision": 0.7398373983739838,
+  "f1": 0.8465116279069766,
+  "confusion_matrix": [
+    [
+      0,
+      32
+    ],
+    [
+      1,
+      91
+    ]
+  ],
+  "tn": 0,
+  "fp": 32,
+  "fn": 1,
+  "tp": 91,
+  "pixel_auroc": 0.7837560367533146,
+  "pixel_ap": 0.15246706533146961,
+  "au_pro": 0.5992440868832111,
+  "positive_pixels": 843352,
+  "negative_pixels": 129180072,
+  "regions": 99,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      127916321,
+      1263751
+    ],
+    [
+      639840,
+      203512
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.13870178693254037,
+    "recall": 0.2413132357544655,
+    "fpr": 0.00978286341255484,
+    "f1": 0.1761539676666169,
+    "tp": 203512,
+    "fp": 1263751,
+    "tn": 127916321,
+    "fn": 639840
+  },
+  "secondary_image_q99": {
+    "auroc": 0.7231657608695652,
+    "ap": 0.9023226759201817,
+    "recall": 0.9239130434782609,
+    "fpr": 0.90625,
+    "precision": 0.7456140350877193,
+    "f1": 0.8252427184466019,
+    "confusion_matrix": [
+      [
+        3,
+        29
+      ],
+      [
+        7,
+        85
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "leather",
+    "images": 36,
+    "image_threshold": 0.008297315798699856,
+    "secondary_image_threshold_q99": 0.009363967925310135,
+    "pixel_threshold": 0.006744384765625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2359296,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.007930416613817215,
+      0.009363967925310135
+    ],
+    "calibration_scores": [
+      0.006916319951415062,
+      0.006929553113877773,
+      0.006863801274448633,
+      0.006793145556002855,
+      0.006812373176217079,
+      0.006888353265821934,
+      0.0072213150560855865,
+      0.007248403038829565,
+      0.006929353810846806,
+      0.0071847992949187756,
+      0.006929551716893911,
+      0.007014833390712738,
+      0.007714929524809122,
+      0.007281842641532421,
+      0.007402225397527218,
+      0.006386722903698683,
+      0.007123395334929228,
+      0.009363967925310135,
+      0.008297315798699856,
+      0.007662066724151373,
+      0.007996838539838791,
+      0.008270017802715302,
+      0.007951943203806877,
+      0.007678209338337183,
+      0.00763379130512476,
+      0.0073212371207773685,
+      0.007675493601709604,
+      0.007565505802631378,
+      0.007849130779504776,
+      0.007578431628644466,
+      0.007516610901802778,
+      0.007667551748454571,
+      0.007803869899362326,
+      0.007173000834882259,
+      0.007930416613817215,
+      0.007914140820503235
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "d718774b6715c1b94afacc52d2a05e1b56d86b27a91ff065ff33a8499fb42b04"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 7.245200000397745,
+      "p95_ms": 7.797540000501613
+    },
+    "host_to_device": {
+      "p50_ms": 0.962900000558875,
+      "p95_ms": 1.2805399994249453
+    },
+    "model": {
+      "p50_ms": 3.564599999663187,
+      "p95_ms": 6.009425000684131
+    },
+    "postprocessing": {
+      "p50_ms": 5.039149999902293,
+      "p95_ms": 7.250210000438528
+    },
+    "end_to_end": {
+      "p50_ms": 16.864750000422646,
+      "p95_ms": 19.852570001421554
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 255 MHz, 41"
+    },
+    "peak_inference_allocated_bytes": 30584832,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6339160724896019,
+        0.8088701494583848
+      ],
+      "image_ap": [
+        0.8494124179851182,
+        0.9440064004818174
+      ],
+      "recall": [
+        0.9651162790697675,
+        1.0
+      ],
+      "fpr": [
+        1.0,
+        1.0
+      ],
+      "precision": [
+        0.6585365853658537,
+        0.8145161290322581
+      ],
+      "f1": [
+        0.7902439024390244,
+        0.8928571428571429
+      ],
+      "pixel_auroc": [
+        0.7563394680318364,
+        0.8119289967902803
+      ],
+      "pixel_ap": [
+        0.11683442035036906,
+        0.1906780515116099
+      ],
+      "au_pro": [
+        0.5651036115578699,
+        0.6351033511957941
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.7822943212566424,
+    "pixel_ap": 0.15017909470843543,
+    "au_pro": 0.598901464826046
+  },
+  "training_seconds": 29.965820800000074,
+  "training_peak_allocated_bytes": 627128832,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 120.94000340000093,
+  "per_defect": [
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "color",
+      "defective_images": 19,
+      "auroc": 0.6118421052631579,
+      "ap": 0.4634765484492886,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "precision": 0.37254901960784315,
+      "f1": 0.5428571428571428,
+      "confusion_matrix": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "cut",
+      "defective_images": 19,
+      "auroc": 0.6480263157894737,
+      "ap": 0.7050288251762282,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "precision": 0.37254901960784315,
+      "f1": 0.5428571428571428,
+      "confusion_matrix": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "fold",
+      "defective_images": 17,
+      "auroc": 0.8713235294117647,
+      "ap": 0.8458649193943312,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "precision": 0.3469387755102041,
+      "f1": 0.5151515151515151,
+      "confusion_matrix": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "glue",
+      "defective_images": 19,
+      "auroc": 0.6069078947368419,
+      "ap": 0.6672489024810992,
+      "recall": 0.9473684210526315,
+      "fpr": 1.0,
+      "precision": 0.36,
+      "f1": 0.5217391304347826,
+      "confusion_matrix": [
+        [
+          0,
+          32
+        ],
+        [
+          1,
+          18
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "poke",
+      "defective_images": 18,
+      "auroc": 0.9027777777777777,
+      "ap": 0.8876312294790556,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "precision": 0.36,
+      "f1": 0.5294117647058824,
+      "confusion_matrix": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-leather-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "c3dc2a3124f39c599516a050bb29c758b36eda0358c26d0ca32a73ccc422b66a",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 124,
+  "evaluated_at_utc": "2026-11-12T16:26:29.701571+00:00"
+}

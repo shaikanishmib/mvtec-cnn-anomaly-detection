@@ -1,0 +1,282 @@
+{
+  "experiment_id": "02-test-mse-bottle-s2026-v1",
+  "category": "bottle",
+  "seed": 2026,
+  "training_experiment": "02-final-mse-bottle-s2026-v1",
+  "checkpoint_sha256": "3a05e4d4c6368af09da07d4c0cdffa354ce7d72cb428bed07c9a22bc4ac8aaa0",
+  "image_auroc": 0.6214285714285714,
+  "image_ap": 0.8731989193376821,
+  "recall": 0.38095238095238093,
+  "fpr": 0.1,
+  "precision": 0.9230769230769231,
+  "f1": 0.5393258426966292,
+  "confusion_matrix": [
+    [
+      18,
+      2
+    ],
+    [
+      39,
+      24
+    ]
+  ],
+  "tn": 18,
+  "fp": 2,
+  "fn": 39,
+  "tp": 24,
+  "pixel_auroc": 0.675806470653585,
+  "pixel_ap": 0.11091057291527101,
+  "au_pro": 0.30522938724709914,
+  "positive_pixels": 3886731,
+  "negative_pixels": 63343269,
+  "regions": 68,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      63083209,
+      260060
+    ],
+    [
+      3743145,
+      143586
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.35572258860486666,
+    "recall": 0.036942613214035136,
+    "fpr": 0.004105566449372861,
+    "f1": 0.06693397806300005,
+    "tp": 143586,
+    "fp": 260060,
+    "tn": 63083209,
+    "fn": 3743145
+  },
+  "secondary_image_q99": {
+    "auroc": 0.6214285714285714,
+    "ap": 0.8731989193376821,
+    "recall": 0.38095238095238093,
+    "fpr": 0.05,
+    "precision": 0.96,
+    "f1": 0.5454545454545454,
+    "confusion_matrix": [
+      [
+        19,
+        1
+      ],
+      [
+        39,
+        24
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "bottle",
+    "images": 31,
+    "image_threshold": 0.08398058265447617,
+    "secondary_image_threshold_q99": 0.08563659340143204,
+    "pixel_threshold": 0.036895751953125,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2031616,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.07693836092948914,
+      0.08563659340143204
+    ],
+    "calibration_scores": [
+      0.047802165150642395,
+      0.05846850946545601,
+      0.035121187567710876,
+      0.04021972045302391,
+      0.04216219112277031,
+      0.03967028483748436,
+      0.0556965209543705,
+      0.05121329426765442,
+      0.07092639058828354,
+      0.08563659340143204,
+      0.03771843761205673,
+      0.03627530112862587,
+      0.07269950211048126,
+      0.07693836092948914,
+      0.046294890344142914,
+      0.07830441743135452,
+      0.06970976293087006,
+      0.04394669458270073,
+      0.06463449448347092,
+      0.05635851249098778,
+      0.08128908276557922,
+      0.07378026843070984,
+      0.06562000513076782,
+      0.0746275782585144,
+      0.07321027666330338,
+      0.05988122150301933,
+      0.07729072123765945,
+      0.07145437598228455,
+      0.08398058265447617,
+      0.04082498699426651,
+      0.0672004371881485
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 6.270550000408548,
+      "p95_ms": 6.681219998972665
+    },
+    "host_to_device": {
+      "p50_ms": 0.9040000004461035,
+      "p95_ms": 1.2076900003194169
+    },
+    "model": {
+      "p50_ms": 3.2657000001563574,
+      "p95_ms": 5.194944999948347
+    },
+    "postprocessing": {
+      "p50_ms": 4.177700000582263,
+      "p95_ms": 4.598699999496603
+    },
+    "end_to_end": {
+      "p50_ms": 14.778650000152993,
+      "p95_ms": 16.814384999815957
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 270 MHz, 49"
+    },
+    "peak_inference_allocated_bytes": 22968832,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.4967105263157895,
+        0.7453110599078341
+      ],
+      "image_ap": [
+        0.8012471869379407,
+        0.9345441357131951
+      ],
+      "recall": [
+        0.26782738095238096,
+        0.5
+      ],
+      "fpr": [
+        0.0,
+        0.23809523809523808
+      ],
+      "precision": [
+        0.8095238095238095,
+        1.0
+      ],
+      "f1": [
+        0.4146131202691337,
+        0.6530612244897959
+      ],
+      "pixel_auroc": [
+        0.6027156992424071,
+        0.6716731338705928
+      ],
+      "pixel_ap": [
+        0.0853946467658234,
+        0.1245857418725524
+      ],
+      "au_pro": [
+        0.2504528969260142,
+        0.3635194398174397
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.6353685486008743,
+    "pixel_ap": 0.104089551792902,
+    "au_pro": 0.30522208063047473
+  },
+  "training_seconds": 31.763188299999456,
+  "training_peak_allocated_bytes": 621492736,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 53.24149700000089,
+  "per_defect": [
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_large",
+      "defective_images": 20,
+      "auroc": 0.6525,
+      "ap": 0.7543905865644995,
+      "recall": 0.45,
+      "fpr": 0.1,
+      "precision": 0.8181818181818182,
+      "f1": 0.5806451612903226,
+      "confusion_matrix": [
+        [
+          18,
+          2
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_small",
+      "defective_images": 22,
+      "auroc": 0.7545454545454545,
+      "ap": 0.8444181268613564,
+      "recall": 0.5454545454545454,
+      "fpr": 0.1,
+      "precision": 0.8571428571428571,
+      "f1": 0.6666666666666665,
+      "confusion_matrix": [
+        [
+          18,
+          2
+        ],
+        [
+          10,
+          12
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "contamination",
+      "defective_images": 21,
+      "auroc": 0.45238095238095233,
+      "ap": 0.5670551117401574,
+      "recall": 0.14285714285714285,
+      "fpr": 0.1,
+      "precision": 0.6,
+      "f1": 0.23076923076923073,
+      "confusion_matrix": [
+        [
+          18,
+          2
+        ],
+        [
+          18,
+          3
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-bottle-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "e1fe75f1e9d271f50bc13e51644b5dd47c3e3ea69ff3c077c446dc327e45122f",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 83,
+  "evaluated_at_utc": "2026-11-12T16:15:59.662378+00:00"
+}

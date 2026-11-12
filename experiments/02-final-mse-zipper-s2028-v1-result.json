@@ -1,0 +1,254 @@
+{
+  "experiment_id": "02-final-mse-zipper-s2028-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "zipper"
+  ],
+  "hypothesis": "Frozen category-specific confirmation",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2028,
+    "map_kind": "squared"
+  },
+  "seed": 2028,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": true
+  },
+  "metrics": {
+    "experiment_id": "02-final-mse-zipper-s2028-v1",
+    "category": "zipper",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2028,
+      "map_kind": "squared"
+    },
+    "configuration_sha256": "4a0dda41be0ac8ef6b8439345e8ccb0b7c91e31133950929ece780ba72123622",
+    "gradient_normal_images": 168,
+    "probe_normal_sources": 0,
+    "parameters": 31499,
+    "metrics": {},
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.10881305521442777,
+        "normal_development_loss": 0.10062090307474136,
+        "train_seconds": 1.3820852999997442,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.08152103406332788,
+        "normal_development_loss": 0.05297677591443062,
+        "train_seconds": 1.393944699999338,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.030739127347866695,
+        "normal_development_loss": 0.019146403297781944,
+        "train_seconds": 1.3758089000002656,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.015061597605901105,
+        "normal_development_loss": 0.010197843424975872,
+        "train_seconds": 1.3833593999988807,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.00871818135714247,
+        "normal_development_loss": 0.0065485336817801,
+        "train_seconds": 1.3877880000000005,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.005350749451844465,
+        "normal_development_loss": 0.004123506136238575,
+        "train_seconds": 1.381692800001474,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.003580931152793623,
+        "normal_development_loss": 0.0030465025920420885,
+        "train_seconds": 1.3938760000000912,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.0029553060331160112,
+        "normal_development_loss": 0.0028281700797379017,
+        "train_seconds": 1.3873671000001195,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.0027204545525213084,
+        "normal_development_loss": 0.002417114097625017,
+        "train_seconds": 1.3916850999994494,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.002389360030758239,
+        "normal_development_loss": 0.0023386818356812,
+        "train_seconds": 1.3950039999999717,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.0023111907787443627,
+        "normal_development_loss": 0.002313875127583742,
+        "train_seconds": 1.3742701999999554,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.002142532573391994,
+        "normal_development_loss": 0.0021279174834489822,
+        "train_seconds": 1.3932832000009512,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.00203207720048903,
+        "normal_development_loss": 0.001990831457078457,
+        "train_seconds": 1.3835607999990316,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.002020336598867462,
+        "normal_development_loss": 0.0018850803608074784,
+        "train_seconds": 1.3891749999984313,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.0021082570643297265,
+        "normal_development_loss": 0.0020835590548813343,
+        "train_seconds": 1.3950291000001016,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.0018984249438203516,
+        "normal_development_loss": 0.0018472867086529732,
+        "train_seconds": 1.380945499999143,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.0017949607766543825,
+        "normal_development_loss": 0.0017562900902703404,
+        "train_seconds": 1.3834173000013834,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.0017799190467312222,
+        "normal_development_loss": 0.001722599845379591,
+        "train_seconds": 1.3804865000001882,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.0018010915900092748,
+        "normal_development_loss": 0.001859458745457232,
+        "train_seconds": 1.3850079000003461,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.0017622604057015408,
+        "normal_development_loss": 0.001721852575428784,
+        "train_seconds": 1.3801003999997192,
+        "peak_allocated_bytes": 626670080,
+        "peak_reserved_bytes": 979369984
+      }
+    ],
+    "training_seconds_including_loading_validation": 29.695729299999584,
+    "peak_allocated_bytes": 626670080,
+    "peak_reserved_bytes": 979369984,
+    "checkpoint": "checkpoints\\autoencoder\\02-final-mse-zipper-s2028-v1\\last.pt",
+    "checkpoint_sha256": "55fca598ff3de743c29570fe135cff77bbdac8aa46f01f5627ebd457a000d6c7",
+    "checkpoint_bytes": 131133
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-final-mse-zipper-s2028-v1"
+  },
+  "interpretation": "No calibration or official test access",
+  "decision": "frozen fit complete",
+  "status": "completed",
+  "recorded_at": "2026-11-12T16:14:29.179283+00:00",
+  "config_sha256": "2257fdfa08f768fef8a732a977b75190cc19c96b204a9c6d4e449f0ac19a84da"
+}

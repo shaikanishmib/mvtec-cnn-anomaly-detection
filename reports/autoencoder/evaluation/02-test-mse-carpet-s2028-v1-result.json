@@ -1,0 +1,337 @@
+{
+  "experiment_id": "02-test-mse-carpet-s2028-v1",
+  "category": "carpet",
+  "seed": 2028,
+  "training_experiment": "02-final-mse-carpet-s2028-v1",
+  "checkpoint_sha256": "326cf55904d434e90e1e41531f0d6e6d640a4b7ba39fd2c2858b865ea32b6d15",
+  "image_auroc": 0.3298555377207063,
+  "image_ap": 0.7000740851557624,
+  "recall": 0.011235955056179775,
+  "fpr": 0.03571428571428571,
+  "precision": 0.5,
+  "f1": 0.021978021978021976,
+  "confusion_matrix": [
+    [
+      27,
+      1
+    ],
+    [
+      88,
+      1
+    ]
+  ],
+  "tn": 27,
+  "fp": 1,
+  "fn": 88,
+  "tp": 1,
+  "pixel_auroc": 0.43944469480767256,
+  "pixel_ap": 0.015026832777648649,
+  "au_pro": 0.12440755730481097,
+  "positive_pixels": 1965794,
+  "negative_pixels": 120717598,
+  "regions": 97,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      120606585,
+      111013
+    ],
+    [
+      1957471,
+      8323
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.06974425152510559,
+    "recall": 0.004233912607323046,
+    "fpr": 0.0009196090863239343,
+    "f1": 0.007983195292379851,
+    "tp": 8323,
+    "fp": 111013,
+    "tn": 120606585,
+    "fn": 1957471
+  },
+  "secondary_image_q99": {
+    "auroc": 0.3298555377207063,
+    "ap": 0.7000740851557624,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        28,
+        0
+      ],
+      [
+        89,
+        0
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "carpet",
+    "images": 42,
+    "image_threshold": 0.08918382972478867,
+    "secondary_image_threshold_q99": 0.10230723023414612,
+    "pixel_threshold": 0.076080322265625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2752512,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.08467747271060944,
+      0.10230723023414612
+    ],
+    "calibration_scores": [
+      0.08509310334920883,
+      0.07308557629585266,
+      0.0728088915348053,
+      0.07580824941396713,
+      0.10230723023414612,
+      0.07702124118804932,
+      0.07871148735284805,
+      0.07402600347995758,
+      0.07581894099712372,
+      0.07330604642629623,
+      0.06919137388467789,
+      0.08918382972478867,
+      0.07391337305307388,
+      0.07274595648050308,
+      0.07278363406658173,
+      0.07508775591850281,
+      0.07337424904108047,
+      0.06940215080976486,
+      0.07534006237983704,
+      0.06816564500331879,
+      0.06818726658821106,
+      0.07006175071001053,
+      0.07141591608524323,
+      0.075136199593544,
+      0.08328212052583694,
+      0.07759422808885574,
+      0.07886482775211334,
+      0.08548499643802643,
+      0.07651380449533463,
+      0.08017367869615555,
+      0.08467747271060944,
+      0.08459320664405823,
+      0.07868583500385284,
+      0.08653686195611954,
+      0.07465790957212448,
+      0.07415300607681274,
+      0.07410657405853271,
+      0.09949122369289398,
+      0.07093636691570282,
+      0.08234547823667526,
+      0.07870858907699585,
+      0.07474132627248764
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "877d856565283112996331d090d297f4461e1228052e84723501adbe2ca6b8fc"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.9352000003418652,
+      "p95_ms": 4.542950001814458
+    },
+    "host_to_device": {
+      "p50_ms": 0.4515000000537839,
+      "p95_ms": 0.7674800006498115
+    },
+    "model": {
+      "p50_ms": 1.902799998788396,
+      "p95_ms": 4.321979998894675
+    },
+    "postprocessing": {
+      "p50_ms": 2.6105999986612005,
+      "p95_ms": 3.1037600007039123
+    },
+    "end_to_end": {
+      "p50_ms": 9.103999998842482,
+      "p95_ms": 11.837450000348325
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 480 MHz, 40"
+    },
+    "peak_inference_allocated_bytes": 29208576,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.23815429813785075,
+        0.4302683621525533
+      ],
+      "image_ap": [
+        0.6080568932879964,
+        0.8167716135666052
+      ],
+      "recall": [
+        0.0,
+        0.037037037037037035
+      ],
+      "fpr": [
+        0.0,
+        0.11538461538461539
+      ],
+      "precision": [
+        0.0,
+        1.0
+      ],
+      "f1": [
+        0.0,
+        0.07058823529411765
+      ],
+      "pixel_auroc": [
+        0.4048558186881983,
+        0.46816623274105157
+      ],
+      "pixel_ap": [
+        0.011858053454702377,
+        0.018480054102056276
+      ],
+      "au_pro": [
+        0.1061757635341746,
+        0.14545547400971337
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.43948138057248165,
+    "pixel_ap": 0.015051952590769318,
+    "au_pro": 0.12440676014692195
+  },
+  "training_seconds": 34.68998939999983,
+  "training_peak_allocated_bytes": 632961536,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 49.60140540000066,
+  "per_defect": [
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "color",
+      "defective_images": 19,
+      "auroc": 0.4699248120300752,
+      "ap": 0.41176382366657094,
+      "recall": 0.0,
+      "fpr": 0.03571428571428571,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          27,
+          1
+        ],
+        [
+          19,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "cut",
+      "defective_images": 17,
+      "auroc": 0.14705882352941177,
+      "ap": 0.2623656987278729,
+      "recall": 0.0,
+      "fpr": 0.03571428571428571,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          27,
+          1
+        ],
+        [
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "hole",
+      "defective_images": 17,
+      "auroc": 0.5441176470588235,
+      "ap": 0.4253287893199012,
+      "recall": 0.0,
+      "fpr": 0.03571428571428571,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          27,
+          1
+        ],
+        [
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "metal_contamination",
+      "defective_images": 17,
+      "auroc": 0.025210084033613443,
+      "ap": 0.23124906427845043,
+      "recall": 0.0,
+      "fpr": 0.03571428571428571,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          27,
+          1
+        ],
+        [
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "thread",
+      "defective_images": 19,
+      "auroc": 0.4342105263157895,
+      "ap": 0.43014317397430457,
+      "recall": 0.05263157894736842,
+      "fpr": 0.03571428571428571,
+      "precision": 0.5,
+      "f1": 0.09523809523809525,
+      "confusion_matrix": [
+        [
+          27,
+          1
+        ],
+        [
+          18,
+          1
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-carpet-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "e98f1f5eb83483924e98f62fa9a28399e534d389f8ee65639f806eed520b6736",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 117,
+  "evaluated_at_utc": "2026-11-12T17:06:40.799067+00:00"
+}

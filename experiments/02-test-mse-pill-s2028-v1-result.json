@@ -1,0 +1,512 @@
+{
+  "experiment_id": "02-test-mse-pill-s2028-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "pill"
+  ],
+  "hypothesis": "Frozen normal-only reconstruction baseline; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2028,
+    "map_kind": "squared"
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "02-final-mse-pill-s2028-v1",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+        "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+      },
+      "git_sha": "076b52bf2bdc90f5fdce289a982700e99ec0a9c4"
+    },
+    "evaluation_source_sha256": "4d5cfd2505fdbc7b3b77fff317bd43a8937acc545d4802eb9e0494f006b3b8ed",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "02-test-mse-pill-s2028-v1",
+    "category": "pill",
+    "seed": 2028,
+    "training_experiment": "02-final-mse-pill-s2028-v1",
+    "checkpoint_sha256": "4ef241121ddb6cfb30558519169b941435c2f3706dc8d87b8d3afd8c8dfa12bd",
+    "image_auroc": 0.737861429350791,
+    "image_ap": 0.9428189239065533,
+    "recall": 0.14893617021276595,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.25925925925925924,
+    "confusion_matrix": [
+      [
+        26,
+        0
+      ],
+      [
+        120,
+        21
+      ]
+    ],
+    "tn": 26,
+    "fp": 0,
+    "fn": 120,
+    "tp": 21,
+    "pixel_auroc": 0.8416039317721968,
+    "pixel_ap": 0.18280745664083223,
+    "au_pro": 0.7802921932626816,
+    "positive_pixels": 3589160,
+    "negative_pixels": 103290840,
+    "regions": 245,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        102807223,
+        483617
+      ],
+      [
+        3343870,
+        245290
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.336517552993729,
+      "recall": 0.06834189615397475,
+      "fpr": 0.0046820899123291085,
+      "f1": 0.11361102085724932,
+      "tp": 245290,
+      "fp": 483617,
+      "tn": 102807223,
+      "fn": 3343870
+    },
+    "secondary_image_q99": {
+      "auroc": 0.737861429350791,
+      "ap": 0.9428189239065533,
+      "recall": 0.10638297872340426,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.1923076923076923,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          126,
+          15
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "pill",
+      "images": 40,
+      "image_threshold": 0.030931714922189713,
+      "secondary_image_threshold_q99": 0.03409021347761154,
+      "pixel_threshold": 0.01605224609375,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2621440,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.027525052428245544,
+        0.03409021347761154
+      ],
+      "calibration_scores": [
+        0.028158342465758324,
+        0.0180649496614933,
+        0.022724129259586334,
+        0.014813011512160301,
+        0.020512506365776062,
+        0.014664164744317532,
+        0.020356707274913788,
+        0.02047639526426792,
+        0.02754783071577549,
+        0.014645960181951523,
+        0.014007119461894035,
+        0.018865691497921944,
+        0.016492759808897972,
+        0.022222403436899185,
+        0.01171794068068266,
+        0.024531297385692596,
+        0.023942191153764725,
+        0.026900041848421097,
+        0.024200016632676125,
+        0.01804477907717228,
+        0.01913253217935562,
+        0.02712905779480934,
+        0.027525052428245544,
+        0.03409021347761154,
+        0.030931714922189713,
+        0.02375016175210476,
+        0.028049491345882416,
+        0.02184663526713848,
+        0.02199116349220276,
+        0.015037435106933117,
+        0.019857488572597504,
+        0.02161746844649315,
+        0.02041606232523918,
+        0.013886767439544201,
+        0.02014215663075447,
+        0.023402024060487747,
+        0.01554807648062706,
+        0.027172932401299477,
+        0.020259222015738487,
+        0.015002484433352947
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 2.6396999983262504,
+        "p95_ms": 3.038829997603897
+      },
+      "host_to_device": {
+        "p50_ms": 0.4100500027561793,
+        "p95_ms": 0.7177299996328653
+      },
+      "model": {
+        "p50_ms": 1.653499999520136,
+        "p95_ms": 2.6292100001228382
+      },
+      "postprocessing": {
+        "p50_ms": 1.7347499997413252,
+        "p95_ms": 2.8998000008868976
+      },
+      "end_to_end": {
+        "p50_ms": 6.569399998625158,
+        "p95_ms": 9.265220000452246
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 630 MHz, 41"
+      },
+      "peak_inference_allocated_bytes": 39746048,
+      "peak_inference_reserved_bytes": 171966464
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.6436461598746082,
+          0.8245776641836424
+        ],
+        "image_ap": [
+          0.9088725227345209,
+          0.9717494303279054
+        ],
+        "recall": [
+          0.09090909090909091,
+          0.2097990777338603
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.16666666666666669,
+          0.3468329237478799
+        ],
+        "pixel_auroc": [
+          0.7725027922569784,
+          0.8504816283908985
+        ],
+        "pixel_ap": [
+          0.1043629072506981,
+          0.24753313449464145
+        ],
+        "au_pro": [
+          0.7340718735256329,
+          0.8159424643594595
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8117884985684357,
+      "pixel_ap": 0.17407901169838425,
+      "au_pro": 0.7798205516492361
+    },
+    "training_seconds": 32.68378610000036,
+    "training_peak_allocated_bytes": 632175104,
+    "checkpoint_bytes": 131133,
+    "parameters": 31499,
+    "evaluation_seconds": 42.22109350000028,
+    "per_defect": [
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "color",
+        "defective_images": 25,
+        "auroc": 0.6676923076923077,
+        "ap": 0.7408618852821471,
+        "recall": 0.16,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.2758620689655173,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            21,
+            4
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "combined",
+        "defective_images": 17,
+        "auroc": 0.9660633484162896,
+        "ap": 0.961955936220642,
+        "recall": 0.5294117647058824,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6923076923076924,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            8,
+            9
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "contamination",
+        "defective_images": 21,
+        "auroc": 0.7673992673992673,
+        "ap": 0.7661728530277812,
+        "recall": 0.047619047619047616,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.0909090909090909,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            20,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "crack",
+        "defective_images": 26,
+        "auroc": 0.7559171597633135,
+        "ap": 0.7917079851504255,
+        "recall": 0.11538461538461539,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.20689655172413793,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            23,
+            3
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "faulty_imprint",
+        "defective_images": 19,
+        "auroc": 0.6133603238866396,
+        "ap": 0.5474355907002677,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            19,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "pill_type",
+        "defective_images": 9,
+        "auroc": 0.8589743589743588,
+        "ap": 0.7774094823114432,
+        "recall": 0.4444444444444444,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6153846153846153,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            5,
+            4
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "scratch",
+        "defective_images": 24,
+        "auroc": 0.657051282051282,
+        "ap": 0.6633134936967016,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            24,
+            0
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/autoencoder/02-test-mse-pill-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "144d9ade29b080c78484a4f2e53377664cf70e20e95814b07de2296a33104531",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "image_rows": 167,
+    "evaluated_at_utc": "2026-11-12T17:10:00.345831+00:00"
+  },
+  "calibration": {
+    "category": "pill",
+    "images": 40,
+    "image_threshold": 0.030931714922189713,
+    "secondary_image_threshold_q99": 0.03409021347761154,
+    "pixel_threshold": 0.01605224609375,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2621440,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.027525052428245544,
+      0.03409021347761154
+    ],
+    "calibration_scores": [
+      0.028158342465758324,
+      0.0180649496614933,
+      0.022724129259586334,
+      0.014813011512160301,
+      0.020512506365776062,
+      0.014664164744317532,
+      0.020356707274913788,
+      0.02047639526426792,
+      0.02754783071577549,
+      0.014645960181951523,
+      0.014007119461894035,
+      0.018865691497921944,
+      0.016492759808897972,
+      0.022222403436899185,
+      0.01171794068068266,
+      0.024531297385692596,
+      0.023942191153764725,
+      0.026900041848421097,
+      0.024200016632676125,
+      0.01804477907717228,
+      0.01913253217935562,
+      0.02712905779480934,
+      0.027525052428245544,
+      0.03409021347761154,
+      0.030931714922189713,
+      0.02375016175210476,
+      0.028049491345882416,
+      0.02184663526713848,
+      0.02199116349220276,
+      0.015037435106933117,
+      0.019857488572597504,
+      0.02161746844649315,
+      0.02041606232523918,
+      0.013886767439544201,
+      0.02014215663075447,
+      0.023402024060487747,
+      0.01554807648062706,
+      0.027172932401299477,
+      0.020259222015738487,
+      0.015002484433352947
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad"
+  },
+  "paths": {
+    "local": "outputs/autoencoder/02-test-mse-pill-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T17:10:00.346834+00:00",
+  "config_sha256": "90e3aeec0780bc5187edfd210395a00a84a2ebd7e329121e624fa70723af625b"
+}

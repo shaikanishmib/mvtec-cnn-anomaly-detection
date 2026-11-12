@@ -1,0 +1,331 @@
+{
+  "experiment_id": "02-test-mse-hazelnut-s2027-v1",
+  "category": "hazelnut",
+  "seed": 2027,
+  "training_experiment": "02-final-mse-hazelnut-s2027-v1",
+  "checkpoint_sha256": "418727e27a0205cee7b2f2f0a5348c2a3f49bd38215e39c0174481a7c965335a",
+  "image_auroc": 0.9585714285714286,
+  "image_ap": 0.9775037687379757,
+  "recall": 0.6857142857142857,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.8135593220338984,
+  "confusion_matrix": [
+    [
+      40,
+      0
+    ],
+    [
+      22,
+      48
+    ]
+  ],
+  "tn": 40,
+  "fp": 0,
+  "fn": 22,
+  "tp": 48,
+  "pixel_auroc": 0.9360895097966275,
+  "pixel_ap": 0.529554348605099,
+  "au_pro": 0.8921035316890151,
+  "positive_pixels": 2462314,
+  "negative_pixels": 112881046,
+  "regions": 136,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      112304829,
+      576217
+    ],
+    [
+      1375827,
+      1086487
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.653445832812094,
+    "recall": 0.441246323580177,
+    "fpr": 0.005104639090605167,
+    "f1": 0.5267792770843667,
+    "tp": 1086487,
+    "fp": 576217,
+    "tn": 112304829,
+    "fn": 1375827
+  },
+  "secondary_image_q99": {
+    "auroc": 0.9585714285714286,
+    "ap": 0.9775037687379757,
+    "recall": 0.6428571428571429,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.782608695652174,
+    "confusion_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        25,
+        45
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "hazelnut",
+    "images": 58,
+    "image_threshold": 0.015736572444438934,
+    "secondary_image_threshold_q99": 0.017224160954356194,
+    "pixel_threshold": 0.007476806640625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 3801088,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.014227255247533321,
+      0.017224160954356194
+    ],
+    "calibration_scores": [
+      0.017224160954356194,
+      0.006664237007498741,
+      0.004666195251047611,
+      0.006747780833393335,
+      0.005020231008529663,
+      0.010235550813376904,
+      0.010188299231231213,
+      0.009456666186451912,
+      0.008511821739375591,
+      0.00872039794921875,
+      0.007050317246466875,
+      0.009630592539906502,
+      0.00816624891012907,
+      0.011252271942794323,
+      0.015736572444438934,
+      0.00718168867751956,
+      0.00612632604315877,
+      0.009224234148859978,
+      0.00824087392538786,
+      0.008602159097790718,
+      0.011719546280801296,
+      0.010024133138358593,
+      0.0066276234574615955,
+      0.008949298411607742,
+      0.00994312483817339,
+      0.007516524288803339,
+      0.008860554546117783,
+      0.010898515582084656,
+      0.009063935838639736,
+      0.006903683766722679,
+      0.006781416013836861,
+      0.014227255247533321,
+      0.008879967033863068,
+      0.006760685704648495,
+      0.007566145155578852,
+      0.007783529348671436,
+      0.015878615900874138,
+      0.015003186650574207,
+      0.015057859942317009,
+      0.015623637475073338,
+      0.009100607596337795,
+      0.009862338192760944,
+      0.006729506887495518,
+      0.007755126338452101,
+      0.007872087880969048,
+      0.007121116854250431,
+      0.007107183802872896,
+      0.006277818698436022,
+      0.006505048833787441,
+      0.007635279558598995,
+      0.0071913106366992,
+      0.00786929577589035,
+      0.0063553196378052235,
+      0.006629676558077335,
+      0.008216417394578457,
+      0.010347182862460613,
+      0.0048025259748101234,
+      0.008394706062972546
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 7.417500000883592,
+      "p95_ms": 7.903470000928792
+    },
+    "host_to_device": {
+      "p50_ms": 0.9645999980421038,
+      "p95_ms": 1.2632799984203302
+    },
+    "model": {
+      "p50_ms": 3.5371000012673903,
+      "p95_ms": 5.198734998339203
+    },
+    "postprocessing": {
+      "p50_ms": 5.1045500022155466,
+      "p95_ms": 7.219079999595122
+    },
+    "end_to_end": {
+      "p50_ms": 17.189950000101817,
+      "p95_ms": 19.711464997271833
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 255 MHz, 40"
+    },
+    "peak_inference_allocated_bytes": 27832320,
+    "peak_inference_reserved_bytes": 171966464
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9228900472640283,
+        0.9851766417530544
+      ],
+      "image_ap": [
+        0.9557490055973277,
+        0.9927006796651316
+      ],
+      "recall": [
+        0.5735294117647058,
+        0.7945293291183702
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.7289719626168224,
+        0.8855016357688112
+      ],
+      "pixel_auroc": [
+        0.9041660688429315,
+        0.9483339026325157
+      ],
+      "pixel_ap": [
+        0.48612225789065583,
+        0.5703405869059409
+      ],
+      "au_pro": [
+        0.8528851484499732,
+        0.9204988336455325
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9212581982924118,
+    "pixel_ap": 0.5219319707340817,
+    "au_pro": 0.8914180511985547
+  },
+  "training_seconds": 48.3873668999986,
+  "training_peak_allocated_bytes": 651966976,
+  "checkpoint_bytes": 131133,
+  "parameters": 31499,
+  "evaluation_seconds": 111.51571400000103,
+  "per_defect": [
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "crack",
+      "defective_images": 18,
+      "auroc": 0.9472222222222223,
+      "ap": 0.9235936980804131,
+      "recall": 0.6666666666666666,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.8,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          6,
+          12
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "cut",
+      "defective_images": 17,
+      "auroc": 0.8985294117647059,
+      "ap": 0.8081272273427619,
+      "recall": 0.29411764705882354,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.45454545454545453,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          12,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "hole",
+      "defective_images": 18,
+      "auroc": 0.9875,
+      "ap": 0.9762844952795934,
+      "recall": 0.7777777777777778,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.8750000000000001,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          4,
+          14
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "print",
+      "defective_images": 17,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/autoencoder/02-test-mse-hazelnut-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "15d846dae1d85f1b0f9fb2dbebec81c6a32fb3e67269e14e71cb08405abde241",
+  "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+  "image_rows": 110,
+  "evaluated_at_utc": "2026-11-12T16:49:33.636215+00:00"
+}

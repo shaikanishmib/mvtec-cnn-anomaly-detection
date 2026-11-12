@@ -1,0 +1,482 @@
+{
+  "experiment_id": "02-test-mse-hazelnut-s2026-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "hazelnut"
+  ],
+  "hypothesis": "Frozen normal-only reconstruction baseline; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026,
+    "map_kind": "squared"
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "02-final-mse-hazelnut-s2026-v1",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+        "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+      },
+      "git_sha": "076b52bf2bdc90f5fdce289a982700e99ec0a9c4"
+    },
+    "evaluation_source_sha256": "4d5cfd2505fdbc7b3b77fff317bd43a8937acc545d4802eb9e0494f006b3b8ed",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "02-test-mse-hazelnut-s2026-v1",
+    "category": "hazelnut",
+    "seed": 2026,
+    "training_experiment": "02-final-mse-hazelnut-s2026-v1",
+    "checkpoint_sha256": "3547d4213eac840e16c56fe62f43aa21beda8ce46d2333f7c4e42a0e11726c5d",
+    "image_auroc": 0.9632142857142858,
+    "image_ap": 0.9797140459112272,
+    "recall": 0.6714285714285714,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.8034188034188035,
+    "confusion_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        23,
+        47
+      ]
+    ],
+    "tn": 40,
+    "fp": 0,
+    "fn": 23,
+    "tp": 47,
+    "pixel_auroc": 0.938694123107726,
+    "pixel_ap": 0.5474820708979714,
+    "au_pro": 0.9023984958570995,
+    "positive_pixels": 2462314,
+    "negative_pixels": 112881046,
+    "regions": 136,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        112392295,
+        488751
+      ],
+      [
+        1416529,
+        1045785
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.6814991632649869,
+      "recall": 0.4247163440568506,
+      "fpr": 0.004329788014189734,
+      "f1": 0.5233046023743698,
+      "tp": 1045785,
+      "fp": 488751,
+      "tn": 112392295,
+      "fn": 1416529
+    },
+    "secondary_image_q99": {
+      "auroc": 0.9632142857142858,
+      "ap": 0.9797140459112272,
+      "recall": 0.6571428571428571,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.7931034482758621,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          24,
+          46
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "hazelnut",
+      "images": 58,
+      "image_threshold": 0.015712114050984383,
+      "secondary_image_threshold_q99": 0.016517939046025276,
+      "pixel_threshold": 0.007659912109375,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 3801088,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.014591680839657784,
+        0.016517939046025276
+      ],
+      "calibration_scores": [
+        0.016517939046025276,
+        0.006802205462008715,
+        0.004338485654443502,
+        0.006626038812100887,
+        0.004680554382503033,
+        0.010307960212230682,
+        0.010394040495157242,
+        0.009559928439557552,
+        0.008658023551106453,
+        0.008060348220169544,
+        0.00684944586828351,
+        0.009814317338168621,
+        0.008174238726496696,
+        0.011293594725430012,
+        0.015712114050984383,
+        0.007140563800930977,
+        0.005907367914915085,
+        0.009273666888475418,
+        0.008732432499527931,
+        0.00893340352922678,
+        0.011963289231061935,
+        0.010233019478619099,
+        0.006529162637889385,
+        0.008894831873476505,
+        0.010312288999557495,
+        0.007407692726701498,
+        0.008390474133193493,
+        0.011027504689991474,
+        0.009614616632461548,
+        0.006625988986343145,
+        0.0069612679071724415,
+        0.015090092085301876,
+        0.008736527524888515,
+        0.007036504801362753,
+        0.007531536277383566,
+        0.007546605076640844,
+        0.01481621153652668,
+        0.014591680839657784,
+        0.016407977789640427,
+        0.014725352637469769,
+        0.009456894360482693,
+        0.01111652422696352,
+        0.006469127722084522,
+        0.007151029538363218,
+        0.008082830347120762,
+        0.006479492411017418,
+        0.006967427674680948,
+        0.006544062867760658,
+        0.005779164377599955,
+        0.0075814384035766125,
+        0.0072875493206083775,
+        0.007612305227667093,
+        0.0064907860942184925,
+        0.0068796961568295956,
+        0.00840074848383665,
+        0.010460525751113892,
+        0.004142748657613993,
+        0.008240335620939732
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 7.173149999289308,
+        "p95_ms": 7.72901500122316
+      },
+      "host_to_device": {
+        "p50_ms": 0.9704499998406391,
+        "p95_ms": 1.2299649991291517
+      },
+      "model": {
+        "p50_ms": 3.4006000005319947,
+        "p95_ms": 5.053940000561849
+      },
+      "postprocessing": {
+        "p50_ms": 4.981900000530004,
+        "p95_ms": 7.205315000737752
+      },
+      "end_to_end": {
+        "p50_ms": 16.692000000148255,
+        "p95_ms": 19.7280900008991
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native residual map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 255 MHz, 41"
+      },
+      "peak_inference_allocated_bytes": 27832320,
+      "peak_inference_reserved_bytes": 171966464
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9310672999106993,
+          0.9873516799292661
+        ],
+        "image_ap": [
+          0.9589848579410116,
+          0.9934067886356805
+        ],
+        "recall": [
+          0.5588139801375096,
+          0.7812839673913041
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.7169732704402516,
+          0.8772143774069318
+        ],
+        "pixel_auroc": [
+          0.9066804286451392,
+          0.9512937688965772
+        ],
+        "pixel_ap": [
+          0.5004618292379226,
+          0.591992765485968
+        ],
+        "au_pro": [
+          0.8662241688483164,
+          0.9282021640103393
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed [0,1] residual bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9242206908977149,
+      "pixel_ap": 0.539158722776876,
+      "au_pro": 0.9016066761102703
+    },
+    "training_seconds": 48.26562440000089,
+    "training_peak_allocated_bytes": 651966976,
+    "checkpoint_bytes": 131133,
+    "parameters": 31499,
+    "evaluation_seconds": 104.51717619999908,
+    "per_defect": [
+      {
+        "category": "hazelnut",
+        "seed": 2026,
+        "defect": "crack",
+        "defective_images": 18,
+        "auroc": 0.9569444444444444,
+        "ap": 0.9331526044761339,
+        "recall": 0.6666666666666666,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.8,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            6,
+            12
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2026,
+        "defect": "cut",
+        "defective_images": 17,
+        "auroc": 0.9147058823529411,
+        "ap": 0.8399839195398071,
+        "recall": 0.23529411764705882,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.38095238095238093,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            13,
+            4
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2026,
+        "defect": "hole",
+        "defective_images": 18,
+        "auroc": 0.9805555555555555,
+        "ap": 0.9638397867564534,
+        "recall": 0.7777777777777778,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.8750000000000001,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            4,
+            14
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2026,
+        "defect": "print",
+        "defective_images": 17,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/autoencoder/02-test-mse-hazelnut-s2026-v1/model_resolution_maps.npy",
+    "maps_sha256": "1569a258777a71cf285d07a4ca27ff6e08368a842734db3999433e7e20edff11",
+    "freeze_sha256": "6fab454c5bfef9708616cec50ab0d8e0f96587b48ac16c5b3352500ea957efad",
+    "image_rows": 110,
+    "evaluated_at_utc": "2026-11-12T16:24:27.892382+00:00"
+  },
+  "calibration": {
+    "category": "hazelnut",
+    "images": 58,
+    "image_threshold": 0.015712114050984383,
+    "secondary_image_threshold_q99": 0.016517939046025276,
+    "pixel_threshold": 0.007659912109375,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 3801088,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.014591680839657784,
+      0.016517939046025276
+    ],
+    "calibration_scores": [
+      0.016517939046025276,
+      0.006802205462008715,
+      0.004338485654443502,
+      0.006626038812100887,
+      0.004680554382503033,
+      0.010307960212230682,
+      0.010394040495157242,
+      0.009559928439557552,
+      0.008658023551106453,
+      0.008060348220169544,
+      0.00684944586828351,
+      0.009814317338168621,
+      0.008174238726496696,
+      0.011293594725430012,
+      0.015712114050984383,
+      0.007140563800930977,
+      0.005907367914915085,
+      0.009273666888475418,
+      0.008732432499527931,
+      0.00893340352922678,
+      0.011963289231061935,
+      0.010233019478619099,
+      0.006529162637889385,
+      0.008894831873476505,
+      0.010312288999557495,
+      0.007407692726701498,
+      0.008390474133193493,
+      0.011027504689991474,
+      0.009614616632461548,
+      0.006625988986343145,
+      0.0069612679071724415,
+      0.015090092085301876,
+      0.008736527524888515,
+      0.007036504801362753,
+      0.007531536277383566,
+      0.007546605076640844,
+      0.01481621153652668,
+      0.014591680839657784,
+      0.016407977789640427,
+      0.014725352637469769,
+      0.009456894360482693,
+      0.01111652422696352,
+      0.006469127722084522,
+      0.007151029538363218,
+      0.008082830347120762,
+      0.006479492411017418,
+      0.006967427674680948,
+      0.006544062867760658,
+      0.005779164377599955,
+      0.0075814384035766125,
+      0.0072875493206083775,
+      0.007612305227667093,
+      0.0064907860942184925,
+      0.0068796961568295956,
+      0.00840074848383665,
+      0.010460525751113892,
+      0.004142748657613993,
+      0.008240335620939732
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928"
+  },
+  "paths": {
+    "local": "outputs/autoencoder/02-test-mse-hazelnut-s2026-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T16:24:27.895384+00:00",
+  "config_sha256": "56f9bc39a6b1c7c2079a7800f26d4052828f79f44173debb5a6d9777b2c5fa70"
+}
