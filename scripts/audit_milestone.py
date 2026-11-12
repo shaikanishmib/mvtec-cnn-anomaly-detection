@@ -21,9 +21,10 @@ def audit():
     total = 0
     for name in files:
         path = Path(name)
-        assert path.parts[0] not in {"data", "checkpoints", "outputs", ".aws"}
+        assert path.parts[0] not in {"data", "checkpoints", "outputs", ".aws", ".cache"}
         assert not any(p.startswith(".venv") for p in path.parts)
-        assert path.suffix.lower() not in {".pt", ".pth", ".ckpt", ".pem", ".key", ".zip", ".png"}
+        assert path.suffix.lower() not in {".pt", ".pth", ".ckpt", ".pem", ".key", ".zip", ".png",
+                                           ".tar", ".gz", ".7z", ".safetensors", ".onnx"}
         assert not path.name.startswith((".env", "credentials"))
         contents = git("show", f":{name}")
         assert len(contents) < 5_000_000, f"Oversized: {name}"

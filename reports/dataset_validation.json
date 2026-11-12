@@ -1,0 +1,63 @@
+{
+  "validated_at_utc": "2026-11-12T05:19:57.780780+00:00",
+  "dataset_root": "data/mvtec_ad",
+  "seed": 2026,
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "images": 5354,
+  "mask_count": 1258,
+  "inventory_sha256": "4e6f4c8cb486f01c394738e1ddfff1bdc93ad0a8e8e942c3d25046709245b392",
+  "partitions": {
+    "fit": {
+      "path": "reports/partitions/seed2026-fit.csv",
+      "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "images": 2551
+    },
+    "development": {
+      "path": "reports/partitions/seed2026-development.csv",
+      "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "images": 539
+    },
+    "calibration": {
+      "path": "reports/partitions/seed2026-calibration.csv",
+      "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "images": 539
+    },
+    "test": {
+      "path": "reports/partitions/seed2026-test.csv",
+      "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+      "images": 1725
+    }
+  },
+  "disk_free_bytes": 591096733696,
+  "integrity": "all images and masks verified/decoded; dimensions, binary masks and pairing passed",
+  "exact_duplicate_images": 0,
+  "provenance": {
+    "placement": "user-provided complete dataset; not downloaded by agent",
+    "official_source": "https://www.mvtec.com/research-teaching/datasets/mvtec-ad",
+    "archive_checksum": null,
+    "original_download_timestamp": null,
+    "limitation": "No original archive or publisher checksum supplied; content hashes establish local identity, not independent authenticity",
+    "metadata_sha256": {
+      "license.txt": "a355a57937552790ebd751f8a8026b23882160ab73f1c38f8030456dfcf1a330",
+      "readme.txt": "60222d7e42a41e6e63ee6ed632d1149b76705fa49924b4c7594ebfc36f0a667c"
+    }
+  },
+  "validation_environment": "project isolated .venv; full revalidation in EDA kernel",
+  "notebook_revalidated_at_utc": "2026-11-12T05:27:21.468135+00:00"
+}

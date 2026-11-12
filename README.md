@@ -9,7 +9,7 @@ both successful and unsuccessful experiments. No benchmark results exist yet.
 
 | Notebook | Focus | Status |
 |---|---|---|
-| [00](notebooks/00_dataset_eda.ipynb) | Dataset EDA and integrity | Written; missing-data execution verified; real-data EDA blocked |
+| [00](notebooks/00_dataset_eda.ipynb) | Dataset EDA and integrity | Complete real-data EDA and verified CUDA kernel |
 | 01 | Basic CNN, declared one-class or synthetic proxy objective | Planned |
 | 02 | Convolutional autoencoder | Planned |
 | 03 | PatchCore | Planned |
@@ -25,36 +25,46 @@ from MVTec's official download form. Attribute Bergmann et al., CVPR 2019 and th
 extended IJCV dataset paper. Data is licensed **CC BY-NC-SA 4.0** and must not be
 published in this repository. Follow [acquisition and checksums](docs/dataset.md).
 
-Extract under `data/mvtec_ad/<category>/` with `train/good`, `test/<type>` and
-`ground_truth/<type>` directories. Data, checkpoints, weights, executed notebooks
-and image panels are Git-ignored. No dataset was available at initialization;
-category counts, image statistics and observed plots are therefore unavailable.
+The user-provided complete dataset is already present; it was not downloaded
+again or modified. Automatic root discovery supports categories directly under
+`data/` or within a wrapper such as `data/mvtec_ad/`. All 15 categories passed
+decoding and mask checks: **5,354 images**, comprising 3,629 training normals,
+467 test normals and 1,258 test defects, each with a valid mask. See
+[per-category counts](reports/category_counts.csv) and
+[data/manifest identities](reports/dataset_validation.json). No exact duplicate
+images were found. Original archive authenticity cannot be independently checked
+without the source archive/checksum; this limitation is recorded.
 
 ## Reproduce the foundation
 
-Use PowerShell and CPython 3.12.10. The verified local environment reuses installed
-packages without modifying them:
+Use PowerShell and CPython 3.12.10. This project's `.venv` is isolated and contains
+the verified CUDA-enabled scientific/Jupyter environment:
 
 ```powershell
 cd C:\Users\shaik\mvtec-cnn-anomaly-detection
-python -m venv --system-site-packages .venv
+python -m venv .venv
 New-Item -ItemType Directory -Force data,checkpoints,outputs | Out-Null
+.\.venv\Scripts\python.exe -m pip install pip==25.0.1
+.\.venv\Scripts\python.exe -m pip install -r requirements.lock.txt --cache-dir .cache/pip
+.\.venv\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e .
 .\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe -m ipykernel install --prefix .venv --name mvtec-research --display-name "MVTec research (CUDA, Python 3.12)"
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe scripts/validate_notebook.py
 .\.venv\Scripts\python.exe scripts/execute_eda.py
 ```
 
-[Environment instructions](docs/environment.md) explain the audited package lock,
-direct dependency pins, JupyterLab/kernel setup and alternative pinned CUDA
-specification. The inherited environment is not an independently rebuilt isolated
-environment; that verification remains outstanding. Launch Jupyter Notebook or
-JupyterLab in a browser and select the research interpreter. No VS Code is needed.
+[Environment instructions](docs/environment.md) explain the Windows/Python-specific
+artifact hash lock, direct pins, JupyterLab/kernel setup and actual CUDA checks.
+The lock covers 116 external packages with downloaded-wheel SHA256 hashes.
+Launch `.venv/Scripts/python.exe -m jupyterlab` and select **MVTec research (CUDA,
+Python 3.12)**. A second independent environment rebuild has not been performed.
 
-The execution script uses its own interpreter and saves the executed notebook to
-`outputs/eda/00_dataset_eda.executed.ipynb`. The tracked notebook has cleared
-outputs to avoid distributing dataset images. Missing data is explicitly reported
-and skipped; successful missing-data execution is **not completed dataset EDA**.
+The execution script verifies the registered kernel's interpreter and saves the
+full executed notebook to `outputs/eda/00_dataset_eda.executed.ipynb`. The tracked
+copy preserves real numeric outputs and aggregate plots; panels containing
+dataset pixels remain local. All real-data sections run; integrity failures stop
+execution. Re-run `scripts/prepare_data.py` to verify the frozen split manifests.
 
 ## Methodology
 
@@ -74,16 +84,20 @@ numbers are reported before actual experiments. See the
 
 ## Verified progress and compute limits
 
-The setup includes the protocol, a 20-section EDA notebook, project-local dataset
+The setup includes the protocol, completed 20-section EDA, project-local dataset
 validation, deterministic partitions, metric references and an append-only
-experiment registry. See [environment audit](reports/environment.json) and
-[notebook execution status](reports/eda_execution.json) for machine-readable facts.
+experiment registry. Seed 2026 assigns 2,551 fitting, 539 development and 539
+calibration normals; all 1,725 official test files remain separate. See
+[environment audit](reports/environment.json),
+[notebook execution evidence](reports/eda_execution.json),
+[EDA findings](reports/eda_findings.json) and [validation history](reports/validation.md).
 
 The RTX 4060 Laptop GPU reports 8,188 MiB VRAM (about 8 GB), driver 610.91.
-Installed PyTorch 2.15.0+cpu and torchvision 0.29.2+cpu import successfully;
-PyTorch CUDA is unavailable. CPU EDA works. CUDA-enabled training, model latency,
-and memory feasibility remain unverified. No model weights have been downloaded
-and no model has been trained.
+Installed PyTorch **2.11.0+cu128** and torchvision **0.26.0+cu128** detect the GPU.
+GPU matrix multiplication, a synthetic CNN forward/backward check and torchvision
+CUDA NMS passed in the research kernel. See [GPU evidence](reports/cuda_verification.json).
+Model-specific fit time, inference latency and memory feasibility remain unmeasured.
+No model weights have been downloaded and no anomaly detector has been trained.
 
 ## Repository layout and next stage
 
@@ -92,7 +106,9 @@ auditable utilities; `configs/`, `experiments/`, `reports/`, `scripts/`, `tests/
 and `docs/` hold configuration, evidence and reproduction support. `data/`,
 `checkpoints/` and `outputs/` are local ignored storage; scripts recreate outputs.
 
-Next: acquire and validate MVTec AD, verify the CUDA environment, then begin
-Notebook 01 — Basic CNN. After the research comparison, a separate engineering
+Next, when separately requested: Notebook 01 — Basic CNN. Each future notebook
+must preserve its full experimental story, tried configurations, actual results,
+calibration, evaluation, failures and interpretations. After the research
+comparison, a separate engineering
 stage will add reusable PyTorch inference, FastAPI, a browser interface, tests,
 benchmarks and deployment. That application is not implemented in this milestone.

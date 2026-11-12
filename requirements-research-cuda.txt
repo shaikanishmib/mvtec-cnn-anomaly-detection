@@ -1,6 +1,7 @@
 # Install torch/torchvision FIRST from requirements-cuda.txt with the CUDA index.
-# Conservative pinned scientific/Jupyter stack for the separate training env.
-# A clean rebuild and full transitive lock are still to be verified.
+# Pinned scientific/Jupyter stack for this project's isolated .venv.
+setuptools==78.1.0
+wheel==0.45.1
 numpy==2.2.6
 pandas==2.2.3
 pillow==11.2.1

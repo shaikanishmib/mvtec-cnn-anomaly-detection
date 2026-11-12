@@ -1,7 +1,6 @@
 {
-  "dataset_available_and_validated": false,
-  "categories_discovered": [],
-  "missing_categories": [
+  "dataset_available_and_validated": true,
+  "categories_discovered": [
     "bottle",
     "cable",
     "capsule",
@@ -18,11 +17,146 @@
     "wood",
     "zipper"
   ],
-  "observed_image_count": null,
-  "configuration_sha256": "b375cf6d3de338c67d193a749a94b18e94255562f351ab037ffe4c37ae962d2a",
-  "cuda_available": false,
-  "test_exposure": "descriptive images/masks only if data available; no tuning",
-  "status": "BLOCKED: missing complete dataset",
+  "missing_categories": [],
+  "observed_image_count": 5354,
+  "observed_mask_count": 1258,
+  "configuration_sha256": "079be9ddc2e4a6b18a2485c7f8dd4685a0e8571335b0bd690d788c5db0497cab",
+  "cuda_available": true,
+  "cuda_device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "test_exposure": "descriptive images/masks viewed; no tuning or training",
+  "status": "All real-data EDA sections executed",
+  "partition_manifest_sha256": "6039350f49af47732350b7c416a2dc845f540f9e1fe4e837f21295de4f0cb25c",
+  "frozen_manifests": {
+    "fit": {
+      "path": "reports/partitions/seed2026-fit.csv",
+      "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "images": 2551
+    },
+    "development": {
+      "path": "reports/partitions/seed2026-development.csv",
+      "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "images": 539
+    },
+    "calibration": {
+      "path": "reports/partitions/seed2026-calibration.csv",
+      "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "images": 539
+    },
+    "test": {
+      "path": "reports/partitions/seed2026-test.csv",
+      "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+      "images": 1725
+    }
+  },
+  "counts": [
+    {
+      "category": "bottle",
+      "train_normal": 209,
+      "test_normal": 20,
+      "test_defective": 63,
+      "total": 292
+    },
+    {
+      "category": "cable",
+      "train_normal": 224,
+      "test_normal": 58,
+      "test_defective": 92,
+      "total": 374
+    },
+    {
+      "category": "capsule",
+      "train_normal": 219,
+      "test_normal": 23,
+      "test_defective": 109,
+      "total": 351
+    },
+    {
+      "category": "carpet",
+      "train_normal": 280,
+      "test_normal": 28,
+      "test_defective": 89,
+      "total": 397
+    },
+    {
+      "category": "grid",
+      "train_normal": 264,
+      "test_normal": 21,
+      "test_defective": 57,
+      "total": 342
+    },
+    {
+      "category": "hazelnut",
+      "train_normal": 391,
+      "test_normal": 40,
+      "test_defective": 70,
+      "total": 501
+    },
+    {
+      "category": "leather",
+      "train_normal": 245,
+      "test_normal": 32,
+      "test_defective": 92,
+      "total": 369
+    },
+    {
+      "category": "metal_nut",
+      "train_normal": 220,
+      "test_normal": 22,
+      "test_defective": 93,
+      "total": 335
+    },
+    {
+      "category": "pill",
+      "train_normal": 267,
+      "test_normal": 26,
+      "test_defective": 141,
+      "total": 434
+    },
+    {
+      "category": "screw",
+      "train_normal": 320,
+      "test_normal": 41,
+      "test_defective": 119,
+      "total": 480
+    },
+    {
+      "category": "tile",
+      "train_normal": 230,
+      "test_normal": 33,
+      "test_defective": 84,
+      "total": 347
+    },
+    {
+      "category": "toothbrush",
+      "train_normal": 60,
+      "test_normal": 12,
+      "test_defective": 30,
+      "total": 102
+    },
+    {
+      "category": "transistor",
+      "train_normal": 213,
+      "test_normal": 60,
+      "test_defective": 40,
+      "total": 313
+    },
+    {
+      "category": "wood",
+      "train_normal": 247,
+      "test_normal": 19,
+      "test_defective": 60,
+      "total": 326
+    },
+    {
+      "category": "zipper",
+      "train_normal": 240,
+      "test_normal": 32,
+      "test_defective": 119,
+      "total": 391
+    }
+  ],
   "code_cells_executed": 19,
-  "execution_interpreter": "project .venv (inherits audited system packages)"
+  "execution_interpreter": "project isolated .venv; registered mvtec-research kernel",
+  "kernel_verified": true,
+  "executed_at_utc": "2026-11-12T05:27:21.468135+00:00"
 }

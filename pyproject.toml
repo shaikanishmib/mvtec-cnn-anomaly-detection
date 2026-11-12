@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==84.2.1"]
+requires = ["setuptools==78.1.0", "wheel==0.45.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,11 +8,11 @@ version = "0.1.0"
 description = "Reproducible MVTec AD anomaly detection research"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-  "numpy==2.5.4", "pandas==2.3.3", "pillow==13.0.0",
-  "matplotlib==3.11.2", "scipy==1.18.1", "scikit-learn==1.9.1",
-  "torch==2.15.0", "torchvision==0.29.2",
-  "nbformat==5.11.1", "nbclient==0.11.0", "ipykernel==7.4.0",
-  "pytest==9.2.0",
+  "numpy==2.2.6", "pandas==2.2.3", "pillow==11.2.1",
+  "matplotlib==3.10.3", "scipy==1.15.3", "scikit-learn==1.6.1",
+  "torch==2.11.0+cu128", "torchvision==0.26.0+cu128",
+  "nbformat==5.10.4", "nbclient==0.10.2", "ipykernel==6.29.5",
+  "jupyterlab==4.4.3", "pytest==8.3.5",
 ]
 
 [tool.setuptools.packages.find]

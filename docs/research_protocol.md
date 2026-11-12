@@ -4,6 +4,23 @@ Freeze this protocol and partition manifest before Notebook 01. Amendments recei
 a dated Git commit and rationale; prior experiments retain their original rules.
 No model has been trained or evaluated in this repository at initialization.
 
+## Milestone 2 preparation amendment — 2026-11-12
+
+The user-provided complete data was validated read-only, with automatic root
+discovery under data/ and an isolated CUDA/Jupyter environment. Compact relative
+path/content partition manifests are published under reports/partitions/ with LF
+line endings and full SHA256 identities; raw images, masks and image panels stay
+ignored. The full inventory remains local. This changes evidence retention, not
+the normal-only split, score, threshold or evaluation protocol. Original archive
+checksum/download time are unknown and disclosed, not invented. Descriptive
+test-image/mask EDA has now occurred; there has been no model training or tuning.
+
+Every future model notebook must tell its full experimental story: hypothesis,
+implementation, training/fitting, exact configurations tried, actual results,
+normal-only calibration, evaluation, failure analysis and Markdown interpretation.
+Preserve failed configurations and results alongside successes. Do not begin
+Notebook 01 until separately requested after this milestone.
+
 ## Question and coverage
 
 How do a Basic CNN, convolutional autoencoder, PatchCore, SuperSimpleNet, PaDiM

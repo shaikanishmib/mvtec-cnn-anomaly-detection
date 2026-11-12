@@ -2,7 +2,8 @@ import shutil
 import numpy as np
 import pytest
 from PIL import Image
-from anomaly_detection.data import CATEGORIES, discover, inventory, partitions, project_data_root
+from anomaly_detection.data import (CATEGORIES, discover, inventory, partitions,
+                                    project_data_root, autodiscover_data_root)
 
 
 def test_discovery_missing_and_complete(dataset, tmp_path):
@@ -62,7 +63,7 @@ def test_integrity_failures(dataset, damage):
 
 
 def test_project_root_isolation(tmp_path):
-    assert project_data_root(tmp_path) == tmp_path / "data/mvtec_ad"
+    assert project_data_root(tmp_path, "data/mvtec_ad") == tmp_path / "data/mvtec_ad"
     with pytest.raises(ValueError, match="inside project"):
         project_data_root(tmp_path, "../outside")
 
@@ -71,3 +72,24 @@ def test_missing_test_split(dataset):
     shutil.rmtree(dataset / "wood/test")
     with pytest.raises(ValueError, match="Missing split"):
         inventory(dataset)
+
+
+@pytest.mark.parametrize("wrapper", ["", "mvtec_ad", "archive/wrapper"])
+def test_automatic_root_discovery(dataset, tmp_path_factory, wrapper):
+    project = tmp_path_factory.mktemp("discovery")
+    destination = project / "data" / wrapper
+    shutil.copytree(dataset, destination)
+    assert autodiscover_data_root(project) == destination
+    assert project_data_root(project) == destination
+
+
+def test_discovery_rejects_ambiguous_and_partial(dataset, tmp_path_factory):
+    project = tmp_path_factory.mktemp("ambiguous")
+    shutil.copytree(dataset, project / "data/one")
+    shutil.copytree(dataset, project / "data/two")
+    with pytest.raises(ValueError, match="found 2"):
+        autodiscover_data_root(project)
+    partial = tmp_path_factory.mktemp("partial")
+    (partial / "data/bottle/train/good").mkdir(parents=True)
+    with pytest.raises(ValueError, match="missing categories"):
+        autodiscover_data_root(partial)

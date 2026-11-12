@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import random
+import os
 
 import numpy as np
 import pandas as pd
@@ -30,16 +31,51 @@ def discover(root):
     return tuple(c for c in CATEGORIES if (root / c / "train" / "good").is_dir())
 
 
-def project_data_root(project, relative="data/mvtec_ad"):
+def autodiscover_data_root(project):
+    """Find a unique category root anywhere under data/, without following links.
+
+    Stop at category roots instead of traversing thousands of image directories.
+    Multiple candidate roots require an explicit selection rather than guessing.
+    """
+    base = Path(project).resolve() / "data"
+    if not base.is_dir() or base.is_symlink() or base.is_junction():
+        raise ValueError("Missing or linked project data directory")
+    candidates = []
+    pending = [base]
+    while pending:
+        folder = pending.pop()
+        children = sorted(folder.iterdir())
+        directories = []
+        for child in children:
+            if child.is_symlink() or child.is_junction():
+                raise ValueError("Linked paths are not permitted under project data/")
+            if child.is_dir():
+                directories.append(child)
+        if any(child.name in CATEGORIES for child in directories):
+            candidates.append(folder)
+        else:
+            pending.extend(directories)
+    if len(candidates) != 1:
+        raise ValueError(f"Expected one dataset root under data/, found {len(candidates)}")
+    root = candidates[0]
+    missing = sorted(set(CATEGORIES) - set(discover(root)))
+    if missing:
+        raise ValueError(f"Incomplete dataset root; missing categories: {missing}")
+    return root
+
+
+def project_data_root(project, relative=None):
     """Reject roots outside this repository, including junction/symlink escapes."""
     project = Path(project).resolve()
+    if relative in (None, "auto"):
+        return autodiscover_data_root(project)
     root = (project / relative).resolve()
     if not root.is_relative_to(project / "data"):
         raise ValueError("Dataset root must remain inside project data/")
     return root
 
 
-def inventory(root, require_complete=True):
+def inventory(root, require_complete=True, progress=None):
     """Decode every image and mask; errors stop publication of partial statistics.
 
     Hashes detect byte duplicates, not all near duplicates. Mean/std are RGB [0,1]
@@ -51,6 +87,16 @@ def inventory(root, require_complete=True):
         raise ValueError(f"Missing categories: {sorted(set(CATEGORIES) - set(categories))}")
     records, expected_masks = [], set()
     for category in categories:
+        if progress:
+            progress(category)
+        # Reject junctions/symlinks before traversing or opening their targets.
+        for folder, directories, files in os.walk(root / category, followlinks=False):
+            for name in directories + files:
+                child = Path(folder) / name
+                if child.is_symlink() or child.is_junction():
+                    raise ValueError("Linked dataset entries are not permitted")
+        if not (root / category / "ground_truth").is_dir():
+            raise ValueError(f"Missing ground_truth: {category}")
         for split in ("train", "test"):
             split_dir = root / category / split
             if not split_dir.is_dir():
