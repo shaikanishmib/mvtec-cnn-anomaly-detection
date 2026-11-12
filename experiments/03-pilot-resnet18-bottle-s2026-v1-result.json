@@ -1,0 +1,184 @@
+{
+  "experiment_id": "03-pilot-resnet18-bottle-s2026-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "A cached frozen ResNet18 with a 512-patch projected coreset supports bounded exact search and finite anomaly maps.",
+  "preprocessing": "Whole PIL RGB bilinear 256 + official V1 transform with identity resize/crop 256 geometry",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "bank_budget": 512,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "seed": 2026,
+    "normalize": false
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "ram_bytes": 34038341632,
+    "git_sha": "82aa3e262b1481bf517515ef317b9c244f758879",
+    "source_sha256": {
+      "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "src/anomaly_detection/patchcore_research.py": "092d16e92cf9493dc086d2aaa6ee153ef05ca4b3d236369cd1d0a10923df4114"
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {},
+  "metrics": {
+    "configuration": {
+      "backbone": "resnet18",
+      "weights": "IMAGENET1K_V1",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "resolution": 256,
+      "bank_budget": 512,
+      "candidate_limit": 20000,
+      "projection_dim": 32,
+      "query_chunk": 512,
+      "bank_chunk": 2048,
+      "seed": 2026,
+      "normalize": false
+    },
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "weight_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+    "extractor_parameters": 2782784,
+    "trainable_parameters": 0,
+    "feature_shapes": [
+      [
+        1,
+        64,
+        64,
+        64
+      ],
+      [
+        1,
+        128,
+        32,
+        32
+      ],
+      [
+        1,
+        256,
+        16,
+        16
+      ]
+    ],
+    "embedding_shape": [
+      24576,
+      384
+    ],
+    "patches_per_image": 1024,
+    "extraction_seconds": 0.442961100001412,
+    "coreset_seconds": 0.8132004999970377,
+    "search_8_images_seconds": 0.030620199999248143,
+    "search_p50_ms": 4.397949998747208,
+    "search_p95_ms": 5.506249997779377,
+    "coverage": {
+      "candidate_count": 20000,
+      "projected_radius": 1.3653745651245117,
+      "projected_mean_distance": 0.9100455045700073,
+      "projection_dim": 32
+    },
+    "resources": {
+      "seconds": 3.489012300000468,
+      "cpu_initial_rss_bytes": 948654080,
+      "cpu_peak_rss_bytes": 1669513216,
+      "cpu_peak_increment_bytes": 720859136,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 275537920,
+      "peak_gpu_reserved_bytes": 354418688
+    },
+    "bank_bytes": 786432,
+    "feature_bytes_per_image": 1572864,
+    "all_category_fitting_images": {
+      "bottle": 147,
+      "cable": 158,
+      "capsule": 155,
+      "carpet": 196,
+      "grid": 186,
+      "hazelnut": 275,
+      "leather": 173,
+      "metal_nut": 154,
+      "pill": 187,
+      "screw": 224,
+      "tile": 162,
+      "toothbrush": 42,
+      "transistor": 151,
+      "wood": 173,
+      "zipper": 168
+    },
+    "expected_feature_cache_bytes": {
+      "bottle": 231211008,
+      "cable": 248512512,
+      "capsule": 243793920,
+      "carpet": 308281344,
+      "grid": 292552704,
+      "hazelnut": 432537600,
+      "leather": 272105472,
+      "metal_nut": 242221056,
+      "pill": 294125568,
+      "screw": 352321536,
+      "tile": 254803968,
+      "toothbrush": 66060288,
+      "transistor": 237502464,
+      "wood": 272105472,
+      "zipper": 264241152
+    },
+    "projected_three_seed_final_extraction_seconds": 47.08307358765008,
+    "coreset_cost_caveat": "Pilot bank 512; candidate cap and selected bank budget affect final cost. Deterministic extraction runs once, not three times.",
+    "correctness": {
+      "float64_fixture": true,
+      "zero_self_distances": true,
+      "finite_nonnegative_maps": true,
+      "map_shape": [
+        8,
+        256,
+        256
+      ]
+    }
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/patchcore/03-pilot-resnet18-bottle-s2026-v1"
+  },
+  "interpretation": "Feasibility evidence only; synthetic map example is not a real-defect benchmark.",
+  "decision": "Pilot correctness passed; assess measured workload before bounded development",
+  "status": "completed",
+  "recorded_at": "2026-11-12T18:29:07.350206+00:00",
+  "config_sha256": "e35c35abc895a96bc95e4494fabe49ce04e96724b050a83323bce77034c92638"
+}

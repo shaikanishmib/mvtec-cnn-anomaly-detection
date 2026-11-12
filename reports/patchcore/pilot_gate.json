@@ -1,0 +1,17 @@
+{
+  "pilot": "03-pilot-resnet18-bottle-s2026-v1",
+  "correctness": "Seven unit tests passed; live GPU float64-distance fixture, zero self-distance and finite 8x256x256 maps passed",
+  "decision": "Proceed with bounded development; no official test access yet",
+  "patches_per_image": 1024,
+  "embedding_dimension": 384,
+  "bank_vector_bytes": {"256": 393216, "1024": 1572864, "2048": 3145728},
+  "maximum_fitting_category_cache_bytes": 432537600,
+  "all_partition_feature_cache_estimate_bytes": 8421113856,
+  "deterministic_fitting_extraction_estimate_seconds_once": 47.08307358765008,
+  "estimated_45_bank_2048_selection_seconds": 146.37608999946679,
+  "selection_estimate_method": "Linear budget extrapolation of measured 512-bank pilot, fixed 20000 candidate cap; refine with full development measurements",
+  "native_evaluation_planning_minutes": 75,
+  "native_evaluation_basis": "Previous AE 45-run exact native evaluation took 58.70 minutes; score distributions, system load and additional NN costs vary",
+  "scope": "Measured pilot feasibility gate, not final configuration selection or final compute gate",
+  "test_setup_history": "First fixture attempt: 6 passed, 1 setup error from missing outputs/patchcore parent; after creating parent, 7 passed in 13.03 seconds. No failed model trial."
+}
