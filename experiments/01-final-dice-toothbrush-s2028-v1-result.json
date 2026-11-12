@@ -1,0 +1,163 @@
+{
+  "experiment_id": "01-final-dice-toothbrush-s2028-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "Fresh per-category/per-seed confirmation under frozen policy; no calibration/test selection.",
+  "preprocessing": {
+    "RGB": true,
+    "resize": 256,
+    "float_range": [
+      0,
+      1
+    ],
+    "model_centering": "2*x-1",
+    "resize_method": "PIL bilinear antialiased"
+  },
+  "hyperparameters": {
+    "seed": 2028,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "phase": "final",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "partition_identities": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "metrics": {
+    "experiment_id": "01-final-dice-toothbrush-s2028-v1",
+    "category": "toothbrush",
+    "phase": "final",
+    "configuration": {
+      "seed": 2028,
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "max_epochs": 8,
+      "minimum_epochs": 3,
+      "patience": 3,
+      "normal_probability": 0.5,
+      "positive_weight": 8.0,
+      "name": "dice",
+      "width": 16,
+      "synthetic": "mixed",
+      "dice_weight": 1.0
+    },
+    "configuration_sha256": "e42dd98a4e4b1a72f32733ae0999c87e12b906f6d5fbdead6063af38b4b1c644",
+    "best_epoch": 8,
+    "epochs_completed": 8,
+    "parameters": 83857,
+    "gradient_normal_images": 42,
+    "probe_normal_sources": 0,
+    "training_seconds_including_loading_validation": 1.5436283000162803,
+    "training_gpu_seconds": 1.2096997000044212,
+    "selected_development_metrics": {
+      "train_loss": 1.1143375181016468,
+      "gradient_norm": 2.19815346740541,
+      "train_epoch_seconds": 0.1380494000040926,
+      "normal_development_bce": 0.0870596244931221,
+      "epoch": 8,
+      "elapsed_seconds": 1.5004684000159614,
+      "peak_allocated_bytes": 459993088,
+      "peak_reserved_bytes": 704643072
+    },
+    "peak_allocated_bytes": 459993088,
+    "peak_reserved_bytes": 704643072,
+    "checkpoint": "checkpoints/basic_cnn/01-final-dice-toothbrush-s2028-v1/best.pt",
+    "checkpoint_sha256": "841d88e739ec35e01f06e49b4bab2659df569c68a43c97a7cde57b2bb2feff6f",
+    "checkpoint_bytes": 343117,
+    "history": "reports/basic_cnn/runs/01-final-dice-toothbrush-s2028-v1-history.csv",
+    "history_sha256": "2399a19979aa66d888b4f7b6ba27bb4b847f67d250d719a39dc659e1e3ba07da",
+    "code_identity": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    }
+  },
+  "calibration": {
+    "used": false
+  },
+  "paths": {
+    "output": "outputs/basic_cnn/01-final-dice-toothbrush-s2028-v1",
+    "checkpoints": "checkpoints/basic_cnn/01-final-dice-toothbrush-s2028-v1"
+  },
+  "interpretation": "Fresh category-specific model; test not accessed",
+  "decision": "frozen confirmation trained",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:16:00.868226+00:00",
+  "config_sha256": "9cbe79a93bee3bce7b97d2878ba6cd65d3e04038dedb038a8656c2486a5964d1"
+}

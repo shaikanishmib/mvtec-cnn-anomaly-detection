@@ -1,0 +1,331 @@
+{
+  "experiment_id": "01-test-dice-leather-s2028-v1",
+  "category": "leather",
+  "seed": 2028,
+  "training_experiment": "01-final-dice-leather-s2028-v1",
+  "checkpoint_sha256": "9ab84e95554a5887e952a554d373786bcc210552e8f211e6c786be4b6d977014",
+  "image_auroc": 0.978600543478261,
+  "image_ap": 0.9930945341341965,
+  "recall": 0.9782608695652174,
+  "fpr": 0.40625,
+  "precision": 0.8737864077669902,
+  "f1": 0.923076923076923,
+  "confusion_matrix": [
+    [
+      19,
+      13
+    ],
+    [
+      2,
+      90
+    ]
+  ],
+  "tn": 19,
+  "fp": 13,
+  "fn": 2,
+  "tp": 90,
+  "pixel_auroc": 0.9820508756956363,
+  "pixel_ap": 0.5534065886960555,
+  "au_pro": 0.974403829840021,
+  "positive_pixels": 843352,
+  "negative_pixels": 129180072,
+  "regions": 99,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      125300173,
+      3879899
+    ],
+    [
+      63540,
+      779812
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.16735200959887855,
+    "recall": 0.924657794135782,
+    "fpr": 0.030034810632401567,
+    "f1": 0.2834101663019304,
+    "tp": 779812,
+    "fp": 3879899,
+    "tn": 125300173,
+    "fn": 63540
+  },
+  "secondary_image_q99": {
+    "auroc": 0.978600543478261,
+    "ap": 0.9930945341341965,
+    "recall": 0.9565217391304348,
+    "fpr": 0.3125,
+    "precision": 0.8979591836734694,
+    "f1": 0.9263157894736843,
+    "confusion_matrix": [
+      [
+        22,
+        10
+      ],
+      [
+        4,
+        88
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "leather",
+    "images": 36,
+    "image_threshold": 0.9005225300788879,
+    "secondary_image_threshold_q99": 0.9618692398071289,
+    "pixel_threshold": 0.3076934814453125,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2359296,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.5377534031867981,
+      0.9618692398071289
+    ],
+    "calibration_scores": [
+      0.3285547196865082,
+      0.3168204128742218,
+      0.25820180773735046,
+      0.7645840048789978,
+      0.2517510950565338,
+      0.3047512173652649,
+      0.28885623812675476,
+      0.2057214081287384,
+      0.42439746856689453,
+      0.35957780480384827,
+      0.2960568368434906,
+      0.24366448819637299,
+      0.2467631846666336,
+      0.3010203242301941,
+      0.18309108912944794,
+      0.41050219535827637,
+      0.5377534031867981,
+      0.4970459043979645,
+      0.374840646982193,
+      0.5154951810836792,
+      0.44337204098701477,
+      0.3826289772987366,
+      0.6497933268547058,
+      0.2453046292066574,
+      0.4363185465335846,
+      0.41704806685447693,
+      0.30405858159065247,
+      0.27515068650245667,
+      0.15584301948547363,
+      0.9005225300788879,
+      0.33427396416664124,
+      0.9618692398071289,
+      0.605976402759552,
+      0.30122727155685425,
+      0.3121735453605652,
+      0.35735729336738586
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "d718774b6715c1b94afacc52d2a05e1b56d86b27a91ff065ff33a8499fb42b04"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 5.047999991802499,
+      "p95_ms": 5.945734995475504
+    },
+    "host_to_device": {
+      "p50_ms": 0.6350500043481588,
+      "p95_ms": 0.9554399977787397
+    },
+    "model": {
+      "p50_ms": 2.329349998035468,
+      "p95_ms": 3.4839799991459564
+    },
+    "postprocessing": {
+      "p50_ms": 2.2431999968830496,
+      "p95_ms": 3.600124992954079
+    },
+    "end_to_end": {
+      "p50_ms": 10.342599998693913,
+      "p95_ms": 13.625059997139031
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 52"
+    },
+    "peak_inference_allocated_bytes": 38876672,
+    "peak_inference_reserved_bytes": 354418688
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9560439560439561,
+        0.9952669726107226
+      ],
+      "image_ap": [
+        0.9847957183218978,
+        0.9984096789777284
+      ],
+      "recall": [
+        0.945054945054945,
+        1.0
+      ],
+      "fpr": [
+        0.23076923076923078,
+        0.576973684210526
+      ],
+      "precision": [
+        0.8055494100294985,
+        0.9381443298969072
+      ],
+      "f1": [
+        0.8795696450146713,
+        0.9603960396039605
+      ],
+      "pixel_auroc": [
+        0.9655290870226112,
+        0.9929959661781711
+      ],
+      "pixel_ap": [
+        0.4028493100211131,
+        0.5361301183058031
+      ],
+      "au_pro": [
+        0.9620706275738067,
+        0.9819716927237894
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9817471016665958,
+    "pixel_ap": 0.4698090704982468,
+    "au_pro": 0.973404917634259
+  },
+  "training_seconds": 5.062453000020469,
+  "training_peak_allocated_bytes": 491057152,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 39.93426900001941,
+  "per_defect": [
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "color",
+      "defective_images": 19,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.40625,
+      "precision": 0.59375,
+      "f1": 0.7450980392156863,
+      "confusion_matrix": [
+        [
+          19,
+          13
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "cut",
+      "defective_images": 19,
+      "auroc": 0.90625,
+      "ap": 0.8861641427499563,
+      "recall": 0.8947368421052632,
+      "fpr": 0.40625,
+      "precision": 0.5666666666666667,
+      "f1": 0.6938775510204083,
+      "confusion_matrix": [
+        [
+          19,
+          13
+        ],
+        [
+          2,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "fold",
+      "defective_images": 17,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.40625,
+      "precision": 0.5666666666666667,
+      "f1": 0.7234042553191489,
+      "confusion_matrix": [
+        [
+          19,
+          13
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "glue",
+      "defective_images": 19,
+      "auroc": 0.9917763157894737,
+      "ap": 0.9890350877192983,
+      "recall": 1.0,
+      "fpr": 0.40625,
+      "precision": 0.59375,
+      "f1": 0.7450980392156863,
+      "confusion_matrix": [
+        [
+          19,
+          13
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "poke",
+      "defective_images": 18,
+      "auroc": 0.9982638888888888,
+      "ap": 0.9970760233918129,
+      "recall": 1.0,
+      "fpr": 0.40625,
+      "precision": 0.5806451612903226,
+      "f1": 0.7346938775510204,
+      "confusion_matrix": [
+        [
+          19,
+          13
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-leather-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "1a86ad37c77acd7dd9122851b34a1bb68f184dd8cc5a9a156675eb6d6b8b7f92",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 124,
+  "evaluated_at_utc": "2026-11-12T06:50:47.968091+00:00"
+}

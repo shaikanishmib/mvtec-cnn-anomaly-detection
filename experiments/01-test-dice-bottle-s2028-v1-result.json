@@ -1,0 +1,412 @@
+{
+  "experiment_id": "01-test-dice-bottle-s2028-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2028,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-bottle-s2028-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-bottle-s2028-v1",
+    "category": "bottle",
+    "seed": 2028,
+    "training_experiment": "01-final-dice-bottle-s2028-v1",
+    "checkpoint_sha256": "8c7418c24bc846fbdb6b9e9c85d320bd54d3bc24e18761044884f93af79679b0",
+    "image_auroc": 0.7880952380952382,
+    "image_ap": 0.9334836757669165,
+    "recall": 0.5079365079365079,
+    "fpr": 0.05,
+    "precision": 0.9696969696969697,
+    "f1": 0.6666666666666666,
+    "confusion_matrix": [
+      [
+        19,
+        1
+      ],
+      [
+        31,
+        32
+      ]
+    ],
+    "tn": 19,
+    "fp": 1,
+    "fn": 31,
+    "tp": 32,
+    "pixel_auroc": 0.8016774249078568,
+    "pixel_ap": 0.25336968863496057,
+    "au_pro": 0.5154514340066622,
+    "positive_pixels": 3886731,
+    "negative_pixels": 63343269,
+    "regions": 68,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        62925804,
+        417465
+      ],
+      [
+        3391395,
+        495336
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.5426549707986735,
+      "recall": 0.1274428304917423,
+      "fpr": 0.006590518717939865,
+      "f1": 0.20641012498718628,
+      "tp": 495336,
+      "fp": 417465,
+      "tn": 62925804,
+      "fn": 3391395
+    },
+    "secondary_image_q99": {
+      "auroc": 0.7880952380952382,
+      "ap": 0.9334836757669165,
+      "recall": 0.47619047619047616,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.6451612903225806,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          33,
+          30
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "bottle",
+      "images": 31,
+      "image_threshold": 0.9923219084739685,
+      "secondary_image_threshold_q99": 0.9952142238616943,
+      "pixel_threshold": 0.3592987060546875,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2031616,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.9383974671363831,
+        0.9952142238616943
+      ],
+      "calibration_scores": [
+        0.530624508857727,
+        0.9471792578697205,
+        0.4991922378540039,
+        0.2971787452697754,
+        0.40975260734558105,
+        0.2562338411808014,
+        0.9405720829963684,
+        0.5618621706962585,
+        0.8525096774101257,
+        0.6528517007827759,
+        0.294403612613678,
+        0.2815513610839844,
+        0.9383974671363831,
+        0.9923219084739685,
+        0.45724570751190186,
+        0.8218169808387756,
+        0.9737879037857056,
+        0.8018856644630432,
+        0.3893904685974121,
+        0.798492431640625,
+        0.408581018447876,
+        0.8871281147003174,
+        0.901772677898407,
+        0.7036980986595154,
+        0.9952142238616943,
+        0.7034607529640198,
+        0.728734016418457,
+        0.9338529706001282,
+        0.9275462031364441,
+        0.7548262476921082,
+        0.8156700730323792
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.984349998063408,
+        "p95_ms": 4.921464987273794
+      },
+      "host_to_device": {
+        "p50_ms": 0.5357999762054533,
+        "p95_ms": 0.8689450085512362
+      },
+      "model": {
+        "p50_ms": 2.6669500075513497,
+        "p95_ms": 5.197525009862146
+      },
+      "postprocessing": {
+        "p50_ms": 1.7694500129437074,
+        "p95_ms": 2.662400012195576
+      },
+      "end_to_end": {
+        "p50_ms": 9.553550014970824,
+        "p95_ms": 11.5887900130474
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 50"
+      },
+      "peak_inference_allocated_bytes": 31274496,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.6811764705882353,
+          0.8837606837606837
+        ],
+        "image_ap": [
+          0.8869182109902279,
+          0.9707110496430541
+        ],
+        "recall": [
+          0.38596491228070173,
+          0.639344262295082
+        ],
+        "fpr": [
+          0.0,
+          0.16666666666666666
+        ],
+        "precision": [
+          0.9,
+          1.0
+        ],
+        "f1": [
+          0.5494505494505494,
+          0.7736001217285452
+        ],
+        "pixel_auroc": [
+          0.7806640725318613,
+          0.8230668790165887
+        ],
+        "pixel_ap": [
+          0.2149966412568966,
+          0.29187274964015303
+        ],
+        "au_pro": [
+          0.45491133562978,
+          0.5816685539434756
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8016266368055374,
+      "pixel_ap": 0.2528107722893691,
+      "au_pro": 0.5154522625426958
+    },
+    "training_seconds": 4.65616760001285,
+    "training_peak_allocated_bytes": 485421056,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 20.479213699989486,
+    "per_defect": [
+      {
+        "category": "bottle",
+        "seed": 2028,
+        "defect": "broken_large",
+        "defective_images": 20,
+        "auroc": 0.9075,
+        "ap": 0.9316209238789886,
+        "recall": 0.75,
+        "fpr": 0.05,
+        "precision": 0.9375,
+        "f1": 0.8333333333333334,
+        "confusion_matrix": [
+          [
+            19,
+            1
+          ],
+          [
+            5,
+            15
+          ]
+        ]
+      },
+      {
+        "category": "bottle",
+        "seed": 2028,
+        "defect": "broken_small",
+        "defective_images": 22,
+        "auroc": 0.8704545454545454,
+        "ap": 0.9150617235255982,
+        "recall": 0.6818181818181818,
+        "fpr": 0.05,
+        "precision": 0.9375,
+        "f1": 0.7894736842105263,
+        "confusion_matrix": [
+          [
+            19,
+            1
+          ],
+          [
+            7,
+            15
+          ]
+        ]
+      },
+      {
+        "category": "bottle",
+        "seed": 2028,
+        "defect": "contamination",
+        "defective_images": 21,
+        "auroc": 0.5880952380952381,
+        "ap": 0.6548096769901282,
+        "recall": 0.09523809523809523,
+        "fpr": 0.05,
+        "precision": 0.6666666666666666,
+        "f1": 0.16666666666666666,
+        "confusion_matrix": [
+          [
+            19,
+            1
+          ],
+          [
+            19,
+            2
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-bottle-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "1514972e461f3d2150dc450d710942308bb3129cf4e60553814fb59d4164af3c",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 83,
+    "evaluated_at_utc": "2026-11-12T06:46:54.771039+00:00"
+  },
+  "calibration": {
+    "category": "bottle",
+    "images": 31,
+    "image_threshold": 0.9923219084739685,
+    "secondary_image_threshold_q99": 0.9952142238616943,
+    "pixel_threshold": 0.3592987060546875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2031616,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.9383974671363831,
+      0.9952142238616943
+    ],
+    "calibration_scores": [
+      0.530624508857727,
+      0.9471792578697205,
+      0.4991922378540039,
+      0.2971787452697754,
+      0.40975260734558105,
+      0.2562338411808014,
+      0.9405720829963684,
+      0.5618621706962585,
+      0.8525096774101257,
+      0.6528517007827759,
+      0.294403612613678,
+      0.2815513610839844,
+      0.9383974671363831,
+      0.9923219084739685,
+      0.45724570751190186,
+      0.8218169808387756,
+      0.9737879037857056,
+      0.8018856644630432,
+      0.3893904685974121,
+      0.798492431640625,
+      0.408581018447876,
+      0.8871281147003174,
+      0.901772677898407,
+      0.7036980986595154,
+      0.9952142238616943,
+      0.7034607529640198,
+      0.728734016418457,
+      0.9338529706001282,
+      0.9275462031364441,
+      0.7548262476921082,
+      0.8156700730323792
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-bottle-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:46:54.772554+00:00",
+  "config_sha256": "2c7ea772b002b8d57ff6587623bf363b67ed2c68bd5d2aafacedcdb2647e9d3e"
+}

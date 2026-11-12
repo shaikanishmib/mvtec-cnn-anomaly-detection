@@ -1,0 +1,438 @@
+{
+  "experiment_id": "01-test-dice-metal_nut-s2028-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "metal_nut"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2028,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-metal_nut-s2028-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-metal_nut-s2028-v1",
+    "category": "metal_nut",
+    "seed": 2028,
+    "training_experiment": "01-final-dice-metal_nut-s2028-v1",
+    "checkpoint_sha256": "4ea8ab62e9e48b50a61e01221fbde0945825e10e809a14b39047de812d3743c7",
+    "image_auroc": 0.7688172043010754,
+    "image_ap": 0.9393591528711895,
+    "recall": 0.3548387096774194,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.5238095238095238,
+    "confusion_matrix": [
+      [
+        22,
+        0
+      ],
+      [
+        60,
+        33
+      ]
+    ],
+    "tn": 22,
+    "fp": 0,
+    "fn": 60,
+    "tp": 33,
+    "pixel_auroc": 0.7076991231810403,
+    "pixel_ap": 0.23096429939469176,
+    "au_pro": 0.4741276189264617,
+    "positive_pixels": 6602541,
+    "negative_pixels": 49747459,
+    "regions": 132,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        49473862,
+        273597
+      ],
+      [
+        6301432,
+        301109
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.523935716696885,
+      "recall": 0.04560501782571286,
+      "fpr": 0.005499718086103654,
+      "f1": 0.08390654522548827,
+      "tp": 301109,
+      "fp": 273597,
+      "tn": 49473862,
+      "fn": 6301432
+    },
+    "secondary_image_q99": {
+      "auroc": 0.7688172043010754,
+      "ap": 0.9393591528711895,
+      "recall": 0.27956989247311825,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.43697478991596633,
+      "confusion_matrix": [
+        [
+          22,
+          0
+        ],
+        [
+          67,
+          26
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "metal_nut",
+      "images": 33,
+      "image_threshold": 0.9954264760017395,
+      "secondary_image_threshold_q99": 0.9988036155700684,
+      "pixel_threshold": 0.7695770263671875,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2162688,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.9710463285446167,
+        0.9988036155700684
+      ],
+      "calibration_scores": [
+        0.9767515659332275,
+        0.9449307918548584,
+        0.9231866002082825,
+        0.6870275735855103,
+        0.8803462386131287,
+        0.9710463285446167,
+        0.8376675248146057,
+        0.9323650598526001,
+        0.9954264760017395,
+        0.838016152381897,
+        0.9988036155700684,
+        0.8244006633758545,
+        0.697725772857666,
+        0.9494017362594604,
+        0.7466479539871216,
+        0.9004111289978027,
+        0.7834547162055969,
+        0.7433185577392578,
+        0.8415597081184387,
+        0.9864826798439026,
+        0.9477221369743347,
+        0.9541780948638916,
+        0.9926922917366028,
+        0.6798382997512817,
+        0.9372627139091492,
+        0.7135492563247681,
+        0.9386661648750305,
+        0.930199384689331,
+        0.8793919086456299,
+        0.7878588438034058,
+        0.7401168942451477,
+        0.878458559513092,
+        0.9657019972801208
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "cc1747febb28a5abbc432aa746810619a423d7b4405eed6dc9036186772adf26"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 2.839499997207895,
+        "p95_ms": 3.5211750000598836
+      },
+      "host_to_device": {
+        "p50_ms": 0.5415499908849597,
+        "p95_ms": 0.9426950171473435
+      },
+      "model": {
+        "p50_ms": 2.25355000293348,
+        "p95_ms": 4.866309984936378
+      },
+      "postprocessing": {
+        "p50_ms": 1.1903999984497204,
+        "p95_ms": 1.9768400030443445
+      },
+      "end_to_end": {
+        "p50_ms": 6.830449987319298,
+        "p95_ms": 10.081975010689346
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 51"
+      },
+      "peak_inference_allocated_bytes": 37107200,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.6724863434279786,
+          0.8547979340340703
+        ],
+        "image_ap": [
+          0.8989687394626171,
+          0.970670441542111
+        ],
+        "recall": [
+          0.2608695652173913,
+          0.4536316776007496
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.41379310344827586,
+          0.6241356382978722
+        ],
+        "pixel_auroc": [
+          0.6802331211917061,
+          0.7323423379414618
+        ],
+        "pixel_ap": [
+          0.19412405324788312,
+          0.2726470526147121
+        ],
+        "au_pro": [
+          0.41295448108909943,
+          0.5412196053741279
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.7076962359978153,
+      "pixel_ap": 0.23085956351230227,
+      "au_pro": 0.47412597466359446
+    },
+    "training_seconds": 4.852680900017731,
+    "training_peak_allocated_bytes": 486731776,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 18.643053299980238,
+    "per_defect": [
+      {
+        "category": "metal_nut",
+        "seed": 2028,
+        "defect": "bent",
+        "defective_images": 25,
+        "auroc": 0.8236363636363637,
+        "ap": 0.8814556802634607,
+        "recall": 0.52,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6842105263157895,
+        "confusion_matrix": [
+          [
+            22,
+            0
+          ],
+          [
+            12,
+            13
+          ]
+        ]
+      },
+      {
+        "category": "metal_nut",
+        "seed": 2028,
+        "defect": "color",
+        "defective_images": 22,
+        "auroc": 0.8863636363636364,
+        "ap": 0.9122510202055656,
+        "recall": 0.5909090909090909,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.7428571428571429,
+        "confusion_matrix": [
+          [
+            22,
+            0
+          ],
+          [
+            9,
+            13
+          ]
+        ]
+      },
+      {
+        "category": "metal_nut",
+        "seed": 2028,
+        "defect": "flip",
+        "defective_images": 23,
+        "auroc": 0.8557312252964426,
+        "ap": 0.832066068307487,
+        "recall": 0.17391304347826086,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.29629629629629634,
+        "confusion_matrix": [
+          [
+            22,
+            0
+          ],
+          [
+            19,
+            4
+          ]
+        ]
+      },
+      {
+        "category": "metal_nut",
+        "seed": 2028,
+        "defect": "scratch",
+        "defective_images": 23,
+        "auroc": 0.5098814229249012,
+        "ap": 0.6014023169062939,
+        "recall": 0.13043478260869565,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.23076923076923078,
+        "confusion_matrix": [
+          [
+            22,
+            0
+          ],
+          [
+            20,
+            3
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-metal_nut-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "e941650792070c916fc0ba731884066abc73fd205925b779b2f446a72356dafc",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 115,
+    "evaluated_at_utc": "2026-11-12T06:51:07.159134+00:00"
+  },
+  "calibration": {
+    "category": "metal_nut",
+    "images": 33,
+    "image_threshold": 0.9954264760017395,
+    "secondary_image_threshold_q99": 0.9988036155700684,
+    "pixel_threshold": 0.7695770263671875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2162688,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.9710463285446167,
+      0.9988036155700684
+    ],
+    "calibration_scores": [
+      0.9767515659332275,
+      0.9449307918548584,
+      0.9231866002082825,
+      0.6870275735855103,
+      0.8803462386131287,
+      0.9710463285446167,
+      0.8376675248146057,
+      0.9323650598526001,
+      0.9954264760017395,
+      0.838016152381897,
+      0.9988036155700684,
+      0.8244006633758545,
+      0.697725772857666,
+      0.9494017362594604,
+      0.7466479539871216,
+      0.9004111289978027,
+      0.7834547162055969,
+      0.7433185577392578,
+      0.8415597081184387,
+      0.9864826798439026,
+      0.9477221369743347,
+      0.9541780948638916,
+      0.9926922917366028,
+      0.6798382997512817,
+      0.9372627139091492,
+      0.7135492563247681,
+      0.9386661648750305,
+      0.930199384689331,
+      0.8793919086456299,
+      0.7878588438034058,
+      0.7401168942451477,
+      0.878458559513092,
+      0.9657019972801208
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "cc1747febb28a5abbc432aa746810619a423d7b4405eed6dc9036186772adf26"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-metal_nut-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:51:07.162135+00:00",
+  "config_sha256": "209fe4c223cd112d4726e15a83d51d1329ef844ea6daca235ff2632133c94ecb"
+}

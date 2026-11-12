@@ -1,0 +1,331 @@
+{
+  "experiment_id": "01-test-dice-hazelnut-s2027-v1",
+  "category": "hazelnut",
+  "seed": 2027,
+  "training_experiment": "01-final-dice-hazelnut-s2027-v1",
+  "checkpoint_sha256": "3872cb56f4abe50eee18d5e56bf07821e10084b2deaf7db2ca0e169d00653477",
+  "image_auroc": 0.9007142857142858,
+  "image_ap": 0.9508902777919503,
+  "recall": 0.6571428571428571,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.7931034482758621,
+  "confusion_matrix": [
+    [
+      40,
+      0
+    ],
+    [
+      24,
+      46
+    ]
+  ],
+  "tn": 40,
+  "fp": 0,
+  "fn": 24,
+  "tp": 46,
+  "pixel_auroc": 0.9318476493298816,
+  "pixel_ap": 0.5152793318800898,
+  "au_pro": 0.8172965988658834,
+  "positive_pixels": 2462314,
+  "negative_pixels": 112881046,
+  "regions": 136,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      112544949,
+      336097
+    ],
+    [
+      1537412,
+      924902
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.7334676712669875,
+    "recall": 0.37562309274934064,
+    "fpr": 0.0029774440608922067,
+    "f1": 0.4968166791242101,
+    "tp": 924902,
+    "fp": 336097,
+    "tn": 112544949,
+    "fn": 1537412
+  },
+  "secondary_image_q99": {
+    "auroc": 0.9007142857142858,
+    "ap": 0.9508902777919503,
+    "recall": 0.4857142857142857,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.6538461538461539,
+    "confusion_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        36,
+        34
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "hazelnut",
+    "images": 58,
+    "image_threshold": 0.9962995648384094,
+    "secondary_image_threshold_q99": 0.9997790455818176,
+    "pixel_threshold": 0.9366607666015625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 3801088,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.9908677339553833,
+      0.9997790455818176
+    ],
+    "calibration_scores": [
+      0.6439869403839111,
+      0.9862576127052307,
+      0.5720251202583313,
+      0.803087055683136,
+      0.819855809211731,
+      0.9888319969177246,
+      0.9830265641212463,
+      0.9201427102088928,
+      0.8671196103096008,
+      0.8219830393791199,
+      0.9165567755699158,
+      0.9256128668785095,
+      0.9812381863594055,
+      0.9997790455818176,
+      0.9949433207511902,
+      0.8908774256706238,
+      0.9991074204444885,
+      0.956106424331665,
+      0.9700385332107544,
+      0.9522981643676758,
+      0.44895175099372864,
+      0.8638255596160889,
+      0.9770364165306091,
+      0.9272324442863464,
+      0.876491904258728,
+      0.9876232147216797,
+      0.5841386914253235,
+      0.9823254942893982,
+      0.9879641532897949,
+      0.9826587438583374,
+      0.9923043847084045,
+      0.9933713674545288,
+      0.9448724389076233,
+      0.9862361550331116,
+      0.732471764087677,
+      0.9908677339553833,
+      0.9962995648384094,
+      0.9901621341705322,
+      0.9232907295227051,
+      0.9038907885551453,
+      0.9230551719665527,
+      0.9452807903289795,
+      0.8332533240318298,
+      0.8632771372795105,
+      0.5029342770576477,
+      0.9792337417602539,
+      0.9627606868743896,
+      0.7442426681518555,
+      0.69340980052948,
+      0.6907393336296082,
+      0.8198409676551819,
+      0.8936513662338257,
+      0.8958566188812256,
+      0.8416471481323242,
+      0.8900113701820374,
+      0.9826214909553528,
+      0.9634664058685303,
+      0.8300297260284424
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 5.025500009651296,
+      "p95_ms": 5.8294299960834906
+    },
+    "host_to_device": {
+      "p50_ms": 0.6687499990221113,
+      "p95_ms": 0.9889399909297936
+    },
+    "model": {
+      "p50_ms": 2.2527000110130757,
+      "p95_ms": 3.305790011654606
+    },
+    "postprocessing": {
+      "p50_ms": 2.21280001278501,
+      "p95_ms": 3.582419986196327
+    },
+    "end_to_end": {
+      "p50_ms": 10.200349992373958,
+      "p95_ms": 13.05995498842094
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 49"
+    },
+    "peak_inference_allocated_bytes": 36124160,
+    "peak_inference_reserved_bytes": 354418688
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8413927833530106,
+        0.9487179487179487
+      ],
+      "image_ap": [
+        0.9159318585921511,
+        0.9767023816494221
+      ],
+      "recall": [
+        0.5454545454545454,
+        0.7647058823529411
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.7058823529411764,
+        0.8666666666666666
+      ],
+      "pixel_auroc": [
+        0.9087260066066626,
+        0.9617126853812
+      ],
+      "pixel_ap": [
+        0.45055034404411487,
+        0.5959140404862681
+      ],
+      "au_pro": [
+        0.7686034338869394,
+        0.8689343659914719
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9318368075387755,
+    "pixel_ap": 0.5101858770307246,
+    "au_pro": 0.8172814279487954
+  },
+  "training_seconds": 8.222238499991363,
+  "training_peak_allocated_bytes": 515895296,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 34.095356600009836,
+  "per_defect": [
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "crack",
+      "defective_images": 18,
+      "auroc": 0.9027777777777778,
+      "ap": 0.8762786596119929,
+      "recall": 0.6111111111111112,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.7586206896551725,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "cut",
+      "defective_images": 17,
+      "auroc": 0.7029411764705882,
+      "ap": 0.5747533058486287,
+      "recall": 0.17647058823529413,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.3,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          14,
+          3
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "hole",
+      "defective_images": 18,
+      "auroc": 0.9916666666666667,
+      "ap": 0.9861111111111112,
+      "recall": 0.8333333333333334,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9090909090909091,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          3,
+          15
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "print",
+      "defective_images": 17,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-hazelnut-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "fd5c302c298a95f31abf4ac033dd22ccdacdb048cd66881ad18e18c6304a9995",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 110,
+  "evaluated_at_utc": "2026-11-12T06:41:38.880041+00:00"
+}

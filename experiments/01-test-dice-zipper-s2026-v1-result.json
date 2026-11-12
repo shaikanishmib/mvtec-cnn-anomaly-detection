@@ -1,0 +1,510 @@
+{
+  "experiment_id": "01-test-dice-zipper-s2026-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "zipper"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2026,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-zipper-s2026-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-zipper-s2026-v1",
+    "category": "zipper",
+    "seed": 2026,
+    "training_experiment": "01-final-dice-zipper-s2026-v1",
+    "checkpoint_sha256": "bcc6a5702a2b9ef3521fb64ffe2bbb1d4a6c50f4fdb51543aee9efcd5300bd62",
+    "image_auroc": 0.8471638655462185,
+    "image_ap": 0.9604951684609506,
+    "recall": 0.16806722689075632,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.28776978417266186,
+    "confusion_matrix": [
+      [
+        32,
+        0
+      ],
+      [
+        99,
+        20
+      ]
+    ],
+    "tn": 32,
+    "fp": 0,
+    "fn": 99,
+    "tp": 20,
+    "pixel_auroc": 0.8597460683614961,
+    "pixel_ap": 0.2776721585872951,
+    "au_pro": 0.6140188486466441,
+    "positive_pixels": 3274311,
+    "negative_pixels": 155060665,
+    "regions": 177,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        153936242,
+        1124423
+      ],
+      [
+        2412844,
+        861467
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.4337939160779298,
+      "recall": 0.2630987099270656,
+      "fpr": 0.007251503790468072,
+      "f1": 0.3275414760766746,
+      "tp": 861467,
+      "fp": 1124423,
+      "tn": 153936242,
+      "fn": 2412844
+    },
+    "secondary_image_q99": {
+      "auroc": 0.8471638655462185,
+      "ap": 0.9604951684609506,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          32,
+          0
+        ],
+        [
+          119,
+          0
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "zipper",
+      "images": 36,
+      "image_threshold": 0.9727576971054077,
+      "secondary_image_threshold_q99": 0.9999474287033081,
+      "pixel_threshold": 0.3796844482421875,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2359296,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.7336809039115906,
+        0.9999474287033081
+      ],
+      "calibration_scores": [
+        0.5013406872749329,
+        0.38870006799697876,
+        0.6094735264778137,
+        0.4741936922073364,
+        0.4698605239391327,
+        0.9727576971054077,
+        0.6259097456932068,
+        0.7884049415588379,
+        0.9999474287033081,
+        0.5836944580078125,
+        0.7336809039115906,
+        0.37750399112701416,
+        0.5788321495056152,
+        0.4039932191371918,
+        0.8141038417816162,
+        0.32706886529922485,
+        0.40478605031967163,
+        0.5233965516090393,
+        0.5609001517295837,
+        0.445737361907959,
+        0.5622002482414246,
+        0.36183521151542664,
+        0.37552574276924133,
+        0.4653250277042389,
+        0.5882361531257629,
+        0.4726811349391937,
+        0.3970092236995697,
+        0.35878637433052063,
+        0.4272696375846863,
+        0.3821137845516205,
+        0.49308544397354126,
+        0.4791922867298126,
+        0.9163778424263,
+        0.40460142493247986,
+        0.31748783588409424,
+        0.32846197485923767
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "90aead9f27f930d17a287b97c39f7dbde5d8c1b8b374d097d8916bace4a98bcd"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.331450010999106,
+        "p95_ms": 6.294139992678538
+      },
+      "host_to_device": {
+        "p50_ms": 0.6831500068074092,
+        "p95_ms": 1.0429850241052918
+      },
+      "model": {
+        "p50_ms": 2.7155500138178468,
+        "p95_ms": 4.498264993890184
+      },
+      "postprocessing": {
+        "p50_ms": 2.45649999123998,
+        "p95_ms": 3.7848350053536706
+      },
+      "end_to_end": {
+        "p50_ms": 11.74760001595132,
+        "p95_ms": 13.926350000838283
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 390 MHz, 47"
+      },
+      "peak_inference_allocated_bytes": 44185088,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.7815124305079231,
+          0.9042118176484814
+        ],
+        "image_ap": [
+          0.9358388140892151,
+          0.9792673522211934
+        ],
+        "recall": [
+          0.10619469026548672,
+          0.23931623931623933
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.192,
+          0.38620689655172413
+        ],
+        "pixel_auroc": [
+          0.8351842273467908,
+          0.882814821864637
+        ],
+        "pixel_ap": [
+          0.22840318859532763,
+          0.3231700777570413
+        ],
+        "au_pro": [
+          0.5574688292250418,
+          0.6709301452587412
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8597063199454874,
+      "pixel_ap": 0.2775173777638492,
+      "au_pro": 0.6140191708622843
+    },
+    "training_seconds": 21.71463660002337,
+    "training_peak_allocated_bytes": 490074112,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 56.64319800000521,
+    "per_defect": [
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "broken_teeth",
+        "defective_images": 19,
+        "auroc": 0.8766447368421053,
+        "ap": 0.8861005454813504,
+        "recall": 0.21052631578947367,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.34782608695652173,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            15,
+            4
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "combined",
+        "defective_images": 16,
+        "auroc": 0.9453125,
+        "ap": 0.9211518050348018,
+        "recall": 0.3125,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.47619047619047616,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            11,
+            5
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "fabric_border",
+        "defective_images": 17,
+        "auroc": 0.7334558823529412,
+        "ap": 0.6816423219107657,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            17,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "fabric_interior",
+        "defective_images": 16,
+        "auroc": 0.966796875,
+        "ap": 0.9678030303030303,
+        "recall": 0.0625,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.11764705882352941,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            15,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "rough",
+        "defective_images": 17,
+        "auroc": 0.9705882352941176,
+        "ap": 0.9573669467787115,
+        "recall": 0.47058823529411764,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6399999999999999,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            9,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "split_teeth",
+        "defective_images": 18,
+        "auroc": 0.8715277777777777,
+        "ap": 0.8599060276638368,
+        "recall": 0.05555555555555555,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.10526315789473684,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            17,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2026,
+        "defect": "squeezed_teeth",
+        "defective_images": 16,
+        "auroc": 0.556640625,
+        "ap": 0.595021365815244,
+        "recall": 0.0625,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.11764705882352941,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            15,
+            1
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-zipper-s2026-v1/model_resolution_maps.npy",
+    "maps_sha256": "fb498250353fa377061d9ab7f93e7ab551a9e6b9e80af2e45a77e62870f1d304",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 151,
+    "evaluated_at_utc": "2026-11-12T06:38:08.339261+00:00"
+  },
+  "calibration": {
+    "category": "zipper",
+    "images": 36,
+    "image_threshold": 0.9727576971054077,
+    "secondary_image_threshold_q99": 0.9999474287033081,
+    "pixel_threshold": 0.3796844482421875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2359296,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.7336809039115906,
+      0.9999474287033081
+    ],
+    "calibration_scores": [
+      0.5013406872749329,
+      0.38870006799697876,
+      0.6094735264778137,
+      0.4741936922073364,
+      0.4698605239391327,
+      0.9727576971054077,
+      0.6259097456932068,
+      0.7884049415588379,
+      0.9999474287033081,
+      0.5836944580078125,
+      0.7336809039115906,
+      0.37750399112701416,
+      0.5788321495056152,
+      0.4039932191371918,
+      0.8141038417816162,
+      0.32706886529922485,
+      0.40478605031967163,
+      0.5233965516090393,
+      0.5609001517295837,
+      0.445737361907959,
+      0.5622002482414246,
+      0.36183521151542664,
+      0.37552574276924133,
+      0.4653250277042389,
+      0.5882361531257629,
+      0.4726811349391937,
+      0.3970092236995697,
+      0.35878637433052063,
+      0.4272696375846863,
+      0.3821137845516205,
+      0.49308544397354126,
+      0.4791922867298126,
+      0.9163778424263,
+      0.40460142493247986,
+      0.31748783588409424,
+      0.32846197485923767
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "90aead9f27f930d17a287b97c39f7dbde5d8c1b8b374d097d8916bace4a98bcd"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-zipper-s2026-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:38:08.341261+00:00",
+  "config_sha256": "f2ae801634ceb49e6289f3e35e813e2492eeec84e2338d53692a15be629cc5b3"
+}

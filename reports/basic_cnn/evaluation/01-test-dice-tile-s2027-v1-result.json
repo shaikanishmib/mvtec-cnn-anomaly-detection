@@ -1,0 +1,329 @@
+{
+  "experiment_id": "01-test-dice-tile-s2027-v1",
+  "category": "tile",
+  "seed": 2027,
+  "training_experiment": "01-final-dice-tile-s2027-v1",
+  "checkpoint_sha256": "17c2c5b14f7914e0f2e32f24b889b828b608ec3f5e038ebda54e90f4eab4e961",
+  "image_auroc": 0.9040404040404041,
+  "image_ap": 0.9648834990157216,
+  "recall": 0.7619047619047619,
+  "fpr": 0.09090909090909091,
+  "precision": 0.9552238805970149,
+  "f1": 0.847682119205298,
+  "confusion_matrix": [
+    [
+      30,
+      3
+    ],
+    [
+      20,
+      64
+    ]
+  ],
+  "tn": 30,
+  "fp": 3,
+  "fn": 20,
+  "tp": 64,
+  "pixel_auroc": 0.8362423155663287,
+  "pixel_ap": 0.5996747194153705,
+  "au_pro": 0.6720530692001857,
+  "positive_pixels": 5809846,
+  "negative_pixels": 76745354,
+  "regions": 86,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      75619809,
+      1125545
+    ],
+    [
+      2881757,
+      2928089
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.7223367970566656,
+    "recall": 0.5039873690283702,
+    "fpr": 0.014665969225967737,
+    "f1": 0.5937233106368137,
+    "tp": 2928089,
+    "fp": 1125545,
+    "tn": 75619809,
+    "fn": 2881757
+  },
+  "secondary_image_q99": {
+    "auroc": 0.9040404040404041,
+    "ap": 0.9648834990157216,
+    "recall": 0.40476190476190477,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.576271186440678,
+    "confusion_matrix": [
+      [
+        33,
+        0
+      ],
+      [
+        50,
+        34
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "tile",
+    "images": 34,
+    "image_threshold": 0.9990131855010986,
+    "secondary_image_threshold_q99": 0.9999523162841797,
+    "pixel_threshold": 0.676422119140625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2228224,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.9835510849952698,
+      0.9999523162841797
+    ],
+    "calibration_scores": [
+      0.703744113445282,
+      0.7460441589355469,
+      0.9186035990715027,
+      0.6145174503326416,
+      0.97509765625,
+      0.8492563962936401,
+      0.7268202900886536,
+      0.7856625914573669,
+      0.8633902072906494,
+      0.9918488264083862,
+      0.570702850818634,
+      0.6291138529777527,
+      0.9602031111717224,
+      0.7715157866477966,
+      0.4242418110370636,
+      0.7029850482940674,
+      0.9990131855010986,
+      0.8473048806190491,
+      0.7161338925361633,
+      0.9982153177261353,
+      0.9999523162841797,
+      0.7192565202713013,
+      0.9823530912399292,
+      0.5849698185920715,
+      0.9239742755889893,
+      0.9848294854164124,
+      0.5699577331542969,
+      0.8854286074638367,
+      0.589073896408081,
+      0.9835510849952698,
+      0.941900372505188,
+      0.9699310660362244,
+      0.7753191590309143,
+      0.5903885364532471
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "cfb6df45aa28301e371b3c335f45e40599ef3a2dcdcd05c62054fd44de5ee403"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.6734999885084108,
+      "p95_ms": 4.7396449983352795
+    },
+    "host_to_device": {
+      "p50_ms": 0.6588999967789277,
+      "p95_ms": 0.9858950215857474
+    },
+    "model": {
+      "p50_ms": 2.662600003532134,
+      "p95_ms": 3.8891449992661355
+    },
+    "postprocessing": {
+      "p50_ms": 1.6057500179158524,
+      "p95_ms": 2.63866500754375
+    },
+    "end_to_end": {
+      "p50_ms": 9.212599994498305,
+      "p95_ms": 11.271194988512434
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 50"
+    },
+    "peak_inference_allocated_bytes": 37500416,
+    "peak_inference_reserved_bytes": 354418688
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8490032642089094,
+        0.9501611803899993
+      ],
+      "image_ap": [
+        0.9389479759701306,
+        0.9837573433457996
+      ],
+      "recall": [
+        0.6666666666666666,
+        0.8488372093023255
+      ],
+      "fpr": [
+        0.0,
+        0.2
+      ],
+      "precision": [
+        0.898273928215354,
+        1.0
+      ],
+      "f1": [
+        0.7808049159623043,
+        0.9036144578313253
+      ],
+      "pixel_auroc": [
+        0.7897342598266863,
+        0.8742221055213284
+      ],
+      "pixel_ap": [
+        0.532220789625322,
+        0.6626693658162904
+      ],
+      "au_pro": [
+        0.594562527988957,
+        0.7416476098335915
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.8363145848950563,
+    "pixel_ap": 0.5991644352668029,
+    "au_pro": 0.6720488306890375
+  },
+  "training_seconds": 5.079164000024321,
+  "training_peak_allocated_bytes": 488501248,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 26.232659600005718,
+  "per_defect": [
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "crack",
+      "defective_images": 17,
+      "auroc": 0.9928698752228163,
+      "ap": 0.9877162629757785,
+      "recall": 0.9411764705882353,
+      "fpr": 0.09090909090909091,
+      "precision": 0.8421052631578947,
+      "f1": 0.8888888888888888,
+      "confusion_matrix": [
+        [
+          30,
+          3
+        ],
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "glue_strip",
+      "defective_images": 18,
+      "auroc": 0.9882154882154882,
+      "ap": 0.9794753427686864,
+      "recall": 0.9444444444444444,
+      "fpr": 0.09090909090909091,
+      "precision": 0.85,
+      "f1": 0.8947368421052632,
+      "confusion_matrix": [
+        [
+          30,
+          3
+        ],
+        [
+          1,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "gray_stroke",
+      "defective_images": 16,
+      "auroc": 0.5416666666666667,
+      "ap": 0.32980804047729007,
+      "recall": 0.0,
+      "fpr": 0.09090909090909091,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          30,
+          3
+        ],
+        [
+          16,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "oil",
+      "defective_images": 18,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.09090909090909091,
+      "precision": 0.8571428571428571,
+      "f1": 0.923076923076923,
+      "confusion_matrix": [
+        [
+          30,
+          3
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "rough",
+      "defective_images": 15,
+      "auroc": 0.9737373737373737,
+      "ap": 0.9448439632263161,
+      "recall": 0.8666666666666667,
+      "fpr": 0.09090909090909091,
+      "precision": 0.8125,
+      "f1": 0.8387096774193549,
+      "confusion_matrix": [
+        [
+          30,
+          3
+        ],
+        [
+          2,
+          13
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-tile-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "618a53de070f11ea8e6c92de755497622ad6846806595e60b220a839753bb785",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 117,
+  "evaluated_at_utc": "2026-11-12T06:44:32.782270+00:00"
+}

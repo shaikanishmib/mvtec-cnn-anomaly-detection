@@ -1,0 +1,324 @@
+{
+  "experiment_id": "01-test-dice-toothbrush-s2027-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2027,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-toothbrush-s2027-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-toothbrush-s2027-v1",
+    "category": "toothbrush",
+    "seed": 2027,
+    "training_experiment": "01-final-dice-toothbrush-s2027-v1",
+    "checkpoint_sha256": "e2a81ff15f1442e2bab03c2edc830609df1833fc0ae3cb0f050ddcbe2a04518b",
+    "image_auroc": 0.7361111111111112,
+    "image_ap": 0.8960740586343408,
+    "recall": 0.36666666666666664,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.5365853658536585,
+    "confusion_matrix": [
+      [
+        12,
+        0
+      ],
+      [
+        19,
+        11
+      ]
+    ],
+    "tn": 12,
+    "fp": 0,
+    "fn": 19,
+    "tp": 11,
+    "pixel_auroc": 0.7809587921196458,
+    "pixel_ap": 0.06372311390805878,
+    "au_pro": 0.43381633809031894,
+    "positive_pixels": 673493,
+    "negative_pixels": 43366699,
+    "regions": 66,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        43077946,
+        288753
+      ],
+      [
+        621342,
+        52151
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.15297855114636377,
+      "recall": 0.07743361846374053,
+      "fpr": 0.006658403951843326,
+      "f1": 0.1028216763259355,
+      "tp": 52151,
+      "fp": 288753,
+      "tn": 43077946,
+      "fn": 621342
+    },
+    "secondary_image_q99": {
+      "auroc": 0.7361111111111112,
+      "ap": 0.8960740586343408,
+      "recall": 0.36666666666666664,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.5365853658536585,
+      "confusion_matrix": [
+        [
+          12,
+          0
+        ],
+        [
+          19,
+          11
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "toothbrush",
+      "images": 9,
+      "image_threshold": 0.7806684970855713,
+      "secondary_image_threshold_q99": 0.7806684970855713,
+      "pixel_threshold": 0.5162353515625,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 589824,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.7094261050224304,
+        0.7806684970855713
+      ],
+      "calibration_scores": [
+        0.7800111174583435,
+        0.750371515750885,
+        0.7806684970855713,
+        0.7019451856613159,
+        0.7094261050224304,
+        0.6706880331039429,
+        0.6874927878379822,
+        0.6666114926338196,
+        0.6712180972099304
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.053000000771135,
+        "p95_ms": 6.55250000563683
+      },
+      "host_to_device": {
+        "p50_ms": 0.6337499944493175,
+        "p95_ms": 0.9346099832328034
+      },
+      "model": {
+        "p50_ms": 2.2767500049667433,
+        "p95_ms": 3.675385005772112
+      },
+      "postprocessing": {
+        "p50_ms": 2.19130000914447,
+        "p95_ms": 3.503285015176516
+      },
+      "end_to_end": {
+        "p50_ms": 10.349350006435998,
+        "p95_ms": 12.805184999888297
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 50"
+      },
+      "peak_inference_allocated_bytes": 22885888,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.5694058641975308,
+          0.8856404713644989
+        ],
+        "image_ap": [
+          0.8019086178155714,
+          0.9671652873626674
+        ],
+        "recall": [
+          0.2,
+          0.5555555555555556
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.33333333333333337,
+          0.7142857142857143
+        ],
+        "pixel_auroc": [
+          0.7317623878659997,
+          0.852139838437727
+        ],
+        "pixel_ap": [
+          0.037814226012839236,
+          0.1019090440772909
+        ],
+        "au_pro": [
+          0.35330483659144296,
+          0.51963244789293
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.7809588132764214,
+      "pixel_ap": 0.06370038187675792,
+      "au_pro": 0.43380618127169546
+    },
+    "training_seconds": 1.53490120000788,
+    "training_peak_allocated_bytes": 459993088,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 14.7766144000052,
+    "per_defect": [
+      {
+        "category": "toothbrush",
+        "seed": 2027,
+        "defect": "defective",
+        "defective_images": 30,
+        "auroc": 0.7361111111111112,
+        "ap": 0.8960740586343408,
+        "recall": 0.36666666666666664,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.5365853658536585,
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            19,
+            11
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-toothbrush-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "8e1ccec09a70a729285d983032d0b40cc4d17a7d1128000220592c5b3a803edf",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 42,
+    "evaluated_at_utc": "2026-11-12T06:44:47.956680+00:00"
+  },
+  "calibration": {
+    "category": "toothbrush",
+    "images": 9,
+    "image_threshold": 0.7806684970855713,
+    "secondary_image_threshold_q99": 0.7806684970855713,
+    "pixel_threshold": 0.5162353515625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 589824,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.7094261050224304,
+      0.7806684970855713
+    ],
+    "calibration_scores": [
+      0.7800111174583435,
+      0.750371515750885,
+      0.7806684970855713,
+      0.7019451856613159,
+      0.7094261050224304,
+      0.6706880331039429,
+      0.6874927878379822,
+      0.6666114926338196,
+      0.6712180972099304
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-toothbrush-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:44:47.958679+00:00",
+  "config_sha256": "52a96de90cd5d84efb60b41052ba91c5bc2bfc1bda6e7f8bceb3788bfc7ecd46"
+}

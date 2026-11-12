@@ -1,0 +1,334 @@
+{
+  "experiment_id": "01-test-dice-grid-s2028-v1",
+  "category": "grid",
+  "seed": 2028,
+  "training_experiment": "01-final-dice-grid-s2028-v1",
+  "checkpoint_sha256": "b5b49767f21cdcd0f56775087993825702f0d6563584494cb121dff9b1419164",
+  "image_auroc": 0.9314954051796157,
+  "image_ap": 0.9750724460650879,
+  "recall": 0.7368421052631579,
+  "fpr": 0.047619047619047616,
+  "precision": 0.9767441860465116,
+  "f1": 0.8399999999999999,
+  "confusion_matrix": [
+    [
+      20,
+      1
+    ],
+    [
+      15,
+      42
+    ]
+  ],
+  "tn": 20,
+  "fp": 1,
+  "fn": 15,
+  "tp": 42,
+  "pixel_auroc": 0.9071110028118754,
+  "pixel_ap": 0.25313966053939974,
+  "au_pro": 0.7964732784488912,
+  "positive_pixels": 564944,
+  "negative_pixels": 81223984,
+  "regions": 170,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      79078649,
+      2145335
+    ],
+    [
+      231897,
+      333047
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.13438081780774716,
+    "recall": 0.5895221473278768,
+    "fpr": 0.0264125803038669,
+    "f1": 0.2188704069166432,
+    "tp": 333047,
+    "fp": 2145335,
+    "tn": 79078649,
+    "fn": 231897
+  },
+  "secondary_image_q99": {
+    "auroc": 0.9314954051796157,
+    "ap": 0.9750724460650879,
+    "recall": 0.7017543859649122,
+    "fpr": 0.047619047619047616,
+    "precision": 0.975609756097561,
+    "f1": 0.8163265306122448,
+    "confusion_matrix": [
+      [
+        20,
+        1
+      ],
+      [
+        17,
+        40
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "grid",
+    "images": 39,
+    "image_threshold": 0.9461924433708191,
+    "secondary_image_threshold_q99": 0.9609829783439636,
+    "pixel_threshold": 0.1634368896484375,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2555904,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.8391101956367493,
+      0.9609829783439636
+    ],
+    "calibration_scores": [
+      0.9461924433708191,
+      0.797858476638794,
+      0.17175699770450592,
+      0.7471333146095276,
+      0.3394741117954254,
+      0.09116142988204956,
+      0.34294119477272034,
+      0.19666840136051178,
+      0.5555223822593689,
+      0.2442844808101654,
+      0.8746995329856873,
+      0.9609829783439636,
+      0.08936713635921478,
+      0.829788863658905,
+      0.11981280148029327,
+      0.7816442847251892,
+      0.61307293176651,
+      0.38470959663391113,
+      0.9313842058181763,
+      0.26453307271003723,
+      0.9154170155525208,
+      0.5622274875640869,
+      0.405833899974823,
+      0.15462726354599,
+      0.31520089507102966,
+      0.37915995717048645,
+      0.292562335729599,
+      0.025987431406974792,
+      0.12439914047718048,
+      0.22594963014125824,
+      0.8341794610023499,
+      0.8391101956367493,
+      0.32413506507873535,
+      0.2639903128147125,
+      0.3414078652858734,
+      0.20410512387752533,
+      0.2990630865097046,
+      0.825714111328125,
+      0.4134702980518341
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "c545fa66d4e9bfa1b568cd54a355ac54a357fe2eac64c09003936481bb0f71fe"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 5.095450003864244,
+      "p95_ms": 5.910829982894938
+    },
+    "host_to_device": {
+      "p50_ms": 0.5974999949103221,
+      "p95_ms": 0.8934450190281494
+    },
+    "model": {
+      "p50_ms": 2.3255999985849485,
+      "p95_ms": 3.5872949927579603
+    },
+    "postprocessing": {
+      "p50_ms": 2.219000001787208,
+      "p95_ms": 3.431234990421217
+    },
+    "end_to_end": {
+      "p50_ms": 10.39479998871684,
+      "p95_ms": 12.716234993422404
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 50"
+    },
+    "peak_inference_allocated_bytes": 29832704,
+    "peak_inference_reserved_bytes": 354418688
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8676922498797499,
+        0.9781173531312559
+      ],
+      "image_ap": [
+        0.9465522237068744,
+        0.9931686316263032
+      ],
+      "recall": [
+        0.625,
+        0.8461538461538461
+      ],
+      "fpr": [
+        0.0,
+        0.15
+      ],
+      "precision": [
+        0.925,
+        1.0
+      ],
+      "f1": [
+        0.7586206896551725,
+        0.9090909090909091
+      ],
+      "pixel_auroc": [
+        0.8695570632134789,
+        0.9346592249344465
+      ],
+      "pixel_ap": [
+        0.1516024499178746,
+        0.27121037619975025
+      ],
+      "au_pro": [
+        0.7309822668502753,
+        0.8486763379359051
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.907004046763093,
+    "pixel_ap": 0.21576949064322276,
+    "au_pro": 0.7963435349783698
+  },
+  "training_seconds": 5.46202639999683,
+  "training_peak_allocated_bytes": 494923264,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 26.985979599994607,
+  "per_defect": [
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "bent",
+      "defective_images": 12,
+      "auroc": 0.9126984126984127,
+      "ap": 0.8338340512972867,
+      "recall": 0.3333333333333333,
+      "fpr": 0.047619047619047616,
+      "precision": 0.8,
+      "f1": 0.47058823529411764,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          8,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "broken",
+      "defective_images": 12,
+      "auroc": 0.9682539682539681,
+      "ap": 0.9526366607248961,
+      "recall": 0.9166666666666666,
+      "fpr": 0.047619047619047616,
+      "precision": 0.9166666666666666,
+      "f1": 0.9166666666666666,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          1,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "glue",
+      "defective_images": 11,
+      "auroc": 0.774891774891775,
+      "ap": 0.7034874436060207,
+      "recall": 0.45454545454545453,
+      "fpr": 0.047619047619047616,
+      "precision": 0.8333333333333334,
+      "f1": 0.5882352941176471,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "metal_contamination",
+      "defective_images": 11,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.047619047619047616,
+      "precision": 0.9166666666666666,
+      "f1": 0.9565217391304348,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          0,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "thread",
+      "defective_images": 11,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.047619047619047616,
+      "precision": 0.9166666666666666,
+      "f1": 0.9565217391304348,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          0,
+          11
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-grid-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "ee39bdb3cf7d5f2677f2e6a42ae2b2276fe20830d28cb4f2f7bb8bd81e074630",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 78,
+  "evaluated_at_utc": "2026-11-12T06:49:31.236217+00:00"
+}

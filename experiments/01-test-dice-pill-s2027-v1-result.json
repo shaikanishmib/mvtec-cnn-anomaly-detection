@@ -1,0 +1,518 @@
+{
+  "experiment_id": "01-test-dice-pill-s2027-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "pill"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2027,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-pill-s2027-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-pill-s2027-v1",
+    "category": "pill",
+    "seed": 2027,
+    "training_experiment": "01-final-dice-pill-s2027-v1",
+    "checkpoint_sha256": "67d817eba5d908e9c4c2c0c0f32189f8316554cb4f160573282087edfff9e379",
+    "image_auroc": 0.737315875613748,
+    "image_ap": 0.9406088277908028,
+    "recall": 0.28368794326241137,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.44198895027624313,
+    "confusion_matrix": [
+      [
+        26,
+        0
+      ],
+      [
+        101,
+        40
+      ]
+    ],
+    "tn": 26,
+    "fp": 0,
+    "fn": 101,
+    "tp": 40,
+    "pixel_auroc": 0.86070867138569,
+    "pixel_ap": 0.24395081841866348,
+    "au_pro": 0.7973676027763656,
+    "positive_pixels": 3589160,
+    "negative_pixels": 103290840,
+    "regions": 245,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        102458303,
+        832537
+      ],
+      [
+        2985888,
+        603272
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.4201617346039759,
+      "recall": 0.16808166813404807,
+      "fpr": 0.008060124208497095,
+      "f1": 0.24010973998048546,
+      "tp": 603272,
+      "fp": 832537,
+      "tn": 102458303,
+      "fn": 2985888
+    },
+    "secondary_image_q99": {
+      "auroc": 0.737315875613748,
+      "ap": 0.9406088277908028,
+      "recall": 0.2624113475177305,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.41573033707865165,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          104,
+          37
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "pill",
+      "images": 40,
+      "image_threshold": 0.9999948740005493,
+      "secondary_image_threshold_q99": 0.9999985694885254,
+      "pixel_threshold": 0.8922119140625,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2621440,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.999718964099884,
+        0.9999985694885254
+      ],
+      "calibration_scores": [
+        0.989523708820343,
+        0.9997079968452454,
+        0.964777946472168,
+        0.9777758717536926,
+        0.9096024036407471,
+        0.9837236404418945,
+        0.9874536991119385,
+        0.9857007265090942,
+        0.9999985694885254,
+        0.4394511282444,
+        0.2812848687171936,
+        0.9738397598266602,
+        0.7721402645111084,
+        0.9791799187660217,
+        0.9215584993362427,
+        0.9998903274536133,
+        0.9869153499603271,
+        0.999846339225769,
+        0.9999871253967285,
+        0.8862024545669556,
+        0.9889227151870728,
+        0.9927703738212585,
+        0.9905169606208801,
+        0.9999948740005493,
+        0.9991432428359985,
+        0.733667254447937,
+        0.7231029272079468,
+        0.99964439868927,
+        0.9380486607551575,
+        0.9410545229911804,
+        0.9920247793197632,
+        0.9930049777030945,
+        0.996938943862915,
+        0.7833116054534912,
+        0.9222567677497864,
+        0.9992579817771912,
+        0.9400256276130676,
+        0.9993436932563782,
+        0.999718964099884,
+        0.9585412740707397
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.3536499977344647,
+        "p95_ms": 4.309855014435016
+      },
+      "host_to_device": {
+        "p50_ms": 0.5197499849600717,
+        "p95_ms": 0.8461199904559171
+      },
+      "model": {
+        "p50_ms": 2.3205500037875026,
+        "p95_ms": 4.399015012313608
+      },
+      "postprocessing": {
+        "p50_ms": 1.4069999888306484,
+        "p95_ms": 2.218949986854568
+      },
+      "end_to_end": {
+        "p50_ms": 7.705199997872114,
+        "p95_ms": 10.554399994725827
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 49"
+      },
+      "peak_inference_allocated_bytes": 47330816,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.6325669069419481,
+          0.8310390439700784
+        ],
+        "image_ap": [
+          0.9033903857117146,
+          0.9714060825819295
+        ],
+        "recall": [
+          0.2112676056338028,
+          0.35812092264678463
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.3488372093023256,
+          0.5273770740207591
+        ],
+        "pixel_auroc": [
+          0.830949317402877,
+          0.8913643328992593
+        ],
+        "pixel_ap": [
+          0.15921200571964275,
+          0.32284154795635056
+        ],
+        "au_pro": [
+          0.7517489524976195,
+          0.8316558510333646
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8607029573498329,
+      "pixel_ap": 0.24142766281248076,
+      "au_pro": 0.7970266394735843
+    },
+    "training_seconds": 5.829951599997003,
+    "training_peak_allocated_bytes": 495119872,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 33.02688240000862,
+    "per_defect": [
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "color",
+        "defective_images": 25,
+        "auroc": 0.8661538461538462,
+        "ap": 0.9005520852816717,
+        "recall": 0.68,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.8095238095238095,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            8,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "combined",
+        "defective_images": 17,
+        "auroc": 0.9072398190045248,
+        "ap": 0.9194870910240929,
+        "recall": 0.7058823529411765,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.8275862068965517,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            5,
+            12
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "contamination",
+        "defective_images": 21,
+        "auroc": 0.7307692307692307,
+        "ap": 0.6778507512500023,
+        "recall": 0.09523809523809523,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.17391304347826084,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            19,
+            2
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "crack",
+        "defective_images": 26,
+        "auroc": 0.6967455621301776,
+        "ap": 0.7306977963566748,
+        "recall": 0.11538461538461539,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.20689655172413793,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            23,
+            3
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "faulty_imprint",
+        "defective_images": 19,
+        "auroc": 0.47773279352226716,
+        "ap": 0.40994988208148314,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            19,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "pill_type",
+        "defective_images": 9,
+        "auroc": 0.8931623931623932,
+        "ap": 0.8188098451256346,
+        "recall": 0.5555555555555556,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.7142857142857143,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2027,
+        "defect": "scratch",
+        "defective_images": 24,
+        "auroc": 0.6794871794871795,
+        "ap": 0.6183073399159372,
+        "recall": 0.041666666666666664,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.07999999999999999,
+        "confusion_matrix": [
+          [
+            26,
+            0
+          ],
+          [
+            23,
+            1
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-pill-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "8c72da3255b777ed163a1a484f141980218e66f4468dda7d6f60697f0489c346",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 167,
+    "evaluated_at_utc": "2026-11-12T06:43:14.659270+00:00"
+  },
+  "calibration": {
+    "category": "pill",
+    "images": 40,
+    "image_threshold": 0.9999948740005493,
+    "secondary_image_threshold_q99": 0.9999985694885254,
+    "pixel_threshold": 0.8922119140625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2621440,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.999718964099884,
+      0.9999985694885254
+    ],
+    "calibration_scores": [
+      0.989523708820343,
+      0.9997079968452454,
+      0.964777946472168,
+      0.9777758717536926,
+      0.9096024036407471,
+      0.9837236404418945,
+      0.9874536991119385,
+      0.9857007265090942,
+      0.9999985694885254,
+      0.4394511282444,
+      0.2812848687171936,
+      0.9738397598266602,
+      0.7721402645111084,
+      0.9791799187660217,
+      0.9215584993362427,
+      0.9998903274536133,
+      0.9869153499603271,
+      0.999846339225769,
+      0.9999871253967285,
+      0.8862024545669556,
+      0.9889227151870728,
+      0.9927703738212585,
+      0.9905169606208801,
+      0.9999948740005493,
+      0.9991432428359985,
+      0.733667254447937,
+      0.7231029272079468,
+      0.99964439868927,
+      0.9380486607551575,
+      0.9410545229911804,
+      0.9920247793197632,
+      0.9930049777030945,
+      0.996938943862915,
+      0.7833116054534912,
+      0.9222567677497864,
+      0.9992579817771912,
+      0.9400256276130676,
+      0.9993436932563782,
+      0.999718964099884,
+      0.9585412740707397
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-pill-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:43:14.662280+00:00",
+  "config_sha256": "449db98aa42cebcd9be22d61c2d3775d43a6962974e295c455443fd5fef59a69"
+}

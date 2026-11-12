@@ -1,0 +1,526 @@
+{
+  "experiment_id": "01-test-dice-cable-s2027-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2027,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-cable-s2027-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-cable-s2027-v1",
+    "category": "cable",
+    "seed": 2027,
+    "training_experiment": "01-final-dice-cable-s2027-v1",
+    "checkpoint_sha256": "46dc853721826f0cfdcffd6e09992f48ecf4720c2b58c8d94d08b1dd871ed9e7",
+    "image_auroc": 0.4598950524737631,
+    "image_ap": 0.601983059311434,
+    "recall": 0.05434782608695652,
+    "fpr": 0.08620689655172414,
+    "precision": 0.5,
+    "f1": 0.09803921568627451,
+    "confusion_matrix": [
+      [
+        53,
+        5
+      ],
+      [
+        87,
+        5
+      ]
+    ],
+    "tn": 53,
+    "fp": 5,
+    "fn": 87,
+    "tp": 5,
+    "pixel_auroc": 0.6194639579851389,
+    "pixel_ap": 0.04824188891472509,
+    "au_pro": 0.2759086552199656,
+    "positive_pixels": 4515876,
+    "negative_pixels": 152770524,
+    "regions": 151,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        151884011,
+        886513
+      ],
+      [
+        4446192,
+        69684
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.0728761960140013,
+      "recall": 0.015430893142327203,
+      "fpr": 0.005802906063214132,
+      "f1": 0.02546895847332446,
+      "tp": 69684,
+      "fp": 886513,
+      "tn": 151884011,
+      "fn": 4446192
+    },
+    "secondary_image_q99": {
+      "auroc": 0.4598950524737631,
+      "ap": 0.601983059311434,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          92,
+          0
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "cable",
+      "images": 33,
+      "image_threshold": 0.9924336671829224,
+      "secondary_image_threshold_q99": 0.9968698620796204,
+      "pixel_threshold": 0.870697021484375,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2162688,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.975825309753418,
+        0.9968698620796204
+      ],
+      "calibration_scores": [
+        0.9382344484329224,
+        0.9514564275741577,
+        0.8820410966873169,
+        0.980918288230896,
+        0.7570788264274597,
+        0.8946494460105896,
+        0.9582111835479736,
+        0.8043296337127686,
+        0.9186223745346069,
+        0.9551738500595093,
+        0.9273480772972107,
+        0.9498945474624634,
+        0.975825309753418,
+        0.9744199514389038,
+        0.8770054578781128,
+        0.9924336671829224,
+        0.9327420592308044,
+        0.9128991961479187,
+        0.8963852524757385,
+        0.8785727024078369,
+        0.9777006506919861,
+        0.9089361429214478,
+        0.8696022033691406,
+        0.9207439422607422,
+        0.9464688301086426,
+        0.9636073708534241,
+        0.9884840846061707,
+        0.9140327572822571,
+        0.9968698620796204,
+        0.9691910147666931,
+        0.9222851991653442,
+        0.9536936283111572,
+        0.942936897277832
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "2b5697fa109f81bcce3830d93cd2dd075a4e258d8215207c6967c19c0eb717f4"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.04045000707265,
+        "p95_ms": 6.276770003023557
+      },
+      "host_to_device": {
+        "p50_ms": 0.6683000101475045,
+        "p95_ms": 0.9420599832083097
+      },
+      "model": {
+        "p50_ms": 2.3704999912297353,
+        "p95_ms": 3.202579995559063
+      },
+      "postprocessing": {
+        "p50_ms": 2.2015000140527263,
+        "p95_ms": 3.528770006960258
+      },
+      "end_to_end": {
+        "p50_ms": 10.409149996121414,
+        "p95_ms": 12.956580017635131
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 390 MHz, 47"
+      },
+      "peak_inference_allocated_bytes": 43988480,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.3620726674605596,
+          0.556825772401115
+        ],
+        "image_ap": [
+          0.5036321420855635,
+          0.713253877597836
+        ],
+        "recall": [
+          0.011360444330949949,
+          0.10465116279069768
+        ],
+        "fpr": [
+          0.017857142857142856,
+          0.16666666666666666
+        ],
+        "precision": [
+          0.16666666666666666,
+          0.8333333333333334
+        ],
+        "f1": [
+          0.021052631578947368,
+          0.1800045045045045
+        ],
+        "pixel_auroc": [
+          0.5572278732195353,
+          0.683906636884744
+        ],
+        "pixel_ap": [
+          0.03607653337297227,
+          0.06345645800373637
+        ],
+        "au_pro": [
+          0.21881069747613469,
+          0.3416203525418786
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.6194579365516015,
+      "pixel_ap": 0.04823739612733417,
+      "au_pro": 0.27590888309269174
+    },
+    "training_seconds": 5.5195068000175525,
+    "training_peak_allocated_bytes": 487518208,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 49.37061049998738,
+    "per_defect": [
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "bent_wire",
+        "defective_images": 13,
+        "auroc": 0.5477453580901857,
+        "ap": 0.22586678735491544,
+        "recall": 0.07692307692307693,
+        "fpr": 0.08620689655172414,
+        "precision": 0.16666666666666666,
+        "f1": 0.10526315789473684,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            12,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "cable_swap",
+        "defective_images": 12,
+        "auroc": 0.4755747126436782,
+        "ap": 0.17766500695519788,
+        "recall": 0.08333333333333333,
+        "fpr": 0.08620689655172414,
+        "precision": 0.16666666666666666,
+        "f1": 0.1111111111111111,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            11,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "combined",
+        "defective_images": 11,
+        "auroc": 0.5376175548589341,
+        "ap": 0.26037148054648185,
+        "recall": 0.09090909090909091,
+        "fpr": 0.08620689655172414,
+        "precision": 0.16666666666666666,
+        "f1": 0.11764705882352942,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            10,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "cut_inner_insulation",
+        "defective_images": 14,
+        "auroc": 0.3731527093596059,
+        "ap": 0.16264617559366024,
+        "recall": 0.0,
+        "fpr": 0.08620689655172414,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            14,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "cut_outer_insulation",
+        "defective_images": 10,
+        "auroc": 0.3206896551724138,
+        "ap": 0.12317521286602627,
+        "recall": 0.0,
+        "fpr": 0.08620689655172414,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            10,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "missing_cable",
+        "defective_images": 12,
+        "auroc": 0.41379310344827586,
+        "ap": 0.1853143063046263,
+        "recall": 0.08333333333333333,
+        "fpr": 0.08620689655172414,
+        "precision": 0.16666666666666666,
+        "f1": 0.1111111111111111,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            11,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "missing_wire",
+        "defective_images": 10,
+        "auroc": 0.39137931034482754,
+        "ap": 0.14012464954309772,
+        "recall": 0.0,
+        "fpr": 0.08620689655172414,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            10,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2027,
+        "defect": "poke_insulation",
+        "defective_images": 10,
+        "auroc": 0.6258620689655172,
+        "ap": 0.2596650114591291,
+        "recall": 0.1,
+        "fpr": 0.08620689655172414,
+        "precision": 0.16666666666666666,
+        "f1": 0.125,
+        "confusion_matrix": [
+          [
+            53,
+            5
+          ],
+          [
+            9,
+            1
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-cable-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "5a7e862ad48a46b13cd5eba1b1e50d9e264e2c73ed575b3d843217c436b9be1c",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 150,
+    "evaluated_at_utc": "2026-11-12T06:39:18.242471+00:00"
+  },
+  "calibration": {
+    "category": "cable",
+    "images": 33,
+    "image_threshold": 0.9924336671829224,
+    "secondary_image_threshold_q99": 0.9968698620796204,
+    "pixel_threshold": 0.870697021484375,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2162688,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.975825309753418,
+      0.9968698620796204
+    ],
+    "calibration_scores": [
+      0.9382344484329224,
+      0.9514564275741577,
+      0.8820410966873169,
+      0.980918288230896,
+      0.7570788264274597,
+      0.8946494460105896,
+      0.9582111835479736,
+      0.8043296337127686,
+      0.9186223745346069,
+      0.9551738500595093,
+      0.9273480772972107,
+      0.9498945474624634,
+      0.975825309753418,
+      0.9744199514389038,
+      0.8770054578781128,
+      0.9924336671829224,
+      0.9327420592308044,
+      0.9128991961479187,
+      0.8963852524757385,
+      0.8785727024078369,
+      0.9777006506919861,
+      0.9089361429214478,
+      0.8696022033691406,
+      0.9207439422607422,
+      0.9464688301086426,
+      0.9636073708534241,
+      0.9884840846061707,
+      0.9140327572822571,
+      0.9968698620796204,
+      0.9691910147666931,
+      0.9222851991653442,
+      0.9536936283111572,
+      0.942936897277832
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "2b5697fa109f81bcce3830d93cd2dd075a4e258d8215207c6967c19c0eb717f4"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-cable-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:39:18.244471+00:00",
+  "config_sha256": "e1f515ada2e6d1af1a14787bce57a84a6d861ffc3a101aaa0e36b460ac1c6ae0"
+}

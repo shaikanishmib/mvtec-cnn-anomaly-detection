@@ -1,0 +1,282 @@
+{
+  "experiment_id": "01-test-dice-bottle-s2026-v1",
+  "category": "bottle",
+  "seed": 2026,
+  "training_experiment": "01-final-dice-bottle-s2026-v1",
+  "checkpoint_sha256": "a5b907fa375147f62972ca4563d6c068a483fdc573dc0ae9e689f06da2c9e60b",
+  "image_auroc": 0.7761904761904762,
+  "image_ap": 0.9264343988511166,
+  "recall": 0.38095238095238093,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.5517241379310345,
+  "confusion_matrix": [
+    [
+      20,
+      0
+    ],
+    [
+      39,
+      24
+    ]
+  ],
+  "tn": 20,
+  "fp": 0,
+  "fn": 39,
+  "tp": 24,
+  "pixel_auroc": 0.7680010765668914,
+  "pixel_ap": 0.24028248576613265,
+  "au_pro": 0.3495883307555502,
+  "positive_pixels": 3886731,
+  "negative_pixels": 63343269,
+  "regions": 68,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      62689762,
+      653507
+    ],
+    [
+      3225037,
+      661694
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.5031124520130383,
+    "recall": 0.1702443518730779,
+    "fpr": 0.010316913072484465,
+    "f1": 0.25440317174465177,
+    "tp": 661694,
+    "fp": 653507,
+    "tn": 62689762,
+    "fn": 3225037
+  },
+  "secondary_image_q99": {
+    "auroc": 0.7761904761904762,
+    "ap": 0.9264343988511166,
+    "recall": 0.36507936507936506,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.5348837209302325,
+    "confusion_matrix": [
+      [
+        20,
+        0
+      ],
+      [
+        40,
+        23
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "bottle",
+    "images": 31,
+    "image_threshold": 0.24371437728405,
+    "secondary_image_threshold_q99": 0.25081387162208557,
+    "pixel_threshold": 0.036834716796875,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2031616,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.08694814890623093,
+      0.25081387162208557
+    ],
+    "calibration_scores": [
+      0.05348953604698181,
+      0.24371437728405,
+      0.035835519433021545,
+      0.05362292751669884,
+      0.03797198459506035,
+      0.03669620677828789,
+      0.05890330299735069,
+      0.036366187036037445,
+      0.25081387162208557,
+      0.03756818547844887,
+      0.035327304154634476,
+      0.08309336751699448,
+      0.03603456914424896,
+      0.039515357464551926,
+      0.03402112051844597,
+      0.03708748146891594,
+      0.03999762982130051,
+      0.036451153457164764,
+      0.0363568477332592,
+      0.03567090630531311,
+      0.03929342329502106,
+      0.044095538556575775,
+      0.03532884642481804,
+      0.03765622153878212,
+      0.08694814890623093,
+      0.0342053547501564,
+      0.21383658051490784,
+      0.036267466843128204,
+      0.10970882326364517,
+      0.036735668778419495,
+      0.16882014274597168
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 10.045500006526709,
+      "p95_ms": 11.714255016704556
+    },
+    "host_to_device": {
+      "p50_ms": 1.1643000034382567,
+      "p95_ms": 1.5091299937921576
+    },
+    "model": {
+      "p50_ms": 6.146750005427748,
+      "p95_ms": 8.241099999577273
+    },
+    "postprocessing": {
+      "p50_ms": 3.8030500145396218,
+      "p95_ms": 4.267400008393452
+    },
+    "end_to_end": {
+      "p50_ms": 20.84155000920873,
+      "p95_ms": 24.995105006382797
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P8, 210 MHz, 40"
+    },
+    "peak_inference_allocated_bytes": 31274496,
+    "peak_inference_reserved_bytes": 270532608
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6605204106197126,
+        0.8730222734254992
+      ],
+      "image_ap": [
+        0.8706091856623036,
+        0.967416103096831
+      ],
+      "recall": [
+        0.26560202205882355,
+        0.5
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.41972437553832903,
+        0.6666666666666666
+      ],
+      "pixel_auroc": [
+        0.7238443424138981,
+        0.812349432946629
+      ],
+      "pixel_ap": [
+        0.15636390582212628,
+        0.33843728919729077
+      ],
+      "au_pro": [
+        0.2814325458836887,
+        0.4192011639176712
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.7678457730391105,
+    "pixel_ap": 0.23939125793899815,
+    "au_pro": 0.349587889990321
+  },
+  "training_seconds": 13.686266400007298,
+  "training_peak_allocated_bytes": 485617664,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 57.49235379998572,
+  "per_defect": [
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_large",
+      "defective_images": 20,
+      "auroc": 0.8325,
+      "ap": 0.8742028864854952,
+      "recall": 0.55,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.7096774193548387,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          9,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_small",
+      "defective_images": 22,
+      "auroc": 0.7613636363636365,
+      "ap": 0.8287935467633832,
+      "recall": 0.36363636363636365,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.5333333333333333,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          14,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "contamination",
+      "defective_images": 21,
+      "auroc": 0.7380952380952381,
+      "ap": 0.7949341540161041,
+      "recall": 0.23809523809523808,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.3846153846153846,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          16,
+          5
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-bottle-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "7dcc94f2e2a3e62510f866127149d6c3bdc1b8c52a603140721e2dda1b8f4e86",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 83,
+  "evaluated_at_utc": "2026-11-12T06:20:08.876802+00:00"
+}

@@ -58,7 +58,11 @@ def test_frozen_evaluation_pipeline_on_synthetic_files_only(dataset,tmp_path,mon
     inventory=project/'outputs/eda';inventory.mkdir(parents=True)
     frame('test').assign(height=8,width=10).to_csv(inventory/'inventory.csv',index=False)
     monkeypatch.setattr(evaluation,'ROOT',project)
-    monkeypatch.setattr(evaluation,'read_partition',lambda part,category:frame(part))
+    access=[]
+    def partition_reader(part,category):
+        access.append(part)
+        return frame(part)
+    monkeypatch.setattr(evaluation,'read_partition',partition_reader)
     monkeypatch.setattr(evaluation,'load_resized',resized)
     monkeypatch.setattr(evaluation,'autodiscover_data_root',lambda _:dataset)
     training={'category':'bottle','configuration':config,'checkpoint':'fixture.pt',
@@ -69,6 +73,7 @@ def test_frozen_evaluation_pipeline_on_synthetic_files_only(dataset,tmp_path,mon
     assert result['image_rows']==2 and result['positive_pixels']==6
     assert result['negative_pixels']==154 and result['regions']==1
     assert result['calibration']['images']==4
+    assert access[0]=='calibration' and access.count('test')==1
     assert sum(np.asarray(result['confusion_matrix']).ravel())==2
     assert not list((project/'outputs/basic_cnn/fixture-evaluation').glob('native-*.dat'))
     with pytest.raises(FileExistsError):evaluation.evaluate_frozen('fixture-evaluation',training,sha256(freeze))

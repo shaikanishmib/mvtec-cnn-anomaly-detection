@@ -1,0 +1,490 @@
+{
+  "experiment_id": "01-test-dice-screw-s2026-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "screw"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2026,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-screw-s2026-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-screw-s2026-v1",
+    "category": "screw",
+    "seed": 2026,
+    "training_experiment": "01-final-dice-screw-s2026-v1",
+    "checkpoint_sha256": "0c6687db09202f26f4466e06c1f8cf555944f21be15157f04d2f356a7ab4f47b",
+    "image_auroc": 0.024185283869645424,
+    "image_ap": 0.5380036917037215,
+    "recall": 0.04201680672268908,
+    "fpr": 0.8536585365853658,
+    "precision": 0.125,
+    "f1": 0.06289308176100629,
+    "confusion_matrix": [
+      [
+        6,
+        35
+      ],
+      [
+        114,
+        5
+      ]
+    ],
+    "tn": 6,
+    "fp": 35,
+    "fn": 114,
+    "tp": 5,
+    "pixel_auroc": 0.8012476412557001,
+    "pixel_ap": 0.006069601575119166,
+    "au_pro": 0.3483705908406599,
+    "positive_pixels": 418611,
+    "negative_pixels": 167353549,
+    "regions": 135,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        164859052,
+        2494497
+      ],
+      [
+        412064,
+        6547
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.0026177068456212683,
+      "recall": 0.015639818351643887,
+      "fpr": 0.01490555183864072,
+      "f1": 0.004484776454752359,
+      "tp": 6547,
+      "fp": 2494497,
+      "tn": 164859052,
+      "fn": 412064
+    },
+    "secondary_image_q99": {
+      "auroc": 0.024185283869645424,
+      "ap": 0.5380036917037215,
+      "recall": 0.0,
+      "fpr": 0.1951219512195122,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          33,
+          8
+        ],
+        [
+          119,
+          0
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "screw",
+      "images": 48,
+      "image_threshold": 0.864020824432373,
+      "secondary_image_threshold_q99": 0.9979640245437622,
+      "pixel_threshold": 0.509307861328125,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 3145728,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.7811749577522278,
+        0.9979640245437622
+      ],
+      "calibration_scores": [
+        0.7065379619598389,
+        0.452409029006958,
+        0.6773262023925781,
+        0.811029851436615,
+        0.6639569997787476,
+        0.5606651306152344,
+        0.6128556728363037,
+        0.6520187258720398,
+        0.6278133988380432,
+        0.6099198460578918,
+        0.5905455946922302,
+        0.7610302567481995,
+        0.6383089423179626,
+        0.6035383343696594,
+        0.6251614093780518,
+        0.6845349669456482,
+        0.5596129894256592,
+        0.530083417892456,
+        0.7535742521286011,
+        0.4245368242263794,
+        0.508135199546814,
+        0.9979640245437622,
+        0.8111011981964111,
+        0.6598793268203735,
+        0.40624672174453735,
+        0.5145154595375061,
+        0.6101856827735901,
+        0.5989198684692383,
+        0.5232429504394531,
+        0.651366114616394,
+        0.975739061832428,
+        0.564014196395874,
+        0.5378280878067017,
+        0.864020824432373,
+        0.796710193157196,
+        0.43012577295303345,
+        0.6783533096313477,
+        0.6350932717323303,
+        0.7242482304573059,
+        0.7811749577522278,
+        0.5982455611228943,
+        0.5958265066146851,
+        0.6810512542724609,
+        0.539333701133728,
+        0.35998666286468506,
+        0.6173543930053711,
+        0.7219744324684143,
+        0.5638671517372131
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.129550001583993,
+        "p95_ms": 6.24483501596842
+      },
+      "host_to_device": {
+        "p50_ms": 0.6898999999975786,
+        "p95_ms": 1.054299995303154
+      },
+      "model": {
+        "p50_ms": 2.486099998350255,
+        "p95_ms": 3.7889800019911446
+      },
+      "postprocessing": {
+        "p50_ms": 2.385250001680106,
+        "p95_ms": 3.780815002392046
+      },
+      "end_to_end": {
+        "p50_ms": 11.551599993254058,
+        "p95_ms": 13.895690011850093
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 41"
+      },
+      "peak_inference_allocated_bytes": 45954560,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.004181818181818185,
+          0.05615846200739248
+        ],
+        "image_ap": [
+          0.4738020828557387,
+          0.6237223954676031
+        ],
+        "recall": [
+          0.00847457627118644,
+          0.08335084033613435
+        ],
+        "fpr": [
+          0.7368421052631579,
+          0.9534883720930233
+        ],
+        "precision": [
+          0.02857142857142857,
+          0.24391598915989152
+        ],
+        "f1": [
+          0.012903225806451613,
+          0.12123059866962298
+        ],
+        "pixel_auroc": [
+          0.7841436649601616,
+          0.8179688896672968
+        ],
+        "pixel_ap": [
+          0.005007165853941902,
+          0.007406405114571193
+        ],
+        "au_pro": [
+          0.30005647672300956,
+          0.398820842112238
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8012476421795035,
+      "pixel_ap": 0.00607174546187953,
+      "au_pro": 0.3483698827468986
+    },
+    "training_seconds": 21.13075470001786,
+    "training_peak_allocated_bytes": 503443456,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 118.20003010000801,
+    "per_defect": [
+      {
+        "category": "screw",
+        "seed": 2026,
+        "defect": "manipulated_front",
+        "defective_images": 24,
+        "auroc": 0.039634146341463415,
+        "ap": 0.22375365555140142,
+        "recall": 0.08333333333333333,
+        "fpr": 0.8536585365853658,
+        "precision": 0.05405405405405406,
+        "f1": 0.06557377049180328,
+        "confusion_matrix": [
+          [
+            6,
+            35
+          ],
+          [
+            22,
+            2
+          ]
+        ]
+      },
+      {
+        "category": "screw",
+        "seed": 2026,
+        "defect": "scratch_head",
+        "defective_images": 24,
+        "auroc": 0.029471544715447162,
+        "ap": 0.2226814310937123,
+        "recall": 0.08333333333333333,
+        "fpr": 0.8536585365853658,
+        "precision": 0.05405405405405406,
+        "f1": 0.06557377049180328,
+        "confusion_matrix": [
+          [
+            6,
+            35
+          ],
+          [
+            22,
+            2
+          ]
+        ]
+      },
+      {
+        "category": "screw",
+        "seed": 2026,
+        "defect": "scratch_neck",
+        "defective_images": 25,
+        "auroc": 0.021463414634146347,
+        "ap": 0.22837164914063549,
+        "recall": 0.04,
+        "fpr": 0.8536585365853658,
+        "precision": 0.027777777777777776,
+        "f1": 0.03278688524590164,
+        "confusion_matrix": [
+          [
+            6,
+            35
+          ],
+          [
+            24,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "screw",
+        "seed": 2026,
+        "defect": "thread_side",
+        "defective_images": 23,
+        "auroc": 0.014846235418875937,
+        "ap": 0.21527803352252056,
+        "recall": 0.0,
+        "fpr": 0.8536585365853658,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            6,
+            35
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      },
+      {
+        "category": "screw",
+        "seed": 2026,
+        "defect": "thread_top",
+        "defective_images": 23,
+        "auroc": 0.014846235418875942,
+        "ap": 0.2157860628137967,
+        "recall": 0.0,
+        "fpr": 0.8536585365853658,
+        "precision": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            6,
+            35
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-screw-s2026-v1/model_resolution_maps.npy",
+    "maps_sha256": "a0924ea00adf357bdd1f06bf4a059092947e3181f3162672054ebd48d0c730b4",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 160,
+    "evaluated_at_utc": "2026-11-12T06:35:10.956265+00:00"
+  },
+  "calibration": {
+    "category": "screw",
+    "images": 48,
+    "image_threshold": 0.864020824432373,
+    "secondary_image_threshold_q99": 0.9979640245437622,
+    "pixel_threshold": 0.509307861328125,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 3145728,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.7811749577522278,
+      0.9979640245437622
+    ],
+    "calibration_scores": [
+      0.7065379619598389,
+      0.452409029006958,
+      0.6773262023925781,
+      0.811029851436615,
+      0.6639569997787476,
+      0.5606651306152344,
+      0.6128556728363037,
+      0.6520187258720398,
+      0.6278133988380432,
+      0.6099198460578918,
+      0.5905455946922302,
+      0.7610302567481995,
+      0.6383089423179626,
+      0.6035383343696594,
+      0.6251614093780518,
+      0.6845349669456482,
+      0.5596129894256592,
+      0.530083417892456,
+      0.7535742521286011,
+      0.4245368242263794,
+      0.508135199546814,
+      0.9979640245437622,
+      0.8111011981964111,
+      0.6598793268203735,
+      0.40624672174453735,
+      0.5145154595375061,
+      0.6101856827735901,
+      0.5989198684692383,
+      0.5232429504394531,
+      0.651366114616394,
+      0.975739061832428,
+      0.564014196395874,
+      0.5378280878067017,
+      0.864020824432373,
+      0.796710193157196,
+      0.43012577295303345,
+      0.6783533096313477,
+      0.6350932717323303,
+      0.7242482304573059,
+      0.7811749577522278,
+      0.5982455611228943,
+      0.5958265066146851,
+      0.6810512542724609,
+      0.539333701133728,
+      0.35998666286468506,
+      0.6173543930053711,
+      0.7219744324684143,
+      0.5638671517372131
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-screw-s2026-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:35:10.958448+00:00",
+  "config_sha256": "182a7c68643dcb7446984778c3c5abae16699091cb8f4566933e81eaec756fb3"
+}

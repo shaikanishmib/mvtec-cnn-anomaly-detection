@@ -1,0 +1,468 @@
+{
+  "experiment_id": "01-test-dice-wood-s2027-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "wood"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2027,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-wood-s2027-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-wood-s2027-v1",
+    "category": "wood",
+    "seed": 2027,
+    "training_experiment": "01-final-dice-wood-s2027-v1",
+    "checkpoint_sha256": "d930adfc11ae0ce1fd5f3f0824092364564bd0c3237acca92ea94755e344222d",
+    "image_auroc": 0.894736842105263,
+    "image_ap": 0.9678731941761382,
+    "recall": 0.5833333333333334,
+    "fpr": 0.05263157894736842,
+    "precision": 0.9722222222222222,
+    "f1": 0.7291666666666666,
+    "confusion_matrix": [
+      [
+        18,
+        1
+      ],
+      [
+        25,
+        35
+      ]
+    ],
+    "tn": 18,
+    "fp": 1,
+    "fn": 25,
+    "tp": 35,
+    "pixel_auroc": 0.6250267221213868,
+    "pixel_ap": 0.24509603453559647,
+    "au_pro": 0.45739488784277926,
+    "positive_pixels": 3199416,
+    "negative_pixels": 79638088,
+    "regions": 168,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        79102619,
+        535469
+      ],
+      [
+        2563487,
+        635929
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.5428803873662069,
+      "recall": 0.1987640869458676,
+      "fpr": 0.006723780209288802,
+      "f1": 0.29098881810115923,
+      "tp": 635929,
+      "fp": 535469,
+      "tn": 79102619,
+      "fn": 2563487
+    },
+    "secondary_image_q99": {
+      "auroc": 0.894736842105263,
+      "ap": 0.9678731941761382,
+      "recall": 0.5666666666666667,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.7234042553191489,
+      "confusion_matrix": [
+        [
+          19,
+          0
+        ],
+        [
+          26,
+          34
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "wood",
+      "images": 37,
+      "image_threshold": 0.8996859788894653,
+      "secondary_image_threshold_q99": 0.9102097749710083,
+      "pixel_threshold": 0.6287384033203125,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2424832,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.8672568798065186,
+        0.9102097749710083
+      ],
+      "calibration_scores": [
+        0.8845617771148682,
+        0.6708733439445496,
+        0.7906696200370789,
+        0.8076900839805603,
+        0.3856154680252075,
+        0.7946346998214722,
+        0.5765836834907532,
+        0.5479697585105896,
+        0.5550350546836853,
+        0.5012935996055603,
+        0.618394672870636,
+        0.5159339904785156,
+        0.698078453540802,
+        0.7186494469642639,
+        0.5290917158126831,
+        0.6675689220428467,
+        0.4842243790626526,
+        0.9102097749710083,
+        0.8672568798065186,
+        0.8996859788894653,
+        0.6774666905403137,
+        0.8184118270874023,
+        0.5176443457603455,
+        0.7013359665870667,
+        0.666025698184967,
+        0.7235312461853027,
+        0.7734621167182922,
+        0.6287211179733276,
+        0.5704632997512817,
+        0.4294751286506653,
+        0.5691922903060913,
+        0.8686473965644836,
+        0.6999054551124573,
+        0.7225902080535889,
+        0.7233895063400269,
+        0.8786914348602295,
+        0.7485498785972595
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.057699992903508,
+        "p95_ms": 5.876324999553615
+      },
+      "host_to_device": {
+        "p50_ms": 0.6347000016830862,
+        "p95_ms": 0.9598900011042132
+      },
+      "model": {
+        "p50_ms": 2.316950005479157,
+        "p95_ms": 3.856340021593492
+      },
+      "postprocessing": {
+        "p50_ms": 2.2097500041127205,
+        "p95_ms": 3.5609999918960966
+      },
+      "end_to_end": {
+        "p50_ms": 10.181449993979186,
+        "p95_ms": 13.303950020053888
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 50"
+      },
+      "peak_inference_allocated_bytes": 30029312,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.8160130306851618,
+          0.9589490968801314
+        ],
+        "image_ap": [
+          0.9358181755039882,
+          0.9898966954942403
+        ],
+        "recall": [
+          0.4576271186440678,
+          0.7031698258196719
+        ],
+        "fpr": [
+          0.0,
+          0.17647058823529413
+        ],
+        "precision": [
+          0.9047235023041474,
+          1.0
+        ],
+        "f1": [
+          0.6206896551724138,
+          0.8214536048064085
+        ],
+        "pixel_auroc": [
+          0.5551871553107613,
+          0.7027874523527254
+        ],
+        "pixel_ap": [
+          0.15831601003982224,
+          0.33859559848944654
+        ],
+        "au_pro": [
+          0.36739085564973467,
+          0.5437359568206386
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.6250248823745638,
+      "pixel_ap": 0.24382664215733227,
+      "au_pro": 0.45739326469879715
+    },
+    "training_seconds": 5.103369699994801,
+    "training_peak_allocated_bytes": 491253760,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 24.937927200022386,
+    "per_defect": [
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "color",
+        "defective_images": 8,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.05263157894736842,
+        "precision": 0.8888888888888888,
+        "f1": 0.9411764705882353,
+        "confusion_matrix": [
+          [
+            18,
+            1
+          ],
+          [
+            0,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "combined",
+        "defective_images": 11,
+        "auroc": 0.9808612440191387,
+        "ap": 0.9722550177095631,
+        "recall": 0.8181818181818182,
+        "fpr": 0.05263157894736842,
+        "precision": 0.9,
+        "f1": 0.8571428571428572,
+        "confusion_matrix": [
+          [
+            18,
+            1
+          ],
+          [
+            2,
+            9
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "hole",
+        "defective_images": 10,
+        "auroc": 0.963157894736842,
+        "ap": 0.9351301476301476,
+        "recall": 0.7,
+        "fpr": 0.05263157894736842,
+        "precision": 0.875,
+        "f1": 0.7777777777777777,
+        "confusion_matrix": [
+          [
+            18,
+            1
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "liquid",
+        "defective_images": 10,
+        "auroc": 0.8263157894736842,
+        "ap": 0.7308180708180707,
+        "recall": 0.1,
+        "fpr": 0.05263157894736842,
+        "precision": 0.5,
+        "f1": 0.16666666666666669,
+        "confusion_matrix": [
+          [
+            18,
+            1
+          ],
+          [
+            9,
+            1
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "scratch",
+        "defective_images": 21,
+        "auroc": 0.8095238095238095,
+        "ap": 0.8692533295369429,
+        "recall": 0.47619047619047616,
+        "fpr": 0.05263157894736842,
+        "precision": 0.9090909090909091,
+        "f1": 0.6249999999999999,
+        "confusion_matrix": [
+          [
+            18,
+            1
+          ],
+          [
+            11,
+            10
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-wood-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "0a746b207593b2cb56793b70e2743c890838d92f20ec510ccc067b685d028fed",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 79,
+    "evaluated_at_utc": "2026-11-12T06:45:46.746532+00:00"
+  },
+  "calibration": {
+    "category": "wood",
+    "images": 37,
+    "image_threshold": 0.8996859788894653,
+    "secondary_image_threshold_q99": 0.9102097749710083,
+    "pixel_threshold": 0.6287384033203125,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2424832,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.8672568798065186,
+      0.9102097749710083
+    ],
+    "calibration_scores": [
+      0.8845617771148682,
+      0.6708733439445496,
+      0.7906696200370789,
+      0.8076900839805603,
+      0.3856154680252075,
+      0.7946346998214722,
+      0.5765836834907532,
+      0.5479697585105896,
+      0.5550350546836853,
+      0.5012935996055603,
+      0.618394672870636,
+      0.5159339904785156,
+      0.698078453540802,
+      0.7186494469642639,
+      0.5290917158126831,
+      0.6675689220428467,
+      0.4842243790626526,
+      0.9102097749710083,
+      0.8672568798065186,
+      0.8996859788894653,
+      0.6774666905403137,
+      0.8184118270874023,
+      0.5176443457603455,
+      0.7013359665870667,
+      0.666025698184967,
+      0.7235312461853027,
+      0.7734621167182922,
+      0.6287211179733276,
+      0.5704632997512817,
+      0.4294751286506653,
+      0.5691922903060913,
+      0.8686473965644836,
+      0.6999054551124573,
+      0.7225902080535889,
+      0.7233895063400269,
+      0.8786914348602295,
+      0.7485498785972595
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-wood-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:45:46.747532+00:00",
+  "config_sha256": "6e4e13811bbeed5fe1a8fb38b25898ccf4fd61e02b48f498a424d007d46341f5"
+}

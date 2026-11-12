@@ -1,0 +1,329 @@
+{
+  "experiment_id": "01-test-dice-tile-s2028-v1",
+  "category": "tile",
+  "seed": 2028,
+  "training_experiment": "01-final-dice-tile-s2028-v1",
+  "checkpoint_sha256": "f35878bd5a7d8f963f26c5fe1dab38412d256586726e8ccaebc610d1122b97a1",
+  "image_auroc": 0.8329725829725829,
+  "image_ap": 0.9392035009823892,
+  "recall": 0.6428571428571429,
+  "fpr": 0.12121212121212122,
+  "precision": 0.9310344827586207,
+  "f1": 0.7605633802816901,
+  "confusion_matrix": [
+    [
+      29,
+      4
+    ],
+    [
+      30,
+      54
+    ]
+  ],
+  "tn": 29,
+  "fp": 4,
+  "fn": 30,
+  "tp": 54,
+  "pixel_auroc": 0.724180004414274,
+  "pixel_ap": 0.46679231680403827,
+  "au_pro": 0.4780802742094333,
+  "positive_pixels": 5809846,
+  "negative_pixels": 76745354,
+  "regions": 86,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      75909664,
+      835690
+    ],
+    [
+      3873224,
+      1936622
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.6985584595096078,
+    "recall": 0.33333448081067896,
+    "fpr": 0.010889128220061373,
+    "f1": 0.4513135274368055,
+    "tp": 1936622,
+    "fp": 835690,
+    "tn": 75909664,
+    "fn": 3873224
+  },
+  "secondary_image_q99": {
+    "auroc": 0.8329725829725829,
+    "ap": 0.9392035009823892,
+    "recall": 0.6190476190476191,
+    "fpr": 0.030303030303030304,
+    "precision": 0.9811320754716981,
+    "f1": 0.759124087591241,
+    "confusion_matrix": [
+      [
+        32,
+        1
+      ],
+      [
+        32,
+        52
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "tile",
+    "images": 34,
+    "image_threshold": 0.8196496963500977,
+    "secondary_image_threshold_q99": 0.8503742814064026,
+    "pixel_threshold": 0.2862548828125,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2228224,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.6413758397102356,
+      0.8503742814064026
+    ],
+    "calibration_scores": [
+      0.47581666707992554,
+      0.6413758397102356,
+      0.484638512134552,
+      0.2710244655609131,
+      0.09919354319572449,
+      0.1826270967721939,
+      0.17093467712402344,
+      0.3978723883628845,
+      0.10607228428125381,
+      0.26510894298553467,
+      0.2800804674625397,
+      0.8503742814064026,
+      0.6269276738166809,
+      0.4213620126247406,
+      0.2266375720500946,
+      0.5569092631340027,
+      0.6237088441848755,
+      0.2912440896034241,
+      0.6105973720550537,
+      0.2407360076904297,
+      0.27530112862586975,
+      0.31381547451019287,
+      0.365740567445755,
+      0.49498558044433594,
+      0.6442954540252686,
+      0.43930864334106445,
+      0.3837670683860779,
+      0.8196496963500977,
+      0.6592310070991516,
+      0.3991020619869232,
+      0.18851681053638458,
+      0.4389749765396118,
+      0.741468608379364,
+      0.36209842562675476
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "cfb6df45aa28301e371b3c335f45e40599ef3a2dcdcd05c62054fd44de5ee403"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.671600003144704,
+      "p95_ms": 4.710240007261746
+    },
+    "host_to_device": {
+      "p50_ms": 0.5940999981248751,
+      "p95_ms": 0.9110000057262367
+    },
+    "model": {
+      "p50_ms": 2.429799977107905,
+      "p95_ms": 3.818814987607765
+    },
+    "postprocessing": {
+      "p50_ms": 1.593149994732812,
+      "p95_ms": 2.4502449989086017
+    },
+    "end_to_end": {
+      "p50_ms": 8.87404999230057,
+      "p95_ms": 10.634475006372668
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 450 MHz, 47"
+    },
+    "peak_inference_allocated_bytes": 37500416,
+    "peak_inference_reserved_bytes": 354418688
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7604469417407783,
+        0.9015775034293553
+      ],
+      "image_ap": [
+        0.9015608552216993,
+        0.9685936667128358
+      ],
+      "recall": [
+        0.5411764705882353,
+        0.7415730337078652
+      ],
+      "fpr": [
+        0.02702702702702703,
+        0.25
+      ],
+      "precision": [
+        0.8596491228070176,
+        0.9841331845238095
+      ],
+      "f1": [
+        0.6762490697097495,
+        0.8343578596676554
+      ],
+      "pixel_auroc": [
+        0.667366478678425,
+        0.7730515635311739
+      ],
+      "pixel_ap": [
+        0.3855750551880484,
+        0.5405929386680548
+      ],
+      "au_pro": [
+        0.4050290735198783,
+        0.5472749284001742
+      ]
+    },
+    "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.7241791901831851,
+    "pixel_ap": 0.46642247984073415,
+    "au_pro": 0.4780776530771466
+  },
+  "training_seconds": 5.096807499998249,
+  "training_peak_allocated_bytes": 488501248,
+  "checkpoint_bytes": 343117,
+  "parameters": 83857,
+  "evaluation_seconds": 25.6620997999853,
+  "per_defect": [
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "crack",
+      "defective_images": 17,
+      "auroc": 0.7130124777183601,
+      "ap": 0.6825762470898743,
+      "recall": 0.47058823529411764,
+      "fpr": 0.12121212121212122,
+      "precision": 0.6666666666666666,
+      "f1": 0.5517241379310345,
+      "confusion_matrix": [
+        [
+          29,
+          4
+        ],
+        [
+          9,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "glue_strip",
+      "defective_images": 18,
+      "auroc": 0.8636363636363636,
+      "ap": 0.8558562028800125,
+      "recall": 0.6666666666666666,
+      "fpr": 0.12121212121212122,
+      "precision": 0.75,
+      "f1": 0.7058823529411765,
+      "confusion_matrix": [
+        [
+          29,
+          4
+        ],
+        [
+          6,
+          12
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "gray_stroke",
+      "defective_images": 16,
+      "auroc": 0.8125,
+      "ap": 0.7340571939826654,
+      "recall": 0.4375,
+      "fpr": 0.12121212121212122,
+      "precision": 0.6363636363636364,
+      "f1": 0.5185185185185185,
+      "confusion_matrix": [
+        [
+          29,
+          4
+        ],
+        [
+          9,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "oil",
+      "defective_images": 18,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.12121212121212122,
+      "precision": 0.8181818181818182,
+      "f1": 0.9,
+      "confusion_matrix": [
+        [
+          29,
+          4
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "rough",
+      "defective_images": 15,
+      "auroc": 0.7535353535353535,
+      "ap": 0.7662481549922713,
+      "recall": 0.6,
+      "fpr": 0.12121212121212122,
+      "precision": 0.6923076923076923,
+      "f1": 0.6428571428571429,
+      "confusion_matrix": [
+        [
+          29,
+          4
+        ],
+        [
+          6,
+          9
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/basic_cnn/01-test-dice-tile-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "7ab41be0fcb6269e6cc7f5bf8ee0b2b775cb7fe25102ae4aa083a74bc6af8283",
+  "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+  "image_rows": 117,
+  "evaluated_at_utc": "2026-11-12T06:52:57.296203+00:00"
+}

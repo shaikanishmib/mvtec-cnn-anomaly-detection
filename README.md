@@ -3,14 +3,15 @@
 PyTorch research comparing normal-only industrial anomaly detection and defect
 localization across all 15 original MVTec AD categories. The scientific notebooks
 are the canonical experiment narrative; compact, append-only records preserve
-both successful and unsuccessful experiments. No benchmark results exist yet.
+both successful and unsuccessful experiments. The Basic CNN baseline is complete;
+the remaining model families and engineering application are planned.
 
 ## Research roadmap
 
 | Notebook | Focus | Status |
 |---|---|---|
 | [00](notebooks/00_dataset_eda.ipynb) | Dataset EDA and integrity | Complete real-data EDA and verified CUDA kernel |
-| 01 | Basic CNN, synthetic-supervised segmentation | Pilot and bounded development complete; frozen all-category confirmation pending |
+| [01](notebooks/01_basic_cnn.ipynb) | Basic CNN, synthetic-supervised segmentation | Complete: bounded development and all 15 categories across three seeds |
 | 02 | Convolutional autoencoder | Planned |
 | 03 | PatchCore | Planned |
 | 04 | SuperSimpleNet | Planned |
@@ -96,14 +97,55 @@ The RTX 4060 Laptop GPU reports 8,188 MiB VRAM (about 8 GB), driver 610.91.
 Installed PyTorch **2.11.0+cu128** and torchvision **0.26.0+cu128** detect the GPU.
 GPU matrix multiplication, a synthetic CNN forward/backward check and torchvision
 CUDA NMS passed in the research kernel. See [GPU evidence](reports/cuda_verification.json).
-No pretrained weights have been downloaded. The scratch Basic CNN implementation
-has completed one bottle pilot and 19 further controlled development fits across
-four predeclared categories. The five-configuration search selected mixed
-synthetic edits with weighted BCE+Dice; these proxy results are not real-defect
-benchmark results. See [Basic CNN preregistration](docs/basic_cnn_protocol.md),
-[development comparison](reports/basic_cnn/development_macro.csv) and
-[frozen configuration](configs/basic_cnn_frozen.json). Full confirmation and
-Notebook 01 are in progress; later models remain unstarted.
+No pretrained weights have been downloaded. The scratch Basic CNN completed a
+bottle pilot and 19 further controlled development fits on four predeclared
+categories. The frozen width-16, mixed-synthetic, weighted BCE+Dice policy then
+trained **45 fresh models: all 15 categories × seeds 2026/2027/2028**, eight epochs
+each. Synthetic edits/probes used fitting normals only; official development
+remained normal. Reserved normal calibration set thresholds before one official
+test evaluation per category/seed. No post-test configuration changes were made.
+
+## Basic CNN measured baseline
+
+Unweighted category macro means, averaged over three seeds:
+
+| Metric | Mean |
+|---|---:|
+| Image AUROC | 0.7126 |
+| Image AP | 0.8590 |
+| Pixel AUROC | 0.7858 |
+| Pixel AP | 0.2354 |
+| AU-PRO, FPR ≤0.30 | 0.5498 |
+| Recall | 0.4018 |
+| False-positive rate | 0.0983 |
+| Precision | 0.8733 |
+| F1 | 0.5106 |
+
+The 40.2% recall and 9.8% FPR expose a limited baseline; the normal-calibration
+5% image-FPR target did not guarantee test FPR. Performance varies sharply by
+category, including poor screw detection. Image AP must be read against defect
+prevalence. Pixel point estimates use exact native-resolution evaluation; pixel
+bootstrap intervals use a disclosed 4,096-bin approximation with measured AP bias.
+All failures, rejected configurations and seed variation are retained.
+
+The model has **83,857 parameters**, checkpoints about **335 KiB**, maximum final
+training allocation **0.480 GiB**, and mean across runs of model p50 **3.139 ms**
+(p95 **4.629 ms**). Mean end-to-end p50 is **12.538 ms**, from memory-resident RGB
+to native CPU map; file read/decode is excluded. These are means of per-run
+percentiles, not a pooled service benchmark. Final training took **8.11 minutes**
+including loading/validation; exact native evaluation took **35.85 minutes**.
+
+Read [Notebook 01](notebooks/01_basic_cnn.ipynb),
+[all-category results](reports/basic_cnn/all_category_means.csv),
+[measured findings](reports/basic_cnn/findings.md),
+[development comparison](reports/basic_cnn/development_macro.csv),
+[preregistration](docs/basic_cnn_protocol.md),
+[frozen configuration](configs/basic_cnn_frozen.json) and
+[reproduction instructions](docs/basic_cnn_reproduction.md).
+The notebook shows the exact architecture, generator, loss and training loop,
+full experiment story, calibration, evaluation and per-category failure analysis.
+Public replay preserves genuine compact outputs; licensed image/map panels and
+large artifacts remain local. New reproductions use new IDs, never overwrite v1.
 
 ## Repository layout and next stage
 
@@ -112,7 +154,7 @@ auditable utilities; `configs/`, `experiments/`, `reports/`, `scripts/`, `tests/
 and `docs/` hold configuration, evidence and reproduction support. `data/`,
 `checkpoints/` and `outputs/` are local ignored storage; scripts recreate outputs.
 
-Current work: complete Notebook 01 — Basic CNN under its frozen policy. Each future notebook
+Notebook 01 is complete. Notebook 02 requires a separate request. Each future notebook
 must preserve its full experimental story, tried configurations, actual results,
 calibration, evaluation, failures and interpretations. After the research
 comparison, a separate engineering

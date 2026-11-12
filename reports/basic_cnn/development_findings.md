@@ -33,3 +33,7 @@ failed, and none of the unsuccessful proxy configurations was deleted.
 Final confirmation remains pending at this development milestone. The planned
 45 fresh models cover all 15 categories and three seeds. Synthetic-to-real gap,
 small-defect localization and normal-calibrated recall/FPR remain open hypotheses.
+
+Subsequent frozen confirmation is now recorded in Notebook 01 and summary.json.
+The development statements above describe the earlier, independently committed
+milestone; they are not rewritten to match the later real-test outcomes.

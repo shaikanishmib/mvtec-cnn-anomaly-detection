@@ -1,0 +1,510 @@
+{
+  "experiment_id": "01-test-dice-zipper-s2027-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "zipper"
+  ],
+  "hypothesis": "Frozen synthetic-supervised CNN transfers to official real defects; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "seed": 2027,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "01-final-dice-zipper-s2027-v1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "code": {
+      "git_sha": "ec1efdc8da9641cd1209dd58d24318e5eea8a8f6",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "evaluation_source_sha256": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "01-test-dice-zipper-s2027-v1",
+    "category": "zipper",
+    "seed": 2027,
+    "training_experiment": "01-final-dice-zipper-s2027-v1",
+    "checkpoint_sha256": "cd1407904406237157b72314fc083b43de7b952f29b6ee0bbc5ddeae4306f38c",
+    "image_auroc": 0.8398109243697479,
+    "image_ap": 0.9597049750744641,
+    "recall": 0.48739495798319327,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.655367231638418,
+    "confusion_matrix": [
+      [
+        32,
+        0
+      ],
+      [
+        61,
+        58
+      ]
+    ],
+    "tn": 32,
+    "fp": 0,
+    "fn": 61,
+    "tp": 58,
+    "pixel_auroc": 0.8794340031719192,
+    "pixel_ap": 0.33868257377254596,
+    "au_pro": 0.6802255874303696,
+    "positive_pixels": 3274311,
+    "negative_pixels": 155060665,
+    "regions": 177,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        154217449,
+        843216
+      ],
+      [
+        2433582,
+        840729
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.49926155545460216,
+      "recall": 0.25676516372452096,
+      "fpr": 0.00543797487260873,
+      "f1": 0.33912286900878047,
+      "tp": 840729,
+      "fp": 843216,
+      "tn": 154217449,
+      "fn": 2433582
+    },
+    "secondary_image_q99": {
+      "auroc": 0.8398109243697479,
+      "ap": 0.9597049750744641,
+      "recall": 0.15126050420168066,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.26277372262773724,
+      "confusion_matrix": [
+        [
+          32,
+          0
+        ],
+        [
+          101,
+          18
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "zipper",
+      "images": 36,
+      "image_threshold": 0.9641539454460144,
+      "secondary_image_threshold_q99": 0.9993956089019775,
+      "pixel_threshold": 0.739166259765625,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_bins": 65536,
+      "pixel_calibration_samples": 2359296,
+      "pixel_score_resolution": 256,
+      "image_threshold_bootstrap_95ci": [
+        0.9212751984596252,
+        0.9993956089019775
+      ],
+      "calibration_scores": [
+        0.9108679890632629,
+        0.6946248412132263,
+        0.8547431230545044,
+        0.8020459413528442,
+        0.9003453850746155,
+        0.5176188349723816,
+        0.9212751984596252,
+        0.46457481384277344,
+        0.9993956089019775,
+        0.8918423652648926,
+        0.9641539454460144,
+        0.34390392899513245,
+        0.9076228737831116,
+        0.8442674875259399,
+        0.9585562944412231,
+        0.4547240734100342,
+        0.6673485636711121,
+        0.8991156816482544,
+        0.9530296325683594,
+        0.9064868092536926,
+        0.8814613819122314,
+        0.416853129863739,
+        0.4614219665527344,
+        0.9412651658058167,
+        0.9074447751045227,
+        0.27171972393989563,
+        0.49896538257598877,
+        0.6746852993965149,
+        0.688849151134491,
+        0.29137590527534485,
+        0.8814946413040161,
+        0.8523169159889221,
+        0.8551918268203735,
+        0.6154749393463135,
+        0.46567660570144653,
+        0.4958208203315735
+      ],
+      "method": "normal calibration only; higher order statistic; strict score > threshold",
+      "source_paths_sha256": "90aead9f27f930d17a287b97c39f7dbde5d8c1b8b374d097d8916bace4a98bcd"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.045449986937456,
+        "p95_ms": 6.350579977151937
+      },
+      "host_to_device": {
+        "p50_ms": 0.6621999928029254,
+        "p95_ms": 0.9873500079265795
+      },
+      "model": {
+        "p50_ms": 2.353700008825399,
+        "p95_ms": 3.4392300178296864
+      },
+      "postprocessing": {
+        "p50_ms": 2.1847000025445595,
+        "p95_ms": 3.5928749930462796
+      },
+      "end_to_end": {
+        "p50_ms": 10.230950007098727,
+        "p95_ms": 14.461175014730541
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "memory-resident RGB -> native probability map on CPU; file read/decode excluded",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, [N/A], P5, 435 MHz, 50"
+      },
+      "peak_inference_allocated_bytes": 44185088,
+      "peak_inference_reserved_bytes": 354418688
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.7731200396825397,
+          0.9002411246957471
+        ],
+        "image_ap": [
+          0.9367480308707196,
+          0.9783218717357305
+        ],
+        "recall": [
+          0.39837038635873084,
+          0.5789473684210527
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.5697637621430675,
+          0.7333333333333334
+        ],
+        "pixel_auroc": [
+          0.8563524063657281,
+          0.8999886540496524
+        ],
+        "pixel_ap": [
+          0.28764170697248076,
+          0.38473552475285333
+        ],
+        "au_pro": [
+          0.6334031899549174,
+          0.7297076813106224
+        ]
+      },
+      "pixel_ci_method": "whole-image bootstrap, 4096 fixed probability bins; primary metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.8793885612785083,
+      "pixel_ap": 0.3379168807049693,
+      "au_pro": 0.6802206361410633
+    },
+    "training_seconds": 5.157954900001641,
+    "training_peak_allocated_bytes": 490074112,
+    "checkpoint_bytes": 343117,
+    "parameters": 83857,
+    "evaluation_seconds": 46.48960349999834,
+    "per_defect": [
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "broken_teeth",
+        "defective_images": 19,
+        "auroc": 0.9210526315789473,
+        "ap": 0.9255587472383136,
+        "recall": 0.47368421052631576,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6428571428571429,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            10,
+            9
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "combined",
+        "defective_images": 16,
+        "auroc": 0.890625,
+        "ap": 0.8842610080891331,
+        "recall": 0.5,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.6666666666666666,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "fabric_border",
+        "defective_images": 17,
+        "auroc": 0.7757352941176471,
+        "ap": 0.7662077638560703,
+        "recall": 0.29411764705882354,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.45454545454545453,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            12,
+            5
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "fabric_interior",
+        "defective_images": 16,
+        "auroc": 0.9765625,
+        "ap": 0.9732142857142857,
+        "recall": 0.875,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            2,
+            14
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "rough",
+        "defective_images": 17,
+        "auroc": 0.9393382352941176,
+        "ap": 0.9479575163398692,
+        "recall": 0.8235294117647058,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.9032258064516129,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            3,
+            14
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "split_teeth",
+        "defective_images": 18,
+        "auroc": 0.8142361111111112,
+        "ap": 0.8563816141830327,
+        "recall": 0.3333333333333333,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.5,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            12,
+            6
+          ]
+        ]
+      },
+      {
+        "category": "zipper",
+        "seed": 2027,
+        "defect": "squeezed_teeth",
+        "defective_images": 16,
+        "auroc": 0.546875,
+        "ap": 0.514988514621243,
+        "recall": 0.125,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.2222222222222222,
+        "confusion_matrix": [
+          [
+            32,
+            0
+          ],
+          [
+            14,
+            2
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/basic_cnn/01-test-dice-zipper-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "4fd6050065219e06734d12589d628b42842d05336a6d5297c0818bd5334fe6a1",
+    "freeze_sha256": "13b8d6a81a4e0f40af8732bd4ad58376554b6006ce0bb0126b13f9e105fb4404",
+    "image_rows": 151,
+    "evaluated_at_utc": "2026-11-12T06:46:33.665008+00:00"
+  },
+  "calibration": {
+    "category": "zipper",
+    "images": 36,
+    "image_threshold": 0.9641539454460144,
+    "secondary_image_threshold_q99": 0.9993956089019775,
+    "pixel_threshold": 0.739166259765625,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_bins": 65536,
+    "pixel_calibration_samples": 2359296,
+    "pixel_score_resolution": 256,
+    "image_threshold_bootstrap_95ci": [
+      0.9212751984596252,
+      0.9993956089019775
+    ],
+    "calibration_scores": [
+      0.9108679890632629,
+      0.6946248412132263,
+      0.8547431230545044,
+      0.8020459413528442,
+      0.9003453850746155,
+      0.5176188349723816,
+      0.9212751984596252,
+      0.46457481384277344,
+      0.9993956089019775,
+      0.8918423652648926,
+      0.9641539454460144,
+      0.34390392899513245,
+      0.9076228737831116,
+      0.8442674875259399,
+      0.9585562944412231,
+      0.4547240734100342,
+      0.6673485636711121,
+      0.8991156816482544,
+      0.9530296325683594,
+      0.9064868092536926,
+      0.8814613819122314,
+      0.416853129863739,
+      0.4614219665527344,
+      0.9412651658058167,
+      0.9074447751045227,
+      0.27171972393989563,
+      0.49896538257598877,
+      0.6746852993965149,
+      0.688849151134491,
+      0.29137590527534485,
+      0.8814946413040161,
+      0.8523169159889221,
+      0.8551918268203735,
+      0.6154749393463135,
+      0.46567660570144653,
+      0.4958208203315735
+    ],
+    "method": "normal calibration only; higher order statistic; strict score > threshold",
+    "source_paths_sha256": "90aead9f27f930d17a287b97c39f7dbde5d8c1b8b374d097d8916bace4a98bcd"
+  },
+  "paths": {
+    "local": "outputs/basic_cnn/01-test-dice-zipper-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T06:46:33.667008+00:00",
+  "config_sha256": "bb5cb20dc5504625f7caf5725bdfc365541bd16fc48487dbe2fa7960deecd436"
+}
