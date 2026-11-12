@@ -1,0 +1,49 @@
+{
+  "configuration": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 3,
+    "seed": 2026
+  },
+  "parameters": 31499,
+  "fit_count": 147,
+  "development_count": 31,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3268111354234267,
+      "normal_development_loss": 0.3069065713113354,
+      "train_seconds": 2.6236680000001797,
+      "elapsed_seconds": 2.8244168999990507,
+      "peak_allocated_bytes": 609729536,
+      "peak_reserved_bytes": 901775360
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.24193118796462104,
+      "normal_development_loss": 0.10196471070089648,
+      "train_seconds": 1.216956800000844,
+      "elapsed_seconds": 4.102682699998695,
+      "peak_allocated_bytes": 609729536,
+      "peak_reserved_bytes": 901775360
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.08909734242221937,
+      "normal_development_loss": 0.08615253240831437,
+      "train_seconds": 1.2079755999984627,
+      "elapsed_seconds": 5.362124699999185,
+      "peak_allocated_bytes": 609729536,
+      "peak_reserved_bytes": 901775360
+    }
+  ],
+  "wall_seconds": 5.396767899999759,
+  "checkpoint": "checkpoints\\autoencoder\\02-pilot-shallow-bottle-s2026-v1\\last.pt",
+  "checkpoint_sha256": "16578563bd348e51a0fb2a3fd222cfea05243d1c03faffe99f5c5dab23362480",
+  "checkpoint_bytes": 404015
+}

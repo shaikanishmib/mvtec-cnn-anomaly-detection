@@ -1,0 +1,62 @@
+{
+  "experiment_id": "02-pilot-shallow-bottle-s2026-v1-start",
+  "model_family": "convolutional_autoencoder",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "A scratch bottleneck model learns to reconstruct fitting normals; measure throughput before development.",
+  "preprocessing": "PIL RGB bilinear 256x256, float32 /255",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 3,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git_sha": "cf12623f6aea48b27d736e76dcc937bdb7903d30",
+    "dirty": true,
+    "source_sha256": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {},
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-pilot-shallow-bottle-s2026-v1"
+  },
+  "interpretation": "Throughput pilot only; no official test access.",
+  "decision": "Measure before scaling",
+  "status": "started",
+  "recorded_at": "2026-11-12T15:35:45.380492+00:00",
+  "config_sha256": "1fc460cf058c6e1c2d6c45de0352502433c7f585446ff0ce540c064176ba1fad"
+}

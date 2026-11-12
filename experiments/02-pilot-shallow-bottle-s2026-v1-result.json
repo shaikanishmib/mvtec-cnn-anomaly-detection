@@ -1,0 +1,110 @@
+{
+  "experiment_id": "02-pilot-shallow-bottle-s2026-v1-result",
+  "model_family": "convolutional_autoencoder",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "A scratch bottleneck model learns to reconstruct fitting normals; measure throughput before development.",
+  "preprocessing": "PIL RGB bilinear 256x256, float32 /255",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 3,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git_sha": "cf12623f6aea48b27d736e76dcc937bdb7903d30",
+    "dirty": true,
+    "source_sha256": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {},
+  "metrics": {
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "l1",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 3,
+      "seed": 2026
+    },
+    "parameters": 31499,
+    "fit_count": 147,
+    "development_count": 31,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3268111354234267,
+        "normal_development_loss": 0.3069065713113354,
+        "train_seconds": 2.6236680000001797,
+        "elapsed_seconds": 2.8244168999990507,
+        "peak_allocated_bytes": 609729536,
+        "peak_reserved_bytes": 901775360
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.24193118796462104,
+        "normal_development_loss": 0.10196471070089648,
+        "train_seconds": 1.216956800000844,
+        "elapsed_seconds": 4.102682699998695,
+        "peak_allocated_bytes": 609729536,
+        "peak_reserved_bytes": 901775360
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.08909734242221937,
+        "normal_development_loss": 0.08615253240831437,
+        "train_seconds": 1.2079755999984627,
+        "elapsed_seconds": 5.362124699999185,
+        "peak_allocated_bytes": 609729536,
+        "peak_reserved_bytes": 901775360
+      }
+    ],
+    "wall_seconds": 5.396767899999759,
+    "checkpoint": "checkpoints\\autoencoder\\02-pilot-shallow-bottle-s2026-v1\\last.pt",
+    "checkpoint_sha256": "16578563bd348e51a0fb2a3fd222cfea05243d1c03faffe99f5c5dab23362480",
+    "checkpoint_bytes": 404015
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-pilot-shallow-bottle-s2026-v1"
+  },
+  "interpretation": "See actual curves; no detection quality measured by reconstruction loss alone.",
+  "decision": "Pilot complete; development and freeze pending",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:35:57.489991+00:00",
+  "config_sha256": "8f02d9276cb7d07629588108a0fee40fd812bc11f34d9c1011ea23e78d197e44"
+}
