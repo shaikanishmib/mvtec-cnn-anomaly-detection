@@ -3,3 +3,10 @@ reports/partitions/*.csv text eol=lf
 reports/*.csv text eol=lf
 requirements*.txt text eol=lf
 *.ipynb text eol=lf
+*.py text eol=lf
+configs/*.json text eol=lf
+# Preserve the byte identities of Windows-generated frozen records on checkout.
+configs/basic_cnn_frozen.json text eol=crlf
+reports/**/*.csv text eol=lf
+reports/**/*.json text eol=crlf
+experiments/*.json text eol=crlf

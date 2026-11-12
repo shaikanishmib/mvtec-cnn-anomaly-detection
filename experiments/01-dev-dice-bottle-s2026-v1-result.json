@@ -1,0 +1,172 @@
+{
+  "experiment_id": "01-dev-dice-bottle-s2026-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Controlled dice ablation; compare only fixed fitting-derived proxy and normal-development objectives.",
+  "preprocessing": {
+    "RGB": true,
+    "resize": 256,
+    "float_range": [
+      0,
+      1
+    ],
+    "model_centering": "2*x-1",
+    "resize_method": "PIL bilinear antialiased"
+  },
+  "hyperparameters": {
+    "seed": 2026,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "dice",
+    "width": 16,
+    "synthetic": "mixed",
+    "dice_weight": 1.0
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "phase": "development",
+    "code": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "partition_identities": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "metrics": {
+    "experiment_id": "01-dev-dice-bottle-s2026-v1",
+    "category": "bottle",
+    "phase": "development",
+    "configuration": {
+      "seed": 2026,
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "max_epochs": 8,
+      "minimum_epochs": 3,
+      "patience": 3,
+      "normal_probability": 0.5,
+      "positive_weight": 8.0,
+      "name": "dice",
+      "width": 16,
+      "synthetic": "mixed",
+      "dice_weight": 1.0
+    },
+    "configuration_sha256": "f1244b96b2c22408b02b4a1b145114d81b1b2bfc714afceb2738462a585d25e6",
+    "best_epoch": 7,
+    "epochs_completed": 8,
+    "parameters": 83857,
+    "gradient_normal_images": 118,
+    "probe_normal_sources": 29,
+    "training_seconds_including_loading_validation": 13.845991100009996,
+    "training_gpu_seconds": 2.9982780999853276,
+    "selected_development_metrics": {
+      "train_loss": 0.984087451029632,
+      "gradient_norm": 13.825499615426791,
+      "train_epoch_seconds": 0.3348184000060428,
+      "normal_development_bce": 0.03747978061437607,
+      "probe_loss": 0.9627103805541992,
+      "stopping_objective": 0.5000950805842876,
+      "proxy_image_auroc": 0.9643281807372176,
+      "proxy_image_ap": 0.9763061795081498,
+      "proxy_recall_at_dev_normal_q95": 0.9310344827586207,
+      "proxy_pixel_ap": 0.7033857605166904,
+      "development_threshold": 0.29942455887794495,
+      "probe_positives": 29,
+      "normal_development_images": 31,
+      "epoch": 7,
+      "elapsed_seconds": 12.160263099998701,
+      "peak_allocated_bytes": 546566144,
+      "peak_reserved_bytes": 752877568
+    },
+    "peak_allocated_bytes": 546566144,
+    "peak_reserved_bytes": 752877568,
+    "checkpoint": "checkpoints/basic_cnn/01-dev-dice-bottle-s2026-v1/best.pt",
+    "checkpoint_sha256": "a78222a0a1ab5af940d7cfbaa9e6b9568bcca779e402ecd428093d30b4e8a1ef",
+    "checkpoint_bytes": 343117,
+    "history": "reports/basic_cnn/runs/01-dev-dice-bottle-s2026-v1-history.csv",
+    "history_sha256": "d84216f74f61cb4fd6acc0d746618936137fbda9328f236b720a94e9dc36ea88",
+    "code_identity": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    }
+  },
+  "calibration": {
+    "used": false
+  },
+  "paths": {
+    "output": "outputs/basic_cnn/01-dev-dice-bottle-s2026-v1",
+    "checkpoints": "checkpoints/basic_cnn/01-dev-dice-bottle-s2026-v1"
+  },
+  "interpretation": "Synthetic development results only",
+  "decision": "await bounded comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-12T05:52:13.841576+00:00",
+  "config_sha256": "e7033cc7c9fec308b5b7dfeef3faeb38459f5385b0cf393a19b7ddff777e2b8b"
+}

@@ -10,7 +10,7 @@ both successful and unsuccessful experiments. No benchmark results exist yet.
 | Notebook | Focus | Status |
 |---|---|---|
 | [00](notebooks/00_dataset_eda.ipynb) | Dataset EDA and integrity | Complete real-data EDA and verified CUDA kernel |
-| 01 | Basic CNN, declared one-class or synthetic proxy objective | Planned |
+| 01 | Basic CNN, synthetic-supervised segmentation | Pilot and bounded development complete; frozen all-category confirmation pending |
 | 02 | Convolutional autoencoder | Planned |
 | 03 | PatchCore | Planned |
 | 04 | SuperSimpleNet | Planned |
@@ -96,8 +96,14 @@ The RTX 4060 Laptop GPU reports 8,188 MiB VRAM (about 8 GB), driver 610.91.
 Installed PyTorch **2.11.0+cu128** and torchvision **0.26.0+cu128** detect the GPU.
 GPU matrix multiplication, a synthetic CNN forward/backward check and torchvision
 CUDA NMS passed in the research kernel. See [GPU evidence](reports/cuda_verification.json).
-Model-specific fit time, inference latency and memory feasibility remain unmeasured.
-No model weights have been downloaded and no anomaly detector has been trained.
+No pretrained weights have been downloaded. The scratch Basic CNN implementation
+has completed one bottle pilot and 19 further controlled development fits across
+four predeclared categories. The five-configuration search selected mixed
+synthetic edits with weighted BCE+Dice; these proxy results are not real-defect
+benchmark results. See [Basic CNN preregistration](docs/basic_cnn_protocol.md),
+[development comparison](reports/basic_cnn/development_macro.csv) and
+[frozen configuration](configs/basic_cnn_frozen.json). Full confirmation and
+Notebook 01 are in progress; later models remain unstarted.
 
 ## Repository layout and next stage
 
@@ -106,7 +112,7 @@ auditable utilities; `configs/`, `experiments/`, `reports/`, `scripts/`, `tests/
 and `docs/` hold configuration, evidence and reproduction support. `data/`,
 `checkpoints/` and `outputs/` are local ignored storage; scripts recreate outputs.
 
-Next, when separately requested: Notebook 01 — Basic CNN. Each future notebook
+Current work: complete Notebook 01 — Basic CNN under its frozen policy. Each future notebook
 must preserve its full experimental story, tried configurations, actual results,
 calibration, evaluation, failures and interpretations. After the research
 comparison, a separate engineering

@@ -1,0 +1,172 @@
+{
+  "experiment_id": "01-dev-perturb-wood-s2026-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "wood"
+  ],
+  "hypothesis": "Controlled perturb ablation; compare only fixed fitting-derived proxy and normal-development objectives.",
+  "preprocessing": {
+    "RGB": true,
+    "resize": 256,
+    "float_range": [
+      0,
+      1
+    ],
+    "model_centering": "2*x-1",
+    "resize_method": "PIL bilinear antialiased"
+  },
+  "hyperparameters": {
+    "seed": 2026,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "perturb",
+    "width": 16,
+    "synthetic": "perturb",
+    "dice_weight": 0.0
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "phase": "development",
+    "code": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "partition_identities": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "metrics": {
+    "experiment_id": "01-dev-perturb-wood-s2026-v1",
+    "category": "wood",
+    "phase": "development",
+    "configuration": {
+      "seed": 2026,
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "max_epochs": 8,
+      "minimum_epochs": 3,
+      "patience": 3,
+      "normal_probability": 0.5,
+      "positive_weight": 8.0,
+      "name": "perturb",
+      "width": 16,
+      "synthetic": "perturb",
+      "dice_weight": 0.0
+    },
+    "configuration_sha256": "77047f7fc094af7cdc02ef61f7c6ce2b38cf63ba5fb19b057093d67aab0b92d1",
+    "best_epoch": 2,
+    "epochs_completed": 5,
+    "parameters": 83857,
+    "gradient_normal_images": 139,
+    "probe_normal_sources": 34,
+    "training_seconds_including_loading_validation": 10.699196200002916,
+    "training_gpu_seconds": 2.1931713000230957,
+    "selected_development_metrics": {
+      "train_loss": 0.12301866045529894,
+      "gradient_norm": 2.189488750567539,
+      "train_epoch_seconds": 0.45170500001404434,
+      "normal_development_bce": 0.030911829322576523,
+      "probe_loss": 0.3654424846172333,
+      "stopping_objective": 0.1981771569699049,
+      "proxy_image_auroc": 0.7923875432525952,
+      "proxy_image_ap": 0.8556189894396407,
+      "proxy_recall_at_dev_normal_q95": 0.6470588235294118,
+      "proxy_pixel_ap": 0.4923376940019052,
+      "development_threshold": 0.15609103441238403,
+      "probe_positives": 34,
+      "normal_development_images": 37,
+      "epoch": 2,
+      "elapsed_seconds": 4.523757299990393,
+      "peak_allocated_bytes": 562556928,
+      "peak_reserved_bytes": 752877568
+    },
+    "peak_allocated_bytes": 562556928,
+    "peak_reserved_bytes": 752877568,
+    "checkpoint": "checkpoints/basic_cnn/01-dev-perturb-wood-s2026-v1/best.pt",
+    "checkpoint_sha256": "aea5647de348f0ce645c7bc4b780d923c2c990341961bcbccf326995ce3e8881",
+    "checkpoint_bytes": 343117,
+    "history": "reports/basic_cnn/runs/01-dev-perturb-wood-s2026-v1-history.csv",
+    "history_sha256": "44473c4b9fe3d3d5cc88eb1e153e7b2bf24506775956866eb3fcd721ec0a1e76",
+    "code_identity": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    }
+  },
+  "calibration": {
+    "used": false
+  },
+  "paths": {
+    "output": "outputs/basic_cnn/01-dev-perturb-wood-s2026-v1",
+    "checkpoints": "checkpoints/basic_cnn/01-dev-perturb-wood-s2026-v1"
+  },
+  "interpretation": "Synthetic development results only",
+  "decision": "await bounded comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-12T05:51:59.794272+00:00",
+  "config_sha256": "880a5b0c8f2c1a7b6c975f764750c54320c489eb5de3b9a45a0fedc096af42e5"
+}

@@ -1,0 +1,172 @@
+{
+  "experiment_id": "01-dev-patch-bottle-s2026-v1-result",
+  "model_family": "BasicCNN",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Controlled patch ablation; compare only fixed fitting-derived proxy and normal-development objectives.",
+  "preprocessing": {
+    "RGB": true,
+    "resize": 256,
+    "float_range": [
+      0,
+      1
+    ],
+    "model_centering": "2*x-1",
+    "resize_method": "PIL bilinear antialiased"
+  },
+  "hyperparameters": {
+    "seed": 2026,
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 8,
+    "minimum_epochs": 3,
+    "patience": 3,
+    "normal_probability": 0.5,
+    "positive_weight": 8.0,
+    "name": "patch",
+    "width": 16,
+    "synthetic": "patch",
+    "dice_weight": 0.0
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "phase": "development",
+    "code": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "partition_identities": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "metrics": {
+    "experiment_id": "01-dev-patch-bottle-s2026-v1",
+    "category": "bottle",
+    "phase": "development",
+    "configuration": {
+      "seed": 2026,
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "max_epochs": 8,
+      "minimum_epochs": 3,
+      "patience": 3,
+      "normal_probability": 0.5,
+      "positive_weight": 8.0,
+      "name": "patch",
+      "width": 16,
+      "synthetic": "patch",
+      "dice_weight": 0.0
+    },
+    "configuration_sha256": "e16cb8e2663a4c8bea2f8a608616112bab23aaa09f614d7b48096f362fa46d9a",
+    "best_epoch": 7,
+    "epochs_completed": 8,
+    "parameters": 83857,
+    "gradient_normal_images": 118,
+    "probe_normal_sources": 29,
+    "training_seconds_including_loading_validation": 15.375963300000876,
+    "training_gpu_seconds": 3.618795400019735,
+    "selected_development_metrics": {
+      "train_loss": 0.22953329247943424,
+      "gradient_norm": 2.196675114712473,
+      "train_epoch_seconds": 0.4800708999973722,
+      "normal_development_bce": 0.059654030948877335,
+      "probe_loss": 0.33862096071243286,
+      "stopping_objective": 0.1991374958306551,
+      "proxy_image_auroc": 0.6979785969084423,
+      "proxy_image_ap": 0.7863402623520586,
+      "proxy_recall_at_dev_normal_q95": 0.5172413793103449,
+      "proxy_pixel_ap": 0.33532093183217826,
+      "development_threshold": 0.36320123076438904,
+      "probe_positives": 29,
+      "normal_development_images": 31,
+      "epoch": 7,
+      "elapsed_seconds": 13.430054500000551,
+      "peak_allocated_bytes": 546566144,
+      "peak_reserved_bytes": 752877568
+    },
+    "peak_allocated_bytes": 546566144,
+    "peak_reserved_bytes": 752877568,
+    "checkpoint": "checkpoints/basic_cnn/01-dev-patch-bottle-s2026-v1/best.pt",
+    "checkpoint_sha256": "7ef42ea576fdba5fbc1e11f287b9ca05e24ac9f63ac9e784d2883026d9c6bb7f",
+    "checkpoint_bytes": 343117,
+    "history": "reports/basic_cnn/runs/01-dev-patch-bottle-s2026-v1-history.csv",
+    "history_sha256": "e787a01dcb285629a5cd78d8d194a5fec10c013ced96237613c421b23f561a5c",
+    "code_identity": {
+      "git_sha": "a6c3ede11fee24a14f2a701128c82c66b2cf8bba",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    }
+  },
+  "calibration": {
+    "used": false
+  },
+  "paths": {
+    "output": "outputs/basic_cnn/01-dev-patch-bottle-s2026-v1",
+    "checkpoints": "checkpoints/basic_cnn/01-dev-patch-bottle-s2026-v1"
+  },
+  "interpretation": "Synthetic development results only",
+  "decision": "await bounded comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-12T05:50:45.206471+00:00",
+  "config_sha256": "f9709d39bb5e087f74f88e479f3a45bec3eb77bce5886a9143a043634da8d9a4"
+}
