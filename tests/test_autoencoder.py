@@ -66,3 +66,41 @@ def test_reproducibility_and_shared_calibration_metrics():
     result = binary_metrics([0,0,1,1], [18,19,20,21], threshold)
     assert result['confusion_matrix'] == [[2,0],[0,2]]
     assert result['auroc'] == result['ap'] == result['f1'] == 1.
+
+
+def test_calibration_uses_only_normal_partition_and_raw_residual(monkeypatch):
+    import pandas as pd
+    from anomaly_detection import ae_evaluation as evaluation
+    requests=[]
+    def partition(name,category):
+        requests.append((name,category))
+        assert name=='calibration'
+        return pd.DataFrame(dict(path=['bottle/train/good/a.png','bottle/train/good/b.png'],sha256=['a','b']))
+    monkeypatch.setattr(evaluation,'read_partition',partition)
+    monkeypatch.setattr(torch.Tensor,'cuda',lambda self:self)
+    images=torch.stack([torch.full((3,8,8),51,dtype=torch.uint8),torch.full((3,8,8),102,dtype=torch.uint8)])
+    monkeypatch.setattr(evaluation,'load_resized',lambda rows,resolution:images)
+    monkeypatch.setattr(evaluation,'reconstruct',lambda model,images:torch.zeros_like(images,dtype=torch.float32))
+    model=ConvAutoencoder(width=4)
+    model.map_kind='squared'
+    result=evaluation.calibrate_model(model,'bottle',8)
+    assert requests==[('calibration','bottle')]
+    assert result['images']==2
+    assert result['image_threshold']==pytest.approx(.16)
+    assert result['pixel_threshold']==pytest.approx(np.ceil(.16*65536)/65536)
+    assert result['calibration_scores']==pytest.approx([.04,.16])
+
+
+def test_training_step_reproducibility():
+    def step(seed):
+        seed_everything(seed)
+        model=ConvAutoencoder(width=4)
+        optimizer=torch.optim.Adam(model.parameters(),lr=.001)
+        batch=torch.rand(2,3,32,32)
+        loss=reconstruction_loss(model(batch),batch,'mse')
+        loss.backward();optimizer.step()
+        return loss.detach(),{k:v.clone() for k,v in model.state_dict().items()}
+    a,weights_a=step(2026)
+    b,weights_b=step(2026)
+    assert torch.equal(a,b)
+    assert all(torch.equal(weights_a[k],weights_b[k]) for k in weights_a)

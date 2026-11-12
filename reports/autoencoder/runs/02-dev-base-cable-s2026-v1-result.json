@@ -1,0 +1,227 @@
+{
+  "experiment_id": "02-dev-base-cable-s2026-v1",
+  "category": "cable",
+  "configuration": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026
+  },
+  "configuration_sha256": "e8569f5a09ded53560acc1791b302b819390523207a44827f60cc0859496a878",
+  "gradient_normal_images": 127,
+  "probe_normal_sources": 31,
+  "parameters": 31499,
+  "metrics": {
+    "absolute": {
+      "auroc": 0.4245577523413111,
+      "ap": 0.4715149831330177,
+      "recall": 0.06451612903225806,
+      "fpr": 0.06451612903225806,
+      "precision": 0.5,
+      "f1": 0.1142857142857143,
+      "confusion_matrix": [
+        [
+          29,
+          2
+        ],
+        [
+          29,
+          2
+        ]
+      ],
+      "pixel_ap": 0.05061545189719361
+    },
+    "squared": {
+      "auroc": 0.43288241415192513,
+      "ap": 0.4761066712234412,
+      "recall": 0.06451612903225806,
+      "fpr": 0.06451612903225806,
+      "precision": 0.5,
+      "f1": 0.1142857142857143,
+      "confusion_matrix": [
+        [
+          29,
+          2
+        ],
+        [
+          29,
+          2
+        ]
+      ],
+      "pixel_ap": 0.057435520239868434
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1885591914334635,
+      "normal_development_loss": 0.17616572976112366,
+      "train_seconds": 1.3064283999992767,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.1662834352395666,
+      "normal_development_loss": 0.15683898329734802,
+      "train_seconds": 1.022317100001601,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.14336963080045745,
+      "normal_development_loss": 0.12763148546218872,
+      "train_seconds": 1.0233289000007062,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1132520605025329,
+      "normal_development_loss": 0.10692787170410156,
+      "train_seconds": 1.0157517999996344,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.09811132184163791,
+      "normal_development_loss": 0.08743941783905029,
+      "train_seconds": 1.0298762999991595,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.08406942460949965,
+      "normal_development_loss": 0.07964866608381271,
+      "train_seconds": 1.0390513999991526,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.07517434938216773,
+      "normal_development_loss": 0.07121606916189194,
+      "train_seconds": 1.030710299999555,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.07088832756665749,
+      "normal_development_loss": 0.06999248266220093,
+      "train_seconds": 1.0359294000008958,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.06858389361167518,
+      "normal_development_loss": 0.06758449226617813,
+      "train_seconds": 1.0499096999992616,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.06665898390172974,
+      "normal_development_loss": 0.06600499153137207,
+      "train_seconds": 1.0203409000005195,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.06509085140359683,
+      "normal_development_loss": 0.06492819637060165,
+      "train_seconds": 1.0260446000011143,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.06448436886306823,
+      "normal_development_loss": 0.06534215062856674,
+      "train_seconds": 1.020804699999644,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.06319350972184985,
+      "normal_development_loss": 0.0626600980758667,
+      "train_seconds": 1.0488388000012492,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.06238297396522807,
+      "normal_development_loss": 0.06545128673315048,
+      "train_seconds": 1.0145482000007178,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.062025730593467325,
+      "normal_development_loss": 0.06253544241189957,
+      "train_seconds": 1.0248131999996986,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.06036485860666891,
+      "normal_development_loss": 0.06008187308907509,
+      "train_seconds": 1.0306713999998465,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.05924035966630996,
+      "normal_development_loss": 0.05877848342061043,
+      "train_seconds": 1.043274499999825,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.05876672625776351,
+      "normal_development_loss": 0.05865686759352684,
+      "train_seconds": 1.0184798000009323,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.0582892778292885,
+      "normal_development_loss": 0.05833945795893669,
+      "train_seconds": 1.0264865000008285,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.05724745422719032,
+      "normal_development_loss": 0.056982412934303284,
+      "train_seconds": 1.0273250999998709,
+      "peak_allocated_bytes": 676215808,
+      "peak_reserved_bytes": 1067450368
+    }
+  ],
+  "training_seconds_including_loading_validation": 39.09555929999988,
+  "peak_allocated_bytes": 676215808,
+  "peak_reserved_bytes": 1067450368,
+  "checkpoint": "checkpoints\\autoencoder\\02-dev-base-cable-s2026-v1\\last.pt",
+  "checkpoint_sha256": "72506e2af6ff5a7fd99740cd75852fefe20b0d4e1d29726144f1460d94bf0a71",
+  "checkpoint_bytes": 131133
+}

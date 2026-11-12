@@ -1,0 +1,298 @@
+{
+  "experiment_id": "02-development-selection-v1",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "hypothesis": "Choose a single reconstruction policy using registered proxy evidence",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "frozen_at_utc": "2026-11-12T15:51:26.741536+00:00",
+    "selected_variant": "mse",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2026,
+      "map_kind": "squared"
+    },
+    "categories": [
+      "bottle",
+      "cable",
+      "capsule",
+      "carpet",
+      "grid",
+      "hazelnut",
+      "leather",
+      "metal_nut",
+      "pill",
+      "screw",
+      "tile",
+      "toothbrush",
+      "transistor",
+      "wood",
+      "zipper"
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "scoring": "channel-mean residual, fixed top ceil(1% HW) mean at model resolution; native bilinear pixel maps",
+    "calibration": "image higher q95, strict >; pixel upper bin edge pooled normal q99.5 at model resolution, 65536 bins",
+    "evaluation_source_sha256": "4d5cfd2505fdbc7b3b77fff317bd43a8937acc545d4802eb9e0494f006b3b8ed",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "selection": "four-category mean (proxy image AUROC + pixel AP)/2; no official test evidence",
+    "target_image_fpr": 0.05
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": false
+  },
+  "metrics": {
+    "candidates": [
+      {
+        "variant": "mse",
+        "map_kind": "squared",
+        "objective": 0.3689517271823793,
+        "parameters": 31499.0,
+        "training_seconds": 27.80788235,
+        "peak_allocated_bytes": 694696448.0,
+        "auroc": 0.6149728824101051,
+        "ap": 0.6645270350352682,
+        "recall": 0.23195711581244116,
+        "fpr": 0.06262411404409457,
+        "precision": 0.7482954545454545,
+        "f1": 0.3424350649350649,
+        "pixel_ap": 0.1229305719546536
+      },
+      {
+        "variant": "deeper",
+        "map_kind": "squared",
+        "objective": 0.3623635504538543,
+        "parameters": 126667.0,
+        "training_seconds": 31.90652240000054,
+        "peak_allocated_bytes": 704165888.0,
+        "auroc": 0.6188110507762514,
+        "ap": 0.6675410898262599,
+        "recall": 0.18707841333675593,
+        "fpr": 0.02950571860471749,
+        "precision": 0.8402777777777778,
+        "f1": 0.2920303283915192,
+        "pixel_ap": 0.1059160501314572
+      },
+      {
+        "variant": "narrow",
+        "map_kind": "squared",
+        "objective": 0.35444437734024065,
+        "parameters": 29381.0,
+        "training_seconds": 26.619080924999253,
+        "peak_allocated_bytes": 679926784.0,
+        "auroc": 0.6038996888749505,
+        "ap": 0.6524588558453456,
+        "recall": 0.2219720629759562,
+        "fpr": 0.06262411404409457,
+        "precision": 0.7642676767676768,
+        "f1": 0.3389837398373984,
+        "pixel_ap": 0.1049890658055308
+      },
+      {
+        "variant": "mse",
+        "map_kind": "absolute",
+        "objective": 0.34939820932313836,
+        "parameters": 31499.0,
+        "training_seconds": 27.80788235,
+        "peak_allocated_bytes": 694696448.0,
+        "auroc": 0.5957611711862547,
+        "ap": 0.6404875381617836,
+        "recall": 0.19790953623684437,
+        "fpr": 0.06262411404409457,
+        "precision": 0.715625,
+        "f1": 0.29089971430396966,
+        "pixel_ap": 0.10303524746002192
+      },
+      {
+        "variant": "deeper",
+        "map_kind": "absolute",
+        "objective": 0.33909896731942657,
+        "parameters": 126667.0,
+        "training_seconds": 31.90652240000054,
+        "peak_allocated_bytes": 704165888.0,
+        "auroc": 0.5911044515168016,
+        "ap": 0.6260919175650304,
+        "recall": 0.16886996948176036,
+        "fpr": 0.04619092438892217,
+        "precision": 0.5223214285714286,
+        "f1": 0.23847481021394065,
+        "pixel_ap": 0.08709348312205159
+      },
+      {
+        "variant": "narrow",
+        "map_kind": "absolute",
+        "objective": 0.3390483339523321,
+        "parameters": 29381.0,
+        "training_seconds": 26.619080924999253,
+        "peak_allocated_bytes": 679926784.0,
+        "auroc": 0.5908904086876067,
+        "ap": 0.6240261782324645,
+        "recall": 0.18368677982658793,
+        "fpr": 0.06262411404409457,
+        "precision": 0.6941964285714286,
+        "f1": 0.2690303657694962,
+        "pixel_ap": 0.08720625921705748
+      },
+      {
+        "variant": "wide",
+        "map_kind": "squared",
+        "objective": 0.3369719193388738,
+        "parameters": 39971.0,
+        "training_seconds": 28.397048075000384,
+        "peak_allocated_bytes": 690227200.0,
+        "auroc": 0.5834515707355202,
+        "ap": 0.6324067255762217,
+        "recall": 0.16321264189555346,
+        "fpr": 0.05400342438892217,
+        "precision": 0.716765873015873,
+        "f1": 0.26252451781627983,
+        "pixel_ap": 0.09049226794222737
+      },
+      {
+        "variant": "base",
+        "map_kind": "squared",
+        "objective": 0.3331954507471881,
+        "parameters": 31499.0,
+        "training_seconds": 33.409696699999586,
+        "peak_allocated_bytes": 682064896.0,
+        "auroc": 0.5767781836734545,
+        "ap": 0.623152602092802,
+        "recall": 0.12511720644020422,
+        "fpr": 0.03676204507857733,
+        "precision": 0.7837301587301587,
+        "f1": 0.2106692366773012,
+        "pixel_ap": 0.08961271782092181
+      },
+      {
+        "variant": "wide",
+        "map_kind": "absolute",
+        "objective": 0.3168639812076265,
+        "parameters": 39971.0,
+        "training_seconds": 28.397048075000384,
+        "peak_allocated_bytes": 690227200.0,
+        "auroc": 0.5624876578164686,
+        "ap": 0.6091302270841977,
+        "recall": 0.14279376479564188,
+        "fpr": 0.06262411404409457,
+        "precision": 0.6666666666666666,
+        "f1": 0.22443863724351532,
+        "pixel_ap": 0.07124030459878442
+      },
+      {
+        "variant": "base",
+        "map_kind": "absolute",
+        "objective": 0.3086553263523327,
+        "parameters": 31499.0,
+        "training_seconds": 33.409696699999586,
+        "peak_allocated_bytes": 682064896.0,
+        "auroc": 0.5474042740198413,
+        "ap": 0.5894638121993181,
+        "recall": 0.0988821268646074,
+        "fpr": 0.03676204507857733,
+        "precision": 0.7416666666666667,
+        "f1": 0.1739449270699271,
+        "pixel_ap": 0.0699063786848243
+      }
+    ],
+    "budget": {
+      "pilot": "02-pilot-shallow-bottle-s2026-v1",
+      "configuration": {
+        "width": 16,
+        "depth": 3,
+        "latent_channels": 8,
+        "loss": "mse",
+        "resolution": 256,
+        "batch_size": 16,
+        "learning_rate": 0.001,
+        "epochs": 20,
+        "seed": 2026,
+        "map_kind": "squared"
+      },
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "models": 45,
+      "fitting_images_per_seed": 2551,
+      "epochs": 20,
+      "measured_selected_seconds_per_training_image_epoch": 0.008282960582707511,
+      "expected_training_seconds": 1267.7899467892116,
+      "observed_selected_peak_allocated_bytes": 715143680,
+      "caveat": "Estimate excludes initial decoding, validation, calibration, native metrics and latency benchmark; category sizes/hardware load vary.",
+      "planned_native_evaluation_minutes": 60,
+      "final_training_budget_minutes": 45
+    }
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-dev-base-bottle-s2026-v1"
+  },
+  "interpretation": "Proxy superiority does not imply real-defect superiority. No combined loss/smoothing/resolution trial is justified by this bounded comparison.",
+  "decision": "freeze mse / squared",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:51:27.080567+00:00",
+  "config_sha256": "d5a267a81c5c35df0086d90dbefe192d77acf854171377c91c59c6b6db7f9810"
+}

@@ -7,6 +7,12 @@ requirements*.txt text eol=lf
 configs/*.json text eol=lf
 # Preserve the byte identities of Windows-generated frozen records on checkout.
 configs/basic_cnn_frozen.json text eol=crlf
+configs/autoencoder_frozen.json text eol=crlf
+# Retain the byte identity of the preregistered Windows-derived AE evaluator.
+src/anomaly_detection/ae_evaluation.py text eol=crlf
 reports/**/*.csv text eol=lf
 reports/**/*.json text eol=crlf
 experiments/*.json text eol=crlf
+# AE histories were emitted with the Windows CSV default; keep published hashes.
+reports/autoencoder/runs/*-history.csv text eol=crlf
+reports/autoencoder/02-pilot-*-history.csv text eol=crlf

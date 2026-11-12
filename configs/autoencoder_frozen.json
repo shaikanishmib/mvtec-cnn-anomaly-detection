@@ -1,0 +1,48 @@
+{
+  "frozen_at_utc": "2026-11-12T15:51:26.741536+00:00",
+  "selected_variant": "mse",
+  "configuration": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026,
+    "map_kind": "squared"
+  },
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "scoring": "channel-mean residual, fixed top ceil(1% HW) mean at model resolution; native bilinear pixel maps",
+  "calibration": "image higher q95, strict >; pixel upper bin edge pooled normal q99.5 at model resolution, 65536 bins",
+  "evaluation_source_sha256": "4d5cfd2505fdbc7b3b77fff317bd43a8937acc545d4802eb9e0494f006b3b8ed",
+  "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294",
+  "source_sha256": {
+    "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+    "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+  },
+  "selection": "four-category mean (proxy image AUROC + pixel AP)/2; no official test evidence",
+  "target_image_fpr": 0.05
+}

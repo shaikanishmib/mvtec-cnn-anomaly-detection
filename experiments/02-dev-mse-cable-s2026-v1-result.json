@@ -1,0 +1,291 @@
+{
+  "experiment_id": "02-dev-mse-cable-s2026-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "Controlled normal-only reconstruction ablation",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": false
+  },
+  "metrics": {
+    "experiment_id": "02-dev-mse-cable-s2026-v1",
+    "category": "cable",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2026
+    },
+    "configuration_sha256": "f87e4471664fc7b46bb85eba12349978aa90cc63933783ac54aea6141c114622",
+    "gradient_normal_images": 127,
+    "probe_normal_sources": 31,
+    "parameters": 31499,
+    "metrics": {
+      "absolute": {
+        "auroc": 0.4235171696149844,
+        "ap": 0.46705287419806807,
+        "recall": 0.06451612903225806,
+        "fpr": 0.06451612903225806,
+        "precision": 0.5,
+        "f1": 0.1142857142857143,
+        "confusion_matrix": [
+          [
+            29,
+            2
+          ],
+          [
+            29,
+            2
+          ]
+        ],
+        "pixel_ap": 0.05031723113801117
+      },
+      "squared": {
+        "auroc": 0.4281997918834547,
+        "ap": 0.47218655205033255,
+        "recall": 0.06451612903225806,
+        "fpr": 0.06451612903225806,
+        "precision": 0.5,
+        "f1": 0.1142857142857143,
+        "confusion_matrix": [
+          [
+            29,
+            2
+          ],
+          [
+            29,
+            2
+          ]
+        ],
+        "pixel_ap": 0.05503505160450167
+      }
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.0501089908299953,
+        "normal_development_loss": 0.0471511073410511,
+        "train_seconds": 1.293761100001575,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.04256952084659591,
+        "normal_development_loss": 0.03750922530889511,
+        "train_seconds": 1.0232577999995556,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.029527278279694986,
+        "normal_development_loss": 0.020758382976055145,
+        "train_seconds": 1.037229199999274,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.018710965730660542,
+        "normal_development_loss": 0.01663030870258808,
+        "train_seconds": 1.0298488999997062,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.0132672768086195,
+        "normal_development_loss": 0.010941590182483196,
+        "train_seconds": 1.0371611999999004,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.010337223782842084,
+        "normal_development_loss": 0.00974592287093401,
+        "train_seconds": 1.03227760000118,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.009584028347153363,
+        "normal_development_loss": 0.00962680485099554,
+        "train_seconds": 1.0299482999998872,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.009310921646771938,
+        "normal_development_loss": 0.00898770336061716,
+        "train_seconds": 1.0231815999995888,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.00889988597042448,
+        "normal_development_loss": 0.008839024230837822,
+        "train_seconds": 1.0071616000004724,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.008673078857186272,
+        "normal_development_loss": 0.008540205657482147,
+        "train_seconds": 1.0345870999990439,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.008398425046677194,
+        "normal_development_loss": 0.008316081948578358,
+        "train_seconds": 1.0396748000002844,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.008182151631752807,
+        "normal_development_loss": 0.008044321089982986,
+        "train_seconds": 1.0257189000003564,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.007966122714670624,
+        "normal_development_loss": 0.007842866703867912,
+        "train_seconds": 1.0291651000006823,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.007781923583554705,
+        "normal_development_loss": 0.007657876703888178,
+        "train_seconds": 1.0212360000004992,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.007582562216594229,
+        "normal_development_loss": 0.00748362485319376,
+        "train_seconds": 1.0223029000007955,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.007371510115019449,
+        "normal_development_loss": 0.0074101705104112625,
+        "train_seconds": 1.0251598000013473,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.008053080120131256,
+        "normal_development_loss": 0.00735507532954216,
+        "train_seconds": 1.0339324999986275,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.007410227097424231,
+        "normal_development_loss": 0.007124801632016897,
+        "train_seconds": 1.0357846999995672,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.007097020935941869,
+        "normal_development_loss": 0.006931844167411327,
+        "train_seconds": 1.0324971999998525,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.006889243357206189,
+        "normal_development_loss": 0.006805039010941982,
+        "train_seconds": 1.0297053000012966,
+        "peak_allocated_bytes": 688798208,
+        "peak_reserved_bytes": 1126170624
+      }
+    ],
+    "training_seconds_including_loading_validation": 26.70036810000056,
+    "peak_allocated_bytes": 688798208,
+    "peak_reserved_bytes": 1126170624,
+    "checkpoint": "checkpoints\\autoencoder\\02-dev-mse-cable-s2026-v1\\last.pt",
+    "checkpoint_sha256": "39e8dbc5431f739a8d7494764350588059687ada92447e61094ca635c8730aed",
+    "checkpoint_bytes": 131133
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-dev-mse-cable-s2026-v1"
+  },
+  "interpretation": "No calibration or official test access",
+  "decision": "await development comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:46:03.436017+00:00",
+  "config_sha256": "607ed4d48d77998d1267a6637bb28318d25a73590944fa183157c4ebd0d978a2"
+}

@@ -1,0 +1,292 @@
+{
+  "experiment_id": "02-dev-wide-bottle-s2026-v1-decision",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Increasing latent channels from 8 to 32 improves normal reconstruction but may also copy synthetic edits.",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 32,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "result_event": "02-dev-wide-bottle-s2026-v1-result",
+    "selection_event": "02-development-selection-v1"
+  },
+  "metrics": {
+    "experiment_id": "02-dev-wide-bottle-s2026-v1",
+    "category": "bottle",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 32,
+      "loss": "l1",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2026
+    },
+    "configuration_sha256": "981dcbfc2b42b83885ab516675c6c51b18827d7edda66fbeecea1437d4570f63",
+    "gradient_normal_images": 118,
+    "probe_normal_sources": 29,
+    "parameters": 39971,
+    "metrics": {
+      "absolute": {
+        "auroc": 0.6967895362663497,
+        "ap": 0.7295634896032653,
+        "recall": 0.3103448275862069,
+        "fpr": 0.10344827586206896,
+        "precision": 0.75,
+        "f1": 0.4390243902439025,
+        "confusion_matrix": [
+          [
+            26,
+            3
+          ],
+          [
+            20,
+            9
+          ]
+        ],
+        "pixel_ap": 0.12521816075394543
+      },
+      "squared": {
+        "auroc": 0.6730083234244947,
+        "ap": 0.7057904634177747,
+        "recall": 0.2413793103448276,
+        "fpr": 0.06896551724137931,
+        "precision": 0.7777777777777778,
+        "f1": 0.368421052631579,
+        "confusion_matrix": [
+          [
+            27,
+            2
+          ],
+          [
+            22,
+            7
+          ]
+        ],
+        "pixel_ap": 0.12422258790838103
+      }
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.32722114253852325,
+        "normal_development_loss": 0.31339699029922485,
+        "train_seconds": 1.1668850000005477,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.28345812680357596,
+        "normal_development_loss": 0.23618440330028534,
+        "train_seconds": 0.9805629000002227,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.18763099471896383,
+        "normal_development_loss": 0.09575683623552322,
+        "train_seconds": 0.9930234000003111,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.08697323879953157,
+        "normal_development_loss": 0.08794749528169632,
+        "train_seconds": 0.999686399998609,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.07178407402361854,
+        "normal_development_loss": 0.05506691336631775,
+        "train_seconds": 1.0126963999991858,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.05718926409796133,
+        "normal_development_loss": 0.05267076566815376,
+        "train_seconds": 1.017191400000229,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.05050373260500068,
+        "normal_development_loss": 0.04700743779540062,
+        "train_seconds": 1.0201552999988053,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.04599848875807504,
+        "normal_development_loss": 0.04368874430656433,
+        "train_seconds": 1.0188281999999163,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.04216508832523378,
+        "normal_development_loss": 0.03999127075076103,
+        "train_seconds": 1.0126617000005353,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.038637800236879766,
+        "normal_development_loss": 0.03712703287601471,
+        "train_seconds": 1.0118763999998919,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.036186286390332854,
+        "normal_development_loss": 0.035788293927907944,
+        "train_seconds": 1.0050537999995868,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.03816339998679646,
+        "normal_development_loss": 0.03480314090847969,
+        "train_seconds": 1.0040747000002739,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.03800141805056798,
+        "normal_development_loss": 0.03589678183197975,
+        "train_seconds": 1.004636899999241,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.03486853326528759,
+        "normal_development_loss": 0.030375076457858086,
+        "train_seconds": 1.000726800000848,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.03250169068953748,
+        "normal_development_loss": 0.032379280775785446,
+        "train_seconds": 1.0031214999999065,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.03105428174011788,
+        "normal_development_loss": 0.03672290965914726,
+        "train_seconds": 1.0197015999983705,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.031370343987719485,
+        "normal_development_loss": 0.028620468452572823,
+        "train_seconds": 1.0168432999998913,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.03079570103752411,
+        "normal_development_loss": 0.030972788110375404,
+        "train_seconds": 1.0129957999997714,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.029751254245638847,
+        "normal_development_loss": 0.029775826260447502,
+        "train_seconds": 1.0102252000015142,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.02795554760654094,
+        "normal_development_loss": 0.02797868102788925,
+        "train_seconds": 1.014857199999824,
+        "peak_allocated_bytes": 678545408,
+        "peak_reserved_bytes": 1126170624
+      }
+    ],
+    "training_seconds_including_loading_validation": 24.984053800000765,
+    "peak_allocated_bytes": 678545408,
+    "peak_reserved_bytes": 1126170624,
+    "checkpoint": "checkpoints\\autoencoder\\02-dev-wide-bottle-s2026-v1\\last.pt",
+    "checkpoint_sha256": "673e3b008c6c2f6385ebfe9d8328446929fa0448836a694c0e33d94fd2f4568c",
+    "checkpoint_bytes": 164989
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-dev-wide-bottle-s2026-v1"
+  },
+  "interpretation": "Variant wide: best four-category variant/map objective 0.336972; selected mse/squared objective 0.368952. Decisions use all fixed development categories, not this category alone. Both residual rules and every epoch remain recorded; proxy results do not establish real-defect quality.",
+  "decision": "reject",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:56:23.180591+00:00",
+  "config_sha256": "92369991ddd1438d14529279be9a9fb7607995e34133db977c435642d5224c7d"
+}

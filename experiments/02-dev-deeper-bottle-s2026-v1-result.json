@@ -1,0 +1,291 @@
+{
+  "experiment_id": "02-dev-deeper-bottle-s2026-v1-result",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Controlled normal-only reconstruction ablation",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 4,
+    "latent_channels": 8,
+    "loss": "l1",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "final": false
+  },
+  "metrics": {
+    "experiment_id": "02-dev-deeper-bottle-s2026-v1",
+    "category": "bottle",
+    "configuration": {
+      "width": 16,
+      "depth": 4,
+      "latent_channels": 8,
+      "loss": "l1",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2026
+    },
+    "configuration_sha256": "ac5970a1d97d3b5527e370c8b6c3bed9a7c483b3104bbd4f360bf41bb6add858",
+    "gradient_normal_images": 118,
+    "probe_normal_sources": 29,
+    "parameters": 126667,
+    "metrics": {
+      "absolute": {
+        "auroc": 0.7966706302021404,
+        "ap": 0.8299603596245921,
+        "recall": 0.4827586206896552,
+        "fpr": 0.06896551724137931,
+        "precision": 0.875,
+        "f1": 0.6222222222222222,
+        "confusion_matrix": [
+          [
+            27,
+            2
+          ],
+          [
+            15,
+            14
+          ]
+        ],
+        "pixel_ap": 0.21558358960940796
+      },
+      "squared": {
+        "auroc": 0.7919143876337693,
+        "ap": 0.8249067675244408,
+        "recall": 0.3793103448275862,
+        "fpr": 0.034482758620689655,
+        "precision": 0.9166666666666666,
+        "f1": 0.5365853658536586,
+        "confusion_matrix": [
+          [
+            28,
+            1
+          ],
+          [
+            18,
+            11
+          ]
+        ],
+        "pixel_ap": 0.21870479119352482
+      }
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3292103960352429,
+        "normal_development_loss": 0.31732288002967834,
+        "train_seconds": 1.5470650999995996,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.25772621874081886,
+        "normal_development_loss": 0.12332892417907715,
+        "train_seconds": 1.151085100000273,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.1285982361789477,
+        "normal_development_loss": 0.16848671436309814,
+        "train_seconds": 1.1478222999994614,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.10642770905110796,
+        "normal_development_loss": 0.0740535631775856,
+        "train_seconds": 1.1381173999998282,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.08201782519029359,
+        "normal_development_loss": 0.0620555505156517,
+        "train_seconds": 1.1259409000012965,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.06483053043484688,
+        "normal_development_loss": 0.05518463999032974,
+        "train_seconds": 1.124997599999915,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.05251891039690729,
+        "normal_development_loss": 0.04505528509616852,
+        "train_seconds": 1.1212384999998903,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.04250971954000198,
+        "normal_development_loss": 0.03659094497561455,
+        "train_seconds": 1.1205583999999362,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.034144378977559384,
+        "normal_development_loss": 0.030542954802513123,
+        "train_seconds": 1.140425999999934,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.030130033839052005,
+        "normal_development_loss": 0.029776988551020622,
+        "train_seconds": 1.1433101999991777,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.029046804217968958,
+        "normal_development_loss": 0.028398679569363594,
+        "train_seconds": 1.1195633000006637,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.02860838755712671,
+        "normal_development_loss": 0.02769576571881771,
+        "train_seconds": 1.1241787999988446,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.02757775669885894,
+        "normal_development_loss": 0.027526386082172394,
+        "train_seconds": 1.156918599999699,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.02900545759978941,
+        "normal_development_loss": 0.02996865101158619,
+        "train_seconds": 1.135611900001095,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.028731906439288187,
+        "normal_development_loss": 0.027414873242378235,
+        "train_seconds": 1.1206520999985514,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.028346193449224455,
+        "normal_development_loss": 0.027324847877025604,
+        "train_seconds": 1.1267396999992343,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.0276355430231256,
+        "normal_development_loss": 0.026880407705903053,
+        "train_seconds": 1.117235100000471,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.027630368026636414,
+        "normal_development_loss": 0.02780521847307682,
+        "train_seconds": 1.1266123999994306,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.027133721858263016,
+        "normal_development_loss": 0.027692411094903946,
+        "train_seconds": 1.131651800000327,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.027184054571188103,
+        "normal_development_loss": 0.028159411624073982,
+        "train_seconds": 1.1152477999985422,
+        "peak_allocated_bytes": 692041728,
+        "peak_reserved_bytes": 1067450368
+      }
+    ],
+    "training_seconds_including_loading_validation": 28.0837233000002,
+    "peak_allocated_bytes": 692041728,
+    "peak_reserved_bytes": 1067450368,
+    "checkpoint": "checkpoints\\autoencoder\\02-dev-deeper-bottle-s2026-v1\\last.pt",
+    "checkpoint_sha256": "f98c71eb1e404961423b7a32fc1c879bb2baf42a7fb23bf858d79d32dfef12a1",
+    "checkpoint_bytes": 512741
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-dev-deeper-bottle-s2026-v1"
+  },
+  "interpretation": "No calibration or official test access",
+  "decision": "await development comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:39:52.201181+00:00",
+  "config_sha256": "203e64def1a8f45cdd84f9ac29bece61d286755b17ebf809f8a943817d24b48e"
+}

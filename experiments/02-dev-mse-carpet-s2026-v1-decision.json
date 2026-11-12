@@ -1,0 +1,292 @@
+{
+  "experiment_id": "02-dev-mse-carpet-s2026-v1-decision",
+  "model_family": "ConvAutoencoder",
+  "categories": [
+    "carpet"
+  ],
+  "hypothesis": "MSE emphasizes large residuals and may improve residual ranking relative to L1.",
+  "preprocessing": "PIL RGB bilinear, /255 float32",
+  "hyperparameters": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": {
+      "src/anomaly_detection/autoencoder.py": "67bf26893fb577de1c4706ffc56a49d1fa3edadd6b93bc6def13a1f471980e4d",
+      "src/anomaly_detection/ae_research.py": "306333e97dc8b45e9eff17285d4ec8e7c9f80f68c1e4dc0da42bf8039fcc9857"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    },
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "training": {
+    "result_event": "02-dev-mse-carpet-s2026-v1-result",
+    "selection_event": "02-development-selection-v1"
+  },
+  "metrics": {
+    "experiment_id": "02-dev-mse-carpet-s2026-v1",
+    "category": "carpet",
+    "configuration": {
+      "width": 16,
+      "depth": 3,
+      "latent_channels": 8,
+      "loss": "mse",
+      "resolution": 256,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "epochs": 20,
+      "seed": 2026
+    },
+    "configuration_sha256": "f87e4471664fc7b46bb85eba12349978aa90cc63933783ac54aea6141c114622",
+    "gradient_normal_images": 157,
+    "probe_normal_sources": 39,
+    "parameters": 31499,
+    "metrics": {
+      "absolute": {
+        "auroc": 0.5897435897435898,
+        "ap": 0.6412242935366339,
+        "recall": 0.15384615384615385,
+        "fpr": 0.05128205128205128,
+        "precision": 0.75,
+        "f1": 0.25531914893617025,
+        "confusion_matrix": [
+          [
+            37,
+            2
+          ],
+          [
+            33,
+            6
+          ]
+        ],
+        "pixel_ap": 0.058296706233314136
+      },
+      "squared": {
+        "auroc": 0.6423405654174885,
+        "ap": 0.7014012262196652,
+        "recall": 0.23076923076923078,
+        "fpr": 0.05128205128205128,
+        "precision": 0.8181818181818182,
+        "f1": 0.36000000000000004,
+        "confusion_matrix": [
+          [
+            37,
+            2
+          ],
+          [
+            30,
+            9
+          ]
+        ],
+        "pixel_ap": 0.09995157930690718
+      }
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.025927005495852345,
+        "normal_development_loss": 0.015092356130480766,
+        "train_seconds": 1.4231338999998115,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.014898134698011692,
+        "normal_development_loss": 0.014414076693356037,
+        "train_seconds": 1.2761650000011286,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.013698122363276543,
+        "normal_development_loss": 0.013496327213943005,
+        "train_seconds": 1.2769826000003377,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.013367894129341196,
+        "normal_development_loss": 0.013452325947582722,
+        "train_seconds": 1.2839014000001043,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.013278983023231196,
+        "normal_development_loss": 0.013340339995920658,
+        "train_seconds": 1.2835410999996384,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.013162644218155153,
+        "normal_development_loss": 0.013219613581895828,
+        "train_seconds": 1.2870089000007283,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.013053294401734498,
+        "normal_development_loss": 0.013123977929353714,
+        "train_seconds": 1.2752695999988646,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.013008625774531607,
+        "normal_development_loss": 0.013074828311800957,
+        "train_seconds": 1.280272399999376,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.012947879476579511,
+        "normal_development_loss": 0.013029277324676514,
+        "train_seconds": 1.2776776000009704,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.012894847845528155,
+        "normal_development_loss": 0.012967623770236969,
+        "train_seconds": 1.2870476999996754,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.012837024803042033,
+        "normal_development_loss": 0.013040665537118912,
+        "train_seconds": 1.2503240999994887,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.012796245242474944,
+        "normal_development_loss": 0.01281632762402296,
+        "train_seconds": 1.2381198999992193,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.012695338399072362,
+        "normal_development_loss": 0.01274702325463295,
+        "train_seconds": 1.2429871000003914,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.012639472077179487,
+        "normal_development_loss": 0.012633263133466244,
+        "train_seconds": 1.2497842000011588,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.012529832726213962,
+        "normal_development_loss": 0.012555968016386032,
+        "train_seconds": 1.2695966999999655,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.012415300366605164,
+        "normal_development_loss": 0.012557591311633587,
+        "train_seconds": 1.2832809000010457,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.012370327546907837,
+        "normal_development_loss": 0.012448122724890709,
+        "train_seconds": 1.2761767000010877,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.012414384852786352,
+        "normal_development_loss": 0.012430950999259949,
+        "train_seconds": 1.2659997999999177,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.012359405743183604,
+        "normal_development_loss": 0.01240585558116436,
+        "train_seconds": 1.2764525000002322,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.01230857273338327,
+        "normal_development_loss": 0.012424388900399208,
+        "train_seconds": 1.2864688000008755,
+        "peak_allocated_bytes": 715143680,
+        "peak_reserved_bytes": 1126170624
+      }
+    ],
+    "training_seconds_including_loading_validation": 32.35502869999982,
+    "peak_allocated_bytes": 715143680,
+    "peak_reserved_bytes": 1126170624,
+    "checkpoint": "checkpoints\\autoencoder\\02-dev-mse-carpet-s2026-v1\\last.pt",
+    "checkpoint_sha256": "f167b66fcfedf8d90dd3144f2387c2f79bcc34432fc8f6e40d56f202f19081cd",
+    "checkpoint_bytes": 131133
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs\\autoencoder\\02-dev-mse-carpet-s2026-v1"
+  },
+  "interpretation": "Variant mse: best four-category variant/map objective 0.368952; selected mse/squared objective 0.368952. Decisions use all fixed development categories, not this category alone. Both residual rules and every epoch remain recorded; proxy results do not establish real-defect quality.",
+  "decision": "keep",
+  "status": "completed",
+  "recorded_at": "2026-11-12T15:56:23.307301+00:00",
+  "config_sha256": "354294291c9b7e6ba058f4eb280c851663133787b052b8d76fc7c6041fbd9d83"
+}

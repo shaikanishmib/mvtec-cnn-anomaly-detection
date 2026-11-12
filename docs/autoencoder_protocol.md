@@ -54,3 +54,11 @@ Pixel threshold: upper edge of the bin containing the pooled calibration
 residual q99.5, 65,536 fixed [0,1] bins. This is separate from image q95.
 Threshold uncertainty: 2,000 whole-calibration-image bootstrap draws. Test metric
 uncertainty reuses shared whole-image bootstrap and native exact point metrics.
+
+Chronology disclosure: the scalar selection rule and fixed 20-epoch development
+budget were documented while the first base development jobs were already
+running, after the bottle base result existed. Categories and five ablations
+were fixed before development began. This was development-stage selection,
+not a claim of a fully preregistered selection scalar before any proxy output.
+No official autoencoder test evidence informed this rule. The complete final
+policy was frozen before final fits and official evaluation.

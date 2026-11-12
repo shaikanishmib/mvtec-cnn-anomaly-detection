@@ -1,0 +1,29 @@
+{
+  "pilot": "02-pilot-shallow-bottle-s2026-v1",
+  "configuration": {
+    "width": 16,
+    "depth": 3,
+    "latent_channels": 8,
+    "loss": "mse",
+    "resolution": 256,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "seed": 2026,
+    "map_kind": "squared"
+  },
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "fitting_images_per_seed": 2551,
+  "epochs": 20,
+  "measured_selected_seconds_per_training_image_epoch": 0.008282960582707511,
+  "expected_training_seconds": 1267.7899467892116,
+  "observed_selected_peak_allocated_bytes": 715143680,
+  "caveat": "Estimate excludes initial decoding, validation, calibration, native metrics and latency benchmark; category sizes/hardware load vary.",
+  "planned_native_evaluation_minutes": 60,
+  "final_training_budget_minutes": 45
+}
