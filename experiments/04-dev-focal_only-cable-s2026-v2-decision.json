@@ -1,0 +1,122 @@
+{
+  "experiment_id": "04-dev-focal_only-cable-s2026-v2-decision",
+  "model_family": "SuperSimpleNetVariant",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "Stronger noise improves synthetic discrimination over the same fixed Lite budget",
+  "preprocessing": "Whole RGB PIL256, ImageNet V1 normalization; upscale layer2/3 to64 before pooling",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "noise_std": 0.015,
+    "loss": "focal",
+    "seed": 2026,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 40,
+    "validation_every": 10,
+    "hypothesis": "Removing the balanced margin tests whether it impedes short-budget segmentation learning"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "aef86f8902a972b441103c627c42c53232e57d40",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {
+    "common_proxy": [
+      {
+        "candidate": "focal_only",
+        "category": "cable",
+        "aggregation": "head",
+        "train_seconds": 83.14280119998875,
+        "parameters": 555331,
+        "auroc": 0.47291666666666665,
+        "ap": 0.5250484820694931,
+        "recall": 0.03125,
+        "fpr": 0.03333333333333333,
+        "precision": 0.5,
+        "f1": 0.058823529411764705,
+        "pixel_ap": 0.1551754390282361,
+        "normal_development_q95": 0.21258071064949036,
+        "objective": 0.31404605284745135
+      },
+      {
+        "candidate": "focal_only",
+        "category": "cable",
+        "aggregation": "max",
+        "train_seconds": 83.14280119998875,
+        "parameters": 555331,
+        "auroc": 0.4317708333333333,
+        "ap": 0.4963977432685412,
+        "recall": 0.03125,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.06060606060606061,
+        "pixel_ap": 0.1551754390282361,
+        "normal_development_q95": 0.09014913439750671,
+        "objective": 0.29347313618078474
+      },
+      {
+        "candidate": "focal_only",
+        "category": "cable",
+        "aggregation": "top1pct",
+        "train_seconds": 83.14280119998875,
+        "parameters": 555331,
+        "auroc": 0.4104166666666667,
+        "ap": 0.5000631982826051,
+        "recall": 0.03125,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.06060606060606061,
+        "pixel_ap": 0.1551754390282361,
+        "normal_development_q95": -0.02507215365767479,
+        "objective": 0.2827960528474514
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-dev-noise05-bottle-s2026-v1"
+  },
+  "interpretation": "Four-category common-proxy rule selected noise05/top1pct; all unsuccessful trials retained",
+  "decision": "reject",
+  "status": "completed",
+  "recorded_at": "2026-11-13T05:00:09.495324+00:00",
+  "config_sha256": "3eeae579dac5bef33c08aafd3d7b64a8ac96a257dd8dfe1cad691a12fb0bb1b1"
+}

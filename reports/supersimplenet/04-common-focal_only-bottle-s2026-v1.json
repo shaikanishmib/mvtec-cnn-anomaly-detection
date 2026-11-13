@@ -1,0 +1,77 @@
+{
+  "candidates": {
+    "head": {
+      "auroc": 0.7681331747919145,
+      "ap": 0.7501607779830172,
+      "recall": 0.6206896551724138,
+      "fpr": 0.20689655172413793,
+      "precision": 0.75,
+      "f1": 0.679245283018868,
+      "confusion_matrix": [
+        [
+          23,
+          6
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "pixel_ap": 0.22029037520986353,
+      "normal_development_q95": 0.09696601331233978,
+      "objective": 0.4549876370698545
+    },
+    "max": {
+      "auroc": 0.7122473246135553,
+      "ap": 0.705585555180278,
+      "recall": 0.3103448275862069,
+      "fpr": 0.10344827586206896,
+      "precision": 0.75,
+      "f1": 0.4390243902439025,
+      "confusion_matrix": [
+        [
+          26,
+          3
+        ],
+        [
+          20,
+          9
+        ]
+      ],
+      "pixel_ap": 0.22029037520986353,
+      "normal_development_q95": -0.030832070857286453,
+      "objective": 0.4529067809461922
+    },
+    "top1pct": {
+      "auroc": 0.7170035671819263,
+      "ap": 0.6852639223054462,
+      "recall": 0.20689655172413793,
+      "fpr": 0.13793103448275862,
+      "precision": 0.6,
+      "f1": 0.3076923076923077,
+      "confusion_matrix": [
+        [
+          25,
+          4
+        ],
+        [
+          23,
+          6
+        ]
+      ],
+      "pixel_ap": 0.22029037520986353,
+      "normal_development_q95": -0.12169081717729568,
+      "objective": 0.4466642125752052
+    }
+  },
+  "synthetic_loss": 0.0684339748374347,
+  "proxy_images": 58,
+  "proxy_positives": 29,
+  "normal_map_focal": 0.012885396368801594,
+  "normal_head_focal": 0.04526214301586151,
+  "checkpoint_sha256": "dcc24bcd519c784915e0727e18129a15c85b84d00a6681f2d242adf476b59bf7",
+  "training_experiment": "04-dev-focal_only-bottle-s2026-v1",
+  "proxy_noise_std": 0.05,
+  "probe_rows_sha256": "baa106b662af05ccbcd4c47f5d1a593927373c86e610046d21f59c9f81702cf6",
+  "clean_normal_development_sha256": "4f1a9a7349551ca05a2f784d14ddac452c23d8085b32366688331a97fe1b7fd9"
+}

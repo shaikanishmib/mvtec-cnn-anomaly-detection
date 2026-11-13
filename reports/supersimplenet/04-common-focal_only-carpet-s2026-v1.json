@@ -1,0 +1,77 @@
+{
+  "candidates": {
+    "head": {
+      "auroc": 0.6624917600527357,
+      "ap": 0.6049622969318584,
+      "recall": 0.4864864864864865,
+      "fpr": 0.14634146341463414,
+      "precision": 0.75,
+      "f1": 0.5901639344262296,
+      "confusion_matrix": [
+        [
+          35,
+          6
+        ],
+        [
+          19,
+          18
+        ]
+      ],
+      "pixel_ap": 0.36835990669169766,
+      "normal_development_q95": 0.21180900931358337,
+      "objective": 0.49134046751855814
+    },
+    "max": {
+      "auroc": 0.9228740936058009,
+      "ap": 0.8721036061444114,
+      "recall": 0.35135135135135137,
+      "fpr": 0.04878048780487805,
+      "precision": 0.8666666666666667,
+      "f1": 0.5000000000000001,
+      "confusion_matrix": [
+        [
+          39,
+          2
+        ],
+        [
+          24,
+          13
+        ]
+      ],
+      "pixel_ap": 0.36835990669169766,
+      "normal_development_q95": 0.03144031763076782,
+      "objective": 0.6456170001487492
+    },
+    "top1pct": {
+      "auroc": 0.9360580092287409,
+      "ap": 0.9264144129191856,
+      "recall": 0.6756756756756757,
+      "fpr": 0.07317073170731707,
+      "precision": 0.8928571428571429,
+      "f1": 0.7692307692307693,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          12,
+          25
+        ]
+      ],
+      "pixel_ap": 0.36835990669169766,
+      "normal_development_q95": -0.10359597951173782,
+      "objective": 0.64641627503339
+    }
+  },
+  "synthetic_loss": 0.07127047807742388,
+  "proxy_images": 78,
+  "proxy_positives": 37,
+  "normal_map_focal": 0.0124337924644351,
+  "normal_head_focal": 0.05190221592783928,
+  "checkpoint_sha256": "c18ee58c7a6251907d35664c638c06cb6e5bfb4956109ba2019a02e4264ae7cd",
+  "training_experiment": "04-dev-focal_only-carpet-s2026-v1",
+  "proxy_noise_std": 0.05,
+  "probe_rows_sha256": "8340363dfde87ba2e2a8bd82329541b97489a2866b0f4784c25e301ae34b33db",
+  "clean_normal_development_sha256": "5ee4b2eb515737117650939f3ecbc06479f80a578242794b2583a17b74239241"
+}

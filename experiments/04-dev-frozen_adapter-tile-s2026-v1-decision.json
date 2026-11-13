@@ -1,0 +1,122 @@
+{
+  "experiment_id": "04-dev-frozen_adapter-tile-s2026-v1-decision",
+  "model_family": "SuperSimpleNetVariant",
+  "categories": [
+    "tile"
+  ],
+  "hypothesis": "Stronger noise improves synthetic discrimination over the same fixed Lite budget",
+  "preprocessing": "Whole RGB PIL256, ImageNet V1 normalization; upscale layer2/3 to64 before pooling",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": false,
+    "noise_std": 0.015,
+    "loss": "margin_focal",
+    "seed": 2026,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 40,
+    "validation_every": 10,
+    "hypothesis": "Freezing the random adapter tests whether adaptation improves stable discrimination"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "aef86f8902a972b441103c627c42c53232e57d40",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {
+    "common_proxy": [
+      {
+        "candidate": "frozen_adapter",
+        "category": "tile",
+        "aggregation": "head",
+        "train_seconds": 81.85629519997747,
+        "parameters": 555331,
+        "auroc": 0.4267578125,
+        "ap": 0.4485621298460304,
+        "recall": 0.0,
+        "fpr": 0.03125,
+        "precision": 0.0,
+        "f1": 0.0,
+        "pixel_ap": 0.2352889386683723,
+        "normal_development_q95": 0.42282232642173767,
+        "objective": 0.33102337558418615
+      },
+      {
+        "candidate": "frozen_adapter",
+        "category": "tile",
+        "aggregation": "max",
+        "train_seconds": 81.85629519997747,
+        "parameters": 555331,
+        "auroc": 0.8017578125,
+        "ap": 0.7558364972743146,
+        "recall": 0.0625,
+        "fpr": 0.03125,
+        "precision": 0.6666666666666666,
+        "f1": 0.11428571428571428,
+        "pixel_ap": 0.2352889386683723,
+        "normal_development_q95": 0.7390121221542358,
+        "objective": 0.5185233755841862
+      },
+      {
+        "candidate": "frozen_adapter",
+        "category": "tile",
+        "aggregation": "top1pct",
+        "train_seconds": 81.85629519997747,
+        "parameters": 555331,
+        "auroc": 0.7861328125,
+        "ap": 0.7826361343920841,
+        "recall": 0.1875,
+        "fpr": 0.03125,
+        "precision": 0.8571428571428571,
+        "f1": 0.30769230769230765,
+        "pixel_ap": 0.2352889386683723,
+        "normal_development_q95": 0.501964271068573,
+        "objective": 0.5107108755841862
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-dev-noise05-bottle-s2026-v1"
+  },
+  "interpretation": "Four-category common-proxy rule selected noise05/top1pct; all unsuccessful trials retained",
+  "decision": "reject",
+  "status": "completed",
+  "recorded_at": "2026-11-13T05:00:09.487218+00:00",
+  "config_sha256": "44a7b9004958f0c7baaee082d9906d2d129dc8af0ee2e08281abad2592db26e6"
+}

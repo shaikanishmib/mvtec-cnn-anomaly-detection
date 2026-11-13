@@ -7,6 +7,11 @@ import torch
 from anomaly_detection.supersimplenet import SSNExtractor
 from anomaly_detection.ssn_research import experiment
 
+def development_identifier(candidate,category):
+    recovery=ROOT/'reports/supersimplenet/recovery.json'
+    mapping=json.loads(recovery.read_text()) if recovery.exists() else {}
+    return mapping.get(candidate+'/'+category,f'04-dev-{candidate}-{category}-s2026-v1')
+
 def candidates():
     base=dict(backbone='resnet18',channels=384,seg_width=256,det_width=32,adapter_trainable=True,
         noise_std=.015,loss='margin_focal',seed=2026,batch_size=8,extraction_batch=8,epochs=40,validation_every=10)
@@ -23,7 +28,7 @@ def main():
     extractor=SSNExtractor('resnet18').cuda()
     for name,config in candidates().items():
         for category in ['bottle','cable','carpet','tile']:
-            identifier=f'04-dev-{name}-{category}-s2026-v1'
+            identifier=development_identifier(name,category)
             if (ROOT/f'reports/supersimplenet/runs/{identifier}-result.json').exists():continue
             experiment(identifier,category,config,extractor)
 

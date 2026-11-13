@@ -1,0 +1,77 @@
+{
+  "candidates": {
+    "head": {
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "pixel_ap": 0.8377764340271506,
+      "normal_development_q95": -0.10801535099744797,
+      "objective": 0.9188882170135753
+    },
+    "max": {
+      "auroc": 0.9770833333333334,
+      "ap": 0.9801603911986976,
+      "recall": 0.90625,
+      "fpr": 0.16666666666666666,
+      "precision": 0.8529411764705882,
+      "f1": 0.8787878787878787,
+      "confusion_matrix": [
+        [
+          25,
+          5
+        ],
+        [
+          3,
+          29
+        ]
+      ],
+      "pixel_ap": 0.8377764340271506,
+      "normal_development_q95": 0.8780069351196289,
+      "objective": 0.8782632170135753
+    },
+    "top1pct": {
+      "auroc": 0.9947916666666667,
+      "ap": 0.9953368015552996,
+      "recall": 0.96875,
+      "fpr": 0.1,
+      "precision": 0.9117647058823529,
+      "f1": 0.9393939393939394,
+      "confusion_matrix": [
+        [
+          27,
+          3
+        ],
+        [
+          1,
+          31
+        ]
+      ],
+      "pixel_ap": 0.8377764340271506,
+      "normal_development_q95": 0.5512509942054749,
+      "objective": 0.9037840503469088
+    }
+  },
+  "synthetic_loss": 0.2969717354543747,
+  "proxy_images": 62,
+  "proxy_positives": 32,
+  "normal_map_focal": 0.015040339902043343,
+  "normal_head_focal": 0.00820151437073946,
+  "checkpoint_sha256": "7d214a0f93c18e57478782504b540e7205db6073d7f632d0036c44144ea4a3d3",
+  "training_experiment": "04-dev-noise05-cable-s2026-v1",
+  "proxy_noise_std": 0.05,
+  "probe_rows_sha256": "82e5fdc0fe6a234aa2379023525a662f3f7e1c8c3a5ce6d314f0a11b36da7836",
+  "clean_normal_development_sha256": "fb47472125ebec9b4543d948e4a9e3adf8cade3c751613ada2e81eec4ef43458"
+}

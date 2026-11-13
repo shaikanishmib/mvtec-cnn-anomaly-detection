@@ -1,0 +1,154 @@
+{
+  "experiment_id": "04-common-reference_noise-tile-s2026-v1",
+  "model_family": "SuperSimpleNetVariant",
+  "categories": [
+    "tile"
+  ],
+  "hypothesis": "All candidates face identical .05 synthetic proxies; easier perturbations cannot determine the winner",
+  "preprocessing": "Whole RGB PIL256, ImageNet V1 normalization; upscale layer2/3 to64 before pooling",
+  "hyperparameters": {
+    "training": {
+      "backbone": "resnet18",
+      "channels": 384,
+      "seg_width": 256,
+      "det_width": 32,
+      "adapter_trainable": true,
+      "noise_std": 0.015,
+      "loss": "margin_focal",
+      "seed": 2026,
+      "batch_size": 8,
+      "extraction_batch": 8,
+      "epochs": 40,
+      "validation_every": 10,
+      "hypothesis": "Reference noise is learnable with more fitting normals and the fixed 40-epoch Lite budget"
+    },
+    "common_proxy": {
+      "noise_std": 0.05,
+      "mask_seed": 9901,
+      "noise_seed": 9902
+    }
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "7edf24aa38e115b72d41754493a1539d1845136b",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {
+    "candidates": {
+      "head": {
+        "auroc": 0.4677734375,
+        "ap": 0.5080115162073557,
+        "recall": 0.03125,
+        "fpr": 0.09375,
+        "precision": 0.25,
+        "f1": 0.05555555555555555,
+        "confusion_matrix": [
+          [
+            29,
+            3
+          ],
+          [
+            31,
+            1
+          ]
+        ],
+        "pixel_ap": 0.30083596162962456,
+        "normal_development_q95": 0.29049035906791687,
+        "objective": 0.3733671995648123
+      },
+      "max": {
+        "auroc": 0.859375,
+        "ap": 0.8248746097888326,
+        "recall": 0.15625,
+        "fpr": 0.03125,
+        "precision": 0.8333333333333334,
+        "f1": 0.2631578947368421,
+        "confusion_matrix": [
+          [
+            31,
+            1
+          ],
+          [
+            27,
+            5
+          ]
+        ],
+        "pixel_ap": 0.30083596162962456,
+        "normal_development_q95": 0.6675423383712769,
+        "objective": 0.5801054808148123
+      },
+      "top1pct": {
+        "auroc": 0.87109375,
+        "ap": 0.8719026288420213,
+        "recall": 0.34375,
+        "fpr": 0.03125,
+        "precision": 0.9166666666666666,
+        "f1": 0.5,
+        "confusion_matrix": [
+          [
+            31,
+            1
+          ],
+          [
+            21,
+            11
+          ]
+        ],
+        "pixel_ap": 0.30083596162962456,
+        "normal_development_q95": 0.46064475178718567,
+        "objective": 0.5859648558148123
+      }
+    },
+    "synthetic_loss": 0.9149211198091507,
+    "proxy_images": 64,
+    "proxy_positives": 32,
+    "normal_map_focal": 0.03521503880620003,
+    "normal_head_focal": 0.0431273877620697,
+    "checkpoint_sha256": "77747d08c53853394777c65864738f0c463e3ef08a43b5af2d485517a8e9721a",
+    "training_experiment": "04-dev-reference_noise-tile-s2026-v1",
+    "proxy_noise_std": 0.05,
+    "probe_rows_sha256": "64b9f3b3f0af64ad696f701f9b53934693df274c698f4b92ecfba57f54e85f45",
+    "clean_normal_development_sha256": "ca458170e77bb30a105b5de3e454d7d3826fcd6d6443f293629fc40e9e887416"
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-dev-reference_noise-tile-s2026-v1"
+  },
+  "interpretation": "Synthetic-only held-out fitting proxies and clean development normals, not real-defect validation",
+  "decision": "include in prespecified common-proxy comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-13T05:00:03.105270+00:00",
+  "config_sha256": "68e52d23e4c59b501d215058572bc81c28e7ad1b85c3f41cd3da8131b3c78e97"
+}

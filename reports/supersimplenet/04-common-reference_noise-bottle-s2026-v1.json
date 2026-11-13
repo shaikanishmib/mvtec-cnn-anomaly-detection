@@ -1,0 +1,77 @@
+{
+  "candidates": {
+    "head": {
+      "auroc": 0.8097502972651606,
+      "ap": 0.8313787214106729,
+      "recall": 0.4827586206896552,
+      "fpr": 0.13793103448275862,
+      "precision": 0.7777777777777778,
+      "f1": 0.5957446808510638,
+      "confusion_matrix": [
+        [
+          25,
+          4
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      "pixel_ap": 0.18996943083281376,
+      "normal_development_q95": 0.10857579112052917,
+      "objective": 0.47787710542829753
+    },
+    "max": {
+      "auroc": 0.5707491082045184,
+      "ap": 0.5418092952929872,
+      "recall": 0.034482758620689655,
+      "fpr": 0.034482758620689655,
+      "precision": 0.5,
+      "f1": 0.06451612903225806,
+      "confusion_matrix": [
+        [
+          28,
+          1
+        ],
+        [
+          28,
+          1
+        ]
+      ],
+      "pixel_ap": 0.18996943083281376,
+      "normal_development_q95": 0.517839789390564,
+      "objective": 0.38035926951866605
+    },
+    "top1pct": {
+      "auroc": 0.5374554102259215,
+      "ap": 0.5085058606305899,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          29,
+          0
+        ],
+        [
+          29,
+          0
+        ]
+      ],
+      "pixel_ap": 0.18996943083281376,
+      "normal_development_q95": 0.40067383646965027,
+      "objective": 0.3637124205293676
+    }
+  },
+  "synthetic_loss": 0.9868615536854185,
+  "proxy_images": 58,
+  "proxy_positives": 29,
+  "normal_map_focal": 0.027990471571683884,
+  "normal_head_focal": 0.04315299913287163,
+  "checkpoint_sha256": "b3ebc44d415d35339c3b60d3d46fe4eae80832c2da06b78a57c98dac8bed8a26",
+  "training_experiment": "04-dev-reference_noise-bottle-s2026-v1",
+  "proxy_noise_std": 0.05,
+  "probe_rows_sha256": "baa106b662af05ccbcd4c47f5d1a593927373c86e610046d21f59c9f81702cf6",
+  "clean_normal_development_sha256": "4f1a9a7349551ca05a2f784d14ddac452c23d8085b32366688331a97fe1b7fd9"
+}

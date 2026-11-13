@@ -51,6 +51,82 @@ def test_shared_metric_compatibility_and_identity():
     assert value['fpr']==0 and value['confusion_matrix']==[[2,0],[0,2]]
 
 
+def test_clean_inference_and_reserved_normal_calibration(monkeypatch):
+    import pandas as pd
+    from types import SimpleNamespace
+    from anomaly_detection import ssn_evaluation as evaluation
+    from anomaly_detection.ssn_research import predict
+    from anomaly_detection.metrics import calibrate_normal
+    x=torch.randn(3,8,16,16);original=x.clone()
+    class Features:
+        metadata={'input_rows_sha256':'fixture'}
+        def __len__(self):return len(x)
+        def batch(self,indices):return x[list(indices)]
+    features=Features();heads=SuperSimpleHeads(8,4,2)
+    def forbidden(*args,**kwargs):raise AssertionError('Synthetic perturbations entered inference/calibration')
+    monkeypatch.setattr(heads,'synthetic_forward',forbidden)
+    maps,scores,_=predict(heads,features,batch_size=2)
+    assert maps.shape==(3,256,256) and torch.isfinite(scores).all()
+    assert torch.equal(x,original) and not heads.training
+    rows=pd.DataFrame(dict(partition=['calibration']*3,mask=[None]*3,path=['a','b','c'],sha256=['1','2','3']))
+    monkeypatch.setattr(evaluation,'read_partition',lambda *args:rows)
+    monkeypatch.setattr(evaluation,'feature_cache',lambda *args:features)
+    model=SimpleNamespace(extractor=None,heads=heads,config=dict(extraction_batch=8,batch_size=2,aggregation='head'))
+    value=evaluation.calibrate_model(model,'bottle',256)
+    assert value['images']==3 and value['pixel_calibration_samples']==3*256*256
+    assert value['image_threshold']==calibrate_normal(scores.numpy())
+    assert value['pixel_threshold']==float(__import__('numpy').quantile(maps.numpy(),.995,method='higher'))
+    assert torch.equal(x,original)
+
+
+def test_normal_only_fitting_and_single_category_cache_guard():
+    import pandas as pd
+    from anomaly_detection.cnn_research import require_fitting
+    from anomaly_detection.ssn_research import feature_cache
+    normal=pd.DataFrame(dict(partition=['fit'],split=['train'],mask=[None]))
+    require_fitting(normal)
+    for changed in [normal.assign(partition='development'),normal.assign(split='test'),normal.assign(mask='mask.png')]:
+        with pytest.raises(ValueError,match='fitting normals'):require_fitting(changed)
+    with pytest.raises(ValueError,match='Single nonempty category'):
+        feature_cache(None,pd.DataFrame(dict(category=['bottle','cable'])))
+
+
+def test_durable_resume_matches_uninterrupted_optimization(tmp_path,monkeypatch):
+    from anomaly_detection import ssn_final as final
+    from anomaly_detection.ssn_research import train_epoch
+    from anomaly_detection.supersimplenet import optimizer_for
+    monkeypatch.setattr(final,'ROOT',tmp_path)
+    path=tmp_path/'checkpoints/supersimplenet/fixture/progress.pt';path.parent.mkdir(parents=True)
+    config=dict(batch_size=2,noise_std=.05,loss='margin_focal')
+    identity=dict(category='bottle',configuration=config,source='fixture')
+    x=torch.randn(4,8,16,16,generator=torch.Generator().manual_seed(7))
+    class Features:
+        def __len__(self):return len(x)
+        def batch(self,indices):return x[indices]
+    def setup():
+        torch.manual_seed(401);model=SuperSimpleHeads(8,4,2);optimizer=optimizer_for(model)
+        scheduler=torch.optim.lr_scheduler.MultiStepLR(optimizer,[2],gamma=.4)
+        generators={key:torch.Generator().manual_seed(seed) for key,seed in [('shuffle',1),('mask',2),('noise',3)]}
+        return model,optimizer,scheduler,generators
+    model,optimizer,scheduler,generators=setup();history=[]
+    def epoch(model,optimizer,scheduler,generators):
+        value=train_epoch(model,Features(),optimizer,generators['shuffle'],generators['mask'],generators['noise'],config)
+        scheduler.step();return value
+    for _ in range(2):history.append(epoch(model,optimizer,scheduler,generators))
+    final.save_progress(path,model,optimizer,scheduler,generators,history,identity,{})
+    expected_random=torch.rand(3);expected=epoch(model,optimizer,scheduler,generators)
+    resumed,opt,sch,gen=setup();saved=final.restore_progress(path,identity,resumed,opt,sch,gen)
+    assert len(saved['history'])==2 and torch.equal(torch.rand(3),expected_random)
+    actual=epoch(resumed,opt,sch,gen)
+    assert actual==expected
+    assert all(torch.equal(value,resumed.state_dict()[key]) for key,value in model.state_dict().items())
+    with pytest.raises(ValueError,match='identity mismatch'):
+        final.restore_progress(path,dict(identity,category='cable'),resumed,opt,sch,gen)
+    path.with_suffix('.pending.pt').write_bytes(b'interrupted partial write')
+    final.save_progress(path,resumed,opt,sch,gen,saved['history'],identity,{})
+    assert len(list(path.parent.glob('interrupted-write-*.pt')))==1
+
+
 def test_extractor_shapes_and_frozen_statistics():
     torch.set_num_threads(4)
     model=SSNExtractor(pretrained=False);model.train()

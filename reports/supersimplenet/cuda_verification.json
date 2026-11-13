@@ -1,0 +1,42 @@
+{
+  "feature_shape": [
+    8,
+    384,
+    64,
+    64
+  ],
+  "extraction_repeat_exact": true,
+  "cache_replay_max_abs_difference": 0.0,
+  "gpu_forward_backward_finite": true,
+  "durable_next_epoch_exact": true,
+  "clean_inference_exact": true,
+  "first_epoch": {
+    "train_loss": 1.96158766746521,
+    "gradient_norm": 27.008235931396484,
+    "synthetic_fraction": 0.25,
+    "target_pixel_fraction": 0.070098876953125,
+    "segmentation_focal": 0.08822093904018402,
+    "margin_loss": 1.4244345426559448,
+    "detection_focal": 0.44893211126327515
+  },
+  "second_epoch": {
+    "train_loss": 1.753053903579712,
+    "gradient_norm": 28.62689781188965,
+    "synthetic_fraction": 0.5,
+    "target_pixel_fraction": 0.1378936767578125,
+    "segmentation_focal": 0.0960516631603241,
+    "margin_loss": 1.3954521417617798,
+    "detection_focal": 0.26155006885528564
+  },
+  "checkpoint_sha256": "0ffc24ccc11f7228d9dfa39b921a0604fcd4879c3c4c9d833e37d00289d7dfc8",
+  "checkpoint": "checkpoints/supersimplenet/04-cuda-durable-verification-v1/progress.pt",
+  "segmentation_shape": [
+    8,
+    1,
+    64,
+    64
+  ],
+  "image_score_shape": [
+    8
+  ]
+}

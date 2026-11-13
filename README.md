@@ -14,7 +14,7 @@ the remaining model families and engineering application are planned.
 | [01](notebooks/01_basic_cnn.ipynb) | Basic CNN, synthetic-supervised segmentation | Complete: bounded development and all 15 categories across three seeds |
 | [02](notebooks/02_convolutional_autoencoder.ipynb) | Convolutional autoencoder | Complete: bounded development and all 15 categories across three seeds |
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
-| [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet | Architecture and measured normal-only GPU pilots verified; development and final benchmark pending |
+| [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; policy frozen for 15 categories × three seeds; final benchmark pending |
 | 05 | PaDiM | Planned |
 | 06 | EfficientAD | Planned |
 | 07 | Cross-model comparison | Planned |

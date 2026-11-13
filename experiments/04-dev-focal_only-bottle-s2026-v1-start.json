@@ -1,0 +1,71 @@
+{
+  "experiment_id": "04-dev-focal_only-bottle-s2026-v1-start",
+  "model_family": "SuperSimpleNetVariant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Removing the balanced margin tests whether it impedes short-budget segmentation learning",
+  "preprocessing": "Whole RGB PIL256, ImageNet V1 normalization; upscale layer2/3 to64 before pooling",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "noise_std": 0.015,
+    "loss": "focal",
+    "seed": 2026,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 40,
+    "validation_every": 10,
+    "hypothesis": "Removing the balanced margin tests whether it impedes short-budget segmentation learning"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "aef86f8902a972b441103c627c42c53232e57d40",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-dev-focal_only-bottle-s2026-v1"
+  },
+  "interpretation": "Only normal fitting/development and fitting-derived synthetic proxies; no calibration/test access",
+  "decision": "retain every epoch; fixed last epoch",
+  "status": "started",
+  "recorded_at": "2026-11-13T04:48:00.548456+00:00",
+  "config_sha256": "b5f6247f760a56b919e78888a72d3acecdd9b26e6f6e7a1def8a3c8a6fc131bd"
+}

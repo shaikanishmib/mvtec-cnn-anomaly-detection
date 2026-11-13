@@ -1,0 +1,36 @@
+{
+  "experiment_id": "04-cuda-durable-verification-v1-start",
+  "model_family": "SuperSimpleNetVerification",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Frozen extraction is repeatable and durable GPU recovery reproduces the next complete optimization epoch exactly",
+  "preprocessing": "Fitting-normal RGB256 and same compatible per-image cache",
+  "hyperparameters": {
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "batch_size": 8,
+    "noise_std": 0.05,
+    "loss": "margin_focal"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "source_sha256": "9cfdd77e6aa33a02cb089cd90c179e4ee1245e4dabc8b21df3785654a6c5612e",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  },
+  "training": {
+    "phase": "correctness only; not a selection candidate"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Eight fitting normals; no calibration or test access",
+  "decision": "Verify before freeze",
+  "status": "started",
+  "recorded_at": "2026-11-13T04:59:16.780559+00:00",
+  "config_sha256": "9a48af7ccddef7a8fb5fb542c3ca0898b2c21f8d8b3c7b53f4012bc08a595259"
+}

@@ -1,0 +1,39 @@
+{
+  "selected_configuration": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "noise_std": 0.05,
+    "loss": "margin_focal",
+    "seed": 2026,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 40,
+    "validation_every": 10,
+    "hypothesis": "Frozen selected Lite feature-space anomaly discrimination; no further development or test-driven changes",
+    "aggregation": "top1pct",
+    "resolution": 256
+  },
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "measured_train_step_seconds": 0.13084763136028094,
+  "projected_training_seconds": 5118.7593388141895,
+  "projected_three_seed_training_seconds": 5118.7593388141895,
+  "measured_development_peak_gpu_bytes": 761477632,
+  "measured_development_peak_rss_bytes": 2294018048,
+  "expected_total_feature_cache_bytes": 33684455424,
+  "expected_native_evaluation_minutes": 75.0,
+  "decision": "Use three seeds within90-minute measured training budget; otherwise retain one predefined seed2026 and report missing seed uncertainty",
+  "learning_evidence": {
+    "common_proxy_image_auroc": 0.9986979166666667,
+    "common_proxy_pixel_ap": 0.9297983477628408,
+    "objective": 0.9548461925595813
+  },
+  "official_test_accessed": false
+}
