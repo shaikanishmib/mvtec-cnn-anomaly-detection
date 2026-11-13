@@ -1,0 +1,400 @@
+{
+  "experiment_id": "03-development-selection-v1",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "hypothesis": "Choose budget/aggregation from the fixed four-category synthetic-proxy objective within measured resource budgets.",
+  "preprocessing": "Whole PIL bilinear 256 + V1 transform resize/crop 256; ImageNet normalization",
+  "hyperparameters": {
+    "frozen_at_utc": "2026-11-12T18:38:15.737779+00:00",
+    "configuration": {
+      "bank_budget": 2048,
+      "candidate_limit": 20000,
+      "projection_dim": 32,
+      "seed": 2026,
+      "backbone": "resnet18",
+      "weights": "IMAGENET1K_V1",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "resolution": 256,
+      "normalize": false,
+      "query_chunk": 512,
+      "bank_chunk": 2048,
+      "aggregation": "top1pct"
+    },
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "categories": [
+      "bottle",
+      "cable",
+      "capsule",
+      "carpet",
+      "grid",
+      "hazelnut",
+      "leather",
+      "metal_nut",
+      "pill",
+      "screw",
+      "tile",
+      "toothbrush",
+      "transistor",
+      "wood",
+      "zipper"
+    ],
+    "selected_variant": "b2048",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "weight_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+    "source_sha256": {
+      "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+      "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+      "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+      "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+      "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294",
+    "image_calibration": "higher reserved-normal q95, strict >; secondary q99 diagnostic",
+    "pixel_calibration": "exact higher pooled reserved-normal 256-map q99.5, strict >",
+    "uncertainty": "2000 whole-image bootstrap; exact image vectors; pixel 4096 bins of d/(d+calibration median patch distance); raw native point metrics exact",
+    "simplifications": [
+      "ResNet18",
+      "direct multiscale concatenation",
+      "20000 random candidates before projected coreset",
+      "no paper image-score neighborhood reweighting",
+      "no Gaussian smoothing",
+      "whole-image 256 geometry override"
+    ]
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654",
+    "source_sha256": {
+      "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+      "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {
+    "candidates": [
+      {
+        "budget": 2048,
+        "aggregation": "top1pct",
+        "coreset_seconds": 1.4175227250007083,
+        "wall_seconds": 5.216867249999268,
+        "bank_bytes": 3145728.0,
+        "search_p50_ms": 4.564775000289956,
+        "search_p95_ms": 5.555465000588813,
+        "gpu_peak_bytes": 620777984.0,
+        "cpu_peak_bytes": 2139331584.0,
+        "auroc": 0.8971455186445542,
+        "ap": 0.9251691585737394,
+        "recall": 0.7140780086848635,
+        "fpr": 0.04951370468611848,
+        "precision": 0.9532352941176471,
+        "f1": 0.798675287725153,
+        "pixel_ap": 0.6345514261404865,
+        "objective": 0.7658484723925203
+      },
+      {
+        "budget": 2048,
+        "aggregation": "max",
+        "coreset_seconds": 1.4175227250007083,
+        "wall_seconds": 5.216867249999268,
+        "bank_bytes": 3145728.0,
+        "search_p50_ms": 4.564775000289956,
+        "search_p95_ms": 5.555465000588813,
+        "gpu_peak_bytes": 620777984.0,
+        "cpu_peak_bytes": 2139331584.0,
+        "auroc": 0.8921806215821138,
+        "ap": 0.9206683654638527,
+        "recall": 0.7076677522746071,
+        "fpr": 0.07703003337041156,
+        "precision": 0.9350763807285547,
+        "f1": 0.7823539321235173,
+        "pixel_ap": 0.6345514261404865,
+        "objective": 0.7633660238613
+      },
+      {
+        "budget": 1024,
+        "aggregation": "top1pct",
+        "coreset_seconds": 0.7899717249993046,
+        "wall_seconds": 4.717200600000979,
+        "bank_bytes": 1572864.0,
+        "search_p50_ms": 3.447649999998248,
+        "search_p95_ms": 4.295903750607977,
+        "gpu_peak_bytes": 620777984.0,
+        "cpu_peak_bytes": 2139006976.0,
+        "auroc": 0.8964915631867093,
+        "ap": 0.9252977222716494,
+        "recall": 0.7619610732009926,
+        "fpr": 0.07485748053392659,
+        "precision": 0.9215686274509803,
+        "f1": 0.820219186704636,
+        "pixel_ap": 0.627422079902622,
+        "objective": 0.7619568215446657
+      },
+      {
+        "budget": 1024,
+        "aggregation": "max",
+        "coreset_seconds": 0.7899717249993046,
+        "wall_seconds": 4.717200600000979,
+        "bank_bytes": 1572864.0,
+        "search_p50_ms": 3.447649999998248,
+        "search_p95_ms": 4.295903750607977,
+        "gpu_peak_bytes": 620777984.0,
+        "cpu_peak_bytes": 2139006976.0,
+        "auroc": 0.8900008641758456,
+        "ap": 0.9183812360286752,
+        "recall": 0.7221425248138957,
+        "fpr": 0.03978066797866575,
+        "precision": 0.9538709677419355,
+        "f1": 0.8079931972789116,
+        "pixel_ap": 0.627422079902622,
+        "objective": 0.7587114720392338
+      },
+      {
+        "budget": 256,
+        "aggregation": "top1pct",
+        "coreset_seconds": 0.2796383249997234,
+        "wall_seconds": 5.432594175001213,
+        "bank_bytes": 393216.0,
+        "search_p50_ms": 3.7716374990850454,
+        "search_p95_ms": 5.407409999497759,
+        "gpu_peak_bytes": 612389376.0,
+        "cpu_peak_bytes": 2035260416.0,
+        "auroc": 0.8941967234724362,
+        "ap": 0.9221407809375649,
+        "recall": 0.6818199441687345,
+        "fpr": 0.04310344827586207,
+        "precision": 0.9632352941176471,
+        "f1": 0.7777777777777778,
+        "pixel_ap": 0.6022773138520194,
+        "objective": 0.7482370186622279
+      },
+      {
+        "budget": 256,
+        "aggregation": "max",
+        "coreset_seconds": 0.2796383249997234,
+        "wall_seconds": 5.432594175001213,
+        "bank_bytes": 393216.0,
+        "search_p50_ms": 3.7716374990850454,
+        "search_p95_ms": 5.407409999497759,
+        "gpu_peak_bytes": 612389376.0,
+        "cpu_peak_bytes": 2035260416.0,
+        "auroc": 0.8748933201671462,
+        "ap": 0.9055746801095524,
+        "recall": 0.66569091191067,
+        "fpr": 0.023095462194461083,
+        "precision": 0.9669607843137255,
+        "f1": 0.7733987662861754,
+        "pixel_ap": 0.6022773138520194,
+        "objective": 0.7385853170095829
+      }
+    ],
+    "compute_budget": {
+      "pilot": {
+        "configuration": {
+          "backbone": "resnet18",
+          "weights": "IMAGENET1K_V1",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "resolution": 256,
+          "bank_budget": 512,
+          "candidate_limit": 20000,
+          "projection_dim": 32,
+          "query_chunk": 512,
+          "bank_chunk": 2048,
+          "seed": 2026,
+          "normalize": false
+        },
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "weight_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+        "extractor_parameters": 2782784,
+        "trainable_parameters": 0,
+        "feature_shapes": [
+          [
+            1,
+            64,
+            64,
+            64
+          ],
+          [
+            1,
+            128,
+            32,
+            32
+          ],
+          [
+            1,
+            256,
+            16,
+            16
+          ]
+        ],
+        "embedding_shape": [
+          24576,
+          384
+        ],
+        "patches_per_image": 1024,
+        "extraction_seconds": 0.442961100001412,
+        "coreset_seconds": 0.8132004999970377,
+        "search_8_images_seconds": 0.030620199999248143,
+        "search_p50_ms": 4.397949998747208,
+        "search_p95_ms": 5.506249997779377,
+        "coverage": {
+          "candidate_count": 20000,
+          "projected_radius": 1.3653745651245117,
+          "projected_mean_distance": 0.9100455045700073,
+          "projection_dim": 32
+        },
+        "resources": {
+          "seconds": 3.489012300000468,
+          "cpu_initial_rss_bytes": 948654080,
+          "cpu_peak_rss_bytes": 1669513216,
+          "cpu_peak_increment_bytes": 720859136,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 275537920,
+          "peak_gpu_reserved_bytes": 354418688
+        },
+        "bank_bytes": 786432,
+        "feature_bytes_per_image": 1572864,
+        "all_category_fitting_images": {
+          "bottle": 147,
+          "cable": 158,
+          "capsule": 155,
+          "carpet": 196,
+          "grid": 186,
+          "hazelnut": 275,
+          "leather": 173,
+          "metal_nut": 154,
+          "pill": 187,
+          "screw": 224,
+          "tile": 162,
+          "toothbrush": 42,
+          "transistor": 151,
+          "wood": 173,
+          "zipper": 168
+        },
+        "expected_feature_cache_bytes": {
+          "bottle": 231211008,
+          "cable": 248512512,
+          "capsule": 243793920,
+          "carpet": 308281344,
+          "grid": 292552704,
+          "hazelnut": 432537600,
+          "leather": 272105472,
+          "metal_nut": 242221056,
+          "pill": 294125568,
+          "screw": 352321536,
+          "tile": 254803968,
+          "toothbrush": 66060288,
+          "transistor": 237502464,
+          "wood": 272105472,
+          "zipper": 264241152
+        },
+        "projected_three_seed_final_extraction_seconds": 47.08307358765008,
+        "coreset_cost_caveat": "Pilot bank 512; candidate cap and selected bank budget affect final cost. Deterministic extraction runs once, not three times.",
+        "correctness": {
+          "float64_fixture": true,
+          "zero_self_distances": true,
+          "finite_nonnegative_maps": true,
+          "map_shape": [
+            8,
+            256,
+            256
+          ]
+        }
+      },
+      "selected_configuration": {
+        "bank_budget": 2048,
+        "candidate_limit": 20000,
+        "projection_dim": 32,
+        "seed": 2026,
+        "backbone": "resnet18",
+        "weights": "IMAGENET1K_V1",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "resolution": 256,
+        "normalize": false,
+        "query_chunk": 512,
+        "bank_chunk": 2048,
+        "aggregation": "top1pct"
+      },
+      "models": 45,
+      "expected_coreset_seconds": 63.788522625031874,
+      "expected_fitting_extraction_seconds_once": 47.08307358765008,
+      "expected_all_partition_extraction_seconds": 98.81723872531498,
+      "expected_final_bank_vectors_bytes_total": 141557760,
+      "max_fitting_embedding_bytes": 432537600,
+      "max_measured_development_gpu_allocated_bytes": 724849152,
+      "max_measured_development_cpu_rss_bytes": 2211012608,
+      "measured_development_search_p50_ms": 4.564775000289956,
+      "expected_native_evaluation_minutes": 75,
+      "expected_bank_and_cache_minutes": 10,
+      "decision": "Feasible: run all 15 categories with three coreset seeds; extraction shared; no official test tuning"
+    }
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/patchcore/03-dev-b256-bottle-s2026-v1"
+  },
+  "interpretation": "Only proxy evidence informs this selection. Larger banks did not consistently improve textures. No evidence justifies expanding backbone/normalization/smoothing searches in this bounded variant.",
+  "decision": "freeze b2048 / top1pct",
+  "status": "completed",
+  "recorded_at": "2026-11-12T18:38:15.794816+00:00",
+  "config_sha256": "f9fd9f99b09cc3f5df47350c405f67d62772578ee216aa46d3c1c3c49f20ae4a"
+}

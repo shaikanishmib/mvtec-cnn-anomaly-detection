@@ -1,0 +1,146 @@
+{
+  "pilot": {
+    "configuration": {
+      "backbone": "resnet18",
+      "weights": "IMAGENET1K_V1",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "resolution": 256,
+      "bank_budget": 512,
+      "candidate_limit": 20000,
+      "projection_dim": 32,
+      "query_chunk": 512,
+      "bank_chunk": 2048,
+      "seed": 2026,
+      "normalize": false
+    },
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "weight_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+    "extractor_parameters": 2782784,
+    "trainable_parameters": 0,
+    "feature_shapes": [
+      [
+        1,
+        64,
+        64,
+        64
+      ],
+      [
+        1,
+        128,
+        32,
+        32
+      ],
+      [
+        1,
+        256,
+        16,
+        16
+      ]
+    ],
+    "embedding_shape": [
+      24576,
+      384
+    ],
+    "patches_per_image": 1024,
+    "extraction_seconds": 0.442961100001412,
+    "coreset_seconds": 0.8132004999970377,
+    "search_8_images_seconds": 0.030620199999248143,
+    "search_p50_ms": 4.397949998747208,
+    "search_p95_ms": 5.506249997779377,
+    "coverage": {
+      "candidate_count": 20000,
+      "projected_radius": 1.3653745651245117,
+      "projected_mean_distance": 0.9100455045700073,
+      "projection_dim": 32
+    },
+    "resources": {
+      "seconds": 3.489012300000468,
+      "cpu_initial_rss_bytes": 948654080,
+      "cpu_peak_rss_bytes": 1669513216,
+      "cpu_peak_increment_bytes": 720859136,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 275537920,
+      "peak_gpu_reserved_bytes": 354418688
+    },
+    "bank_bytes": 786432,
+    "feature_bytes_per_image": 1572864,
+    "all_category_fitting_images": {
+      "bottle": 147,
+      "cable": 158,
+      "capsule": 155,
+      "carpet": 196,
+      "grid": 186,
+      "hazelnut": 275,
+      "leather": 173,
+      "metal_nut": 154,
+      "pill": 187,
+      "screw": 224,
+      "tile": 162,
+      "toothbrush": 42,
+      "transistor": 151,
+      "wood": 173,
+      "zipper": 168
+    },
+    "expected_feature_cache_bytes": {
+      "bottle": 231211008,
+      "cable": 248512512,
+      "capsule": 243793920,
+      "carpet": 308281344,
+      "grid": 292552704,
+      "hazelnut": 432537600,
+      "leather": 272105472,
+      "metal_nut": 242221056,
+      "pill": 294125568,
+      "screw": 352321536,
+      "tile": 254803968,
+      "toothbrush": 66060288,
+      "transistor": 237502464,
+      "wood": 272105472,
+      "zipper": 264241152
+    },
+    "projected_three_seed_final_extraction_seconds": 47.08307358765008,
+    "coreset_cost_caveat": "Pilot bank 512; candidate cap and selected bank budget affect final cost. Deterministic extraction runs once, not three times.",
+    "correctness": {
+      "float64_fixture": true,
+      "zero_self_distances": true,
+      "finite_nonnegative_maps": true,
+      "map_shape": [
+        8,
+        256,
+        256
+      ]
+    }
+  },
+  "selected_configuration": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2026,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "models": 45,
+  "expected_coreset_seconds": 63.788522625031874,
+  "expected_fitting_extraction_seconds_once": 47.08307358765008,
+  "expected_all_partition_extraction_seconds": 98.81723872531498,
+  "expected_final_bank_vectors_bytes_total": 141557760,
+  "max_fitting_embedding_bytes": 432537600,
+  "max_measured_development_gpu_allocated_bytes": 724849152,
+  "max_measured_development_cpu_rss_bytes": 2211012608,
+  "measured_development_search_p50_ms": 4.564775000289956,
+  "expected_native_evaluation_minutes": 75,
+  "expected_bank_and_cache_minutes": 10,
+  "decision": "Feasible: run all 15 categories with three coreset seeds; extraction shared; no official test tuning"
+}

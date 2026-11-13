@@ -51,7 +51,7 @@ def feature_cache(extractor,rows,batch_size=16):
     if meta.exists():
         saved=json.loads(meta.read_text())
         if not path.exists() or sha256(path)!=saved['sha256']:raise ValueError('Feature cache changed')
-        return np.load(path,mmap_mode='r'),saved
+        return np.load(path,mmap_mode='r'),dict(saved,cache_hit=True)
     if path.exists():raise FileExistsError('Incomplete cache preserved; register recovery: '+str(path))
     with Resources() as resource:
         images=load_resized(rows,256,allow_test=rows.partition.eq('test').all())
@@ -63,7 +63,7 @@ def feature_cache(extractor,rows,batch_size=16):
     saved=dict(identity=identity,sha256=sha256(path),path=path.relative_to(ROOT).as_posix(),
         shape=[len(rows),1024,384],bytes=path.stat().st_size,resources=resource.result)
     with meta.open('x') as stream:json.dump(saved,stream,indent=2)
-    return np.load(path,mmap_mode='r'),saved
+    return np.load(path,mmap_mode='r'),dict(saved,cache_hit=False)
 
 
 @torch.inference_mode()

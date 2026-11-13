@@ -59,9 +59,40 @@ def test_nearest_distances_against_float64_reference(chunks):
 
 def test_aggregation_and_calibration_isolation():
     from anomaly_detection.metrics import calibrate_normal,binary_metrics
-    maps=torch.zeros(2,10,10);maps[0,0,0]=5;maps[1,:2,:2]=3
+    maps=torch.zeros(2,20,20);maps[0,0,0]=5;maps[1,:2,:2]=3
     assert image_scores(maps).tolist()==[5,3]
-    assert image_scores(maps,'top1pct').tolist()==[5,3]
+    assert image_scores(maps,'top1pct').tolist()==[1.25,3]
     threshold=calibrate_normal(np.arange(20))
     result=binary_metrics([0,0,1,1],[18,19,20,21],threshold)
     assert result['confusion_matrix']==[[2,0],[0,2]]
+
+
+def test_distance_calibration_only_reserved_normals(monkeypatch):
+    from types import SimpleNamespace
+    import pandas as pd
+    from anomaly_detection import patchcore_evaluation as evaluation
+    calls=[]
+    def rows(partition,category):
+        calls.append((partition,category));assert partition=='calibration'
+        return pd.DataFrame(dict(path=['bottle/train/good/a.png','bottle/train/good/b.png'],sha256=['a','b']))
+    monkeypatch.setattr(evaluation,'read_partition',rows)
+    monkeypatch.setattr(evaluation,'feature_cache',lambda *args:(None,{'cache_hit':True}))
+    patches=torch.stack([torch.full((32,32),2.),torch.full((32,32),8.)])
+    monkeypatch.setattr(evaluation,'score_embeddings',lambda *args:patches)
+    model=SimpleNamespace(extractor=None,bank=None,config={'aggregation':'top1pct'})
+    result=evaluation.calibrate_model(model,'bottle',256)
+    assert calls==[('calibration','bottle')]
+    assert result['image_threshold']==result['pixel_threshold']==8
+    assert result['histogram_scale']==5
+
+
+def test_bank_construction_requires_fitting_category(monkeypatch):
+    from anomaly_detection.patchcore_research import fitting_embeddings
+    from anomaly_detection.cnn_research import read_partition
+    monkeypatch.setattr(torch.Tensor,'cuda',lambda self:self)
+    rows=read_partition('fit','bottle').iloc[:2].copy()
+    assert fitting_embeddings(rows,np.zeros((2,1024,384),np.float32)).shape==(2048,384)
+    rows.loc[rows.index[0],'category']='cable'
+    with pytest.raises(ValueError):fitting_embeddings(rows,np.zeros((2,1024,384),np.float32))
+    rows=read_partition('calibration','bottle').iloc[:2]
+    with pytest.raises(ValueError):fitting_embeddings(rows,np.zeros((2,1024,384),np.float32))

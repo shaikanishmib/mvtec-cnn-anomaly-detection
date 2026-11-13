@@ -1,0 +1,1033 @@
+{
+  "experiment_id": "03-dev-b1024-cable-s2026-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "A 1024-patch projected coreset represents category normals within bounded search cost.",
+  "preprocessing": "Whole PIL bilinear 256 + V1 transform resize/crop 256; ImageNet normalization",
+  "hyperparameters": {
+    "bank_budget": 1024,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2026,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654",
+    "source_sha256": {
+      "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+      "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "development"
+  },
+  "metrics": {
+    "experiment_id": "03-dev-b1024-cable-s2026-v1",
+    "category": "cable",
+    "configuration": {
+      "bank_budget": 1024,
+      "candidate_limit": 20000,
+      "projection_dim": 32,
+      "seed": 2026,
+      "backbone": "resnet18",
+      "weights": "IMAGENET1K_V1",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "resolution": 256,
+      "normalize": false,
+      "query_chunk": 512,
+      "bank_chunk": 2048
+    },
+    "phase": "development",
+    "fitting_normals": 127,
+    "probe_sources": 31,
+    "candidate_coverage": {
+      "candidate_count": 20000,
+      "projected_radius": 2.180377960205078,
+      "projected_mean_distance": 1.648409366607666,
+      "projection_dim": 32
+    },
+    "coreset_seconds": 0.7413244000017585,
+    "bank_resources": {
+      "seconds": 1.0484902999996848,
+      "cpu_initial_rss_bytes": 1732001792,
+      "cpu_peak_rss_bytes": 2131537920,
+      "cpu_peak_increment_bytes": 399536128,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 594039296,
+      "peak_gpu_reserved_bytes": 1556086784
+    },
+    "checkpoint": "checkpoints/patchcore/03-dev-b1024-cable-s2026-v1/bank.pt",
+    "checkpoint_sha256": "a1a670d55b35c35dc6b5647124a1504088ac8de69c07a98006949cd1c655798d",
+    "checkpoint_bytes": 1599117,
+    "bank_vector_bytes": 1572864,
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "cable/train/good/003.png",
+            "sha256": "3ec3a5455355965dd8a473fb50a96caa78477a8f284811f0451feda36ea5e39d"
+          },
+          {
+            "path": "cable/train/good/004.png",
+            "sha256": "b428006619d16a7cf59586e6711444c79d27cd6c99a4e4b8c27c74b836426c3f"
+          },
+          {
+            "path": "cable/train/good/006.png",
+            "sha256": "777256314c59eb54f7e1d40751db414c771e6d5b7a47b9ef02daf991a0c586b6"
+          },
+          {
+            "path": "cable/train/good/008.png",
+            "sha256": "1b4b1d5d43c568cff107782aa1ab226770cf07715cf81a749046f0e2cd940dc8"
+          },
+          {
+            "path": "cable/train/good/009.png",
+            "sha256": "4948f5662ee3592627e8478b1a3222d70f19d84fbb30794574c5b1a452ac9346"
+          },
+          {
+            "path": "cable/train/good/010.png",
+            "sha256": "63579fa84325d4ad5ced67737246e2d99d78fedf53c5b930eddc4730cb465d5f"
+          },
+          {
+            "path": "cable/train/good/013.png",
+            "sha256": "a620c8aeaf16e5c2a91f7b171a9669136f11e07003cdeb663843c4fcef13172d"
+          },
+          {
+            "path": "cable/train/good/014.png",
+            "sha256": "1b5942324c0486dfa48e71e16a4b6714e9b687e72791e06341270fa7ca2e261d"
+          },
+          {
+            "path": "cable/train/good/015.png",
+            "sha256": "e37325979c21718b5d7ed3c456211ff73a876f113c4a281047834379fe6c71fb"
+          },
+          {
+            "path": "cable/train/good/017.png",
+            "sha256": "9e07b580b35c95ba03497a42cfeff08e831dd470d1416150ff9b579656651e6a"
+          },
+          {
+            "path": "cable/train/good/022.png",
+            "sha256": "c471f03205a41e39f205a2250d1073b4ace2d7b7dce8f37972dbd9ef09623652"
+          },
+          {
+            "path": "cable/train/good/027.png",
+            "sha256": "c6c04690d24d32d53b344d0d8f49e2ab33d4aef3d73ae049235525aeeef3619c"
+          },
+          {
+            "path": "cable/train/good/030.png",
+            "sha256": "5e1d777412cd64161c953a36626f48a34213f219fa6e9e2968df2023defbd91f"
+          },
+          {
+            "path": "cable/train/good/033.png",
+            "sha256": "767671f7a1db200375aa40d60ba51f564d8b8c90b1b1e4463e9b606f2c25a481"
+          },
+          {
+            "path": "cable/train/good/034.png",
+            "sha256": "3150881df38cff3350b0879cfac4f38c93b293b0de644533b89ae2f248bd7c1e"
+          },
+          {
+            "path": "cable/train/good/035.png",
+            "sha256": "e8bcf2c2f95f7fd95291df93324322371e92a19e938bcd7685206fcf683d7a98"
+          },
+          {
+            "path": "cable/train/good/036.png",
+            "sha256": "93d807cb287e85c3af8ddf1c1df8ef63a4b7c75834a3fab1f86210d3cbf22d4d"
+          },
+          {
+            "path": "cable/train/good/042.png",
+            "sha256": "43a90e233097323d8fec5ab2006eb7a2275535a4206b3d131725c8fc70e93b49"
+          },
+          {
+            "path": "cable/train/good/043.png",
+            "sha256": "f5e6091c04ee522be55b7016e92ac2197d45713eff537fba36aba1bc955f931e"
+          },
+          {
+            "path": "cable/train/good/044.png",
+            "sha256": "0f042fce061afacbbb4d595215f6e548215132ea90408d764bbb5441972054eb"
+          },
+          {
+            "path": "cable/train/good/046.png",
+            "sha256": "4466b0901651b3fe1d2774e4f0807fb58676f9a4531bda6711ec25d36317fb5a"
+          },
+          {
+            "path": "cable/train/good/047.png",
+            "sha256": "27c09f936bbacb50161fc47a219dcfd915bd2e3208d4751c7e0fb58fc1239709"
+          },
+          {
+            "path": "cable/train/good/053.png",
+            "sha256": "3cd57c87eb7fd4763d9ab7e6d810cfc13ae803c1afc317f51bfc6d077e5550d5"
+          },
+          {
+            "path": "cable/train/good/054.png",
+            "sha256": "aa8e4e32d69affbf10f02e80d82a99d208cd5106b047e127baa2fbae86e9942d"
+          },
+          {
+            "path": "cable/train/good/055.png",
+            "sha256": "2a7e735cbba129ac45401f10ece59644039d60d8341b5738037f5f5daae20d4e"
+          },
+          {
+            "path": "cable/train/good/056.png",
+            "sha256": "49967041319cc3f95bf5666fdaa8a81b6f94c4a13d46eed4a9aa2fbd8b914413"
+          },
+          {
+            "path": "cable/train/good/057.png",
+            "sha256": "0edc03088ca2f16cb31cf21972938efcd7f7f0e2d7d61eb71b245b931d0294d4"
+          },
+          {
+            "path": "cable/train/good/058.png",
+            "sha256": "4e99b255b97e97cfdd80bade1f4cb3f28aa7f12234b8f661269bb37cd96ebdee"
+          },
+          {
+            "path": "cable/train/good/059.png",
+            "sha256": "4655635c6e3141f2e873ee79d6dd1f5f2b89e1ca2797a001e3b4c254e1ea2bb3"
+          },
+          {
+            "path": "cable/train/good/060.png",
+            "sha256": "671eb336f885f419c242b1243fa940c42f4df7c1dca7cc14bcddfe316d99a5d7"
+          },
+          {
+            "path": "cable/train/good/062.png",
+            "sha256": "7a0bf9fb2b53126c7eba291b684f344d85dd77ba1a7885679839a62b433d9882"
+          },
+          {
+            "path": "cable/train/good/063.png",
+            "sha256": "52d4fa7f98072a70b6457150efbe5b6392eb1874aae9c0590e2ad89d540d591d"
+          },
+          {
+            "path": "cable/train/good/065.png",
+            "sha256": "b9492703c01ca7191193ab4d469150095fd50dbb0d901d3b739b903158d4709d"
+          },
+          {
+            "path": "cable/train/good/066.png",
+            "sha256": "86d7af751bfefa7a97f8f6fa68c000bbc2d0edd01087c67a3d4ac9e4516bc49b"
+          },
+          {
+            "path": "cable/train/good/068.png",
+            "sha256": "a9839b15be9ab9fc6ae49e96b3eeddf39506c2fc1ad888c3ba2e1abe21b54886"
+          },
+          {
+            "path": "cable/train/good/069.png",
+            "sha256": "b7d71b9a15663880fa44789abcdfa4a7542c8bcfefb797b7af506ee28674ffe6"
+          },
+          {
+            "path": "cable/train/good/070.png",
+            "sha256": "58ebf1366b9fa832fbc4f8e4978706b4c1c5b59ab709b6694660d51a5c842d35"
+          },
+          {
+            "path": "cable/train/good/072.png",
+            "sha256": "ffc2ccdb7d987890bb9dfbe950f5f74103416e2a49ac30ab82b84e830837fa07"
+          },
+          {
+            "path": "cable/train/good/074.png",
+            "sha256": "af42b551e0179e6a8aa34c217a62fe90f5e452efc6cca5433dad3e86e2a21f12"
+          },
+          {
+            "path": "cable/train/good/075.png",
+            "sha256": "83186282f5b4c2805251f6aa4926bed514b48177bc7020efdee45cfe46fc11b6"
+          },
+          {
+            "path": "cable/train/good/076.png",
+            "sha256": "4360102343829173cc1cca14a63f9b8d78be3fb09d791570526b974103914f86"
+          },
+          {
+            "path": "cable/train/good/077.png",
+            "sha256": "4677d1720e735c912608859841e847df37cb870ac45cec07dfe643b8e20096c6"
+          },
+          {
+            "path": "cable/train/good/078.png",
+            "sha256": "d1aace4e062c01502940e5b40717b1790a595e8086e04d3097ad39bcb832b5b5"
+          },
+          {
+            "path": "cable/train/good/079.png",
+            "sha256": "ade2a21c4428e85fcc1a6adf670cb7a1b38ac1a663ea4055ee9de4148df3014e"
+          },
+          {
+            "path": "cable/train/good/081.png",
+            "sha256": "1b6b3293f2efbab7f1d543981f0986cacea9b9a4513ebe133125e887659ced3f"
+          },
+          {
+            "path": "cable/train/good/082.png",
+            "sha256": "bdda1728b819a4d36c5a7f7a11c93d06bd61bfe03a61e073effb964abdc15ef6"
+          },
+          {
+            "path": "cable/train/good/084.png",
+            "sha256": "fa668e23299ed4a827304a3eaac692e222c419ab8a9a5d8e1e85ab2c43375bf8"
+          },
+          {
+            "path": "cable/train/good/086.png",
+            "sha256": "0804ef637c8056279f66f925f7ee3cf425075d1d276dfadd6cc54a14107ac0f7"
+          },
+          {
+            "path": "cable/train/good/087.png",
+            "sha256": "9db80299c40a7702fe1dc05bd7794b518a0be4ac58dfb97377f607ce4ad5468e"
+          },
+          {
+            "path": "cable/train/good/088.png",
+            "sha256": "dc24155d573071fcd8eb31f1a2a8fd9d374a9bbaf6f60f59b23e056b05fb636d"
+          },
+          {
+            "path": "cable/train/good/089.png",
+            "sha256": "b4c61541c5254d31aa02f7986e14127e52fa884b0f8cf79fa358b4d7faf313f0"
+          },
+          {
+            "path": "cable/train/good/091.png",
+            "sha256": "b93d896c72e4ab36abc4b18eb97c4ac5ac6accec1071c8ac15b1c36017f97703"
+          },
+          {
+            "path": "cable/train/good/095.png",
+            "sha256": "e697a63b115c91105ff4291ab3cf2cbf67831da9c82b71cbc4b761092991912a"
+          },
+          {
+            "path": "cable/train/good/096.png",
+            "sha256": "4dab3cb05851ad2647629e78c1d92e533148e12e834c293b28c399c48f0ec2dc"
+          },
+          {
+            "path": "cable/train/good/098.png",
+            "sha256": "30437238ad324382a99267bf363d4c71ac9fe8b1fb30d725602d02633110c5d2"
+          },
+          {
+            "path": "cable/train/good/100.png",
+            "sha256": "f95ae58f3181842a64b6e58efe4dd65fb7cee74d47f3f82ab5ca8aa6ff852d06"
+          },
+          {
+            "path": "cable/train/good/101.png",
+            "sha256": "c86819c8ef9c22918227a09210f4867d8922dc01dcf3dd7b94efe71ff3abc41a"
+          },
+          {
+            "path": "cable/train/good/104.png",
+            "sha256": "5105f5610f691435a5bc03f99d8d60ad0bddfdf85adba6b7fecd156fd6af80de"
+          },
+          {
+            "path": "cable/train/good/105.png",
+            "sha256": "0dc22d3682338e78e67fd59d3af9ef820c4c118171da276b423abdb0a152254e"
+          },
+          {
+            "path": "cable/train/good/107.png",
+            "sha256": "f4ccb049de1e223d668a699213323f967220a458cd6334d4d4b5a69917cc28ea"
+          },
+          {
+            "path": "cable/train/good/108.png",
+            "sha256": "6af0c4b5aaf4439cdbc6f52cc3bd799e082ed5ae8c178c7f466c1af77099c930"
+          },
+          {
+            "path": "cable/train/good/109.png",
+            "sha256": "33ac0d12f22f9dbd87ac16c118703fa7e9dba4c0bd2031f80f671542fadc3015"
+          },
+          {
+            "path": "cable/train/good/110.png",
+            "sha256": "41f7571e295f3062ad374807658695e43c63d62e2c9cf38dc7ef1d7fd0ce8497"
+          },
+          {
+            "path": "cable/train/good/113.png",
+            "sha256": "afd83e4fd10123bff347e266df0205ac30dbcf78a6b544e840719bdca2a94717"
+          },
+          {
+            "path": "cable/train/good/114.png",
+            "sha256": "c0f589f67af400e2935b3d4e89a1cbfb8bac7b55f6226780b79e2a2afde00a2e"
+          },
+          {
+            "path": "cable/train/good/115.png",
+            "sha256": "f194c22105557132ecc4c821350843cd001bb63eaac5e2d8cb488814e18b11e4"
+          },
+          {
+            "path": "cable/train/good/116.png",
+            "sha256": "1fbcee38a40f72d160a4d8084c48ad24e25165cd9c00ff4f7b4611a68523ba22"
+          },
+          {
+            "path": "cable/train/good/118.png",
+            "sha256": "4d30d5cd4ef1ed1c3aae629cf520291deb618a69d70cc85838887ba6a2a497e5"
+          },
+          {
+            "path": "cable/train/good/124.png",
+            "sha256": "54238cfaf7bf011fe8c73a9646eb3a12cf1157b2d6ea7173267e29798fa53806"
+          },
+          {
+            "path": "cable/train/good/126.png",
+            "sha256": "1694c7012dda31362aed3bee1271eb8b269ec494432202e321eda585871f8418"
+          },
+          {
+            "path": "cable/train/good/127.png",
+            "sha256": "dc5dffff6a1f7aa1692cbcf9fbd6b122d0e4b972853d69bc5f79c24bf7c8090e"
+          },
+          {
+            "path": "cable/train/good/128.png",
+            "sha256": "2714700d40e22afd6513b792c3d8b4b132fab398563d6b37f9c9e66e2de9fe3b"
+          },
+          {
+            "path": "cable/train/good/129.png",
+            "sha256": "1dd5169cd0b76906fca387116d70003d12eb2b0de1ff1c64f4df024c841c9df5"
+          },
+          {
+            "path": "cable/train/good/130.png",
+            "sha256": "88984a90645ba87c5e904fc4e3ebf8ae6e3ba5baeddefcd78e4328820eb1f115"
+          },
+          {
+            "path": "cable/train/good/131.png",
+            "sha256": "762671702baebbb5d70499eafa6b48aa655c211a5b6ca8ed93b511fc05302e8b"
+          },
+          {
+            "path": "cable/train/good/133.png",
+            "sha256": "0d6461b56076ea6fa9f8c8ae939304cf4a23711f1c3c6ef977096084f1d4ce1e"
+          },
+          {
+            "path": "cable/train/good/134.png",
+            "sha256": "50b541d39aad34377498d343f72aa64987d90d524c4ea6dfdc7671fe9744a473"
+          },
+          {
+            "path": "cable/train/good/137.png",
+            "sha256": "d49b6ad0086bd717e53aa46be0d73ff552a72cb2bcf12a9e29cedeeb2dd00599"
+          },
+          {
+            "path": "cable/train/good/138.png",
+            "sha256": "1ca2d6851c537de8f82fac67135b864652949f04a44256d012f8e7a0013b59eb"
+          },
+          {
+            "path": "cable/train/good/140.png",
+            "sha256": "4ffe3ab6794db6748f8a0a85f39c3a6fc6c799a7d93a22ad06969044ea33fc97"
+          },
+          {
+            "path": "cable/train/good/143.png",
+            "sha256": "a7f12f0bc5c983fdec0f01844a7a8cf70fa4d28d9ba5382242304879990112f8"
+          },
+          {
+            "path": "cable/train/good/144.png",
+            "sha256": "3934d92da1b38628bafd7aa9b87eeeab78a927e850c44536e26647f6f33c39c2"
+          },
+          {
+            "path": "cable/train/good/147.png",
+            "sha256": "0e9a1c8e75d504513523d92848ee028e5d92ea2ce58d4cfe84b7d393629c7577"
+          },
+          {
+            "path": "cable/train/good/150.png",
+            "sha256": "4975f743739e1c713f27bae1c7e311af6ed89a6c8a812f2066786dad7767d342"
+          },
+          {
+            "path": "cable/train/good/151.png",
+            "sha256": "3dcd175d3d3eb5535b93c627072fb2c590f109f6e6fe24be72a76813c335f210"
+          },
+          {
+            "path": "cable/train/good/152.png",
+            "sha256": "7fe9e4c5d863639418b53c20b4d3a7d57c30a8595ded37bb06daee42ec39116c"
+          },
+          {
+            "path": "cable/train/good/153.png",
+            "sha256": "e5611d91eac67192e28c6212f0599a76d967b68d2ed996d814ce5a463f3b4893"
+          },
+          {
+            "path": "cable/train/good/154.png",
+            "sha256": "413b84f9265b608b59b330b50ff9b47d201a71a623da5954f851a8d06fed390b"
+          },
+          {
+            "path": "cable/train/good/156.png",
+            "sha256": "c1ca5e5b4382689e6f825ed5b8b861c1278261dd98dac528269ef5535a573715"
+          },
+          {
+            "path": "cable/train/good/158.png",
+            "sha256": "d1637ba0263698778334c4383d8da63fdeb0238630f5c55a5b95e130a8d83ba6"
+          },
+          {
+            "path": "cable/train/good/160.png",
+            "sha256": "4503e4fe3d7bb4cdcb4fcc2a4cbecb9984ae7bbf74a1761006be9b0215d7549b"
+          },
+          {
+            "path": "cable/train/good/161.png",
+            "sha256": "8efcb9519f081329c93b356407b6ceda2b4ff5a885d07f7b1f18fdae398ddff4"
+          },
+          {
+            "path": "cable/train/good/163.png",
+            "sha256": "59e61dcdfd8b8230d92f3a7c7243e0adc73eae65baa1b3941fadfa34d65f5d00"
+          },
+          {
+            "path": "cable/train/good/165.png",
+            "sha256": "60d5c37d2a646f8e2df66ebee52e9f164724624f7956223bee0784c0fe3282b9"
+          },
+          {
+            "path": "cable/train/good/166.png",
+            "sha256": "1ccfdc8686afa274242dda4ba833d05e987c171d9ec94fb4ca9eddcea0c05c34"
+          },
+          {
+            "path": "cable/train/good/167.png",
+            "sha256": "80b117ab500ff8358e04bb4e8bdc1ce063b088a5990015749c8f6514dfb971df"
+          },
+          {
+            "path": "cable/train/good/169.png",
+            "sha256": "4ee1c02a9c5d9c29395e5807a73aa0f42ffea3663c5cc47c349d22add62aed31"
+          },
+          {
+            "path": "cable/train/good/172.png",
+            "sha256": "3fc42048ec5d58f6cb9509916564ddc48259db17251b071d38907301f9c1b5dd"
+          },
+          {
+            "path": "cable/train/good/174.png",
+            "sha256": "69091319fe8f95b7c4bea3c7698f042f54cd0e3e8bedb83c16cf2d9ceff2d6b0"
+          },
+          {
+            "path": "cable/train/good/176.png",
+            "sha256": "3cfd9ee31b2ed44130058905a1d6cbff827abbf9455e34f65f69c43b34f30848"
+          },
+          {
+            "path": "cable/train/good/178.png",
+            "sha256": "66145410a3712248a9e34060bf6e6641f07f71266b54ef920e568407e761e251"
+          },
+          {
+            "path": "cable/train/good/179.png",
+            "sha256": "773f83c56882de0159d9eeb34547aa0c08a087cdff772b8b32c97fc7ac4e8a3a"
+          },
+          {
+            "path": "cable/train/good/181.png",
+            "sha256": "70b535503f5d79a1ea3d67b339af3762fa17f1d8b43c34a6522fc6ad7ee50890"
+          },
+          {
+            "path": "cable/train/good/182.png",
+            "sha256": "95126c5f45c10678457de711e2e6f25d3462c8e5b67566cec585c00fab9c07f2"
+          },
+          {
+            "path": "cable/train/good/183.png",
+            "sha256": "9df5b16ba7ce7192dd760733edc5605093a3d3f3889e0c661a3170d4c228665a"
+          },
+          {
+            "path": "cable/train/good/186.png",
+            "sha256": "0b7050e81e394e4a20430a664ba9ed8e0f4aacb4493e3e512da41a67290743b0"
+          },
+          {
+            "path": "cable/train/good/187.png",
+            "sha256": "9d2e024770b9632fd33e13a75c89d844a73122f94976ec233d82f9f459af82eb"
+          },
+          {
+            "path": "cable/train/good/188.png",
+            "sha256": "758cf3bec287fc496ec06a132b6bbde053ad982a4ca7ac48fdca9137d5379235"
+          },
+          {
+            "path": "cable/train/good/190.png",
+            "sha256": "54d02d39b938fa6bf25653d16bfb2db0e37c388893a0493c09da08b3e3bc3d3c"
+          },
+          {
+            "path": "cable/train/good/195.png",
+            "sha256": "8acafe5ff5ef34f8fb994fd9968b8a3944ef0271577e787560f43915584ebf61"
+          },
+          {
+            "path": "cable/train/good/196.png",
+            "sha256": "847128f6054573cef518cefd0f1613dee642fd78efe88605878344f19946054a"
+          },
+          {
+            "path": "cable/train/good/197.png",
+            "sha256": "4b3f9444d8173034d18ecbd33128cfd60f2d6d371df798c5bf326b10efa08769"
+          },
+          {
+            "path": "cable/train/good/199.png",
+            "sha256": "0e84e071b911e3475df047e2271ff7fd95ef1098cd2a636ee3821c97e6580b58"
+          },
+          {
+            "path": "cable/train/good/200.png",
+            "sha256": "7c8d4bb5e6f8faefaa2cefde04b58c107b53ff3bd705b5aafb01a81d9dc28b4c"
+          },
+          {
+            "path": "cable/train/good/202.png",
+            "sha256": "69886ae52f22789e836ef562c9cc0b8ce82a1c1ddac34be7a16f145989d01c3e"
+          },
+          {
+            "path": "cable/train/good/203.png",
+            "sha256": "be7d29d4d6036127bc41688b6701a9d0e2b9b3e971fc7551d2a66442b5d42ff5"
+          },
+          {
+            "path": "cable/train/good/204.png",
+            "sha256": "8b7334a5c1c388386d75a4861ac06d70c2fa973f48d20a37e4602d198f297611"
+          },
+          {
+            "path": "cable/train/good/205.png",
+            "sha256": "aa4c33c70fd91381fdca61eaba65d3cdb66a317aa509334035742067b3bd9953"
+          },
+          {
+            "path": "cable/train/good/206.png",
+            "sha256": "0a0438be2ca076b327d00b0c462ca80dc57114ff4280d4bb045b3999edb919df"
+          },
+          {
+            "path": "cable/train/good/210.png",
+            "sha256": "abef53fae32c3eec2d0ca67d6d13ccf834b05df2bbe1c76e7fbacaef27fd1f2f"
+          },
+          {
+            "path": "cable/train/good/213.png",
+            "sha256": "5b8b5eb7ccff39e7cc7b252af7d157a9e88bac69e55b1574a902944bbdcf44d9"
+          },
+          {
+            "path": "cable/train/good/214.png",
+            "sha256": "45b380e55b9a79a78ef0b4037ac23c50e097a525d480451abd5176c33d59a901"
+          },
+          {
+            "path": "cable/train/good/216.png",
+            "sha256": "3e4cb96825c868e26763f3fdb6969774211f8bad69c932d7efc3199e743f6d0f"
+          },
+          {
+            "path": "cable/train/good/217.png",
+            "sha256": "eff121d24a487d31ce540b4b12f3e4d70eff12d5b677d5d46059878bf85ec6e2"
+          },
+          {
+            "path": "cable/train/good/219.png",
+            "sha256": "a01a223247759da9e6233e6e7757b190d044041b63a750e1d8967b07c3510b07"
+          },
+          {
+            "path": "cable/train/good/220.png",
+            "sha256": "0535d8239e8b5ac7134a6c110b25315e63ecf6ab701b0f9db499a37b700fff8c"
+          },
+          {
+            "path": "cable/train/good/221.png",
+            "sha256": "e3b4de4734e1ca3bed5c3168a0f7ab1712df32080352e75cfc5192526e785ec1"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "90a05d734a20b0d70364c1f6eadf28442348b7a90283f8a7a6c8d04b0a63c598",
+      "path": "outputs/patchcore/features/72801dceb181bf4c0e8a710d88b4c6c1df187ebe9ae936ecea55ae89ca55ba7d.npy",
+      "shape": [
+        127,
+        1024,
+        384
+      ],
+      "bytes": 199753856,
+      "resources": {
+        "seconds": 0.5930592999975488,
+        "cpu_initial_rss_bytes": 1691025408,
+        "cpu_peak_rss_bytes": 1915781120,
+        "cpu_peak_increment_bytes": 224755712,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 241983488,
+        "peak_gpu_reserved_bytes": 650117120
+      },
+      "cache_hit": true
+    },
+    "original_extraction_seconds": 0.5930592999975488,
+    "metrics": {
+      "max": {
+        "auroc": 0.9490114464099897,
+        "ap": 0.9538802128139214,
+        "recall": 0.7419354838709677,
+        "fpr": 0.06451612903225806,
+        "precision": 0.92,
+        "f1": 0.8214285714285714,
+        "confusion_matrix": [
+          [
+            29,
+            2
+          ],
+          [
+            8,
+            23
+          ]
+        ],
+        "pixel_ap": 0.6730410172008955,
+        "objective": 0.8110262318054426
+      },
+      "top1pct": {
+        "auroc": 0.9719042663891779,
+        "ap": 0.9734012099342251,
+        "recall": 0.8387096774193549,
+        "fpr": 0.06451612903225806,
+        "precision": 0.9285714285714286,
+        "f1": 0.8813559322033899,
+        "confusion_matrix": [
+          [
+            29,
+            2
+          ],
+          [
+            5,
+            26
+          ]
+        ],
+        "pixel_ap": 0.6730410172008955,
+        "objective": 0.8224726417950368
+      }
+    },
+    "development": {
+      "development_search_seconds": 0.4950810000009369,
+      "search_p50_ms": 3.5069999994448153,
+      "search_p95_ms": 4.165369997826929,
+      "resources": {
+        "seconds": 2.5890542000015557,
+        "cpu_initial_rss_bytes": 2019377152,
+        "cpu_peak_rss_bytes": 2231037952,
+        "cpu_peak_increment_bytes": 211660800,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 61082624,
+        "peak_gpu_reserved_bytes": 1556086784
+      },
+      "normal_development_patch_distance_quantiles": [
+        0.8973110914230347,
+        1.80830579996109,
+        2.198119080066681,
+        2.8793294429779053
+      ],
+      "normal_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "cable/train/good/001.png",
+              "sha256": "9cb4ed588400ea96380e37b6b0d659fc68144cb8db832e8fa8869f2f4f989a1b"
+            },
+            {
+              "path": "cable/train/good/005.png",
+              "sha256": "c798d7a09178c6fc8945f3f33cda923d0bf91542e764334629fd5dfb6d99c5f9"
+            },
+            {
+              "path": "cable/train/good/012.png",
+              "sha256": "3d5793ce2ce8d42ec80dce86542a7775ba7d7994d6d8b5c83a73a550ef365312"
+            },
+            {
+              "path": "cable/train/good/016.png",
+              "sha256": "596c391c61ea5031a7b4fd319da57bc445ccce9b794ee42c64b2ae95d6a9ca93"
+            },
+            {
+              "path": "cable/train/good/029.png",
+              "sha256": "d81ecbe09593ab82e522e0021b7fe6c88afa346a8367066be34522e0ead48248"
+            },
+            {
+              "path": "cable/train/good/039.png",
+              "sha256": "c72b32ee64fed5dc02f30aafa5256c7da065648510e412331d3c9a679350798b"
+            },
+            {
+              "path": "cable/train/good/040.png",
+              "sha256": "cdb7a4adb112bbead06a3039ee4ae97bf804cb74a68a8b564cb728e739f4dda7"
+            },
+            {
+              "path": "cable/train/good/041.png",
+              "sha256": "612a8a3b75954b8dbc147b48f79b300674aefe1ae63d6c19fbf06467ad29d456"
+            },
+            {
+              "path": "cable/train/good/045.png",
+              "sha256": "8507c741a052150355bf2a58690b036c01163625ee62acf136af0708fd586bc2"
+            },
+            {
+              "path": "cable/train/good/050.png",
+              "sha256": "39c094022cd37fcae802e32eb5f42b7ce123ca6ab8a28c2bbf3aa077249e0757"
+            },
+            {
+              "path": "cable/train/good/052.png",
+              "sha256": "525620483c58ab40b75244473ab750d6629bb318d389c94514913fd34fcb17bc"
+            },
+            {
+              "path": "cable/train/good/064.png",
+              "sha256": "7702f39a9f6565cb8fc90e47684a1869acfab445e6fe558a0ef2116efa347525"
+            },
+            {
+              "path": "cable/train/good/073.png",
+              "sha256": "dce031b566b63dfe5160c590cae2b2c2d5378c0acabd3f0656a65b8827ca144b"
+            },
+            {
+              "path": "cable/train/good/083.png",
+              "sha256": "a4c06f52ab1861c64a2e0d6b026df4b4f6fa56f29c31b93789db648bea695669"
+            },
+            {
+              "path": "cable/train/good/085.png",
+              "sha256": "539abf6bdb884b51a1f8f77e1d186454d49d74d00f2fdfc66af61085f0c003ed"
+            },
+            {
+              "path": "cable/train/good/090.png",
+              "sha256": "4095f26422b3e9babe44e176f597f9ebb0ccc4a71cf77fda4867e8324a2b2165"
+            },
+            {
+              "path": "cable/train/good/092.png",
+              "sha256": "93aace24338930f029f87fd5b2e2087aa8abc9f15b0e20ccf502a15be3e587b1"
+            },
+            {
+              "path": "cable/train/good/097.png",
+              "sha256": "d368f87453ba079a21a2fd268a5b8d921d13123329b866a160e9a12c3c74c640"
+            },
+            {
+              "path": "cable/train/good/102.png",
+              "sha256": "b1e563ea5fe73b67150f077ef500cb63299cce44c76201cb440f1010af8f701c"
+            },
+            {
+              "path": "cable/train/good/106.png",
+              "sha256": "91d8c9f5bce1d0b14ba8b7e777d5b723efa7a72494115f876374ea0ce4d1f478"
+            },
+            {
+              "path": "cable/train/good/132.png",
+              "sha256": "652dcfcb77e8345a83c68879e1cbd3fce6a8aa1bf7d5f3881c2f31c81baf8427"
+            },
+            {
+              "path": "cable/train/good/135.png",
+              "sha256": "31ec3f82fb5ea5c264af90c532da30c0f026c1fc113b79a19af004cc965facb5"
+            },
+            {
+              "path": "cable/train/good/141.png",
+              "sha256": "a79117547c6bcedd22beda3bed57c4cb6fb42c232fec0f324457a74fea185eca"
+            },
+            {
+              "path": "cable/train/good/159.png",
+              "sha256": "1d569b27bc5b237a6e20b217270b7a4c1489017b25051c2a3a6eb78caacbb591"
+            },
+            {
+              "path": "cable/train/good/162.png",
+              "sha256": "2e7304603ed921e74c60493691293ffa946f41226afdf1ec947a0c3c735e1067"
+            },
+            {
+              "path": "cable/train/good/173.png",
+              "sha256": "97cb22b71289df7c169b1b75edb7369a7c5ba2f25b439d7fd753b4c385246416"
+            },
+            {
+              "path": "cable/train/good/180.png",
+              "sha256": "5425e13c9fa941761231e290fcdba51823f9dad0a881cb4683343527c42dcbef"
+            },
+            {
+              "path": "cable/train/good/185.png",
+              "sha256": "99c91d1d4fdd08a33d98a6c2287a75f785827eab1573d6055997519dec3527e4"
+            },
+            {
+              "path": "cable/train/good/193.png",
+              "sha256": "01f49bd9c21c2877581f83e123943b72a4191ad454d4844814448dafbbd69ae5"
+            },
+            {
+              "path": "cable/train/good/211.png",
+              "sha256": "644db6444a896dbe38cb27b679c5f8d793042361f09166382614c841e1044fac"
+            },
+            {
+              "path": "cable/train/good/215.png",
+              "sha256": "4f9d1fb2ad0f2e81e111882159a6a34d878b651cde6b07937057e18152554f41"
+            },
+            {
+              "path": "cable/train/good/218.png",
+              "sha256": "ff66c33bc9c5b3abb994eb7973f3da7ac471362d7c7f2a487147e00babfeea64"
+            },
+            {
+              "path": "cable/train/good/222.png",
+              "sha256": "247020ca2a715bd57dde7e56a874ba7579dc7402f703dd03a488066d4a635234"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "d0034753cf1cdbc49c0f0bb6f398c3f608f96dd25ac73b32f4173b84e2921e19",
+        "path": "outputs/patchcore/features/1b9919e734bc9f320eb9a3e2163fff0acdd693ccca66d554af75f80233ba4624.npy",
+        "shape": [
+          33,
+          1024,
+          384
+        ],
+        "bytes": 51904640,
+        "resources": {
+          "seconds": 0.20188580000103684,
+          "cpu_initial_rss_bytes": 1877278720,
+          "cpu_peak_rss_bytes": 1937711104,
+          "cpu_peak_increment_bytes": 60432384,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 242378752,
+          "peak_gpu_reserved_bytes": 1061158912
+        },
+        "cache_hit": true
+      },
+      "proxy_cache": {
+        "identity": {
+          "rows": [
+            {
+              "path": "cable/train/good/000.png",
+              "sha256": "7457390d52de2e34f706abcbc1185da287a5dfd90573af23fef6816fa5d7a1aa"
+            },
+            {
+              "path": "cable/train/good/011.png",
+              "sha256": "d56b5ec55b358802940abf7e0b5d9265860488200b05cdb728aeba8026a19706"
+            },
+            {
+              "path": "cable/train/good/019.png",
+              "sha256": "31bf9d5e6b040600fa3355c3c10a9fb2c7a2a44b6d0c15a3fc11d54022de2b1f"
+            },
+            {
+              "path": "cable/train/good/020.png",
+              "sha256": "26a5e4c97fc71d4a0b4328fc2d3dc80ca6e7dd552137c054d615159c958614f0"
+            },
+            {
+              "path": "cable/train/good/023.png",
+              "sha256": "b6cfc2b3009837da24c0566d2a27f612c97e7eba5a157b34426ebd905969b9cb"
+            },
+            {
+              "path": "cable/train/good/026.png",
+              "sha256": "0b8e971955a930117894f3703b6fb873b9fd31c6a07f78b13d9563d2c431d355"
+            },
+            {
+              "path": "cable/train/good/031.png",
+              "sha256": "2c96a498aacaf40e28e47c12ce34f4fa60e863b19cbbc70600b26f7c8f32eb83"
+            },
+            {
+              "path": "cable/train/good/032.png",
+              "sha256": "0ab7b8c0f30ac2435715889bd0cc68d96001931d6de67d4b4850edb301b199e5"
+            },
+            {
+              "path": "cable/train/good/037.png",
+              "sha256": "825459ca2b49e685e9d072dd293137c3c9b23714fffb3fe72013dcc644e8bfe2"
+            },
+            {
+              "path": "cable/train/good/048.png",
+              "sha256": "890027af0a275ee58e3d13c207fcc4cf9cbc0e77de342cd21a5e1f45dde0dacf"
+            },
+            {
+              "path": "cable/train/good/049.png",
+              "sha256": "b3647a1aa0230e77a2357ff260d5ebd7b5a4cbdf8fdc30033c1abeabb787b213"
+            },
+            {
+              "path": "cable/train/good/051.png",
+              "sha256": "f0982719c0a483ba6ab04c4456a4a72ee7120ba051b4b4e6e345efff1049cadb"
+            },
+            {
+              "path": "cable/train/good/071.png",
+              "sha256": "f31666e8500de188f3e526a19852e6e64248e592dd717caaef804b37fb9fb1bd"
+            },
+            {
+              "path": "cable/train/good/094.png",
+              "sha256": "515e01c3cc77292588e80ae44d656e333c07de2b5d7ce3113cb248ff4cd5e5ca"
+            },
+            {
+              "path": "cable/train/good/099.png",
+              "sha256": "7ee07b0604b62df82de50d74ddd9423fdd4b8e44dddffd0a86a7daa420120baa"
+            },
+            {
+              "path": "cable/train/good/111.png",
+              "sha256": "de48a32f25d574c5a27191423fb52643d5fd3f4e07664f9a1c19cf468918f696"
+            },
+            {
+              "path": "cable/train/good/112.png",
+              "sha256": "06777b3bccdd327d6c4e5e0b56f2986737a9f9716623ac04f2c202d9529316eb"
+            },
+            {
+              "path": "cable/train/good/121.png",
+              "sha256": "4efa7629d9d9b62ca90c47baaef2bd8fb76e3d041c791f2147b1f68d5ccb9faa"
+            },
+            {
+              "path": "cable/train/good/125.png",
+              "sha256": "c31882922e4a122e8c5674c5fc1d35bb3bab1755bc9a2801b7c48363eaff3c5e"
+            },
+            {
+              "path": "cable/train/good/139.png",
+              "sha256": "2433ac09336d0e5d5425465494d9cf0a9890d614481123a0e3722704a8909f1d"
+            },
+            {
+              "path": "cable/train/good/145.png",
+              "sha256": "447cbff0d4dbcb512fcbfaf57acbd57a0024462f15f5e9556f5c868de6f5e631"
+            },
+            {
+              "path": "cable/train/good/155.png",
+              "sha256": "3faac4d71a218bb3e04204a39beb94f7cc17cc7e2484042bb4960f15a581fa60"
+            },
+            {
+              "path": "cable/train/good/164.png",
+              "sha256": "bfc07c43cc4cd9529222d79bdfe730bf9256b95f0c43f14ff87c50620a1d848a"
+            },
+            {
+              "path": "cable/train/good/168.png",
+              "sha256": "ce1563be1712bc32a41ac8b74591b81b373b7a355475665522f0c5fbb432f0de"
+            },
+            {
+              "path": "cable/train/good/170.png",
+              "sha256": "448093c0fa670471b1c5ecafc9aad90d2628d904147f5717145edf9c584f0931"
+            },
+            {
+              "path": "cable/train/good/175.png",
+              "sha256": "ac6fde605c6e3a1776a3fa1f87592efc9e0d381f82c9514e115447f9f35cd89f"
+            },
+            {
+              "path": "cable/train/good/177.png",
+              "sha256": "66d41cb4644e1b542284c0a0208425007a3c96d226098be27f2ae4200f3fe0bf"
+            },
+            {
+              "path": "cable/train/good/184.png",
+              "sha256": "c4ef7b8eb0e2ca71c018938db5d6920ffb28b11a34f3895d0e9cc665afc39368"
+            },
+            {
+              "path": "cable/train/good/201.png",
+              "sha256": "073ecd16ac4cc0efaa611f31b74c970b29713edd4df57c153c96a58e8cbcc076"
+            },
+            {
+              "path": "cable/train/good/207.png",
+              "sha256": "27ee59d23291a88079367292194b7b622f58dfe15f454724ea0b56544acae2fc"
+            },
+            {
+              "path": "cable/train/good/223.png",
+              "sha256": "f8706fd206cfde5bc919864c2622e2ff4d7c2749e39889946f7950e00755d9ff"
+            }
+          ],
+          "weight": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "core": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "synthetic_source": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+          "seed": 9901
+        },
+        "path": "outputs/patchcore/proxies/d236849a49ce3ab2554fa391019a7df5ed63ba5024379f3b800b6a9d42c087fa.npz",
+        "sha256": "fd7a5244c00b4d1bd9b98de276fd754326a76186d9c84a8661a748b2e3aea23d",
+        "resources": {
+          "seconds": 0.3736594000001787,
+          "cpu_initial_rss_bytes": 1879306240,
+          "cpu_peak_rss_bytes": 2004639744,
+          "cpu_peak_increment_bytes": 125333504,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 276129792,
+          "peak_gpu_reserved_bytes": 1061158912
+        },
+        "cache_hit": true
+      }
+    },
+    "wall_seconds": 4.605081500001688
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/patchcore/03-dev-b1024-cable-s2026-v1"
+  },
+  "interpretation": "No calibration/test data in bank construction or development",
+  "decision": "await bounded development selection",
+  "status": "completed",
+  "recorded_at": "2026-11-12T18:34:05.644812+00:00",
+  "config_sha256": "73c80302f845e2efd49eacd5efb24197302f3b2e7f2af9dea9b228bf5a964a7c"
+}
