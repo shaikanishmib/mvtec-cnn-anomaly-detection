@@ -1,0 +1,1626 @@
+{
+  "experiment_id": "03-test-b2048-pill-s2028-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "pill"
+  ],
+  "hypothesis": "Frozen normal patch-memory confirmation; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2028,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "03-final-b2048-pill-s2028-v1",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+        "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+        "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+        "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "03-test-b2048-pill-s2028-v1",
+    "category": "pill",
+    "seed": 2028,
+    "training_experiment": "03-final-b2048-pill-s2028-v1",
+    "checkpoint_sha256": "7d8246520fbaf48632850a665ee144a461fd5ba9a3fa3849af57ca2ab4673040",
+    "image_auroc": 0.9233496999454447,
+    "image_ap": 0.9856288129228086,
+    "recall": 0.6099290780141844,
+    "fpr": 0.038461538461538464,
+    "precision": 0.9885057471264368,
+    "f1": 0.7543859649122806,
+    "confusion_matrix": [
+      [
+        25,
+        1
+      ],
+      [
+        55,
+        86
+      ]
+    ],
+    "tn": 25,
+    "fp": 1,
+    "fn": 55,
+    "tp": 86,
+    "pixel_auroc": 0.9698746201444006,
+    "pixel_ap": 0.7115328038352644,
+    "au_pro": 0.9337022147647936,
+    "positive_pixels": 3589160,
+    "negative_pixels": 103290840,
+    "regions": 245,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        101467287,
+        1823553
+      ],
+      [
+        874437,
+        2714723
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.5981837596479368,
+      "recall": 0.7563672279864927,
+      "fpr": 0.01765454710214381,
+      "f1": 0.6680392192568481,
+      "tp": 2714723,
+      "fp": 1823553,
+      "tn": 101467287,
+      "fn": 874437
+    },
+    "secondary_image_q99": {
+      "auroc": 0.9233496999454447,
+      "ap": 0.9856288129228086,
+      "recall": 0.5390070921985816,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.7004608294930876,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          65,
+          76
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "pill",
+      "images": 40,
+      "image_threshold": 1.9787589311599731,
+      "secondary_image_threshold_q99": 2.036461353302002,
+      "pixel_threshold": 1.7390440702438354,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_calibration_samples": 2621440,
+      "pixel_score_resolution": 256,
+      "calibration_scores": [
+        1.8199974298477173,
+        1.7388663291931152,
+        1.9234157800674438,
+        1.700661540031433,
+        1.7864283323287964,
+        1.5868760347366333,
+        1.7560862302780151,
+        1.759027361869812,
+        2.036461353302002,
+        1.7539211511611938,
+        1.7945595979690552,
+        1.7464569807052612,
+        1.724997639656067,
+        1.779557466506958,
+        1.6110529899597168,
+        1.8908324241638184,
+        1.7423568964004517,
+        1.9787589311599731,
+        1.9340949058532715,
+        1.715964436531067,
+        1.744430661201477,
+        1.8128279447555542,
+        1.746533989906311,
+        1.7869147062301636,
+        1.7780952453613281,
+        1.8494855165481567,
+        1.778222918510437,
+        1.773484706878662,
+        1.6986511945724487,
+        1.6352578401565552,
+        1.7465745210647583,
+        1.7314873933792114,
+        1.6949496269226074,
+        1.655063271522522,
+        1.7554893493652344,
+        1.7881699800491333,
+        1.7071105241775513,
+        1.742324948310852,
+        1.7284915447235107,
+        1.6122173070907593
+      ],
+      "image_threshold_bootstrap_95ci": [
+        1.8494855165481567,
+        2.036461353302002
+      ],
+      "histogram_scale": 1.1629555225372314,
+      "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+      "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+      "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad",
+      "feature_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "pill/train/good/005.png",
+              "sha256": "0ffc2ffd69387fb6f555edbe7a988fe6e4042f05b6ade946907aada498e55d86"
+            },
+            {
+              "path": "pill/train/good/013.png",
+              "sha256": "f3174fd19aaf75124fe4225c90e029ae923efd8617ff73f65dc7281907d69946"
+            },
+            {
+              "path": "pill/train/good/018.png",
+              "sha256": "ce1dc91d3206a6c108cb8cad5828289b4b6a048d85730da4731107f123f7a013"
+            },
+            {
+              "path": "pill/train/good/019.png",
+              "sha256": "6cd041a3f95512f2ce9356306e61d446f42879fedd2eb0bd31bac38e48886d1d"
+            },
+            {
+              "path": "pill/train/good/023.png",
+              "sha256": "f1f224f4fcf871b7433cdf471c57e2ba64070c683ae55a2a42670caa1babee49"
+            },
+            {
+              "path": "pill/train/good/025.png",
+              "sha256": "794a6e4a07d3688e3c6e81eda5f49c9048afefa12eb8e092b1777ff4598330c1"
+            },
+            {
+              "path": "pill/train/good/028.png",
+              "sha256": "1a050b01016d8b035b4ad51eb5d5c996ea1115509e4e143a53f0b7d8d14f282c"
+            },
+            {
+              "path": "pill/train/good/039.png",
+              "sha256": "252f0ee78e87d6b671183c43a60083a01bee5f2c134431cf0624e89f435682b9"
+            },
+            {
+              "path": "pill/train/good/061.png",
+              "sha256": "17fa8090a28117dbf28a76a947ef6c3ccb4d9c9aa5d3fc43299c31b9fe9e545d"
+            },
+            {
+              "path": "pill/train/good/068.png",
+              "sha256": "ddf32045ec9a24755e9e1eeddbae85ae23b8223e9706e2aac91fdff5c3078901"
+            },
+            {
+              "path": "pill/train/good/070.png",
+              "sha256": "af601ffac2843a41e0b40c0b47c615e93e4406085841274dc62cccc4ccd19856"
+            },
+            {
+              "path": "pill/train/good/075.png",
+              "sha256": "608bd71ad30a6b5682a094696778c60f30279d0ef2dde8f09a886c9e7bef01e0"
+            },
+            {
+              "path": "pill/train/good/100.png",
+              "sha256": "043552e1c2df02e4fcca8838ad4442ffa02645a4a36ef381c988dea9d4c158c1"
+            },
+            {
+              "path": "pill/train/good/103.png",
+              "sha256": "3f0b137b0bb35f7277ce361cc3e4c056f8dec4f60dd099b935be57c4838983cc"
+            },
+            {
+              "path": "pill/train/good/108.png",
+              "sha256": "14e8001b4e8aa63f832b5754a16224afa182401405ea95453db6a4643dc2d898"
+            },
+            {
+              "path": "pill/train/good/117.png",
+              "sha256": "44fa16a7aefd5c49dda0fca5631da1e59dae6f9f1360e5e9e488a5d2c01e262d"
+            },
+            {
+              "path": "pill/train/good/127.png",
+              "sha256": "5c0e25a30981b9c108c046c404af31917e7248a697ef10318c4adfb440ca9774"
+            },
+            {
+              "path": "pill/train/good/129.png",
+              "sha256": "cf7bf96bccde5f5846d14f4bd72e71989e6bb961e40466d45019779b762dbba2"
+            },
+            {
+              "path": "pill/train/good/133.png",
+              "sha256": "d7d4529b62caadd302d42e3e9e474353651932238fd17c5411a76e75068c3793"
+            },
+            {
+              "path": "pill/train/good/138.png",
+              "sha256": "211c8c3310e047c0bb2419fa5c8bf98f56b3bc597989fc59a59b9836ca947ee2"
+            },
+            {
+              "path": "pill/train/good/156.png",
+              "sha256": "bdd99e316d77ab9ed5e49bff5ce91ea11c6b834d02c17c0f773280c4f893c028"
+            },
+            {
+              "path": "pill/train/good/169.png",
+              "sha256": "6737a96dec84d5c4fceddcee99690981d309dc6136e1a32bf6ece7a912c14344"
+            },
+            {
+              "path": "pill/train/good/171.png",
+              "sha256": "99be82900bd43c701f6187e22395c333e11663d133e2633d12aa96da629f4747"
+            },
+            {
+              "path": "pill/train/good/186.png",
+              "sha256": "f2b0cf25b5431d38b6361dc8dc91902f95411277e09c7892b426dbc9fd4720af"
+            },
+            {
+              "path": "pill/train/good/188.png",
+              "sha256": "561a2148521ed49e5fa2ab7820866359e022748b4f77d85bf69230bd519126f7"
+            },
+            {
+              "path": "pill/train/good/189.png",
+              "sha256": "cd628ea1756202720b45ec286ae16bbed92b476609b421bc6d3aba5ae342e854"
+            },
+            {
+              "path": "pill/train/good/195.png",
+              "sha256": "56f52ece035dd0f6c8848af23d62e420ef9679647054ae735890106cae462853"
+            },
+            {
+              "path": "pill/train/good/201.png",
+              "sha256": "1a14f75948c55b3826a9867e85e074b99ec3a715545b8913a243abd0044d46ea"
+            },
+            {
+              "path": "pill/train/good/206.png",
+              "sha256": "f559ec35cf8eb28cfc302a616b418baefc774498ac5e319ffdc22ab8c28855e4"
+            },
+            {
+              "path": "pill/train/good/211.png",
+              "sha256": "581066a290c2969c00c026c8d5330394e82891a90e056ecfef3ed766ce7be76c"
+            },
+            {
+              "path": "pill/train/good/222.png",
+              "sha256": "aa797b9e515d252858ae01064feb6f2044efe3c45e5ccaa4e8190c2038e10dc0"
+            },
+            {
+              "path": "pill/train/good/223.png",
+              "sha256": "01a909fba431731c83a73819e2fefadb0b9a3365e4381b6bc74ea03d8c9589b9"
+            },
+            {
+              "path": "pill/train/good/224.png",
+              "sha256": "dcaf732dc2947f6b39e7373c11a3220ce3a028138f11124c2e5b5e9660c789f0"
+            },
+            {
+              "path": "pill/train/good/234.png",
+              "sha256": "0d79a82e6a977efb1225dc4e7ad2f95445ca591d5c271f40030e4d9dc669d8b3"
+            },
+            {
+              "path": "pill/train/good/236.png",
+              "sha256": "772029ce5686e22ac3dcb600b1be9d1cfdfe8b7ccce7214c693557b04e34b6e6"
+            },
+            {
+              "path": "pill/train/good/237.png",
+              "sha256": "63b034d446f1abc5234d3f7021e3219bc4ef76a6014f72ba968978b7d0c98cd7"
+            },
+            {
+              "path": "pill/train/good/243.png",
+              "sha256": "5d55ddba7eb26392408c911d0ed597f847af396e767644856f36fd71dc0e998e"
+            },
+            {
+              "path": "pill/train/good/256.png",
+              "sha256": "ce71f2ecca34332dc6348c4392619084ba39550a7ccfe8e5963145cc7b79f779"
+            },
+            {
+              "path": "pill/train/good/260.png",
+              "sha256": "2e2d94283c3fa2310f850f255da42b08f0e376fdccdc989e1ba31482e3903ae3"
+            },
+            {
+              "path": "pill/train/good/265.png",
+              "sha256": "94126cd1367b0b56d34479bbcecd91e471b4ffe54abe6fab7cdec9b064447417"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "d8de6959d6a7c19c3ced0a02612c0d277c028b57c313ac10fb2a010cbedc4530",
+        "path": "outputs/patchcore/features/51a2c024449132623b680339345dc63b7fdd77846ef677775d223fff40614df9.npy",
+        "shape": [
+          40,
+          1024,
+          384
+        ],
+        "bytes": 62914688,
+        "resources": {
+          "seconds": 0.4499756000004709,
+          "cpu_initial_rss_bytes": 1604448256,
+          "cpu_peak_rss_bytes": 1687769088,
+          "cpu_peak_increment_bytes": 83320832,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 246177792,
+          "peak_gpu_reserved_bytes": 341835776
+        },
+        "cache_hit": true
+      }
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 5.361800000173389,
+        "p95_ms": 5.668205002984905
+      },
+      "host_to_device": {
+        "p50_ms": 1.3274000011733733,
+        "p95_ms": 3.364214997782254
+      },
+      "feature_extraction": {
+        "p50_ms": 11.875999998665066,
+        "p95_ms": 13.37108500301838
+      },
+      "nearest_neighbor": {
+        "p50_ms": 3.5435500012681587,
+        "p95_ms": 4.080249999424268
+      },
+      "model": {
+        "p50_ms": 15.440000001035514,
+        "p95_ms": 17.141845000878675
+      },
+      "postprocessing": {
+        "p50_ms": 9.329150001576636,
+        "p95_ms": 10.658255000453208
+      },
+      "end_to_end": {
+        "p50_ms": 31.625900001017726,
+        "p95_ms": 34.5253049985331
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 435 MHz, 45"
+      },
+      "peak_inference_allocated_bytes": 71194112,
+      "peak_inference_reserved_bytes": 341835776
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.8769768092953925,
+          0.9627068137342111
+        ],
+        "image_ap": [
+          0.9740525360657617,
+          0.9943663916783336
+        ],
+        "recall": [
+          0.528169014084507,
+          0.6928571428571428
+        ],
+        "fpr": [
+          0.0,
+          0.12906732117812042
+        ],
+        "precision": [
+          0.9620253164556962,
+          1.0
+        ],
+        "f1": [
+          0.6875000000000001,
+          0.8148225957049485
+        ],
+        "pixel_auroc": [
+          0.9598535685428359,
+          0.9787180385299635
+        ],
+        "pixel_ap": [
+          0.559519432056728,
+          0.7984222751294493
+        ],
+        "au_pro": [
+          0.9141950343187656,
+          0.9491313813762057
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9698743909570486,
+      "pixel_ap": 0.7110393485309493,
+      "au_pro": 0.9337026892179103
+    },
+    "training_seconds": 2.551453299998684,
+    "coreset_seconds": 1.4573206999994,
+    "original_extraction_seconds": 1.001649300000281,
+    "feature_cache_hit_during_fit": true,
+    "test_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "pill/test/color/000.png",
+            "sha256": "d3f975073a5fde118e8848e495370c32c714f58870127537e74bb8b9a32ef74c"
+          },
+          {
+            "path": "pill/test/color/001.png",
+            "sha256": "4a1dbaee70c8e0e2bc32943def4697002919c4bcfe37e0013f85bf93dfcb9bc9"
+          },
+          {
+            "path": "pill/test/color/002.png",
+            "sha256": "3428656690acd5ea3061497d2d8ea309b9b6d6e65471e2935e7627f5f6397d46"
+          },
+          {
+            "path": "pill/test/color/003.png",
+            "sha256": "f3b68a0d05470793e7ff31b036b7969e5329f5997dbcc114d4b06a82442f7730"
+          },
+          {
+            "path": "pill/test/color/004.png",
+            "sha256": "ac7ca80cf23ccce2e2f81dd77c748e90ba3da7cfb37d10ad7ff797e3f7555393"
+          },
+          {
+            "path": "pill/test/color/005.png",
+            "sha256": "739d3031c3ce33910ad1924cb696defa548cce153b70d4441b892ce51da9e947"
+          },
+          {
+            "path": "pill/test/color/006.png",
+            "sha256": "0ccb7d441a31332224da2bea13bf2789ec188c571c79add841127a16e41b42ec"
+          },
+          {
+            "path": "pill/test/color/007.png",
+            "sha256": "e401deaf92e941bf42010b989771a746cf8869914c45eb0460c315d3741c06dc"
+          },
+          {
+            "path": "pill/test/color/008.png",
+            "sha256": "01d0f0551ae938a2881da507b9640d436c8754197e9d5289b80cf66ab5af6e37"
+          },
+          {
+            "path": "pill/test/color/009.png",
+            "sha256": "79e02d0d46ffcc67b49f52a8d9de69af81f856876e2ab287cc2f9860d8260486"
+          },
+          {
+            "path": "pill/test/color/010.png",
+            "sha256": "e17d32318c81d378ca8e10845158e72b2b1a6a13eb8dba8196c683523b831f86"
+          },
+          {
+            "path": "pill/test/color/011.png",
+            "sha256": "577b9d4ef5e88cfc6c4569b628a99afa9d2665337de0af03c26b875099fc4526"
+          },
+          {
+            "path": "pill/test/color/012.png",
+            "sha256": "6d7d4ef4eddde146a2a2f1623a247b7f8dfe534f7489553be1e369c663431fb1"
+          },
+          {
+            "path": "pill/test/color/013.png",
+            "sha256": "3c262260dcc2af53b3b6338f561de45319bfde0e7fb397e0af6986f4e8c232ab"
+          },
+          {
+            "path": "pill/test/color/014.png",
+            "sha256": "5a92579738de22e56a31507fb06947870419a9340536974ef41ecd812b272e7a"
+          },
+          {
+            "path": "pill/test/color/015.png",
+            "sha256": "af26b0cf4ce8cedf18a3d7e763fa60c24b6d292a843589bbdbc4f28fbc6c3054"
+          },
+          {
+            "path": "pill/test/color/016.png",
+            "sha256": "5bf0dff10ce5cbd5d0b7e35c6869bb2d3e84d8fc58dc447f3a0884d97783ceea"
+          },
+          {
+            "path": "pill/test/color/017.png",
+            "sha256": "3bc94b5952778a562e8881888ea8b663e124a42f4a468767547767c72ce8b56d"
+          },
+          {
+            "path": "pill/test/color/018.png",
+            "sha256": "e71b303db7bd458183e44d01a30ee0a16768aa80e804ab074e2bf7b89409e132"
+          },
+          {
+            "path": "pill/test/color/019.png",
+            "sha256": "1866ca9946bb08dd589adc991eb1fd97375f3ca4ec9d00df0763eae382dc542e"
+          },
+          {
+            "path": "pill/test/color/020.png",
+            "sha256": "1721f228bdc31aaef52b82e88a4281fc871542a5e8c717cd873b0298e4060d7b"
+          },
+          {
+            "path": "pill/test/color/021.png",
+            "sha256": "60872f91063786a7aa9894cf1653df75f6bee7522a836a9c38c72acd3dcd919d"
+          },
+          {
+            "path": "pill/test/color/022.png",
+            "sha256": "4aef23429618c28c971585738f28732605858a662666ad5333c53154382f9723"
+          },
+          {
+            "path": "pill/test/color/023.png",
+            "sha256": "8ff0b4ce70b7cb6c104dd2528fdb12fb50809dcc9e8dfc3314de1cc3f0fc3836"
+          },
+          {
+            "path": "pill/test/color/024.png",
+            "sha256": "e77edd3ba5bb7a224c852110b2fada441141dacd3f2b01bbe04b195ae465cca0"
+          },
+          {
+            "path": "pill/test/combined/000.png",
+            "sha256": "177cf331053edb728d7e9d2f5fd8186b06e9ed38739de0bb37685734a6ea3d01"
+          },
+          {
+            "path": "pill/test/combined/001.png",
+            "sha256": "5d77df898fee57d150136e3fb476fe176061c4457eb19bb61c1e05e0aa807a03"
+          },
+          {
+            "path": "pill/test/combined/002.png",
+            "sha256": "13833c306eafa6d79d07b7703e338743d5405c183d8ddb6afb389bb1282e69bb"
+          },
+          {
+            "path": "pill/test/combined/003.png",
+            "sha256": "71d9ccfd7e46c9d1631cf18585a96010117939162b5a6d1c4fabc3b8136a0dec"
+          },
+          {
+            "path": "pill/test/combined/004.png",
+            "sha256": "2e4013e8a4f666a8b71d68b8256171cf9454d20e5633b52eff938dac1c80d539"
+          },
+          {
+            "path": "pill/test/combined/005.png",
+            "sha256": "7ec2eb86cd338995d08408a55b5195166282036d76ef9d923bad6b44ccdda32a"
+          },
+          {
+            "path": "pill/test/combined/006.png",
+            "sha256": "90914a24c09aeb05c56a1f7503ea10b8d23c7460710895288d426dd432106af9"
+          },
+          {
+            "path": "pill/test/combined/007.png",
+            "sha256": "d053e2f0cfb61ff99425c8a005c42dd9eb45125f58431a93dd38c32eacdeca7e"
+          },
+          {
+            "path": "pill/test/combined/008.png",
+            "sha256": "5f58ebf7ed90e765e2f8cc9ce004c6810760b492e5c9aefba9a9cdc8c3eae093"
+          },
+          {
+            "path": "pill/test/combined/009.png",
+            "sha256": "9963d783660956f5d88155bcfee1b471c7b6e355cc9167576c648afcfc2e59b8"
+          },
+          {
+            "path": "pill/test/combined/010.png",
+            "sha256": "c3efc959fa9ee69ea2a996ca10d074add472ae6dd16f5753f136f280912f1e87"
+          },
+          {
+            "path": "pill/test/combined/011.png",
+            "sha256": "4e32c11c51e98fd3ecaa1a253a576daf5eb93aa7a8a990af810b1d9b45105d76"
+          },
+          {
+            "path": "pill/test/combined/012.png",
+            "sha256": "32e6310d677814b5d13d2f39b17c224280accb735d6bc4b93e0e3f32c88f877c"
+          },
+          {
+            "path": "pill/test/combined/013.png",
+            "sha256": "712c47c029d9d0c3e1daafc6534024e0370dfaacb1adf5379376535da3815ad9"
+          },
+          {
+            "path": "pill/test/combined/014.png",
+            "sha256": "614d3e3902ffabc943f94765105689aa3ae5186dfa24834bfb7719d435803dae"
+          },
+          {
+            "path": "pill/test/combined/015.png",
+            "sha256": "0facc231814c9489039217205c99523f6d29123a991b9587911f28076b314ce1"
+          },
+          {
+            "path": "pill/test/combined/016.png",
+            "sha256": "ab37f157ea67248339379e36bf062f70273003ac8c8b719686d52381189ca704"
+          },
+          {
+            "path": "pill/test/contamination/000.png",
+            "sha256": "4e64c0d6953dea1ba3cbc9f722164b46826f6d61c98a1ae7b513958b60bc9a68"
+          },
+          {
+            "path": "pill/test/contamination/001.png",
+            "sha256": "ae5f179021839a653d92bfad501f999ea413818f6145629d003af65f3e78d9e3"
+          },
+          {
+            "path": "pill/test/contamination/002.png",
+            "sha256": "5b2f76c7176a30274403a02719b3853d8dfa8b5ed8bbd80225973ef5b72d3b27"
+          },
+          {
+            "path": "pill/test/contamination/003.png",
+            "sha256": "ed5f9f0a03a8d8c70e9694d583453493fe95e72fb9345056549d1da279e8349e"
+          },
+          {
+            "path": "pill/test/contamination/004.png",
+            "sha256": "fd96eb174a50941625ccf6c03b7e8435f6f789c5a62c35ae750c994282a3924e"
+          },
+          {
+            "path": "pill/test/contamination/005.png",
+            "sha256": "3f150a7af14d1ea60a8a252ee004d97db2c6489b68b04183459eec7798df5fd1"
+          },
+          {
+            "path": "pill/test/contamination/006.png",
+            "sha256": "c570c487f7c69c3ccfe1a4f297bfec2e7378e72b4cb49fc37c6f589ae62f9832"
+          },
+          {
+            "path": "pill/test/contamination/007.png",
+            "sha256": "597e53b6a5e3019eaa6c1c33597215ec733163231d4708ba92eddf94c7dfd8bc"
+          },
+          {
+            "path": "pill/test/contamination/008.png",
+            "sha256": "dc4594b790f26aa36b90a78084bf681c8e67323e7b5a3b3d48dac073cdd372f8"
+          },
+          {
+            "path": "pill/test/contamination/009.png",
+            "sha256": "da4bd600f10286071f2c727c046b4d67f6088566efe7ee8d8fbf32bcf2188b77"
+          },
+          {
+            "path": "pill/test/contamination/010.png",
+            "sha256": "740e0d09360618c4bfb188ff93ec095182c4cd062246ddad7d83dca6a3a0cf9c"
+          },
+          {
+            "path": "pill/test/contamination/011.png",
+            "sha256": "499f989f6020b4a8acab09c8ae0ede2f537b9efb97ce3d4b30cda7c95bfd823e"
+          },
+          {
+            "path": "pill/test/contamination/012.png",
+            "sha256": "8d670b35a991f224b5b21f2937818e3575966c3ea620c29eff96e7a999f395d4"
+          },
+          {
+            "path": "pill/test/contamination/013.png",
+            "sha256": "a8ecbb5f044a7c84854365a8be80fe3d3dcebed89a0bb460bbdd81152264eb98"
+          },
+          {
+            "path": "pill/test/contamination/014.png",
+            "sha256": "70b72809b9ece6886fb6f5e3b74af14cac3428e66e839f351c39993d2b1d9863"
+          },
+          {
+            "path": "pill/test/contamination/015.png",
+            "sha256": "e44be84bb53bc88c3977e3a36dc791c96dab25837b3ec9b188d5c9b76971cfe5"
+          },
+          {
+            "path": "pill/test/contamination/016.png",
+            "sha256": "8cf9cee429ded719d214d58efc1aedca8d9923c09fc3deeb76cec854e2e86bc7"
+          },
+          {
+            "path": "pill/test/contamination/017.png",
+            "sha256": "cfc27310d9d5a83fefddeff90c97403ab053d678108c6f774294d28651ec2754"
+          },
+          {
+            "path": "pill/test/contamination/018.png",
+            "sha256": "194c2b9ad09730191c33e254207a6cf4bd9e7b8f74206b9461c582dd5025d5c9"
+          },
+          {
+            "path": "pill/test/contamination/019.png",
+            "sha256": "4ea52f535c40b34febdecce26aa310f6e383f162a5acb56f1b17f6468a2c294d"
+          },
+          {
+            "path": "pill/test/contamination/020.png",
+            "sha256": "4040af36d71e426bcce1cf21d7c71bde4948d9a2e901b01bcd034a995e86da1f"
+          },
+          {
+            "path": "pill/test/crack/000.png",
+            "sha256": "6b28d1c24c0e50453e7c55a6c6f62bf10e6364c4adeabc584e3e9804622c16eb"
+          },
+          {
+            "path": "pill/test/crack/001.png",
+            "sha256": "494c837e45293c4f3ddc864dbb8dfc639db3c4f5a49ec18aa1e28cafc421ea3e"
+          },
+          {
+            "path": "pill/test/crack/002.png",
+            "sha256": "5d3c0657354efd23281b50e67d35af30c35767be405051b8c44dd53d344d5eca"
+          },
+          {
+            "path": "pill/test/crack/003.png",
+            "sha256": "9924aa918bcb07b24386bf9c42b3f7e3a49f364512562ab64b13a9c3cc116ed2"
+          },
+          {
+            "path": "pill/test/crack/004.png",
+            "sha256": "767350923d7399b36bc8270dc60f4dd513866bc1e06f61ea7e4876f67ec41a51"
+          },
+          {
+            "path": "pill/test/crack/005.png",
+            "sha256": "57d24f449f8bdd01799df202f3ac931c6da0cf828aae65af0fa466105d8fb894"
+          },
+          {
+            "path": "pill/test/crack/006.png",
+            "sha256": "c807c871fe6953ca2a142d32c54633a2ac7727593eb8f300259bc1f57db637d3"
+          },
+          {
+            "path": "pill/test/crack/007.png",
+            "sha256": "e1d60291f2e027445c120112799584aec17ba81f982fb44cfe5ea2841b24d7f1"
+          },
+          {
+            "path": "pill/test/crack/008.png",
+            "sha256": "b2bea896270f16c950430c1a86d9855510b51df0a99e72bf760cd0d360aa563b"
+          },
+          {
+            "path": "pill/test/crack/009.png",
+            "sha256": "b9881aa5694ff78e10b04a75a08f5c051435c64bce6575a9bf25e15d4910bd43"
+          },
+          {
+            "path": "pill/test/crack/010.png",
+            "sha256": "389b2d9c11d83e38a6d8977ebe44e73116d982598064662d67be50354b95ab44"
+          },
+          {
+            "path": "pill/test/crack/011.png",
+            "sha256": "d913afc95c77344c9172d870a9280951b4655c65cd44d62974773ce3fb0cbe1f"
+          },
+          {
+            "path": "pill/test/crack/012.png",
+            "sha256": "a901b2c63a32e04e4c47083ddd1c4ba093ff3ce32fb1bc01933cb23de613645f"
+          },
+          {
+            "path": "pill/test/crack/013.png",
+            "sha256": "e5d3da23d096fc1f91f0a3b67af6d65cddd2049a9c1bb2a63c9289d93f2f55a0"
+          },
+          {
+            "path": "pill/test/crack/014.png",
+            "sha256": "1a06c2490a4c18280aa3c39ceefeecdfbcf2d97f5874ddacddd7dba705d3b05c"
+          },
+          {
+            "path": "pill/test/crack/015.png",
+            "sha256": "604397b9384414bc2541b214abd34c45759d6228768b085cf89e31cf224c6dce"
+          },
+          {
+            "path": "pill/test/crack/016.png",
+            "sha256": "8c3b73397d30293667211700be73e60716d2c74576416cebcb8ef6d210f4243c"
+          },
+          {
+            "path": "pill/test/crack/017.png",
+            "sha256": "e3be9b55202edade41052b18268260a325af073e06179f92bb703db169c59f45"
+          },
+          {
+            "path": "pill/test/crack/018.png",
+            "sha256": "b90b59f62862e47e1e86523c2a2cecf2f19b64fd936dd0e9a22035bca82f56fe"
+          },
+          {
+            "path": "pill/test/crack/019.png",
+            "sha256": "5de49f9168c98b7476c68c1d772053ec36813abb051d19a5bab278448a86083d"
+          },
+          {
+            "path": "pill/test/crack/020.png",
+            "sha256": "a61803e4568c0e74b87f1b414e250903bdcf01114cb098a114a4e007af3fa19e"
+          },
+          {
+            "path": "pill/test/crack/021.png",
+            "sha256": "0c1b2b40533609367d7a3a6d4e11afe98ec78862b1339070e87eaad5fae456e3"
+          },
+          {
+            "path": "pill/test/crack/022.png",
+            "sha256": "df8b43cbd91a3ac9e75963f495578fb3bb85978905742a08815ae26751e73587"
+          },
+          {
+            "path": "pill/test/crack/023.png",
+            "sha256": "c6dc4a4652b742d9a6af55b3b47b4214127156864e85ec10f8954ad565c46c27"
+          },
+          {
+            "path": "pill/test/crack/024.png",
+            "sha256": "d1f89b471c6094318966d7031637eb5e7f47b6671104fd679a3d528e2a9e2267"
+          },
+          {
+            "path": "pill/test/crack/025.png",
+            "sha256": "433dcac02af5280ebf2583691091e3c9990b03e984fa7476193ff2cdc08122e7"
+          },
+          {
+            "path": "pill/test/faulty_imprint/000.png",
+            "sha256": "8a85863ccc0fc9dbfe698f32679687b634bec5c1c50e14b40152da4a2802a1a3"
+          },
+          {
+            "path": "pill/test/faulty_imprint/001.png",
+            "sha256": "153b88eca7561629168f2cdd0052108625a7a20ced0f9d4c4624dfcb27bc9ab7"
+          },
+          {
+            "path": "pill/test/faulty_imprint/002.png",
+            "sha256": "38c1b5c70131e4f82f8b6da103086979e9a7a2ef7ee28d60e52be3b0e26b05dc"
+          },
+          {
+            "path": "pill/test/faulty_imprint/003.png",
+            "sha256": "e1b9ea076ed429971e34454da4ac657fb43bc15e2fe46aad43e07a82acf66161"
+          },
+          {
+            "path": "pill/test/faulty_imprint/004.png",
+            "sha256": "b14b1c5eb90b802be8cda3de6a747c4e36070aff0790ef97ec49e4e9be7dc6b5"
+          },
+          {
+            "path": "pill/test/faulty_imprint/005.png",
+            "sha256": "7f376d73402dec7c479b896e7304890d5cdf3d0a7ac9f888fcf384962df42dbb"
+          },
+          {
+            "path": "pill/test/faulty_imprint/006.png",
+            "sha256": "267c34724d77b4bb5afc5153a8dfcc047a76e40af40b1552b8e25d33cc3d978d"
+          },
+          {
+            "path": "pill/test/faulty_imprint/007.png",
+            "sha256": "253f703825b4e31c86366e26ed07e95ce25d27f75c8997db98eab65860377c8b"
+          },
+          {
+            "path": "pill/test/faulty_imprint/008.png",
+            "sha256": "4af4434cd4966f2aa7ee8325c3fbe63d8893265285a6d176dd900a8c63259b7b"
+          },
+          {
+            "path": "pill/test/faulty_imprint/009.png",
+            "sha256": "2eca71aaeb881578165111ce571921599bf85e1513570eea519e46678af8bb87"
+          },
+          {
+            "path": "pill/test/faulty_imprint/010.png",
+            "sha256": "0672376120235ab0c1b3125e6f97af7924b596cb118ccbcaeaca145972de846b"
+          },
+          {
+            "path": "pill/test/faulty_imprint/011.png",
+            "sha256": "0ea0f87bc72444a78d7465a67a3869ebf990656945217dea02089256df16216a"
+          },
+          {
+            "path": "pill/test/faulty_imprint/012.png",
+            "sha256": "0495251148af46a41aa1821956b61f0e65c791c07e1358d75ad9274a8addf698"
+          },
+          {
+            "path": "pill/test/faulty_imprint/013.png",
+            "sha256": "a5907ce6e2fc70e055ee8f25752fcce5ebf21ce0f650429d42269b2d1ed3648a"
+          },
+          {
+            "path": "pill/test/faulty_imprint/014.png",
+            "sha256": "b4ae479ee1f4632b4f23602cbda232066b769e4b06b10e148fbf7d7f380fe82a"
+          },
+          {
+            "path": "pill/test/faulty_imprint/015.png",
+            "sha256": "f935ecb51eb768c8a6347efefb89777eeb4a9e39a714afd609f1057121dccb47"
+          },
+          {
+            "path": "pill/test/faulty_imprint/016.png",
+            "sha256": "c88c4d0a3e176860ae263ead6f7e753e5eb3b23112224fac89a4b28f629c2881"
+          },
+          {
+            "path": "pill/test/faulty_imprint/017.png",
+            "sha256": "2247705fa4e55543f75e795ec78b3e6777e3384ca4ba3109f482a68cb323ac8a"
+          },
+          {
+            "path": "pill/test/faulty_imprint/018.png",
+            "sha256": "98da6d2a110129396b6f3e1dce79aadea9be10f1484f00d4402f994e8c195e38"
+          },
+          {
+            "path": "pill/test/good/000.png",
+            "sha256": "3243e078047221b22870996b14104f8afc05ecd8964c66cdddc41551d4a36f4e"
+          },
+          {
+            "path": "pill/test/good/001.png",
+            "sha256": "86a3d3f5f413957074ddb24271f7b6d0430f8228164dd15aa74b6c9a275b6061"
+          },
+          {
+            "path": "pill/test/good/002.png",
+            "sha256": "63be516ad34144defde84b0021c46342f813089a24349c6f25f2d01222fbe8a6"
+          },
+          {
+            "path": "pill/test/good/003.png",
+            "sha256": "b76e83e24e099436f42dcf4bb6ddafa3fea8fd93624ccd8d0be818f61548b815"
+          },
+          {
+            "path": "pill/test/good/004.png",
+            "sha256": "bdd094f331e1074dd281a5e0f8afb4b3c9ba6ef0f4fa0a4bb7da0fdd4a2f5b1c"
+          },
+          {
+            "path": "pill/test/good/005.png",
+            "sha256": "bb5215699a2d62bb5066cf8b51dcd25f4c7bd7fc7ee2117a5f2d52261f9dc2e1"
+          },
+          {
+            "path": "pill/test/good/006.png",
+            "sha256": "bca94ba29c4c9c547c01e38ce21bbc697fc63c9db8994576f9455e4a8e61b09e"
+          },
+          {
+            "path": "pill/test/good/007.png",
+            "sha256": "ba9875c998729f87f6d95acf11c8f5e70f242ebf7027871b988f925483c650df"
+          },
+          {
+            "path": "pill/test/good/008.png",
+            "sha256": "030a5ec86ef4559132bad8c61443aabe3786e16c247957d889e23e5541155cfb"
+          },
+          {
+            "path": "pill/test/good/009.png",
+            "sha256": "9220b4441e36e9007350819d01000716468424482e70532c9a30c3dd3569ac99"
+          },
+          {
+            "path": "pill/test/good/010.png",
+            "sha256": "3cbb0d2bb66d73e9ba2e90b9b4bf8c73d365237da261012652e4b9558eb4fb93"
+          },
+          {
+            "path": "pill/test/good/011.png",
+            "sha256": "c32485ad7c182a7d259cfd9dad7b269cb7ac10b72508059459e8a53660149b3a"
+          },
+          {
+            "path": "pill/test/good/012.png",
+            "sha256": "a58ca5fbc88d3779128006bd0620645ad2735efa0690ed12b5259fdce9d11d86"
+          },
+          {
+            "path": "pill/test/good/013.png",
+            "sha256": "7dec39f9d862837d8b8cc7379fa6846df5c333a8720e3a5d4c9607a68998768c"
+          },
+          {
+            "path": "pill/test/good/014.png",
+            "sha256": "1d1d967c94a41e6ec9b7ba7f7bed6af0d7585dc53512634d5242075b450b94bb"
+          },
+          {
+            "path": "pill/test/good/015.png",
+            "sha256": "0d91a2232d378661ac9f9378f5551b50cecfc64200b8fd96f410ee664644ebd9"
+          },
+          {
+            "path": "pill/test/good/016.png",
+            "sha256": "bb0c1fd0482c8b9a4780ee3279c7024b0327562c08ecc1c8206ebacd10cef847"
+          },
+          {
+            "path": "pill/test/good/017.png",
+            "sha256": "64cc54dc98bc0c2261dd9d0d2b0cc4ae9fae891d4652f5ea2f18e8eddb7e4b49"
+          },
+          {
+            "path": "pill/test/good/018.png",
+            "sha256": "d27ce453ecb6c1d7ce0b5e4d5416042fd778c7d534748851eea284efb46ed7d5"
+          },
+          {
+            "path": "pill/test/good/019.png",
+            "sha256": "0084a580c79da0879545bfc891dd4214623c5edc47d8053b78b2d44866938af8"
+          },
+          {
+            "path": "pill/test/good/020.png",
+            "sha256": "f59006c8b32896c81769da06ebbdf1e0f7f13775546be3db6d889ba849df9b6d"
+          },
+          {
+            "path": "pill/test/good/021.png",
+            "sha256": "c6aa6aedd126c82bca369879c6806191e82acf2eaa4d0cc6ad8a6a1a4a03d4bd"
+          },
+          {
+            "path": "pill/test/good/022.png",
+            "sha256": "657549628cbdd809da1f7ad42bdb0774868cb3fe9bd805884afe678f88020d3c"
+          },
+          {
+            "path": "pill/test/good/023.png",
+            "sha256": "e7ee72ca915f97adf980fad3ac609c56a22c10504ce68ff2ce21036b1ede2189"
+          },
+          {
+            "path": "pill/test/good/024.png",
+            "sha256": "75f822cbb889c6889f71658a503f1afdef771edde2ed7f2e7ed38b073dfbd7dd"
+          },
+          {
+            "path": "pill/test/good/025.png",
+            "sha256": "25db227a28902928e16eb500aee9d0fd6517bd71edb236e144d8a70d9d467f9b"
+          },
+          {
+            "path": "pill/test/pill_type/000.png",
+            "sha256": "9cab751a08769a940fcbbf6c8d1c20085aab6339082732e25754bb2b0649259c"
+          },
+          {
+            "path": "pill/test/pill_type/001.png",
+            "sha256": "c6f83ceadb6ec0d4e658fe903e0264fcee2ac35ace4c4da3ae31ebf6c1ed7f6d"
+          },
+          {
+            "path": "pill/test/pill_type/002.png",
+            "sha256": "8512af5caa38e108d0fd76847f2c0bdb86b067acf9a39838550ee2e1976254b2"
+          },
+          {
+            "path": "pill/test/pill_type/003.png",
+            "sha256": "a5dab6f236b1ebb074a7bc71cc968007935efaca8e0eef0d1aea274fd558da99"
+          },
+          {
+            "path": "pill/test/pill_type/004.png",
+            "sha256": "9f0b260d87ec3a14580888c0b247de88f91e275e21a750e4d66bf38a44e74c12"
+          },
+          {
+            "path": "pill/test/pill_type/005.png",
+            "sha256": "091988f80c13630f69d2eb52c958d8501e96afb07827ed588bd6faa996891fba"
+          },
+          {
+            "path": "pill/test/pill_type/006.png",
+            "sha256": "90e1e68109b24b71058a9e8f963f492fbc819323c9f6525b9c6b75ead4400f9a"
+          },
+          {
+            "path": "pill/test/pill_type/007.png",
+            "sha256": "433b1c018c1e83938c488f6ae55b411281e8639eec4646463287b334862ede5f"
+          },
+          {
+            "path": "pill/test/pill_type/008.png",
+            "sha256": "e347fc4671cc2d97ab6c01bff320ac0fa7151c4efd2acc6159107137518b5bb0"
+          },
+          {
+            "path": "pill/test/scratch/000.png",
+            "sha256": "e1e5e72e0b032c96ee1c012f385e9cb78f04a63b636a24dc597f954d840c2c35"
+          },
+          {
+            "path": "pill/test/scratch/001.png",
+            "sha256": "982b8cc0d5fdba71524cae3d4f1e27f1550cadc082f2f312829f3826bca06235"
+          },
+          {
+            "path": "pill/test/scratch/002.png",
+            "sha256": "687873f4e65b8d657e55b1bec122ceb65cde53e20acf1fa25643baa545f38f0d"
+          },
+          {
+            "path": "pill/test/scratch/003.png",
+            "sha256": "06554b0837de470700c7204421d39769d4bd37c8af760cb2e7ea75b31872af70"
+          },
+          {
+            "path": "pill/test/scratch/004.png",
+            "sha256": "ab4bc5c44afdcbbf34bd8f74f3c554afdbe0efd6fc8192772518cc53cf8ca773"
+          },
+          {
+            "path": "pill/test/scratch/005.png",
+            "sha256": "d41a88f0d32951f29fca7823386b978078d2bb99bb59859d816e400a40cce233"
+          },
+          {
+            "path": "pill/test/scratch/006.png",
+            "sha256": "838c73b8a6e2e3939a8b1c3f833ff942386514e580604e44fd4de664a1cbe12c"
+          },
+          {
+            "path": "pill/test/scratch/007.png",
+            "sha256": "5ce3442ff1d6d049f815610a031b05cea314d29ac63312b7fc039614cd564a76"
+          },
+          {
+            "path": "pill/test/scratch/008.png",
+            "sha256": "bb4828866ed01941e5e9422e0326a4226cc170281b151940c0ecc53e306c64d7"
+          },
+          {
+            "path": "pill/test/scratch/009.png",
+            "sha256": "e3c84b10ada4b235c2abd1dc2f485657eca65a5b45ddb71908e259e8966608d1"
+          },
+          {
+            "path": "pill/test/scratch/010.png",
+            "sha256": "4009989bd9f4706b8c462a8a455851891516c120a2046c13194d53563c42cde5"
+          },
+          {
+            "path": "pill/test/scratch/011.png",
+            "sha256": "eae8d985a230b222daad2e29b52a76625a5444d735159136906035acd1255c6a"
+          },
+          {
+            "path": "pill/test/scratch/012.png",
+            "sha256": "2599a758412426a2cc13d8d919084409b5bd5e9b4bf2b9a4e218922bed672b66"
+          },
+          {
+            "path": "pill/test/scratch/013.png",
+            "sha256": "339718fd6c4509f4b8c900bb41261248c23540a065c3f068f4da3d1f5c21e9d2"
+          },
+          {
+            "path": "pill/test/scratch/014.png",
+            "sha256": "16d96e9917c79e46a9e8b72c078945154d7c2fe9bc099320c8a6ec17220dc1ba"
+          },
+          {
+            "path": "pill/test/scratch/015.png",
+            "sha256": "3112c6c961cdceb372ce19abbcc23a742c092a1ffb576861e5301ffed3512cc2"
+          },
+          {
+            "path": "pill/test/scratch/016.png",
+            "sha256": "8cd89d769944c9b956eb109608d1a246b5aac484a0f831cbb4289cd9df16f421"
+          },
+          {
+            "path": "pill/test/scratch/017.png",
+            "sha256": "753841f1c9785a200b61ebe51438b91056e2c14099102ed5f4f1f2d0df34a2c7"
+          },
+          {
+            "path": "pill/test/scratch/018.png",
+            "sha256": "6485807cb0b3dd586656647a6952e7ef5badd606b18d9a5ae08392bc7b521ebe"
+          },
+          {
+            "path": "pill/test/scratch/019.png",
+            "sha256": "ba0cdcc1d0f81dae4dd3543c02b945ff4b0384da26229a36cf14a3f811aafada"
+          },
+          {
+            "path": "pill/test/scratch/020.png",
+            "sha256": "570b244cc80ecbd537630c3ec46e182e1eca9fe94e346ed2f3d534df3a5dbb7d"
+          },
+          {
+            "path": "pill/test/scratch/021.png",
+            "sha256": "c1506d4d113c3c24a0aa72ef4cd0ca79ec4cbe7fea437d65d113c742e337662a"
+          },
+          {
+            "path": "pill/test/scratch/022.png",
+            "sha256": "e565d4e5e9fa956eecf9464f035883ecc11deb0b45b3fc06454a9501588f7bb3"
+          },
+          {
+            "path": "pill/test/scratch/023.png",
+            "sha256": "e6d9f029bc38081bb732d9cbb09e5f9a9650f6f15b5544470902050266be9a9c"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "4096cb54d199c4c8c47c5544a8437f0c006b6dce298418a99c7cbdb8cf059f3c",
+      "path": "outputs/patchcore/features/5f296b938eb35ebf184aee779ca1d3bc7ede47f73db3a1819119b22c1c484e02.npy",
+      "shape": [
+        167,
+        1024,
+        384
+      ],
+      "bytes": 262668416,
+      "resources": {
+        "seconds": 0.7242827000009129,
+        "cpu_initial_rss_bytes": 1615192064,
+        "cpu_peak_rss_bytes": 1900077056,
+        "cpu_peak_increment_bytes": 284884992,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    },
+    "cpu_peak_rss_bytes": 3570941952,
+    "bank_vector_bytes": 3145728,
+    "training_peak_allocated_bytes": 853561856,
+    "checkpoint_bytes": 3187213,
+    "parameters": 2782784,
+    "evaluation_seconds": 86.58339429999978,
+    "per_defect": [
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "color",
+        "defective_images": 25,
+        "auroc": 0.8953846153846154,
+        "ap": 0.9254098799797564,
+        "recall": 0.68,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9444444444444444,
+        "f1": 0.7906976744186047,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            8,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "combined",
+        "defective_images": 17,
+        "auroc": 0.9773755656108598,
+        "ap": 0.9740397923875432,
+        "recall": 0.8235294117647058,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9333333333333333,
+        "f1": 0.8749999999999999,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            3,
+            14
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "contamination",
+        "defective_images": 21,
+        "auroc": 0.978021978021978,
+        "ap": 0.9725877214256253,
+        "recall": 0.7142857142857143,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9375,
+        "f1": 0.8108108108108109,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            6,
+            15
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "crack",
+        "defective_images": 26,
+        "auroc": 0.8239644970414202,
+        "ap": 0.8641763182182346,
+        "recall": 0.38461538461538464,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9090909090909091,
+        "f1": 0.5405405405405405,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            16,
+            10
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "faulty_imprint",
+        "defective_images": 19,
+        "auroc": 0.931174089068826,
+        "ap": 0.9008015745411866,
+        "recall": 0.3684210526315789,
+        "fpr": 0.038461538461538464,
+        "precision": 0.875,
+        "f1": 0.5185185185185185,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            12,
+            7
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "pill_type",
+        "defective_images": 9,
+        "auroc": 1.0,
+        "ap": 1.0000000000000002,
+        "recall": 1.0,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9,
+        "f1": 0.9473684210526316,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            0,
+            9
+          ]
+        ]
+      },
+      {
+        "category": "pill",
+        "seed": 2028,
+        "defect": "scratch",
+        "defective_images": 24,
+        "auroc": 0.9391025641025641,
+        "ap": 0.948028187084027,
+        "recall": 0.5833333333333334,
+        "fpr": 0.038461538461538464,
+        "precision": 0.9333333333333333,
+        "f1": 0.7179487179487181,
+        "confusion_matrix": [
+          [
+            25,
+            1
+          ],
+          [
+            10,
+            14
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/patchcore/03-test-b2048-pill-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "e7e69ab6eb2f3fb301a19d5805ccbb3739a4184bd1503c522ebe7f0a2f4227aa",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "image_rows": 167,
+    "evaluated_at_utc": "2026-11-12T19:43:18.826142+00:00"
+  },
+  "calibration": {
+    "category": "pill",
+    "images": 40,
+    "image_threshold": 1.9787589311599731,
+    "secondary_image_threshold_q99": 2.036461353302002,
+    "pixel_threshold": 1.7390440702438354,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 2621440,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      1.8199974298477173,
+      1.7388663291931152,
+      1.9234157800674438,
+      1.700661540031433,
+      1.7864283323287964,
+      1.5868760347366333,
+      1.7560862302780151,
+      1.759027361869812,
+      2.036461353302002,
+      1.7539211511611938,
+      1.7945595979690552,
+      1.7464569807052612,
+      1.724997639656067,
+      1.779557466506958,
+      1.6110529899597168,
+      1.8908324241638184,
+      1.7423568964004517,
+      1.9787589311599731,
+      1.9340949058532715,
+      1.715964436531067,
+      1.744430661201477,
+      1.8128279447555542,
+      1.746533989906311,
+      1.7869147062301636,
+      1.7780952453613281,
+      1.8494855165481567,
+      1.778222918510437,
+      1.773484706878662,
+      1.6986511945724487,
+      1.6352578401565552,
+      1.7465745210647583,
+      1.7314873933792114,
+      1.6949496269226074,
+      1.655063271522522,
+      1.7554893493652344,
+      1.7881699800491333,
+      1.7071105241775513,
+      1.742324948310852,
+      1.7284915447235107,
+      1.6122173070907593
+    ],
+    "image_threshold_bootstrap_95ci": [
+      1.8494855165481567,
+      2.036461353302002
+    ],
+    "histogram_scale": 1.1629555225372314,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "pill/train/good/005.png",
+            "sha256": "0ffc2ffd69387fb6f555edbe7a988fe6e4042f05b6ade946907aada498e55d86"
+          },
+          {
+            "path": "pill/train/good/013.png",
+            "sha256": "f3174fd19aaf75124fe4225c90e029ae923efd8617ff73f65dc7281907d69946"
+          },
+          {
+            "path": "pill/train/good/018.png",
+            "sha256": "ce1dc91d3206a6c108cb8cad5828289b4b6a048d85730da4731107f123f7a013"
+          },
+          {
+            "path": "pill/train/good/019.png",
+            "sha256": "6cd041a3f95512f2ce9356306e61d446f42879fedd2eb0bd31bac38e48886d1d"
+          },
+          {
+            "path": "pill/train/good/023.png",
+            "sha256": "f1f224f4fcf871b7433cdf471c57e2ba64070c683ae55a2a42670caa1babee49"
+          },
+          {
+            "path": "pill/train/good/025.png",
+            "sha256": "794a6e4a07d3688e3c6e81eda5f49c9048afefa12eb8e092b1777ff4598330c1"
+          },
+          {
+            "path": "pill/train/good/028.png",
+            "sha256": "1a050b01016d8b035b4ad51eb5d5c996ea1115509e4e143a53f0b7d8d14f282c"
+          },
+          {
+            "path": "pill/train/good/039.png",
+            "sha256": "252f0ee78e87d6b671183c43a60083a01bee5f2c134431cf0624e89f435682b9"
+          },
+          {
+            "path": "pill/train/good/061.png",
+            "sha256": "17fa8090a28117dbf28a76a947ef6c3ccb4d9c9aa5d3fc43299c31b9fe9e545d"
+          },
+          {
+            "path": "pill/train/good/068.png",
+            "sha256": "ddf32045ec9a24755e9e1eeddbae85ae23b8223e9706e2aac91fdff5c3078901"
+          },
+          {
+            "path": "pill/train/good/070.png",
+            "sha256": "af601ffac2843a41e0b40c0b47c615e93e4406085841274dc62cccc4ccd19856"
+          },
+          {
+            "path": "pill/train/good/075.png",
+            "sha256": "608bd71ad30a6b5682a094696778c60f30279d0ef2dde8f09a886c9e7bef01e0"
+          },
+          {
+            "path": "pill/train/good/100.png",
+            "sha256": "043552e1c2df02e4fcca8838ad4442ffa02645a4a36ef381c988dea9d4c158c1"
+          },
+          {
+            "path": "pill/train/good/103.png",
+            "sha256": "3f0b137b0bb35f7277ce361cc3e4c056f8dec4f60dd099b935be57c4838983cc"
+          },
+          {
+            "path": "pill/train/good/108.png",
+            "sha256": "14e8001b4e8aa63f832b5754a16224afa182401405ea95453db6a4643dc2d898"
+          },
+          {
+            "path": "pill/train/good/117.png",
+            "sha256": "44fa16a7aefd5c49dda0fca5631da1e59dae6f9f1360e5e9e488a5d2c01e262d"
+          },
+          {
+            "path": "pill/train/good/127.png",
+            "sha256": "5c0e25a30981b9c108c046c404af31917e7248a697ef10318c4adfb440ca9774"
+          },
+          {
+            "path": "pill/train/good/129.png",
+            "sha256": "cf7bf96bccde5f5846d14f4bd72e71989e6bb961e40466d45019779b762dbba2"
+          },
+          {
+            "path": "pill/train/good/133.png",
+            "sha256": "d7d4529b62caadd302d42e3e9e474353651932238fd17c5411a76e75068c3793"
+          },
+          {
+            "path": "pill/train/good/138.png",
+            "sha256": "211c8c3310e047c0bb2419fa5c8bf98f56b3bc597989fc59a59b9836ca947ee2"
+          },
+          {
+            "path": "pill/train/good/156.png",
+            "sha256": "bdd99e316d77ab9ed5e49bff5ce91ea11c6b834d02c17c0f773280c4f893c028"
+          },
+          {
+            "path": "pill/train/good/169.png",
+            "sha256": "6737a96dec84d5c4fceddcee99690981d309dc6136e1a32bf6ece7a912c14344"
+          },
+          {
+            "path": "pill/train/good/171.png",
+            "sha256": "99be82900bd43c701f6187e22395c333e11663d133e2633d12aa96da629f4747"
+          },
+          {
+            "path": "pill/train/good/186.png",
+            "sha256": "f2b0cf25b5431d38b6361dc8dc91902f95411277e09c7892b426dbc9fd4720af"
+          },
+          {
+            "path": "pill/train/good/188.png",
+            "sha256": "561a2148521ed49e5fa2ab7820866359e022748b4f77d85bf69230bd519126f7"
+          },
+          {
+            "path": "pill/train/good/189.png",
+            "sha256": "cd628ea1756202720b45ec286ae16bbed92b476609b421bc6d3aba5ae342e854"
+          },
+          {
+            "path": "pill/train/good/195.png",
+            "sha256": "56f52ece035dd0f6c8848af23d62e420ef9679647054ae735890106cae462853"
+          },
+          {
+            "path": "pill/train/good/201.png",
+            "sha256": "1a14f75948c55b3826a9867e85e074b99ec3a715545b8913a243abd0044d46ea"
+          },
+          {
+            "path": "pill/train/good/206.png",
+            "sha256": "f559ec35cf8eb28cfc302a616b418baefc774498ac5e319ffdc22ab8c28855e4"
+          },
+          {
+            "path": "pill/train/good/211.png",
+            "sha256": "581066a290c2969c00c026c8d5330394e82891a90e056ecfef3ed766ce7be76c"
+          },
+          {
+            "path": "pill/train/good/222.png",
+            "sha256": "aa797b9e515d252858ae01064feb6f2044efe3c45e5ccaa4e8190c2038e10dc0"
+          },
+          {
+            "path": "pill/train/good/223.png",
+            "sha256": "01a909fba431731c83a73819e2fefadb0b9a3365e4381b6bc74ea03d8c9589b9"
+          },
+          {
+            "path": "pill/train/good/224.png",
+            "sha256": "dcaf732dc2947f6b39e7373c11a3220ce3a028138f11124c2e5b5e9660c789f0"
+          },
+          {
+            "path": "pill/train/good/234.png",
+            "sha256": "0d79a82e6a977efb1225dc4e7ad2f95445ca591d5c271f40030e4d9dc669d8b3"
+          },
+          {
+            "path": "pill/train/good/236.png",
+            "sha256": "772029ce5686e22ac3dcb600b1be9d1cfdfe8b7ccce7214c693557b04e34b6e6"
+          },
+          {
+            "path": "pill/train/good/237.png",
+            "sha256": "63b034d446f1abc5234d3f7021e3219bc4ef76a6014f72ba968978b7d0c98cd7"
+          },
+          {
+            "path": "pill/train/good/243.png",
+            "sha256": "5d55ddba7eb26392408c911d0ed597f847af396e767644856f36fd71dc0e998e"
+          },
+          {
+            "path": "pill/train/good/256.png",
+            "sha256": "ce71f2ecca34332dc6348c4392619084ba39550a7ccfe8e5963145cc7b79f779"
+          },
+          {
+            "path": "pill/train/good/260.png",
+            "sha256": "2e2d94283c3fa2310f850f255da42b08f0e376fdccdc989e1ba31482e3903ae3"
+          },
+          {
+            "path": "pill/train/good/265.png",
+            "sha256": "94126cd1367b0b56d34479bbcecd91e471b4ffe54abe6fab7cdec9b064447417"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "d8de6959d6a7c19c3ced0a02612c0d277c028b57c313ac10fb2a010cbedc4530",
+      "path": "outputs/patchcore/features/51a2c024449132623b680339345dc63b7fdd77846ef677775d223fff40614df9.npy",
+      "shape": [
+        40,
+        1024,
+        384
+      ],
+      "bytes": 62914688,
+      "resources": {
+        "seconds": 0.4499756000004709,
+        "cpu_initial_rss_bytes": 1604448256,
+        "cpu_peak_rss_bytes": 1687769088,
+        "cpu_peak_increment_bytes": 83320832,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    }
+  },
+  "paths": {
+    "local": "outputs/patchcore/03-test-b2048-pill-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T19:43:18.833144+00:00",
+  "config_sha256": "1528849ae80edffd4c8507233b412c629b76d748766e7cb6a1319bffb49860df"
+}

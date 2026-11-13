@@ -1,0 +1,1510 @@
+{
+  "experiment_id": "03-test-b2048-cable-s2028-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "Frozen normal patch-memory confirmation; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2028,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "03-final-b2048-cable-s2028-v1",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+        "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+        "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+        "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "03-test-b2048-cable-s2028-v1",
+    "category": "cable",
+    "seed": 2028,
+    "training_experiment": "03-final-b2048-cable-s2028-v1",
+    "checkpoint_sha256": "ca6fc8db480059bc1f7e68319028e228c39100092e2a75f44af4b24acef69013",
+    "image_auroc": 0.9775112443778111,
+    "image_ap": 0.9870853775989422,
+    "recall": 0.8478260869565217,
+    "fpr": 0.034482758620689655,
+    "precision": 0.975,
+    "f1": 0.9069767441860466,
+    "confusion_matrix": [
+      [
+        56,
+        2
+      ],
+      [
+        14,
+        78
+      ]
+    ],
+    "tn": 56,
+    "fp": 2,
+    "fn": 14,
+    "tp": 78,
+    "pixel_auroc": 0.9801971493678521,
+    "pixel_ap": 0.6449180124287281,
+    "au_pro": 0.9148869033107138,
+    "positive_pixels": 4515876,
+    "negative_pixels": 152770524,
+    "regions": 151,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        149498041,
+        3272483
+      ],
+      [
+        1084405,
+        3431471
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.5118577782604117,
+      "recall": 0.7598682957636569,
+      "fpr": 0.021420905776300146,
+      "f1": 0.6116796778560816,
+      "tp": 3431471,
+      "fp": 3272483,
+      "tn": 149498041,
+      "fn": 1084405
+    },
+    "secondary_image_q99": {
+      "auroc": 0.9775112443778111,
+      "ap": 0.9870853775989422,
+      "recall": 0.8478260869565217,
+      "fpr": 0.017241379310344827,
+      "precision": 0.9873417721518988,
+      "f1": 0.9122807017543859,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          14,
+          78
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "cable",
+      "images": 33,
+      "image_threshold": 2.538865566253662,
+      "secondary_image_threshold_q99": 2.5765492916107178,
+      "pixel_threshold": 2.3194222450256348,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_calibration_samples": 2162688,
+      "pixel_score_resolution": 256,
+      "calibration_scores": [
+        2.3682799339294434,
+        2.385087490081787,
+        2.5765492916107178,
+        2.2332191467285156,
+        2.412865400314331,
+        2.286555290222168,
+        2.281782627105713,
+        2.304879903793335,
+        2.2579920291900635,
+        2.377920389175415,
+        2.4508912563323975,
+        2.362797498703003,
+        2.429819107055664,
+        2.336697578430176,
+        2.2764527797698975,
+        2.411564350128174,
+        2.380824089050293,
+        2.3218657970428467,
+        2.2465949058532715,
+        2.307112216949463,
+        2.4942617416381836,
+        2.264155387878418,
+        2.3932273387908936,
+        2.2193377017974854,
+        2.3919827938079834,
+        2.3913259506225586,
+        2.3151445388793945,
+        2.272321939468384,
+        2.4560282230377197,
+        2.538865566253662,
+        2.4468343257904053,
+        2.4268128871917725,
+        2.3316004276275635
+      ],
+      "image_threshold_bootstrap_95ci": [
+        2.4468343257904053,
+        2.5765492916107178
+      ],
+      "histogram_scale": 1.716439962387085,
+      "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+      "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+      "source_paths_sha256": "2b5697fa109f81bcce3830d93cd2dd075a4e258d8215207c6967c19c0eb717f4",
+      "feature_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "cable/train/good/002.png",
+              "sha256": "1402284830cf1992d9be60b38c0dda29859670062ce1e1c91aa02dd1808d2d00"
+            },
+            {
+              "path": "cable/train/good/007.png",
+              "sha256": "e8ee12f5048134b81c9cbbce65c036e99b775debf2a29a2d483ddbd189a053f1"
+            },
+            {
+              "path": "cable/train/good/018.png",
+              "sha256": "207a32294770f4af380c76f2defa5416ebb2eed2b8d3e06a599ee564624c479c"
+            },
+            {
+              "path": "cable/train/good/021.png",
+              "sha256": "4aefbee8308cc376c31a6f0222a20c6838c6cc3589a6125b13a70ef44bb808ba"
+            },
+            {
+              "path": "cable/train/good/024.png",
+              "sha256": "21cbc75d472e4c7060ec3c5a8fadfed4806ab76fd7e889bbcf251992a9e5cdbc"
+            },
+            {
+              "path": "cable/train/good/025.png",
+              "sha256": "f321c6e25857bdcd29f63bdaeacc8b3a8cd636afcd50d528e4068adb3670c40a"
+            },
+            {
+              "path": "cable/train/good/028.png",
+              "sha256": "4c021a9e474b8c8ceabdb1939809a577c95cdee21c60fdcc82e54c73093df21a"
+            },
+            {
+              "path": "cable/train/good/038.png",
+              "sha256": "9aa121f9a1c0d85209a2a8d92211461dfbdb36fae512959292ad1fdecb9d0cc0"
+            },
+            {
+              "path": "cable/train/good/061.png",
+              "sha256": "db293ec54cc2b5671d8c05e6bb1c373f814ec8012c4ce2e8024f7b1bb90deae3"
+            },
+            {
+              "path": "cable/train/good/067.png",
+              "sha256": "14975f0bfce40a60c4d85a5ef7858d95392c7f6149e2d90364cb3f93874391ec"
+            },
+            {
+              "path": "cable/train/good/080.png",
+              "sha256": "bc84e9acc4a483be849a4ff0319ed9b776e45af12791fa213b80fef8c6fa4244"
+            },
+            {
+              "path": "cable/train/good/093.png",
+              "sha256": "53c6dc30a121e2e0caf2fc77d8756e009adc939c6641d9052da2dc2f3fe515a0"
+            },
+            {
+              "path": "cable/train/good/103.png",
+              "sha256": "2428b534db3a489589963468dd5fd0be928d78b379a89d5b4a922fbfc94d90dc"
+            },
+            {
+              "path": "cable/train/good/117.png",
+              "sha256": "9d290f0b8e4007244c45377505b32032d4e8606a403f3c62371b52af876f0dd2"
+            },
+            {
+              "path": "cable/train/good/119.png",
+              "sha256": "538f6b431782d2f708fa95dcc01de4a197ef4da76f5429c7b033bdd8b9cef336"
+            },
+            {
+              "path": "cable/train/good/120.png",
+              "sha256": "9564ecd375ec1f5af19303af05efc392285d434de3eb70821d6b2df621b875b6"
+            },
+            {
+              "path": "cable/train/good/122.png",
+              "sha256": "a6848b9dbbcf4a65f2811a79e58914eabdf9c0aa262a65a5ed6f4d57776e6752"
+            },
+            {
+              "path": "cable/train/good/123.png",
+              "sha256": "e0068fce7ef1ae3b320d2ecb8aee6afd699acb43b7f4b2df65bf9a22dd47b01a"
+            },
+            {
+              "path": "cable/train/good/136.png",
+              "sha256": "e866e2764a80ae0b36885a7c8f8c014c3d4cb102151dc25a84157aaf1aaad7a4"
+            },
+            {
+              "path": "cable/train/good/142.png",
+              "sha256": "a07a0d6c38e527de24204afb1580bc5cd10cfbfa1efb32b6050306f46a9787b1"
+            },
+            {
+              "path": "cable/train/good/146.png",
+              "sha256": "4e1217a22593023e3a4a937520fc80461a2a488f221cf91a6b01a8885025a01e"
+            },
+            {
+              "path": "cable/train/good/148.png",
+              "sha256": "c90ebc8e7d0995646f30259f181e52cab2fd0a9612a24eb9eb39f048a149dd7c"
+            },
+            {
+              "path": "cable/train/good/149.png",
+              "sha256": "2e1e6eb62d966f02256d2dadbd4942118b3c1c07c858487216f906297a74441f"
+            },
+            {
+              "path": "cable/train/good/157.png",
+              "sha256": "50575d11ec1d986cc95c87482d7e3c5714f9ea29d688684dd9a045703011ddb9"
+            },
+            {
+              "path": "cable/train/good/171.png",
+              "sha256": "9d2897d3ee6ea21da887ab32ce864c2163f3b4e5f7ed8a6ef1e5d3efc5dd490e"
+            },
+            {
+              "path": "cable/train/good/189.png",
+              "sha256": "aa771950bfe82da7280b3d8654ec57b7a456a34174100b085057bee66b32018f"
+            },
+            {
+              "path": "cable/train/good/191.png",
+              "sha256": "3ec3233fd931a48065d713dc50d01c57d4327bf650aab9c005b65d45ffc9d17c"
+            },
+            {
+              "path": "cable/train/good/192.png",
+              "sha256": "66c48671f0b3867cf8f73bdc30b9cd25a1fba606fb34dadf4d8d5221eef828b3"
+            },
+            {
+              "path": "cable/train/good/194.png",
+              "sha256": "59432576fb090de2c798c5fcfcb92844c21baf5945fa5b83d88bf5e6e922bc51"
+            },
+            {
+              "path": "cable/train/good/198.png",
+              "sha256": "da99a75dbcf91afcb8e09b523a0000d52a2eb5e0939b08bd6202062255aeee36"
+            },
+            {
+              "path": "cable/train/good/208.png",
+              "sha256": "c45f16ed97872c542f0f499064feb0fb407999a059fce7c45f2e003d0d04b197"
+            },
+            {
+              "path": "cable/train/good/209.png",
+              "sha256": "c98f5c446a0356c4f49deab98069fae1802384c08dfe5e01a1d679be43dafce9"
+            },
+            {
+              "path": "cable/train/good/212.png",
+              "sha256": "90ace007f947f94b6cd11a12866df1a857b810f6fd1864c64ab83d8c8802597f"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "dfdafebd21aac77bf4211ded02e4b59f079ee5c0aaac7387c40ce1205f0b49f6",
+        "path": "outputs/patchcore/features/e4873e7f5e48982b50d0c7c2271e4fd4f3b23dbca590efeb592379bab2a383fd.npy",
+        "shape": [
+          33,
+          1024,
+          384
+        ],
+        "bytes": 51904640,
+        "resources": {
+          "seconds": 0.4322738999981084,
+          "cpu_initial_rss_bytes": 1558577152,
+          "cpu_peak_rss_bytes": 1592061952,
+          "cpu_peak_increment_bytes": 33484800,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 246177792,
+          "peak_gpu_reserved_bytes": 341835776
+        },
+        "cache_hit": true
+      }
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 7.620700000188663,
+        "p95_ms": 8.027759998731199
+      },
+      "host_to_device": {
+        "p50_ms": 1.2564999997266568,
+        "p95_ms": 3.1982649999917925
+      },
+      "feature_extraction": {
+        "p50_ms": 11.848750002172892,
+        "p95_ms": 13.059020000582676
+      },
+      "nearest_neighbor": {
+        "p50_ms": 3.5112500008835923,
+        "p95_ms": 4.106235001017922
+      },
+      "model": {
+        "p50_ms": 15.350800000305753,
+        "p95_ms": 17.021755001223937
+      },
+      "postprocessing": {
+        "p50_ms": 10.138150000784663,
+        "p95_ms": 10.933825000029172
+      },
+      "end_to_end": {
+        "p50_ms": 34.299599999940256,
+        "p95_ms": 38.55271500033268
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 435 MHz, 45"
+      },
+      "peak_inference_allocated_bytes": 84222464,
+      "peak_inference_reserved_bytes": 341835776
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9563036223295182,
+          0.9936881303828486
+        ],
+        "image_ap": [
+          0.9737594541269053,
+          0.9963700460337592
+        ],
+        "recall": [
+          0.7683965728274174,
+          0.9176650660264104
+        ],
+        "fpr": [
+          0.0,
+          0.08929237739872065
+        ],
+        "precision": [
+          0.935064935064935,
+          1.0
+        ],
+        "f1": [
+          0.8588218677301428,
+          0.9497206703910613
+        ],
+        "pixel_auroc": [
+          0.974730910975831,
+          0.9850356789870183
+        ],
+        "pixel_ap": [
+          0.5729218347301851,
+          0.7224611320442283
+        ],
+        "au_pro": [
+          0.8831592432108298,
+          0.9424611458733692
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9801967445884087,
+      "pixel_ap": 0.6444069726031523,
+      "au_pro": 0.9148855267148619
+    },
+    "training_seconds": 2.222203100001934,
+    "coreset_seconds": 1.4002249999975902,
+    "original_extraction_seconds": 0.7122825999977067,
+    "feature_cache_hit_during_fit": true,
+    "test_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "cable/test/bent_wire/000.png",
+            "sha256": "4aa2490bd1227dce17dcccba7dcd21c1297a9a858d295f114cb72c2c0f98aa06"
+          },
+          {
+            "path": "cable/test/bent_wire/001.png",
+            "sha256": "6f906f05817d54a62532add0da5f56314a5508babd5849d5a3fa571001ad1a88"
+          },
+          {
+            "path": "cable/test/bent_wire/002.png",
+            "sha256": "b4236bbfb6e09fb5e9daa2b973e7cf897e21cbe4117f1c7f9a107b26e61deabe"
+          },
+          {
+            "path": "cable/test/bent_wire/003.png",
+            "sha256": "3fca90a1c05ba97cadf5d8c944a927377396c958f14faae9780d6d7ec4af226d"
+          },
+          {
+            "path": "cable/test/bent_wire/004.png",
+            "sha256": "f6741462e12ea91951ab44fa0225736f571ab9dc445976577d75e8d68a2744dd"
+          },
+          {
+            "path": "cable/test/bent_wire/005.png",
+            "sha256": "f87e5b4f7be87b2518820c3ee8815c15d88d48cfbfeadf3dbb0770d90099fa34"
+          },
+          {
+            "path": "cable/test/bent_wire/006.png",
+            "sha256": "3c084b2f94c17ac7de2e706c7516a454a6578b448f4abb7b2f347908a2b4f00b"
+          },
+          {
+            "path": "cable/test/bent_wire/007.png",
+            "sha256": "76b7f7a0716340f5ad7cac2030dcad418efa04cb1d58d896306235f820191971"
+          },
+          {
+            "path": "cable/test/bent_wire/008.png",
+            "sha256": "17bc5f06d2a6a4f4f63a3ffc23672bbdadfaff82b125287f870789ef49fe29d6"
+          },
+          {
+            "path": "cable/test/bent_wire/009.png",
+            "sha256": "62b9e2dd24de571b003dd6c2e190a66308102352dea58ba5aa89f8da5427298c"
+          },
+          {
+            "path": "cable/test/bent_wire/010.png",
+            "sha256": "1e344942536a6870df770498d4b5c75bf6a2c93f8020113aa54eaeedaeeecd8c"
+          },
+          {
+            "path": "cable/test/bent_wire/011.png",
+            "sha256": "8f46af648cd3dfe2d8508a1ef1b1e6c069deedf5501b15c96aa0e23056de044d"
+          },
+          {
+            "path": "cable/test/bent_wire/012.png",
+            "sha256": "178f7bdd60c9ac5496077f8a037aac32b060e5b46ddc6467184b65c6d2506677"
+          },
+          {
+            "path": "cable/test/cable_swap/000.png",
+            "sha256": "f1a44cb231cdc1c276367f1f85561c82c5fb47b82fd87a355d8af3e631a0e212"
+          },
+          {
+            "path": "cable/test/cable_swap/001.png",
+            "sha256": "9c5b15181f9c119a1b647123cb29c40d6d3cea8eabf51875b0f3921969b3b55e"
+          },
+          {
+            "path": "cable/test/cable_swap/002.png",
+            "sha256": "713eef338fc884dd59d0ae225a5e4c843bbac68eead1e53736041d2b78b7eb2f"
+          },
+          {
+            "path": "cable/test/cable_swap/003.png",
+            "sha256": "a1041d11e254d45c00d7d48bdeea3efcd27c69d2b0c635166c095457eeb87fa0"
+          },
+          {
+            "path": "cable/test/cable_swap/004.png",
+            "sha256": "5bd227c33d3136bd5ffe4f54d54dfa7db57011120c95876162594e5718fa48ec"
+          },
+          {
+            "path": "cable/test/cable_swap/005.png",
+            "sha256": "eb024779107804bdc3aae14308d1b1021c2166a5dd8d3150f794f28d4309f87a"
+          },
+          {
+            "path": "cable/test/cable_swap/006.png",
+            "sha256": "8bca508db4180ef69b41f10ac4839541aa1a8a4ed155aa9251e7e280d3fb513b"
+          },
+          {
+            "path": "cable/test/cable_swap/007.png",
+            "sha256": "a34f5525d0d20baebee7536225cee4ad40b426b02c9b61ef32ae9cfcaee8fdc2"
+          },
+          {
+            "path": "cable/test/cable_swap/008.png",
+            "sha256": "04e9f7df4691c06d2e61287f6b6a0d37a4ddb81a4fc1f847d986c6340ee32bc9"
+          },
+          {
+            "path": "cable/test/cable_swap/009.png",
+            "sha256": "3ae6ba7b02b81a2b8a4169f946f7613b11c6e1d784572150ffd6f85ce14cd1a9"
+          },
+          {
+            "path": "cable/test/cable_swap/010.png",
+            "sha256": "428b4e5c34800c4295790e447490bb26c68a668c464bff133c91ec623db0bf7b"
+          },
+          {
+            "path": "cable/test/cable_swap/011.png",
+            "sha256": "998659e71235581a359307c79457baef36f08c3883a299d42785e32adace4736"
+          },
+          {
+            "path": "cable/test/combined/000.png",
+            "sha256": "47ed695bc2eaee856eb30ec91aa93f06eec2213b38466a2f311ac14e9af96e52"
+          },
+          {
+            "path": "cable/test/combined/001.png",
+            "sha256": "64e892cb2f119af3702948232bf7d1fc8c6d061a8e76198ede7cd1c0c1c336ae"
+          },
+          {
+            "path": "cable/test/combined/002.png",
+            "sha256": "8dac01f7ff5bd41be773365134cde220f08212916dda9a92bbc011a6facb2332"
+          },
+          {
+            "path": "cable/test/combined/003.png",
+            "sha256": "b4614ac063f691472f38c58e337badcda6667cca4891a98791b258946ef06cef"
+          },
+          {
+            "path": "cable/test/combined/004.png",
+            "sha256": "c9ace07049c9ac493b86a2d44442d121fea62237434f03495e23382300f6a340"
+          },
+          {
+            "path": "cable/test/combined/005.png",
+            "sha256": "8979ff24c5576a25f26195af9c1766d89218b8c7cad6d3edbada25bef94f0aa0"
+          },
+          {
+            "path": "cable/test/combined/006.png",
+            "sha256": "2c725ae3c4986561ebbea178b6c20b41cac468e4a98ef7b5c439db600393d72b"
+          },
+          {
+            "path": "cable/test/combined/007.png",
+            "sha256": "43a8ef9b9f23723199406783b8b6d3ae5751ec24249fdc7868f96ba7e323bbcb"
+          },
+          {
+            "path": "cable/test/combined/008.png",
+            "sha256": "a5dcf1c9d4a00966d2f81c655750db204ad3a720a1bf9d4adae19440a1e8be91"
+          },
+          {
+            "path": "cable/test/combined/009.png",
+            "sha256": "abbb79f4c4e7b7f1eb6e98b29f1ed442265a833e40ba26ba800c95036b5a39ff"
+          },
+          {
+            "path": "cable/test/combined/010.png",
+            "sha256": "6660c18956d671384efff2d17c951a12b701d40b83a87cf4c2de68905403200c"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/000.png",
+            "sha256": "d733dea95e98ac6d1a500cfb569e2b5f76f4375030817b0aba200e26aa46572f"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/001.png",
+            "sha256": "04a079931955582c5dbf2159863bf67b7569e53f160d1299dc9b2aee8370b168"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/002.png",
+            "sha256": "ae4e18abefaa126ceb6615239ed4a41e70bd00ce11709c54ca04ecb9ab640c72"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/003.png",
+            "sha256": "130b191586bdbc4351bc8217e8958a2bf03a06d54fe1d948b26f2a0788a4aecc"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/004.png",
+            "sha256": "1462b9c3674a0042d1ff36a757130bc093feda07d20f18e792e632fb4d08785d"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/005.png",
+            "sha256": "bd7ce414f5b3ce554a1e15da87835f56836ba5bde9ab46eb36680c6399552c7e"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/006.png",
+            "sha256": "f70bc339088ce7701710f9939391cf3d1ab7353f0b50ffcfe58dae0728afdff3"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/007.png",
+            "sha256": "0ec256138b6a23bc0c4c789db6813b71a6e4fdf1f62b84df06845702644b7fed"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/008.png",
+            "sha256": "ac349ba86298334277e42e2423c9c275444dd09a4423b865cd70757aea235761"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/009.png",
+            "sha256": "98ed1d33b4f93c537f6506980b8219a8472f4cf21fde01a51997bbc57b5abaf0"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/010.png",
+            "sha256": "9547f7d098250babaf2f085f27b795e6c3e057db41c0e5eaa3a8362f01af5003"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/011.png",
+            "sha256": "d447e539ee5d9fc8fc0299b362556f3ee8c5b09e2872ba731fe328e381fe0c12"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/012.png",
+            "sha256": "8221d48235e1748e05b49bdd808f879ff6a357f21dfa312ce8e101bb7d3e2df6"
+          },
+          {
+            "path": "cable/test/cut_inner_insulation/013.png",
+            "sha256": "d3b166250cc9390c15ca87cc86e76c0dc0699f0127581e5fd6452544082bc3b1"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/000.png",
+            "sha256": "67fec8d02a4d85bc3b7d314cd5de2de00c1b49f4defb345f3739bfa730892132"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/001.png",
+            "sha256": "b8a993944c26832f0fb1dc6d4a55bff2abb880d13956b0e63ccccd733aced1e7"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/002.png",
+            "sha256": "970f586e3c0a4df201b1e52e7bf14d901d0f269d131e75a1ee1ff1c2cbaff5fe"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/003.png",
+            "sha256": "e02c87400b8c0566f54a3c43f49d4723ce8e6ddc4c55d9bdd7ffcb57c0d1b92d"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/004.png",
+            "sha256": "ffdfc77dadef2da53a91054187ec91d40e80574aee6a482639b618d60f9c0708"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/005.png",
+            "sha256": "63cd1e7c2795a707ddb9834c3e2c0416c8a1f3e5f4b96889560624c78254f863"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/006.png",
+            "sha256": "e8776f468ba0eaec953a8d92aa40b205afae4f06df41b16df565d65dec295fd9"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/007.png",
+            "sha256": "2455f41de7f44704594fb15b388fb9f7dcd69c8b8c3cd391384081df3015e063"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/008.png",
+            "sha256": "7b7c9949abcbef131aeb7b7f64f41450eb7fe71a331d61020b9909fa9f9710e5"
+          },
+          {
+            "path": "cable/test/cut_outer_insulation/009.png",
+            "sha256": "9407b81c0af87767efc5219e0a44e484d5dbe03acf2cfd9fa936fd716c94cad8"
+          },
+          {
+            "path": "cable/test/good/000.png",
+            "sha256": "89132397ea130312c961d447deb33216f14ec133c4ef62793b4ba817696e48cb"
+          },
+          {
+            "path": "cable/test/good/001.png",
+            "sha256": "c9f4e885d36c3d5ea584709dabf756e92e032af97b3b078f9ef25604d3db6d8d"
+          },
+          {
+            "path": "cable/test/good/002.png",
+            "sha256": "ec968ad7f60bf4b9537a6711e55035faea78a465ce4ff7ff074b16e5d7a08c34"
+          },
+          {
+            "path": "cable/test/good/003.png",
+            "sha256": "032241a0906b66efd2ed0f0eb3501a775b417c4a0a135002fe5ebaf818114824"
+          },
+          {
+            "path": "cable/test/good/004.png",
+            "sha256": "7850c5cc2ee6fe50d5d241ed06cadcf74caee2e62efb1014c9cce381659b3f56"
+          },
+          {
+            "path": "cable/test/good/005.png",
+            "sha256": "393232d10df0376627750858991e3895e73e1291c299f36bd6910786b1b8d9fc"
+          },
+          {
+            "path": "cable/test/good/006.png",
+            "sha256": "3c7eee197661c70834dfe93811053f4b00b78fa2efed2002c1e4d4cd97e66655"
+          },
+          {
+            "path": "cable/test/good/007.png",
+            "sha256": "58520808633f344223adfa4ca238da7e4dba708029302fc56b7da9c619eafbd7"
+          },
+          {
+            "path": "cable/test/good/008.png",
+            "sha256": "95aeb051d43affc5bc18688dce4b11eddbc2a7e83dc8685c1ab5a4bec60bd755"
+          },
+          {
+            "path": "cable/test/good/009.png",
+            "sha256": "620db08ca72896d35a6b84eb41577d4f270db068fa3ac22d273e1bc1db7a68f7"
+          },
+          {
+            "path": "cable/test/good/010.png",
+            "sha256": "3546cd9f98fefe04d77401068fcc5b05c99bc44a16299d2d646ff2f460a3abc4"
+          },
+          {
+            "path": "cable/test/good/011.png",
+            "sha256": "2afc83087d9e7780b4d25c31a33f97c6c6733cf5ab3cb83ef21bd7c6918a7f67"
+          },
+          {
+            "path": "cable/test/good/012.png",
+            "sha256": "6d07ab68ea3ccb441accde1d4aee138f2599aa5bd22a4bb2e0f2c918098a7909"
+          },
+          {
+            "path": "cable/test/good/013.png",
+            "sha256": "2135e38f1cf2ee48f2c71d5cce21c874d59bf638f3731e1aa8ffb46d717b6bb4"
+          },
+          {
+            "path": "cable/test/good/014.png",
+            "sha256": "54c03ffe81afc397c21063a21d3d8d10f10b08434e8a6cbb9f8eb916cd320b2c"
+          },
+          {
+            "path": "cable/test/good/015.png",
+            "sha256": "7997c14a50a87224415b15846c488812644b77093c55ffcc4117353db4ef5d2d"
+          },
+          {
+            "path": "cable/test/good/016.png",
+            "sha256": "cce76ead500f127452485e9fae47a400f8dac04c83207f37e070d1db8572fde1"
+          },
+          {
+            "path": "cable/test/good/017.png",
+            "sha256": "2fd384698478bd258435fe55e33bc016b5ae5b3fed7619817eb89b835a9abedb"
+          },
+          {
+            "path": "cable/test/good/018.png",
+            "sha256": "34a4385615fdd2f3b7c4b8f27d8942901da6e1edba4f832067a478ad8ab2547d"
+          },
+          {
+            "path": "cable/test/good/019.png",
+            "sha256": "e193e77e2e2c120d24fddd9a739834f3a72b2170d61fb8922b15833c89d74166"
+          },
+          {
+            "path": "cable/test/good/020.png",
+            "sha256": "68ecb9d9cbb6ac88df6fc23804579e4a9bf219d3d30e678645cc7934e5b11600"
+          },
+          {
+            "path": "cable/test/good/021.png",
+            "sha256": "6599879ae6bee453258a42c8c295e3e3b20eeb82522c3df4000476e8ffb1072c"
+          },
+          {
+            "path": "cable/test/good/022.png",
+            "sha256": "e5d3d90a3b1f4db6f15e667303dd199761ef548d1aca5b9407ad0bf83f7f1593"
+          },
+          {
+            "path": "cable/test/good/023.png",
+            "sha256": "0777bfef91c93311d3941d5827b69d19a9f489310d0fe9b2074173fa15174a37"
+          },
+          {
+            "path": "cable/test/good/024.png",
+            "sha256": "d9fb6b561b81fbd96c04d7e2b825c253342bbc0652544547b364888f71e969e7"
+          },
+          {
+            "path": "cable/test/good/025.png",
+            "sha256": "17798ad5cb616ec9cd91c42556a66545fc54d78f320e0fa2927cdea21c7715e6"
+          },
+          {
+            "path": "cable/test/good/026.png",
+            "sha256": "71e5425aa2fe6bff0effd3d9085e983e880f2a28edbc08f8aed64df3fe1c398c"
+          },
+          {
+            "path": "cable/test/good/027.png",
+            "sha256": "798dc798ed1d9890e579ad679df0f730a0d4d1d71eda976c72239666a7b3dca6"
+          },
+          {
+            "path": "cable/test/good/028.png",
+            "sha256": "6a5d8ee50ac2c7f741c5623dbeecb57eeac9f7feebde5a0689e62390fb3bb0be"
+          },
+          {
+            "path": "cable/test/good/029.png",
+            "sha256": "8c797fc28b4ddb2b84619905f5dab54572030ecb5c906a8b21697993d5b946e7"
+          },
+          {
+            "path": "cable/test/good/030.png",
+            "sha256": "cd586ad6175594534e81de830e787eb6665bbad073d622c3deb0516897788a7b"
+          },
+          {
+            "path": "cable/test/good/031.png",
+            "sha256": "6731818ec3bbc4ce1db23fb180c52ed009203f0bae340ff6d546edce976c4ef6"
+          },
+          {
+            "path": "cable/test/good/032.png",
+            "sha256": "385483d3ee165ceef26b285bdf9224c86fb97c4caecafd84ac39dbf47f5dafee"
+          },
+          {
+            "path": "cable/test/good/033.png",
+            "sha256": "b737becc34d9855076d82c1f12bd0cd9f64ff4aaab5a68e118a936d699f80db2"
+          },
+          {
+            "path": "cable/test/good/034.png",
+            "sha256": "d0708a0e35c2100dfd01aec9dcfd3609fa1364434af9ff516589a7ef1395371b"
+          },
+          {
+            "path": "cable/test/good/035.png",
+            "sha256": "c0ea66bb742375ab0f6639a88459bf9d4de5267385bfe70deca237449ced926e"
+          },
+          {
+            "path": "cable/test/good/036.png",
+            "sha256": "2b682a891ec39b83c985d3959c8c2ab63c8b10373e6b0f6c27e080e7a48f9f09"
+          },
+          {
+            "path": "cable/test/good/037.png",
+            "sha256": "2e5e4c86b98a1adc6e9fd40f31b0aabff16a797974742c7a23f6a30f41108225"
+          },
+          {
+            "path": "cable/test/good/038.png",
+            "sha256": "ff1a574e60a85d74eb9ee2e09d2185bdadb12a877f9dd442f70c301d55f2a2e6"
+          },
+          {
+            "path": "cable/test/good/039.png",
+            "sha256": "8ca732d409644920b613a9bfc89644079719c911d6f1049d3aac56c4e6e581bf"
+          },
+          {
+            "path": "cable/test/good/040.png",
+            "sha256": "5dd06dddb6aee435e9de22266ff854cfd7465f548201a236be0c5f4122794c2e"
+          },
+          {
+            "path": "cable/test/good/041.png",
+            "sha256": "7a3fb1e33584e7a53cc3fe243f0f9ce262ea5b2f210fecdcd68331e69c6a95bf"
+          },
+          {
+            "path": "cable/test/good/042.png",
+            "sha256": "cde36183abea265777cb8eeaf79344f4b90004733efbe35f95f66fd4e36ecc1d"
+          },
+          {
+            "path": "cable/test/good/043.png",
+            "sha256": "45e01e0feb9ddfb35103512d567ede78db60b2dd61d714383153322cbc9bed58"
+          },
+          {
+            "path": "cable/test/good/044.png",
+            "sha256": "5f35340cfa3011c3aa5b752cf5f438dc13b8e01374ee971a108dd2c1b9e005ad"
+          },
+          {
+            "path": "cable/test/good/045.png",
+            "sha256": "701d1cb01b0017c44cab01c89589ca1971071ba6e7a29788dfea4da995ab15c0"
+          },
+          {
+            "path": "cable/test/good/046.png",
+            "sha256": "438312c18eb80d3c60403cb2fb7cbf4382a84ff3d1ce24a71c0008f3d4663687"
+          },
+          {
+            "path": "cable/test/good/047.png",
+            "sha256": "d2dd9d070ff31f19ed196eaaafeb3cb813ab29ead741007346eb0c4a42793167"
+          },
+          {
+            "path": "cable/test/good/048.png",
+            "sha256": "c6eec4f5ad7bc99597fe388848ea04f4a4ae8885bda27a28cbd2beac193ba102"
+          },
+          {
+            "path": "cable/test/good/049.png",
+            "sha256": "4282929f55add6939b8315635bfc1e46c6c5936d3598b3fa556ad9bb195fb1b0"
+          },
+          {
+            "path": "cable/test/good/050.png",
+            "sha256": "653da904fc28d7eee4af05cf5581187169d3f0888211d10c0a0cd0cce6cd1fd3"
+          },
+          {
+            "path": "cable/test/good/051.png",
+            "sha256": "a3b521ff3d30e4ad5d321c49126ef2b9474a5ec990275008fbc6159b08d323cc"
+          },
+          {
+            "path": "cable/test/good/052.png",
+            "sha256": "19a4ee2776a7f635dd33439dd805790edc0041b3486f0ea762fd28e6dd39855d"
+          },
+          {
+            "path": "cable/test/good/053.png",
+            "sha256": "d1b90eaccb9c64579414daf4cd50d45cd4cb8ac4a8cbe3792acdaccddd2f9354"
+          },
+          {
+            "path": "cable/test/good/054.png",
+            "sha256": "be84796041d08072f1d1c5446dff642bee5c7c2d9d41f92e3eaf7bc69bc98021"
+          },
+          {
+            "path": "cable/test/good/055.png",
+            "sha256": "53bc1a3f1805af8c79690a78dec6f8482e813c1c07473a22c6e5488ec1a4eaa5"
+          },
+          {
+            "path": "cable/test/good/056.png",
+            "sha256": "32cfd7c85a310ce323c8c2d593ef1e7cbf1b82e4e05731f511c965de48561140"
+          },
+          {
+            "path": "cable/test/good/057.png",
+            "sha256": "afe6089417fe57e1895154184a474ac8e2f27d0cea1239fa1f5a66220294d2ef"
+          },
+          {
+            "path": "cable/test/missing_cable/000.png",
+            "sha256": "c6d4fa84b74e7bfa12418c9cf916ff3320218a311bfe715b29e0449f6bd6fcda"
+          },
+          {
+            "path": "cable/test/missing_cable/001.png",
+            "sha256": "7d43355ba841b95cec5d3a90bdb79dd2b576d425f5bf1f5a7c03c7891598dace"
+          },
+          {
+            "path": "cable/test/missing_cable/002.png",
+            "sha256": "2793114a3284fb3150c8b02c32b109b898e9facf0198ab3f8080ae32b3ec8715"
+          },
+          {
+            "path": "cable/test/missing_cable/003.png",
+            "sha256": "2e9982cc95ae19716658af500099f83b38cccca880e526db875b8ad8f75ccdc5"
+          },
+          {
+            "path": "cable/test/missing_cable/004.png",
+            "sha256": "743565aae35c24988caa77968f11031a8323f01fe3503afc8c44e39c9d83e3e7"
+          },
+          {
+            "path": "cable/test/missing_cable/005.png",
+            "sha256": "96b6699515a91d9a05e6e23a63a1283a32f27ed48585263ed70fa07d0a9bed6f"
+          },
+          {
+            "path": "cable/test/missing_cable/006.png",
+            "sha256": "04d987271bede1add81c3d3f52c7c927c044fc645a994ceb696047471bd6c95c"
+          },
+          {
+            "path": "cable/test/missing_cable/007.png",
+            "sha256": "754a195ba346e4d20b079e05e10b6afc18f4f00d9b98fcc337ef203a4242f25b"
+          },
+          {
+            "path": "cable/test/missing_cable/008.png",
+            "sha256": "4830272c1b98ec2525bac183e60100d1e5acfc94a17c56553167b82292619b32"
+          },
+          {
+            "path": "cable/test/missing_cable/009.png",
+            "sha256": "e38d96a1e99e3a775a3c6b4a32e13f9361c2ae198828b79902df86a0c248f3e8"
+          },
+          {
+            "path": "cable/test/missing_cable/010.png",
+            "sha256": "a8abffd628f20788096ca189fd81d0732a4c9c9c11b95587c512985801ebae4a"
+          },
+          {
+            "path": "cable/test/missing_cable/011.png",
+            "sha256": "825575de33268167c51c1479fd00dbf51fe7e30a94682cef60cf12f3a7e109c0"
+          },
+          {
+            "path": "cable/test/missing_wire/000.png",
+            "sha256": "c838f7782fe11b6a9d9cdc36990ea393ca3d200b75be6b5af360815bd1b12bbf"
+          },
+          {
+            "path": "cable/test/missing_wire/001.png",
+            "sha256": "6c97f15033f0c945c76d1b6a6b11c266ef7ea904e74c3cb1d6345b70b029b9f1"
+          },
+          {
+            "path": "cable/test/missing_wire/002.png",
+            "sha256": "7f19c08f1ad867523720815cfd8378130df3527013153bad8e93df01b7f6d0e2"
+          },
+          {
+            "path": "cable/test/missing_wire/003.png",
+            "sha256": "6993b9c7ebb2578ed7c255f79a51f4bda5f5e8214ed9a48b4d573bf86cf7661e"
+          },
+          {
+            "path": "cable/test/missing_wire/004.png",
+            "sha256": "ddf9a5c38d924f6894ada3aa38a2696d16578caa855a31fe9890c2d3b04e9244"
+          },
+          {
+            "path": "cable/test/missing_wire/005.png",
+            "sha256": "9e106de34c09cf7f45481d7ceebe341e7d0b624f8c4993d95068653899e198e6"
+          },
+          {
+            "path": "cable/test/missing_wire/006.png",
+            "sha256": "2689caa03f551127abc04a35b08331ee48bf439f2abd955ecd956d2a99ef422c"
+          },
+          {
+            "path": "cable/test/missing_wire/007.png",
+            "sha256": "a8883a442a7ed353f289a1f2e57ba08342db5300326a5a23572f7cc5feba86fb"
+          },
+          {
+            "path": "cable/test/missing_wire/008.png",
+            "sha256": "c4f6fa26dbfe6acdaca9f367c17a21eadf69464b1b858629b86301e65a6dd1c1"
+          },
+          {
+            "path": "cable/test/missing_wire/009.png",
+            "sha256": "290f19cbd78f37645b9e1020153e85e75d5c0034d02c5f44297cba8d0ceeec11"
+          },
+          {
+            "path": "cable/test/poke_insulation/000.png",
+            "sha256": "b387e485ef56bf124dc3ef52633520d0332a84b396fa3baaf5d6716a1d3799f8"
+          },
+          {
+            "path": "cable/test/poke_insulation/001.png",
+            "sha256": "be9567b15a3a093ec7af14ea3c67d46833ecadb863aa62da6f9d4fa6b0e25f66"
+          },
+          {
+            "path": "cable/test/poke_insulation/002.png",
+            "sha256": "618424048561854db963446a85a14fd7ec7137d3ad9eafdeee340731970badd9"
+          },
+          {
+            "path": "cable/test/poke_insulation/003.png",
+            "sha256": "570d81dee47e05bd6e30beaac95616c934c5369a5f74917e8e37da9b691d19de"
+          },
+          {
+            "path": "cable/test/poke_insulation/004.png",
+            "sha256": "ede07cbe25fff9c0e439ef43ccdbb7c36965f778afe8b864ceee79a69a32faf2"
+          },
+          {
+            "path": "cable/test/poke_insulation/005.png",
+            "sha256": "ec14971c23cc8d9a25721e19832ca804aed5b7af1ef66236828f1baccd356f46"
+          },
+          {
+            "path": "cable/test/poke_insulation/006.png",
+            "sha256": "3a4e8ec1fab486ffe16b334409585c7861ac1f743ef4c08a1070de8aab686698"
+          },
+          {
+            "path": "cable/test/poke_insulation/007.png",
+            "sha256": "565bcc0659d7a05dfe42a531a6a1bca63877921b4f4712641724f6a4920e4157"
+          },
+          {
+            "path": "cable/test/poke_insulation/008.png",
+            "sha256": "9adbbc7479d387b47db1eebda6dd2510aee380e17c7735cc869d467228ce7ec4"
+          },
+          {
+            "path": "cable/test/poke_insulation/009.png",
+            "sha256": "1b43c28280f070f96222f0177210872c34c748b0b17895bdbccc1460f5ca7c03"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "2bcc910fab5400cedd2c31544fc85a93536485d4102ff105bb956f729f0f07a2",
+      "path": "outputs/patchcore/features/5a51ddfd44c30e3fd59b174536e420c456c2409b77faac81b09b95f3d0424c59.npy",
+      "shape": [
+        150,
+        1024,
+        384
+      ],
+      "bytes": 235929728,
+      "resources": {
+        "seconds": 0.6649824999985867,
+        "cpu_initial_rss_bytes": 1567215616,
+        "cpu_peak_rss_bytes": 1824030720,
+        "cpu_peak_increment_bytes": 256815104,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    },
+    "cpu_peak_rss_bytes": 5571878912,
+    "bank_vector_bytes": 3145728,
+    "training_peak_allocated_bytes": 730223104,
+    "checkpoint_bytes": 3183885,
+    "parameters": 2782784,
+    "evaluation_seconds": 131.07271820000096,
+    "per_defect": [
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "bent_wire",
+        "defective_images": 13,
+        "auroc": 1.0,
+        "ap": 0.9999999999999998,
+        "recall": 1.0,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8666666666666667,
+        "f1": 0.9285714285714286,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            0,
+            13
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "cable_swap",
+        "defective_images": 12,
+        "auroc": 0.8936781609195402,
+        "ap": 0.5990079365079365,
+        "recall": 0.25,
+        "fpr": 0.034482758620689655,
+        "precision": 0.6,
+        "f1": 0.35294117647058826,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            9,
+            3
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "combined",
+        "defective_images": 11,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8461538461538461,
+        "f1": 0.9166666666666666,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            0,
+            11
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "cut_inner_insulation",
+        "defective_images": 14,
+        "auroc": 0.9926108374384237,
+        "ap": 0.9708460307199802,
+        "recall": 0.9285714285714286,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8666666666666667,
+        "f1": 0.896551724137931,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            1,
+            13
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "cut_outer_insulation",
+        "defective_images": 10,
+        "auroc": 0.9896551724137931,
+        "ap": 0.951923076923077,
+        "recall": 0.8,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8,
+        "f1": 0.8000000000000002,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            2,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "missing_cable",
+        "defective_images": 12,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8571428571428571,
+        "f1": 0.923076923076923,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            0,
+            12
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "missing_wire",
+        "defective_images": 10,
+        "auroc": 0.9982758620689655,
+        "ap": 0.9909090909090909,
+        "recall": 1.0,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "category": "cable",
+        "seed": 2028,
+        "defect": "poke_insulation",
+        "defective_images": 10,
+        "auroc": 0.9431034482758621,
+        "ap": 0.8596330956625075,
+        "recall": 0.8,
+        "fpr": 0.034482758620689655,
+        "precision": 0.8,
+        "f1": 0.8000000000000002,
+        "confusion_matrix": [
+          [
+            56,
+            2
+          ],
+          [
+            2,
+            8
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/patchcore/03-test-b2048-cable-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "038a9fad7b9548ee3cda73ed66dd7cf3051f4f8ce5816a6e8fd2887d342a7bcc",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "image_rows": 150,
+    "evaluated_at_utc": "2026-11-12T19:32:53.501047+00:00"
+  },
+  "calibration": {
+    "category": "cable",
+    "images": 33,
+    "image_threshold": 2.538865566253662,
+    "secondary_image_threshold_q99": 2.5765492916107178,
+    "pixel_threshold": 2.3194222450256348,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 2162688,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      2.3682799339294434,
+      2.385087490081787,
+      2.5765492916107178,
+      2.2332191467285156,
+      2.412865400314331,
+      2.286555290222168,
+      2.281782627105713,
+      2.304879903793335,
+      2.2579920291900635,
+      2.377920389175415,
+      2.4508912563323975,
+      2.362797498703003,
+      2.429819107055664,
+      2.336697578430176,
+      2.2764527797698975,
+      2.411564350128174,
+      2.380824089050293,
+      2.3218657970428467,
+      2.2465949058532715,
+      2.307112216949463,
+      2.4942617416381836,
+      2.264155387878418,
+      2.3932273387908936,
+      2.2193377017974854,
+      2.3919827938079834,
+      2.3913259506225586,
+      2.3151445388793945,
+      2.272321939468384,
+      2.4560282230377197,
+      2.538865566253662,
+      2.4468343257904053,
+      2.4268128871917725,
+      2.3316004276275635
+    ],
+    "image_threshold_bootstrap_95ci": [
+      2.4468343257904053,
+      2.5765492916107178
+    ],
+    "histogram_scale": 1.716439962387085,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "2b5697fa109f81bcce3830d93cd2dd075a4e258d8215207c6967c19c0eb717f4",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "cable/train/good/002.png",
+            "sha256": "1402284830cf1992d9be60b38c0dda29859670062ce1e1c91aa02dd1808d2d00"
+          },
+          {
+            "path": "cable/train/good/007.png",
+            "sha256": "e8ee12f5048134b81c9cbbce65c036e99b775debf2a29a2d483ddbd189a053f1"
+          },
+          {
+            "path": "cable/train/good/018.png",
+            "sha256": "207a32294770f4af380c76f2defa5416ebb2eed2b8d3e06a599ee564624c479c"
+          },
+          {
+            "path": "cable/train/good/021.png",
+            "sha256": "4aefbee8308cc376c31a6f0222a20c6838c6cc3589a6125b13a70ef44bb808ba"
+          },
+          {
+            "path": "cable/train/good/024.png",
+            "sha256": "21cbc75d472e4c7060ec3c5a8fadfed4806ab76fd7e889bbcf251992a9e5cdbc"
+          },
+          {
+            "path": "cable/train/good/025.png",
+            "sha256": "f321c6e25857bdcd29f63bdaeacc8b3a8cd636afcd50d528e4068adb3670c40a"
+          },
+          {
+            "path": "cable/train/good/028.png",
+            "sha256": "4c021a9e474b8c8ceabdb1939809a577c95cdee21c60fdcc82e54c73093df21a"
+          },
+          {
+            "path": "cable/train/good/038.png",
+            "sha256": "9aa121f9a1c0d85209a2a8d92211461dfbdb36fae512959292ad1fdecb9d0cc0"
+          },
+          {
+            "path": "cable/train/good/061.png",
+            "sha256": "db293ec54cc2b5671d8c05e6bb1c373f814ec8012c4ce2e8024f7b1bb90deae3"
+          },
+          {
+            "path": "cable/train/good/067.png",
+            "sha256": "14975f0bfce40a60c4d85a5ef7858d95392c7f6149e2d90364cb3f93874391ec"
+          },
+          {
+            "path": "cable/train/good/080.png",
+            "sha256": "bc84e9acc4a483be849a4ff0319ed9b776e45af12791fa213b80fef8c6fa4244"
+          },
+          {
+            "path": "cable/train/good/093.png",
+            "sha256": "53c6dc30a121e2e0caf2fc77d8756e009adc939c6641d9052da2dc2f3fe515a0"
+          },
+          {
+            "path": "cable/train/good/103.png",
+            "sha256": "2428b534db3a489589963468dd5fd0be928d78b379a89d5b4a922fbfc94d90dc"
+          },
+          {
+            "path": "cable/train/good/117.png",
+            "sha256": "9d290f0b8e4007244c45377505b32032d4e8606a403f3c62371b52af876f0dd2"
+          },
+          {
+            "path": "cable/train/good/119.png",
+            "sha256": "538f6b431782d2f708fa95dcc01de4a197ef4da76f5429c7b033bdd8b9cef336"
+          },
+          {
+            "path": "cable/train/good/120.png",
+            "sha256": "9564ecd375ec1f5af19303af05efc392285d434de3eb70821d6b2df621b875b6"
+          },
+          {
+            "path": "cable/train/good/122.png",
+            "sha256": "a6848b9dbbcf4a65f2811a79e58914eabdf9c0aa262a65a5ed6f4d57776e6752"
+          },
+          {
+            "path": "cable/train/good/123.png",
+            "sha256": "e0068fce7ef1ae3b320d2ecb8aee6afd699acb43b7f4b2df65bf9a22dd47b01a"
+          },
+          {
+            "path": "cable/train/good/136.png",
+            "sha256": "e866e2764a80ae0b36885a7c8f8c014c3d4cb102151dc25a84157aaf1aaad7a4"
+          },
+          {
+            "path": "cable/train/good/142.png",
+            "sha256": "a07a0d6c38e527de24204afb1580bc5cd10cfbfa1efb32b6050306f46a9787b1"
+          },
+          {
+            "path": "cable/train/good/146.png",
+            "sha256": "4e1217a22593023e3a4a937520fc80461a2a488f221cf91a6b01a8885025a01e"
+          },
+          {
+            "path": "cable/train/good/148.png",
+            "sha256": "c90ebc8e7d0995646f30259f181e52cab2fd0a9612a24eb9eb39f048a149dd7c"
+          },
+          {
+            "path": "cable/train/good/149.png",
+            "sha256": "2e1e6eb62d966f02256d2dadbd4942118b3c1c07c858487216f906297a74441f"
+          },
+          {
+            "path": "cable/train/good/157.png",
+            "sha256": "50575d11ec1d986cc95c87482d7e3c5714f9ea29d688684dd9a045703011ddb9"
+          },
+          {
+            "path": "cable/train/good/171.png",
+            "sha256": "9d2897d3ee6ea21da887ab32ce864c2163f3b4e5f7ed8a6ef1e5d3efc5dd490e"
+          },
+          {
+            "path": "cable/train/good/189.png",
+            "sha256": "aa771950bfe82da7280b3d8654ec57b7a456a34174100b085057bee66b32018f"
+          },
+          {
+            "path": "cable/train/good/191.png",
+            "sha256": "3ec3233fd931a48065d713dc50d01c57d4327bf650aab9c005b65d45ffc9d17c"
+          },
+          {
+            "path": "cable/train/good/192.png",
+            "sha256": "66c48671f0b3867cf8f73bdc30b9cd25a1fba606fb34dadf4d8d5221eef828b3"
+          },
+          {
+            "path": "cable/train/good/194.png",
+            "sha256": "59432576fb090de2c798c5fcfcb92844c21baf5945fa5b83d88bf5e6e922bc51"
+          },
+          {
+            "path": "cable/train/good/198.png",
+            "sha256": "da99a75dbcf91afcb8e09b523a0000d52a2eb5e0939b08bd6202062255aeee36"
+          },
+          {
+            "path": "cable/train/good/208.png",
+            "sha256": "c45f16ed97872c542f0f499064feb0fb407999a059fce7c45f2e003d0d04b197"
+          },
+          {
+            "path": "cable/train/good/209.png",
+            "sha256": "c98f5c446a0356c4f49deab98069fae1802384c08dfe5e01a1d679be43dafce9"
+          },
+          {
+            "path": "cable/train/good/212.png",
+            "sha256": "90ace007f947f94b6cd11a12866df1a857b810f6fd1864c64ab83d8c8802597f"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "dfdafebd21aac77bf4211ded02e4b59f079ee5c0aaac7387c40ce1205f0b49f6",
+      "path": "outputs/patchcore/features/e4873e7f5e48982b50d0c7c2271e4fd4f3b23dbca590efeb592379bab2a383fd.npy",
+      "shape": [
+        33,
+        1024,
+        384
+      ],
+      "bytes": 51904640,
+      "resources": {
+        "seconds": 0.4322738999981084,
+        "cpu_initial_rss_bytes": 1558577152,
+        "cpu_peak_rss_bytes": 1592061952,
+        "cpu_peak_increment_bytes": 33484800,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    }
+  },
+  "paths": {
+    "local": "outputs/patchcore/03-test-b2048-cable-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T19:32:53.508042+00:00",
+  "config_sha256": "097040fae0e9dbb704a389701277e4122058288e92d637403d40f2d276669238"
+}

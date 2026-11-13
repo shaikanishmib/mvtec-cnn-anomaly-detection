@@ -1,0 +1,100 @@
+{
+  "category": "toothbrush",
+  "images": 9,
+  "image_threshold": 1.6520098447799683,
+  "secondary_image_threshold_q99": 1.6520098447799683,
+  "pixel_threshold": 1.5515410900115967,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 589824,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    1.5609886646270752,
+    1.5702083110809326,
+    1.3917683362960815,
+    1.6233055591583252,
+    1.5951180458068848,
+    1.6174092292785645,
+    1.6520098447799683,
+    1.5864315032958984,
+    1.6306971311569214
+  ],
+  "image_threshold_bootstrap_95ci": [
+    1.6174092292785645,
+    1.6520098447799683
+  ],
+  "histogram_scale": 0.9203000068664551,
+  "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+  "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e",
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "toothbrush/train/good/007.png",
+          "sha256": "7101d9456b26671d3a1685befc7a11970c9a8a20abcc0ea0835e8203247a2ffb"
+        },
+        {
+          "path": "toothbrush/train/good/013.png",
+          "sha256": "42dc71cf0e0d3a6668fad8e6d13af6256c10b68a95c272b794fbe288941bc337"
+        },
+        {
+          "path": "toothbrush/train/good/015.png",
+          "sha256": "1a7b4f1153bc633dc5bf2aa853664d8b67956623d2fa87003d4bc106e877ffa3"
+        },
+        {
+          "path": "toothbrush/train/good/023.png",
+          "sha256": "5d8ac1e2fdf27cf1bc320f753da3f24a29cb7be575e5da96e48fa1253158f9ae"
+        },
+        {
+          "path": "toothbrush/train/good/030.png",
+          "sha256": "aa2d98050f3deeb6d84371cc1dc09f25b3f69672329d71b3659e852b34465ae2"
+        },
+        {
+          "path": "toothbrush/train/good/031.png",
+          "sha256": "df468901cc0bfa97a07bfd8abee9c7297af30575e56807984f4e73e1c3e37267"
+        },
+        {
+          "path": "toothbrush/train/good/049.png",
+          "sha256": "ac90618f3d644f7eea851028af2fe269c730c6d16e2b157e916b60040b046e53"
+        },
+        {
+          "path": "toothbrush/train/good/051.png",
+          "sha256": "5ca3785bc50d38faf78fd4b57b805f76b12412e0306801b9858c1fed379aa22c"
+        },
+        {
+          "path": "toothbrush/train/good/057.png",
+          "sha256": "a31aa65ec5654993890efc6d84040ab14ac2e097d06bf2fb927e9e8e200fcce9"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "fe57055b8f0f6ede6983a0d1191349bb10223fb7f0370b6ad2e922c1f90c7d4e",
+    "path": "outputs/patchcore/features/b458b6c54d2dc1e51f25261056d3ca1a5c5699a9c57af10b319465850954ff76.npy",
+    "shape": [
+      9,
+      1024,
+      384
+    ],
+    "bytes": 14155904,
+    "resources": {
+      "seconds": 0.19497409999894444,
+      "cpu_initial_rss_bytes": 1607774208,
+      "cpu_peak_rss_bytes": 1637879808,
+      "cpu_peak_increment_bytes": 30105600,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 146432000,
+      "peak_gpu_reserved_bytes": 341835776
+    },
+    "cache_hit": false
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "experiment_id": "03-test-b2048-carpet-s2027-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "carpet"
+  ],
+  "hypothesis": "Frozen normal patch-memory confirmation; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2027,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "03-final-b2048-carpet-s2027-v1",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+        "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+        "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+        "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "03-test-b2048-carpet-s2027-v1",
+    "category": "carpet",
+    "seed": 2027,
+    "training_experiment": "03-final-b2048-carpet-s2027-v1",
+    "checkpoint_sha256": "81e319038e7365e61f19c16c626fa82997ca6e1855867859b5d85b787744f3c4",
+    "image_auroc": 0.9759229534510433,
+    "image_ap": 0.9934754132465351,
+    "recall": 0.9887640449438202,
+    "fpr": 0.6071428571428571,
+    "precision": 0.8380952380952381,
+    "f1": 0.9072164948453609,
+    "confusion_matrix": [
+      [
+        11,
+        17
+      ],
+      [
+        1,
+        88
+      ]
+    ],
+    "tn": 11,
+    "fp": 17,
+    "fn": 1,
+    "tp": 88,
+    "pixel_auroc": 0.9893905442521258,
+    "pixel_ap": 0.5658452392067455,
+    "au_pro": 0.9511856685805873,
+    "positive_pixels": 1965794,
+    "negative_pixels": 120717598,
+    "regions": 97,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        110152995,
+        10564603
+      ],
+      [
+        19513,
+        1946281
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.1555670246802704,
+      "recall": 0.9900737310216635,
+      "fpr": 0.08751501997248155,
+      "f1": 0.2688850301153345,
+      "tp": 1946281,
+      "fp": 10564603,
+      "tn": 110152995,
+      "fn": 19513
+    },
+    "secondary_image_q99": {
+      "auroc": 0.9759229534510433,
+      "ap": 0.9934754132465351,
+      "recall": 0.9775280898876404,
+      "fpr": 0.35714285714285715,
+      "precision": 0.8969072164948454,
+      "f1": 0.935483870967742,
+      "confusion_matrix": [
+        [
+          18,
+          10
+        ],
+        [
+          2,
+          87
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "carpet",
+      "images": 42,
+      "image_threshold": 1.2310365438461304,
+      "secondary_image_threshold_q99": 1.2717052698135376,
+      "pixel_threshold": 1.1386786699295044,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_calibration_samples": 2752512,
+      "pixel_score_resolution": 256,
+      "calibration_scores": [
+        1.140976905822754,
+        1.2048726081848145,
+        1.1109765768051147,
+        1.180033802986145,
+        1.1707892417907715,
+        1.1338711977005005,
+        1.1933785676956177,
+        1.1906529664993286,
+        1.2581249475479126,
+        1.0995771884918213,
+        1.0955026149749756,
+        1.1857272386550903,
+        1.152795672416687,
+        1.2717052698135376,
+        1.1381726264953613,
+        1.1525155305862427,
+        1.1055229902267456,
+        1.1285125017166138,
+        1.1731833219528198,
+        1.190356731414795,
+        1.2094050645828247,
+        1.1134337186813354,
+        1.1497881412506104,
+        1.1525779962539673,
+        1.174156665802002,
+        1.2310365438461304,
+        1.1199955940246582,
+        1.115238904953003,
+        1.1276147365570068,
+        1.1628966331481934,
+        1.1416624784469604,
+        1.1323472261428833,
+        1.2247248888015747,
+        1.1720337867736816,
+        1.1132830381393433,
+        1.1962751150131226,
+        1.150931477546692,
+        1.2306238412857056,
+        1.1660102605819702,
+        1.2068686485290527,
+        1.1727180480957031,
+        1.1929179430007935
+      ],
+      "image_threshold_bootstrap_95ci": [
+        1.2068686485290527,
+        1.2717052698135376
+      ],
+      "histogram_scale": 0.9312412738800049,
+      "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+      "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+      "source_paths_sha256": "877d856565283112996331d090d297f4461e1228052e84723501adbe2ca6b8fc",
+      "feature_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "carpet/train/good/017.png",
+              "sha256": "05b6a02b6147c1655e7aa6f56f1f434d37a338ed9abdb8027c5fbb4aba780031"
+            },
+            {
+              "path": "carpet/train/good/018.png",
+              "sha256": "feb358329e99472d2b51c9caffbdf6efd470249bf5f66fb374a116a2c1292799"
+            },
+            {
+              "path": "carpet/train/good/022.png",
+              "sha256": "607b5650677c45a0057c1ea135768501edcd789f22a5674037cb6493c6bb851d"
+            },
+            {
+              "path": "carpet/train/good/030.png",
+              "sha256": "5b96ce8d388924b090fb4017cdc04c9e13a3eb23779d3b4c9bbffcac19cf4f97"
+            },
+            {
+              "path": "carpet/train/good/034.png",
+              "sha256": "a129ebd71ec50199517d7d837a905df19eed4d7eaf7860506b6cfed073f34d2b"
+            },
+            {
+              "path": "carpet/train/good/037.png",
+              "sha256": "bec2fe2ffe8042dc6d4199fb54527b502f1d3b0a48dd6221165396705b5641ad"
+            },
+            {
+              "path": "carpet/train/good/045.png",
+              "sha256": "30596752a28d066451fc97e9a601b5b0adcd6c4445ad585e3a1be3f7d6f85309"
+            },
+            {
+              "path": "carpet/train/good/057.png",
+              "sha256": "87e1b924baf6381c87e24d0336e15714618c1ceb641afeb66ef22143ca76f5ee"
+            },
+            {
+              "path": "carpet/train/good/077.png",
+              "sha256": "bd11b72e9da5ea73722349866bf5ee1b59a0cf05512e397be86fb517b8e5eae6"
+            },
+            {
+              "path": "carpet/train/good/089.png",
+              "sha256": "ef81b3f58f31220a432b456f136fe0cc8fc8c1045026de76d6eec5608659ed33"
+            },
+            {
+              "path": "carpet/train/good/093.png",
+              "sha256": "4ad9716d7abcc8d7447833260e0e842aada7fcdf93af50ef6b852bc424e98cdf"
+            },
+            {
+              "path": "carpet/train/good/096.png",
+              "sha256": "23f1edf6fcd461293d1b23a6ec1e46c7455e1194a7e438965c4559e176c04b0e"
+            },
+            {
+              "path": "carpet/train/good/110.png",
+              "sha256": "6b6ded3c5fde15e721ef8e5cfa3e75e4bf05faefc78c6f6a3c4cf7c221980d61"
+            },
+            {
+              "path": "carpet/train/good/123.png",
+              "sha256": "30b48e51b767e9e9693f4f1086168a6409dc8c943d4c98850b2f148725e4000a"
+            },
+            {
+              "path": "carpet/train/good/130.png",
+              "sha256": "1c07dcd8f3e9c7124e17630a8c96914cff4ef962f08ef7a355f52ba421131801"
+            },
+            {
+              "path": "carpet/train/good/141.png",
+              "sha256": "9f1f17178b9eb57347ed832b3b5f8fb9252ac01425b942f81946cab229165eab"
+            },
+            {
+              "path": "carpet/train/good/152.png",
+              "sha256": "7dec9fa4e14f23145784e6e8cd3425c66a51e375436f0dc65b4761a715141fc1"
+            },
+            {
+              "path": "carpet/train/good/154.png",
+              "sha256": "2701b049022b16681bf055c4a1068f1130e23454457995392d5e5befd993fb21"
+            },
+            {
+              "path": "carpet/train/good/167.png",
+              "sha256": "c0a0a1ecaf2d788f8fc8202a1ce58f6ec61beeff44389ee8a0fe7ca1134997fc"
+            },
+            {
+              "path": "carpet/train/good/172.png",
+              "sha256": "3c0ac6080d1b2ec0f4a9bbf25d9698e5b8aa5a56b888df5f8a0284b18ff2dd87"
+            },
+            {
+              "path": "carpet/train/good/179.png",
+              "sha256": "00d8113ead7a93e9a41a0a25587e75800491ef49660d9addd91a6ecf90096bb1"
+            },
+            {
+              "path": "carpet/train/good/180.png",
+              "sha256": "6f9e477b04c89b36d3d77e13058c9914828d5894e1b21f77c41be03c6ff728af"
+            },
+            {
+              "path": "carpet/train/good/183.png",
+              "sha256": "08cf59d5f6d5125f20a36deb3d29b466212ec04a03010397a27215784f8e1466"
+            },
+            {
+              "path": "carpet/train/good/190.png",
+              "sha256": "0e4d228b25c018523ba506ca995e8dff84b5d10ea092165808378351be84da17"
+            },
+            {
+              "path": "carpet/train/good/195.png",
+              "sha256": "b2b3a6e232d34d3de1ef3a0afaebcde6124ac53139ac3b84061018d11a1932c9"
+            },
+            {
+              "path": "carpet/train/good/198.png",
+              "sha256": "8f2ac6eac198771d2deaacb8ac0f5faead14ea214545fd909de3c8977cd28b4c"
+            },
+            {
+              "path": "carpet/train/good/203.png",
+              "sha256": "41748906e5d2e90a28082641ae193356c53a2f78d7392ad629172f109338e3e8"
+            },
+            {
+              "path": "carpet/train/good/213.png",
+              "sha256": "9e3ecd754432dd8179a92d8ed998ec1e0c09269e5a88337e5ffbaec39fb8df8d"
+            },
+            {
+              "path": "carpet/train/good/216.png",
+              "sha256": "3b431f5f0554ab711ec1fe97c00f50ea24610a89e9855ae66d34f05795e7c69f"
+            },
+            {
+              "path": "carpet/train/good/219.png",
+              "sha256": "4b62e76e26d311df8d39ebc20e5056c4cdb70b842659c0481c70b6361dee9c44"
+            },
+            {
+              "path": "carpet/train/good/220.png",
+              "sha256": "794e6388737910b8298bb5cc02895453233ec949517127c05fb321f73bf85bce"
+            },
+            {
+              "path": "carpet/train/good/223.png",
+              "sha256": "6e9878266c88936ff2add3c9be4fca59aaad53946120922b67e7ffe83a403bf1"
+            },
+            {
+              "path": "carpet/train/good/227.png",
+              "sha256": "567881f05688b0dc3988cf44f2b4354e74e3b49d0839311e612e52ce36141846"
+            },
+            {
+              "path": "carpet/train/good/231.png",
+              "sha256": "89b355f5e5cf369089e95fa569083fc8fe424c46f5c85f7fb457d66f143457e4"
+            },
+            {
+              "path": "carpet/train/good/242.png",
+              "sha256": "eb911e0cbd19147c175f70e98e70a5c26ac94ffdbe592b32f6727447350be0c8"
+            },
+            {
+              "path": "carpet/train/good/244.png",
+              "sha256": "1e38c7c39839cad7131ebaa225f01997bfe47ea3eb0ad467a16f94c587e7f69d"
+            },
+            {
+              "path": "carpet/train/good/245.png",
+              "sha256": "f9541c7f93d152a5732a26cb5ec7901d640ea2ce7d03b0aacda8f7c045402bcc"
+            },
+            {
+              "path": "carpet/train/good/258.png",
+              "sha256": "748d35e9f3ee8104a4585d4c80b63886b2ef9f9a42a5b0ec15061f6a1e6fb552"
+            },
+            {
+              "path": "carpet/train/good/259.png",
+              "sha256": "c0f70264e96d2a2e299754417aad3327f57d362c94a4de6cb8621350508902b8"
+            },
+            {
+              "path": "carpet/train/good/261.png",
+              "sha256": "79fcca5ec62627d52777550a2bfe9ed5426a9e234660f68ca2b706887946f53e"
+            },
+            {
+              "path": "carpet/train/good/262.png",
+              "sha256": "96a6b006e2e64fce72ca5e64ae7f5c2e827005b55d32d7d98fdd84a2bb97b578"
+            },
+            {
+              "path": "carpet/train/good/266.png",
+              "sha256": "d763e3e9f7189d24f9bd33190b592638612314358d67fb28da26987977781c9f"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "ed0cb8ee442ec28aecb75c91e26fe27c97b52c9fcd01125d386cd49d35935f4e",
+        "path": "outputs/patchcore/features/85674a8f39c32bbb0f5671c9646e3bedcc46115431b19d373a940e7f8d0a48a6.npy",
+        "shape": [
+          42,
+          1024,
+          384
+        ],
+        "bytes": 66060416,
+        "resources": {
+          "seconds": 0.5270084000003408,
+          "cpu_initial_rss_bytes": 1593462784,
+          "cpu_peak_rss_bytes": 1662726144,
+          "cpu_peak_increment_bytes": 69263360,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 246177792,
+          "peak_gpu_reserved_bytes": 341835776
+        },
+        "cache_hit": true
+      }
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 7.457399999111658,
+        "p95_ms": 7.813880000503558
+      },
+      "host_to_device": {
+        "p50_ms": 1.303449998886208,
+        "p95_ms": 3.2118850005645045
+      },
+      "feature_extraction": {
+        "p50_ms": 12.244499997905223,
+        "p95_ms": 13.304079999034002
+      },
+      "nearest_neighbor": {
+        "p50_ms": 3.615150000769063,
+        "p95_ms": 4.049114997178548
+      },
+      "model": {
+        "p50_ms": 15.915099998892401,
+        "p95_ms": 17.133619999913208
+      },
+      "postprocessing": {
+        "p50_ms": 10.34194999920146,
+        "p95_ms": 11.865180000313552
+      },
+      "end_to_end": {
+        "p50_ms": 35.05265000057989,
+        "p95_ms": 37.80068999749346
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 420 MHz, 39"
+      },
+      "peak_inference_allocated_bytes": 84222464,
+      "peak_inference_reserved_bytes": 341835776
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9478925026123302,
+          0.997647104923474
+        ],
+        "image_ap": [
+          0.9852191939187842,
+          0.9992466348612152
+        ],
+        "recall": [
+          0.9647058823529412,
+          1.0
+        ],
+        "fpr": [
+          0.4166666666666667,
+          0.7916666666666666
+        ],
+        "precision": [
+          0.7663139087410665,
+          0.9052730883813307
+        ],
+        "f1": [
+          0.8617021276595745,
+          0.9468726163234172
+        ],
+        "pixel_auroc": [
+          0.9854515928980343,
+          0.9926423437100022
+        ],
+        "pixel_ap": [
+          0.4509005071548661,
+          0.6942656871053644
+        ],
+        "au_pro": [
+          0.9317446208066319,
+          0.9674823303425806
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9893905147740862,
+      "pixel_ap": 0.5654988520626569,
+      "au_pro": 0.9511848280037838
+    },
+    "training_seconds": 2.601341900000989,
+    "coreset_seconds": 1.519632499999716,
+    "original_extraction_seconds": 0.8475110999970639,
+    "feature_cache_hit_during_fit": true,
+    "test_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "carpet/test/color/000.png",
+            "sha256": "12dff41957a900a38a9def83edbea55006c9190109678fc29b0d96b546ecae28"
+          },
+          {
+            "path": "carpet/test/color/001.png",
+            "sha256": "541e2d09dbc332ed74981424fb04368f65f3c58473965785832c9416d4578452"
+          },
+          {
+            "path": "carpet/test/color/002.png",
+            "sha256": "862872685fb8e8ac71b86270444cd3fdda2007596434ebfbe156d81ec782a2ae"
+          },
+          {
+            "path": "carpet/test/color/003.png",
+            "sha256": "1c2c9599bdc6546017cbce4ea4c283e6eddea78c06eb762c8692feb9d6248c0c"
+          },
+          {
+            "path": "carpet/test/color/004.png",
+            "sha256": "d06d4cea2d51a43d261318c1cf9f40e23bb8cf5f45e33a443c3fd7f0fc1c006e"
+          },
+          {
+            "path": "carpet/test/color/005.png",
+            "sha256": "a9a8e682c857441003fac6a2b663c32145315ca2b4a9d0e8397ff1391eeda449"
+          },
+          {
+            "path": "carpet/test/color/006.png",
+            "sha256": "6e71596d151d088ab5ff887b95c28ff1de6262dfd19551ca594630326ca1c452"
+          },
+          {
+            "path": "carpet/test/color/007.png",
+            "sha256": "96eaaa608a2266541ddb549380eae7bc1f018395432e2c746faf7534990d7768"
+          },
+          {
+            "path": "carpet/test/color/008.png",
+            "sha256": "1a53ca4222481e4fc54c3a3824384c13ff65ca88fb8fa183efde654634749dda"
+          },
+          {
+            "path": "carpet/test/color/009.png",
+            "sha256": "956d84f7ebcfc246a9130745c6c8fabac472025cb4802584ff24ee8c63f5b112"
+          },
+          {
+            "path": "carpet/test/color/010.png",
+            "sha256": "bef81a3ff6b150ebd6d0c33188856d913db45c5b1248a0d087c06c856660f0d3"
+          },
+          {
+            "path": "carpet/test/color/011.png",
+            "sha256": "2c0d43222bb3dc5941493fe9a3424e3d4baad784a2c5d885c65b13732721c968"
+          },
+          {
+            "path": "carpet/test/color/012.png",
+            "sha256": "1ff531d39f9377c7e01f43742f8a87a322393d8f6d4f056d1ac150751972e0bc"
+          },
+          {
+            "path": "carpet/test/color/013.png",
+            "sha256": "4b6a2abcf1bd95e795a68a1b24e73b262cd34afc657f0d69b179598a4ffeb782"
+          },
+          {
+            "path": "carpet/test/color/014.png",
+            "sha256": "9a338e0bba821ca85a02e58ecba08bc3d49cbbf36a464b429f831dfa70672f5a"
+          },
+          {
+            "path": "carpet/test/color/015.png",
+            "sha256": "92ed84cc0fef45fb6bb84da2c7cb2ce533db094f75f69f2beb9a54dd57cd6330"
+          },
+          {
+            "path": "carpet/test/color/016.png",
+            "sha256": "fd73a13debbccfcb2c831b89b5300ea842d72df43fb5bfef2be00277d6cbf81f"
+          },
+          {
+            "path": "carpet/test/color/017.png",
+            "sha256": "86f4d079d2f8d07cc2c187b39d9b740afde39a83e72be909085603530f891ece"
+          },
+          {
+            "path": "carpet/test/color/018.png",
+            "sha256": "a6ac030ba4c83b5d728d35c2df865b96d75a728eea443ec0bded35ac0b0fd14c"
+          },
+          {
+            "path": "carpet/test/cut/000.png",
+            "sha256": "cfc42f69f8592f8b6dd17bf7a83fa71c18a7c65455a872a2c0d113f94c5b9ad0"
+          },
+          {
+            "path": "carpet/test/cut/001.png",
+            "sha256": "ff79bdb335d9380ae6ca0e298cad2f2935d157e0ad32a665c16c0cf51703f116"
+          },
+          {
+            "path": "carpet/test/cut/002.png",
+            "sha256": "a10707d7c0af5dd0411643c58615252a7186aff5e41ab0f2078e85fac3963bd0"
+          },
+          {
+            "path": "carpet/test/cut/003.png",
+            "sha256": "0888f67412f4d7131380503f279dade7a2b4e570fcf096bf2c8b6e516ff11ad6"
+          },
+          {
+            "path": "carpet/test/cut/004.png",
+            "sha256": "29e8ac265e3aaaaa446512732a4771da247d7a4ceb75177cbd36b552f3dfb482"
+          },
+          {
+            "path": "carpet/test/cut/005.png",
+            "sha256": "1ef0ba5bc5117dc62877636d9d694f04be77a9b9ecf8779f0c0368b492c94d4a"
+          },
+          {
+            "path": "carpet/test/cut/006.png",
+            "sha256": "85bab51880df051dfbd0a68f5bf4ecac3edc811188231b9aa8ebd6d76640d1ab"
+          },
+          {
+            "path": "carpet/test/cut/007.png",
+            "sha256": "51106e90b51c49ab936be1e441fc5c92a7a018689c07e993ed8a4c88a7402844"
+          },
+          {
+            "path": "carpet/test/cut/008.png",
+            "sha256": "f8097a80c1a15dd32d3b5b3cd8f6e9de0ddef6d05423ce07263c1b9e7f8d5f56"
+          },
+          {
+            "path": "carpet/test/cut/009.png",
+            "sha256": "1f79ad91033f77a73a7ffa7d4461b351cf62ebe2223ebe1b163c2be5d6202763"
+          },
+          {
+            "path": "carpet/test/cut/010.png",
+            "sha256": "5894d1c512ed6d54fd48da2ca8e35189485172834b77dd7f01f6552f72f6fe2f"
+          },
+          {
+            "path": "carpet/test/cut/011.png",
+            "sha256": "a829e220893cabc4553c5ffe5303501a15d1876dc9d1e149c8d2b732c4307108"
+          },
+          {
+            "path": "carpet/test/cut/012.png",
+            "sha256": "6e59ad4a9cbc0eb89d6519710407e42864ba69b151e388f3c1f938d0ba6511fd"
+          },
+          {
+            "path": "carpet/test/cut/013.png",
+            "sha256": "47b356f470a02b3e5638f7ac56565be7196f8c8842c3e688a92d54df6f21d8b4"
+          },
+          {
+            "path": "carpet/test/cut/014.png",
+            "sha256": "e765fecb67173c22fdb3bbc76c17cf8127c19fc16901925ee35cd1009bbb146d"
+          },
+          {
+            "path": "carpet/test/cut/015.png",
+            "sha256": "3234609b729ab2347c5871ebf894e2eeea65f06359592dbf1968e1d382fb4bb5"
+          },
+          {
+            "path": "carpet/test/cut/016.png",
+            "sha256": "a9e4b12f2370b98f43794207de5ed6e18b7d8fd4e7bf915f511b7c7e1d4e97ff"
+          },
+          {
+            "path": "carpet/test/good/000.png",
+            "sha256": "22c6a63be1eec01601689abb9e794b69ee0aefc1addd9233c63b7e02c70dc0b5"
+          },
+          {
+            "path": "carpet/test/good/001.png",
+            "sha256": "132224b0761e2839a563ca1e339a9f64b1f1f71ca8f6229fa2c74e093888091e"
+          },
+          {
+            "path": "carpet/test/good/002.png",
+            "sha256": "f2f554c14de40f84297d24c2bda95a842693b709830f679957e51e292312c91e"
+          },
+          {
+            "path": "carpet/test/good/003.png",
+            "sha256": "1386be8c4f20aae730f9d7e70253ad90b19e2e71ef65c16a588b1660d6bdf6f2"
+          },
+          {
+            "path": "carpet/test/good/004.png",
+            "sha256": "115a3d1b84e0206be269fc0b8d484ee0c79385daff199b6864bf64415d0e2964"
+          },
+          {
+            "path": "carpet/test/good/005.png",
+            "sha256": "1affd101ed59c87279548b4cfa97d5c926093e230b7e0c0168fb25eb1c0f4ba5"
+          },
+          {
+            "path": "carpet/test/good/006.png",
+            "sha256": "4aba9333d8c7c985e00562cc18dd5d7ae06fcd287017c5c39d08584f8d718905"
+          },
+          {
+            "path": "carpet/test/good/007.png",
+            "sha256": "27b7c449f0a491fc502db0c4622d5eeb655bb136c079d945fb49b2e9e508e9ad"
+          },
+          {
+            "path": "carpet/test/good/008.png",
+            "sha256": "c675b1c4440dfdf0b953e67cdcf42d4791d46973abe152b6b5fa2fb7bd1ca4ed"
+          },
+          {
+            "path": "carpet/test/good/009.png",
+            "sha256": "9ea1e9884de2c5abc71e0bcd6048632dbbb8105b58cab89f4d6e04968583ff49"
+          },
+          {
+            "path": "carpet/test/good/010.png",
+            "sha256": "14f4b54bfe98e9e86b6e5f0979b021529254711f1d8d413347c7c3b447f7aa1b"
+          },
+          {
+            "path": "carpet/test/good/011.png",
+            "sha256": "2dea27682886b3b68875fcfb086098534f7f51b72bb90aa566dee0103614c218"
+          },
+          {
+            "path": "carpet/test/good/012.png",
+            "sha256": "a137a64b3cc76f9e096e73ff99fbd6300d9a3eb542ee4a466633448e08564991"
+          },
+          {
+            "path": "carpet/test/good/013.png",
+            "sha256": "866cc605aec6bf222907e9ae6dc0d05a69d7bea51ed76d5bd729bce6dba8edf6"
+          },
+          {
+            "path": "carpet/test/good/014.png",
+            "sha256": "9f611bfc55d7b511b9b05393bc658da23037ac1a8ca597d9ef26913293b51e74"
+          },
+          {
+            "path": "carpet/test/good/015.png",
+            "sha256": "5416c331f15f82ff6b241f3ec667325784791ba11bde35296140c40bbad8c2b8"
+          },
+          {
+            "path": "carpet/test/good/016.png",
+            "sha256": "2ea65ab222f2c2fbbe381a4b354907a0d43d356368730cbf3766b21f885774e8"
+          },
+          {
+            "path": "carpet/test/good/017.png",
+            "sha256": "b4ca6bdaae527e584f019dd6bc7369b9e4ad87198e5dcd0cc6dfd9478092e679"
+          },
+          {
+            "path": "carpet/test/good/018.png",
+            "sha256": "a599c36ab888bc98eae60e6a9b870ae1f686f335f15413eaf29e1a968fc4d83a"
+          },
+          {
+            "path": "carpet/test/good/019.png",
+            "sha256": "576151dc717c3c3c10527eeb8e4d8070d4fddb6113c5e8b0abd5178a9020940f"
+          },
+          {
+            "path": "carpet/test/good/020.png",
+            "sha256": "548ab03eff58bc2f298b8e598d180e9af2c254e92f50a36628e2c130dc156170"
+          },
+          {
+            "path": "carpet/test/good/021.png",
+            "sha256": "5db1d42adf0266a33c5060dba434925731c5231122dd8ad029d448d566544a93"
+          },
+          {
+            "path": "carpet/test/good/022.png",
+            "sha256": "6caf5bff52a1637401ea30241e964e1292cb8b043ab61e250f8c2ea6db4f12fb"
+          },
+          {
+            "path": "carpet/test/good/023.png",
+            "sha256": "9d3a5c5e481a46db4aa7e8251270dbf25a5d54e0bac8f2eed6fb4d35209718fa"
+          },
+          {
+            "path": "carpet/test/good/024.png",
+            "sha256": "a2122368c9584a7050be119f5b926675da2d1d8ba674feb0ef68198fb4a6dd45"
+          },
+          {
+            "path": "carpet/test/good/025.png",
+            "sha256": "3a4de627ab2e61a89cbcb5a3592f3b207b1186cab18ce17a8d11e6b5cbfeb780"
+          },
+          {
+            "path": "carpet/test/good/026.png",
+            "sha256": "a4c7fddadd8d13301142dac6e39c54fb9a95f7ca504ef0deebf6a4ff35ddeb06"
+          },
+          {
+            "path": "carpet/test/good/027.png",
+            "sha256": "354a76abc30cf25529c53c52a88b19383777569c305b539428a6e3e135fba7e2"
+          },
+          {
+            "path": "carpet/test/hole/000.png",
+            "sha256": "d2740db7d12ef923a5db4ef4c5a49a4bdb7b7d4af9f4024680988bf1cc88a6da"
+          },
+          {
+            "path": "carpet/test/hole/001.png",
+            "sha256": "eeb8258f8c609285cd42e1d8570c51c6e64d9efe6e3baca0de60b05fe3075624"
+          },
+          {
+            "path": "carpet/test/hole/002.png",
+            "sha256": "e1f0ca810329731c0b0c4173b7c9e9e5f82f03dc259d3a5f1a9488daafcf53f3"
+          },
+          {
+            "path": "carpet/test/hole/003.png",
+            "sha256": "7cec2b4b8e198a98891e590c31c11e3ef90c98d37f6c57dfed2023bc01ef5a83"
+          },
+          {
+            "path": "carpet/test/hole/004.png",
+            "sha256": "4f68c05b1dd17d3a8c793c08e1095d6970b8f8f48f46af1b3b6b9885b48d3bbf"
+          },
+          {
+            "path": "carpet/test/hole/005.png",
+            "sha256": "3d43c326e11cea563c7c77e51cec796541de6a216ae77402f1203288a4121381"
+          },
+          {
+            "path": "carpet/test/hole/006.png",
+            "sha256": "25a409769ceb99e93581d14c7f9e734a9ede127fb461aecfbcae76b2efb63b6f"
+          },
+          {
+            "path": "carpet/test/hole/007.png",
+            "sha256": "2890a75e9457516d88f820c8931c13ccd36b10890352f8eaf8858b0898e2976a"
+          },
+          {
+            "path": "carpet/test/hole/008.png",
+            "sha256": "8232757646621f65f579215365d6ba5bf106d1ded3ef809509266d94f97c7693"
+          },
+          {
+            "path": "carpet/test/hole/009.png",
+            "sha256": "685fbfceed87515909665a0f07c94e8920decc1a10c93b9116e1a0862b0d7b20"
+          },
+          {
+            "path": "carpet/test/hole/010.png",
+            "sha256": "3824d634cfd0446ae899c138bc1088457ab884ecf2f1a1e9bae3d106e1db767f"
+          },
+          {
+            "path": "carpet/test/hole/011.png",
+            "sha256": "58c01340a70bf3e70d5f8b4e4635d49aa87ad6a78fbbfd4d7a57cc95af6a5e95"
+          },
+          {
+            "path": "carpet/test/hole/012.png",
+            "sha256": "939d44a6f3f8cefde9ae4ff7c271939d752a62cadab3e92aacc29d1fcf75bbb5"
+          },
+          {
+            "path": "carpet/test/hole/013.png",
+            "sha256": "0c5054413fa753bd6fba4cc25db17785cc1a62221c1d05b5cc30ae72c1d7a7f6"
+          },
+          {
+            "path": "carpet/test/hole/014.png",
+            "sha256": "cb1830afcb7235d4fd511414c8025bbd8892f8657e816186b901f70eef4a14d9"
+          },
+          {
+            "path": "carpet/test/hole/015.png",
+            "sha256": "d6f4e3d383dda18c66ac9dee99083a546f663793ebfbec5f12b19465c48f8f19"
+          },
+          {
+            "path": "carpet/test/hole/016.png",
+            "sha256": "8536c9965523e511bde7cfdd48d78208453fddb7a0830770501223908005db90"
+          },
+          {
+            "path": "carpet/test/metal_contamination/000.png",
+            "sha256": "163002f1ec836e20ed14ac98c5a9e5b19b6f1df1d214cb986005f48500b83d5c"
+          },
+          {
+            "path": "carpet/test/metal_contamination/001.png",
+            "sha256": "45ba93dc86d0f769cdf12e40e512bf0f40fcdafaca967efd33819027d9669f67"
+          },
+          {
+            "path": "carpet/test/metal_contamination/002.png",
+            "sha256": "fe0ade5cbb6b61cf36e75b3fed0cb14b303ddfec606779650ff750200066e9f8"
+          },
+          {
+            "path": "carpet/test/metal_contamination/003.png",
+            "sha256": "31f7722fd246b5dc2e83f21b2b308ec0163c7a4aa003f1711635ce0f0fe111d3"
+          },
+          {
+            "path": "carpet/test/metal_contamination/004.png",
+            "sha256": "b1848c0557a18c6f34291fe8eb3af123feb405472783ee27adacf47172d5b7d0"
+          },
+          {
+            "path": "carpet/test/metal_contamination/005.png",
+            "sha256": "f35b0d76d397691c11c23978069b29c3c9953ebe7c2160408806dc864dce1f5b"
+          },
+          {
+            "path": "carpet/test/metal_contamination/006.png",
+            "sha256": "96478d571eb34ea3bdfd3db76924fee85d56dfb71a9872cb190980d2f4662dd5"
+          },
+          {
+            "path": "carpet/test/metal_contamination/007.png",
+            "sha256": "8950c3c35e7589911883fb4816f7c0cb1dca2cb60f0e7545c00fc19ef9a318b6"
+          },
+          {
+            "path": "carpet/test/metal_contamination/008.png",
+            "sha256": "60a3cabf83028b86606da523034633db95d3c5661dbaeda1757fda0f425963ab"
+          },
+          {
+            "path": "carpet/test/metal_contamination/009.png",
+            "sha256": "f2bbab4848b1f90839ef50cc1f93fbf6a6aa5a226eda484665a96fae1edd4536"
+          },
+          {
+            "path": "carpet/test/metal_contamination/010.png",
+            "sha256": "75049549d6a1f2b97a67f0683dcd7dd32a1ce2e871ce62082b756ed8143314cf"
+          },
+          {
+            "path": "carpet/test/metal_contamination/011.png",
+            "sha256": "2bf2d6ddf6b1772607ed68282da98130bf6550308886f01a604eeb2c81afe3f4"
+          },
+          {
+            "path": "carpet/test/metal_contamination/012.png",
+            "sha256": "0b02bfe62e835c7144fa560ece28ab98406844d9a9ecabbe221226ea064d6860"
+          },
+          {
+            "path": "carpet/test/metal_contamination/013.png",
+            "sha256": "847604f5f74e24f46a950a6d7a455a73e2aed5714a8bda4f12ba60f249ed1b40"
+          },
+          {
+            "path": "carpet/test/metal_contamination/014.png",
+            "sha256": "fc82b04090e1228db88bd91415c3e00086e1cfcaeb6ebe43848780135500f781"
+          },
+          {
+            "path": "carpet/test/metal_contamination/015.png",
+            "sha256": "32f0b312bcfa09a9b5c3e095631bc447359863f91e2b6446de85c23d7f89361c"
+          },
+          {
+            "path": "carpet/test/metal_contamination/016.png",
+            "sha256": "794c8e66720909cada16455d2e8929a68db45f9d102f183fe30857ebfcd128f7"
+          },
+          {
+            "path": "carpet/test/thread/000.png",
+            "sha256": "c99519607bd5ff30cbe4536e8335b5fb2f383ef6ce5a74c06e5f789dc9db8ff1"
+          },
+          {
+            "path": "carpet/test/thread/001.png",
+            "sha256": "e6c42919c3130503f13383cc1f31f0505c624a1cb458e68a5fc269722b71c4ad"
+          },
+          {
+            "path": "carpet/test/thread/002.png",
+            "sha256": "9169cc1916bb5e6b9ae86d43eaced82c9b13bda1b20d88b964d6ea27a575df4b"
+          },
+          {
+            "path": "carpet/test/thread/003.png",
+            "sha256": "f9ff162f3f2a7965748fe1a43d0c651c71f95f78b1742237038ae0f1f19742c6"
+          },
+          {
+            "path": "carpet/test/thread/004.png",
+            "sha256": "d4924fa625a2c81533b127c65fe22e79ead991206edcdc983bebaac459ea6dca"
+          },
+          {
+            "path": "carpet/test/thread/005.png",
+            "sha256": "a0d132d49b6668495106a8ca81535a8d5732f5e2eb6ad267b79f7743119ac496"
+          },
+          {
+            "path": "carpet/test/thread/006.png",
+            "sha256": "36d621f702fbd94e9be27d3883990e5979e1dbfabe9635e9e1e9c97d8d5947ab"
+          },
+          {
+            "path": "carpet/test/thread/007.png",
+            "sha256": "814c0663d1d163c7ee9b4fbf6c0361a880bb1163781d5f2fd6f411d33229fd5f"
+          },
+          {
+            "path": "carpet/test/thread/008.png",
+            "sha256": "8d69258fb2396ec2b81d29131c19667812f749223d8db5afd1bdac1a2573fc4e"
+          },
+          {
+            "path": "carpet/test/thread/009.png",
+            "sha256": "3ae2c8aa2dba56136fc3b73c06d3a1ec971fe4caa594fdb9becdc5a499eb2a9d"
+          },
+          {
+            "path": "carpet/test/thread/010.png",
+            "sha256": "9c3d5c53d540efc1a9b9204728843f8f4723c50f28d3ea52dc1f509fffa2432f"
+          },
+          {
+            "path": "carpet/test/thread/011.png",
+            "sha256": "c2a7fda9ab47b71ec7074a0c17180f9d68447dbf093bca44932bd553d8d4886b"
+          },
+          {
+            "path": "carpet/test/thread/012.png",
+            "sha256": "5a2db07e4e794e6bf59440e8a4950092b0ea58d21465dc85807efa59db27c7c5"
+          },
+          {
+            "path": "carpet/test/thread/013.png",
+            "sha256": "ce1ba038bfe7132308a006a1651f2eb9245a49cdebd9bb43495dbbf701a35eb6"
+          },
+          {
+            "path": "carpet/test/thread/014.png",
+            "sha256": "284e964459db0f6591c630ed29bf8c780a79d450219adac8887aec33a7670bf6"
+          },
+          {
+            "path": "carpet/test/thread/015.png",
+            "sha256": "470f7260a5fcce2fa1b23c9c8c5d5d56f248587ebdfeb915c2316c704d7e3666"
+          },
+          {
+            "path": "carpet/test/thread/016.png",
+            "sha256": "e87886887905a5ff23100565844ab661ff049b9587424f01f99787727f330891"
+          },
+          {
+            "path": "carpet/test/thread/017.png",
+            "sha256": "c858babe863ce5051ab51fb740b8f7d164027eb9ccd66d7d564f9993d08167b6"
+          },
+          {
+            "path": "carpet/test/thread/018.png",
+            "sha256": "c69128dde252e909ed7fa27acb4f51c82d8a3186c3f3f53a1c59170a85e3f442"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "27db50d2259cff8b952dce4ed35a39206d402f4d89f446a0e7184a02074a73e8",
+      "path": "outputs/patchcore/features/727e9710b913a7d517fe295a11511bc124dfeed5db6b54b17dd2a82ca790dbab.npy",
+      "shape": [
+        117,
+        1024,
+        384
+      ],
+      "bytes": 184025216,
+      "resources": {
+        "seconds": 0.540511899998819,
+        "cpu_initial_rss_bytes": 1605148672,
+        "cpu_peak_rss_bytes": 1808871424,
+        "cpu_peak_increment_bytes": 203722752,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    },
+    "cpu_peak_rss_bytes": 4847362048,
+    "bank_vector_bytes": 3145728,
+    "training_peak_allocated_bytes": 892490240,
+    "checkpoint_bytes": 3188621,
+    "parameters": 2782784,
+    "evaluation_seconds": 101.45017319999897,
+    "per_defect": [
+      {
+        "category": "carpet",
+        "seed": 2027,
+        "defect": "color",
+        "defective_images": 19,
+        "auroc": 0.9962406015037595,
+        "ap": 0.9949874686716789,
+        "recall": 1.0,
+        "fpr": 0.6071428571428571,
+        "precision": 0.5277777777777778,
+        "f1": 0.6909090909090909,
+        "confusion_matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            0,
+            19
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2027,
+        "defect": "cut",
+        "defective_images": 17,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.6071428571428571,
+        "precision": 0.5,
+        "f1": 0.6666666666666666,
+        "confusion_matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2027,
+        "defect": "hole",
+        "defective_images": 17,
+        "auroc": 0.9915966386554622,
+        "ap": 0.988795518207283,
+        "recall": 1.0,
+        "fpr": 0.6071428571428571,
+        "precision": 0.5,
+        "f1": 0.6666666666666666,
+        "confusion_matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2027,
+        "defect": "metal_contamination",
+        "defective_images": 17,
+        "auroc": 0.9138655462184874,
+        "ap": 0.935263684187644,
+        "recall": 0.9411764705882353,
+        "fpr": 0.6071428571428571,
+        "precision": 0.48484848484848486,
+        "f1": 0.64,
+        "confusion_matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            1,
+            16
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2027,
+        "defect": "thread",
+        "defective_images": 19,
+        "auroc": 0.9755639097744362,
+        "ap": 0.9735133287764863,
+        "recall": 1.0,
+        "fpr": 0.6071428571428571,
+        "precision": 0.5277777777777778,
+        "f1": 0.6909090909090909,
+        "confusion_matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            0,
+            19
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/patchcore/03-test-b2048-carpet-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "e679cf8b2618abea30c96a96eec4d83975e824188e7bdab09eb33c515cc2e09b",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "image_rows": 117,
+    "evaluated_at_utc": "2026-11-12T19:13:43.124298+00:00"
+  },
+  "calibration": {
+    "category": "carpet",
+    "images": 42,
+    "image_threshold": 1.2310365438461304,
+    "secondary_image_threshold_q99": 1.2717052698135376,
+    "pixel_threshold": 1.1386786699295044,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 2752512,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      1.140976905822754,
+      1.2048726081848145,
+      1.1109765768051147,
+      1.180033802986145,
+      1.1707892417907715,
+      1.1338711977005005,
+      1.1933785676956177,
+      1.1906529664993286,
+      1.2581249475479126,
+      1.0995771884918213,
+      1.0955026149749756,
+      1.1857272386550903,
+      1.152795672416687,
+      1.2717052698135376,
+      1.1381726264953613,
+      1.1525155305862427,
+      1.1055229902267456,
+      1.1285125017166138,
+      1.1731833219528198,
+      1.190356731414795,
+      1.2094050645828247,
+      1.1134337186813354,
+      1.1497881412506104,
+      1.1525779962539673,
+      1.174156665802002,
+      1.2310365438461304,
+      1.1199955940246582,
+      1.115238904953003,
+      1.1276147365570068,
+      1.1628966331481934,
+      1.1416624784469604,
+      1.1323472261428833,
+      1.2247248888015747,
+      1.1720337867736816,
+      1.1132830381393433,
+      1.1962751150131226,
+      1.150931477546692,
+      1.2306238412857056,
+      1.1660102605819702,
+      1.2068686485290527,
+      1.1727180480957031,
+      1.1929179430007935
+    ],
+    "image_threshold_bootstrap_95ci": [
+      1.2068686485290527,
+      1.2717052698135376
+    ],
+    "histogram_scale": 0.9312412738800049,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "877d856565283112996331d090d297f4461e1228052e84723501adbe2ca6b8fc",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "carpet/train/good/017.png",
+            "sha256": "05b6a02b6147c1655e7aa6f56f1f434d37a338ed9abdb8027c5fbb4aba780031"
+          },
+          {
+            "path": "carpet/train/good/018.png",
+            "sha256": "feb358329e99472d2b51c9caffbdf6efd470249bf5f66fb374a116a2c1292799"
+          },
+          {
+            "path": "carpet/train/good/022.png",
+            "sha256": "607b5650677c45a0057c1ea135768501edcd789f22a5674037cb6493c6bb851d"
+          },
+          {
+            "path": "carpet/train/good/030.png",
+            "sha256": "5b96ce8d388924b090fb4017cdc04c9e13a3eb23779d3b4c9bbffcac19cf4f97"
+          },
+          {
+            "path": "carpet/train/good/034.png",
+            "sha256": "a129ebd71ec50199517d7d837a905df19eed4d7eaf7860506b6cfed073f34d2b"
+          },
+          {
+            "path": "carpet/train/good/037.png",
+            "sha256": "bec2fe2ffe8042dc6d4199fb54527b502f1d3b0a48dd6221165396705b5641ad"
+          },
+          {
+            "path": "carpet/train/good/045.png",
+            "sha256": "30596752a28d066451fc97e9a601b5b0adcd6c4445ad585e3a1be3f7d6f85309"
+          },
+          {
+            "path": "carpet/train/good/057.png",
+            "sha256": "87e1b924baf6381c87e24d0336e15714618c1ceb641afeb66ef22143ca76f5ee"
+          },
+          {
+            "path": "carpet/train/good/077.png",
+            "sha256": "bd11b72e9da5ea73722349866bf5ee1b59a0cf05512e397be86fb517b8e5eae6"
+          },
+          {
+            "path": "carpet/train/good/089.png",
+            "sha256": "ef81b3f58f31220a432b456f136fe0cc8fc8c1045026de76d6eec5608659ed33"
+          },
+          {
+            "path": "carpet/train/good/093.png",
+            "sha256": "4ad9716d7abcc8d7447833260e0e842aada7fcdf93af50ef6b852bc424e98cdf"
+          },
+          {
+            "path": "carpet/train/good/096.png",
+            "sha256": "23f1edf6fcd461293d1b23a6ec1e46c7455e1194a7e438965c4559e176c04b0e"
+          },
+          {
+            "path": "carpet/train/good/110.png",
+            "sha256": "6b6ded3c5fde15e721ef8e5cfa3e75e4bf05faefc78c6f6a3c4cf7c221980d61"
+          },
+          {
+            "path": "carpet/train/good/123.png",
+            "sha256": "30b48e51b767e9e9693f4f1086168a6409dc8c943d4c98850b2f148725e4000a"
+          },
+          {
+            "path": "carpet/train/good/130.png",
+            "sha256": "1c07dcd8f3e9c7124e17630a8c96914cff4ef962f08ef7a355f52ba421131801"
+          },
+          {
+            "path": "carpet/train/good/141.png",
+            "sha256": "9f1f17178b9eb57347ed832b3b5f8fb9252ac01425b942f81946cab229165eab"
+          },
+          {
+            "path": "carpet/train/good/152.png",
+            "sha256": "7dec9fa4e14f23145784e6e8cd3425c66a51e375436f0dc65b4761a715141fc1"
+          },
+          {
+            "path": "carpet/train/good/154.png",
+            "sha256": "2701b049022b16681bf055c4a1068f1130e23454457995392d5e5befd993fb21"
+          },
+          {
+            "path": "carpet/train/good/167.png",
+            "sha256": "c0a0a1ecaf2d788f8fc8202a1ce58f6ec61beeff44389ee8a0fe7ca1134997fc"
+          },
+          {
+            "path": "carpet/train/good/172.png",
+            "sha256": "3c0ac6080d1b2ec0f4a9bbf25d9698e5b8aa5a56b888df5f8a0284b18ff2dd87"
+          },
+          {
+            "path": "carpet/train/good/179.png",
+            "sha256": "00d8113ead7a93e9a41a0a25587e75800491ef49660d9addd91a6ecf90096bb1"
+          },
+          {
+            "path": "carpet/train/good/180.png",
+            "sha256": "6f9e477b04c89b36d3d77e13058c9914828d5894e1b21f77c41be03c6ff728af"
+          },
+          {
+            "path": "carpet/train/good/183.png",
+            "sha256": "08cf59d5f6d5125f20a36deb3d29b466212ec04a03010397a27215784f8e1466"
+          },
+          {
+            "path": "carpet/train/good/190.png",
+            "sha256": "0e4d228b25c018523ba506ca995e8dff84b5d10ea092165808378351be84da17"
+          },
+          {
+            "path": "carpet/train/good/195.png",
+            "sha256": "b2b3a6e232d34d3de1ef3a0afaebcde6124ac53139ac3b84061018d11a1932c9"
+          },
+          {
+            "path": "carpet/train/good/198.png",
+            "sha256": "8f2ac6eac198771d2deaacb8ac0f5faead14ea214545fd909de3c8977cd28b4c"
+          },
+          {
+            "path": "carpet/train/good/203.png",
+            "sha256": "41748906e5d2e90a28082641ae193356c53a2f78d7392ad629172f109338e3e8"
+          },
+          {
+            "path": "carpet/train/good/213.png",
+            "sha256": "9e3ecd754432dd8179a92d8ed998ec1e0c09269e5a88337e5ffbaec39fb8df8d"
+          },
+          {
+            "path": "carpet/train/good/216.png",
+            "sha256": "3b431f5f0554ab711ec1fe97c00f50ea24610a89e9855ae66d34f05795e7c69f"
+          },
+          {
+            "path": "carpet/train/good/219.png",
+            "sha256": "4b62e76e26d311df8d39ebc20e5056c4cdb70b842659c0481c70b6361dee9c44"
+          },
+          {
+            "path": "carpet/train/good/220.png",
+            "sha256": "794e6388737910b8298bb5cc02895453233ec949517127c05fb321f73bf85bce"
+          },
+          {
+            "path": "carpet/train/good/223.png",
+            "sha256": "6e9878266c88936ff2add3c9be4fca59aaad53946120922b67e7ffe83a403bf1"
+          },
+          {
+            "path": "carpet/train/good/227.png",
+            "sha256": "567881f05688b0dc3988cf44f2b4354e74e3b49d0839311e612e52ce36141846"
+          },
+          {
+            "path": "carpet/train/good/231.png",
+            "sha256": "89b355f5e5cf369089e95fa569083fc8fe424c46f5c85f7fb457d66f143457e4"
+          },
+          {
+            "path": "carpet/train/good/242.png",
+            "sha256": "eb911e0cbd19147c175f70e98e70a5c26ac94ffdbe592b32f6727447350be0c8"
+          },
+          {
+            "path": "carpet/train/good/244.png",
+            "sha256": "1e38c7c39839cad7131ebaa225f01997bfe47ea3eb0ad467a16f94c587e7f69d"
+          },
+          {
+            "path": "carpet/train/good/245.png",
+            "sha256": "f9541c7f93d152a5732a26cb5ec7901d640ea2ce7d03b0aacda8f7c045402bcc"
+          },
+          {
+            "path": "carpet/train/good/258.png",
+            "sha256": "748d35e9f3ee8104a4585d4c80b63886b2ef9f9a42a5b0ec15061f6a1e6fb552"
+          },
+          {
+            "path": "carpet/train/good/259.png",
+            "sha256": "c0f70264e96d2a2e299754417aad3327f57d362c94a4de6cb8621350508902b8"
+          },
+          {
+            "path": "carpet/train/good/261.png",
+            "sha256": "79fcca5ec62627d52777550a2bfe9ed5426a9e234660f68ca2b706887946f53e"
+          },
+          {
+            "path": "carpet/train/good/262.png",
+            "sha256": "96a6b006e2e64fce72ca5e64ae7f5c2e827005b55d32d7d98fdd84a2bb97b578"
+          },
+          {
+            "path": "carpet/train/good/266.png",
+            "sha256": "d763e3e9f7189d24f9bd33190b592638612314358d67fb28da26987977781c9f"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "ed0cb8ee442ec28aecb75c91e26fe27c97b52c9fcd01125d386cd49d35935f4e",
+      "path": "outputs/patchcore/features/85674a8f39c32bbb0f5671c9646e3bedcc46115431b19d373a940e7f8d0a48a6.npy",
+      "shape": [
+        42,
+        1024,
+        384
+      ],
+      "bytes": 66060416,
+      "resources": {
+        "seconds": 0.5270084000003408,
+        "cpu_initial_rss_bytes": 1593462784,
+        "cpu_peak_rss_bytes": 1662726144,
+        "cpu_peak_increment_bytes": 69263360,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    }
+  },
+  "paths": {
+    "local": "outputs/patchcore/03-test-b2048-carpet-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T19:13:43.130290+00:00",
+  "config_sha256": "2ce6acf246f24568c4cda7066ba2b4639a47ff1b2d9fccd222034d91fdeced35"
+}

@@ -1,0 +1,151 @@
+{
+  "categories": 15,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "development_runs": 12,
+  "macro": {
+    "image_auroc": {
+      "mean": 0.9675715185721371,
+      "seed_std": 0.0012768855854672788,
+      "image_bootstrap_95ci": [
+        0.9592770074560205,
+        0.9756856946601472
+      ],
+      "bootstrap_target": "exact image metric"
+    },
+    "image_ap": {
+      "mean": 0.9885377014831974,
+      "seed_std": 0.0005777320972767818,
+      "image_bootstrap_95ci": [
+        0.9847127851244424,
+        0.9920314501679945
+      ],
+      "bootstrap_target": "exact image metric"
+    },
+    "pixel_auroc": {
+      "mean": 0.9729438122778666,
+      "seed_std": 0.00022656435347136937,
+      "image_bootstrap_95ci": [
+        0.9692171342072473,
+        0.9765981734645944
+      ],
+      "bootstrap_target": "calibration-scaled 4096-bin pixel approximation"
+    },
+    "pixel_ap": {
+      "mean": 0.540154023315294,
+      "seed_std": 0.0021946525834844947,
+      "image_bootstrap_95ci": [
+        0.5195418904118031,
+        0.5629564660378257
+      ],
+      "bootstrap_target": "calibration-scaled 4096-bin pixel approximation"
+    },
+    "au_pro": {
+      "mean": 0.9203990769959395,
+      "seed_std": 9.654120920733232e-05,
+      "image_bootstrap_95ci": [
+        0.9141796087259443,
+        0.9268623516974152
+      ],
+      "bootstrap_target": "calibration-scaled 4096-bin pixel approximation"
+    },
+    "recall": {
+      "mean": 0.8904346544747822,
+      "seed_std": 0.0013169736926770146,
+      "image_bootstrap_95ci": [
+        0.8768379415665456,
+        0.9043995820051914
+      ],
+      "bootstrap_target": "exact image metric"
+    },
+    "fpr": {
+      "mean": 0.1718063006195689,
+      "seed_std": 0.013779463644427274,
+      "image_bootstrap_95ci": [
+        0.1420631922686863,
+        0.20199944431791947
+      ],
+      "bootstrap_target": "exact image metric"
+    },
+    "precision": {
+      "mean": 0.9400449530687424,
+      "seed_std": 0.0037485989255530063,
+      "image_bootstrap_95ci": [
+        0.9263036637569828,
+        0.9531200563519762
+      ],
+      "bootstrap_target": "exact image metric"
+    },
+    "f1": {
+      "mean": 0.9043447090545466,
+      "seed_std": 0.003413720204571493,
+      "image_bootstrap_95ci": [
+        0.8925844350893877,
+        0.9153958485367998
+      ],
+      "bootstrap_target": "exact image metric"
+    }
+  },
+  "frozen_configuration_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+  "total_bank_fit_wall_seconds": 118.9135847999969,
+  "total_coreset_seconds": 62.65951639999912,
+  "total_evaluation_seconds": 4092.582850100007,
+  "deterministic_feature_caches": 45,
+  "deterministic_feature_cache_bytes": 7573345920,
+  "unique_extraction_stage_seconds": 32.80025419999947,
+  "extraction_stage_scope": "Once per compatible partition/category; includes image loading, transforms, GPU extraction, device transfer and cache writes; hash verification outside scope",
+  "mean_model_p50_ms": 15.338836666665479,
+  "mean_model_p95_ms": 17.427637666935173,
+  "mean_end_to_end_p50_ms": 33.57750999991064,
+  "mean_end_to_end_p95_ms": 37.72269322250698,
+  "mean_extraction_p50_ms": 11.790802221851967,
+  "mean_nn_p50_ms": 3.5284066666968608,
+  "peak_bank_gpu_allocated_gib": 1.1494336128234863,
+  "peak_inference_allocated_gib": 0.07843828201293945,
+  "peak_evaluation_cpu_rss_gib": 5.765880584716797,
+  "parameters": 2782784,
+  "trainable_parameters": 0,
+  "max_bank_checkpoint_bytes": 3198733,
+  "bank_vector_bytes": 3145728,
+  "pixel_bootstrap_quantization_bias": {
+    "pixel_auroc": {
+      "mean_binned_minus_exact": -2.6602053830377454e-07,
+      "maximum_absolute_run_difference": 8.537623935600536e-07
+    },
+    "pixel_ap": {
+      "mean_binned_minus_exact": -0.00042132325676756953,
+      "maximum_absolute_run_difference": 0.0007871594368056845
+    },
+    "au_pro": {
+      "mean_binned_minus_exact": -4.837835247961664e-07,
+      "maximum_absolute_run_difference": 9.486626080690286e-06
+    }
+  },
+  "metric_edge_cases": {
+    "image_runs_with_no_alarms": 0,
+    "precision_convention": "shared zero_division=0; conditional defined-run precision separate",
+    "defined_run_macro_precision": 0.9400449530687424
+  },
+  "configuration_changed_after_test": false,
+  "test_evaluations_per_category_seed": 1,
+  "shared_backbone_storage": {
+    "path": "checkpoints/patchcore/shared-resnet18-features.pt",
+    "sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949",
+    "bytes": 11179957,
+    "parameters": 2782784,
+    "trainable_parameters": 0,
+    "original_weight_file_bytes": 46830571,
+    "original_weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "scope": "One shared frozen layer1-3 feature extractor, not repeated per category or seed"
+  },
+  "pixel_operating_macro": {
+    "pixel_recall": 0.8580577625446968,
+    "pixel_fpr": 0.05867434949475413,
+    "pixel_precision": 0.3288637080226804,
+    "pixel_f1": 0.43465032975314455
+  }
+}

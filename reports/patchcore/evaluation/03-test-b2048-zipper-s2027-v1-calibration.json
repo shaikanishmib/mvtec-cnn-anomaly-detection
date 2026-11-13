@@ -1,0 +1,235 @@
+{
+  "category": "zipper",
+  "images": 36,
+  "image_threshold": 1.2915211915969849,
+  "secondary_image_threshold_q99": 1.300370454788208,
+  "pixel_threshold": 1.1305103302001953,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 2359296,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    1.1321381330490112,
+    1.1114002466201782,
+    1.0303481817245483,
+    1.1309905052185059,
+    1.300370454788208,
+    1.0533074140548706,
+    1.2915211915969849,
+    1.179459571838379,
+    1.2880908250808716,
+    1.0947253704071045,
+    1.0801218748092651,
+    1.1230052709579468,
+    1.0291320085525513,
+    1.1095227003097534,
+    1.084072232246399,
+    1.2086594104766846,
+    1.2590330839157104,
+    1.1258748769760132,
+    1.1524535417556763,
+    1.1685853004455566,
+    1.138292908668518,
+    1.1241869926452637,
+    1.0613908767700195,
+    1.268907904624939,
+    1.2344635725021362,
+    1.0908608436584473,
+    1.0958354473114014,
+    1.149290919303894,
+    1.094783902168274,
+    1.1531513929367065,
+    1.162015438079834,
+    1.133872628211975,
+    1.1171263456344604,
+    1.1015598773956299,
+    1.2754918336868286,
+    1.088335394859314
+  ],
+  "image_threshold_bootstrap_95ci": [
+    1.2590330839157104,
+    1.300370454788208
+  ],
+  "histogram_scale": 0.8492743372917175,
+  "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+  "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "90aead9f27f930d17a287b97c39f7dbde5d8c1b8b374d097d8916bace4a98bcd",
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "zipper/train/good/001.png",
+          "sha256": "0a21f15092b012e0c15fe403a32019664a825e6e45577bf4dd20bb5e0d29c814"
+        },
+        {
+          "path": "zipper/train/good/006.png",
+          "sha256": "0968b61639e29abc2882dc2de52842dc7a1352a594672fffcf11a0cc7111e708"
+        },
+        {
+          "path": "zipper/train/good/009.png",
+          "sha256": "1541e0305ecba64c7611a87872f9cf355a3de55a777532ea6b366ebc19fd2f62"
+        },
+        {
+          "path": "zipper/train/good/013.png",
+          "sha256": "36b9ff30478a823a87a5143425699202ea8a0caefd8f3b52e4bb75d58d61b479"
+        },
+        {
+          "path": "zipper/train/good/050.png",
+          "sha256": "dba8e0fc5f2331d16ce2e6481c53ac200a30d2f9cd79d644c895850ec6b7d85a"
+        },
+        {
+          "path": "zipper/train/good/053.png",
+          "sha256": "4899c72ed7cd243cd5ecd619aa9d8b2e8299436d74c46f2fb0d05d33fab23ac1"
+        },
+        {
+          "path": "zipper/train/good/067.png",
+          "sha256": "b8c8f71a9eed1ab0d0254e2477974f7669606269e03d8d109ad5e3be7826995f"
+        },
+        {
+          "path": "zipper/train/good/070.png",
+          "sha256": "bb9d86c51d7fd691e2a1792e804469f1ecd37aa04375aff328e13ce82916b354"
+        },
+        {
+          "path": "zipper/train/good/077.png",
+          "sha256": "41035217bae38da718f724b53b44301ade96c290bf3ee48295034547fec77740"
+        },
+        {
+          "path": "zipper/train/good/098.png",
+          "sha256": "07ef8dbf0c4128b43d6badb03863ee696a54c09915720d5c1f94807668cccf20"
+        },
+        {
+          "path": "zipper/train/good/103.png",
+          "sha256": "61e818dc4d6a9cd69d18abfd857e4a2f91575a1676218b4c091b562eb611d523"
+        },
+        {
+          "path": "zipper/train/good/108.png",
+          "sha256": "d76da572e82ae50f34d0236dfb21f43877d330ff556c9d86faa4606984ba26c0"
+        },
+        {
+          "path": "zipper/train/good/110.png",
+          "sha256": "a22e876aef7ed8452f796facd70f7f7de3ee25223f47d06c8abda62d4acb16d9"
+        },
+        {
+          "path": "zipper/train/good/121.png",
+          "sha256": "bd1a260b46536329b186c8be55852ab9804515747e7d9b883c091851f2183ba3"
+        },
+        {
+          "path": "zipper/train/good/127.png",
+          "sha256": "8d667b8f434ba68eaed06a1cbb1b471c5e3b637ef483875c9dd5cb60052d2f8f"
+        },
+        {
+          "path": "zipper/train/good/130.png",
+          "sha256": "57dc25e5bc5363e5a72e32f18a5f60ce5921f7e17329f44dfffe1fd8310a75e1"
+        },
+        {
+          "path": "zipper/train/good/142.png",
+          "sha256": "e99bb00519cde3104d752708bd41e0565012f4bd04db1b0829873c213be978e8"
+        },
+        {
+          "path": "zipper/train/good/144.png",
+          "sha256": "a62cc3b08b23e4ea5e03f0f694aab913b10d24f795771a4291cb706f1a3b4ee2"
+        },
+        {
+          "path": "zipper/train/good/145.png",
+          "sha256": "162cc2fea9309ef778a257d7b3f31b46d82394d4a794e18ad38d50dbacf3abed"
+        },
+        {
+          "path": "zipper/train/good/146.png",
+          "sha256": "c29922ca63f32b6f197674f698f671c64ff089cde2264be1cfad998e2251ea88"
+        },
+        {
+          "path": "zipper/train/good/154.png",
+          "sha256": "9e440a6589c5a36e26ec7ccc1b56257465055dfeed77fcfdb39523b504dd9f8b"
+        },
+        {
+          "path": "zipper/train/good/166.png",
+          "sha256": "eaebe83aafbe3238d5a7d902f210ede6fd69ede660b9dddc857c54fca5871c62"
+        },
+        {
+          "path": "zipper/train/good/169.png",
+          "sha256": "29216d7d43f269cf802f35680028d56c453058f2a284d39ba1034571f8b7b909"
+        },
+        {
+          "path": "zipper/train/good/175.png",
+          "sha256": "0eb0342fd8e015d431685f6385dff9837bc34a7063513f660f33d76de9865bcd"
+        },
+        {
+          "path": "zipper/train/good/176.png",
+          "sha256": "e4a1ca056121b82f6407ad871d5251d42e29f9f4abe6a061489b39b318aeeea3"
+        },
+        {
+          "path": "zipper/train/good/193.png",
+          "sha256": "1196b2c32e5b8a03cbe61e5342bfb2c4eed56265d19993199dad9c63a0b16fa7"
+        },
+        {
+          "path": "zipper/train/good/195.png",
+          "sha256": "eef5378d90b20512d6cce4229df2d55705426e3e597f6444aae0e76dd88d4c37"
+        },
+        {
+          "path": "zipper/train/good/197.png",
+          "sha256": "b72d7181725a33cddf64b8b9f6020605364fa8f52597f77325a3f958d87883a0"
+        },
+        {
+          "path": "zipper/train/good/199.png",
+          "sha256": "28828ca463d193dd4cdcc15b7c7985c2c1f6bf7f881f879f500927fed9153682"
+        },
+        {
+          "path": "zipper/train/good/200.png",
+          "sha256": "b843377771857a6a2dfe8113c29a9650313ec58fd6aced87e33f8c64f7f03db7"
+        },
+        {
+          "path": "zipper/train/good/206.png",
+          "sha256": "4263c980ee73344fd793b616489f416308fed89b4e2a623599fb433689319280"
+        },
+        {
+          "path": "zipper/train/good/209.png",
+          "sha256": "2265d6dd0219e44f23954bf7781c968083d81da11dafd679dda06afa6c3d5f06"
+        },
+        {
+          "path": "zipper/train/good/210.png",
+          "sha256": "142c05ad6a2c73bb31e497519da66d2be667b54b0cac63358d82c69fa126b59e"
+        },
+        {
+          "path": "zipper/train/good/217.png",
+          "sha256": "22e100c64a9d604ce98d152521adacb5593c556d886d0a6c5905920d9de3bc02"
+        },
+        {
+          "path": "zipper/train/good/233.png",
+          "sha256": "88b11cbeb2d454845c5de84e7ac61e83a9e67e2b4c16073ab857b9c1b08fecb5"
+        },
+        {
+          "path": "zipper/train/good/234.png",
+          "sha256": "b8d1160bb8bd9bfdb6a73a455b9940c7e011d265c069193af8f9e07d59149622"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "41ec9afad324f8e5bef00b302fee2744aaee47382f525c4f0b6729a1bccbab16",
+    "path": "outputs/patchcore/features/261ca18e9f90a05873a7af2d6ef363ec5d9fa0f600ed880d354aa9f0d5d26a74.npy",
+    "shape": [
+      36,
+      1024,
+      384
+    ],
+    "bytes": 56623232,
+    "resources": {
+      "seconds": 1.42179920000126,
+      "cpu_initial_rss_bytes": 1607917568,
+      "cpu_peak_rss_bytes": 1665355776,
+      "cpu_peak_increment_bytes": 57438208,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 246177792,
+      "peak_gpu_reserved_bytes": 341835776
+    },
+    "cache_hit": true
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "category": "screw",
+  "images": 48,
+  "image_threshold": 1.8884795904159546,
+  "secondary_image_threshold_q99": 1.9348262548446655,
+  "pixel_threshold": 1.6953442096710205,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 3145728,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    1.8636085987091064,
+    1.7595196962356567,
+    1.6741249561309814,
+    1.5954056978225708,
+    1.8386393785476685,
+    1.7293356657028198,
+    1.6670132875442505,
+    1.6703319549560547,
+    1.747877597808838,
+    1.8250198364257812,
+    1.8389683961868286,
+    1.830469012260437,
+    1.8721511363983154,
+    1.691720962524414,
+    1.8948527574539185,
+    1.6634372472763062,
+    1.6419697999954224,
+    1.7622605562210083,
+    1.667514681816101,
+    1.6443880796432495,
+    1.7850192785263062,
+    1.823885440826416,
+    1.8325210809707642,
+    1.833448886871338,
+    1.814245343208313,
+    1.9348262548446655,
+    1.679366946220398,
+    1.7643744945526123,
+    1.7245532274246216,
+    1.6210987567901611,
+    1.7163136005401611,
+    1.6556087732315063,
+    1.8553569316864014,
+    1.6882469654083252,
+    1.6170833110809326,
+    1.8410096168518066,
+    1.6318877935409546,
+    1.8884795904159546,
+    1.7915451526641846,
+    1.6400643587112427,
+    1.8054828643798828,
+    1.684489130973816,
+    1.7983046770095825,
+    1.68657648563385,
+    1.7954672574996948,
+    1.7559764385223389,
+    1.788962960243225,
+    1.7762680053710938
+  ],
+  "image_threshold_bootstrap_95ci": [
+    1.8410096168518066,
+    1.9348262548446655
+  ],
+  "histogram_scale": 1.1585652828216553,
+  "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+  "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01",
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "screw/train/good/006.png",
+          "sha256": "17ed86e8648a474b19ea6b975b6cf82412a1246e39cf7521db1744c74d905904"
+        },
+        {
+          "path": "screw/train/good/029.png",
+          "sha256": "5c5eb556ee8603b488342cf45a5d1f1044fbac3334d09cf74026436c57f5a13f"
+        },
+        {
+          "path": "screw/train/good/036.png",
+          "sha256": "6ab100b4652f2fdb8c69c61ca0cd73899f1773ca0885e18ea64876854bfb7bff"
+        },
+        {
+          "path": "screw/train/good/050.png",
+          "sha256": "7a82f8f4a19a0de1ed573d8ef7764812dc8cbc3330d9c957a369f9cc2518ca46"
+        },
+        {
+          "path": "screw/train/good/055.png",
+          "sha256": "f318650b3f2a5ae4e115a815104a36aedddb026a92e14d2d72691daae42e5ee5"
+        },
+        {
+          "path": "screw/train/good/065.png",
+          "sha256": "7b6d49132809b7bf71a2f23092584bd024bea71cbc2b38abb544df0b7733e06b"
+        },
+        {
+          "path": "screw/train/good/069.png",
+          "sha256": "9d086bc66cf2a29bc66bca304d6ec9fac4d3d3e6f88e3f9e63a9203bc1fd33e2"
+        },
+        {
+          "path": "screw/train/good/076.png",
+          "sha256": "0971aa58e654d977a5cbed5aa05bbbbdf6ce4fe73f559e0480d0d5de654cf292"
+        },
+        {
+          "path": "screw/train/good/079.png",
+          "sha256": "74931ff5df6c97febfa7b9183a477f285f64e9057b5a7b5bd03bdd21033b595c"
+        },
+        {
+          "path": "screw/train/good/080.png",
+          "sha256": "cd5bb3d12e66122091fd8f9f45189494257973d8245ffb08d997faf74ed5ff5f"
+        },
+        {
+          "path": "screw/train/good/087.png",
+          "sha256": "f1a87559727b982463e169e715d3a77a31733f5946c198e2267df3643702640d"
+        },
+        {
+          "path": "screw/train/good/088.png",
+          "sha256": "be862191af07d9c83277a64385f6a703531498a9d09d15990d7477910946caa9"
+        },
+        {
+          "path": "screw/train/good/095.png",
+          "sha256": "e3e3469034e7c246eeb0e382e339445e0e5443d5845e0a99bb53367530ce29fd"
+        },
+        {
+          "path": "screw/train/good/096.png",
+          "sha256": "18dc3583e56080a50ff85926289b894969fa66ce2165704d5a0481a87f57799c"
+        },
+        {
+          "path": "screw/train/good/098.png",
+          "sha256": "7f797bd21c3c8223fc531e6eb273b62b1f355256a577562fcd5f2acf33e31f26"
+        },
+        {
+          "path": "screw/train/good/102.png",
+          "sha256": "d5a3ae4f59559f2ce748ab8c2faeb64c0d782ba1a3ea3bcef93e6aa7405bf062"
+        },
+        {
+          "path": "screw/train/good/116.png",
+          "sha256": "f6b059d966348c16bcfddb66fbe021a490b50ae0abf257cad9d1e98c0df76ffb"
+        },
+        {
+          "path": "screw/train/good/123.png",
+          "sha256": "d8da4ca6f97fd5e50467c0a0906d42604a335be71c389b6a6b64442d52dc0c5f"
+        },
+        {
+          "path": "screw/train/good/138.png",
+          "sha256": "71d1e981a1a3167ffbbd5497549247e874408142f0acba5a5165d77e74ce68d0"
+        },
+        {
+          "path": "screw/train/good/148.png",
+          "sha256": "8cace71edfd1c622fb8102d6e54b30485ff5e5b866c90177b853a0ede64f87e3"
+        },
+        {
+          "path": "screw/train/good/153.png",
+          "sha256": "e4404cf67543fd86775e25f074fa9e1ffc15fb3394e15b77f942814499cb2eb1"
+        },
+        {
+          "path": "screw/train/good/166.png",
+          "sha256": "c2364bfe9af97be9af08a02d3b20ddfd98207b0f132f0aaa0b46da63c08c6e72"
+        },
+        {
+          "path": "screw/train/good/167.png",
+          "sha256": "c9e34e79c3a44bd8f34c7757ef4787cd4efe4f7c7cf4122337266d4e71146f31"
+        },
+        {
+          "path": "screw/train/good/168.png",
+          "sha256": "a92bf877f6c22e0ee09261362b5420790bdaac2c4899794aa551cdc09687d637"
+        },
+        {
+          "path": "screw/train/good/171.png",
+          "sha256": "88d664b85ad5b47f1db85687a53c444c67054234326c57250bf3365eca09bc14"
+        },
+        {
+          "path": "screw/train/good/172.png",
+          "sha256": "f7add8b756608d2235efa0ff77929d9a31781e0f2450ee7f432866b664d79593"
+        },
+        {
+          "path": "screw/train/good/176.png",
+          "sha256": "62f8da3bfdfec5108fe201b5a4889cda2e605290c4de61c66e43d85393f766d2"
+        },
+        {
+          "path": "screw/train/good/193.png",
+          "sha256": "c8857ed2dcdfafb6edbebfc21540d351e67eceb594de90abe4fb69f967f94e7b"
+        },
+        {
+          "path": "screw/train/good/210.png",
+          "sha256": "91467a63c45bfdc3cd65efdc376e66181505340a9ec5d5c48aff48a9e709165a"
+        },
+        {
+          "path": "screw/train/good/214.png",
+          "sha256": "7650653745b36eb0681d316aea13a663aa2278905c8d940b6701acfd50e8ce6b"
+        },
+        {
+          "path": "screw/train/good/215.png",
+          "sha256": "3e9fcfd836c19e59931ae3519ff514b34f51d94a356aa0f648a5a4ee087f7d66"
+        },
+        {
+          "path": "screw/train/good/228.png",
+          "sha256": "f64d7e942d8871acd07f14bbf605895b67f4a7580bc151755443a765b1386ba2"
+        },
+        {
+          "path": "screw/train/good/231.png",
+          "sha256": "c1b88f3f6c83ad369fdf64bee216ed83acba504f100a2388adc92ae566daa7b7"
+        },
+        {
+          "path": "screw/train/good/234.png",
+          "sha256": "a291496a37c10ebd9e848f10c3a90cf34742405d899aa80be4cb6864fba3ef91"
+        },
+        {
+          "path": "screw/train/good/240.png",
+          "sha256": "ee33eb8265fb9eacedee3e9b9db53483fec212487ecd0a0a6f15b4a80972b785"
+        },
+        {
+          "path": "screw/train/good/254.png",
+          "sha256": "9a71de3dea0b299b2483292b9cc5f17a0b383309b45aec02e8b0553d79cd9b90"
+        },
+        {
+          "path": "screw/train/good/255.png",
+          "sha256": "503da305f23b27bab09b40c90b15b8b14e1c495b074b777ce4fc797dd45df6a7"
+        },
+        {
+          "path": "screw/train/good/258.png",
+          "sha256": "6973079741a0da5d8d6547bf657f1d4428db1245768d38ccdf01425cfd0f3861"
+        },
+        {
+          "path": "screw/train/good/263.png",
+          "sha256": "25db81f509d15ee1cd94c7c6e860e10281d938a1201520ba9e544d3e667c59b7"
+        },
+        {
+          "path": "screw/train/good/267.png",
+          "sha256": "0e6491f449ba1106b457331a32e92b4b4a6e851e564049a72b5f8aef37488829"
+        },
+        {
+          "path": "screw/train/good/274.png",
+          "sha256": "7b2877f1897da0488eea8739f7ea3ccad40062b06e495840c58d6a02daf90056"
+        },
+        {
+          "path": "screw/train/good/276.png",
+          "sha256": "050b0a0a76ab2e73e285f4a08d36087c30d8d1313944afc33e9bfa461b8f34d8"
+        },
+        {
+          "path": "screw/train/good/287.png",
+          "sha256": "0645498debd1b994224a3b496eb561a4dfcb0601fb756a43281ef037ba4efde0"
+        },
+        {
+          "path": "screw/train/good/296.png",
+          "sha256": "be8298220eb00c4fe46c0e61d2f0f358dbc1fd0e85ef957d07db1b1fce121223"
+        },
+        {
+          "path": "screw/train/good/301.png",
+          "sha256": "2339c60a0c877d6c5de4c97a928905c66b932a428560a244105bdd08474fa1f1"
+        },
+        {
+          "path": "screw/train/good/305.png",
+          "sha256": "defd7259a49525d56f1933e0d44c6b93103a3b29b2ccef1ab5e2640799341b78"
+        },
+        {
+          "path": "screw/train/good/311.png",
+          "sha256": "2366a020c495fbf5010c65342b84e0509c0d0e07f9cb891d8fb072d819ea3f4c"
+        },
+        {
+          "path": "screw/train/good/312.png",
+          "sha256": "20b88b45f7b0c1bdfa288d39fcd80c1da05b1a1de0f6597cbb990dac7e72de65"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "9ed5e34b9bbda2fd7e9106155363b2b0b3591f12ec48c1d7afd1888ce5125b1b",
+    "path": "outputs/patchcore/features/bcc7a160bf0381a4af39d78440545888cb5015cbc697fc30cae7db636700a548.npy",
+    "shape": [
+      48,
+      1024,
+      384
+    ],
+    "bytes": 75497600,
+    "resources": {
+      "seconds": 0.4463374000006297,
+      "cpu_initial_rss_bytes": 1607925760,
+      "cpu_peak_rss_bytes": 1669500928,
+      "cpu_peak_increment_bytes": 61575168,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 246177792,
+      "peak_gpu_reserved_bytes": 341835776
+    },
+    "cache_hit": true
+  }
+}

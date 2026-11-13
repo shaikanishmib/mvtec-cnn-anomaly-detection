@@ -1,0 +1,1200 @@
+{
+  "experiment_id": "03-test-b2048-wood-s2027-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "wood"
+  ],
+  "hypothesis": "Frozen normal patch-memory confirmation; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2027,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "03-final-b2048-wood-s2027-v1",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+        "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+        "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+        "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "03-test-b2048-wood-s2027-v1",
+    "category": "wood",
+    "seed": 2027,
+    "training_experiment": "03-final-b2048-wood-s2027-v1",
+    "checkpoint_sha256": "9b364d6a4511bacb79fbc26422a34759a1e7cafd191da1f94f4501d85624d3ce",
+    "image_auroc": 0.9894736842105263,
+    "image_ap": 0.9967516381990625,
+    "recall": 0.9833333333333333,
+    "fpr": 0.21052631578947367,
+    "precision": 0.9365079365079365,
+    "f1": 0.9593495934959351,
+    "confusion_matrix": [
+      [
+        15,
+        4
+      ],
+      [
+        1,
+        59
+      ]
+    ],
+    "tn": 15,
+    "fp": 4,
+    "fn": 1,
+    "tp": 59,
+    "pixel_auroc": 0.9305961848170998,
+    "pixel_ap": 0.4172959660042335,
+    "au_pro": 0.8838825171605373,
+    "positive_pixels": 3199416,
+    "negative_pixels": 79638088,
+    "regions": 168,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        70696695,
+        8941393
+      ],
+      [
+        571036,
+        2628380
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.22717645367804537,
+      "recall": 0.8215186771585814,
+      "fpr": 0.11227533488749755,
+      "f1": 0.3559274649406951,
+      "tp": 2628380,
+      "fp": 8941393,
+      "tn": 70696695,
+      "fn": 571036
+    },
+    "secondary_image_q99": {
+      "auroc": 0.9894736842105263,
+      "ap": 0.9967516381990625,
+      "recall": 0.9,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9473684210526316,
+      "confusion_matrix": [
+        [
+          19,
+          0
+        ],
+        [
+          6,
+          54
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "wood",
+      "images": 37,
+      "image_threshold": 1.7007180452346802,
+      "secondary_image_threshold_q99": 1.9176408052444458,
+      "pixel_threshold": 1.564865231513977,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_calibration_samples": 2424832,
+      "pixel_score_resolution": 256,
+      "calibration_scores": [
+        1.484526515007019,
+        1.4494118690490723,
+        1.4396816492080688,
+        1.491746425628662,
+        1.4764026403427124,
+        1.5952690839767456,
+        1.5344150066375732,
+        1.6057515144348145,
+        1.4284647703170776,
+        1.641535997390747,
+        1.4453457593917847,
+        1.4222670793533325,
+        1.9176408052444458,
+        1.5433353185653687,
+        1.7007180452346802,
+        1.512621283531189,
+        1.444533109664917,
+        1.4627766609191895,
+        1.443164348602295,
+        1.4904265403747559,
+        1.462996244430542,
+        1.4109433889389038,
+        1.4127246141433716,
+        1.4770793914794922,
+        1.4446715116500854,
+        1.5261082649230957,
+        1.4499547481536865,
+        1.4781441688537598,
+        1.4371085166931152,
+        1.4233450889587402,
+        1.3964675664901733,
+        1.547278642654419,
+        1.5151420831680298,
+        1.5739662647247314,
+        1.5298004150390625,
+        1.4427765607833862,
+        1.51567804813385
+      ],
+      "image_threshold_bootstrap_95ci": [
+        1.5739662647247314,
+        1.9176408052444458
+      ],
+      "histogram_scale": 1.2099494934082031,
+      "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+      "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+      "source_paths_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b",
+      "feature_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "wood/train/good/002.png",
+              "sha256": "8b05ad057d645960666b5d6b0cdd08b2fc4f343f0b9f06589fb3e54fad45c0ff"
+            },
+            {
+              "path": "wood/train/good/004.png",
+              "sha256": "f0a71659b18d098fdc6dde62f61b5796a8daecab64b730439c5dff5996560555"
+            },
+            {
+              "path": "wood/train/good/017.png",
+              "sha256": "7de171a8c9374b556a117f79ee5b51ba9ca84e959adba7b99b4b2ce8bcc831b0"
+            },
+            {
+              "path": "wood/train/good/023.png",
+              "sha256": "1a1a043388e89e0d1e3dec49ea86888d4e2f1b3a0f3e29f32115580abd0b6202"
+            },
+            {
+              "path": "wood/train/good/027.png",
+              "sha256": "21421c181514065b5ced30508a946d7cd1bc709058bc76b08034b53d0bdf5e96"
+            },
+            {
+              "path": "wood/train/good/034.png",
+              "sha256": "46521e2697124a4192e06aa700a0533659296ea450be2fbb4da45ed3a8bb7a29"
+            },
+            {
+              "path": "wood/train/good/047.png",
+              "sha256": "e95070ff95759808e5f7d4147ba49ae81c1a7865bb53c6d5c5a4ea192e097525"
+            },
+            {
+              "path": "wood/train/good/057.png",
+              "sha256": "61a89a4a2d596b64ba243d04e3fdad90bbe72d43791159f0d0159b1b83db448c"
+            },
+            {
+              "path": "wood/train/good/067.png",
+              "sha256": "b9f0913da1de609a0a6c1c9a19848c6c7568554321e3213027e10377e965d74f"
+            },
+            {
+              "path": "wood/train/good/080.png",
+              "sha256": "f9f0d0867b5e9b0d05960bff7019a424b221de57d90cd065563bd02acdcf44bb"
+            },
+            {
+              "path": "wood/train/good/081.png",
+              "sha256": "66f3705348bd11751e3251caf6ce80f760025747a6b972bb1b7d76a19c1abdd9"
+            },
+            {
+              "path": "wood/train/good/083.png",
+              "sha256": "7c69b6898f395e5e7c2afd12efbb51a4cf7384bb492576a7f55314b92dd6d92c"
+            },
+            {
+              "path": "wood/train/good/089.png",
+              "sha256": "c884632c5f6c27afdab6973cfdd670dde54ab12cfff1fa449cc9235435d85f08"
+            },
+            {
+              "path": "wood/train/good/096.png",
+              "sha256": "c24a05b191631acb9e898d47f946c4e0103ce8ad47d4b6150cd1374a91d70051"
+            },
+            {
+              "path": "wood/train/good/098.png",
+              "sha256": "4ed963f491857ac1c90d2ab88797646e605ee97606c2243c72e77f2a96dcb6c4"
+            },
+            {
+              "path": "wood/train/good/103.png",
+              "sha256": "90a5ee808e662175243be845503f0903b191c97eca666357ef280ef0247df0d7"
+            },
+            {
+              "path": "wood/train/good/105.png",
+              "sha256": "1d7c3f582a932dcc54c54a8e374ccec961c66ba8e0ecff31bec77ee4cd070d86"
+            },
+            {
+              "path": "wood/train/good/116.png",
+              "sha256": "ce840fad0af83ff1aff9e2925720284a4af51e9e69a9e3a05fc001a5745e0117"
+            },
+            {
+              "path": "wood/train/good/125.png",
+              "sha256": "c7814c0f72ff2fca8ba7f528675b6a06f2f2cfa94b01f143f282e6e8b78e3880"
+            },
+            {
+              "path": "wood/train/good/127.png",
+              "sha256": "97b85048d03a0f888ed6fe0f60c0c2f2cef1d2cf5c81f4d7e6d384a2f50a8519"
+            },
+            {
+              "path": "wood/train/good/136.png",
+              "sha256": "a31b94c0c3954c5306c87b49824626678f4007faa079113e13ca1a33a5a7f858"
+            },
+            {
+              "path": "wood/train/good/138.png",
+              "sha256": "8dfb859575ab199caad5f2bded2a78a1b2294d0519af6f7871339a823d941250"
+            },
+            {
+              "path": "wood/train/good/143.png",
+              "sha256": "cad2fe8d90b7e7cd3c2e3e7cea93daa70eeb6eb1e0437fadc3be6a656d7a0979"
+            },
+            {
+              "path": "wood/train/good/170.png",
+              "sha256": "14e0ca663c91d410c92a1599518db7f00dd6fe3639b86c0955bd003427aff376"
+            },
+            {
+              "path": "wood/train/good/172.png",
+              "sha256": "bb8200182f46095b893ebb8e564bc71ce5f28b1b83b365a1f5b33b8789ba7452"
+            },
+            {
+              "path": "wood/train/good/185.png",
+              "sha256": "98da363a6233718ccfa6b75b9e0e5cca63bb12f613d3f583ddac20c33ed1f587"
+            },
+            {
+              "path": "wood/train/good/188.png",
+              "sha256": "de45d66f010d2bd4b90cd7a92acc4220954c5c04419df09867e1ae66068ca943"
+            },
+            {
+              "path": "wood/train/good/195.png",
+              "sha256": "382a26d1765e521a79d4c6d51313c015b21ce81a62132d7a5483fa91be2f99ac"
+            },
+            {
+              "path": "wood/train/good/203.png",
+              "sha256": "6a8afd2bdcc1b50f6e60824ec5d349fe1e03ed465606bd255fa553c3c53e72c9"
+            },
+            {
+              "path": "wood/train/good/205.png",
+              "sha256": "5a858a33349efa3f1e6b38dee23466d20fb8603d9a6ec5d543f82c1bcfe4fefd"
+            },
+            {
+              "path": "wood/train/good/213.png",
+              "sha256": "bc1412203379d409abc8c063901a65909630945d0fb501789787e632429e5a6e"
+            },
+            {
+              "path": "wood/train/good/219.png",
+              "sha256": "8af5afdd5e2dd58fe18f106b9954d22ffc0eef81d7298e1f21aee3bf37b393c6"
+            },
+            {
+              "path": "wood/train/good/228.png",
+              "sha256": "561b1ddc2d8ee912abb56e745f34d49de67ae4639b60dd40012ccfcefd483bbd"
+            },
+            {
+              "path": "wood/train/good/231.png",
+              "sha256": "3e82f2503cbb455a11e3dcc9e078f9e0d1ac8a234e660484f41bdb4c2fa0bee6"
+            },
+            {
+              "path": "wood/train/good/234.png",
+              "sha256": "27968f3af02cc56978e90dd358d6f7ed6e095e03c2f821fbf4b78e692b07767d"
+            },
+            {
+              "path": "wood/train/good/241.png",
+              "sha256": "a0bb97c66a79ae875748bef811870fdd8ec03a4d7bf13ff847e904fda1dc24fb"
+            },
+            {
+              "path": "wood/train/good/245.png",
+              "sha256": "472334bb0c57b191c85d8be6e68b6b50541845d1a272db0f7c7eef6a44fd5fef"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "5d8e2e7a52f4ab7e2da6073b29fffdf9488693159812b3902872688a7663b46d",
+        "path": "outputs/patchcore/features/a7e5a0321dc96710766d0709264f18aed4c1764d08c7db8e6cc9576dfecabafc.npy",
+        "shape": [
+          37,
+          1024,
+          384
+        ],
+        "bytes": 58196096,
+        "resources": {
+          "seconds": 0.5284351999980572,
+          "cpu_initial_rss_bytes": 1607880704,
+          "cpu_peak_rss_bytes": 1677639680,
+          "cpu_peak_increment_bytes": 69758976,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 246177792,
+          "peak_gpu_reserved_bytes": 341835776
+        },
+        "cache_hit": true
+      }
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 7.6168999967194395,
+        "p95_ms": 8.054755000375735
+      },
+      "host_to_device": {
+        "p50_ms": 1.3728999983868562,
+        "p95_ms": 4.147730000840965
+      },
+      "feature_extraction": {
+        "p50_ms": 12.477799999032868,
+        "p95_ms": 13.911444999939704
+      },
+      "nearest_neighbor": {
+        "p50_ms": 3.631549998317496,
+        "p95_ms": 4.136135001317598
+      },
+      "model": {
+        "p50_ms": 16.118649999043555,
+        "p95_ms": 17.742895001356374
+      },
+      "postprocessing": {
+        "p50_ms": 10.400600000139093,
+        "p95_ms": 12.777094998637033
+      },
+      "end_to_end": {
+        "p50_ms": 35.46429999914835,
+        "p95_ms": 39.720760001910094
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 465 MHz, 43"
+      },
+      "peak_inference_allocated_bytes": 84222464,
+      "peak_inference_reserved_bytes": 341835776
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9696955321718129,
+          1.0
+        ],
+        "image_ap": [
+          0.9901342109788838,
+          1.0
+        ],
+        "recall": [
+          0.9464285714285714,
+          1.0
+        ],
+        "fpr": [
+          0.047619047619047616,
+          0.4166666666666667
+        ],
+        "precision": [
+          0.873008658008658,
+          0.9848484848484849
+        ],
+        "f1": [
+          0.9193548387096775,
+          0.991869918699187
+        ],
+        "pixel_auroc": [
+          0.8997208481784659,
+          0.9619005919625021
+        ],
+        "pixel_ap": [
+          0.34435555786791266,
+          0.5065765235096238
+        ],
+        "au_pro": [
+          0.8493834694793252,
+          0.9147406964127512
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9305958176657938,
+      "pixel_ap": 0.4168296401886705,
+      "au_pro": 0.8838818833754813
+    },
+    "training_seconds": 2.284331499999098,
+    "coreset_seconds": 1.348300499998004,
+    "original_extraction_seconds": 0.7875266000010015,
+    "feature_cache_hit_during_fit": true,
+    "test_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "wood/test/color/000.png",
+            "sha256": "ff5173b6d04d3b94a7d08faa35fba597f60ba466d52e2a0d91773fd334766aa9"
+          },
+          {
+            "path": "wood/test/color/001.png",
+            "sha256": "eaa63ec7f4e0d5e8deccf53ae3c61b1e10512424afad66300f4223257c7b527f"
+          },
+          {
+            "path": "wood/test/color/002.png",
+            "sha256": "572640c1de71b26a40901dd6e2ee36d7414209a53173a5f65d5eed91c0b15350"
+          },
+          {
+            "path": "wood/test/color/003.png",
+            "sha256": "159c556b4afda7ba20db2be8e91fc29d227f6b7821b6aea41a9efa4e2578c0d1"
+          },
+          {
+            "path": "wood/test/color/004.png",
+            "sha256": "c03c31f35de909f4a7ab25078055d61d98780f93af626c9ae7687873f963dac7"
+          },
+          {
+            "path": "wood/test/color/005.png",
+            "sha256": "8ab7f52e45a478350a02c912761d3574d47c756dc7f0c0540f2404c5b9bd3b60"
+          },
+          {
+            "path": "wood/test/color/006.png",
+            "sha256": "b338d67d534404b4c01fea2340513e356f619e27194fa0f24a3b96bfd84b0b05"
+          },
+          {
+            "path": "wood/test/color/007.png",
+            "sha256": "1b15d729863af1847d5adc35224c0fbe7c0c229a5f5397ac18a86ee38fc69a92"
+          },
+          {
+            "path": "wood/test/combined/000.png",
+            "sha256": "8da4129768be4d86b6797729de1903df66a6563509a058ec5b28454ded219665"
+          },
+          {
+            "path": "wood/test/combined/001.png",
+            "sha256": "a1bac52e513b9f71a3dffb4f730ac085849669d058fdbcd55d515ae47b4e17ed"
+          },
+          {
+            "path": "wood/test/combined/002.png",
+            "sha256": "ecda4e3024b85996fc8fa16cbbb041dd9a27cd2ccb7638545b27a67e97e7f47d"
+          },
+          {
+            "path": "wood/test/combined/003.png",
+            "sha256": "10e198a034bf7e1091b6b0d1f699875ab02f7f2dfe708c2564990095f6ba069d"
+          },
+          {
+            "path": "wood/test/combined/004.png",
+            "sha256": "f496abfe23ed34c02d23c9f363913f1c90b7a555b11538abee9a68ff5aecda30"
+          },
+          {
+            "path": "wood/test/combined/005.png",
+            "sha256": "3a02086b298b21bfb59a616a042b2e4ff38ae0e8874f523657da113ee41b91de"
+          },
+          {
+            "path": "wood/test/combined/006.png",
+            "sha256": "ea4afe1ca3413901ccc2a000d6eaef4bfb1c34a60b91842dfcf1864fc4aac834"
+          },
+          {
+            "path": "wood/test/combined/007.png",
+            "sha256": "4486dec2db2e22240fcea033736e296dfa11a645bf42e5435727bdf785638dd7"
+          },
+          {
+            "path": "wood/test/combined/008.png",
+            "sha256": "0a9f5106e5e64e815636e2dab62bc668972a058ecd3419e487f06f909c69f611"
+          },
+          {
+            "path": "wood/test/combined/009.png",
+            "sha256": "157e38de0c494dcf08130d89539263305c394d6fba7f8278183b290f18620e10"
+          },
+          {
+            "path": "wood/test/combined/010.png",
+            "sha256": "76cd81212dd127d2d41cc6149d90bc423e9a34eea7cb8f1301261bb929353e40"
+          },
+          {
+            "path": "wood/test/good/000.png",
+            "sha256": "a76a11277bbe4a558a6ee947bceca800bc331ba0f9ac2077589cecfdccbcee0a"
+          },
+          {
+            "path": "wood/test/good/001.png",
+            "sha256": "ed0ff8584b359d2d1ac2b781d2d6e717aa48780e695f6b334cedf81d87759bf1"
+          },
+          {
+            "path": "wood/test/good/002.png",
+            "sha256": "09ae7784007eec7829166e6796569d53866460400c2896f19a082f8196f6e113"
+          },
+          {
+            "path": "wood/test/good/003.png",
+            "sha256": "6efeb9d8ce58a4ef8f5c661dc94f39a9b98b0c4c355b76378a296a69804108ce"
+          },
+          {
+            "path": "wood/test/good/004.png",
+            "sha256": "f6fb6a47f740e328dc8f3b12415ffc9282859351784993d058d7939344442eba"
+          },
+          {
+            "path": "wood/test/good/005.png",
+            "sha256": "ef2af2b14c5de74771d85d70fd1e52996a8cc20eed779df97934581cebacbe4d"
+          },
+          {
+            "path": "wood/test/good/006.png",
+            "sha256": "c04ddb34f0e55956c06fa28078980319f7c14e5791fb259d9ae4f437263997e0"
+          },
+          {
+            "path": "wood/test/good/007.png",
+            "sha256": "375fa7de6fa9984996a1a2d8b4bdc7c7b797f4d59a4ed2763a69bb1464690d43"
+          },
+          {
+            "path": "wood/test/good/008.png",
+            "sha256": "945040657559dece5f242a7a6e07d83dc4c4ff5a1c2fb4da464cf3ada081b501"
+          },
+          {
+            "path": "wood/test/good/009.png",
+            "sha256": "bd1ffb5c5b9e02c55277dde51ae9c8cdc79d2483fc1d42bdeca1a5dfd44d2e5a"
+          },
+          {
+            "path": "wood/test/good/010.png",
+            "sha256": "76481a3b199e2a022147ebdaa704e8bcfe48232311bcffbb1eab2572a26cb6da"
+          },
+          {
+            "path": "wood/test/good/011.png",
+            "sha256": "84e1ef2ccccc6a55d0425f35651687e7084996752bd6ce3b1bacd7d355404911"
+          },
+          {
+            "path": "wood/test/good/012.png",
+            "sha256": "8f500ec6bea748bb45ffad58267765ea049958958d715c1a66bb61abaff5d30f"
+          },
+          {
+            "path": "wood/test/good/013.png",
+            "sha256": "1e61ace88bc64dfce8ec27cefa7543865a6842ac7b221feccf6849e63b65fd7b"
+          },
+          {
+            "path": "wood/test/good/014.png",
+            "sha256": "d205a5c9ee9e4f17ab72b06cdaf1ec105e73edcb6bb1d11b3d871342411de084"
+          },
+          {
+            "path": "wood/test/good/015.png",
+            "sha256": "e7ca60e9e6b112b0f0f0cbde3dbd1af3d6336ec068b3afc5f141090608ade1f2"
+          },
+          {
+            "path": "wood/test/good/016.png",
+            "sha256": "d60aaeba4284307e46170845379813e68c14395585e5adb6aad4298acb23f5ab"
+          },
+          {
+            "path": "wood/test/good/017.png",
+            "sha256": "d8672cada7361a8b0b6e669c307f0dfecc26ecabf9f32f9fb952a0a20af5ec63"
+          },
+          {
+            "path": "wood/test/good/018.png",
+            "sha256": "e9fbc2d7eaf3a3a2f6f55c01469bd170c47999b3884d3b9af650aed07c78a464"
+          },
+          {
+            "path": "wood/test/hole/000.png",
+            "sha256": "508eb9f549061f34fec9a3f301724194b81cd7197585593c0da5552eeb34a1f9"
+          },
+          {
+            "path": "wood/test/hole/001.png",
+            "sha256": "5a3c6287514a631b7f6e2ff68c499184968a09e31536c46d01f0fbfc70fe7c97"
+          },
+          {
+            "path": "wood/test/hole/002.png",
+            "sha256": "9e07fa1b9c132d467018c84f41dad87f1dfc0f05108cef7d8e9b500d03b4d23a"
+          },
+          {
+            "path": "wood/test/hole/003.png",
+            "sha256": "a18c16534a5afdd1cdc24cf083a0a344bf2f2ac47591e318ecdb65e18377787a"
+          },
+          {
+            "path": "wood/test/hole/004.png",
+            "sha256": "bc246386b18cb2534a880e3d4d240405e146a312fd8133e9d408b5426a215f33"
+          },
+          {
+            "path": "wood/test/hole/005.png",
+            "sha256": "f425cb5ff14fe4862dd4d44ae0a2b371626e3c57e33144e7bf3d1ed887b35bcb"
+          },
+          {
+            "path": "wood/test/hole/006.png",
+            "sha256": "c56d3fc10e2e26ba6426316d4719f67297f6548697e518c6e21308738e768847"
+          },
+          {
+            "path": "wood/test/hole/007.png",
+            "sha256": "e12caf9853ed8c59fb850524377c825767dd4dc4b546ab0913d98c847a8c23e5"
+          },
+          {
+            "path": "wood/test/hole/008.png",
+            "sha256": "b431e28c591ce6c1dd502ae9a850ca889f9c81aa20dcb9ee4d0f38dcdf081f17"
+          },
+          {
+            "path": "wood/test/hole/009.png",
+            "sha256": "52cd80c5742b1e5a21814221d6968f9aa2b4ed0e9118c5075f894279afea5b33"
+          },
+          {
+            "path": "wood/test/liquid/000.png",
+            "sha256": "ea36427dbc47400a1ba097ffeafc4afa5404ad508a1489c54b0dcbbc7c5f2850"
+          },
+          {
+            "path": "wood/test/liquid/001.png",
+            "sha256": "c2924938ecae459f7d6fe4fa3e962ed5b763c04f92ec026f06fe3762f83617c9"
+          },
+          {
+            "path": "wood/test/liquid/002.png",
+            "sha256": "a80a5fc549fe2031a743636b837850674b7563ea899e2a266b4c9bf9e17e2ab7"
+          },
+          {
+            "path": "wood/test/liquid/003.png",
+            "sha256": "5434720bed8b3a0b6d5133cf7f7cdaf5f95d2b2e437397046e0f1d37253241c5"
+          },
+          {
+            "path": "wood/test/liquid/004.png",
+            "sha256": "4fc7743535a2f4555f19764d35950bd01b5ad589d2984dea4370f5a3728db69a"
+          },
+          {
+            "path": "wood/test/liquid/005.png",
+            "sha256": "7128a7346decb42282fc026942b32015ddd14b970a0f765c7c19d3e21861495f"
+          },
+          {
+            "path": "wood/test/liquid/006.png",
+            "sha256": "ea869a6cc89c273dbd5801c64124e0913d1f50641dc4af56b9ec0510833f20d5"
+          },
+          {
+            "path": "wood/test/liquid/007.png",
+            "sha256": "ca499566c537f8a478555684360ce6fadfe5770d8785c800d38f46f99dca747a"
+          },
+          {
+            "path": "wood/test/liquid/008.png",
+            "sha256": "36c655335f7e5f46ce0f3ea981e36590e81f2f20f1b51c5789de3d4a5c3e9ec3"
+          },
+          {
+            "path": "wood/test/liquid/009.png",
+            "sha256": "b97c16b0b194ea3f4256d89a8c3ee48c82814eb54155a23352f1381234f7b252"
+          },
+          {
+            "path": "wood/test/scratch/000.png",
+            "sha256": "6e6efc49bc7e14d813a072a5f34410a32f07c9f958ff037b4d09f40f232e6dcc"
+          },
+          {
+            "path": "wood/test/scratch/001.png",
+            "sha256": "5e8356101b534e279d3a7a5ce68ccd2c4392af28ca2e1337afcd4639e3ddfe17"
+          },
+          {
+            "path": "wood/test/scratch/002.png",
+            "sha256": "43a80e87609908b57867da190e40cb5f511d7d0b051d9aebfd807276e7c1547a"
+          },
+          {
+            "path": "wood/test/scratch/003.png",
+            "sha256": "b4ec2600c6192d99f3d1310c7a251e305aced817efa047be0c084ec94b0d9e9b"
+          },
+          {
+            "path": "wood/test/scratch/004.png",
+            "sha256": "3876b973c4b0e6971dd12bd1acd3d0a7f1bf9704c874b8cc503dc51440442beb"
+          },
+          {
+            "path": "wood/test/scratch/005.png",
+            "sha256": "bab19569ac3e38f32f37f3d47f9a23aeb0f0be81df466f3ee70e253b393d808a"
+          },
+          {
+            "path": "wood/test/scratch/006.png",
+            "sha256": "6f23a4700bcd40c00b1bca315e3d2a8abdc11b6811465a323e2286166082ab33"
+          },
+          {
+            "path": "wood/test/scratch/007.png",
+            "sha256": "a9d1d18c7aae2672d0a447ea64fe76d5868fe78be228b10b3887043bdafd7673"
+          },
+          {
+            "path": "wood/test/scratch/008.png",
+            "sha256": "805daa75c26d83eb10e018a250e67f2f14ab5b045c294ac125d0f9308ffda1f4"
+          },
+          {
+            "path": "wood/test/scratch/009.png",
+            "sha256": "3855e2cdcefd7cf2b493e7524e77ac9b2acf6a8069d1862b9ce8e7a981d5e497"
+          },
+          {
+            "path": "wood/test/scratch/010.png",
+            "sha256": "8c85ba6f8c6ae59926842daec16c85a52b501ba94508b21e5ed75436e48ac2bb"
+          },
+          {
+            "path": "wood/test/scratch/011.png",
+            "sha256": "503aadc907b3c31730eac01370b5c69f34bee8c8f41ef6cb11eed675926c1a2a"
+          },
+          {
+            "path": "wood/test/scratch/012.png",
+            "sha256": "2343d9644d33fc7d89b91e9c5c108e9ebaef77794b1af550bd8c621247d40f00"
+          },
+          {
+            "path": "wood/test/scratch/013.png",
+            "sha256": "a557989d3d6989bbdcbc9873e90a1d1ae1489090b83cf2198ce59f312129c1ab"
+          },
+          {
+            "path": "wood/test/scratch/014.png",
+            "sha256": "21bcdac1e9dfb56de613201628e4cbb3328b60076a08205a3cf07a90a9e9e8ee"
+          },
+          {
+            "path": "wood/test/scratch/015.png",
+            "sha256": "c12c8c695579e80836eb97a0ea1492d237f3e8009d29c94822d3607a03653d9a"
+          },
+          {
+            "path": "wood/test/scratch/016.png",
+            "sha256": "4ba750093eeefb61b52ecbf9d142240fddfaf1b28a5b7c4e49d0ffb7f0602048"
+          },
+          {
+            "path": "wood/test/scratch/017.png",
+            "sha256": "73bf7cbb41b086c5e206455c1e9da50c90b06285ecff11e94ef5cf443ae74770"
+          },
+          {
+            "path": "wood/test/scratch/018.png",
+            "sha256": "4f55da99c55c29f233cd095fd8a1d402b7c94943e7b7e808119eee5be12503da"
+          },
+          {
+            "path": "wood/test/scratch/019.png",
+            "sha256": "01c4a11d7f9d7d4c062b70cc62f1a0db2d52b29faab071c0baf760df8c292239"
+          },
+          {
+            "path": "wood/test/scratch/020.png",
+            "sha256": "1b4b7774ccc1b00c386c4dbdf7bde6af178d8d3ee02658dab6a91aad9b2bac78"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "4671eda121193ec9d912a46990e2862521efce24968a9b5df7a4b5198fa6b32c",
+      "path": "outputs/patchcore/features/483414b90bf15e427927dfa7161be5c245323b664577430d84f6aadf2e92d668.npy",
+      "shape": [
+        79,
+        1024,
+        384
+      ],
+      "bytes": 124256384,
+      "resources": {
+        "seconds": 0.38221250000060536,
+        "cpu_initial_rss_bytes": 1617588224,
+        "cpu_peak_rss_bytes": 1757405184,
+        "cpu_peak_increment_bytes": 139816960,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    },
+    "cpu_peak_rss_bytes": 3806990336,
+    "bank_vector_bytes": 3145728,
+    "training_peak_allocated_bytes": 793006592,
+    "checkpoint_bytes": 3185549,
+    "parameters": 2782784,
+    "evaluation_seconds": 65.78994969999985,
+    "per_defect": [
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "color",
+        "defective_images": 8,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.21052631578947367,
+        "precision": 0.6666666666666666,
+        "f1": 0.8,
+        "confusion_matrix": [
+          [
+            15,
+            4
+          ],
+          [
+            0,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "combined",
+        "defective_images": 11,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.21052631578947367,
+        "precision": 0.7333333333333333,
+        "f1": 0.846153846153846,
+        "confusion_matrix": [
+          [
+            15,
+            4
+          ],
+          [
+            0,
+            11
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "hole",
+        "defective_images": 10,
+        "auroc": 0.9894736842105264,
+        "ap": 0.9809090909090908,
+        "recall": 1.0,
+        "fpr": 0.21052631578947367,
+        "precision": 0.7142857142857143,
+        "f1": 0.8333333333333333,
+        "confusion_matrix": [
+          [
+            15,
+            4
+          ],
+          [
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "liquid",
+        "defective_images": 10,
+        "auroc": 1.0,
+        "ap": 0.9999999999999999,
+        "recall": 1.0,
+        "fpr": 0.21052631578947367,
+        "precision": 0.7142857142857143,
+        "f1": 0.8333333333333333,
+        "confusion_matrix": [
+          [
+            15,
+            4
+          ],
+          [
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "category": "wood",
+        "seed": 2027,
+        "defect": "scratch",
+        "defective_images": 21,
+        "auroc": 0.9749373433583961,
+        "ap": 0.9797440926731544,
+        "recall": 0.9523809523809523,
+        "fpr": 0.21052631578947367,
+        "precision": 0.8333333333333334,
+        "f1": 0.888888888888889,
+        "confusion_matrix": [
+          [
+            15,
+            4
+          ],
+          [
+            1,
+            20
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/patchcore/03-test-b2048-wood-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "94ed63b04ce47b49289afc02d980e6776d9e55245f197e7243e019da9eaada53",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "image_rows": 79,
+    "evaluated_at_utc": "2026-11-12T19:27:25.360912+00:00"
+  },
+  "calibration": {
+    "category": "wood",
+    "images": 37,
+    "image_threshold": 1.7007180452346802,
+    "secondary_image_threshold_q99": 1.9176408052444458,
+    "pixel_threshold": 1.564865231513977,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 2424832,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      1.484526515007019,
+      1.4494118690490723,
+      1.4396816492080688,
+      1.491746425628662,
+      1.4764026403427124,
+      1.5952690839767456,
+      1.5344150066375732,
+      1.6057515144348145,
+      1.4284647703170776,
+      1.641535997390747,
+      1.4453457593917847,
+      1.4222670793533325,
+      1.9176408052444458,
+      1.5433353185653687,
+      1.7007180452346802,
+      1.512621283531189,
+      1.444533109664917,
+      1.4627766609191895,
+      1.443164348602295,
+      1.4904265403747559,
+      1.462996244430542,
+      1.4109433889389038,
+      1.4127246141433716,
+      1.4770793914794922,
+      1.4446715116500854,
+      1.5261082649230957,
+      1.4499547481536865,
+      1.4781441688537598,
+      1.4371085166931152,
+      1.4233450889587402,
+      1.3964675664901733,
+      1.547278642654419,
+      1.5151420831680298,
+      1.5739662647247314,
+      1.5298004150390625,
+      1.4427765607833862,
+      1.51567804813385
+    ],
+    "image_threshold_bootstrap_95ci": [
+      1.5739662647247314,
+      1.9176408052444458
+    ],
+    "histogram_scale": 1.2099494934082031,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "wood/train/good/002.png",
+            "sha256": "8b05ad057d645960666b5d6b0cdd08b2fc4f343f0b9f06589fb3e54fad45c0ff"
+          },
+          {
+            "path": "wood/train/good/004.png",
+            "sha256": "f0a71659b18d098fdc6dde62f61b5796a8daecab64b730439c5dff5996560555"
+          },
+          {
+            "path": "wood/train/good/017.png",
+            "sha256": "7de171a8c9374b556a117f79ee5b51ba9ca84e959adba7b99b4b2ce8bcc831b0"
+          },
+          {
+            "path": "wood/train/good/023.png",
+            "sha256": "1a1a043388e89e0d1e3dec49ea86888d4e2f1b3a0f3e29f32115580abd0b6202"
+          },
+          {
+            "path": "wood/train/good/027.png",
+            "sha256": "21421c181514065b5ced30508a946d7cd1bc709058bc76b08034b53d0bdf5e96"
+          },
+          {
+            "path": "wood/train/good/034.png",
+            "sha256": "46521e2697124a4192e06aa700a0533659296ea450be2fbb4da45ed3a8bb7a29"
+          },
+          {
+            "path": "wood/train/good/047.png",
+            "sha256": "e95070ff95759808e5f7d4147ba49ae81c1a7865bb53c6d5c5a4ea192e097525"
+          },
+          {
+            "path": "wood/train/good/057.png",
+            "sha256": "61a89a4a2d596b64ba243d04e3fdad90bbe72d43791159f0d0159b1b83db448c"
+          },
+          {
+            "path": "wood/train/good/067.png",
+            "sha256": "b9f0913da1de609a0a6c1c9a19848c6c7568554321e3213027e10377e965d74f"
+          },
+          {
+            "path": "wood/train/good/080.png",
+            "sha256": "f9f0d0867b5e9b0d05960bff7019a424b221de57d90cd065563bd02acdcf44bb"
+          },
+          {
+            "path": "wood/train/good/081.png",
+            "sha256": "66f3705348bd11751e3251caf6ce80f760025747a6b972bb1b7d76a19c1abdd9"
+          },
+          {
+            "path": "wood/train/good/083.png",
+            "sha256": "7c69b6898f395e5e7c2afd12efbb51a4cf7384bb492576a7f55314b92dd6d92c"
+          },
+          {
+            "path": "wood/train/good/089.png",
+            "sha256": "c884632c5f6c27afdab6973cfdd670dde54ab12cfff1fa449cc9235435d85f08"
+          },
+          {
+            "path": "wood/train/good/096.png",
+            "sha256": "c24a05b191631acb9e898d47f946c4e0103ce8ad47d4b6150cd1374a91d70051"
+          },
+          {
+            "path": "wood/train/good/098.png",
+            "sha256": "4ed963f491857ac1c90d2ab88797646e605ee97606c2243c72e77f2a96dcb6c4"
+          },
+          {
+            "path": "wood/train/good/103.png",
+            "sha256": "90a5ee808e662175243be845503f0903b191c97eca666357ef280ef0247df0d7"
+          },
+          {
+            "path": "wood/train/good/105.png",
+            "sha256": "1d7c3f582a932dcc54c54a8e374ccec961c66ba8e0ecff31bec77ee4cd070d86"
+          },
+          {
+            "path": "wood/train/good/116.png",
+            "sha256": "ce840fad0af83ff1aff9e2925720284a4af51e9e69a9e3a05fc001a5745e0117"
+          },
+          {
+            "path": "wood/train/good/125.png",
+            "sha256": "c7814c0f72ff2fca8ba7f528675b6a06f2f2cfa94b01f143f282e6e8b78e3880"
+          },
+          {
+            "path": "wood/train/good/127.png",
+            "sha256": "97b85048d03a0f888ed6fe0f60c0c2f2cef1d2cf5c81f4d7e6d384a2f50a8519"
+          },
+          {
+            "path": "wood/train/good/136.png",
+            "sha256": "a31b94c0c3954c5306c87b49824626678f4007faa079113e13ca1a33a5a7f858"
+          },
+          {
+            "path": "wood/train/good/138.png",
+            "sha256": "8dfb859575ab199caad5f2bded2a78a1b2294d0519af6f7871339a823d941250"
+          },
+          {
+            "path": "wood/train/good/143.png",
+            "sha256": "cad2fe8d90b7e7cd3c2e3e7cea93daa70eeb6eb1e0437fadc3be6a656d7a0979"
+          },
+          {
+            "path": "wood/train/good/170.png",
+            "sha256": "14e0ca663c91d410c92a1599518db7f00dd6fe3639b86c0955bd003427aff376"
+          },
+          {
+            "path": "wood/train/good/172.png",
+            "sha256": "bb8200182f46095b893ebb8e564bc71ce5f28b1b83b365a1f5b33b8789ba7452"
+          },
+          {
+            "path": "wood/train/good/185.png",
+            "sha256": "98da363a6233718ccfa6b75b9e0e5cca63bb12f613d3f583ddac20c33ed1f587"
+          },
+          {
+            "path": "wood/train/good/188.png",
+            "sha256": "de45d66f010d2bd4b90cd7a92acc4220954c5c04419df09867e1ae66068ca943"
+          },
+          {
+            "path": "wood/train/good/195.png",
+            "sha256": "382a26d1765e521a79d4c6d51313c015b21ce81a62132d7a5483fa91be2f99ac"
+          },
+          {
+            "path": "wood/train/good/203.png",
+            "sha256": "6a8afd2bdcc1b50f6e60824ec5d349fe1e03ed465606bd255fa553c3c53e72c9"
+          },
+          {
+            "path": "wood/train/good/205.png",
+            "sha256": "5a858a33349efa3f1e6b38dee23466d20fb8603d9a6ec5d543f82c1bcfe4fefd"
+          },
+          {
+            "path": "wood/train/good/213.png",
+            "sha256": "bc1412203379d409abc8c063901a65909630945d0fb501789787e632429e5a6e"
+          },
+          {
+            "path": "wood/train/good/219.png",
+            "sha256": "8af5afdd5e2dd58fe18f106b9954d22ffc0eef81d7298e1f21aee3bf37b393c6"
+          },
+          {
+            "path": "wood/train/good/228.png",
+            "sha256": "561b1ddc2d8ee912abb56e745f34d49de67ae4639b60dd40012ccfcefd483bbd"
+          },
+          {
+            "path": "wood/train/good/231.png",
+            "sha256": "3e82f2503cbb455a11e3dcc9e078f9e0d1ac8a234e660484f41bdb4c2fa0bee6"
+          },
+          {
+            "path": "wood/train/good/234.png",
+            "sha256": "27968f3af02cc56978e90dd358d6f7ed6e095e03c2f821fbf4b78e692b07767d"
+          },
+          {
+            "path": "wood/train/good/241.png",
+            "sha256": "a0bb97c66a79ae875748bef811870fdd8ec03a4d7bf13ff847e904fda1dc24fb"
+          },
+          {
+            "path": "wood/train/good/245.png",
+            "sha256": "472334bb0c57b191c85d8be6e68b6b50541845d1a272db0f7c7eef6a44fd5fef"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "5d8e2e7a52f4ab7e2da6073b29fffdf9488693159812b3902872688a7663b46d",
+      "path": "outputs/patchcore/features/a7e5a0321dc96710766d0709264f18aed4c1764d08c7db8e6cc9576dfecabafc.npy",
+      "shape": [
+        37,
+        1024,
+        384
+      ],
+      "bytes": 58196096,
+      "resources": {
+        "seconds": 0.5284351999980572,
+        "cpu_initial_rss_bytes": 1607880704,
+        "cpu_peak_rss_bytes": 1677639680,
+        "cpu_peak_increment_bytes": 69758976,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    }
+  },
+  "paths": {
+    "local": "outputs/patchcore/03-test-b2048-wood-s2027-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T19:27:25.366707+00:00",
+  "config_sha256": "fe50d3ddd8782841ebd2a068cd2abb31d83ab2e858f25d9718fed8247eeff826"
+}

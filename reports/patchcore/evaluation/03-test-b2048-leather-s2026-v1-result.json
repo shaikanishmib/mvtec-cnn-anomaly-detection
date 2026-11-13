@@ -1,0 +1,1053 @@
+{
+  "experiment_id": "03-test-b2048-leather-s2026-v1",
+  "category": "leather",
+  "seed": 2026,
+  "training_experiment": "03-final-b2048-leather-s2026-v1",
+  "checkpoint_sha256": "6bc15615b4cfe5111b50e1d95eb22c1b3dd166cd03c4117524b759d609ea3f69",
+  "image_auroc": 1.0,
+  "image_ap": 1.0000000000000002,
+  "recall": 1.0,
+  "fpr": 0.46875,
+  "precision": 0.8598130841121495,
+  "f1": 0.9246231155778893,
+  "confusion_matrix": [
+    [
+      17,
+      15
+    ],
+    [
+      0,
+      92
+    ]
+  ],
+  "tn": 17,
+  "fp": 15,
+  "fn": 0,
+  "tp": 92,
+  "pixel_auroc": 0.992430644242721,
+  "pixel_ap": 0.4243144257845043,
+  "au_pro": 0.975059117442408,
+  "positive_pixels": 843352,
+  "negative_pixels": 129180072,
+  "regions": 99,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      111504820,
+      17675252
+    ],
+    [
+      0,
+      843352
+    ]
+  ],
+  "pixel_operating_point": {
+    "precision": 0.04554079778367743,
+    "recall": 1.0,
+    "fpr": 0.1368264603537301,
+    "f1": 0.08711433906780905,
+    "tp": 843352,
+    "fp": 17675252,
+    "tn": 111504820,
+    "fn": 0
+  },
+  "secondary_image_q99": {
+    "auroc": 1.0,
+    "ap": 1.0000000000000002,
+    "recall": 1.0,
+    "fpr": 0.375,
+    "precision": 0.8846153846153846,
+    "f1": 0.9387755102040816,
+    "confusion_matrix": [
+      [
+        20,
+        12
+      ],
+      [
+        0,
+        92
+      ]
+    ]
+  },
+  "calibration": {
+    "category": "leather",
+    "images": 36,
+    "image_threshold": 1.1901620626449585,
+    "secondary_image_threshold_q99": 1.2022781372070312,
+    "pixel_threshold": 1.1006852388381958,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 2359296,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      1.1106621026992798,
+      1.0933648347854614,
+      1.0794755220413208,
+      1.1495308876037598,
+      1.0865381956100464,
+      1.1019563674926758,
+      1.1062674522399902,
+      1.145269751548767,
+      1.1274641752243042,
+      1.109516978263855,
+      1.089667558670044,
+      1.0821735858917236,
+      1.1033034324645996,
+      1.1542925834655762,
+      1.144936203956604,
+      1.1340779066085815,
+      1.1102187633514404,
+      1.151570200920105,
+      1.1276720762252808,
+      1.1273244619369507,
+      1.0886257886886597,
+      1.1595605611801147,
+      1.093751311302185,
+      1.2022781372070312,
+      1.1578677892684937,
+      1.1660664081573486,
+      1.1109257936477661,
+      1.0890583992004395,
+      1.148840069770813,
+      1.0895607471466064,
+      1.1129835844039917,
+      1.084565281867981,
+      1.103102207183838,
+      1.159950852394104,
+      1.1163016557693481,
+      1.1901620626449585
+    ],
+    "image_threshold_bootstrap_95ci": [
+      1.1578677892684937,
+      1.2022781372070312
+    ],
+    "histogram_scale": 0.9082140922546387,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "d718774b6715c1b94afacc52d2a05e1b56d86b27a91ff065ff33a8499fb42b04",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "leather/train/good/028.png",
+            "sha256": "9278872879fdf28766fecf4363ae81588256b92b9cb09e0648d4429254286026"
+          },
+          {
+            "path": "leather/train/good/038.png",
+            "sha256": "61f516d30d0475856282a843b760f0e1ee006eaa7466150c8191a2e2d2e0db51"
+          },
+          {
+            "path": "leather/train/good/052.png",
+            "sha256": "938a466d7c296c1f43287cfe0a74656a08551d239c4ac57968fb2401c6418b70"
+          },
+          {
+            "path": "leather/train/good/058.png",
+            "sha256": "15529f6480662d33fd2276823505884ac6522ac92601d9d27a08c03fc9a40f6c"
+          },
+          {
+            "path": "leather/train/good/060.png",
+            "sha256": "c254b221b717f42a45c293dce1395f5f4767080f80b93508c1c60996ec2001ad"
+          },
+          {
+            "path": "leather/train/good/062.png",
+            "sha256": "f11ad8aaf9ec1b9b85faef95e02a5ae347d306a9d00b9eb7f0887a1c50aaf647"
+          },
+          {
+            "path": "leather/train/good/064.png",
+            "sha256": "3cf231159db6fef23cd0f3ad3974320c1817d46e7afc927b9df95cdfb6ef8a8a"
+          },
+          {
+            "path": "leather/train/good/071.png",
+            "sha256": "07a3542ccd4469553f7877d0f3d267fe31113d9268acba8cd99d1f6a3bcbb0cf"
+          },
+          {
+            "path": "leather/train/good/072.png",
+            "sha256": "2b99d68938b749b3b97fd3e5d9d8eda4411001ed55f2bf26a211997149165e07"
+          },
+          {
+            "path": "leather/train/good/073.png",
+            "sha256": "73e9c207cdeff61b3126fa4160fdae314454a3761189c91647b4f8980e0ce1f8"
+          },
+          {
+            "path": "leather/train/good/090.png",
+            "sha256": "eaf92ba0c188f24fb04e6ed931d06738fde364f17ddbe3eff81e1cbee91e7b3b"
+          },
+          {
+            "path": "leather/train/good/093.png",
+            "sha256": "5db74ac144fbf6c929198eff315587798733455e9a88b9976f72a4f26ff20345"
+          },
+          {
+            "path": "leather/train/good/099.png",
+            "sha256": "f70665a2240ad9b5a20994b7247f2b45d73a5e58c929074d941f07f8b25d3a9f"
+          },
+          {
+            "path": "leather/train/good/103.png",
+            "sha256": "6ef6ea3f6a945744fd86b18aa885d54a2890f16647961a8b89e6a765d7fe5603"
+          },
+          {
+            "path": "leather/train/good/109.png",
+            "sha256": "f42fc84377e23bfbde4f7b0489aa481627266070308dcc200cb4a7d3c35eab8b"
+          },
+          {
+            "path": "leather/train/good/116.png",
+            "sha256": "9e7656c22494a52e253d5453dbb09e232746955c8008e88c6392f082008cf983"
+          },
+          {
+            "path": "leather/train/good/118.png",
+            "sha256": "77a11f063d96f124390fcdd138eb5152e376139a1e64f454d5e1bf998fa6ca3c"
+          },
+          {
+            "path": "leather/train/good/134.png",
+            "sha256": "5161a86f9e080ff8058f44ec61021344da5925cb3ca4d923107b226d35f7c6a6"
+          },
+          {
+            "path": "leather/train/good/136.png",
+            "sha256": "0cb1a67250bd4643b058585e8d2a5a845a0c51ad4fb8dfe05bee011ae7b5a419"
+          },
+          {
+            "path": "leather/train/good/142.png",
+            "sha256": "83c716236805a1c8c409dd30468d7d71f7640fb73b0205e5c50896c4aab86ce7"
+          },
+          {
+            "path": "leather/train/good/144.png",
+            "sha256": "e98337bbc3d8241f6f29d8d146e21d7b4e379479c1bb3079825b3f4d62c2ad71"
+          },
+          {
+            "path": "leather/train/good/156.png",
+            "sha256": "7ba85b38233cd1d4ebce1f7887afef6202575c665c9b5cb7954bab859dafd2d6"
+          },
+          {
+            "path": "leather/train/good/160.png",
+            "sha256": "24bb5717dd2f0f6f93a9e490b9c34b441da019c635b0737b4753b0c8b2f6f0e4"
+          },
+          {
+            "path": "leather/train/good/163.png",
+            "sha256": "27b6d5a2230353429598f34b05596d302856dbf69f6b9423378fbefaae71f3c4"
+          },
+          {
+            "path": "leather/train/good/164.png",
+            "sha256": "d27c6c727ac46a92b83d2541b69e8854b60390283dabc8f5edddb3ca78ccef4d"
+          },
+          {
+            "path": "leather/train/good/172.png",
+            "sha256": "923ddf65f058cfa12539498d25e49373dd5bdd8cf7fd4b33dac2e6503f2e27a8"
+          },
+          {
+            "path": "leather/train/good/178.png",
+            "sha256": "fe700ff426e7c242ae895eb5e3e33078ba265128244551e781063344c7571cdf"
+          },
+          {
+            "path": "leather/train/good/180.png",
+            "sha256": "80c5aa470f1c6c36bd3f636457d196462efb81d70612c407690a4db35f2d120f"
+          },
+          {
+            "path": "leather/train/good/187.png",
+            "sha256": "8a4d90ba64dcf74982b68dddcf791ce1c7e6a562c3b8ad335df28660a0d17647"
+          },
+          {
+            "path": "leather/train/good/189.png",
+            "sha256": "bf49d41ec00f073236a31d07fef292b70328e3bd2a535607e010606e1fcb904c"
+          },
+          {
+            "path": "leather/train/good/195.png",
+            "sha256": "51356f2f88a99f386550778bb00914e28a6bf3916305fb6cbd6e3d47171cea8d"
+          },
+          {
+            "path": "leather/train/good/196.png",
+            "sha256": "8a72a0a1bc2b36f226d6ceea91e27c3830c4cf926d4876b3389d2cef74715bb8"
+          },
+          {
+            "path": "leather/train/good/203.png",
+            "sha256": "d575dbd3a191531b2ad5f2010d392dd666311cd436cf242bafe4be6ceed9c776"
+          },
+          {
+            "path": "leather/train/good/210.png",
+            "sha256": "c732bd061321a1e71cd52148acd1cde5ba372f16f6242c8e4d969e1e4e3b6e45"
+          },
+          {
+            "path": "leather/train/good/242.png",
+            "sha256": "6da1e86f5637b93413bf3ae9f0ac481925ef023c4803c19a25f5122ba36375c0"
+          },
+          {
+            "path": "leather/train/good/244.png",
+            "sha256": "506997b4c1d539fb75c252a5ed488846764bbff33ed72b8fb87e09359f39d5a4"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "a7948cb8e61ab014374e65d13eaf070f0a71bd82a886ce73ebec9e9c57c94dde",
+      "path": "outputs/patchcore/features/dd017a902b26c2dd47b525cd528480de26d3653706e13c41f466bcb6bc042d2b.npy",
+      "shape": [
+        36,
+        1024,
+        384
+      ],
+      "bytes": 56623232,
+      "resources": {
+        "seconds": 0.4657193000020925,
+        "cpu_initial_rss_bytes": 1605636096,
+        "cpu_peak_rss_bytes": 1673101312,
+        "cpu_peak_increment_bytes": 67465216,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": false
+    }
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 7.454700000380399,
+      "p95_ms": 8.010960000865452
+    },
+    "host_to_device": {
+      "p50_ms": 1.2548499998956686,
+      "p95_ms": 2.5781699989238387
+    },
+    "feature_extraction": {
+      "p50_ms": 11.543250000613625,
+      "p95_ms": 12.635379999483119
+    },
+    "nearest_neighbor": {
+      "p50_ms": 3.4266999991814373,
+      "p95_ms": 3.924680001182423
+    },
+    "model": {
+      "p50_ms": 14.966950000598445,
+      "p95_ms": 16.311005000352452
+    },
+    "postprocessing": {
+      "p50_ms": 10.039250000772881,
+      "p95_ms": 10.982870001862466
+    },
+    "end_to_end": {
+      "p50_ms": 33.625199997914024,
+      "p95_ms": 36.51653999932023
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+    "power_context_at_end_of_timing": {
+      "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 435 MHz, 46"
+    },
+    "peak_inference_allocated_bytes": 84222464,
+    "peak_inference_reserved_bytes": 341835776
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9999999999999999,
+        1.0
+      ],
+      "image_ap": [
+        0.9999999999999999,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0
+      ],
+      "fpr": [
+        0.2954211229946524,
+        0.6471323529411761
+      ],
+      "precision": [
+        0.7958864795918368,
+        0.9189370173745173
+      ],
+      "f1": [
+        0.8863438489371325,
+        0.9577563052735014
+      ],
+      "pixel_auroc": [
+        0.9908383093165495,
+        0.9940942989755654
+      ],
+      "pixel_ap": [
+        0.3786055532100877,
+        0.4809813778654498
+      ],
+      "au_pro": [
+        0.9689189609748433,
+        0.9807693930709733
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9924306408147344,
+    "pixel_ap": 0.4239575903989078,
+    "au_pro": 0.9750590847798029
+  },
+  "training_seconds": 3.255643799999234,
+  "coreset_seconds": 1.323231599999417,
+  "original_extraction_seconds": 0.9786449000021094,
+  "feature_cache_hit_during_fit": false,
+  "test_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "leather/test/color/000.png",
+          "sha256": "c0bc61600c97dede10e577255c6d40c66412b8350b830582a3e128c3a868a34e"
+        },
+        {
+          "path": "leather/test/color/001.png",
+          "sha256": "07718fe06a5248c43f692e97dae3c43d37135826929bce33e29466f16bc68458"
+        },
+        {
+          "path": "leather/test/color/002.png",
+          "sha256": "49f486a4c4c138f00b2e550b716bb58d89add7e04b84bda101cef7c97eac3c01"
+        },
+        {
+          "path": "leather/test/color/003.png",
+          "sha256": "8a7960b3c4b70a927a09f4c6862a40777510547541385c33002b0ec38658234f"
+        },
+        {
+          "path": "leather/test/color/004.png",
+          "sha256": "e853e2f5463f5120043616a49c1bdddf8a5e38b68b09584c117584fb8b5551e5"
+        },
+        {
+          "path": "leather/test/color/005.png",
+          "sha256": "8ac039f41e22c1affa681dc630fa423b5b0cb987e98a4a85b3dc13ba7d8e1bda"
+        },
+        {
+          "path": "leather/test/color/006.png",
+          "sha256": "723c61ff929cc2e572787d55bb7361aadab2669fb9ab48efd2a09fe84d1ac38c"
+        },
+        {
+          "path": "leather/test/color/007.png",
+          "sha256": "cb3ab76da7b5ba5c48b98384c10cd4c1473950a77654b0863538e5415f86ea83"
+        },
+        {
+          "path": "leather/test/color/008.png",
+          "sha256": "bf228dcb4472af9307825e366d868a86dd435cc9cc971cec77e0dd63c9388536"
+        },
+        {
+          "path": "leather/test/color/009.png",
+          "sha256": "9189d2f770f182d38f460bb828a5e7ad7cc990c75a73baff2e5fa0d2de7019e9"
+        },
+        {
+          "path": "leather/test/color/010.png",
+          "sha256": "f37ce518b751bcb287b028640b7a091dce9159c256637df58b5d24157fa6da54"
+        },
+        {
+          "path": "leather/test/color/011.png",
+          "sha256": "2475dae537f3920db4a4b8dee52d1ab8e048e9498132a457273dd4c32949cdfb"
+        },
+        {
+          "path": "leather/test/color/012.png",
+          "sha256": "79ffa0c51dc943e775f54683d04b6ede019a38e7b2c9260852c26fd2d2229020"
+        },
+        {
+          "path": "leather/test/color/013.png",
+          "sha256": "be636830ff2631ac55d7e9d85d02b43a170a5b25549fc40444f8dee88b56182a"
+        },
+        {
+          "path": "leather/test/color/014.png",
+          "sha256": "144d39853a97884fd35fed91f1ed10843fbe7494cd6a0b90869bdfb5a550ff71"
+        },
+        {
+          "path": "leather/test/color/015.png",
+          "sha256": "ca32681c8b5b3b9e7dd4c3e5a0e980a1aee64db601ef7c6fdd73ee9b62c14af4"
+        },
+        {
+          "path": "leather/test/color/016.png",
+          "sha256": "137ccc714f44edcac5ed6e478eb22563a44d1b5e83eb56463d542fcbd4aa76d6"
+        },
+        {
+          "path": "leather/test/color/017.png",
+          "sha256": "f5008900ec91e4a0f6f6e1c6b9b84fa9f1674f30b3646a5fb15e75100d6f546e"
+        },
+        {
+          "path": "leather/test/color/018.png",
+          "sha256": "ac3faf35b3498ffe31c25bcb704a8da6ce5ad035f5e92e3fc927be8fad73afd1"
+        },
+        {
+          "path": "leather/test/cut/000.png",
+          "sha256": "d362fb12f480398438d29250d99e9420c632addd65dcb4b837b4c5c3bbf9b154"
+        },
+        {
+          "path": "leather/test/cut/001.png",
+          "sha256": "6e1f471049729cdb236636bfb4cac61f55a79394d526aecfbeea202672fc7f16"
+        },
+        {
+          "path": "leather/test/cut/002.png",
+          "sha256": "8fe3fd8682d0fbfc2ee936569ac1d5ce9bce4d1b875fdece40b530358d55ff5a"
+        },
+        {
+          "path": "leather/test/cut/003.png",
+          "sha256": "d785862910de3aaeabdc974700378c250a5be51131e2494f65f15804dd10f4ad"
+        },
+        {
+          "path": "leather/test/cut/004.png",
+          "sha256": "24e332c2d4386b487d95dee58d952765d4b36961d9f093f1cbc0aed86e7a09a9"
+        },
+        {
+          "path": "leather/test/cut/005.png",
+          "sha256": "2b8b8e2a281a19159ce4001f7865ab7e303fc46fb3f824f4f81d9e1c5525ee81"
+        },
+        {
+          "path": "leather/test/cut/006.png",
+          "sha256": "fdb2866f270c442c461f90d05eba7c9a3e070870429663313a1ac7d34d9567d0"
+        },
+        {
+          "path": "leather/test/cut/007.png",
+          "sha256": "52a57266f6d836a621e6d22f414a849070b745d6cb5ad62d72295911e2f4460f"
+        },
+        {
+          "path": "leather/test/cut/008.png",
+          "sha256": "1d969bbbfa6563bdf081c4ce43413bb94c94696bf25f9028421fe31fa414a5cb"
+        },
+        {
+          "path": "leather/test/cut/009.png",
+          "sha256": "ee63b06d0fb9b228d3ba3d60501561c34d913edc715ce894a2d402c38ecaf9ea"
+        },
+        {
+          "path": "leather/test/cut/010.png",
+          "sha256": "5dfe0fd2e4fa9605cf79264b156b4b79600a862fbb65489b8049f87f21965d7c"
+        },
+        {
+          "path": "leather/test/cut/011.png",
+          "sha256": "18134a142464a2ce44ed79bec95dc046b08529dd8fa7d597e769ca7b9a3c087b"
+        },
+        {
+          "path": "leather/test/cut/012.png",
+          "sha256": "5f57397cd4aef31ffd9adf88df7062732a9d95b996a6c9749ec24376650534a8"
+        },
+        {
+          "path": "leather/test/cut/013.png",
+          "sha256": "6b3cfca20175236e60123cb75fcdb0eebe95ea9a2557ec4e8a39c98a33bda263"
+        },
+        {
+          "path": "leather/test/cut/014.png",
+          "sha256": "7a5aa0dbc332f6eaf2a1ee81f6878cbaf1804b6a2a6ef03b0d87b5960574b407"
+        },
+        {
+          "path": "leather/test/cut/015.png",
+          "sha256": "0973fc013df79c000aa3f029a4af9baa88539bb0bc220342b9e6aa9dfcd28d17"
+        },
+        {
+          "path": "leather/test/cut/016.png",
+          "sha256": "498a8d748ec0b355f5d8ae02d23e37eebb80431601119923616987669e29bba9"
+        },
+        {
+          "path": "leather/test/cut/017.png",
+          "sha256": "ec80017b9e400e345a87372247fb160e35f0ac08e4b322331e89ee09edcd8bad"
+        },
+        {
+          "path": "leather/test/cut/018.png",
+          "sha256": "00e5c8308608cecb143ac8b6e1691293a0021ca942e0844002ed359c15506045"
+        },
+        {
+          "path": "leather/test/fold/000.png",
+          "sha256": "7324fcdb26d017bcd1100e2d96dcb2c57d05f09aa36bcf5544c3d47b654900ca"
+        },
+        {
+          "path": "leather/test/fold/001.png",
+          "sha256": "08157c3a881d967885b7cbae7cb307a132f8b89cce49f04fd39334a9d83aad36"
+        },
+        {
+          "path": "leather/test/fold/002.png",
+          "sha256": "a82b7953a42d6652643f20ca54833e97e862ac6d9b9a14ba7ac7953bf5723a7c"
+        },
+        {
+          "path": "leather/test/fold/003.png",
+          "sha256": "a7849aaf2d3003a3d8071bb20d709a95fb311bb4ed475c1bc3d8d40a9180aa50"
+        },
+        {
+          "path": "leather/test/fold/004.png",
+          "sha256": "59b88a5b29bc4d9bf9b6449a6021cd4a3d2fd7900b76846e068b716a74d948aa"
+        },
+        {
+          "path": "leather/test/fold/005.png",
+          "sha256": "68b12fff492949a05d05b243a6eae45172ec87deb335d322a24b701f62f0403a"
+        },
+        {
+          "path": "leather/test/fold/006.png",
+          "sha256": "9feb028b8ae880b3abe01e5122180e5d7b5dc317e1a2d71d2f45dd2f9a760ac1"
+        },
+        {
+          "path": "leather/test/fold/007.png",
+          "sha256": "255745f4ad04c13b3e8d1be7ce1d79a15a747ad2be13297868a33348fefb696a"
+        },
+        {
+          "path": "leather/test/fold/008.png",
+          "sha256": "cfd276011431087b5e5bac13695c0447c5f707056cb6b411f0812decdcb6e37e"
+        },
+        {
+          "path": "leather/test/fold/009.png",
+          "sha256": "821dcc89b0cee5c7e13505173ce1f3f111b6e82f8e050635e7fb4f50564ee4e0"
+        },
+        {
+          "path": "leather/test/fold/010.png",
+          "sha256": "4df4eea15eddb56f4090a7c2dc1ca0cd7d60ee0d615b7d7fa724274fb42ad726"
+        },
+        {
+          "path": "leather/test/fold/011.png",
+          "sha256": "216adec28e8f60e506e84204c2658b4180b9d256b39f77420f15bedab57620cf"
+        },
+        {
+          "path": "leather/test/fold/012.png",
+          "sha256": "4edfe5fc85c9cbbe0eaeb27c900932bc6e2d1b972dd246f9d4cd03da490c8f74"
+        },
+        {
+          "path": "leather/test/fold/013.png",
+          "sha256": "924fe4d7bc40c0372578b1cb641134d8ad573fec6fbd0fed70aaf83d48f9c167"
+        },
+        {
+          "path": "leather/test/fold/014.png",
+          "sha256": "da9a8bd5d6f4d9664ca65e214023dd208ded45d186e045449d21eef654127508"
+        },
+        {
+          "path": "leather/test/fold/015.png",
+          "sha256": "296d8ec00b206d523b4821651477f77ee5ac40f058b4d993332fd27581f6183f"
+        },
+        {
+          "path": "leather/test/fold/016.png",
+          "sha256": "39b9c4fc8b7d2fa9bce16314b75a7921dbca363fada40e950bed0eab40c7a022"
+        },
+        {
+          "path": "leather/test/glue/000.png",
+          "sha256": "b348c65f7a12d1b512be800fa8f8beaddb596f69a68466f93c678eabb7de1a38"
+        },
+        {
+          "path": "leather/test/glue/001.png",
+          "sha256": "0fabcfe77ea8f864a84946388eec2e920efc4e8a74688e375fe8148758e3e638"
+        },
+        {
+          "path": "leather/test/glue/002.png",
+          "sha256": "1f231c7fd27a8fbcc11bc0e12d317004b73a095e80b76ff723ecf1232d12de1b"
+        },
+        {
+          "path": "leather/test/glue/003.png",
+          "sha256": "3df652f11342b9d2cde04702eee12c227d29532795a3c3d0b13e7b124d1ba1b6"
+        },
+        {
+          "path": "leather/test/glue/004.png",
+          "sha256": "088c2fd7f1ca003c8bcaf7bc523086310b19a86eb7eaa803570380eff6b0745b"
+        },
+        {
+          "path": "leather/test/glue/005.png",
+          "sha256": "79cae4f8ccef1617af45abe2b58d481080259499292f5e864c8ab2ac95835a73"
+        },
+        {
+          "path": "leather/test/glue/006.png",
+          "sha256": "83dc2ae473415af0bc4fa086e40b87da2bad2199dfc011a98471a0ab0de12089"
+        },
+        {
+          "path": "leather/test/glue/007.png",
+          "sha256": "c01d7d8e742f7f9f90d5a3df98957745fa440924bc710dad35be5de287eeb53b"
+        },
+        {
+          "path": "leather/test/glue/008.png",
+          "sha256": "523c3857c61c3d07e09b0a228c8b15d4247b9c1a03d8e103b98ab65f831df1b3"
+        },
+        {
+          "path": "leather/test/glue/009.png",
+          "sha256": "ece2643da68441c3420e13227625014678cc91ccc67a3efe974f3b4991db0fcf"
+        },
+        {
+          "path": "leather/test/glue/010.png",
+          "sha256": "dfed3bb68d0a5f61618c7a4ef08e6b4bf61c9c5d7045ed5896af70a8fd872aae"
+        },
+        {
+          "path": "leather/test/glue/011.png",
+          "sha256": "d1e753ed1662dd8207dfff12bcc34f1b8cb27911c188baaef48a1763085128ef"
+        },
+        {
+          "path": "leather/test/glue/012.png",
+          "sha256": "1f3c35edc6d97cec2a991063487bc965cc0831abfb00f8254dcdf8804265d7eb"
+        },
+        {
+          "path": "leather/test/glue/013.png",
+          "sha256": "531a02ba825c9d97d235b6023d9386e451313bbc5dedf7643b42b6f3ab86539d"
+        },
+        {
+          "path": "leather/test/glue/014.png",
+          "sha256": "bc848be2edd3a5e71a73eb28484222a48048fb9e64d64f276e0da7b5971382ce"
+        },
+        {
+          "path": "leather/test/glue/015.png",
+          "sha256": "67a034894d914dca79db705b4eb428354f18abba4c8a3c0241c9a73272601f99"
+        },
+        {
+          "path": "leather/test/glue/016.png",
+          "sha256": "c32c46f9c69ab0af4759406e2e830dbdd392695f16512c893efe749e8f998b4c"
+        },
+        {
+          "path": "leather/test/glue/017.png",
+          "sha256": "9b3c19353add684f386ff13204617984b016ee5269291a88f353c6e2333cb9ce"
+        },
+        {
+          "path": "leather/test/glue/018.png",
+          "sha256": "f4ec5f47bb437b026c1c45901476e66333eadabbf5ec724612f02fd66fe85da4"
+        },
+        {
+          "path": "leather/test/good/000.png",
+          "sha256": "64609f35b4b8c88daf42fcc9c34d359d160ea9b88ac8c537a5a8e672b813c18a"
+        },
+        {
+          "path": "leather/test/good/001.png",
+          "sha256": "2f4333a152e75287ad36fee6b285e8a31dde7e66de77529e4af9386fbdf27ffa"
+        },
+        {
+          "path": "leather/test/good/002.png",
+          "sha256": "45cf969cea93fc721fb409709608dc66c469aaf72d9ee83fd79eb22aa4a3d1df"
+        },
+        {
+          "path": "leather/test/good/003.png",
+          "sha256": "c9b3727f94c5a87df5b16cb6a867eb8de467843afeac6a2d9d2d3b0b4ff62e07"
+        },
+        {
+          "path": "leather/test/good/004.png",
+          "sha256": "aff5a0bcb366d6a9287b4f5bcbc6aaca455134e61d6ea354425a3d2d363fc3ed"
+        },
+        {
+          "path": "leather/test/good/005.png",
+          "sha256": "37e9167fb5c7aba77619a66e23c0df0af3869013d0664977b6a5a111f92114cb"
+        },
+        {
+          "path": "leather/test/good/006.png",
+          "sha256": "74a75c885d34c504082512819dfa422e8a6158960dd48487092357599498f3a6"
+        },
+        {
+          "path": "leather/test/good/007.png",
+          "sha256": "48c6e1062279ffb52d398ea2d03ff3040ae9e46fd94a4a0e01b1503e9158bf6b"
+        },
+        {
+          "path": "leather/test/good/008.png",
+          "sha256": "899b2d5fe28ffa37fcf29c5ca0d4088ed2bbfb4c04f3c2629c57fedb7db08363"
+        },
+        {
+          "path": "leather/test/good/009.png",
+          "sha256": "b06fe75831672b4e8f20cb9307a2d8e77ccc5f274e7f7a900bb1b4d013a07ab1"
+        },
+        {
+          "path": "leather/test/good/010.png",
+          "sha256": "1ed5c6ff91f27be40c9182256bb2f2c1302781fddfbdf3616553f97c0c17b6e5"
+        },
+        {
+          "path": "leather/test/good/011.png",
+          "sha256": "aaf28f6b65ca4e89502906a7b6c386ec41acb9c2c325d4709f53b020a307a0a2"
+        },
+        {
+          "path": "leather/test/good/012.png",
+          "sha256": "da0c40cb899ec97ec6ec01cad1c857f0a7a1bce533d3436b8c28ed0a4bfd2068"
+        },
+        {
+          "path": "leather/test/good/013.png",
+          "sha256": "19ed2a03e901ec30f1fe8f1768fd122c7bc423ee4717b291baaa069f97d4db73"
+        },
+        {
+          "path": "leather/test/good/014.png",
+          "sha256": "ccb776dc86ab84be6ddc6b97a31f86201d112e6410f7da986f2876d8a3a20493"
+        },
+        {
+          "path": "leather/test/good/015.png",
+          "sha256": "e2c2bd54a2babcbe1ea42dc89c6326bf2e506d6fb4c252f3310c19b888676de1"
+        },
+        {
+          "path": "leather/test/good/016.png",
+          "sha256": "930e4c63949cdd34c70c4bc8a25696d10b3f3c8e84582dc28e50714b55a893ec"
+        },
+        {
+          "path": "leather/test/good/017.png",
+          "sha256": "88a0824937f3d4cb57a62b3d459f617e0c692721f60cbb40e2733128ccaa1ae9"
+        },
+        {
+          "path": "leather/test/good/018.png",
+          "sha256": "62532ae3f29ca1d55fabb58e52eeecf3a9162590139983ec0818e6878887e7f2"
+        },
+        {
+          "path": "leather/test/good/019.png",
+          "sha256": "9e87d1c8652c57d8b2c166a59b218419e467aa6ed36fb756eee9f7eb34c83922"
+        },
+        {
+          "path": "leather/test/good/020.png",
+          "sha256": "9fdf061607c23802af580702e89e8c079858660b0e6bf96a1059d9c6f7d6d5a3"
+        },
+        {
+          "path": "leather/test/good/021.png",
+          "sha256": "c38c1d6e473c43ba89acff3a44c067dae600e85e8a8cf49056da42c85fa83d3e"
+        },
+        {
+          "path": "leather/test/good/022.png",
+          "sha256": "af127ea37860eb41e072baef16354cf60b080969e023f3c301a65d5ba56cfc3a"
+        },
+        {
+          "path": "leather/test/good/023.png",
+          "sha256": "c070afa7ab1dd4b39a21e820b2ab80c5a4ec357ec3dca582983c99d8003f5c1e"
+        },
+        {
+          "path": "leather/test/good/024.png",
+          "sha256": "c1903350ac3c28d1dcd70efa685f621ed8e66757b8e17ae93a9783cc16913519"
+        },
+        {
+          "path": "leather/test/good/025.png",
+          "sha256": "4fbc5d1e2f7f69f860d9b51f74aae89dc1cc708e43a1cb01662b9039ace73e48"
+        },
+        {
+          "path": "leather/test/good/026.png",
+          "sha256": "922417a4a15dab57a86678c470c73336f0e81e3f3feeb79fc7413ed27bb86a0f"
+        },
+        {
+          "path": "leather/test/good/027.png",
+          "sha256": "69e950c126a63ec5ba0e34781f9f546487793077f8da85fbe82fff643dd1f378"
+        },
+        {
+          "path": "leather/test/good/028.png",
+          "sha256": "72397ea89b9e0db398d8d6965913667fcf5227145e4c70c3e0b4f9deb20fe7fa"
+        },
+        {
+          "path": "leather/test/good/029.png",
+          "sha256": "099bed5d870dbc26238da44db6584d6d77fe1dfc3e51cb26eb7c66846f408875"
+        },
+        {
+          "path": "leather/test/good/030.png",
+          "sha256": "6b5c983af88fd3507c4bafdd9f6171049dd7e6cc63fee9a6063073c4b982c784"
+        },
+        {
+          "path": "leather/test/good/031.png",
+          "sha256": "e8f0bba0c71d3c21f6e5ea403e8684ee7ee584cfebd1d42be9bc8426575204dd"
+        },
+        {
+          "path": "leather/test/poke/000.png",
+          "sha256": "9bfdc373a12d00409c626403f25c7f86353233373200c666fdb092144331fccb"
+        },
+        {
+          "path": "leather/test/poke/001.png",
+          "sha256": "1988f0a621af656c342b110b9bc062bfb3bf88ad1d72d0d9e2119f4254cbe420"
+        },
+        {
+          "path": "leather/test/poke/002.png",
+          "sha256": "9d80e16ea3be1b493f818a806059a2fadcd653a906310be06adf85091c59a6a5"
+        },
+        {
+          "path": "leather/test/poke/003.png",
+          "sha256": "163c61e0639aeab7e0a256e0ee96bf8d62f6132ebf53d8a5077d119dc64eb44f"
+        },
+        {
+          "path": "leather/test/poke/004.png",
+          "sha256": "e4282046aa7161e6344511a56b807b96d3adc89c442e7f2942d6445ea247271e"
+        },
+        {
+          "path": "leather/test/poke/005.png",
+          "sha256": "8cd90d10fc3033ffa5d7da160ec50bc913212b3384ff4fc88b86739df298e32f"
+        },
+        {
+          "path": "leather/test/poke/006.png",
+          "sha256": "f8594de8dc05d99511da124fc0d1f5bd3b841e25ba615a940358e71a39fbe8f1"
+        },
+        {
+          "path": "leather/test/poke/007.png",
+          "sha256": "f0ceddbebb6b244bab9479ea178349f8e6b88232cf61cd974ae036184ca5a1e8"
+        },
+        {
+          "path": "leather/test/poke/008.png",
+          "sha256": "1af7d52052ae71c840d1395d90f35a6c26e3ad4bd197126668ec5c92cc68aacb"
+        },
+        {
+          "path": "leather/test/poke/009.png",
+          "sha256": "46117a544e0c64916570133f3007ef4c62079a4ca15f1dae0d0a061776ff082d"
+        },
+        {
+          "path": "leather/test/poke/010.png",
+          "sha256": "6e3da428caf0cb71419ea19f7dc746b3181e220cc946cab0159eab516a91d5b7"
+        },
+        {
+          "path": "leather/test/poke/011.png",
+          "sha256": "5f5e0b84a52d7c6fe626ecc086d05202288eea119842e0bba499244a6b04574b"
+        },
+        {
+          "path": "leather/test/poke/012.png",
+          "sha256": "61d1636bce6f8a43f36a9542afadc1886db8d3408c3a04f470bca510a4d0d08a"
+        },
+        {
+          "path": "leather/test/poke/013.png",
+          "sha256": "11379ccc65759f49ceddc4680e2814c35097c442ed4b7f740fae0904a5c213c5"
+        },
+        {
+          "path": "leather/test/poke/014.png",
+          "sha256": "1ba03f7c15fda1c216aeadaec68ed5c13cc8c40e9be66887b0a727a119074af2"
+        },
+        {
+          "path": "leather/test/poke/015.png",
+          "sha256": "8f552009665c8984dd93bc49a54669c7a026c08bea363c5c7f848279fac7eb32"
+        },
+        {
+          "path": "leather/test/poke/016.png",
+          "sha256": "de237966f067604da3e22edbd86943b9201e124fe88722314b4d7be494b072e6"
+        },
+        {
+          "path": "leather/test/poke/017.png",
+          "sha256": "709f1172d5910f05ea8f3d77b9899c27a1bb2bb0c744b1f84400b38209063253"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "e8e0722118aa43fecd2589772a06b55eb5b1e2ba8a71345764e8f4662d2a2e33",
+    "path": "outputs/patchcore/features/839335c32dfed78d0f782963b2df5e6f6c997ff8e2374d57243052b9fd594a96.npy",
+    "shape": [
+      124,
+      1024,
+      384
+    ],
+    "bytes": 195035264,
+    "resources": {
+      "seconds": 0.5332565000026079,
+      "cpu_initial_rss_bytes": 1610899456,
+      "cpu_peak_rss_bytes": 1830342656,
+      "cpu_peak_increment_bytes": 219443200,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 246177792,
+      "peak_gpu_reserved_bytes": 341835776
+    },
+    "cache_hit": false
+  },
+  "cpu_peak_rss_bytes": 5069660160,
+  "bank_vector_bytes": 3145728,
+  "training_peak_allocated_bytes": 793006592,
+  "checkpoint_bytes": 3185997,
+  "parameters": 2782784,
+  "evaluation_seconds": 108.46123029999944,
+  "per_defect": [
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "color",
+      "defective_images": 19,
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.46875,
+      "precision": 0.5588235294117647,
+      "f1": 0.7169811320754718,
+      "confusion_matrix": [
+        [
+          17,
+          15
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "cut",
+      "defective_images": 19,
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.46875,
+      "precision": 0.5588235294117647,
+      "f1": 0.7169811320754718,
+      "confusion_matrix": [
+        [
+          17,
+          15
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "fold",
+      "defective_images": 17,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.46875,
+      "precision": 0.53125,
+      "f1": 0.6938775510204082,
+      "confusion_matrix": [
+        [
+          17,
+          15
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "glue",
+      "defective_images": 19,
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.46875,
+      "precision": 0.5588235294117647,
+      "f1": 0.7169811320754718,
+      "confusion_matrix": [
+        [
+          17,
+          15
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2026,
+      "defect": "poke",
+      "defective_images": 18,
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.46875,
+      "precision": 0.5454545454545454,
+      "f1": 0.7058823529411764,
+      "confusion_matrix": [
+        [
+          17,
+          15
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    }
+  ],
+  "local_maps": "outputs/patchcore/03-test-b2048-leather-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "48e61c8b0f8625eaa221a29de729b03d02220cde7e5157a4d982c965980fe412",
+  "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+  "image_rows": 124,
+  "evaluated_at_utc": "2026-11-12T18:55:04.541281+00:00"
+}

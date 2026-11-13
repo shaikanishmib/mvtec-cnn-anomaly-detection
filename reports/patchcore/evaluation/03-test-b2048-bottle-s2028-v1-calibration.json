@@ -1,0 +1,210 @@
+{
+  "category": "bottle",
+  "images": 31,
+  "image_threshold": 1.4729938507080078,
+  "secondary_image_threshold_q99": 1.4815443754196167,
+  "pixel_threshold": 1.2824220657348633,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 2031616,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    1.2764523029327393,
+    1.3441352844238281,
+    1.2940258979797363,
+    1.2510992288589478,
+    1.1629055738449097,
+    1.2411645650863647,
+    1.358851671218872,
+    1.3273873329162598,
+    1.31244957447052,
+    1.245205283164978,
+    1.2969969511032104,
+    1.4729938507080078,
+    1.337684154510498,
+    1.4124360084533691,
+    1.3840107917785645,
+    1.31895112991333,
+    1.4211971759796143,
+    1.3175798654556274,
+    1.2975494861602783,
+    1.2326661348342896,
+    1.381882667541504,
+    1.2216087579727173,
+    1.4815443754196167,
+    1.269987940788269,
+    1.3025375604629517,
+    1.2674001455307007,
+    1.2554081678390503,
+    1.2066270112991333,
+    1.3178973197937012,
+    1.303113341331482,
+    1.2843542098999023
+  ],
+  "image_threshold_bootstrap_95ci": [
+    1.381882667541504,
+    1.4815443754196167
+  ],
+  "histogram_scale": 0.8582943677902222,
+  "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+  "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8",
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "bottle/train/good/017.png",
+          "sha256": "7d546aa84dbfe0c37b19346fa88e579d6b45b3075073e0ba3f1e2e8657e6cefb"
+        },
+        {
+          "path": "bottle/train/good/028.png",
+          "sha256": "20ad78aefe7af62b170a569a2c96b95f12621af240e259bb1b32ba142d87638e"
+        },
+        {
+          "path": "bottle/train/good/031.png",
+          "sha256": "47980ffc9411c7ef921b750051640587d829f34b2326e08144b0ac3a5e28c106"
+        },
+        {
+          "path": "bottle/train/good/044.png",
+          "sha256": "4ec7f7015c79583007984f83a57df369c6f81551d095386d3c3e9a4554be3aee"
+        },
+        {
+          "path": "bottle/train/good/054.png",
+          "sha256": "7ed6a41a7d4b684bfbfb89fbe3989ce90c7ea1179bbf4abec4964d15a91f28ec"
+        },
+        {
+          "path": "bottle/train/good/057.png",
+          "sha256": "ff41fa6adf5452d5f2d3abf0939aacac53779b4f70de4db2a816843a3179a171"
+        },
+        {
+          "path": "bottle/train/good/061.png",
+          "sha256": "f40106f40a441d24b6ef04228cab8572b81ef0daaad134b65bfe07aefa622322"
+        },
+        {
+          "path": "bottle/train/good/069.png",
+          "sha256": "40802acb289937ab895aa716810049c5fa1a6d3f7129820eb55dc48ba63c4324"
+        },
+        {
+          "path": "bottle/train/good/083.png",
+          "sha256": "2ad85b709cd69e57a816f46ef33da97056a47ed4311a4c6b1d81878bf169fe4e"
+        },
+        {
+          "path": "bottle/train/good/096.png",
+          "sha256": "4fb0a3c26dc80d417473f52c3d6d5c7c410bac411b8e86391b0e23a5b0eec5cb"
+        },
+        {
+          "path": "bottle/train/good/098.png",
+          "sha256": "d11ced0126ff870d2a31c52f0884d1f7fdc8db3c6a6d7ebbef00b3eaecd1cdef"
+        },
+        {
+          "path": "bottle/train/good/106.png",
+          "sha256": "3a2700ef2b72514e52b11af74a2b1e9a8bc22155391e6dd2a45540b91c682e53"
+        },
+        {
+          "path": "bottle/train/good/121.png",
+          "sha256": "e776eef773529b358c1c300eabb3840115b8d30bf9e4c0e349d7c84fe0360433"
+        },
+        {
+          "path": "bottle/train/good/125.png",
+          "sha256": "8d3909fa8bf034d1cdb026bcb216a498debc272c20d5f78f2ad6a0a788be7eb3"
+        },
+        {
+          "path": "bottle/train/good/134.png",
+          "sha256": "ce3d2d784e15987c508213c87ea538e4dd82639856ce1ffd5701b175143249d4"
+        },
+        {
+          "path": "bottle/train/good/143.png",
+          "sha256": "ec15d8a9a4d1a476b96e03ffbaf3607362f6f80f42c6f968a17d7984c63d3794"
+        },
+        {
+          "path": "bottle/train/good/155.png",
+          "sha256": "c931f3c7a8335fa857f2b0573bd5e261ec27ee1292f76f085132a2b4b03181de"
+        },
+        {
+          "path": "bottle/train/good/166.png",
+          "sha256": "e182aaaada3d6b701fa542289bb70854036b7183a9b8749342f50f51a75e3590"
+        },
+        {
+          "path": "bottle/train/good/167.png",
+          "sha256": "17655246a2a4e78f10854ffb65786de5b9ca49bbe1a38e1e0149c6235b6942ad"
+        },
+        {
+          "path": "bottle/train/good/169.png",
+          "sha256": "1bf3ad96b67849c864e3efac2e90cda2d2cc51a9299c2ea3af4c39cd03366a4d"
+        },
+        {
+          "path": "bottle/train/good/175.png",
+          "sha256": "99c43c84a67ee65a17a25d324fef1853dc04459eaf6d0e03fa7ebc20962918ca"
+        },
+        {
+          "path": "bottle/train/good/176.png",
+          "sha256": "342f28d113515dcb2bd68a71e33112377c95b9fe78bde3612db290f58e96e971"
+        },
+        {
+          "path": "bottle/train/good/180.png",
+          "sha256": "4abbc0205890a0501807ffedcd2525d554ec057c8f57bc9dbb906144b4d5563b"
+        },
+        {
+          "path": "bottle/train/good/183.png",
+          "sha256": "dfa04efa0b98ce6a73981b1bc971ee1e3ede3b43741cf6366e785454513dd5c4"
+        },
+        {
+          "path": "bottle/train/good/184.png",
+          "sha256": "e6a95fe96793a6eb825151968f468aea0d6bbc243f415cf53e70a487e74901c1"
+        },
+        {
+          "path": "bottle/train/good/192.png",
+          "sha256": "465ba527bdf40e00325285abe7b6028813661a7420a59e3dadd287c0290c8f87"
+        },
+        {
+          "path": "bottle/train/good/195.png",
+          "sha256": "9fa40de41750f9e07991f2b81e157b0a24778cc3a0f891a4a4a3b66a6dac5f47"
+        },
+        {
+          "path": "bottle/train/good/199.png",
+          "sha256": "b2f9680e1c915daf3d8f705834f32382e0ddd2bf1196d228993e9644adeb7a00"
+        },
+        {
+          "path": "bottle/train/good/203.png",
+          "sha256": "d67173e677dc3934521819b986d131f158e776e6c22935b516a97d821f82385a"
+        },
+        {
+          "path": "bottle/train/good/206.png",
+          "sha256": "d8c79bc8793403ad4a731bfda783b34126396f27ded0268392c2eea6ba6d3280"
+        },
+        {
+          "path": "bottle/train/good/207.png",
+          "sha256": "8d3a37405af7d2713754db40c487a6f7d6abcc5968cabb36870ddafdfd682303"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "3267573987805347fe6d5a964736bac26929cd473c5bd6f1e27879ac53bd9caf",
+    "path": "outputs/patchcore/features/f7c5567b02dca15c0b891271e293d9964eff8f4871ed1c3ddb8046cfdffc3c51.npy",
+    "shape": [
+      31,
+      1024,
+      384
+    ],
+    "bytes": 48758912,
+    "resources": {
+      "seconds": 0.6328691000016988,
+      "cpu_initial_rss_bytes": 897683456,
+      "cpu_peak_rss_bytes": 1264349184,
+      "cpu_peak_increment_bytes": 366665728,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 203579392,
+      "peak_gpu_reserved_bytes": 264241152
+    },
+    "cache_hit": true
+  }
+}

@@ -1,0 +1,686 @@
+{
+  "experiment_id": "03-final-b2048-transistor-s2027-v1",
+  "category": "transistor",
+  "configuration": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2027,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "phase": "final",
+  "fitting_normals": 151,
+  "probe_sources": 0,
+  "candidate_coverage": {
+    "candidate_count": 20000,
+    "projected_radius": 1.607026219367981,
+    "projected_mean_distance": 1.1514101028442383,
+    "projection_dim": 32
+  },
+  "coreset_seconds": 1.5717296000002534,
+  "bank_resources": {
+    "seconds": 2.0462926000000152,
+    "cpu_initial_rss_bytes": 1564655616,
+    "cpu_peak_rss_bytes": 2039689216,
+    "cpu_peak_increment_bytes": 475033600,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 697848320,
+    "peak_gpu_reserved_bytes": 2726297600
+  },
+  "checkpoint": "checkpoints/patchcore/03-final-b2048-transistor-s2027-v1/bank.pt",
+  "checkpoint_sha256": "edaa5c2170e345ed5bd4b8f1a1bd8e74a510d98f0055d021a27221775d7d3662",
+  "checkpoint_bytes": 3183821,
+  "bank_vector_bytes": 3145728,
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "transistor/train/good/001.png",
+          "sha256": "479e538decadde0c2d687834e117a6e1a3002ece07d6b02ed145b1f116497e75"
+        },
+        {
+          "path": "transistor/train/good/005.png",
+          "sha256": "7faf8ffc97db9081e4fd93815828d6971a7196ebf61cfacf01fdce770eb1f605"
+        },
+        {
+          "path": "transistor/train/good/006.png",
+          "sha256": "452f80139d9dcc8702a161a8ec66d2613db3b75c85227c9fac4c2b536d230ac4"
+        },
+        {
+          "path": "transistor/train/good/007.png",
+          "sha256": "b876d33f839d77fe0bfeec3d32c788fd120662b48fa7e9fca1f05ec33916c0c2"
+        },
+        {
+          "path": "transistor/train/good/008.png",
+          "sha256": "1a2b5a1295fb8fc73026a43e7ddf1e79aae688a71368f17459c8090198d10db9"
+        },
+        {
+          "path": "transistor/train/good/009.png",
+          "sha256": "6e011216160fa4e0635645848b5d2fdb1c9430264973b939b769567b7378ae40"
+        },
+        {
+          "path": "transistor/train/good/011.png",
+          "sha256": "a7e6384baac0f97a18b56b5360b94fa5972a4ac18ad0018f0fa84a43ca71b00a"
+        },
+        {
+          "path": "transistor/train/good/012.png",
+          "sha256": "badb3c08e447522a8ea6e66bd627bce8a03fddc76a47ecf3a5149806fe9f310e"
+        },
+        {
+          "path": "transistor/train/good/013.png",
+          "sha256": "01347f6fb7149363c3362fff51856ea24113fce0c10fe559a728ef859bb52b59"
+        },
+        {
+          "path": "transistor/train/good/014.png",
+          "sha256": "415d69e6cfd4cf4734b8a139024a66bb6e579a4f0b81daa53aac57908342ed21"
+        },
+        {
+          "path": "transistor/train/good/015.png",
+          "sha256": "1dc99854d3262cdd0e63bc009dc0e84bb6a606863a649ff75b355dfb33e57fff"
+        },
+        {
+          "path": "transistor/train/good/016.png",
+          "sha256": "54a24bf2b36351b94a13ff74b4349c3076646fc1209ecb1d20b8c63d2be1eefb"
+        },
+        {
+          "path": "transistor/train/good/017.png",
+          "sha256": "c2330de1e9da0d0edb4dfc9d693b7fe751d2696812283ed24f91015c1eb2e325"
+        },
+        {
+          "path": "transistor/train/good/020.png",
+          "sha256": "fc4b8f79e571e1859152526930c4ca56d96f437d3a39548516e4f37179347071"
+        },
+        {
+          "path": "transistor/train/good/021.png",
+          "sha256": "7d36833cb9128e9611b3bbf4a28f47f96f483b987e2f45b0ee5fef739bba0950"
+        },
+        {
+          "path": "transistor/train/good/023.png",
+          "sha256": "4615dd1a465ad72868bd72a69910cf468d5a1704be4bd42b34dddee0b23d44cc"
+        },
+        {
+          "path": "transistor/train/good/024.png",
+          "sha256": "0101193006ad66e2a237c17f37c1918726d4337561e6314ba9fc8b337a68cec9"
+        },
+        {
+          "path": "transistor/train/good/025.png",
+          "sha256": "ee6295b9eee145fcf4afbcc28fbbab72c820791b658dab0def0b4af451fe4c26"
+        },
+        {
+          "path": "transistor/train/good/026.png",
+          "sha256": "4f441ebfd7e64c020b113c5db6339fa793baa7931f62638236a8824e096c23b5"
+        },
+        {
+          "path": "transistor/train/good/028.png",
+          "sha256": "694d096bea853b1c7be4b576cf2096b8fee438651d397d48eb4ceaf783b55030"
+        },
+        {
+          "path": "transistor/train/good/029.png",
+          "sha256": "e48cef5da43d23a1f23a7694d3bd2f45740b1705c12dd80b323aab1ffdefd373"
+        },
+        {
+          "path": "transistor/train/good/030.png",
+          "sha256": "ba31d10a6521029052aa3d5ba775646e7cfae28081546f6e98200d44c4e5c977"
+        },
+        {
+          "path": "transistor/train/good/031.png",
+          "sha256": "796a2d120879bfe61093b40bca2b332b15fefc2799ab7a7aaac7fdd30ab97893"
+        },
+        {
+          "path": "transistor/train/good/032.png",
+          "sha256": "29e774a4c03b94a098a2061cec909ab3aae45d4844c4f2c26f1e6a008efce678"
+        },
+        {
+          "path": "transistor/train/good/033.png",
+          "sha256": "6dc669f867ab2d411a65f691130d863368a36d88ccefacb35ffb3f110aa3456f"
+        },
+        {
+          "path": "transistor/train/good/034.png",
+          "sha256": "654fcb231a43f21dd3d57e8089dc123537bdb32a8fb0d3fbcac39e746f1aa515"
+        },
+        {
+          "path": "transistor/train/good/035.png",
+          "sha256": "14a914db4377481be21bb80735ed36253afe1b359a395a6acc2d547df2b61bc1"
+        },
+        {
+          "path": "transistor/train/good/038.png",
+          "sha256": "0c0b6b1da63a42980c20b8e3627e1de23cfecdd4468566a86792bedb3949dbb9"
+        },
+        {
+          "path": "transistor/train/good/039.png",
+          "sha256": "6a8a8bb53b656692ddb219de9379a866386b3131bf102c1a91a5ec4346c1ce84"
+        },
+        {
+          "path": "transistor/train/good/040.png",
+          "sha256": "96d72517fb9da655ce021b809daf7107bf7c86c1a80efaa26cebad0f350183fe"
+        },
+        {
+          "path": "transistor/train/good/043.png",
+          "sha256": "6f31cdebd963598fa231a55d05377662147c92af65ff46e1804993536add53e5"
+        },
+        {
+          "path": "transistor/train/good/044.png",
+          "sha256": "b210470892750eb9079fc3b632abe177bfe1f081021cd20bd771a0e83cddfb3d"
+        },
+        {
+          "path": "transistor/train/good/045.png",
+          "sha256": "67aa823a2977f14997300bef7f7c45a015662432caab9d46d033ee6f63bfa7f3"
+        },
+        {
+          "path": "transistor/train/good/047.png",
+          "sha256": "30b7d40218414b31f52414e142ac85dfc5e0a232dfdef3ce54083bd80f4be60f"
+        },
+        {
+          "path": "transistor/train/good/054.png",
+          "sha256": "2c1f0f481a949a3258e52e66a252682756a390cf6ae6cea090c3b1bf2a31f145"
+        },
+        {
+          "path": "transistor/train/good/055.png",
+          "sha256": "41e09f51242c6ba1502079f5e96bed2f1aff8f3d772a795c4a33c1abd7f43c5c"
+        },
+        {
+          "path": "transistor/train/good/056.png",
+          "sha256": "72c6a318a47e873a82d2db2f249142c2e614b41dc454cbb8ebafb7fbdf9444b7"
+        },
+        {
+          "path": "transistor/train/good/058.png",
+          "sha256": "7324c79c42807d7f57eaafdceddc735e13584d5a2dbb4dd18184d6ef371388e7"
+        },
+        {
+          "path": "transistor/train/good/059.png",
+          "sha256": "e776679cf43cd161738dd9895ec5edc8b1ea9046c64852e23fed1cd9a48d1a48"
+        },
+        {
+          "path": "transistor/train/good/060.png",
+          "sha256": "0ef1ce90554b9b3bd2ce4f0485b523137415a00dd33110e1e1234267033c01df"
+        },
+        {
+          "path": "transistor/train/good/061.png",
+          "sha256": "43c09360a2a17140a3d323b222521105079a97c16d6221f853df39a6b3780ab6"
+        },
+        {
+          "path": "transistor/train/good/063.png",
+          "sha256": "a0220bdb2824340a802db0bc18d49b118647426955b36079efe2ee5c48bd4eeb"
+        },
+        {
+          "path": "transistor/train/good/064.png",
+          "sha256": "70e68f96254385a0426d6dff72511cfc59c26f769b9408a633c6a6e85975b5a7"
+        },
+        {
+          "path": "transistor/train/good/066.png",
+          "sha256": "e69eb8681a53cdf785e7e850c4bc1f166185f3f6be836d48ca1c6a4b2793b17d"
+        },
+        {
+          "path": "transistor/train/good/067.png",
+          "sha256": "a0cb6ff3750cbdb406eb6be1eba4dbd08ace4bd6cd70feed79ad5ce0aed1da6c"
+        },
+        {
+          "path": "transistor/train/good/068.png",
+          "sha256": "5c1d467eb2f3afa1b2fd660c0495c0d15ace37567a165ed838c71b0cf7528b10"
+        },
+        {
+          "path": "transistor/train/good/069.png",
+          "sha256": "7973f0dcb3e104afa54c92716eea413442370c6991f320ee037f95f02f088fe0"
+        },
+        {
+          "path": "transistor/train/good/070.png",
+          "sha256": "ef4f1a50b8743baf142fdc9dea74faa2ea990fd844c352388f03a306505844ec"
+        },
+        {
+          "path": "transistor/train/good/071.png",
+          "sha256": "d8062a72ac53ff3659214923fe3be390134986d319206ce5f1ffde49e2dbb9de"
+        },
+        {
+          "path": "transistor/train/good/072.png",
+          "sha256": "41f7ecf1b8a4fc630cd98d18d09d47db0c75fe4e1fa170485e5dc5b687cf166c"
+        },
+        {
+          "path": "transistor/train/good/074.png",
+          "sha256": "5fc992a2326971e550f41649d9ce2cb71c633e4a1f4e3510b45e3f43d21eda83"
+        },
+        {
+          "path": "transistor/train/good/076.png",
+          "sha256": "abe21cd027afb805ee97756022cbc74978bde679276d3073c70c19e3bd068736"
+        },
+        {
+          "path": "transistor/train/good/077.png",
+          "sha256": "d1c0e866ee2b648ced40c24e689d9f6bea8f60a8b34b73042a250ac1702193aa"
+        },
+        {
+          "path": "transistor/train/good/079.png",
+          "sha256": "c5c3bf2a078fbd7fbd90316bc64a0b306441d2127e7e42a1770ac8be88b7cb9c"
+        },
+        {
+          "path": "transistor/train/good/080.png",
+          "sha256": "4fc604df887bfb28f1568b943c774d00472c3624cc3d3f13bf027e9b38d46013"
+        },
+        {
+          "path": "transistor/train/good/081.png",
+          "sha256": "2c109bc0127ff37bfeb32e1444b9d681ef38165e5cea720456cf8fbebaf342d6"
+        },
+        {
+          "path": "transistor/train/good/082.png",
+          "sha256": "420842897df54365a5d74560644ee12bf4c112d9e640336ba12612c40a97022c"
+        },
+        {
+          "path": "transistor/train/good/083.png",
+          "sha256": "227f4ca5918a7052ce1d5f1ea1c756fc149500431e72503e90a9b65dd71d8393"
+        },
+        {
+          "path": "transistor/train/good/084.png",
+          "sha256": "ba9f34a85ddfe61520de05508d5398c60938fb4664e47db6da0c0aab749e39fc"
+        },
+        {
+          "path": "transistor/train/good/085.png",
+          "sha256": "5e3fa57517fa1742fabef8e8e5d0d89987fab3f74226b79172b6a304262ef7dd"
+        },
+        {
+          "path": "transistor/train/good/086.png",
+          "sha256": "53d8d1e59ca17d528c364883e075297a36a9ab033939d5889fbc436641cb37d8"
+        },
+        {
+          "path": "transistor/train/good/088.png",
+          "sha256": "45bb2abdba66c26618e1d855642bc6c2202f674657ec67ab76c472fbf193627a"
+        },
+        {
+          "path": "transistor/train/good/089.png",
+          "sha256": "72f608a0afe6778d6f39b2e01f741df91759a6e033bf12e5244d8d48ef73314a"
+        },
+        {
+          "path": "transistor/train/good/090.png",
+          "sha256": "ed5ac64e663ffc1d6f454b5927af5776fd01069222373397b30042650d003bfb"
+        },
+        {
+          "path": "transistor/train/good/091.png",
+          "sha256": "fa5c87edc8f147daf287fffc5401e17fc8ef7f1f73dfda57a59b0bed3b22d5b3"
+        },
+        {
+          "path": "transistor/train/good/092.png",
+          "sha256": "38ba314cf77887c0fb35b4ea0efd9b3d8da1065474b33053bc652e787623e587"
+        },
+        {
+          "path": "transistor/train/good/094.png",
+          "sha256": "0d201f7c359f30806e7dd9a77e3b14151dda1d28df2fc1f6af1175e7a9d98d9a"
+        },
+        {
+          "path": "transistor/train/good/096.png",
+          "sha256": "d9849ddeb3b1a21f5bdb0c5ec1fd78cd6182ec0aeeb16d5c7cc1e65dd6ebc822"
+        },
+        {
+          "path": "transistor/train/good/097.png",
+          "sha256": "79d10b1408faa004c117985eae505f034770d091354c5b4c41dfd028f3b30ed9"
+        },
+        {
+          "path": "transistor/train/good/098.png",
+          "sha256": "84efd9154364b6ed32c872e1bd45ccf552088806b8e711368e5204c1a1da4f7e"
+        },
+        {
+          "path": "transistor/train/good/099.png",
+          "sha256": "ba64ad5fec07d13050448e5436439e5255c9f576b1e150ca46143449c895eadf"
+        },
+        {
+          "path": "transistor/train/good/100.png",
+          "sha256": "83fd2f99c66544bc39c1ffdf51c3d48ca76c6a50479756861a3735d5c340f728"
+        },
+        {
+          "path": "transistor/train/good/102.png",
+          "sha256": "b1fbc38ac9eb41f0690e7db06bfa02fde47f4fb13dd376a19a47457542780c0b"
+        },
+        {
+          "path": "transistor/train/good/103.png",
+          "sha256": "adf78ab5d30cf03c5b97d2c78a2bd0c40aab1ea6a2ad0c125b49b579af38125f"
+        },
+        {
+          "path": "transistor/train/good/106.png",
+          "sha256": "ce453c56626ffc8083c40a7f4ca8572c5adff9d5752fbb906a8b8ea683aaad7f"
+        },
+        {
+          "path": "transistor/train/good/107.png",
+          "sha256": "b107e14d5c80bc40dbe241c907329dac5f76cf93f1c5105ef6c53917206d64f9"
+        },
+        {
+          "path": "transistor/train/good/108.png",
+          "sha256": "ce65e2dc7e77f1ea89ca816a89f27866bb2224a098da137d41f27e5517b9cadc"
+        },
+        {
+          "path": "transistor/train/good/109.png",
+          "sha256": "06874a54f4a5805b5baf6ecfae96c8efb74a9ef773450184c3013dc7481ccbc2"
+        },
+        {
+          "path": "transistor/train/good/110.png",
+          "sha256": "71ad1e472a3793f3e3023410f76a5921b6f1e7fd597b542d49016d6fa0530a9a"
+        },
+        {
+          "path": "transistor/train/good/111.png",
+          "sha256": "129368d558178f1c43d174ca329456bc4ce26e1582d6eeec842027e78d353145"
+        },
+        {
+          "path": "transistor/train/good/112.png",
+          "sha256": "93c0bfdc0e47f15e9de45d59c2583941aa0e8db200466c3a262a50176a0ce4a5"
+        },
+        {
+          "path": "transistor/train/good/114.png",
+          "sha256": "66c052c919839b0f3330baf083647dca3510dea9e77b90c556d4b9f240bb59d7"
+        },
+        {
+          "path": "transistor/train/good/116.png",
+          "sha256": "1129f4eb678e8b36f92e744771117e68d691cbdd1347e848426e02d53425cc3b"
+        },
+        {
+          "path": "transistor/train/good/118.png",
+          "sha256": "9de62bc238e322bf26fb8dd5b8551cc181c0b73bd9e9f3caa2bd1fedbb1a45df"
+        },
+        {
+          "path": "transistor/train/good/119.png",
+          "sha256": "d29c8ab5c4dd69b119084dbde75060686e38cbb6dd389871793e9734dfecf48c"
+        },
+        {
+          "path": "transistor/train/good/120.png",
+          "sha256": "9de14e20e2eb0aef2021657d68b3924024f8a4b5dbb77ae0844338c9594d6041"
+        },
+        {
+          "path": "transistor/train/good/121.png",
+          "sha256": "d896ee9c87c43455a53a18a6826e775a3aa4ed512add60d65fa0079a51ef6cb7"
+        },
+        {
+          "path": "transistor/train/good/123.png",
+          "sha256": "654c18e7e92c26121fdd636bb3643af1b223ac1ecc2afce34cb719de79788ec5"
+        },
+        {
+          "path": "transistor/train/good/124.png",
+          "sha256": "456deafbdeca8e82ad2fc55df220180c6651af6cd948bde3daac9f9270287137"
+        },
+        {
+          "path": "transistor/train/good/125.png",
+          "sha256": "cc0b91813d6b44285415c49131763ec74c2502a3d634ec0333c3dae5ee84049b"
+        },
+        {
+          "path": "transistor/train/good/126.png",
+          "sha256": "501741ba6a78d60af427b1c97e8488f79277ce848c65fdb70ed677d3a2adfc71"
+        },
+        {
+          "path": "transistor/train/good/129.png",
+          "sha256": "a7316a94ca79c70eb83ac15cbe9fb26e2822c3450cd6a9e7e3eed9584b508fdf"
+        },
+        {
+          "path": "transistor/train/good/130.png",
+          "sha256": "2bad72d5f2e0a905253c485fa29b0480cbe84b0ead1de475970268c5651aa662"
+        },
+        {
+          "path": "transistor/train/good/131.png",
+          "sha256": "6a95176c72e9429dd247331e78791e9b45da2895c9a69481963d62180acc7315"
+        },
+        {
+          "path": "transistor/train/good/132.png",
+          "sha256": "5cde8aca0497505f53a95db7bfbbd535b2e322d9967f6a1ed3916c9bf7b7f3a2"
+        },
+        {
+          "path": "transistor/train/good/133.png",
+          "sha256": "e2012015a6a1d9afcabf2593f7d27e345d92ecdb356e47cf00b420526a579f23"
+        },
+        {
+          "path": "transistor/train/good/135.png",
+          "sha256": "de419128f1b4b455ebb52e76bb541539ef6e23e66111270897217cb905feff0c"
+        },
+        {
+          "path": "transistor/train/good/136.png",
+          "sha256": "a751f6eea899e25fd78168d73f37caefb8b21b0bdc566cd0e2faefe631771f9a"
+        },
+        {
+          "path": "transistor/train/good/137.png",
+          "sha256": "d869f6e1318ae9d32a4eeae1fd261d128efa2c09a94ec1295202b366eb25e5ad"
+        },
+        {
+          "path": "transistor/train/good/138.png",
+          "sha256": "171ea2a3edee40070c0b35056b854034c1c48de23f82ff7b0ced1faa30f12366"
+        },
+        {
+          "path": "transistor/train/good/139.png",
+          "sha256": "ccb657f4de6c0e50067e828d5f10de6add50ebfc596b236231f0b7dbbd78c36e"
+        },
+        {
+          "path": "transistor/train/good/140.png",
+          "sha256": "5da2ec7cec8a10635dd7d1386e1c5d5a210374c4855f460921dcb40858959140"
+        },
+        {
+          "path": "transistor/train/good/141.png",
+          "sha256": "e7d6a612a43d49e8b1c2d9057ee34bbd3cae823530fc697c78ffd9f6d204171e"
+        },
+        {
+          "path": "transistor/train/good/143.png",
+          "sha256": "93ce4d426b31b2514428d8795b8140a925fda36606443e214d4224be5d8adffa"
+        },
+        {
+          "path": "transistor/train/good/145.png",
+          "sha256": "751c35982870ee5adce2a69c72ccd5fa4fd27c574c18e119915b00eb16753167"
+        },
+        {
+          "path": "transistor/train/good/146.png",
+          "sha256": "19e9fddafc42dc8317a927536f430b0bd9623c7fc11acaca955abe4ddec61399"
+        },
+        {
+          "path": "transistor/train/good/148.png",
+          "sha256": "81120e6179733790e48cdc0982322360112a34ce982576ff44d4e72771815918"
+        },
+        {
+          "path": "transistor/train/good/150.png",
+          "sha256": "fdfea457e9af8a9f052d28581d78d1e73e539c65106f31bed389116694d94c82"
+        },
+        {
+          "path": "transistor/train/good/151.png",
+          "sha256": "45b726003dbe39f15fd3f75440e17e7940dfce23bc0df6ba0492562708f0cfa1"
+        },
+        {
+          "path": "transistor/train/good/152.png",
+          "sha256": "8e6fa6650a5f6bdf09bc6e3b5b0b983ce88b8737282e799c0d83da732979399f"
+        },
+        {
+          "path": "transistor/train/good/153.png",
+          "sha256": "cfb13c573d66a5640b07ec93af3d2918bbf679845ff54100401ea89408a814ed"
+        },
+        {
+          "path": "transistor/train/good/154.png",
+          "sha256": "e45e5e999cdacfc308dd1e1011f367d4b3c814e3fe53ef3090a6a331ac502ade"
+        },
+        {
+          "path": "transistor/train/good/155.png",
+          "sha256": "430d2d3d2cff5e343125e15613c2b072bd76567ba0da84d83280c67291fc2a86"
+        },
+        {
+          "path": "transistor/train/good/156.png",
+          "sha256": "ae76afcc2d2c5c5bababd7ba5f4d45456ddad81b7ae564de157551155b5f349c"
+        },
+        {
+          "path": "transistor/train/good/157.png",
+          "sha256": "e6c06ba3d037875a511b90282e98a53a9684c2d8b72b50b5c231b0f87351e49d"
+        },
+        {
+          "path": "transistor/train/good/158.png",
+          "sha256": "0d4dd902876393546bc0f5922c0990bbe97206d3842d1bb9b6ce2147e79daad7"
+        },
+        {
+          "path": "transistor/train/good/159.png",
+          "sha256": "8a4ec7b26fe2056547dce35528f59c7e636855825776d17152f168201979e55e"
+        },
+        {
+          "path": "transistor/train/good/162.png",
+          "sha256": "274ded3591d333879ffbfcf468162cf55b4614e6c93782f89a231657fa55f998"
+        },
+        {
+          "path": "transistor/train/good/166.png",
+          "sha256": "10c00c4f8ec29ba229c249fa6a43371760af3d40eb47d75f72ceb5cb6ced6ba4"
+        },
+        {
+          "path": "transistor/train/good/167.png",
+          "sha256": "190f3f3a100b0b977ce379380e4b0ab303408510fe3393cd892c73847e84cbf7"
+        },
+        {
+          "path": "transistor/train/good/170.png",
+          "sha256": "b1f616911295cce89f0b3e16acc8ef137186c99ac78f878964e36bd0a3eb3ebd"
+        },
+        {
+          "path": "transistor/train/good/171.png",
+          "sha256": "a9fe5d9f48d7d7241123ef40dc1f595d0f097eb8638ddb2421550e59bcf0d054"
+        },
+        {
+          "path": "transistor/train/good/172.png",
+          "sha256": "d0e3d5f2ced219044da7a502e0ec81e836935584f15e4e1b8f3dcc976b01a0bf"
+        },
+        {
+          "path": "transistor/train/good/174.png",
+          "sha256": "cf3b8dd3ed0829186633ebd20f1c5241dfcbd4ac5fa6a884e10e4ecbd13c7aeb"
+        },
+        {
+          "path": "transistor/train/good/178.png",
+          "sha256": "836012f0879840e3197f8a6282d41e09603b8362b24b9a5d0e23857bbc7f2a7a"
+        },
+        {
+          "path": "transistor/train/good/179.png",
+          "sha256": "563e9a905e9a5276b48b96cba6b646c1cf83badcc9526a36458572bad93a7acc"
+        },
+        {
+          "path": "transistor/train/good/180.png",
+          "sha256": "5ac7a19404691ed8d705b2efe6185c40d2ed3e90128b0bd15512f42c39760e6a"
+        },
+        {
+          "path": "transistor/train/good/182.png",
+          "sha256": "bc156c3a920383afe38def0eb92f380afddd661d5c7c823874a89166714e57b3"
+        },
+        {
+          "path": "transistor/train/good/183.png",
+          "sha256": "8ea6f31b6f9d564f5044af2225c067a2d370e9e1bd5acc6c4f2601b028040af2"
+        },
+        {
+          "path": "transistor/train/good/184.png",
+          "sha256": "e93bece4ed6e2834e931179b952f7cd21237b5c0de4fc1ce3fababb5c740d1cd"
+        },
+        {
+          "path": "transistor/train/good/185.png",
+          "sha256": "dc9608136cdbcd36d76ac6a17cd5280e47eb348d56cc0fde1ec3045c2fad3aba"
+        },
+        {
+          "path": "transistor/train/good/187.png",
+          "sha256": "61ff13c3e48ad289b1f3105f972f70f90475b403ce1d5b238e456e914350f1d3"
+        },
+        {
+          "path": "transistor/train/good/188.png",
+          "sha256": "bb5ac1cb15e123a8a429cdf5b4a2ca8fa090ff8124eb290bcab9af9dc36ae9eb"
+        },
+        {
+          "path": "transistor/train/good/190.png",
+          "sha256": "c63ebd48e905ab47fb8a26c1304b9dbfd33b024646494fc77a6a3cce6ff40d6b"
+        },
+        {
+          "path": "transistor/train/good/191.png",
+          "sha256": "1e13f81d9875be130ea3d6d830164b6769494e3355869ae350ce48dbf45354ab"
+        },
+        {
+          "path": "transistor/train/good/192.png",
+          "sha256": "2ca4081c4ab6b7f2b76987da97468e94c95136281ea87ff095022aab04b3f753"
+        },
+        {
+          "path": "transistor/train/good/193.png",
+          "sha256": "9821b727791a1b44d3467b11302001cf507f2b5acf6c10c6c5e665138d10ea28"
+        },
+        {
+          "path": "transistor/train/good/194.png",
+          "sha256": "2b7b4d3cafb4857a5b0fd45972932da953e5a6d54f33ee1eaaee2f1d1148a600"
+        },
+        {
+          "path": "transistor/train/good/195.png",
+          "sha256": "b064fd9d3009218888206f218372e9b723af8c4337a0e97998dda6d6c76b5c04"
+        },
+        {
+          "path": "transistor/train/good/196.png",
+          "sha256": "235cd1978ac0eb3f9e4bd116ef0d177414733c5a7f1e012bd88a2e3002eb9d8d"
+        },
+        {
+          "path": "transistor/train/good/197.png",
+          "sha256": "65d7266321e20c063afa6bb4e17213d5ec24e3f82a973005e7c25560c7b10ebf"
+        },
+        {
+          "path": "transistor/train/good/198.png",
+          "sha256": "623b7a691225bf80aa53d87059a9059ea61295c08bba26fe6317e20c61575732"
+        },
+        {
+          "path": "transistor/train/good/199.png",
+          "sha256": "2f6ac0043a73115c73ce9a1575a3d7e4a50ff7ea387e32f0313a901ade818a45"
+        },
+        {
+          "path": "transistor/train/good/202.png",
+          "sha256": "7cf3327068cac81c5517c343eb54b808296bdb9b8323283c6d1fcc512b80b7b9"
+        },
+        {
+          "path": "transistor/train/good/203.png",
+          "sha256": "8cd15aeb34ef0204333c29356132aeb33e36cf4a8f9c038aea93914bb3f3e533"
+        },
+        {
+          "path": "transistor/train/good/204.png",
+          "sha256": "fb96f19554029a5d5b9ab4e926533fc561b1ef030c7e73ae2ae0eeb87517bd75"
+        },
+        {
+          "path": "transistor/train/good/206.png",
+          "sha256": "56b2db665228613a3c4c738ed7935d18ba008d2c7f18ee17433cf679f13860fe"
+        },
+        {
+          "path": "transistor/train/good/207.png",
+          "sha256": "0882b06411b0d23d19b7fe10478deb0854dc7c7d8b96df7da2796582fd531c2c"
+        },
+        {
+          "path": "transistor/train/good/208.png",
+          "sha256": "9cbf3efa09e373b8bf1ef6ff976989e40fad53d1b037b9ffe66f0f85c94f1d95"
+        },
+        {
+          "path": "transistor/train/good/211.png",
+          "sha256": "8532f4bb020c8e448dc0515ae2491905bc988a8d390ac2249538891cb79ee3e8"
+        },
+        {
+          "path": "transistor/train/good/212.png",
+          "sha256": "d9547ed779de5e3a22cce9f4a9ca05ea26f055f063d50eebe287f42d42c6a777"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "2dcd3f1d408759fa282e9db795394bb7e0cf1eb0c08309d9c8766642cb2f2fdc",
+    "path": "outputs/patchcore/features/933be95ea341ea53431977604bdc07b60f363df6fb808286896ddec79420d26c.npy",
+    "shape": [
+      151,
+      1024,
+      384
+    ],
+    "bytes": 237502592,
+    "resources": {
+      "seconds": 0.8917999000004784,
+      "cpu_initial_rss_bytes": 1566863360,
+      "cpu_peak_rss_bytes": 1841946624,
+      "cpu_peak_increment_bytes": 275083264,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 241983488,
+      "peak_gpu_reserved_bytes": 2726297600
+    },
+    "cache_hit": true
+  },
+  "original_extraction_seconds": 0.8917999000004784,
+  "metrics": {},
+  "development": {},
+  "wall_seconds": 2.5422089000021515
+}

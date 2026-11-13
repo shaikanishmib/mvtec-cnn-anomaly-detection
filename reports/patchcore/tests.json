@@ -1,0 +1,13 @@
+{
+  "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp=outputs/patchcore/pytest-final-v2",
+  "passed": 85,
+  "failed": 0,
+  "skipped": 0,
+  "seconds": 71.11,
+  "earlier_full_pass": {"passed": 85, "seconds": 81.11},
+  "initial_checks": {"passed": 7, "seconds": 13.03, "expanded_passed": 9, "expanded_seconds": 12.04},
+  "fixture_setup_history": "First initial run had 6 passing tests and one missing temporary-parent setup error; parent creation resolved it. No failed model fitting/evaluation trial.",
+  "pip_check": "No broken requirements found; psutil 7.2.2 already matched both existing lock files and is now a direct dependency",
+  "scope": "Full previous-model preservation, CUDA, real data, PatchCore shapes/alignment/determinism/coreset/NN/maps/calibration/category/checkpoints/publication/metric reconciliation",
+  "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1"
+}

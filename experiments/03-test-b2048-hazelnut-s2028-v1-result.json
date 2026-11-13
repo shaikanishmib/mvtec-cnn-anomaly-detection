@@ -1,0 +1,1512 @@
+{
+  "experiment_id": "03-test-b2048-hazelnut-s2028-v1-result",
+  "model_family": "PatchCoreVariant",
+  "categories": [
+    "hazelnut"
+  ],
+  "hypothesis": "Frozen normal patch-memory confirmation; no further selection",
+  "preprocessing": {
+    "resolution": 256,
+    "native_map": "bilinear, align_corners=False"
+  },
+  "hyperparameters": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2028,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-12T05:22:22.786578+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "training_experiment": "03-final-b2048-hazelnut-s2028-v1",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "code": {
+      "source_sha256": {
+        "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "src/anomaly_detection/patchcore_research.py": "180fee8ee63eb8833323e6fdd5143ba47c7f0d090bc5874f16b6dca6ec361138",
+        "src/anomaly_detection/patchcore_runs.py": "7680e9828172e3671168a11bf8da9f86748dac94a2020c13680a5d9dbad8aa91",
+        "src/anomaly_detection/patchcore_evaluation.py": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+        "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "git_sha": "b3c0c0594e063448f0dcf20581f332c7ce87d654"
+    },
+    "evaluation_source_sha256": "5a6105858e81836ffa14f249a5811edeeed457426efd966a1e56a116b0c4e1f4",
+    "pixel_metric_source_sha256": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294"
+  },
+  "metrics": {
+    "experiment_id": "03-test-b2048-hazelnut-s2028-v1",
+    "category": "hazelnut",
+    "seed": 2028,
+    "training_experiment": "03-final-b2048-hazelnut-s2028-v1",
+    "checkpoint_sha256": "9352ebdd1ee9842b9976363caa6792297eae24e7dce64c046b277f86a5deae35",
+    "image_auroc": 1.0,
+    "image_ap": 0.9999999999999998,
+    "recall": 0.9857142857142858,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9928057553956835,
+    "confusion_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        1,
+        69
+      ]
+    ],
+    "tn": 40,
+    "fp": 0,
+    "fn": 1,
+    "tp": 69,
+    "pixel_auroc": 0.9862028349649686,
+    "pixel_ap": 0.5783422839307151,
+    "au_pro": 0.9414420240568493,
+    "positive_pixels": 2462314,
+    "negative_pixels": 112881046,
+    "regions": 136,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        109513250,
+        3367796
+      ],
+      [
+        253693,
+        2208621
+      ]
+    ],
+    "pixel_operating_point": {
+      "precision": 0.3960645339112911,
+      "recall": 0.8969696797402769,
+      "fpr": 0.029834911345523855,
+      "f1": 0.5494949389399895,
+      "tp": 2208621,
+      "fp": 3367796,
+      "tn": 109513250,
+      "fn": 253693
+    },
+    "secondary_image_q99": {
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 0.9714285714285714,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9855072463768115,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          2,
+          68
+        ]
+      ]
+    },
+    "calibration": {
+      "category": "hazelnut",
+      "images": 58,
+      "image_threshold": 2.4857935905456543,
+      "secondary_image_threshold_q99": 2.5503978729248047,
+      "pixel_threshold": 2.269416093826294,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "pixel_calibration_samples": 3801088,
+      "pixel_score_resolution": 256,
+      "calibration_scores": [
+        2.1969761848449707,
+        2.174729347229004,
+        2.083930730819702,
+        2.1458547115325928,
+        2.16656231880188,
+        2.314291477203369,
+        2.2502729892730713,
+        2.3199195861816406,
+        2.2411692142486572,
+        2.2582671642303467,
+        2.1400511264801025,
+        2.1974353790283203,
+        2.2972571849823,
+        2.5129897594451904,
+        2.3779802322387695,
+        2.140590190887451,
+        2.5503978729248047,
+        2.316520929336548,
+        2.169177293777466,
+        2.2253611087799072,
+        2.1493113040924072,
+        2.149378776550293,
+        2.215820550918579,
+        2.3323416709899902,
+        2.205280065536499,
+        2.3687639236450195,
+        2.2580549716949463,
+        2.439624547958374,
+        2.355398416519165,
+        2.1991019248962402,
+        2.126065254211426,
+        2.261472702026367,
+        2.161876916885376,
+        2.243774175643921,
+        2.1579432487487793,
+        2.2466323375701904,
+        2.0851151943206787,
+        2.162381887435913,
+        2.1533145904541016,
+        2.2896339893341064,
+        2.1220178604125977,
+        2.1709818840026855,
+        2.4857935905456543,
+        2.1153154373168945,
+        2.3667027950286865,
+        2.2314512729644775,
+        2.208326578140259,
+        2.228992223739624,
+        2.2753865718841553,
+        2.1952168941497803,
+        2.1020519733428955,
+        2.1715707778930664,
+        2.3600656986236572,
+        2.082151174545288,
+        2.3517141342163086,
+        2.2611496448516846,
+        2.2182457447052,
+        2.1460187435150146
+      ],
+      "image_threshold_bootstrap_95ci": [
+        2.3600656986236572,
+        2.5503978729248047
+      ],
+      "histogram_scale": 1.4430131912231445,
+      "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+      "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+      "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928",
+      "feature_cache": {
+        "identity": {
+          "records": [
+            {
+              "path": "hazelnut/train/good/019.png",
+              "sha256": "f322442e8fa1090958394de84b7779831fef1075d2620e7add58b95ee0ef709b"
+            },
+            {
+              "path": "hazelnut/train/good/033.png",
+              "sha256": "13d073c307a9feb5076a5ac1ae84273db65af44eed438d5b85d9d22a5b313914"
+            },
+            {
+              "path": "hazelnut/train/good/035.png",
+              "sha256": "eb04fc36b4c0ae79618083768bea5ae29576f7668c57e0eb07cfc035a7789888"
+            },
+            {
+              "path": "hazelnut/train/good/041.png",
+              "sha256": "e8f821c1c0b300fb0108360e48397bc79d34eb7104ef3af4fd5e7679a29a949b"
+            },
+            {
+              "path": "hazelnut/train/good/055.png",
+              "sha256": "96399a843e97213e31eda9a5ae1c72b5ed4e06a4b057adb89397e7842c11d0cb"
+            },
+            {
+              "path": "hazelnut/train/good/065.png",
+              "sha256": "772d7a9ddf436911372ca95c01b8a75c57efd449612607f177c1f647f31efcc5"
+            },
+            {
+              "path": "hazelnut/train/good/071.png",
+              "sha256": "6faa9036b613944c7c1d1d0671d9aef2b5afafd50ccc70ea1cc261d87a363651"
+            },
+            {
+              "path": "hazelnut/train/good/075.png",
+              "sha256": "129e725e85dbf92f9770a7734d51fe7945d2a37d6a07050fd3fd08589c1135ff"
+            },
+            {
+              "path": "hazelnut/train/good/079.png",
+              "sha256": "53f6615931fcfa9637e883d7fb016d1b0b3072666af0a4eb98f9f192520a2d8b"
+            },
+            {
+              "path": "hazelnut/train/good/099.png",
+              "sha256": "047606d80b09c5127dfaee903892b36ee3da4f2465ff22944b4f3133f9c0f4ba"
+            },
+            {
+              "path": "hazelnut/train/good/101.png",
+              "sha256": "ad411f96841183267d31cad9f497be6b1ca1db6a689f379104e7cd5c7e571bd3"
+            },
+            {
+              "path": "hazelnut/train/good/103.png",
+              "sha256": "6d0744df9e62a363d8d5a13bc9cab9fe82007e042fa18db2a40c9c28b1165299"
+            },
+            {
+              "path": "hazelnut/train/good/106.png",
+              "sha256": "7c776d93a48e526225620eeabc76b521b7c0065272ef6831a99cf112f42eb9c8"
+            },
+            {
+              "path": "hazelnut/train/good/108.png",
+              "sha256": "b65bd4ba62ae2fb0f872b4c4ca2a619ad1e7db296d8edffb121fad3a70a82b09"
+            },
+            {
+              "path": "hazelnut/train/good/109.png",
+              "sha256": "55bdb24e11a74a7bd64f62559252c1342ba9598d80967b20681c80e2b7445486"
+            },
+            {
+              "path": "hazelnut/train/good/128.png",
+              "sha256": "fc02796b620958e5b1bb5e77292390ca71457d3d661bcc5ed611ca7cb91fdcf3"
+            },
+            {
+              "path": "hazelnut/train/good/131.png",
+              "sha256": "54f6553cf498c74de6584132a90bd49a8b8539c7929117c502a89eec2fb415ad"
+            },
+            {
+              "path": "hazelnut/train/good/138.png",
+              "sha256": "62d7e0375876eded2d1cd735a8f978c97d74c87d7c44d5158569a02fc7e5e0f3"
+            },
+            {
+              "path": "hazelnut/train/good/146.png",
+              "sha256": "4d856dfcd1cbea334edb1a4d65a4035404571b1d96e3004aca1f0e1dcd5042d3"
+            },
+            {
+              "path": "hazelnut/train/good/155.png",
+              "sha256": "ce59ed1870803d605cc65e39323ccd7052d5996321c60a11de62a22e3e52e05c"
+            },
+            {
+              "path": "hazelnut/train/good/160.png",
+              "sha256": "b38a8e53f865a22bc8ce58b4e6ad478bf0eeb54196018fb46e0f26b93cd9f155"
+            },
+            {
+              "path": "hazelnut/train/good/163.png",
+              "sha256": "a8be2ec3ceb4490f8e4e82c9ff5f37cd7b4626254ba32484cb44c665758897eb"
+            },
+            {
+              "path": "hazelnut/train/good/183.png",
+              "sha256": "cf551f0fb8f664bbdb8a0068b7697247654066c435ad2368a27482abab9d9867"
+            },
+            {
+              "path": "hazelnut/train/good/187.png",
+              "sha256": "dbd94869a452ff63e7fefee3bc1a51e7fc544d66d312b34ac8b39d596e3a7a73"
+            },
+            {
+              "path": "hazelnut/train/good/193.png",
+              "sha256": "556029fbdbdcf23a7274fda5ef274722883b910325c5ca415516b3991bf12b1e"
+            },
+            {
+              "path": "hazelnut/train/good/197.png",
+              "sha256": "5b6b17acfe2141d3de61f0b8d90b66804b846fca8688afb59220195285908b72"
+            },
+            {
+              "path": "hazelnut/train/good/214.png",
+              "sha256": "3cbc083efa415eadb0ba83ab3c8f0554061a0ce7f4fbe8502222b1a5d397a60d"
+            },
+            {
+              "path": "hazelnut/train/good/228.png",
+              "sha256": "bb5d400fa2a889a552229504ffa87718880d3480b71b76b6fb0f5cf89d528b0a"
+            },
+            {
+              "path": "hazelnut/train/good/231.png",
+              "sha256": "81942fd4e85421e99d7dcf9474fd22fbef54972f65ae4d61ad9d02135362b703"
+            },
+            {
+              "path": "hazelnut/train/good/240.png",
+              "sha256": "0b10eeb8d33ad82866e025559e73f7c53e0c99a2da836f7336221fa39eb48422"
+            },
+            {
+              "path": "hazelnut/train/good/250.png",
+              "sha256": "c983212116077d8ad75b95a7c77994c13b00491c4f920075f05dcfed009d6881"
+            },
+            {
+              "path": "hazelnut/train/good/266.png",
+              "sha256": "2f68f9c9ad91c391488fb1067681cf989bd8c56d25ccd81fac313361af64bf4b"
+            },
+            {
+              "path": "hazelnut/train/good/267.png",
+              "sha256": "216dafb2c17964776cd419672bd3169c344b5fea5885ff2bff50e68d0622cb67"
+            },
+            {
+              "path": "hazelnut/train/good/269.png",
+              "sha256": "74bee3406e98eacc6aff7c39fb508e221930efb67d59849a5a9cabf38f4e5fc5"
+            },
+            {
+              "path": "hazelnut/train/good/272.png",
+              "sha256": "f2d4d6c3ac57b348e419485c398e1ad7a7ed06e6bf9289bf1323c720c99e815c"
+            },
+            {
+              "path": "hazelnut/train/good/274.png",
+              "sha256": "ed772e669994a3ab13541194ce109d3caef1dafabe8324cf4f336fc3e4e4d3de"
+            },
+            {
+              "path": "hazelnut/train/good/282.png",
+              "sha256": "5a407236c92ada04ba549a22ce02a99a3cc0c3b0df6015ce3d5f92a46a5c2d9a"
+            },
+            {
+              "path": "hazelnut/train/good/293.png",
+              "sha256": "f00ee6ad012d3e05876cef66fa85b92b949f215e05a33e2fc6509e5e0f9d7762"
+            },
+            {
+              "path": "hazelnut/train/good/294.png",
+              "sha256": "fee6d3c489d33266c0bcfa48ddd022c0ed40020a929db7114f82d2e3f44027e9"
+            },
+            {
+              "path": "hazelnut/train/good/297.png",
+              "sha256": "b6f58573e2a69b0da28bf30d058e459a96f3dbdffd833ccd9e04594a76032a38"
+            },
+            {
+              "path": "hazelnut/train/good/304.png",
+              "sha256": "87aa7c51f1c13a81d4c18e36502783c62344768651f12d174affddbd93e01758"
+            },
+            {
+              "path": "hazelnut/train/good/310.png",
+              "sha256": "42491137bf033c03e1cc4d1da8858f16d74545062e2592172211833f6bb8380e"
+            },
+            {
+              "path": "hazelnut/train/good/324.png",
+              "sha256": "2fc801d21334c701ffdfe7617124b9d7ae026ac7e90510a7a90bea56c0345021"
+            },
+            {
+              "path": "hazelnut/train/good/328.png",
+              "sha256": "04f89416fad82426bbb667a429817a0df76b2819b333e8216d5f0452f8174ba3"
+            },
+            {
+              "path": "hazelnut/train/good/333.png",
+              "sha256": "b083cd258eb56e232cb8ede645a3bd81f9ec779ee3593faeb9c6b700d065bdda"
+            },
+            {
+              "path": "hazelnut/train/good/338.png",
+              "sha256": "44cc50597ac1f34e319781dd0d555baa5799afbf282fbe505c72d3d7458310c9"
+            },
+            {
+              "path": "hazelnut/train/good/342.png",
+              "sha256": "6c98da7b4edc36e55f452b48cf73aa649c1397b53c51eaf1ad33b6f605f6e133"
+            },
+            {
+              "path": "hazelnut/train/good/348.png",
+              "sha256": "750f0e745002fcfc8f1e41b1e2a5b9ffe91492f213729e662e34a64c0aef7663"
+            },
+            {
+              "path": "hazelnut/train/good/350.png",
+              "sha256": "1061140de32cb60c1d1190f0f2b43e351eb237efb2bf5b94cdd2abe079f0f4e7"
+            },
+            {
+              "path": "hazelnut/train/good/351.png",
+              "sha256": "fd63af6ef2e46e75f5bbed4afb21017c21403fccb1a23c9bab891752eaec3593"
+            },
+            {
+              "path": "hazelnut/train/good/352.png",
+              "sha256": "9b098a7a7b3b6b7000df51eb760d49a4c0a4b13f9eb6b3b2c3254973485aaf98"
+            },
+            {
+              "path": "hazelnut/train/good/357.png",
+              "sha256": "30d0cb12845dc16e78b324dcea3e00032f58d420073e55dd6ebada9343ad7032"
+            },
+            {
+              "path": "hazelnut/train/good/367.png",
+              "sha256": "9a904b298122154077d553039b47ac42b1b3ae38c7264a372860e84f950c0061"
+            },
+            {
+              "path": "hazelnut/train/good/368.png",
+              "sha256": "43cd2edd44201e252377af844f63f63a5c0b134b954347dc294937c37bf76033"
+            },
+            {
+              "path": "hazelnut/train/good/369.png",
+              "sha256": "45487957cf52643369dc743d85570e60bc610bb2130cc12280bc1d31032b28b2"
+            },
+            {
+              "path": "hazelnut/train/good/375.png",
+              "sha256": "d0f04f843544ad823e37d3f2fc515a79a957ef9807d86c53010a001e58da9f25"
+            },
+            {
+              "path": "hazelnut/train/good/380.png",
+              "sha256": "b2cb8aa1b16effd32710707725d69b7335b62610fe4b2eec0992f02649a8ef2b"
+            },
+            {
+              "path": "hazelnut/train/good/381.png",
+              "sha256": "60de8389ce9e081c74777c767869bda3f0e8bb7fb01538c5aa6a92a1dab894f2"
+            }
+          ],
+          "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+          "layers": [
+            "layer2",
+            "layer3"
+          ],
+          "local_pool": 3,
+          "alignment": "bilinear-align_corners_false",
+          "dtype": "float32"
+        },
+        "sha256": "ab137cdf4883842c709eb5902055e746c1bbe65397460679a4a9f96b2c48c04d",
+        "path": "outputs/patchcore/features/1a38de44bf4ba91ac8b91a86b54d933d7e2d1a30c7920d5b281b69747031823f.npy",
+        "shape": [
+          58,
+          1024,
+          384
+        ],
+        "bytes": 91226240,
+        "resources": {
+          "seconds": 0.47940269999890006,
+          "cpu_initial_rss_bytes": 1596743680,
+          "cpu_peak_rss_bytes": 1715007488,
+          "cpu_peak_increment_bytes": 118263808,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 246177792,
+          "peak_gpu_reserved_bytes": 341835776
+        },
+        "cache_hit": true
+      }
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 7.4697500003821915,
+        "p95_ms": 8.092509998641615
+      },
+      "host_to_device": {
+        "p50_ms": 1.3087999996059807,
+        "p95_ms": 2.5406599994312242
+      },
+      "feature_extraction": {
+        "p50_ms": 11.538549999386305,
+        "p95_ms": 13.16678500152193
+      },
+      "nearest_neighbor": {
+        "p50_ms": 3.427699999519973,
+        "p95_ms": 4.019320001134474
+      },
+      "model": {
+        "p50_ms": 14.980049998484901,
+        "p95_ms": 16.878510000788083
+      },
+      "postprocessing": {
+        "p50_ms": 10.118250000232365,
+        "p95_ms": 11.141285000849166
+      },
+      "end_to_end": {
+        "p50_ms": 33.930749999854015,
+        "p95_ms": 36.87178500167647
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Memory-resident decoded RGB -> native raw-distance CPU map + image score; file decode excluded; model=feature extraction+NN",
+      "power_context_at_end_of_timing": {
+        "windows_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, P5, 420 MHz, 46"
+      },
+      "peak_inference_allocated_bytes": 84222464,
+      "peak_inference_reserved_bytes": 341835776
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9999999999999999,
+          1.0
+        ],
+        "image_ap": [
+          0.9999999999999999,
+          1.0
+        ],
+        "recall": [
+          0.953125,
+          1.0
+        ],
+        "fpr": [
+          0.0,
+          0.0
+        ],
+        "precision": [
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.976,
+          1.0
+        ],
+        "pixel_auroc": [
+          0.982498311087702,
+          0.9902704368594998
+        ],
+        "pixel_ap": [
+          0.5198876202282428,
+          0.6453357179598643
+        ],
+        "au_pro": [
+          0.9202743140608892,
+          0.9600335375737595
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median patch distance); exact raw-distance primary metrics"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.986202727014653,
+      "pixel_ap": 0.5778050263412362,
+      "au_pro": 0.9414418619946174
+    },
+    "training_seconds": 2.84570629999871,
+    "coreset_seconds": 1.4398242999996,
+    "original_extraction_seconds": 1.556379099998594,
+    "feature_cache_hit_during_fit": true,
+    "test_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "hazelnut/test/crack/000.png",
+            "sha256": "e26b54282b6b11286760905ca2880af594561b606dfa0643859d6ee6027cf8c2"
+          },
+          {
+            "path": "hazelnut/test/crack/001.png",
+            "sha256": "3657bc7f6776c1792dce241e76d3bd760bd780b026bf2e4f5c1d80ac102aa487"
+          },
+          {
+            "path": "hazelnut/test/crack/002.png",
+            "sha256": "c4cd667138b269fabe65fa39a6d68a85bfdf49f8a2c77f6f03c883cdc015dad4"
+          },
+          {
+            "path": "hazelnut/test/crack/003.png",
+            "sha256": "f7b977c75b14eb2346a8959a40e544cb06540a046a17753ed94cec36cd38b4b0"
+          },
+          {
+            "path": "hazelnut/test/crack/004.png",
+            "sha256": "15d9b0d004a7a77e6541b5d68c6fd12b45a8b12b43c017e87bd20d4fe0727bbf"
+          },
+          {
+            "path": "hazelnut/test/crack/005.png",
+            "sha256": "3c262e7cbb0b1b81b6459d952353764f76b86e05119f3861c0076fac8f6a158b"
+          },
+          {
+            "path": "hazelnut/test/crack/006.png",
+            "sha256": "d99a752e32e4f0cb208bc1707341aa505a9ad106d61d3745570f8469f401491a"
+          },
+          {
+            "path": "hazelnut/test/crack/007.png",
+            "sha256": "8bb80045842147ab80609cf854df340d158d0db76770b80845e673596cfdeebf"
+          },
+          {
+            "path": "hazelnut/test/crack/008.png",
+            "sha256": "482693e98866b23afed0c2ed3803d2dfa6dfdaf571ba0753558b1eb09ea75975"
+          },
+          {
+            "path": "hazelnut/test/crack/009.png",
+            "sha256": "c30d8b0a924b2859c2283a1b90ffc74f6eb5c76b64e312fe7c45fe5e28548df4"
+          },
+          {
+            "path": "hazelnut/test/crack/010.png",
+            "sha256": "39cadf02608a7a36041a2326c2a2c09dca5b0ccb44a7570bc71b70dee5bfdada"
+          },
+          {
+            "path": "hazelnut/test/crack/011.png",
+            "sha256": "c83d9f85a2c0cfbaa407b41bc667ca56e4c66274f3fc2d503be2e799a12f955e"
+          },
+          {
+            "path": "hazelnut/test/crack/012.png",
+            "sha256": "0523483988a920ff336c3a239381b98bbf7b67afd53d6b5ba3e7aa5b7ca6fd6c"
+          },
+          {
+            "path": "hazelnut/test/crack/013.png",
+            "sha256": "b65ef8c7eb689a6ee1b5dd1453b596369f46e78707d2de5dacc2f5a606ee8da4"
+          },
+          {
+            "path": "hazelnut/test/crack/014.png",
+            "sha256": "8535b7fec53c9777545c67a129d0c453bea664b54c8289d74ae09204b7d31524"
+          },
+          {
+            "path": "hazelnut/test/crack/015.png",
+            "sha256": "92ed91cd6b819634f54ac722e70eb74694be294c8996f75ab46486a3b00f1804"
+          },
+          {
+            "path": "hazelnut/test/crack/016.png",
+            "sha256": "b6b1b6800ed113d8f90ce11156b7c68e1cfef28ad056c7987507bf1575510ef6"
+          },
+          {
+            "path": "hazelnut/test/crack/017.png",
+            "sha256": "44793a32ecfdc2d92a644ccf3ef9b63cc7233882e5b592fd66dfeacc969ea078"
+          },
+          {
+            "path": "hazelnut/test/cut/000.png",
+            "sha256": "901bf3b3ddef6e7d3592b00cfd0f5c512b745ef61e7837ed4e283da2f99c1b8a"
+          },
+          {
+            "path": "hazelnut/test/cut/001.png",
+            "sha256": "f287622343bc86f5a02a683c570489324954f2a8378831dc2db7f4f9cd21370a"
+          },
+          {
+            "path": "hazelnut/test/cut/002.png",
+            "sha256": "9df68a470e5a216e39959bcd4b801ddf52bf16abbcb689dde896c1d4931dd6d7"
+          },
+          {
+            "path": "hazelnut/test/cut/003.png",
+            "sha256": "84301659e7f9358c3d1f79b5dd3561ddcf4d2c72e99399bb20961ef7ce7e31c2"
+          },
+          {
+            "path": "hazelnut/test/cut/004.png",
+            "sha256": "17ce5e1567a61b4a64211d3b7177e9327ed6b15911b680fea67970c342088ea6"
+          },
+          {
+            "path": "hazelnut/test/cut/005.png",
+            "sha256": "e688f79a31cb4ca616dc6bf4306d00f8e80bff8be198d6d6799999806f562579"
+          },
+          {
+            "path": "hazelnut/test/cut/006.png",
+            "sha256": "6981dd3f4e7132597fb222badc37d044fbdf341a202227c08465fea8e771ac9a"
+          },
+          {
+            "path": "hazelnut/test/cut/007.png",
+            "sha256": "20eca651c9ade6a083a19363ab2652155780bf90d5d7df0544b82bb91c2239af"
+          },
+          {
+            "path": "hazelnut/test/cut/008.png",
+            "sha256": "0b4b2d8aabff2f4c1f86b23eba0e05b9b1170028ffdb02658348529c9a37bff0"
+          },
+          {
+            "path": "hazelnut/test/cut/009.png",
+            "sha256": "bd80153a630db3ed040a98ce8bd76e033524e0f42cc6cbf556e886bcd2611ab4"
+          },
+          {
+            "path": "hazelnut/test/cut/010.png",
+            "sha256": "545d0da1696010ed9356f530f329788d198ba9c5abc9f0bd0421e5eceef51d63"
+          },
+          {
+            "path": "hazelnut/test/cut/011.png",
+            "sha256": "1037c78b6d9f7b4c13de615984014c87678ee452ab8e7503ffc2934b90c98fdd"
+          },
+          {
+            "path": "hazelnut/test/cut/012.png",
+            "sha256": "cd5d45c2c2a12aa99dac4e084a91fa21948238f660a70578dd28c34f5bb7325c"
+          },
+          {
+            "path": "hazelnut/test/cut/013.png",
+            "sha256": "d559e360bdf07cf62e59a74137eb79b3df601d80ddf9df0658fe96a695dd0ef0"
+          },
+          {
+            "path": "hazelnut/test/cut/014.png",
+            "sha256": "746d815ce8bf70929be5817db9676f1d5f0f060d19aedef85982a04ffb593be5"
+          },
+          {
+            "path": "hazelnut/test/cut/015.png",
+            "sha256": "c5de29e7ab272d7b653df85cbb139574243837e7a8665cb00fc97503cb1dff23"
+          },
+          {
+            "path": "hazelnut/test/cut/016.png",
+            "sha256": "5db56fd188862556d9dd8337e1a563efe1154bef08f63372e1b38cc756ebcfe1"
+          },
+          {
+            "path": "hazelnut/test/good/000.png",
+            "sha256": "32034b75a2dca53cff86c4833e00a25cd65939859820e96ce9b980359cb08955"
+          },
+          {
+            "path": "hazelnut/test/good/001.png",
+            "sha256": "5066bb0a11ad23541c2aab3fd9ee3861726bd9c3f48dd291f916118b09f39973"
+          },
+          {
+            "path": "hazelnut/test/good/002.png",
+            "sha256": "4d3e5e7159a2b3aaa5a90611122efef65f93d521132a7796159e9cd960619ce8"
+          },
+          {
+            "path": "hazelnut/test/good/003.png",
+            "sha256": "a1d0915587523d7d3ed52273c89f5afb2e74bbd3b2b872c08fd4ac6c6741beb0"
+          },
+          {
+            "path": "hazelnut/test/good/004.png",
+            "sha256": "16df20526a2715f8690001f9ef5eb1f615721260a08feadfc1d3bfde42d60e0b"
+          },
+          {
+            "path": "hazelnut/test/good/005.png",
+            "sha256": "79d966e719a6a88b12e3b07c8e339af879e1659dd5fb64c39438355ba787dad7"
+          },
+          {
+            "path": "hazelnut/test/good/006.png",
+            "sha256": "c925291385ea6400a6c13adf3cfd83aa607c9a7fb96c0eb7a48d3d1cf84a1280"
+          },
+          {
+            "path": "hazelnut/test/good/007.png",
+            "sha256": "6573308fcaa3f6a8a0e68d6cff702b5aeb3f0bf83bde1fb53d78b63ff765aea6"
+          },
+          {
+            "path": "hazelnut/test/good/008.png",
+            "sha256": "d2d80825dd99d8f06113fd609048752e228e42f8236a36030914aa3be44f3d89"
+          },
+          {
+            "path": "hazelnut/test/good/009.png",
+            "sha256": "b24311ccbbb97c9affb9c4d2029f44141182d4413589d8bb55d025bbdb0e46a8"
+          },
+          {
+            "path": "hazelnut/test/good/010.png",
+            "sha256": "b7299fd3b5f3791ed98fa5a54a55ee1471b7dd54b56b903a0309246f973c3163"
+          },
+          {
+            "path": "hazelnut/test/good/011.png",
+            "sha256": "1f894dfe85923cb67e2fe1407dded8d1481c25e21f31dba959eee2f22a4669c5"
+          },
+          {
+            "path": "hazelnut/test/good/012.png",
+            "sha256": "cd762b359ee068d9a9f2585a17a879b91f8cc5340c18662606bb5f15f9e8a03c"
+          },
+          {
+            "path": "hazelnut/test/good/013.png",
+            "sha256": "c375c88bedafc858fb65787203feaf6e866cbfce45485a5106b2298383fab1be"
+          },
+          {
+            "path": "hazelnut/test/good/014.png",
+            "sha256": "8290043352683dd73d7b041758dec14cd2243a139a11566a4305a80f42ef6e8f"
+          },
+          {
+            "path": "hazelnut/test/good/015.png",
+            "sha256": "f8f9a873271ec19e4cd81ef26efba8482ba59486b21277f24c88e83f893727f7"
+          },
+          {
+            "path": "hazelnut/test/good/016.png",
+            "sha256": "75d4e637105b57120d4da9e6c990f36c69795a6ca2b55f45b14492b804f871c5"
+          },
+          {
+            "path": "hazelnut/test/good/017.png",
+            "sha256": "a4796df884a02267ae914341524dad5f69ae3df162831c6115c04105e8f4835a"
+          },
+          {
+            "path": "hazelnut/test/good/018.png",
+            "sha256": "d654cba6242727a51e12b09fa95e4d46bf671d2e5eaf63d24781bd1c3e12f8a2"
+          },
+          {
+            "path": "hazelnut/test/good/019.png",
+            "sha256": "227b05a1f8fdb1080b5d98651dfb2272a3c48faba615af33f7622bae6b6821df"
+          },
+          {
+            "path": "hazelnut/test/good/020.png",
+            "sha256": "cc2a9bf85ba8cbc57fc2fffa7799275bceaa45bbbe85862717c0eb2a6af3ebd8"
+          },
+          {
+            "path": "hazelnut/test/good/021.png",
+            "sha256": "360292b312083afae646bfd5b90d529467716a79b2c498867bd61736a84bacd7"
+          },
+          {
+            "path": "hazelnut/test/good/022.png",
+            "sha256": "fb82dc2d7c8acb9ac3bba01a33636d613af983c8323cb957b06cbd57c97d26f5"
+          },
+          {
+            "path": "hazelnut/test/good/023.png",
+            "sha256": "063da7197aaa13d7063263e7f76f955000d1404239d41f0093911caa37ad77ce"
+          },
+          {
+            "path": "hazelnut/test/good/024.png",
+            "sha256": "740633d252f69d5777b74780c7d8bfd9d3902664fb71866ffc9a10fac99043b4"
+          },
+          {
+            "path": "hazelnut/test/good/025.png",
+            "sha256": "553c1783f0f2af3c92c92ca8c661f32d5c4d87fc6a1141bf4b319bcdcdd959a1"
+          },
+          {
+            "path": "hazelnut/test/good/026.png",
+            "sha256": "25323d78e8573815f6e6d0db9f52d098dbf8c008d73765ecb5cd65567a4ef039"
+          },
+          {
+            "path": "hazelnut/test/good/027.png",
+            "sha256": "2ba503049ed3fd2b167baf8800e6a9a6343a64d166e61919017f44700c5a6baa"
+          },
+          {
+            "path": "hazelnut/test/good/028.png",
+            "sha256": "a14d34540fbcaa4fabd992095bf3e6a409599af1ec815d380e0db0b460011797"
+          },
+          {
+            "path": "hazelnut/test/good/029.png",
+            "sha256": "ddf71dee2f4a0ebb089f4cc9f6f8180862ba521ffdcbc106afd2505ac1147778"
+          },
+          {
+            "path": "hazelnut/test/good/030.png",
+            "sha256": "40f7699e11204a0574ff9ab8a89865e25688012efd0132316a8e1266e293eeca"
+          },
+          {
+            "path": "hazelnut/test/good/031.png",
+            "sha256": "55a338a32729460de040ca0a64537c9c3f858ab7ffde5ba9ff3b7feb1ab07a68"
+          },
+          {
+            "path": "hazelnut/test/good/032.png",
+            "sha256": "c67c946d6a9def8c202db17de36e29a953e6f96cf03b9983c28226eacea87c33"
+          },
+          {
+            "path": "hazelnut/test/good/033.png",
+            "sha256": "9c15195c7529c58b15b7837a6754cf31a93b18c57809470ebbf0f5629fe506ed"
+          },
+          {
+            "path": "hazelnut/test/good/034.png",
+            "sha256": "48a9d7013fe4e9173086637a26fad71ca464aee5560643208b80fe7912f5d3ff"
+          },
+          {
+            "path": "hazelnut/test/good/035.png",
+            "sha256": "9c533d00e2a41e2caf1f927a0fc396bf20c0d1a108a54311a5e0e557c4bda996"
+          },
+          {
+            "path": "hazelnut/test/good/036.png",
+            "sha256": "b43f505ce5d9eeb49ad6259fa1612334b821449b7600c11f99dce3528d36397b"
+          },
+          {
+            "path": "hazelnut/test/good/037.png",
+            "sha256": "8e8d0325def289aa068df8d4d7eb5d273eaf09c0b692102e5ca6f7a3c5ec1564"
+          },
+          {
+            "path": "hazelnut/test/good/038.png",
+            "sha256": "5765729be23b87defdf2a5ada95846b4305d16f247745af60e69ddde06f1696b"
+          },
+          {
+            "path": "hazelnut/test/good/039.png",
+            "sha256": "b9f5706a22b7939cba299fbbae211afc8682b754836aeb6ce40bdb28d76c8f22"
+          },
+          {
+            "path": "hazelnut/test/hole/000.png",
+            "sha256": "b9a1a102db263079fec8bc9836f182253dced9ca178957b7e9bef05cba3312c2"
+          },
+          {
+            "path": "hazelnut/test/hole/001.png",
+            "sha256": "c3aa706e84d7b0b894755b106c3b9a04f18c48daa0819cf616ade2c1b969252e"
+          },
+          {
+            "path": "hazelnut/test/hole/002.png",
+            "sha256": "0a5ebcb92c384c3c2c3fa69305603d856c67516a4235d77c66ecea6d7e8a552d"
+          },
+          {
+            "path": "hazelnut/test/hole/003.png",
+            "sha256": "4d241bd420abbc3b39c2df3b4815416390363a52994dd871410246a92ef546b5"
+          },
+          {
+            "path": "hazelnut/test/hole/004.png",
+            "sha256": "a635da4283143f12a0e6b4e8240281b4434241c4045ffad5d89a4479793e0559"
+          },
+          {
+            "path": "hazelnut/test/hole/005.png",
+            "sha256": "0d64b5a8b175531ace4719719436b91686115b84f6b299eeae854db2b00c863f"
+          },
+          {
+            "path": "hazelnut/test/hole/006.png",
+            "sha256": "dfb46612d76c1134bd6481d85afb2e95ab104d9a3f1b9a761ec34f9e454dd10b"
+          },
+          {
+            "path": "hazelnut/test/hole/007.png",
+            "sha256": "23152b06124706ff3eb8cb1fc83d82d16b44ccec373d76c381fcc0b79f4b09cd"
+          },
+          {
+            "path": "hazelnut/test/hole/008.png",
+            "sha256": "933ecda17811db8cb701134dcf8bcfebfcfc8c3f607c7990af3d7d1a81bb1d06"
+          },
+          {
+            "path": "hazelnut/test/hole/009.png",
+            "sha256": "2d9d8165044fb8c2b3ba9cbe7f5abfda5794ad9bae517610afb419f09f530477"
+          },
+          {
+            "path": "hazelnut/test/hole/010.png",
+            "sha256": "b0db81b6c3b05ca4e62383b2a827d35aa488a187a563828a56ea68778f64f35f"
+          },
+          {
+            "path": "hazelnut/test/hole/011.png",
+            "sha256": "cb0185418d152ea6626d41039ad5c78714dcb9e68a2da3726cbac239ebd8029a"
+          },
+          {
+            "path": "hazelnut/test/hole/012.png",
+            "sha256": "0d98b4a5ec6124cbe3c1625d1c072e8e876f9ab1e8fa1fc9b3370ad6f3384f84"
+          },
+          {
+            "path": "hazelnut/test/hole/013.png",
+            "sha256": "1c65854d6ee8dc848e7efbc9c0dae9ff4a98b46875d38e6c589c3e1ac7897e59"
+          },
+          {
+            "path": "hazelnut/test/hole/014.png",
+            "sha256": "15ee1d4ff9a8b09534ddaf53c85272f06352e22f2bbf96c532073da9acb96be0"
+          },
+          {
+            "path": "hazelnut/test/hole/015.png",
+            "sha256": "e696b26ee88718c84d967e98c53684f8056c6241997d931b1bb614a83b7fcac5"
+          },
+          {
+            "path": "hazelnut/test/hole/016.png",
+            "sha256": "dd9c54842b3e519a6c1e629ac34fdbb3ffe4a3e4016f41cc9d2187f785758500"
+          },
+          {
+            "path": "hazelnut/test/hole/017.png",
+            "sha256": "2d41679785fe5b96cb59eeab6ddae326896fa6cd39f169063e3c62c905c0de2c"
+          },
+          {
+            "path": "hazelnut/test/print/000.png",
+            "sha256": "63245ac91c1f83c97e081bbcfde5bb9751b008a994c201d9f18dcd6db3552c87"
+          },
+          {
+            "path": "hazelnut/test/print/001.png",
+            "sha256": "c49146f7142420c920735df5b4231a8cac3dc82393769ea9017360ead5d2804a"
+          },
+          {
+            "path": "hazelnut/test/print/002.png",
+            "sha256": "fbc640ee5beb6c36fb3097f059c3033838025b96c5924eaebbb3ef899cb27c94"
+          },
+          {
+            "path": "hazelnut/test/print/003.png",
+            "sha256": "be6e4cbb2d5168627fd643c1d7c5e5901b3906178ff3999e9b719f350d41661c"
+          },
+          {
+            "path": "hazelnut/test/print/004.png",
+            "sha256": "362da9e7e778f0d495caff2e1c4f9f26db50ae91f9a1694f00035e2494c57a51"
+          },
+          {
+            "path": "hazelnut/test/print/005.png",
+            "sha256": "e51fb3537a5c534276cc7ad6e76f67320ec7704c0a1e2ea9d468e3276cf727d1"
+          },
+          {
+            "path": "hazelnut/test/print/006.png",
+            "sha256": "70f237247205aa6d1e9078d0cd7cd80edbfaf444e7140dc41152b50ee040a5e2"
+          },
+          {
+            "path": "hazelnut/test/print/007.png",
+            "sha256": "06b9863b7c08161e8a90a7f33c4b42557ae37976b9498ff179a296247559e61c"
+          },
+          {
+            "path": "hazelnut/test/print/008.png",
+            "sha256": "d857c8ec69e16b6cf78ea2a337af2830ef3b34d85f205a43ded32b318b942e30"
+          },
+          {
+            "path": "hazelnut/test/print/009.png",
+            "sha256": "63f127c32781ab7e0b7ddea58e2e6a379bc086d40bd8f7d0437dc11ea95c578e"
+          },
+          {
+            "path": "hazelnut/test/print/010.png",
+            "sha256": "8ea4b699d7ebf6be3fcf48179c6b422c136e1dd1f7cc84960c5355bb98a6d1cd"
+          },
+          {
+            "path": "hazelnut/test/print/011.png",
+            "sha256": "0d619f50ac313bccf29aafb9b43a7c6ed188403193611742705aeed7887bd6c0"
+          },
+          {
+            "path": "hazelnut/test/print/012.png",
+            "sha256": "3a8fdf5d712e7c5621946292e16e39074e79128b75e135b3fb4478ae24ac289f"
+          },
+          {
+            "path": "hazelnut/test/print/013.png",
+            "sha256": "6a5092f0c3731906207f714b981981eec63603c46c982e426ea725d697344fe4"
+          },
+          {
+            "path": "hazelnut/test/print/014.png",
+            "sha256": "e039ec6e3d173af70c280f12cc72946aa37077d6235d03a71ccf143830935d51"
+          },
+          {
+            "path": "hazelnut/test/print/015.png",
+            "sha256": "9ebfb599870e807051d2e30d9077acc164410bcd4c37ef8053c0795c366ed75c"
+          },
+          {
+            "path": "hazelnut/test/print/016.png",
+            "sha256": "28ab7f2661418f50be7788742993cae18a65d17548ee8699decd47fe814a9835"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "d8024815e793f90e20785111a1c07668fe68df6c3f745b048f97f2747d5df544",
+      "path": "outputs/patchcore/features/ff4caeae183425c996ca868a5938d02c90c184e8442f86f1563222aa45a959fe.npy",
+      "shape": [
+        110,
+        1024,
+        384
+      ],
+      "bytes": 173015168,
+      "resources": {
+        "seconds": 0.4713939999965078,
+        "cpu_initial_rss_bytes": 1611980800,
+        "cpu_peak_rss_bytes": 1792229376,
+        "cpu_peak_increment_bytes": 180248576,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    },
+    "cpu_peak_rss_bytes": 3694600192,
+    "bank_vector_bytes": 3145728,
+    "training_peak_allocated_bytes": 1234194944,
+    "checkpoint_bytes": 3198733,
+    "parameters": 2782784,
+    "evaluation_seconds": 92.69147429999794,
+    "per_defect": [
+      {
+        "category": "hazelnut",
+        "seed": 2028,
+        "defect": "crack",
+        "defective_images": 18,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            0,
+            18
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2028,
+        "defect": "cut",
+        "defective_images": 17,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 0.9411764705882353,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 0.9696969696969697,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            1,
+            16
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2028,
+        "defect": "hole",
+        "defective_images": 18,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            0,
+            18
+          ]
+        ]
+      },
+      {
+        "category": "hazelnut",
+        "seed": 2028,
+        "defect": "print",
+        "defective_images": 17,
+        "auroc": 1.0,
+        "ap": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      }
+    ],
+    "local_maps": "outputs/patchcore/03-test-b2048-hazelnut-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "0cfb1f1c87a9b72172df6ce9fdcdbf12e89275ddd42cbd7e04e3c8f80ccb0dd6",
+    "freeze_sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1",
+    "image_rows": 110,
+    "evaluated_at_utc": "2026-11-12T19:39:08.628583+00:00"
+  },
+  "calibration": {
+    "category": "hazelnut",
+    "images": 58,
+    "image_threshold": 2.4857935905456543,
+    "secondary_image_threshold_q99": 2.5503978729248047,
+    "pixel_threshold": 2.269416093826294,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "pixel_calibration_samples": 3801088,
+    "pixel_score_resolution": 256,
+    "calibration_scores": [
+      2.1969761848449707,
+      2.174729347229004,
+      2.083930730819702,
+      2.1458547115325928,
+      2.16656231880188,
+      2.314291477203369,
+      2.2502729892730713,
+      2.3199195861816406,
+      2.2411692142486572,
+      2.2582671642303467,
+      2.1400511264801025,
+      2.1974353790283203,
+      2.2972571849823,
+      2.5129897594451904,
+      2.3779802322387695,
+      2.140590190887451,
+      2.5503978729248047,
+      2.316520929336548,
+      2.169177293777466,
+      2.2253611087799072,
+      2.1493113040924072,
+      2.149378776550293,
+      2.215820550918579,
+      2.3323416709899902,
+      2.205280065536499,
+      2.3687639236450195,
+      2.2580549716949463,
+      2.439624547958374,
+      2.355398416519165,
+      2.1991019248962402,
+      2.126065254211426,
+      2.261472702026367,
+      2.161876916885376,
+      2.243774175643921,
+      2.1579432487487793,
+      2.2466323375701904,
+      2.0851151943206787,
+      2.162381887435913,
+      2.1533145904541016,
+      2.2896339893341064,
+      2.1220178604125977,
+      2.1709818840026855,
+      2.4857935905456543,
+      2.1153154373168945,
+      2.3667027950286865,
+      2.2314512729644775,
+      2.208326578140259,
+      2.228992223739624,
+      2.2753865718841553,
+      2.1952168941497803,
+      2.1020519733428955,
+      2.1715707778930664,
+      2.3600656986236572,
+      2.082151174545288,
+      2.3517141342163086,
+      2.2611496448516846,
+      2.2182457447052,
+      2.1460187435150146
+    ],
+    "image_threshold_bootstrap_95ci": [
+      2.3600656986236572,
+      2.5503978729248047
+    ],
+    "histogram_scale": 1.4430131912231445,
+    "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+    "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+    "source_paths_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928",
+    "feature_cache": {
+      "identity": {
+        "records": [
+          {
+            "path": "hazelnut/train/good/019.png",
+            "sha256": "f322442e8fa1090958394de84b7779831fef1075d2620e7add58b95ee0ef709b"
+          },
+          {
+            "path": "hazelnut/train/good/033.png",
+            "sha256": "13d073c307a9feb5076a5ac1ae84273db65af44eed438d5b85d9d22a5b313914"
+          },
+          {
+            "path": "hazelnut/train/good/035.png",
+            "sha256": "eb04fc36b4c0ae79618083768bea5ae29576f7668c57e0eb07cfc035a7789888"
+          },
+          {
+            "path": "hazelnut/train/good/041.png",
+            "sha256": "e8f821c1c0b300fb0108360e48397bc79d34eb7104ef3af4fd5e7679a29a949b"
+          },
+          {
+            "path": "hazelnut/train/good/055.png",
+            "sha256": "96399a843e97213e31eda9a5ae1c72b5ed4e06a4b057adb89397e7842c11d0cb"
+          },
+          {
+            "path": "hazelnut/train/good/065.png",
+            "sha256": "772d7a9ddf436911372ca95c01b8a75c57efd449612607f177c1f647f31efcc5"
+          },
+          {
+            "path": "hazelnut/train/good/071.png",
+            "sha256": "6faa9036b613944c7c1d1d0671d9aef2b5afafd50ccc70ea1cc261d87a363651"
+          },
+          {
+            "path": "hazelnut/train/good/075.png",
+            "sha256": "129e725e85dbf92f9770a7734d51fe7945d2a37d6a07050fd3fd08589c1135ff"
+          },
+          {
+            "path": "hazelnut/train/good/079.png",
+            "sha256": "53f6615931fcfa9637e883d7fb016d1b0b3072666af0a4eb98f9f192520a2d8b"
+          },
+          {
+            "path": "hazelnut/train/good/099.png",
+            "sha256": "047606d80b09c5127dfaee903892b36ee3da4f2465ff22944b4f3133f9c0f4ba"
+          },
+          {
+            "path": "hazelnut/train/good/101.png",
+            "sha256": "ad411f96841183267d31cad9f497be6b1ca1db6a689f379104e7cd5c7e571bd3"
+          },
+          {
+            "path": "hazelnut/train/good/103.png",
+            "sha256": "6d0744df9e62a363d8d5a13bc9cab9fe82007e042fa18db2a40c9c28b1165299"
+          },
+          {
+            "path": "hazelnut/train/good/106.png",
+            "sha256": "7c776d93a48e526225620eeabc76b521b7c0065272ef6831a99cf112f42eb9c8"
+          },
+          {
+            "path": "hazelnut/train/good/108.png",
+            "sha256": "b65bd4ba62ae2fb0f872b4c4ca2a619ad1e7db296d8edffb121fad3a70a82b09"
+          },
+          {
+            "path": "hazelnut/train/good/109.png",
+            "sha256": "55bdb24e11a74a7bd64f62559252c1342ba9598d80967b20681c80e2b7445486"
+          },
+          {
+            "path": "hazelnut/train/good/128.png",
+            "sha256": "fc02796b620958e5b1bb5e77292390ca71457d3d661bcc5ed611ca7cb91fdcf3"
+          },
+          {
+            "path": "hazelnut/train/good/131.png",
+            "sha256": "54f6553cf498c74de6584132a90bd49a8b8539c7929117c502a89eec2fb415ad"
+          },
+          {
+            "path": "hazelnut/train/good/138.png",
+            "sha256": "62d7e0375876eded2d1cd735a8f978c97d74c87d7c44d5158569a02fc7e5e0f3"
+          },
+          {
+            "path": "hazelnut/train/good/146.png",
+            "sha256": "4d856dfcd1cbea334edb1a4d65a4035404571b1d96e3004aca1f0e1dcd5042d3"
+          },
+          {
+            "path": "hazelnut/train/good/155.png",
+            "sha256": "ce59ed1870803d605cc65e39323ccd7052d5996321c60a11de62a22e3e52e05c"
+          },
+          {
+            "path": "hazelnut/train/good/160.png",
+            "sha256": "b38a8e53f865a22bc8ce58b4e6ad478bf0eeb54196018fb46e0f26b93cd9f155"
+          },
+          {
+            "path": "hazelnut/train/good/163.png",
+            "sha256": "a8be2ec3ceb4490f8e4e82c9ff5f37cd7b4626254ba32484cb44c665758897eb"
+          },
+          {
+            "path": "hazelnut/train/good/183.png",
+            "sha256": "cf551f0fb8f664bbdb8a0068b7697247654066c435ad2368a27482abab9d9867"
+          },
+          {
+            "path": "hazelnut/train/good/187.png",
+            "sha256": "dbd94869a452ff63e7fefee3bc1a51e7fc544d66d312b34ac8b39d596e3a7a73"
+          },
+          {
+            "path": "hazelnut/train/good/193.png",
+            "sha256": "556029fbdbdcf23a7274fda5ef274722883b910325c5ca415516b3991bf12b1e"
+          },
+          {
+            "path": "hazelnut/train/good/197.png",
+            "sha256": "5b6b17acfe2141d3de61f0b8d90b66804b846fca8688afb59220195285908b72"
+          },
+          {
+            "path": "hazelnut/train/good/214.png",
+            "sha256": "3cbc083efa415eadb0ba83ab3c8f0554061a0ce7f4fbe8502222b1a5d397a60d"
+          },
+          {
+            "path": "hazelnut/train/good/228.png",
+            "sha256": "bb5d400fa2a889a552229504ffa87718880d3480b71b76b6fb0f5cf89d528b0a"
+          },
+          {
+            "path": "hazelnut/train/good/231.png",
+            "sha256": "81942fd4e85421e99d7dcf9474fd22fbef54972f65ae4d61ad9d02135362b703"
+          },
+          {
+            "path": "hazelnut/train/good/240.png",
+            "sha256": "0b10eeb8d33ad82866e025559e73f7c53e0c99a2da836f7336221fa39eb48422"
+          },
+          {
+            "path": "hazelnut/train/good/250.png",
+            "sha256": "c983212116077d8ad75b95a7c77994c13b00491c4f920075f05dcfed009d6881"
+          },
+          {
+            "path": "hazelnut/train/good/266.png",
+            "sha256": "2f68f9c9ad91c391488fb1067681cf989bd8c56d25ccd81fac313361af64bf4b"
+          },
+          {
+            "path": "hazelnut/train/good/267.png",
+            "sha256": "216dafb2c17964776cd419672bd3169c344b5fea5885ff2bff50e68d0622cb67"
+          },
+          {
+            "path": "hazelnut/train/good/269.png",
+            "sha256": "74bee3406e98eacc6aff7c39fb508e221930efb67d59849a5a9cabf38f4e5fc5"
+          },
+          {
+            "path": "hazelnut/train/good/272.png",
+            "sha256": "f2d4d6c3ac57b348e419485c398e1ad7a7ed06e6bf9289bf1323c720c99e815c"
+          },
+          {
+            "path": "hazelnut/train/good/274.png",
+            "sha256": "ed772e669994a3ab13541194ce109d3caef1dafabe8324cf4f336fc3e4e4d3de"
+          },
+          {
+            "path": "hazelnut/train/good/282.png",
+            "sha256": "5a407236c92ada04ba549a22ce02a99a3cc0c3b0df6015ce3d5f92a46a5c2d9a"
+          },
+          {
+            "path": "hazelnut/train/good/293.png",
+            "sha256": "f00ee6ad012d3e05876cef66fa85b92b949f215e05a33e2fc6509e5e0f9d7762"
+          },
+          {
+            "path": "hazelnut/train/good/294.png",
+            "sha256": "fee6d3c489d33266c0bcfa48ddd022c0ed40020a929db7114f82d2e3f44027e9"
+          },
+          {
+            "path": "hazelnut/train/good/297.png",
+            "sha256": "b6f58573e2a69b0da28bf30d058e459a96f3dbdffd833ccd9e04594a76032a38"
+          },
+          {
+            "path": "hazelnut/train/good/304.png",
+            "sha256": "87aa7c51f1c13a81d4c18e36502783c62344768651f12d174affddbd93e01758"
+          },
+          {
+            "path": "hazelnut/train/good/310.png",
+            "sha256": "42491137bf033c03e1cc4d1da8858f16d74545062e2592172211833f6bb8380e"
+          },
+          {
+            "path": "hazelnut/train/good/324.png",
+            "sha256": "2fc801d21334c701ffdfe7617124b9d7ae026ac7e90510a7a90bea56c0345021"
+          },
+          {
+            "path": "hazelnut/train/good/328.png",
+            "sha256": "04f89416fad82426bbb667a429817a0df76b2819b333e8216d5f0452f8174ba3"
+          },
+          {
+            "path": "hazelnut/train/good/333.png",
+            "sha256": "b083cd258eb56e232cb8ede645a3bd81f9ec779ee3593faeb9c6b700d065bdda"
+          },
+          {
+            "path": "hazelnut/train/good/338.png",
+            "sha256": "44cc50597ac1f34e319781dd0d555baa5799afbf282fbe505c72d3d7458310c9"
+          },
+          {
+            "path": "hazelnut/train/good/342.png",
+            "sha256": "6c98da7b4edc36e55f452b48cf73aa649c1397b53c51eaf1ad33b6f605f6e133"
+          },
+          {
+            "path": "hazelnut/train/good/348.png",
+            "sha256": "750f0e745002fcfc8f1e41b1e2a5b9ffe91492f213729e662e34a64c0aef7663"
+          },
+          {
+            "path": "hazelnut/train/good/350.png",
+            "sha256": "1061140de32cb60c1d1190f0f2b43e351eb237efb2bf5b94cdd2abe079f0f4e7"
+          },
+          {
+            "path": "hazelnut/train/good/351.png",
+            "sha256": "fd63af6ef2e46e75f5bbed4afb21017c21403fccb1a23c9bab891752eaec3593"
+          },
+          {
+            "path": "hazelnut/train/good/352.png",
+            "sha256": "9b098a7a7b3b6b7000df51eb760d49a4c0a4b13f9eb6b3b2c3254973485aaf98"
+          },
+          {
+            "path": "hazelnut/train/good/357.png",
+            "sha256": "30d0cb12845dc16e78b324dcea3e00032f58d420073e55dd6ebada9343ad7032"
+          },
+          {
+            "path": "hazelnut/train/good/367.png",
+            "sha256": "9a904b298122154077d553039b47ac42b1b3ae38c7264a372860e84f950c0061"
+          },
+          {
+            "path": "hazelnut/train/good/368.png",
+            "sha256": "43cd2edd44201e252377af844f63f63a5c0b134b954347dc294937c37bf76033"
+          },
+          {
+            "path": "hazelnut/train/good/369.png",
+            "sha256": "45487957cf52643369dc743d85570e60bc610bb2130cc12280bc1d31032b28b2"
+          },
+          {
+            "path": "hazelnut/train/good/375.png",
+            "sha256": "d0f04f843544ad823e37d3f2fc515a79a957ef9807d86c53010a001e58da9f25"
+          },
+          {
+            "path": "hazelnut/train/good/380.png",
+            "sha256": "b2cb8aa1b16effd32710707725d69b7335b62610fe4b2eec0992f02649a8ef2b"
+          },
+          {
+            "path": "hazelnut/train/good/381.png",
+            "sha256": "60de8389ce9e081c74777c767869bda3f0e8bb7fb01538c5aa6a92a1dab894f2"
+          }
+        ],
+        "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+        "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+        "layers": [
+          "layer2",
+          "layer3"
+        ],
+        "local_pool": 3,
+        "alignment": "bilinear-align_corners_false",
+        "dtype": "float32"
+      },
+      "sha256": "ab137cdf4883842c709eb5902055e746c1bbe65397460679a4a9f96b2c48c04d",
+      "path": "outputs/patchcore/features/1a38de44bf4ba91ac8b91a86b54d933d7e2d1a30c7920d5b281b69747031823f.npy",
+      "shape": [
+        58,
+        1024,
+        384
+      ],
+      "bytes": 91226240,
+      "resources": {
+        "seconds": 0.47940269999890006,
+        "cpu_initial_rss_bytes": 1596743680,
+        "cpu_peak_rss_bytes": 1715007488,
+        "cpu_peak_increment_bytes": 118263808,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 246177792,
+        "peak_gpu_reserved_bytes": 341835776
+      },
+      "cache_hit": true
+    }
+  },
+  "paths": {
+    "local": "outputs/patchcore/03-test-b2048-hazelnut-s2028-v1"
+  },
+  "interpretation": "Frozen real-test confirmation; no post-test changes permitted",
+  "decision": "retain even if disappointing",
+  "status": "completed",
+  "recorded_at": "2026-11-12T19:39:08.635544+00:00",
+  "config_sha256": "4f423d6bf1002364e2eea9b63a810bb7dd4a24a247997b08348c8d48193d3bf7"
+}

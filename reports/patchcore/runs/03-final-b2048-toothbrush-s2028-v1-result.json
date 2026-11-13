@@ -1,0 +1,250 @@
+{
+  "experiment_id": "03-final-b2048-toothbrush-s2028-v1",
+  "category": "toothbrush",
+  "configuration": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2028,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "phase": "final",
+  "fitting_normals": 42,
+  "probe_sources": 0,
+  "candidate_coverage": {
+    "candidate_count": 20000,
+    "projected_radius": 1.2259588241577148,
+    "projected_mean_distance": 0.7591394782066345,
+    "projection_dim": 32
+  },
+  "coreset_seconds": 1.411285800000769,
+  "bank_resources": {
+    "seconds": 1.5154633999991347,
+    "cpu_initial_rss_bytes": 1567875072,
+    "cpu_peak_rss_bytes": 1679781888,
+    "cpu_peak_increment_bytes": 111906816,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 229003776,
+    "peak_gpu_reserved_bytes": 2726297600
+  },
+  "checkpoint": "checkpoints/patchcore/03-final-b2048-toothbrush-s2028-v1/bank.pt",
+  "checkpoint_sha256": "80e2b6ea8b7e4e6ea542af0b744b9431c728fbfd6b848557ffcfea709230a4d9",
+  "checkpoint_bytes": 3170317,
+  "bank_vector_bytes": 3145728,
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "toothbrush/train/good/001.png",
+          "sha256": "344a89e778e52e0834f5fe9a4ec83021d735bd58f7a23d15be7d4f1f2697d611"
+        },
+        {
+          "path": "toothbrush/train/good/002.png",
+          "sha256": "8fa5dd89a75aabf58e9771f3cd2785628c5b0472cd23c75cab8f94f3214d2907"
+        },
+        {
+          "path": "toothbrush/train/good/003.png",
+          "sha256": "6367bb821a62c5ef3d6869ecce459c3fb078c1e77162478ea61d47f3792b74ac"
+        },
+        {
+          "path": "toothbrush/train/good/004.png",
+          "sha256": "2c5be146dce1b3d29a819d56fc007a11a596142dbb3c5351b0c3c8e8a02a9050"
+        },
+        {
+          "path": "toothbrush/train/good/005.png",
+          "sha256": "3c17fc107361e2ed871c3bebd36b59f6ef4936fa770fe866fc769514dfb621c7"
+        },
+        {
+          "path": "toothbrush/train/good/006.png",
+          "sha256": "cae0e745b8af374f156cafd366adb34f58b6d99359c4c0a87fb700c5015d691d"
+        },
+        {
+          "path": "toothbrush/train/good/008.png",
+          "sha256": "7f7c97e33207f59f715a8e4a593e1faceb7b5c04f167a62147a2a0acef5e1414"
+        },
+        {
+          "path": "toothbrush/train/good/009.png",
+          "sha256": "a3f3435be33d694ef7a0c6e530d32affd1cabffc3194bc2614240bd85ed115ee"
+        },
+        {
+          "path": "toothbrush/train/good/010.png",
+          "sha256": "a1886cdafcccebb2b25f616cfa5de44443132e87825be1093a82a8aa6fd0b5c1"
+        },
+        {
+          "path": "toothbrush/train/good/011.png",
+          "sha256": "43515f65d3676e37ac3be6bd0f3365ed1c539d0aabbb0139dd282e6b4549cf65"
+        },
+        {
+          "path": "toothbrush/train/good/014.png",
+          "sha256": "76be1c5eb9bfe78c3c4ac8bfc0929bd779f347d0b97cded634456a0389f7a062"
+        },
+        {
+          "path": "toothbrush/train/good/016.png",
+          "sha256": "20661718848952cf7d4debdf97fc2f899736241fdedcc7fce237fe68a6cf9aba"
+        },
+        {
+          "path": "toothbrush/train/good/017.png",
+          "sha256": "4301bbbed4bad3cac48fc20f6472b9a208c56864f9e55f5356fef78f34acfebe"
+        },
+        {
+          "path": "toothbrush/train/good/018.png",
+          "sha256": "9e565269ee9639b9c6dd83a2dfeacdf2b8d058e0611dc990a4331a4295eaf346"
+        },
+        {
+          "path": "toothbrush/train/good/019.png",
+          "sha256": "b539491b0686e237438ef9a93e1231e03ae5c7b24fb1e12475ec34d7208adeb9"
+        },
+        {
+          "path": "toothbrush/train/good/021.png",
+          "sha256": "3a944fc5c6b3e27d437a153ba863326ae07c29e290aafc5df5faca94412ea8e4"
+        },
+        {
+          "path": "toothbrush/train/good/022.png",
+          "sha256": "5420f1939bfdf5bde163099bd078c44d57462e01eaf0e37349058acbef16ac41"
+        },
+        {
+          "path": "toothbrush/train/good/024.png",
+          "sha256": "fb000cbd82112f73930565b4b74bf2856e544754e9abc15c3b430b833c7374db"
+        },
+        {
+          "path": "toothbrush/train/good/025.png",
+          "sha256": "cadc8f2ece37721ea606f2946cfd135ec1b2463683d7608b03691de28a4838c6"
+        },
+        {
+          "path": "toothbrush/train/good/026.png",
+          "sha256": "a37d9881bfd8d580d3c940aab828e5d538b0f6e10a5fe581f78d178c87899cf2"
+        },
+        {
+          "path": "toothbrush/train/good/027.png",
+          "sha256": "62d9383f03a09f36a31b0cb2619639a2dfd30df2ab712a75c01cf7e5516b6b99"
+        },
+        {
+          "path": "toothbrush/train/good/029.png",
+          "sha256": "99f716c301d167e80880a03a1bbf26c530f47e2b6380a9a41d215816abfa1609"
+        },
+        {
+          "path": "toothbrush/train/good/034.png",
+          "sha256": "5a2b1785d6ffca5bb97d613b56c57183734bd011ad8ec09de75043f9d6610cb5"
+        },
+        {
+          "path": "toothbrush/train/good/035.png",
+          "sha256": "c02289194a9851584f20c6645241622d99e23f1f057f2d32ae39ffab3f5330ef"
+        },
+        {
+          "path": "toothbrush/train/good/036.png",
+          "sha256": "aa88551c4cafb15ac30f2bf25da53ded349ba93a2d737b2d05cfd478c57749ce"
+        },
+        {
+          "path": "toothbrush/train/good/037.png",
+          "sha256": "d8e10e2a4fae956fa5d35b8c71fe8b0d97d92ac8eadf0bcd2c74ae04e07478cb"
+        },
+        {
+          "path": "toothbrush/train/good/039.png",
+          "sha256": "546d537f9287582e73b699e3e1249066d915ab2eee90fd2e45784b6208098c06"
+        },
+        {
+          "path": "toothbrush/train/good/040.png",
+          "sha256": "0dc90c4e1a0dab6b4d716a66a3e17a88dcecf7e22e48705655f4046981bf48b4"
+        },
+        {
+          "path": "toothbrush/train/good/041.png",
+          "sha256": "c12111dea951d943c5ca81b824df3f8c684bd5b9bcf01ae1e82be3caafa72ea3"
+        },
+        {
+          "path": "toothbrush/train/good/042.png",
+          "sha256": "3fecb6e6f2bac82f7f76184467ae28ef3f73e3d0141eba0e10176522e6f7fcc7"
+        },
+        {
+          "path": "toothbrush/train/good/043.png",
+          "sha256": "3825a5b6493d7b39dce4f6eee2ac1ab1cc904593e118033a0031cc3d3d1dda74"
+        },
+        {
+          "path": "toothbrush/train/good/044.png",
+          "sha256": "57abd2064ad0449144cd00c302120466b6af574913a5be81c10e83ced3a1ee11"
+        },
+        {
+          "path": "toothbrush/train/good/045.png",
+          "sha256": "b12f73fb81d32980993dda624c63ec0375a610b144bcf1d1a047793709f508b6"
+        },
+        {
+          "path": "toothbrush/train/good/046.png",
+          "sha256": "6140780d752358842e29584cdf3bba7adba667c3d9ea2e62e38087c05e305d5e"
+        },
+        {
+          "path": "toothbrush/train/good/047.png",
+          "sha256": "3bdfe90f04bbcad8f235fe844eb31fb4e85eccf3eab57ffb27072458fb11e4ae"
+        },
+        {
+          "path": "toothbrush/train/good/048.png",
+          "sha256": "8135bc5dc91b7a44b30c642e04b21a69ae8e3f8df9a6bce58f39175ea4c117de"
+        },
+        {
+          "path": "toothbrush/train/good/052.png",
+          "sha256": "0c151eaa9a43f57fea055976c438d75113ae46bc0bcb9ad7eaf21c7ecbe924ec"
+        },
+        {
+          "path": "toothbrush/train/good/053.png",
+          "sha256": "c795e6c47af6147715ffbcbdac50949a8cf4da9724f0a8ebc16847ea87135559"
+        },
+        {
+          "path": "toothbrush/train/good/054.png",
+          "sha256": "06512792fb435babcba49bf744ee5c09da30121b8d10f38ebb3b0d9c10003d67"
+        },
+        {
+          "path": "toothbrush/train/good/056.png",
+          "sha256": "ea706e338c46a2d7037b5dac4ad990adc797ba73bae7bcdeacc21fe50c85ed56"
+        },
+        {
+          "path": "toothbrush/train/good/058.png",
+          "sha256": "54e7196bf119a95bb6d64a1c89c54d432ed8c4f5cb5719b30001f6eafdd9bcbf"
+        },
+        {
+          "path": "toothbrush/train/good/059.png",
+          "sha256": "6fff2912e372af732426bfa27e2b65c649f28bf02be77defb13a3452aeeb568f"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "8d5ecd5857882ca544e75cfa38f712ded62cab65fb47543b022b0ae08f7d2b7a",
+    "path": "outputs/patchcore/features/8df2af3e0ce1866de46020831c71bfd2bcde9470347f06c70f7d5e32d37c4a36.npy",
+    "shape": [
+      42,
+      1024,
+      384
+    ],
+    "bytes": 66060416,
+    "resources": {
+      "seconds": 0.22220630000083474,
+      "cpu_initial_rss_bytes": 1566863360,
+      "cpu_peak_rss_bytes": 1630662656,
+      "cpu_peak_increment_bytes": 63799296,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 241983488,
+      "peak_gpu_reserved_bytes": 2726297600
+    },
+    "cache_hit": true
+  },
+  "original_extraction_seconds": 0.22220630000083474,
+  "metrics": {},
+  "development": {},
+  "wall_seconds": 1.671498600000632
+}

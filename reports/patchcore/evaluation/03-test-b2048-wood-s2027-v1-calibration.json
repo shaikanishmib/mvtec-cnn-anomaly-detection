@@ -1,0 +1,240 @@
+{
+  "category": "wood",
+  "images": 37,
+  "image_threshold": 1.7007180452346802,
+  "secondary_image_threshold_q99": 1.9176408052444458,
+  "pixel_threshold": 1.564865231513977,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 2424832,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    1.484526515007019,
+    1.4494118690490723,
+    1.4396816492080688,
+    1.491746425628662,
+    1.4764026403427124,
+    1.5952690839767456,
+    1.5344150066375732,
+    1.6057515144348145,
+    1.4284647703170776,
+    1.641535997390747,
+    1.4453457593917847,
+    1.4222670793533325,
+    1.9176408052444458,
+    1.5433353185653687,
+    1.7007180452346802,
+    1.512621283531189,
+    1.444533109664917,
+    1.4627766609191895,
+    1.443164348602295,
+    1.4904265403747559,
+    1.462996244430542,
+    1.4109433889389038,
+    1.4127246141433716,
+    1.4770793914794922,
+    1.4446715116500854,
+    1.5261082649230957,
+    1.4499547481536865,
+    1.4781441688537598,
+    1.4371085166931152,
+    1.4233450889587402,
+    1.3964675664901733,
+    1.547278642654419,
+    1.5151420831680298,
+    1.5739662647247314,
+    1.5298004150390625,
+    1.4427765607833862,
+    1.51567804813385
+  ],
+  "image_threshold_bootstrap_95ci": [
+    1.5739662647247314,
+    1.9176408052444458
+  ],
+  "histogram_scale": 1.2099494934082031,
+  "histogram_transform": "d/(d+normal calibration median patch distance), 4096 bins; no raw-score clipping",
+  "method": "Reserved normals only; higher empirical image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b",
+  "feature_cache": {
+    "identity": {
+      "records": [
+        {
+          "path": "wood/train/good/002.png",
+          "sha256": "8b05ad057d645960666b5d6b0cdd08b2fc4f343f0b9f06589fb3e54fad45c0ff"
+        },
+        {
+          "path": "wood/train/good/004.png",
+          "sha256": "f0a71659b18d098fdc6dde62f61b5796a8daecab64b730439c5dff5996560555"
+        },
+        {
+          "path": "wood/train/good/017.png",
+          "sha256": "7de171a8c9374b556a117f79ee5b51ba9ca84e959adba7b99b4b2ce8bcc831b0"
+        },
+        {
+          "path": "wood/train/good/023.png",
+          "sha256": "1a1a043388e89e0d1e3dec49ea86888d4e2f1b3a0f3e29f32115580abd0b6202"
+        },
+        {
+          "path": "wood/train/good/027.png",
+          "sha256": "21421c181514065b5ced30508a946d7cd1bc709058bc76b08034b53d0bdf5e96"
+        },
+        {
+          "path": "wood/train/good/034.png",
+          "sha256": "46521e2697124a4192e06aa700a0533659296ea450be2fbb4da45ed3a8bb7a29"
+        },
+        {
+          "path": "wood/train/good/047.png",
+          "sha256": "e95070ff95759808e5f7d4147ba49ae81c1a7865bb53c6d5c5a4ea192e097525"
+        },
+        {
+          "path": "wood/train/good/057.png",
+          "sha256": "61a89a4a2d596b64ba243d04e3fdad90bbe72d43791159f0d0159b1b83db448c"
+        },
+        {
+          "path": "wood/train/good/067.png",
+          "sha256": "b9f0913da1de609a0a6c1c9a19848c6c7568554321e3213027e10377e965d74f"
+        },
+        {
+          "path": "wood/train/good/080.png",
+          "sha256": "f9f0d0867b5e9b0d05960bff7019a424b221de57d90cd065563bd02acdcf44bb"
+        },
+        {
+          "path": "wood/train/good/081.png",
+          "sha256": "66f3705348bd11751e3251caf6ce80f760025747a6b972bb1b7d76a19c1abdd9"
+        },
+        {
+          "path": "wood/train/good/083.png",
+          "sha256": "7c69b6898f395e5e7c2afd12efbb51a4cf7384bb492576a7f55314b92dd6d92c"
+        },
+        {
+          "path": "wood/train/good/089.png",
+          "sha256": "c884632c5f6c27afdab6973cfdd670dde54ab12cfff1fa449cc9235435d85f08"
+        },
+        {
+          "path": "wood/train/good/096.png",
+          "sha256": "c24a05b191631acb9e898d47f946c4e0103ce8ad47d4b6150cd1374a91d70051"
+        },
+        {
+          "path": "wood/train/good/098.png",
+          "sha256": "4ed963f491857ac1c90d2ab88797646e605ee97606c2243c72e77f2a96dcb6c4"
+        },
+        {
+          "path": "wood/train/good/103.png",
+          "sha256": "90a5ee808e662175243be845503f0903b191c97eca666357ef280ef0247df0d7"
+        },
+        {
+          "path": "wood/train/good/105.png",
+          "sha256": "1d7c3f582a932dcc54c54a8e374ccec961c66ba8e0ecff31bec77ee4cd070d86"
+        },
+        {
+          "path": "wood/train/good/116.png",
+          "sha256": "ce840fad0af83ff1aff9e2925720284a4af51e9e69a9e3a05fc001a5745e0117"
+        },
+        {
+          "path": "wood/train/good/125.png",
+          "sha256": "c7814c0f72ff2fca8ba7f528675b6a06f2f2cfa94b01f143f282e6e8b78e3880"
+        },
+        {
+          "path": "wood/train/good/127.png",
+          "sha256": "97b85048d03a0f888ed6fe0f60c0c2f2cef1d2cf5c81f4d7e6d384a2f50a8519"
+        },
+        {
+          "path": "wood/train/good/136.png",
+          "sha256": "a31b94c0c3954c5306c87b49824626678f4007faa079113e13ca1a33a5a7f858"
+        },
+        {
+          "path": "wood/train/good/138.png",
+          "sha256": "8dfb859575ab199caad5f2bded2a78a1b2294d0519af6f7871339a823d941250"
+        },
+        {
+          "path": "wood/train/good/143.png",
+          "sha256": "cad2fe8d90b7e7cd3c2e3e7cea93daa70eeb6eb1e0437fadc3be6a656d7a0979"
+        },
+        {
+          "path": "wood/train/good/170.png",
+          "sha256": "14e0ca663c91d410c92a1599518db7f00dd6fe3639b86c0955bd003427aff376"
+        },
+        {
+          "path": "wood/train/good/172.png",
+          "sha256": "bb8200182f46095b893ebb8e564bc71ce5f28b1b83b365a1f5b33b8789ba7452"
+        },
+        {
+          "path": "wood/train/good/185.png",
+          "sha256": "98da363a6233718ccfa6b75b9e0e5cca63bb12f613d3f583ddac20c33ed1f587"
+        },
+        {
+          "path": "wood/train/good/188.png",
+          "sha256": "de45d66f010d2bd4b90cd7a92acc4220954c5c04419df09867e1ae66068ca943"
+        },
+        {
+          "path": "wood/train/good/195.png",
+          "sha256": "382a26d1765e521a79d4c6d51313c015b21ce81a62132d7a5483fa91be2f99ac"
+        },
+        {
+          "path": "wood/train/good/203.png",
+          "sha256": "6a8afd2bdcc1b50f6e60824ec5d349fe1e03ed465606bd255fa553c3c53e72c9"
+        },
+        {
+          "path": "wood/train/good/205.png",
+          "sha256": "5a858a33349efa3f1e6b38dee23466d20fb8603d9a6ec5d543f82c1bcfe4fefd"
+        },
+        {
+          "path": "wood/train/good/213.png",
+          "sha256": "bc1412203379d409abc8c063901a65909630945d0fb501789787e632429e5a6e"
+        },
+        {
+          "path": "wood/train/good/219.png",
+          "sha256": "8af5afdd5e2dd58fe18f106b9954d22ffc0eef81d7298e1f21aee3bf37b393c6"
+        },
+        {
+          "path": "wood/train/good/228.png",
+          "sha256": "561b1ddc2d8ee912abb56e745f34d49de67ae4639b60dd40012ccfcefd483bbd"
+        },
+        {
+          "path": "wood/train/good/231.png",
+          "sha256": "3e82f2503cbb455a11e3dcc9e078f9e0d1ac8a234e660484f41bdb4c2fa0bee6"
+        },
+        {
+          "path": "wood/train/good/234.png",
+          "sha256": "27968f3af02cc56978e90dd358d6f7ed6e095e03c2f821fbf4b78e692b07767d"
+        },
+        {
+          "path": "wood/train/good/241.png",
+          "sha256": "a0bb97c66a79ae875748bef811870fdd8ec03a4d7bf13ff847e904fda1dc24fb"
+        },
+        {
+          "path": "wood/train/good/245.png",
+          "sha256": "472334bb0c57b191c85d8be6e68b6b50541845d1a272db0f7c7eef6a44fd5fef"
+        }
+      ],
+      "extractor_source_sha256": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "preprocessing": "whole-PIL-bilinear-256; V1-transform-256-identity-geometry",
+      "layers": [
+        "layer2",
+        "layer3"
+      ],
+      "local_pool": 3,
+      "alignment": "bilinear-align_corners_false",
+      "dtype": "float32"
+    },
+    "sha256": "5d8e2e7a52f4ab7e2da6073b29fffdf9488693159812b3902872688a7663b46d",
+    "path": "outputs/patchcore/features/a7e5a0321dc96710766d0709264f18aed4c1764d08c7db8e6cc9576dfecabafc.npy",
+    "shape": [
+      37,
+      1024,
+      384
+    ],
+    "bytes": 58196096,
+    "resources": {
+      "seconds": 0.5284351999980572,
+      "cpu_initial_rss_bytes": 1607880704,
+      "cpu_peak_rss_bytes": 1677639680,
+      "cpu_peak_increment_bytes": 69758976,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 246177792,
+      "peak_gpu_reserved_bytes": 341835776
+    },
+    "cache_hit": true
+  }
+}
