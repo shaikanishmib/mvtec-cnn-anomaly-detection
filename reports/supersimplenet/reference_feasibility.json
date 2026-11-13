@@ -1,0 +1,159 @@
+{
+  "backbone": "wide_resnet50_2",
+  "weights_sha256": "95faca4d11227dddf8633dbb5ff6c8a9003c1aa5b8945c73834b8007b10950b8",
+  "layer_shapes": [
+    [
+      4,
+      512,
+      32,
+      32
+    ],
+    [
+      4,
+      1024,
+      16,
+      16
+    ]
+  ],
+  "aggregated_shape": [
+    4,
+    1536,
+    64,
+    64
+  ],
+  "segmentation_shape": [
+    8,
+    1,
+    64,
+    64
+  ],
+  "detection_shape": [
+    8
+  ],
+  "head_parameters": 8856835,
+  "batch_size": 4,
+  "steps": 12,
+  "warmup_steps": 2,
+  "mean_step_seconds": 0.15902596000014455,
+  "step_seconds": [
+    0.8205912999983411,
+    0.1657277999984217,
+    0.15623020000202814,
+    0.15811509999912232,
+    0.1649692999999388,
+    0.15904560000490164,
+    0.16181369999685558,
+    0.1560144000031869,
+    0.15529660000174772,
+    0.16143869999359595,
+    0.15760479999880772,
+    0.15973120000126073
+  ],
+  "losses": [
+    {
+      "step": 0,
+      "loss": 1.6749516725540161,
+      "segmentation_focal": 0.20367620885372162,
+      "margin_loss": 1.4246301651000977,
+      "detection_focal": 0.04664523899555206
+    },
+    {
+      "step": 1,
+      "loss": 6.782384395599365,
+      "segmentation_focal": 0.5235404968261719,
+      "margin_loss": 2.145169734954834,
+      "detection_focal": 4.113674163818359
+    },
+    {
+      "step": 2,
+      "loss": 5.796785354614258,
+      "segmentation_focal": 0.7052974700927734,
+      "margin_loss": 2.655857563018799,
+      "detection_focal": 2.4356300830841064
+    },
+    {
+      "step": 3,
+      "loss": 3.150627613067627,
+      "segmentation_focal": 0.630362868309021,
+      "margin_loss": 2.358142375946045,
+      "detection_focal": 0.16212216019630432
+    },
+    {
+      "step": 4,
+      "loss": 5.18701171875,
+      "segmentation_focal": 0.49714168906211853,
+      "margin_loss": 2.274867534637451,
+      "detection_focal": 2.4150028228759766
+    },
+    {
+      "step": 5,
+      "loss": 3.8262367248535156,
+      "segmentation_focal": 0.5701265931129456,
+      "margin_loss": 2.413052558898926,
+      "detection_focal": 0.8430577516555786
+    },
+    {
+      "step": 6,
+      "loss": 2.0902347564697266,
+      "segmentation_focal": 0.4010847508907318,
+      "margin_loss": 1.6557559967041016,
+      "detection_focal": 0.03339403495192528
+    },
+    {
+      "step": 7,
+      "loss": 2.853226661682129,
+      "segmentation_focal": 0.2823292315006256,
+      "margin_loss": 1.6649914979934692,
+      "detection_focal": 0.9059059023857117
+    },
+    {
+      "step": 8,
+      "loss": 2.1551475524902344,
+      "segmentation_focal": 0.1922806203365326,
+      "margin_loss": 1.4495458602905273,
+      "detection_focal": 0.5133211016654968
+    },
+    {
+      "step": 9,
+      "loss": 1.7925864458084106,
+      "segmentation_focal": 0.15550480782985687,
+      "margin_loss": 1.5511574745178223,
+      "detection_focal": 0.08592420071363449
+    },
+    {
+      "step": 10,
+      "loss": 1.7116729021072388,
+      "segmentation_focal": 0.11246160417795181,
+      "margin_loss": 1.4149640798568726,
+      "detection_focal": 0.18424727022647858
+    },
+    {
+      "step": 11,
+      "loss": 1.5620288848876953,
+      "segmentation_focal": 0.13361138105392456,
+      "margin_loss": 1.3817195892333984,
+      "detection_focal": 0.046697843819856644
+    }
+  ],
+  "extraction_resources": {
+    "seconds": 0.466149799998675,
+    "cpu_initial_rss_bytes": 1233260544,
+    "cpu_peak_rss_bytes": 1615855616,
+    "cpu_peak_increment_bytes": 382595072,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 669847552,
+    "peak_gpu_reserved_bytes": 1140850688
+  },
+  "training_resources": {
+    "seconds": 2.579084100005275,
+    "cpu_initial_rss_bytes": 1615908864,
+    "cpu_peak_rss_bytes": 2188419072,
+    "cpu_peak_increment_bytes": 572510208,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 1674352640,
+    "peak_gpu_reserved_bytes": 2629828608
+  },
+  "projected_40_epoch_45_fit_training_seconds": 12270.443073611154,
+  "provenance": "12 optimization steps on four fitting-normal bottle images; feasibility only, not a convergence experiment",
+  "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5"
+}

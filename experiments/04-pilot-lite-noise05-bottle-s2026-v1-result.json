@@ -1,0 +1,1682 @@
+{
+  "experiment_id": "04-pilot-lite-noise05-bottle-s2026-v1-result",
+  "model_family": "SuperSimpleNetVariant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Larger planned feature perturbations improve learnability under the same bounded Lite pilot",
+  "preprocessing": "Whole RGB PIL256, ImageNet V1 normalization; upscale layer2/3 to64 before pooling",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "noise_std": 0.05,
+    "loss": "margin_focal",
+    "seed": 2026,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 20,
+    "validation_every": 2,
+    "hypothesis": "Larger planned feature perturbations improve learnability under the same bounded Lite pilot"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+    "git_sha": "7edf24aa38e115b72d41754493a1539d1845136b",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51"
+    },
+    "partitions": {
+      "fit": {
+        "path": "reports/partitions/seed2026-fit.csv",
+        "sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "images": 2551
+      },
+      "development": {
+        "path": "reports/partitions/seed2026-development.csv",
+        "sha256": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "images": 539
+      },
+      "calibration": {
+        "path": "reports/partitions/seed2026-calibration.csv",
+        "sha256": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "images": 539
+      },
+      "test": {
+        "path": "reports/partitions/seed2026-test.csv",
+        "sha256": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2",
+        "images": 1725
+      }
+    }
+  },
+  "training": {
+    "phase": "pilot"
+  },
+  "metrics": {
+    "experiment_id": "04-pilot-lite-noise05-bottle-s2026-v1",
+    "category": "bottle",
+    "phase": "pilot",
+    "configuration": {
+      "backbone": "resnet18",
+      "channels": 384,
+      "seg_width": 256,
+      "det_width": 32,
+      "adapter_trainable": true,
+      "noise_std": 0.05,
+      "loss": "margin_focal",
+      "seed": 2026,
+      "batch_size": 8,
+      "extraction_batch": 8,
+      "epochs": 20,
+      "validation_every": 2,
+      "hypothesis": "Larger planned feature perturbations improve learnability under the same bounded Lite pilot"
+    },
+    "history": [
+      {
+        "train_loss": 1.7844929099082947,
+        "gradient_norm": 17.29622519016266,
+        "synthetic_fraction": 0.5,
+        "target_pixel_fraction": 0.12175369262695312,
+        "segmentation_focal": 0.19640105217695236,
+        "margin_loss": 1.2721602320671082,
+        "detection_focal": 0.3159316536039114,
+        "train_epoch_seconds": 1.4159711000029347,
+        "epoch": 1,
+        "elapsed_seconds": 3.2109314000044833
+      },
+      {
+        "train_loss": 1.3358725607395172,
+        "gradient_norm": 7.202768921852112,
+        "synthetic_fraction": 0.484375,
+        "target_pixel_fraction": 0.12669754028320312,
+        "segmentation_focal": 0.128070667386055,
+        "margin_loss": 1.1239597499370575,
+        "detection_focal": 0.08384212758392096,
+        "train_epoch_seconds": 0.6243567000055918,
+        "proxy_objective": 0.13315649316656092,
+        "proxy_image_auroc": 0.21875,
+        "proxy_pixel_ap": 0.1475629863331218,
+        "proxy_loss": 1.1921768188476562,
+        "normal_map_focal": 0.045053429901599884,
+        "normal_head_focal": 0.003603713121265173,
+        "epoch": 2,
+        "elapsed_seconds": 4.507210300005681
+      },
+      {
+        "train_loss": 1.217642217874527,
+        "gradient_norm": 6.130073189735413,
+        "synthetic_fraction": 0.578125,
+        "target_pixel_fraction": 0.14192581176757812,
+        "segmentation_focal": 0.09209035336971283,
+        "margin_loss": 1.0510376989841461,
+        "detection_focal": 0.07451416738331318,
+        "train_epoch_seconds": 0.5579832999937935,
+        "epoch": 3,
+        "elapsed_seconds": 5.0698300000003655
+      },
+      {
+        "train_loss": 1.1314653754234314,
+        "gradient_norm": 3.6242160201072693,
+        "synthetic_fraction": 0.53125,
+        "target_pixel_fraction": 0.13655471801757812,
+        "segmentation_focal": 0.07207253202795982,
+        "margin_loss": 1.0037522912025452,
+        "detection_focal": 0.055640559643507004,
+        "train_epoch_seconds": 0.5726058000000194,
+        "proxy_objective": 0.1976935802768054,
+        "proxy_image_auroc": 0.328125,
+        "proxy_pixel_ap": 0.16726216055361073,
+        "proxy_loss": 1.32879638671875,
+        "normal_map_focal": 0.03737542778253555,
+        "normal_head_focal": 0.0005760792410001159,
+        "epoch": 4,
+        "elapsed_seconds": 6.219728700001724
+      },
+      {
+        "train_loss": 1.1084512770175934,
+        "gradient_norm": 3.3367320895195007,
+        "synthetic_fraction": 0.390625,
+        "target_pixel_fraction": 0.0971221923828125,
+        "segmentation_focal": 0.0603802427649498,
+        "margin_loss": 0.999319538474083,
+        "detection_focal": 0.04875150602310896,
+        "train_epoch_seconds": 0.5903220000036526,
+        "epoch": 5,
+        "elapsed_seconds": 6.816985900004511
+      },
+      {
+        "train_loss": 1.0667344331741333,
+        "gradient_norm": 2.3679280877113342,
+        "synthetic_fraction": 0.4375,
+        "target_pixel_fraction": 0.1143798828125,
+        "segmentation_focal": 0.04932264145463705,
+        "margin_loss": 0.9720984846353531,
+        "detection_focal": 0.045313342474401,
+        "train_epoch_seconds": 0.6172732999984873,
+        "proxy_objective": 0.26571757169203947,
+        "proxy_image_auroc": 0.359375,
+        "proxy_pixel_ap": 0.172060143384079,
+        "proxy_loss": 1.2699373960494995,
+        "normal_map_focal": 0.0219881534576416,
+        "normal_head_focal": 0.0007623948622494936,
+        "epoch": 6,
+        "elapsed_seconds": 8.001712400000542
+      },
+      {
+        "train_loss": 1.0566909611225128,
+        "gradient_norm": 2.141848534345627,
+        "synthetic_fraction": 0.5625,
+        "target_pixel_fraction": 0.14922332763671875,
+        "segmentation_focal": 0.04587145149707794,
+        "margin_loss": 0.967663511633873,
+        "detection_focal": 0.043156024999916553,
+        "train_epoch_seconds": 0.6016600000002654,
+        "epoch": 7,
+        "elapsed_seconds": 8.607228600005328
+      },
+      {
+        "train_loss": 1.014149233698845,
+        "gradient_norm": 2.038559705018997,
+        "synthetic_fraction": 0.515625,
+        "target_pixel_fraction": 0.14054489135742188,
+        "segmentation_focal": 0.04191675875335932,
+        "margin_loss": 0.9301507771015167,
+        "detection_focal": 0.04208168759942055,
+        "train_epoch_seconds": 0.6046012000006158,
+        "proxy_objective": 0.3907077974634768,
+        "proxy_image_auroc": 0.59375,
+        "proxy_pixel_ap": 0.1876655949269536,
+        "proxy_loss": 1.2139766216278076,
+        "normal_map_focal": 0.014124903827905655,
+        "normal_head_focal": 0.001453518751077354,
+        "epoch": 8,
+        "elapsed_seconds": 9.795405100005155
+      },
+      {
+        "train_loss": 1.0334924161434174,
+        "gradient_norm": 2.5756821036338806,
+        "synthetic_fraction": 0.578125,
+        "target_pixel_fraction": 0.15608978271484375,
+        "segmentation_focal": 0.040224358439445496,
+        "margin_loss": 0.9529697746038437,
+        "detection_focal": 0.0402982821688056,
+        "train_epoch_seconds": 0.6523222999967402,
+        "epoch": 9,
+        "elapsed_seconds": 10.4511244000023
+      },
+      {
+        "train_loss": 1.046675056219101,
+        "gradient_norm": 4.006541132926941,
+        "synthetic_fraction": 0.453125,
+        "target_pixel_fraction": 0.1223602294921875,
+        "segmentation_focal": 0.03911619260907173,
+        "margin_loss": 0.9601299315690994,
+        "detection_focal": 0.04742894507944584,
+        "train_epoch_seconds": 0.6083680000010645,
+        "proxy_objective": 0.4144124979776083,
+        "proxy_image_auroc": 0.65625,
+        "proxy_pixel_ap": 0.17257499595521664,
+        "proxy_loss": 1.219547986984253,
+        "normal_map_focal": 0.015341481193900108,
+        "normal_head_focal": 0.0016419107560068369,
+        "epoch": 10,
+        "elapsed_seconds": 11.62917759999982
+      },
+      {
+        "train_loss": 1.0149999856948853,
+        "gradient_norm": 2.7272604405879974,
+        "synthetic_fraction": 0.59375,
+        "target_pixel_fraction": 0.1723175048828125,
+        "segmentation_focal": 0.03931009769439697,
+        "margin_loss": 0.9342759400606155,
+        "detection_focal": 0.041413973085582256,
+        "train_epoch_seconds": 0.6629953999945428,
+        "epoch": 11,
+        "elapsed_seconds": 12.295333500005654
+      },
+      {
+        "train_loss": 0.991810068488121,
+        "gradient_norm": 2.341572493314743,
+        "synthetic_fraction": 0.65625,
+        "target_pixel_fraction": 0.16808319091796875,
+        "segmentation_focal": 0.038271866738796234,
+        "margin_loss": 0.9155667722225189,
+        "detection_focal": 0.037971447221934795,
+        "train_epoch_seconds": 0.6537377000058768,
+        "proxy_objective": 0.4621975037961971,
+        "proxy_image_auroc": 0.734375,
+        "proxy_pixel_ap": 0.19002000759239424,
+        "proxy_loss": 1.1310114860534668,
+        "normal_map_focal": 0.015908261761069298,
+        "normal_head_focal": 0.0033462410792708397,
+        "epoch": 12,
+        "elapsed_seconds": 13.544707799999742
+      },
+      {
+        "train_loss": 0.9928273111581802,
+        "gradient_norm": 2.8291622400283813,
+        "synthetic_fraction": 0.40625,
+        "target_pixel_fraction": 0.09881210327148438,
+        "segmentation_focal": 0.036245616152882576,
+        "margin_loss": 0.9128312170505524,
+        "detection_focal": 0.04375046957284212,
+        "train_epoch_seconds": 0.5954836000018986,
+        "epoch": 13,
+        "elapsed_seconds": 14.14305030000105
+      },
+      {
+        "train_loss": 0.9807285666465759,
+        "gradient_norm": 2.5394656360149384,
+        "synthetic_fraction": 0.53125,
+        "target_pixel_fraction": 0.13798904418945312,
+        "segmentation_focal": 0.03741294238716364,
+        "margin_loss": 0.905300572514534,
+        "detection_focal": 0.03801505267620087,
+        "train_epoch_seconds": 0.5465351999955601,
+        "proxy_objective": 0.5422962965724537,
+        "proxy_image_auroc": 0.84375,
+        "proxy_pixel_ap": 0.24084259314490733,
+        "proxy_loss": 1.0346318483352661,
+        "normal_map_focal": 0.019384663552045822,
+        "normal_head_focal": 0.005646935664117336,
+        "epoch": 14,
+        "elapsed_seconds": 15.164804800006095
+      },
+      {
+        "train_loss": 0.9722859561443329,
+        "gradient_norm": 2.598352998495102,
+        "synthetic_fraction": 0.453125,
+        "target_pixel_fraction": 0.12260818481445312,
+        "segmentation_focal": 0.036125664599239826,
+        "margin_loss": 0.8933501094579697,
+        "detection_focal": 0.04281016159802675,
+        "train_epoch_seconds": 0.5324203000054695,
+        "epoch": 15,
+        "elapsed_seconds": 15.699959800003853
+      },
+      {
+        "train_loss": 0.952713206410408,
+        "gradient_norm": 2.5371735095977783,
+        "synthetic_fraction": 0.375,
+        "target_pixel_fraction": 0.0872344970703125,
+        "segmentation_focal": 0.0351902861148119,
+        "margin_loss": 0.8814741969108582,
+        "detection_focal": 0.03604872990399599,
+        "train_epoch_seconds": 0.5166437999941991,
+        "proxy_objective": 0.5233269796607048,
+        "proxy_image_auroc": 0.8125,
+        "proxy_pixel_ap": 0.2341539593214097,
+        "proxy_loss": 1.044246792793274,
+        "normal_map_focal": 0.0198920127004385,
+        "normal_head_focal": 0.004444092512130737,
+        "epoch": 16,
+        "elapsed_seconds": 16.689715000000433
+      },
+      {
+        "train_loss": 0.9527550935745239,
+        "gradient_norm": 2.247644156217575,
+        "synthetic_fraction": 0.546875,
+        "target_pixel_fraction": 0.14357757568359375,
+        "segmentation_focal": 0.036832546815276146,
+        "margin_loss": 0.8802236467599869,
+        "detection_focal": 0.03569888882339001,
+        "train_epoch_seconds": 0.5095806999961496,
+        "epoch": 17,
+        "elapsed_seconds": 17.202747500006808
+      },
+      {
+        "train_loss": 0.9584057033061981,
+        "gradient_norm": 2.593252420425415,
+        "synthetic_fraction": 0.484375,
+        "target_pixel_fraction": 0.132598876953125,
+        "segmentation_focal": 0.03646446019411087,
+        "margin_loss": 0.8888426125049591,
+        "detection_focal": 0.03309862222522497,
+        "train_epoch_seconds": 0.5074289000040153,
+        "proxy_objective": 0.5164537585409075,
+        "proxy_image_auroc": 0.78125,
+        "proxy_pixel_ap": 0.2516575170818149,
+        "proxy_loss": 0.981582522392273,
+        "normal_map_focal": 0.02421031892299652,
+        "normal_head_focal": 0.00761962216347456,
+        "epoch": 18,
+        "elapsed_seconds": 18.21430600000167
+      },
+      {
+        "train_loss": 0.9350047260522842,
+        "gradient_norm": 2.111547291278839,
+        "synthetic_fraction": 0.375,
+        "target_pixel_fraction": 0.09683990478515625,
+        "segmentation_focal": 0.03462004102766514,
+        "margin_loss": 0.8685614466667175,
+        "detection_focal": 0.031823225785046816,
+        "train_epoch_seconds": 0.5013478000037139,
+        "epoch": 19,
+        "elapsed_seconds": 18.7183623000019
+      },
+      {
+        "train_loss": 0.93631611764431,
+        "gradient_norm": 2.7716596126556396,
+        "synthetic_fraction": 0.484375,
+        "target_pixel_fraction": 0.13257598876953125,
+        "segmentation_focal": 0.035075065679848194,
+        "margin_loss": 0.8647525161504745,
+        "detection_focal": 0.03648852836340666,
+        "train_epoch_seconds": 0.5458471999954781,
+        "proxy_objective": 0.5382721065546681,
+        "proxy_image_auroc": 0.8125,
+        "proxy_pixel_ap": 0.264044213109336,
+        "proxy_loss": 0.9493485689163208,
+        "normal_map_focal": 0.02759729139506817,
+        "normal_head_focal": 0.009813559241592884,
+        "epoch": 20,
+        "elapsed_seconds": 19.7359401000067
+      }
+    ],
+    "development": {
+      "candidates": {
+        "head": {
+          "auroc": 0.8125,
+          "ap": 0.8219246031746031,
+          "recall": 0.125,
+          "fpr": 0.0,
+          "precision": 1.0,
+          "f1": 0.2222222222222222,
+          "confusion_matrix": [
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "pixel_ap": 0.264044213109336,
+          "normal_development_q95": -0.20489642024040222,
+          "objective": 0.5382721065546681
+        },
+        "max": {
+          "auroc": 0.734375,
+          "ap": 0.7586309523809525,
+          "recall": 0.5,
+          "fpr": 0.25,
+          "precision": 0.6666666666666666,
+          "f1": 0.5714285714285715,
+          "confusion_matrix": [
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "pixel_ap": 0.264044213109336,
+          "normal_development_q95": 0.5655629634857178,
+          "objective": 0.449209606554668
+        },
+        "top1pct": {
+          "auroc": 0.78125,
+          "ap": 0.7686507936507937,
+          "recall": 0.25,
+          "fpr": 0.125,
+          "precision": 0.6666666666666666,
+          "f1": 0.36363636363636365,
+          "confusion_matrix": [
+            [
+              7,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "pixel_ap": 0.264044213109336,
+          "normal_development_q95": 0.46373477578163147,
+          "objective": 0.503897106554668
+        }
+      },
+      "synthetic_loss": 0.9493485689163208,
+      "proxy_images": 16,
+      "proxy_positives": 8,
+      "normal_map_focal": 0.02759729139506817,
+      "normal_head_focal": 0.009813559241592884
+    },
+    "fit_normals": 32,
+    "probe_sources": 8,
+    "checkpoint": "checkpoints/supersimplenet/04-pilot-lite-noise05-bottle-s2026-v1/last.pt",
+    "checkpoint_sha256": "04d12b2767a41f34fed1bc7c45d464660c96e0a4895813f950bef1d1d87c2b48",
+    "checkpoint_bytes": 2230111,
+    "history_path": "reports/supersimplenet/runs/04-pilot-lite-noise05-bottle-s2026-v1-history.csv",
+    "history_sha256": "e5198260dc5f2dcfde84818ceb9a6ed820377080cd5d698f5bf2eaebf28dee7c",
+    "parameters": 555331,
+    "trainable_parameters": 555331,
+    "resources": {
+      "seconds": 17.955437799995707,
+      "cpu_initial_rss_bytes": 949690368,
+      "cpu_peak_rss_bytes": 2014621696,
+      "cpu_peak_increment_bytes": 1064931328,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 761477632,
+      "peak_gpu_reserved_bytes": 970981376
+    },
+    "feature_caches": {
+      "fit": {
+        "category": "bottle",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        },
+        "images": [
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8a25eb07475a5102f4823fefd82662dd65f8f2a0a333bf958124ceeee38f0e38.npy",
+            "sha256": "9c5e7e540617d375c1c878e630cd6a0bb44e55ac5b1b8d2b2b4aad811a0c8f8f",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/000.png",
+            "source_image_sha256": "8a25eb07475a5102f4823fefd82662dd65f8f2a0a333bf958124ceeee38f0e38",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ba13b82fc8c732a02277816521fe93a0fee00c524f2742bbb3feed0a31cda8df.npy",
+            "sha256": "9b4d80371c4b7e9ea5becb01ba13d3509d77f68a833f72e8c5c8520194c1e455",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/001.png",
+            "source_image_sha256": "ba13b82fc8c732a02277816521fe93a0fee00c524f2742bbb3feed0a31cda8df",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7de0414f1744aaf5cec488928ee3b761509e4bad4f607dc4f6d41ad7862dab69.npy",
+            "sha256": "096b1f06a557aa3aa119381bacffc26131ecfbea895af34f48a683c0ffbd381c",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/002.png",
+            "source_image_sha256": "7de0414f1744aaf5cec488928ee3b761509e4bad4f607dc4f6d41ad7862dab69",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/83a8754d0215c4512cdba27caa15d478f21e4314ac85efa639d4d31d1a82122d.npy",
+            "sha256": "7aad02e5495cc5a85c99da7107c9b5ee05121a0489bf4b5dad5bc05e6bf0e021",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/003.png",
+            "source_image_sha256": "83a8754d0215c4512cdba27caa15d478f21e4314ac85efa639d4d31d1a82122d",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/e322ab1ce2714be77610b25209d5ce91df9ef3f434403cf3dc5041f469d2ade3.npy",
+            "sha256": "26c765a74df6aa6b432df6bb9c17c223de1ab458bef9d620cbac035ed9772544",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/004.png",
+            "source_image_sha256": "e322ab1ce2714be77610b25209d5ce91df9ef3f434403cf3dc5041f469d2ade3",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ce025f228af389707430c4ff417bb0a4ccf4324b9cef4f60e4ad87ed75c735b6.npy",
+            "sha256": "d532134ed2d6ffd063d2ce0d89990183720ccb3d73c1c261f620fb31c858e9a8",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/005.png",
+            "source_image_sha256": "ce025f228af389707430c4ff417bb0a4ccf4324b9cef4f60e4ad87ed75c735b6",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/037acb142ec7494e749da9a46de367df92df345ea3c9c4d0e0e5fe24f8b93461.npy",
+            "sha256": "a283b8074826117c72d61682a63a6d76ebdef2a60e9fe438ed31e74ce00238b6",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/006.png",
+            "source_image_sha256": "037acb142ec7494e749da9a46de367df92df345ea3c9c4d0e0e5fe24f8b93461",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/070d4cbe696071aabc660f9362273d79f0cf36b2b60084f6d545902fa455c254.npy",
+            "sha256": "024d1ff212f59b6bcde83014e20bbd4b69ad100815accda38b26d7ad48a1fdad",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/007.png",
+            "source_image_sha256": "070d4cbe696071aabc660f9362273d79f0cf36b2b60084f6d545902fa455c254",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/fbdca6b40932e967780ba859bb752eeed1996e874581c47d29da7d23f33048be.npy",
+            "sha256": "99df177c0862e95ced299f3936f64c6ba3b3b54a68a0b48c0b7d7b934aee8d76",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/008.png",
+            "source_image_sha256": "fbdca6b40932e967780ba859bb752eeed1996e874581c47d29da7d23f33048be",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/935dd12766cf96bbdeb48ba5801a896cbd7047212f601077d1adef0db9a6ae57.npy",
+            "sha256": "58ace4c8267df47f4d6121658c5e979375d5e175c528c8751011e306b26ac244",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/009.png",
+            "source_image_sha256": "935dd12766cf96bbdeb48ba5801a896cbd7047212f601077d1adef0db9a6ae57",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ad500d6c2c625ecc17f8b276a597f76ce5cabfece6326fd39682b5d6b9192db0.npy",
+            "sha256": "a49a0a3dbea9e14001c7437a01d1ab9b220e9db94154e9eece33f018d48070da",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/010.png",
+            "source_image_sha256": "ad500d6c2c625ecc17f8b276a597f76ce5cabfece6326fd39682b5d6b9192db0",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8493f6eb590418997ff950e1a2cfbe5f31ebbf49a8d075b838a98abfe851ae26.npy",
+            "sha256": "68b4c6fb4e07e7e48709500e7e2b64af39ed53388ca65c418b7393935a563f64",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/011.png",
+            "source_image_sha256": "8493f6eb590418997ff950e1a2cfbe5f31ebbf49a8d075b838a98abfe851ae26",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0c45f021e169dc8b27120c4c70ea09c0a4e3391482ed4dda4a04baf7b2098b85.npy",
+            "sha256": "9f3bfb7498b80e5e3e2939a69eb520a442552a3edc09946adc9500c656501755",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/012.png",
+            "source_image_sha256": "0c45f021e169dc8b27120c4c70ea09c0a4e3391482ed4dda4a04baf7b2098b85",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/13d287cd1cc8b7e7e09ecb74594f7a30d94c35fd5e95b9421b2081d9ead6aa36.npy",
+            "sha256": "90dc76679d583f9ff1181e0f42e3049d805ce32c0d08e5c63a3b0b476f820312",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/013.png",
+            "source_image_sha256": "13d287cd1cc8b7e7e09ecb74594f7a30d94c35fd5e95b9421b2081d9ead6aa36",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/a8826579631c43c66b2e0d33f00cf6d5beac3dcab0cadf50bec3c8837a329288.npy",
+            "sha256": "7aa2d0e0f0b0afc412fdce13f69c60da6c19ba9d9cd82ebfbac25c06708546bd",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/014.png",
+            "source_image_sha256": "a8826579631c43c66b2e0d33f00cf6d5beac3dcab0cadf50bec3c8837a329288",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8ce929a477e23b50c37913300541f324eaf6073155e4abea524a3fdd9d7c49b2.npy",
+            "sha256": "f49432ea7b12e6efe98970df55ff0f3030eef71890067a4102214b8de82a5d17",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/015.png",
+            "source_image_sha256": "8ce929a477e23b50c37913300541f324eaf6073155e4abea524a3fdd9d7c49b2",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/92a6d4b311360bcd5c96ae630a377ea2ebcb29d9b9a39e2f0c1c3ad1f1b88a9a.npy",
+            "sha256": "7c4be0c6c239adb8a226250e7f464e550c7180e64ad4cb1bb806a9f9d607a9b6",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/016.png",
+            "source_image_sha256": "92a6d4b311360bcd5c96ae630a377ea2ebcb29d9b9a39e2f0c1c3ad1f1b88a9a",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/83b1d0683d6c9dbf41ab72464838991bbb931dff24d644cd8e4bf7582ef784ce.npy",
+            "sha256": "d9fa7ab7a9d87f909fedd27a4a2730fa7d36a2e4fa103a61376585a0b65e9fb3",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/018.png",
+            "source_image_sha256": "83b1d0683d6c9dbf41ab72464838991bbb931dff24d644cd8e4bf7582ef784ce",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/96a7e24ec9ca27a9ff389ccba0260d6d78d6762968803260804aef65f26fe077.npy",
+            "sha256": "b333c5b5977176cd8e432d921c8d8b65df2a7013f9f9841697981dee073a078b",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/020.png",
+            "source_image_sha256": "96a7e24ec9ca27a9ff389ccba0260d6d78d6762968803260804aef65f26fe077",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/92fe0a4a396df3bc95852130a063c241486dccb21ac54017145265a1a5dd72f2.npy",
+            "sha256": "9877e935b9de0cbeaaa13b95059930868b8a98ad1a28cb828e93f2ad38506f93",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/021.png",
+            "source_image_sha256": "92fe0a4a396df3bc95852130a063c241486dccb21ac54017145265a1a5dd72f2",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/5bebcd96862ca137cf0a1be85230cffb0098bd06636747c98dd3109c223dd3a0.npy",
+            "sha256": "e433efd666d44b66c3300fa4e49f10ce16c12acb2790aad2af4e7cf772032452",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/023.png",
+            "source_image_sha256": "5bebcd96862ca137cf0a1be85230cffb0098bd06636747c98dd3109c223dd3a0",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0e59918793e8ad42caa415776b381f5366afbd11a9fff2511970dbc1389b8ddf.npy",
+            "sha256": "0274aec8d020cd8c036fada132dcb91f2904b15cc0ddc7a795339d63ab9d625e",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/024.png",
+            "source_image_sha256": "0e59918793e8ad42caa415776b381f5366afbd11a9fff2511970dbc1389b8ddf",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8c9ae9da77c9a3add73dae83d25abbd444ee9445d4e4c6f1d27d946421fa6542.npy",
+            "sha256": "54cc6e8169e8eb20a3d6e156f7246cc6842d076415936cba4533bffcd4aa75fa",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/026.png",
+            "source_image_sha256": "8c9ae9da77c9a3add73dae83d25abbd444ee9445d4e4c6f1d27d946421fa6542",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/c3d7ae38ba8602d8effc716068bb71a4e67d4c0acddd9caf5ec761d3f2853372.npy",
+            "sha256": "b9d6f2e8338b1cedd53200fc419ddacff6e794e10a8f3d6256e333eb768ba04c",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/027.png",
+            "source_image_sha256": "c3d7ae38ba8602d8effc716068bb71a4e67d4c0acddd9caf5ec761d3f2853372",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/b8253d5c07aaf8c58f8d0d4a1884ea4e7e7f26b8529b27e6b55e9392db97f67f.npy",
+            "sha256": "538213c254301061cd5cf0fa4ccf23cadac5e956e6e61f57cd46e5c2ea410529",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/029.png",
+            "source_image_sha256": "b8253d5c07aaf8c58f8d0d4a1884ea4e7e7f26b8529b27e6b55e9392db97f67f",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/2ae6e2e8ca1e90f4e0804e28faeb9bb51cd3c130bda50ed0bafe05fb4533cfd0.npy",
+            "sha256": "8b03e1302f035faffda5f9890582c0e85383a6b3d95647652f56a3a270bc8ed2",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/030.png",
+            "source_image_sha256": "2ae6e2e8ca1e90f4e0804e28faeb9bb51cd3c130bda50ed0bafe05fb4533cfd0",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/4a44f447a81d1a9c18577b667e5dd3131b10205d2a739deedf45490f277a402b.npy",
+            "sha256": "392b3a49f42aa5d77e047ab66e4537354de662cc8f44ce61fd88027ec567ef5f",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/034.png",
+            "source_image_sha256": "4a44f447a81d1a9c18577b667e5dd3131b10205d2a739deedf45490f277a402b",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/1ee9369e10c7f3d73b6a03e2bf3e648ccf29b52e47de99141cbd74603fbd76f0.npy",
+            "sha256": "e9559b06b40d7af9a7de2ba6953305a65522001eef32981f11ecfdfda78a12bc",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/035.png",
+            "source_image_sha256": "1ee9369e10c7f3d73b6a03e2bf3e648ccf29b52e47de99141cbd74603fbd76f0",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/9302580815770c06ed9fccad8512b25d3e80053c35dfeb35d743dd5c907761ee.npy",
+            "sha256": "c31cad3f5195cf42aa6cff9d91c865a40b78e9058f46735583f6842925fc2a07",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/036.png",
+            "source_image_sha256": "9302580815770c06ed9fccad8512b25d3e80053c35dfeb35d743dd5c907761ee",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/3575e4f0785d679737e5d870d4ab308be47ea1565c0b4b6c8d76af502f9a080b.npy",
+            "sha256": "1b6a8200950c23c7e42b13600f9a3a8cb042e4ab5a3e9b12c572e7a197975d70",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/037.png",
+            "source_image_sha256": "3575e4f0785d679737e5d870d4ab308be47ea1565c0b4b6c8d76af502f9a080b",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/905e9e23f2c982de65f7687ad31d35c750f4812cf681b7263b6cd072548d474d.npy",
+            "sha256": "d553542ee6a8367f893ea9e734d4737af1ec9b2064b4760a5ba285ec8a8ca8cb",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/038.png",
+            "source_image_sha256": "905e9e23f2c982de65f7687ad31d35c750f4812cf681b7263b6cd072548d474d",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/663b485f3c271b3c7fd83c3312339c09010e7bc81dcb95d5a4f5646bb776aaaf.npy",
+            "sha256": "0cf7d379c1ae58a57869659cb72328f77f250559348f9c604ca536a888a8df41",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/039.png",
+            "source_image_sha256": "663b485f3c271b3c7fd83c3312339c09010e7bc81dcb95d5a4f5646bb776aaaf",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          }
+        ],
+        "input_rows_sha256": "0cc660cbdc5172515bb870cb1c68c40204ee2a2cbab6648f3dc7c4c282031fba",
+        "cache_misses": 0,
+        "cache_hits": 32,
+        "resources": {
+          "seconds": 0.00022989999706624076,
+          "cpu_initial_rss_bytes": 947236864,
+          "cpu_peak_rss_bytes": 947310592,
+          "cpu_peak_increment_bytes": 73728,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 11162112,
+          "peak_gpu_reserved_bytes": 25165824
+        }
+      },
+      "normal_development": {
+        "category": "bottle",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        },
+        "images": [
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/a12a98cfa582797afce9dd170f5f6795747df8672deaed80d03c7e26406c1aa0.npy",
+            "sha256": "a427e7a65ff14e9de2fc86a6e7cc83358a0eb1920681f8ff53b41cde608bb944",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/019.png",
+            "source_image_sha256": "a12a98cfa582797afce9dd170f5f6795747df8672deaed80d03c7e26406c1aa0",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f8e1ece1086cc7e75dcacffdb7ac5485f767a7a53cb2f92033fc29f58e2708ba.npy",
+            "sha256": "c3f4e1a395384f72e2ea2ac5364676aff576dfec4954de9a40f9ef19170dba3e",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/022.png",
+            "source_image_sha256": "f8e1ece1086cc7e75dcacffdb7ac5485f767a7a53cb2f92033fc29f58e2708ba",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/311f88b86169b4516486999726e702ebca6c8f12c2500cc0449158ffbe0f929b.npy",
+            "sha256": "948edf7c584d85bb2a14bd12eeddba7bf3e7daeb1e5a76c6c8fda7a28ad33b16",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/025.png",
+            "source_image_sha256": "311f88b86169b4516486999726e702ebca6c8f12c2500cc0449158ffbe0f929b",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/22ea2f7d08c0a5ba4f1494737bdc198375760ce42eed8fe29b68436acf2ceb7c.npy",
+            "sha256": "1e210b1ca6ca92752a7df2b99eab645b7460c4a2d5c3fe25702bab8925a32763",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/032.png",
+            "source_image_sha256": "22ea2f7d08c0a5ba4f1494737bdc198375760ce42eed8fe29b68436acf2ceb7c",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/16e52b8b32fcaa6295840300340287fed67abcaf1d4ee9d8edd5e674e46b17ca.npy",
+            "sha256": "161f8ecc1b3ec8cdbfe6c85e26082bcc3ffa9a5fae5f0425c7a1ee7c33ac91a2",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/033.png",
+            "source_image_sha256": "16e52b8b32fcaa6295840300340287fed67abcaf1d4ee9d8edd5e674e46b17ca",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0981ee2efcd397b9881f46d2bf9a568b94f31b5905e8cd787116e9e4cea47603.npy",
+            "sha256": "77cfc6800db332d8dfd3209c48c2cc5285c342362f350aa6a991d2f6dd98f586",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/040.png",
+            "source_image_sha256": "0981ee2efcd397b9881f46d2bf9a568b94f31b5905e8cd787116e9e4cea47603",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/034e70851f06468c7c48fee1845a890074f96887beaa08c0d72b86b10aa4343c.npy",
+            "sha256": "bc48682bbd10c4d093519c418dfccc3a3f31456cc5d9f56998e3bbf5601a8890",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/042.png",
+            "source_image_sha256": "034e70851f06468c7c48fee1845a890074f96887beaa08c0d72b86b10aa4343c",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/e49f59e90918e7d94cd5439eb595e019722a3b254e12ea6ccf901bab2a25112a.npy",
+            "sha256": "889136873934bc0222213093c393d33caca5991a30ad1f1fcf21f338a8daec64",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/045.png",
+            "source_image_sha256": "e49f59e90918e7d94cd5439eb595e019722a3b254e12ea6ccf901bab2a25112a",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/fe999421df95604555b3c253f524e4a6328f16dc8dfe24de6eb66a34fda43d97.npy",
+            "sha256": "7844694bedfb2369243d938ee8ba0450a8e98b6170c042a9b00c84a43dbc0c51",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/050.png",
+            "source_image_sha256": "fe999421df95604555b3c253f524e4a6328f16dc8dfe24de6eb66a34fda43d97",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/93ade48246691fc145a13d531819652b915eeb5da738add2615c40f5590bcc5f.npy",
+            "sha256": "c6f36973227c2c2dfdf477ce2097218b02b4095f49c267a39db7024e55594a99",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/068.png",
+            "source_image_sha256": "93ade48246691fc145a13d531819652b915eeb5da738add2615c40f5590bcc5f",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/1f87cfa2cc3e2152ee3593e2092cc48e23132c4aaea23de20ef4547a2bb612a9.npy",
+            "sha256": "7caadcb0eeacdb73f29f0047dea65e4ef9158052eb77a645a60f04e43bd98e73",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/075.png",
+            "source_image_sha256": "1f87cfa2cc3e2152ee3593e2092cc48e23132c4aaea23de20ef4547a2bb612a9",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/408802ee90d3dadd130284d54bd702d2d3e79bd1ffbf4c3c6668731229e5cf06.npy",
+            "sha256": "c48165d236c3e823e672047fc3f0d552fbf97c7766fef0d7e298a31c6488ad54",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/079.png",
+            "source_image_sha256": "408802ee90d3dadd130284d54bd702d2d3e79bd1ffbf4c3c6668731229e5cf06",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8c9594232eb77990d314c9cccc953bc375917f677b9abf283417f2e26c1d0bd8.npy",
+            "sha256": "9d0d573e2eae230d1f3c78d87f3cf5fcce04a4641384741375640f8c14282781",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/080.png",
+            "source_image_sha256": "8c9594232eb77990d314c9cccc953bc375917f677b9abf283417f2e26c1d0bd8",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7cb0735f9914baa21ceda3699215a8e15665639b181703f3cec94b8f27e1b1a6.npy",
+            "sha256": "95e0f809016cb67bc58ba7ed36741f0866250b91c06405047a508c27534f9a5a",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/081.png",
+            "source_image_sha256": "7cb0735f9914baa21ceda3699215a8e15665639b181703f3cec94b8f27e1b1a6",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8d93da99228a622b5be23bbd3edc5e434648bcd86b7b803c67fee86160c587dc.npy",
+            "sha256": "46590fcc35be702165d438307f9505d77913dd1e7767d21dad5487a5f8bee68a",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/085.png",
+            "source_image_sha256": "8d93da99228a622b5be23bbd3edc5e434648bcd86b7b803c67fee86160c587dc",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/60d532f4ed02d61a11b1f27f729adada0f39b793cca317f5d39a8deb794a3b16.npy",
+            "sha256": "6e2ea929c5490bcfc8599f2e3b7b8fa4615740ded2e8387dab31ff78b9487bb8",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/094.png",
+            "source_image_sha256": "60d532f4ed02d61a11b1f27f729adada0f39b793cca317f5d39a8deb794a3b16",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          }
+        ],
+        "input_rows_sha256": "4e6ce2b306e6d1b6977c70165b7d802a316c8932168d6bbad2f07fb5fe73591e",
+        "cache_misses": 0,
+        "cache_hits": 16,
+        "resources": {
+          "seconds": 0.000261799999861978,
+          "cpu_initial_rss_bytes": 948457472,
+          "cpu_peak_rss_bytes": 948482048,
+          "cpu_peak_increment_bytes": 24576,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 11162112,
+          "peak_gpu_reserved_bytes": 25165824
+        }
+      },
+      "probes": {
+        "category": "bottle",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        },
+        "images": [
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/52c84bab48a67573f1bf589366ad7a882b1c7c866c09e3f4fffa3693bf4a69c3.npy",
+            "sha256": "204f1f02ed84d90d25f0c4037dcc13d3b4817a47672bb724646cfeb14c459f45",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/041.png",
+            "source_image_sha256": "52c84bab48a67573f1bf589366ad7a882b1c7c866c09e3f4fffa3693bf4a69c3",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/6174ef1513643d78ff3228e0e117208b55febcd10b2b86e16c65c26ad9df3c0c.npy",
+            "sha256": "f9f2ca643d8b5e92136aa82352f182893672c619b284d86e235e4be40cd04bf0",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/043.png",
+            "source_image_sha256": "6174ef1513643d78ff3228e0e117208b55febcd10b2b86e16c65c26ad9df3c0c",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/1adba5092ba0706b293e0ce283629a1af776e46d8c809acb2cd084cf9d49d127.npy",
+            "sha256": "19c09788189209e2c0a8683de47c150965048e328283f06c2832348142096d5e",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/046.png",
+            "source_image_sha256": "1adba5092ba0706b293e0ce283629a1af776e46d8c809acb2cd084cf9d49d127",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/87038a5973815117ec24b5cca8cd798dc31d738a0cb6f2efd5803d62f6ef9f1c.npy",
+            "sha256": "bea05cbd01f45bd8c7cf343d0049d4166e1ba6a934bbeb00cf27cbad5ed81d8e",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/047.png",
+            "source_image_sha256": "87038a5973815117ec24b5cca8cd798dc31d738a0cb6f2efd5803d62f6ef9f1c",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/15fa6566a8c01bfcd546f0cf2b34f7e351c9f10126b77ea3ad6ddb9200e21398.npy",
+            "sha256": "2d885538d172111c5025c354c46a068149ddc5e2f68d9726e0fde4add0d01350",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/048.png",
+            "source_image_sha256": "15fa6566a8c01bfcd546f0cf2b34f7e351c9f10126b77ea3ad6ddb9200e21398",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/59233798220711bc931bbb9f4c88a7a42e933e831749df316f949b7572f3f5a1.npy",
+            "sha256": "a38e2698046293cf29b353b52133b9441d25408790b46a4713d21cb72ca10fb0",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/049.png",
+            "source_image_sha256": "59233798220711bc931bbb9f4c88a7a42e933e831749df316f949b7572f3f5a1",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0e3eeb97862eaa2125829f6f6336036b3ce72ab6e8bcf8795bce2c28d8ea425f.npy",
+            "sha256": "60b148cd358bcb5a949c563bbbc5555d1bc1661bb3779139db183db1a6d77cf4",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/051.png",
+            "source_image_sha256": "0e3eeb97862eaa2125829f6f6336036b3ce72ab6e8bcf8795bce2c28d8ea425f",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          },
+          {
+            "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/af57768856d61b24bfdd780989cc5a6623a14c3fd66be2d755af16560fe0e8db.npy",
+            "sha256": "1a53dc84dd1c9d0d6b5fbd38926a42f6186eb4b457cef3696ad53811696593f6",
+            "shape": [
+              384,
+              64,
+              64
+            ],
+            "bytes": 6291584,
+            "source_image": "bottle/train/good/052.png",
+            "source_image_sha256": "af57768856d61b24bfdd780989cc5a6623a14c3fd66be2d755af16560fe0e8db",
+            "profile": {
+              "backbone": "resnet18",
+              "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+              "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+              "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+              "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+              "dtype": "float32"
+            }
+          }
+        ],
+        "input_rows_sha256": "b27ae552aaf1ae55eed873c3545ab8a179cdeb2a5337b9bfbb94de45c5941fde",
+        "cache_misses": 0,
+        "cache_hits": 8,
+        "resources": {
+          "seconds": 0.000240400004258845,
+          "cpu_initial_rss_bytes": 948465664,
+          "cpu_peak_rss_bytes": 948482048,
+          "cpu_peak_increment_bytes": 16384,
+          "cpu_sampling_seconds": 0.05,
+          "peak_gpu_allocated_bytes": 11162112,
+          "peak_gpu_reserved_bytes": 25165824
+        }
+      }
+    },
+    "adapter_relative_weight_drift": 0.02265482395887375,
+    "checkpoint_replay_exact": true,
+    "wall_seconds": 19.877754100001766
+  },
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-pilot-lite-noise05-bottle-s2026-v1"
+  },
+  "interpretation": "Only normal fitting/development and fitting-derived synthetic proxies; no calibration/test access",
+  "decision": "await measured bounded comparison",
+  "status": "completed",
+  "recorded_at": "2026-11-13T04:26:16.987615+00:00",
+  "config_sha256": "f6acc27a4822980bd2d5fa99aad1fa7c93d1e960c25f74819c8ad5da0f059e6f"
+}

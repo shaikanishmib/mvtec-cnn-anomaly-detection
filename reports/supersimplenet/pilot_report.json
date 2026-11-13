@@ -1,0 +1,391 @@
+{
+  "status": "architecture and pilots complete; development pending; no official test access",
+  "reference": {
+    "backbone": "wide_resnet50_2",
+    "weights_sha256": "95faca4d11227dddf8633dbb5ff6c8a9003c1aa5b8945c73834b8007b10950b8",
+    "layer_shapes": [
+      [
+        4,
+        512,
+        32,
+        32
+      ],
+      [
+        4,
+        1024,
+        16,
+        16
+      ]
+    ],
+    "aggregated_shape": [
+      4,
+      1536,
+      64,
+      64
+    ],
+    "segmentation_shape": [
+      8,
+      1,
+      64,
+      64
+    ],
+    "detection_shape": [
+      8
+    ],
+    "head_parameters": 8856835,
+    "batch_size": 4,
+    "steps": 12,
+    "warmup_steps": 2,
+    "mean_step_seconds": 0.15902596000014455,
+    "step_seconds": [
+      0.8205912999983411,
+      0.1657277999984217,
+      0.15623020000202814,
+      0.15811509999912232,
+      0.1649692999999388,
+      0.15904560000490164,
+      0.16181369999685558,
+      0.1560144000031869,
+      0.15529660000174772,
+      0.16143869999359595,
+      0.15760479999880772,
+      0.15973120000126073
+    ],
+    "losses": [
+      {
+        "step": 0,
+        "loss": 1.6749516725540161,
+        "segmentation_focal": 0.20367620885372162,
+        "margin_loss": 1.4246301651000977,
+        "detection_focal": 0.04664523899555206
+      },
+      {
+        "step": 1,
+        "loss": 6.782384395599365,
+        "segmentation_focal": 0.5235404968261719,
+        "margin_loss": 2.145169734954834,
+        "detection_focal": 4.113674163818359
+      },
+      {
+        "step": 2,
+        "loss": 5.796785354614258,
+        "segmentation_focal": 0.7052974700927734,
+        "margin_loss": 2.655857563018799,
+        "detection_focal": 2.4356300830841064
+      },
+      {
+        "step": 3,
+        "loss": 3.150627613067627,
+        "segmentation_focal": 0.630362868309021,
+        "margin_loss": 2.358142375946045,
+        "detection_focal": 0.16212216019630432
+      },
+      {
+        "step": 4,
+        "loss": 5.18701171875,
+        "segmentation_focal": 0.49714168906211853,
+        "margin_loss": 2.274867534637451,
+        "detection_focal": 2.4150028228759766
+      },
+      {
+        "step": 5,
+        "loss": 3.8262367248535156,
+        "segmentation_focal": 0.5701265931129456,
+        "margin_loss": 2.413052558898926,
+        "detection_focal": 0.8430577516555786
+      },
+      {
+        "step": 6,
+        "loss": 2.0902347564697266,
+        "segmentation_focal": 0.4010847508907318,
+        "margin_loss": 1.6557559967041016,
+        "detection_focal": 0.03339403495192528
+      },
+      {
+        "step": 7,
+        "loss": 2.853226661682129,
+        "segmentation_focal": 0.2823292315006256,
+        "margin_loss": 1.6649914979934692,
+        "detection_focal": 0.9059059023857117
+      },
+      {
+        "step": 8,
+        "loss": 2.1551475524902344,
+        "segmentation_focal": 0.1922806203365326,
+        "margin_loss": 1.4495458602905273,
+        "detection_focal": 0.5133211016654968
+      },
+      {
+        "step": 9,
+        "loss": 1.7925864458084106,
+        "segmentation_focal": 0.15550480782985687,
+        "margin_loss": 1.5511574745178223,
+        "detection_focal": 0.08592420071363449
+      },
+      {
+        "step": 10,
+        "loss": 1.7116729021072388,
+        "segmentation_focal": 0.11246160417795181,
+        "margin_loss": 1.4149640798568726,
+        "detection_focal": 0.18424727022647858
+      },
+      {
+        "step": 11,
+        "loss": 1.5620288848876953,
+        "segmentation_focal": 0.13361138105392456,
+        "margin_loss": 1.3817195892333984,
+        "detection_focal": 0.046697843819856644
+      }
+    ],
+    "extraction_resources": {
+      "seconds": 0.466149799998675,
+      "cpu_initial_rss_bytes": 1233260544,
+      "cpu_peak_rss_bytes": 1615855616,
+      "cpu_peak_increment_bytes": 382595072,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 669847552,
+      "peak_gpu_reserved_bytes": 1140850688
+    },
+    "training_resources": {
+      "seconds": 2.579084100005275,
+      "cpu_initial_rss_bytes": 1615908864,
+      "cpu_peak_rss_bytes": 2188419072,
+      "cpu_peak_increment_bytes": 572510208,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 1674352640,
+      "peak_gpu_reserved_bytes": 2629828608
+    },
+    "projected_40_epoch_45_fit_training_seconds": 12270.443073611154,
+    "provenance": "12 optimization steps on four fitting-normal bottle images; feasibility only, not a convergence experiment",
+    "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5"
+  },
+  "pilots": [
+    {
+      "experiment_id": "04-pilot-lite-bottle-s2026-v1",
+      "configuration": {
+        "backbone": "resnet18",
+        "channels": 384,
+        "seg_width": 256,
+        "det_width": 32,
+        "adapter_trainable": true,
+        "noise_std": 0.015,
+        "loss": "margin_focal",
+        "seed": 2026,
+        "batch_size": 8,
+        "extraction_batch": 8,
+        "epochs": 20,
+        "validation_every": 2,
+        "hypothesis": "Lite ICPR components can learn masked feature perturbations on fitting normals without real anomaly supervision"
+      },
+      "development": {
+        "candidates": {
+          "head": {
+            "auroc": 0.390625,
+            "ap": 0.4486568986568987,
+            "recall": 0.0,
+            "fpr": 0.0,
+            "precision": 0.0,
+            "f1": 0.0,
+            "confusion_matrix": [
+              [
+                8,
+                0
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "pixel_ap": 0.17782008407780864,
+            "normal_development_q95": 0.0563804917037487,
+            "objective": 0.2842225420389043
+          },
+          "max": {
+            "auroc": 0.59375,
+            "ap": 0.660218253968254,
+            "recall": 0.125,
+            "fpr": 0.125,
+            "precision": 0.5,
+            "f1": 0.2,
+            "confusion_matrix": [
+              [
+                7,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "pixel_ap": 0.17782008407780864,
+            "normal_development_q95": 0.6137948036193848,
+            "objective": 0.3670350420389043
+          },
+          "top1pct": {
+            "auroc": 0.59375,
+            "ap": 0.643029193029193,
+            "recall": 0.0,
+            "fpr": 0.0,
+            "precision": 0.0,
+            "f1": 0.0,
+            "confusion_matrix": [
+              [
+                8,
+                0
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "pixel_ap": 0.17782008407780864,
+            "normal_development_q95": 0.5402575731277466,
+            "objective": 0.3857850420389043
+          }
+        },
+        "synthetic_loss": 1.0528557300567627,
+        "proxy_images": 16,
+        "proxy_positives": 8,
+        "normal_map_focal": 0.03585053235292435,
+        "normal_head_focal": 0.0303548164665699
+      },
+      "resources": {
+        "seconds": 16.389204599996447,
+        "cpu_initial_rss_bytes": 2256863232,
+        "cpu_peak_rss_bytes": 2349768704,
+        "cpu_peak_increment_bytes": 92905472,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 761477632,
+        "peak_gpu_reserved_bytes": 1281359872
+      },
+      "parameters": 555331,
+      "checkpoint_replay_exact": true,
+      "wall_seconds": 19.9446054,
+      "adapter_relative_weight_drift": 0.017242861911654472
+    },
+    {
+      "experiment_id": "04-pilot-lite-noise05-bottle-s2026-v1",
+      "configuration": {
+        "backbone": "resnet18",
+        "channels": 384,
+        "seg_width": 256,
+        "det_width": 32,
+        "adapter_trainable": true,
+        "noise_std": 0.05,
+        "loss": "margin_focal",
+        "seed": 2026,
+        "batch_size": 8,
+        "extraction_batch": 8,
+        "epochs": 20,
+        "validation_every": 2,
+        "hypothesis": "Larger planned feature perturbations improve learnability under the same bounded Lite pilot"
+      },
+      "development": {
+        "candidates": {
+          "head": {
+            "auroc": 0.8125,
+            "ap": 0.8219246031746031,
+            "recall": 0.125,
+            "fpr": 0.0,
+            "precision": 1.0,
+            "f1": 0.2222222222222222,
+            "confusion_matrix": [
+              [
+                8,
+                0
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "pixel_ap": 0.264044213109336,
+            "normal_development_q95": -0.20489642024040222,
+            "objective": 0.5382721065546681
+          },
+          "max": {
+            "auroc": 0.734375,
+            "ap": 0.7586309523809525,
+            "recall": 0.5,
+            "fpr": 0.25,
+            "precision": 0.6666666666666666,
+            "f1": 0.5714285714285715,
+            "confusion_matrix": [
+              [
+                6,
+                2
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "pixel_ap": 0.264044213109336,
+            "normal_development_q95": 0.5655629634857178,
+            "objective": 0.449209606554668
+          },
+          "top1pct": {
+            "auroc": 0.78125,
+            "ap": 0.7686507936507937,
+            "recall": 0.25,
+            "fpr": 0.125,
+            "precision": 0.6666666666666666,
+            "f1": 0.36363636363636365,
+            "confusion_matrix": [
+              [
+                7,
+                1
+              ],
+              [
+                6,
+                2
+              ]
+            ],
+            "pixel_ap": 0.264044213109336,
+            "normal_development_q95": 0.46373477578163147,
+            "objective": 0.503897106554668
+          }
+        },
+        "synthetic_loss": 0.9493485689163208,
+        "proxy_images": 16,
+        "proxy_positives": 8,
+        "normal_map_focal": 0.02759729139506817,
+        "normal_head_focal": 0.009813559241592884
+      },
+      "resources": {
+        "seconds": 17.955437799995707,
+        "cpu_initial_rss_bytes": 949690368,
+        "cpu_peak_rss_bytes": 2014621696,
+        "cpu_peak_increment_bytes": 1064931328,
+        "cpu_sampling_seconds": 0.05,
+        "peak_gpu_allocated_bytes": 761477632,
+        "peak_gpu_reserved_bytes": 970981376
+      },
+      "parameters": 555331,
+      "checkpoint_replay_exact": true,
+      "wall_seconds": 19.877754100001766,
+      "adapter_relative_weight_drift": 0.02265482395887375
+    }
+  ],
+  "weight_acquisition": {
+    "url": "https://download.pytorch.org/models/wide_resnet50_2-95faca4d.pth",
+    "sha256": "95faca4d11227dddf8633dbb5ff6c8a9003c1aa5b8945c73834b8007b10950b8",
+    "bytes": 138223492,
+    "rationale": "Official ICPR code uses ImageNet V1; existing WideResNet cache was V2 and was not substituted",
+    "storage": "ignored project checkpoint directory"
+  },
+  "decision": "Reference excluded by measured workload; .05 Lite pilot improves synthetic discrimination but tiny probe uncertainty precludes quality claims. Proceed only to preregistered four-category development.",
+  "proposed_final_workload": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "epochs": 40,
+    "categories": 15,
+    "lite_training_seconds_estimate": 6072.149822700034,
+    "note": "Estimate uses measured four-batch pilot epochs; IO, validation, cache extraction and native evaluation are additional. Final gate must use development measurements."
+  },
+  "core_source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+  "notebook_sha256": "cce122515741b34d0becf9abdd2c7d71403bc4610dad1b7618c0b1623b99c135"
+}
