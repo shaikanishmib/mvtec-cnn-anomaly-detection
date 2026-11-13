@@ -3,7 +3,7 @@
 PyTorch research comparing normal-only industrial anomaly detection and defect
 localization across all 15 original MVTec AD categories. The scientific notebooks
 are the canonical experiment narrative; compact, append-only records preserve
-both successful and unsuccessful experiments. The Basic CNN, convolutional autoencoder and PatchCore variant baselines are complete;
+both successful and unsuccessful experiments. The Basic CNN, convolutional autoencoder, PatchCore variant and SuperSimpleNet Lite baselines are complete;
 the remaining model families and engineering application are planned.
 
 ## Research roadmap
@@ -14,7 +14,7 @@ the remaining model families and engineering application are planned.
 | [01](notebooks/01_basic_cnn.ipynb) | Basic CNN, synthetic-supervised segmentation | Complete: bounded development and all 15 categories across three seeds |
 | [02](notebooks/02_convolutional_autoencoder.ipynb) | Convolutional autoencoder | Complete: bounded development and all 15 categories across three seeds |
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
-| [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; policy frozen for 15 categories × three seeds; final benchmark pending |
+| [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
 | 05 | PaDiM | Planned |
 | 06 | EfficientAD | Planned |
 | 07 | Cross-model comparison | Planned |
@@ -264,7 +264,7 @@ The complete local notebook keeps original/reconstruction/error/overlay/mask
 panels. Public outputs contain compact measured tables and aggregate plots.
 Registry records are append-only, including all rejected variants. The pilot
 executed live; later notebook cells analyze separately recorded jobs and
-explicitly do not claim live training replay. No PatchCore work was started.
+explicitly do not claim live training replay. At the autoencoder milestone, no PatchCore work had started.
 
 Read [Notebook 02](notebooks/02_convolutional_autoencoder.ipynb), [results](reports/autoencoder/all_category_means.csv), [findings](reports/autoencoder/findings.md), [experiment registry](experiments/), [protocol](docs/autoencoder_protocol.md) and [reproduction](docs/autoencoder_reproduction.md).
 <!-- AE_FINDINGS_END -->
@@ -386,7 +386,60 @@ major limitation. No independent environment rebuild or deployment claim is
 made. All rejected trials, exact comparisons and measured resource costs remain.
 The pilot executed live; continuation cells analyze separately completed jobs
 without claiming live fitting replay. Licensed panels, features, maps and banks
-remain local and ignored. No SuperSimpleNet work was started.
+remain local and ignored. At the PatchCore milestone, no SuperSimpleNet work had started.
 
 Read [Notebook 03](notebooks/03_patchcore.ipynb), [results](reports/patchcore/all_category_means.csv), [findings](reports/patchcore/findings.md), [protocol](docs/patchcore_protocol.md) and [reproduction](docs/patchcore_reproduction.md).
 <!-- PATCHCORE_FINDINGS_END -->
+
+<!-- SUPERSIMPLENET_FINDINGS_START -->
+## SuperSimpleNet Lite: completed benchmark
+
+Notebook04 evaluates an explicitly reduced-budget ICPR-style SuperSimpleNet.
+Frozen ResNet18 ImageNet V1 layer2/3 features feed a learned adapter,
+segmentation discriminator and auxiliary image detector. Normal-only fitting
+uses Perlin-masked feature-space Gaussian noise, not RGB defect corruption.
+The bounded four-category study selected noise standard deviation0.05,
+margin-plus-focal loss,40 epochs and top1% smoothed-map image scoring.
+All15 categories completed seeds2026/2027/2028 before official evaluation.
+No post-test retraining or threshold changes were made.
+
+| Metric | Basic CNN | Autoencoder | PatchCore variant | SuperSimpleNet Lite |
+|---|---:|---:|---:|---:|
+| image_auroc | 0.712589 | 0.634623 | 0.967572 | 0.964783 |
+| image_ap | 0.858954 | 0.827916 | 0.988538 | 0.986239 |
+| pixel_auroc | 0.785832 | 0.690002 | 0.972944 | 0.952850 |
+| pixel_ap | 0.235382 | 0.110897 | 0.540154 | 0.436077 |
+| au_pro | 0.549807 | 0.449350 | 0.920399 | 0.856502 |
+| recall | 0.401760 | 0.235000 | 0.890435 | 0.892012 |
+| fpr | 0.098341 | 0.093944 | 0.171806 | 0.166249 |
+| precision | 0.873299 | 0.789620 | 0.940045 | 0.941235 |
+| f1 | 0.510593 | 0.314635 | 0.904345 | 0.909892 |
+
+Mean model p50/p95: **9.689/17.339ms**; decoded-RGB-to-native-CPU-map p50/p95: **28.793/39.422ms** (file decode excluded).
+Peak allocated training VRAM: **0.709GiB**. Final training-loop time: **85.66minutes**; native evaluation: **44.96minutes**.
+Shared frozen extractor: **11,179,957bytes** once; largest category-head checkpoint: **2,230,175bytes**.
+
+These are means of run percentiles rather than pooled serving percentiles.
+Ranking, recall, false-positive behavior, localization and latency must be
+considered together. Paired image intervals preserve matching categories,
+seeds and image draws; they condition on fitted models and thresholds.
+Small macro differences do not establish statistical superiority.
+
+Image/pixel thresholds use reserved unmodified normal q95/q99.5 distributions.
+Finite calibration sample sizes do not guarantee the nominal5% unseen-normal FPR.
+The reports include category/seed threshold distributions, Wilson intervals,
+order-statistic uncertainty, real failure panels, fine-defect results and
+post-freeze normal brightness sensitivity. Pixel bootstrap intervals use a
+disclosed fixed-bin approximation; primary native point metrics remain exact.
+
+The publication uses a larger backbone, longer training and a learned primary
+image head. Our reduced widths,40-epoch budget and selected map aggregation are
+explicit differences. Strong synthetic-proxy performance does not guarantee
+synthetic-to-real transfer. All rejected settings and the interrupted cable
+attempt remain recorded. Final fitting has exact epoch/RNG recovery.
+Public outputs are genuine and compact; complete original/mask/overlay panels,
+weights and caches remain local and ignored. No Notebook05 work was started.
+
+Read [Notebook04](notebooks/04_supersimplenet.ipynb), [all-category results](reports/supersimplenet/all_category_means.csv), [measured findings](reports/supersimplenet/findings.md), [frozen policy](configs/supersimplenet_frozen.json), [experiment registry](experiments/04-development-selection-v1.json) and [reproduction guide](docs/supersimplenet_reproduction.md).
+Image-quality differences versus PatchCore remain unresolved by the paired conditional intervals; localization is weaker. Median inference is faster, but end-to-end p95 is higher and texture false positives persist. Read the [visually checked panel analysis](reports/supersimplenet/observed_panel_analysis.md) and [matched frozen cases](reports/supersimplenet/matched_frozen_cases.csv).
+<!-- SUPERSIMPLENET_FINDINGS_END -->

@@ -1,0 +1,39 @@
+{
+  "experiment_id": "04-matched-frozen-cases-v1-result",
+  "model_family": "CrossModelFrozenAnalysis",
+  "categories": [
+    "leather",
+    "carpet",
+    "screw",
+    "transistor"
+  ],
+  "hypothesis": "Compare the same previously documented difficult images across four frozen methods without new inference or selection",
+  "preprocessing": "Read original RGB/masks and retained native-interpolated maps only",
+  "hyperparameters": {
+    "seed": 2026,
+    "cases": "four prior PatchCore failure paths; explicitly selected examples"
+  },
+  "seed": 2026,
+  "environment": {
+    "source_sha256": "6d7a5f7f4cf70f56a5b94a4fb458948e9c0dbdf60c71ebc04f00473a80fc6617"
+  },
+  "training": {
+    "phase": "post-confirmation artifact analysis; no training"
+  },
+  "metrics": {
+    "seconds": 19.067648800002644,
+    "table_sha256": "3142b6bc249556edfbd5639c5043111b80fc411367ee5dd69ebfc3b5c63bdf88",
+    "executed_notebook_sha256": "afa4cb3cc227f06418a22c64f1c6fbc8cc8e3b93a6d1a69e06029e15d467cf6f"
+  },
+  "calibration": {
+    "policy": "All recorded thresholds unchanged"
+  },
+  "paths": {
+    "local_notebook": "outputs/supersimplenet/04_supersimplenet.matched_cases.executed.ipynb"
+  },
+  "interpretation": "Selected illustrative cases are not a random benchmark sample",
+  "decision": "Retain full selected-case comparison and unchanged benchmark",
+  "status": "completed",
+  "recorded_at": "2026-11-13T07:28:09.779401+00:00",
+  "config_sha256": "cba9c58599c815f958bb3edf1e5b8c461c11698404a15114683625bbb07a6978"
+}

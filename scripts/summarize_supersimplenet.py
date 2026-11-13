@@ -82,7 +82,8 @@ def main():
         configuration_changed_after_test=False,test_evaluations_per_category_seed=1,
         uncertainty_limit='Image bootstrap conditions on fitted models and reserved-calibration thresholds. It does not quantify training-seed or calibration-sampling variation.',
         seed_budget_decision=json.loads((output/'compute_budget.json').read_text()),
-        shared_backbone_storage=json.loads((output/'backbone_storage.json').read_text()))
+        shared_backbone_storage=json.loads((output/'backbone_storage.json').read_text()),
+        observed_training_monitor_segments=[json.loads(p.read_text()) for p in sorted(output.glob('training_monitor_*.json'))])
     comparisons={};paired_rows=[];costrows=[]
     for name,folder in baseline_folders.items():
         base=json.loads((ROOT/f'reports/{folder}/summary.json').read_text());baseline=baselines[name]

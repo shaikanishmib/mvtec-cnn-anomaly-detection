@@ -14,6 +14,8 @@ The preceding pilot contains genuine live training. This continuation **executes
 
 ## Implementation exposed as code
 The following definitions expose the feature alignment, adapter, synthetic generation, heads, losses, inference, cache and actual fitting loop used by the recorded jobs. The original modules and exact source hashes remain the authoritative job implementation. In this notebook demonstration only, extractor file-root lookup is expressed as the already verified `ROOT` variable. No training job is rerun here.
+
+For a dense grid of size H×W, embedding width D, segmentation width h_s and detector width h_d, learned-head convolution cost is proportional to HW[D² + D h_s + 25(D+1)h_d], in addition to the frozen CNN. Global pooling is linear in grid size. Persistent head weights scale with the bracketed term; feature activations scale with HW(D+h_s+h_d) at batch one. Training doubles the adapted batch before perturbation. Inference never constructs synthetic masks and has no dependence on the number of fitting images or a patch bank. Upsampling and native-map transfer add output-resolution costs and remain in end-to-end timing.
 '''),code('''from pathlib import Path
 import sys,json,math
 ROOT=Path.cwd()
@@ -29,6 +31,11 @@ frozen=json.loads((ROOT/'configs/supersimplenet_frozen.json').read_text())
 summary=json.loads((report/'summary.json').read_text())
 display(pd.DataFrame([dict(category=c,**{p:len(__import__('anomaly_detection.cnn_research',fromlist=['read_partition']).read_partition(p,c)) for p in ['fit','development','calibration','test']}) for c in CATEGORIES]))
 print('Frozen weights:',frozen['weight_sha256'])
+from anomaly_detection.ssn_research import model_for
+inspection=model_for(frozen['configuration'])
+display(pd.DataFrame([dict(component=name,parameters=sum(p.numel() for p in part.parameters()),trainable=sum(p.numel() for p in part.parameters() if p.requires_grad)) for name,part in [('adapter',inspection.adapter),('segmentation',inspection.seg),('detection convolution',inspection.det),('detection linear',inspection.fc)]]))
+print('Shared frozen extractor parameters:',json.loads((report/'backbone_storage.json').read_text())['parameters'])
+del inspection
 '''),code((ROOT/'src/anomaly_detection/supersimplenet.py').read_text(encoding='utf-8').replace('Path(__file__).resolve().parents[2]', 'ROOT')),
 md('''### Actual data provenance, cache and end-to-end optimization
 `require_fitting` checks fitting-normal provenance before cache construction. Each category owns its own learned heads and immutable checkpoint. Frozen extraction is cached per original image/weight/source identity. Held-out fitting sources create synthetic probes; clean development normals set diagnostic thresholds. Reserved calibration does not enter development. The explicit loop retains every epoch, including weak or unstable outcomes.'''),
@@ -42,6 +49,11 @@ code("print(json.dumps(json.loads((report/'cuda_verification.json').read_text())
 for candidate in ['reference_noise','noise05','frozen_adapter','focal_only']:
     for category in ['bottle','cable','carpet','tile']:
         identifier=development_identifier(candidate,category)
+        if candidate=='focal_only' and category=='cable':
+            tail.cells.extend([md('''## Interrupted attempt 04-dev-focal_only-cable-s2026-v1
+**Hypothesis:** removing the balanced margin tests whether it impedes short-budget segmentation learning on cable. The reserved run was externally interrupted after two epochs and before a checkpoint was saved. This artifact replay preserves those actual epochs; it does not treat the interruption as evidence against the configuration. [Interruption record](../experiments/04-dev-focal_only-cable-s2026-v1-interrupted.json).
+'''),code("display(pd.read_csv(report/'runs/04-dev-focal_only-cable-s2026-v1-history.csv'))"),
+md('''**Decision:** preserve the two-epoch history and restart only this incomplete trial as v2 with the same seed/configuration. Completed configurations and extracted features are reused. The independently completed v2 trial follows below.''')])
         r=json.loads((report/f'runs/{identifier}-result.json').read_text())
         common=json.loads((report/f'04-common-{candidate}-{category}-s2026-v1.json').read_text())
         decision=json.loads((ROOT/f'experiments/{identifier}-decision.json').read_text())
@@ -66,13 +78,15 @@ print(json.dumps(frozen,indent=2))
 print(json.dumps(json.loads((report/'compute_budget.json').read_text()),indent=2))
 assert sha256(ROOT/'configs/supersimplenet_frozen.json')==summary['frozen_configuration_sha256']
 print('Source identities verified:',all(sha256(ROOT/p)==h for p,h in frozen['source_sha256'].items()))
-'''),md('''## Threshold calibration and frozen evaluation implementation
+'''),md('''## Adapter behavior: post-freeze descriptive analysis
+These measurements reuse clean cached held-out fitting-normal features on CPU. They compare the original seeded adapter with the trained checkpoint: relative weight drift, spatial feature variation and RMS magnitude. No pretrained extraction or fitting is repeated. The frozen-adapter control must replay its initial weights exactly. This analysis does not change selection; the adapter/loss ablations at .015 do not isolate their effects at the selected .05 magnitude.
+'''),code("display(pd.read_csv(report/'adapter_diagnostics.csv')[['candidate','category','relative_weight_drift','trained_to_initial_weight_norm_ratio','initial_adapter_spatial_std','trained_adapter_spatial_std','trained_to_initial_spatial_std_ratio']])"),md('''## Threshold calibration and frozen evaluation implementation
 Image threshold is reserved-normal higher q95 with strict `>` decisions. The separate pixel threshold is higher pooled q99.5 of unmodified normal256 maps. The learned detector and dense map are separate scores. Calibration is saved before test images load; no synthetic features enter either calibration distribution. No test-derived normalization is used.
 
 The implementation below reuses shared image/native-pixel metrics and AU-PRO. Primary point metrics are exact on original mask dimensions. Only pixel bootstrap intervals use4096 fixed sigmoid bins; the quantization bias is reported. Image intervals and paired differences use identical whole-image draws across category-matched models. They condition on fitted models and fixed thresholds; they do not include model fitting or threshold estimation uncertainty.
 '''),code((ROOT/'src/anomaly_detection/ssn_evaluation.py').read_text(encoding='utf-8').replace('from .','from anomaly_detection.')),
 md('''## Independent all-category fitting: actual loss curves
-Every category has independent adapter/segmentation/detection parameters. All registered fits finished before the first official test evaluation. These are recorded final-epoch histories, not new training in this kernel. Weak categories and seeds remain visible.'''),code('''runs=pd.read_csv(report/'all_runs.csv');display(runs)
+Every category has independent adapter/segmentation/detection parameters. All registered fits finished before the first official test evaluation. These are recorded final-epoch histories, not new training in this kernel. Weak categories and seeds remain visible.'''),code('''runs=pd.read_csv(report/'all_runs.csv');display(runs[['category','seed','training_seconds','train_peak_vram_gib','checkpoint_bytes']])
 fig,axes=plt.subplots(3,5,figsize=(15,8))
 for ax,category in zip(axes.flat,CATEGORIES):
     for seed in frozen['seeds']:
@@ -99,7 +113,7 @@ for ax,category in zip(axes,['leather','carpet','screw']):
     ax.axvline(result['calibration']['image_threshold'],color='k',label='Frozen q95');ax.set_title(category)
 axes[0].legend(fontsize=7);plt.tight_layout();plt.show();plt.close(fig)
 '''),md('''## Normal and defective inference, masks, heatmaps and overlays — local outputs
-Panel choices are deterministic: first path for each available FP/FN/TP outcome, highest-score normal, and first scratch when available. Each category is represented. Original dataset images, native masks and large panels are retained only in the fully executed local notebook. Public cell sources and compact numerical diagnostics remain. A segmentation threshold and image detector can disagree; neither is retroactively changed.
+Panel choices are deterministic: first path for each available FP/FN/TP outcome, highest-score normal, and first scratch when available. Each category is represented. Original dataset images, native masks and large panels are retained only in the fully executed local notebook. Public cell sources and compact numerical diagnostics remain. Heatmap color limits are per-image; brightness across panels does not compare absolute scores. Overlays use the frozen pixel threshold. A segmentation threshold and the primary image aggregation can disagree; neither is retroactively changed.
 '''),code('''examples=pd.read_csv(report/'failure_examples.csv');data=autodiscover_data_root(ROOT)
 for category in CATEGORIES:
     selected=examples[examples.category.eq(category)]

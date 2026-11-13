@@ -1,0 +1,717 @@
+{
+  "category": "capsule",
+  "images": 32,
+  "image_threshold": 0.3206767737865448,
+  "secondary_image_threshold_q99": 0.7715050578117371,
+  "pixel_threshold": -0.14145427942276,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 2097152,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    -0.3751510977745056,
+    -0.44972145557403564,
+    -0.6133798956871033,
+    -0.47723686695098877,
+    -0.6365774273872375,
+    -0.4078284800052643,
+    -0.3906177282333374,
+    -0.31042298674583435,
+    0.3206767737865448,
+    -0.15124459564685822,
+    -0.23821009695529938,
+    -0.32406213879585266,
+    -0.28837689757347107,
+    -0.3139822781085968,
+    -0.49086520075798035,
+    -0.5238571166992188,
+    -0.4412539303302765,
+    -0.18649138510227203,
+    -0.2784772515296936,
+    -0.1664741337299347,
+    -0.4825449585914612,
+    -0.5012776255607605,
+    -0.32269906997680664,
+    -0.3463188111782074,
+    -0.12991830706596375,
+    0.016402442008256912,
+    -0.4638739824295044,
+    0.10483209043741226,
+    0.7715050578117371,
+    -0.20150229334831238,
+    -0.47973912954330444,
+    0.02993723191320896
+  ],
+  "image_threshold_bootstrap_95ci": [
+    0.012744423374533862,
+    0.7715050578117371
+  ],
+  "histogram_transform": "fixed sigmoid(raw logits), 4096 bins; primary raw scores never clipped",
+  "method": "Reserved unmodified normals; higher image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "abedb86f7cd61affea88189843c4837f9d785abf9cf40848bc436607a658c69e",
+  "feature_cache": {
+    "category": "capsule",
+    "profile": {
+      "backbone": "resnet18",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+      "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+      "dtype": "float32"
+    },
+    "images": [
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/bbae3221f699bece1f243fea65636b7ad48ca6ee8c3b28a97b00db635160eeff.npy",
+        "sha256": "3f0a52f39d0f8bdae1da086657cf77c9c88c506fa4704d696274c99ca9ad0307",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/009.png",
+        "source_image_sha256": "bbae3221f699bece1f243fea65636b7ad48ca6ee8c3b28a97b00db635160eeff",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ac80d78c9d71acde6b883a4d09d3fc38526b47771098dba40cf1db15e550a0d2.npy",
+        "sha256": "6af84211f1fb5288214a86011940c83f4460ebebbc082093bc1151dbf2d87aa5",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/012.png",
+        "source_image_sha256": "ac80d78c9d71acde6b883a4d09d3fc38526b47771098dba40cf1db15e550a0d2",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/2a63f8523e23256b0fba3c6bd24462b1fa0a1917030e89f1a7cf037ccdd2a4f5.npy",
+        "sha256": "4605c1bb3a90ae3103a1dca7e4b6afbd097103b5fd196ab5adf67a6871b9bcdd",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/023.png",
+        "source_image_sha256": "2a63f8523e23256b0fba3c6bd24462b1fa0a1917030e89f1a7cf037ccdd2a4f5",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/3b47fb5010b4ce6a747394c0c6b5e2b518f248bdd1c626961033ee486a9bb0f6.npy",
+        "sha256": "84a78221215cd35c039935f21c25cad3aa380c68aaa9f4800b2cf67de1f9df4d",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/027.png",
+        "source_image_sha256": "3b47fb5010b4ce6a747394c0c6b5e2b518f248bdd1c626961033ee486a9bb0f6",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/41a7bc2ec4114f30a359942118584ed5b1f51e61d6b314fa8aa25f67dec84ce9.npy",
+        "sha256": "70b726ad94537e6cf7d72bb748a9c7917836735c896b4d7a206a83ba5b9c7870",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/031.png",
+        "source_image_sha256": "41a7bc2ec4114f30a359942118584ed5b1f51e61d6b314fa8aa25f67dec84ce9",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/436d5a2e4f2a8f9e04e96bdfc28484df2baf457594b6edb96a77ce6a2227ab89.npy",
+        "sha256": "82f57ac0f195b70b022890c161a381df25f92082ec19bdecee0afae07574e70a",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/032.png",
+        "source_image_sha256": "436d5a2e4f2a8f9e04e96bdfc28484df2baf457594b6edb96a77ce6a2227ab89",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/63f174c4637c8247c9e3a58bf7c6b23fe7b918eaf231e6a8209cded7eb8ed6ba.npy",
+        "sha256": "77054c7eb82515692ff0a1344d5cc76af0b5669ff787d7bd62d5946485ce7763",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/047.png",
+        "source_image_sha256": "63f174c4637c8247c9e3a58bf7c6b23fe7b918eaf231e6a8209cded7eb8ed6ba",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/80ba4b7b43a174a53d2f2b698f8e0aea7dff627c1cf1edc46a4b91387af830e3.npy",
+        "sha256": "61b453938e0b304121f0c6c123a579437b794b2c9c255e7c8ab88c47a870f1a0",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/060.png",
+        "source_image_sha256": "80ba4b7b43a174a53d2f2b698f8e0aea7dff627c1cf1edc46a4b91387af830e3",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/86320071c3c471ad66743cc1556baab4882cf4a5c729e1eb1ab89e35d16f7db0.npy",
+        "sha256": "d063b0403345f5ef95aed7d0820eeb7a463e2aa3ad2fbf599ac77b8a9982448e",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/068.png",
+        "source_image_sha256": "86320071c3c471ad66743cc1556baab4882cf4a5c729e1eb1ab89e35d16f7db0",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/dd16ffaaa801d505c3810c4c9e7abf9a83ec63b23c2135b3cf52a31e09c9991d.npy",
+        "sha256": "6470c36ecd0a2795a2b24e2c54304838fcec6a1c6af1673b88282100ea33840e",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/075.png",
+        "source_image_sha256": "dd16ffaaa801d505c3810c4c9e7abf9a83ec63b23c2135b3cf52a31e09c9991d",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f78405838004943ba9059301bad75fb3835004ad30c3c89242144b05c6e65f45.npy",
+        "sha256": "b7edeb7cfd85c4d2bca4baf6c85c82e81d9521d4499bae29c6f812cbea2fade8",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/083.png",
+        "source_image_sha256": "f78405838004943ba9059301bad75fb3835004ad30c3c89242144b05c6e65f45",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/941dfcf2b73dfa4a70dc2360be5a851be056689ac3aecfb1fa9ca0998c0daaa1.npy",
+        "sha256": "d3f5d129e9ed128b590bcd2e95d70c15f477d9cb6f02b55762a9f5d0ab7f3521",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/086.png",
+        "source_image_sha256": "941dfcf2b73dfa4a70dc2360be5a851be056689ac3aecfb1fa9ca0998c0daaa1",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ba82041c3e90790adf0f8ce171c97adb1088d999a75e9ffd33412f20f2f52bb3.npy",
+        "sha256": "0448cd8e4879cdb5ce3618ae9c75325f810f29b8787dbcd4fb7ac653ae112db0",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/087.png",
+        "source_image_sha256": "ba82041c3e90790adf0f8ce171c97adb1088d999a75e9ffd33412f20f2f52bb3",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/2262f285149573a02a60a7318bea5c0a5ddd787af0b26b713b6a2ff00667df96.npy",
+        "sha256": "92b3112b9e6d3ab8ed58f05971a45b02910c03b1283918b1736433ac7a0c00b3",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/089.png",
+        "source_image_sha256": "2262f285149573a02a60a7318bea5c0a5ddd787af0b26b713b6a2ff00667df96",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/937c08b115023f554194c3d031a74d5037be5f680fb08e844601b5f64ee66060.npy",
+        "sha256": "2a68e8192eabed9bafe89de780cd2823f8d8d2f3eb7037d2279a6312d9d18480",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/098.png",
+        "source_image_sha256": "937c08b115023f554194c3d031a74d5037be5f680fb08e844601b5f64ee66060",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/908def76407edfef25481cf287581a8a8aabe2ad40c60047cf5a28d4f335ffe2.npy",
+        "sha256": "56f51b9ba4ab53980398933b2cd7318ec8863df4928dcd59a363a6554c34f222",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/106.png",
+        "source_image_sha256": "908def76407edfef25481cf287581a8a8aabe2ad40c60047cf5a28d4f335ffe2",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/3e923d88f3235b6d4ce0188dcd341cd7a185f468721d14e57c58a38f1727b730.npy",
+        "sha256": "dd04c2cc8d42c13fdaae5afc1c39464e5390eb875060b5ab73aa6eb0d1f83381",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/115.png",
+        "source_image_sha256": "3e923d88f3235b6d4ce0188dcd341cd7a185f468721d14e57c58a38f1727b730",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/3024b7f944fee6e698c46959f9bba22ec36b64164b609f1e502aa6abced25b3b.npy",
+        "sha256": "9711933ca4136d62aceebfe239a8d86c6909e89fb2c1b4e7913898f5b71ac6d4",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/119.png",
+        "source_image_sha256": "3024b7f944fee6e698c46959f9bba22ec36b64164b609f1e502aa6abced25b3b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/dfea837a27a92b468ebb7a27a9fddf12162a5d6a96bb23c0093c507c7416ae58.npy",
+        "sha256": "9264c474471d91f9591e75da71f5f62b3e087006ad6537f3984fca59d5ac9172",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/142.png",
+        "source_image_sha256": "dfea837a27a92b468ebb7a27a9fddf12162a5d6a96bb23c0093c507c7416ae58",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/6740b1b3549c40d751f8aeacea175c47315aa747fddd699b9f4c4a9b2699abfc.npy",
+        "sha256": "3b17d0a9888ec34f9dede9ba574d0ff4b7ffd757aa2ab9787c16e07bc5330c02",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/146.png",
+        "source_image_sha256": "6740b1b3549c40d751f8aeacea175c47315aa747fddd699b9f4c4a9b2699abfc",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/fb9921dda367fce8be3addd3a4785519ec71db6794d4dd02807fa06e24b67c1d.npy",
+        "sha256": "417a4c5a98e6b97657a0e161d623a692a275e155529321b7fb6e342bd0c1886c",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/167.png",
+        "source_image_sha256": "fb9921dda367fce8be3addd3a4785519ec71db6794d4dd02807fa06e24b67c1d",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/015d6dd318cdaa449ac2fbc4becfe1b0a16d5cbf8b99771196b5a6ac73c6618a.npy",
+        "sha256": "5be697c22acaf2013ed5669462f6a89f684eb259e1e5a0e52d7cfd52f5f617c8",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/181.png",
+        "source_image_sha256": "015d6dd318cdaa449ac2fbc4becfe1b0a16d5cbf8b99771196b5a6ac73c6618a",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/531cfcfec72542dfbb5fc3c6eab39b7a3a5efbaf6420f9c12aaa41882bcb8265.npy",
+        "sha256": "d9fd2c282d875fadfcf877ed7cdb0f94c1262ff850b01003098d300f51d6ba16",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/183.png",
+        "source_image_sha256": "531cfcfec72542dfbb5fc3c6eab39b7a3a5efbaf6420f9c12aaa41882bcb8265",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/392dea3dd5187f95ee2018bedb5471a91c0c9e904e8adcc29d542d87092b0024.npy",
+        "sha256": "3bd1fcdd90ce2b9c19e74fc2d995e56f1d13aa3a48ee33262ac362524fed69df",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/187.png",
+        "source_image_sha256": "392dea3dd5187f95ee2018bedb5471a91c0c9e904e8adcc29d542d87092b0024",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/56b2412b1fc9cdbcfa043d3562c98397b61a489c142f0733187e7a6be5ba97c9.npy",
+        "sha256": "5a180c0c867bc303ef3d1fcd733b1b35fdac80e9804e822180509a40a788d8b1",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/193.png",
+        "source_image_sha256": "56b2412b1fc9cdbcfa043d3562c98397b61a489c142f0733187e7a6be5ba97c9",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/4d0765b9a4cc9039854dbdcc4bdf14b58be565f169c14dd22df5e91f84f5597c.npy",
+        "sha256": "e9ba9c3a45b50b11fb0578f7fcba677aa514a7b4c10e6323d9a59d2e929d9f73",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/194.png",
+        "source_image_sha256": "4d0765b9a4cc9039854dbdcc4bdf14b58be565f169c14dd22df5e91f84f5597c",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/a7d68d11104103c1e0adfd39bdb61e67c468a683d48e60dd6960aea53924015b.npy",
+        "sha256": "2ca900c124ea98d8681494f1112223f266723143793e44b5f49c6210c515d2c6",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/199.png",
+        "source_image_sha256": "a7d68d11104103c1e0adfd39bdb61e67c468a683d48e60dd6960aea53924015b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/96c2c473192136fad7e24f2f513877193512d1ec64668a9d0f499f86c3199617.npy",
+        "sha256": "ab99adc5a838d3cef5aa0e1455842f3eeeda5e63970d730bca1655e56bddfbca",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/201.png",
+        "source_image_sha256": "96c2c473192136fad7e24f2f513877193512d1ec64668a9d0f499f86c3199617",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0021522da6beae8bfb03693730c1417662006754546c92c3a8cd1accd473981b.npy",
+        "sha256": "1f89ac333995d0b26f1207b0559ab01f6d45ac531af31c4655fd4d170afd74cc",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/209.png",
+        "source_image_sha256": "0021522da6beae8bfb03693730c1417662006754546c92c3a8cd1accd473981b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/cb848b8001cb3477b0170e5c90af2c5894ce26e0dffa1f618d7839a698e64d11.npy",
+        "sha256": "e052e312cd156d144ac0a989a2f1a47176fbb41e18716c58b216619d3b51aabc",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/212.png",
+        "source_image_sha256": "cb848b8001cb3477b0170e5c90af2c5894ce26e0dffa1f618d7839a698e64d11",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/35982d13ec108f5ed8d98a25550f0a9d541ebfd27fe7f3fe818487dea50cbb79.npy",
+        "sha256": "85ea753032f7e7719489686cb274b2c09516b899e092f1ccdf9a51df03a4e861",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/214.png",
+        "source_image_sha256": "35982d13ec108f5ed8d98a25550f0a9d541ebfd27fe7f3fe818487dea50cbb79",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/93009e81f450a39101dcfbc555696905d4b85155abcfed96bdf5276baa01e4b4.npy",
+        "sha256": "c10ff8200bff29477da5ba71ec34b09f6f3d380258142da4a2f0ea7d44ce5014",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "capsule/train/good/216.png",
+        "source_image_sha256": "93009e81f450a39101dcfbc555696905d4b85155abcfed96bdf5276baa01e4b4",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      }
+    ],
+    "input_rows_sha256": "abedb86f7cd61affea88189843c4837f9d785abf9cf40848bc436607a658c69e",
+    "cache_misses": 0,
+    "cache_hits": 32,
+    "resources": {
+      "seconds": 0.00013460000627674162,
+      "cpu_initial_rss_bytes": 703205376,
+      "cpu_peak_rss_bytes": 703221760,
+      "cpu_peak_increment_bytes": 16384,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 46944256,
+      "peak_gpu_reserved_bytes": 578813952
+    }
+  }
+}

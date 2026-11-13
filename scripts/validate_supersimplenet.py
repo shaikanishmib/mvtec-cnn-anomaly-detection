@@ -11,6 +11,8 @@ def main():
     for path in events:
         data=json.loads(path.read_text());expected=data.pop('config_sha256');data.pop('recorded_at')
         assert config_hash(data)==expected,path
+        if data['status']=='interrupted' and 'partial_history' in data['paths']:
+            assert sha256(ROOT/data['paths']['partial_history'])==data['metrics']['history_sha256']
     results=list((ROOT/'reports/supersimplenet/runs').glob('*-result.json'))
     for path in results:
         data=json.loads(path.read_text())

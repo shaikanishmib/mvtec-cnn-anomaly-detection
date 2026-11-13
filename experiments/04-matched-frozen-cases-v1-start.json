@@ -1,0 +1,35 @@
+{
+  "experiment_id": "04-matched-frozen-cases-v1-start",
+  "model_family": "CrossModelFrozenAnalysis",
+  "categories": [
+    "leather",
+    "carpet",
+    "screw",
+    "transistor"
+  ],
+  "hypothesis": "Compare the same previously documented difficult images across four frozen methods without new inference or selection",
+  "preprocessing": "Read original RGB/masks and retained native-interpolated maps only",
+  "hyperparameters": {
+    "seed": 2026,
+    "cases": "four prior PatchCore failure paths; explicitly selected examples"
+  },
+  "seed": 2026,
+  "environment": {
+    "source_sha256": "6d7a5f7f4cf70f56a5b94a4fb458948e9c0dbdf60c71ebc04f00473a80fc6617"
+  },
+  "training": {
+    "phase": "post-confirmation artifact analysis; no training"
+  },
+  "metrics": {},
+  "calibration": {
+    "policy": "All recorded thresholds unchanged"
+  },
+  "paths": {
+    "local_notebook": "outputs/supersimplenet/04_supersimplenet.matched_cases.executed.ipynb"
+  },
+  "interpretation": "Selected illustrative cases are not a random benchmark sample",
+  "decision": "Describe without retuning",
+  "status": "started",
+  "recorded_at": "2026-11-13T07:27:50.658070+00:00",
+  "config_sha256": "8813228f93b13fb5c671dec2d9446a6363108843414bc0f49e51a7669f054dab"
+}

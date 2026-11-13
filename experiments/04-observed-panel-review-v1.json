@@ -1,0 +1,50 @@
+{
+  "experiment_id": "04-observed-panel-review-v1",
+  "model_family": "FrozenCrossModelReview",
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "hypothesis": "Check observed failure locations and the quality/calibration/cost tradeoff against retained metrics and genuine panels",
+  "preprocessing": "Visual inspection of all15 category panels and four matched prior-failure cases; no model inference",
+  "hyperparameters": {
+    "official_test_policy": "unchanged"
+  },
+  "seed": 2026,
+  "environment": {
+    "source_sha256": "91551ddd8738e52cd716e294d660e1368801ab5a65e566a9de2275cd5edaa214"
+  },
+  "training": {
+    "phase": "post-evaluation interpretation only"
+  },
+  "metrics": {
+    "review_sha256": "e667cf69185a1313ba3569519f6b8b65a20bff82159cdc630582d554a7c14fe4",
+    "matched_cases": 16,
+    "category_panels_inspected": 15,
+    "public_notebook_sha256": "e8d0e88882120fddc7ef12d647172c6afb12dd7f97d57beadf50ebae9763943d"
+  },
+  "calibration": {
+    "policy": "All recorded thresholds unchanged"
+  },
+  "paths": {
+    "review": "reports/supersimplenet/observed_panel_analysis.md"
+  },
+  "interpretation": "Observed locations and quantitative evidence support descriptive conclusions, not causal proof or new selection",
+  "decision": "Publish balanced findings; no next model",
+  "status": "completed",
+  "recorded_at": "2026-11-13T07:35:17.105754+00:00",
+  "config_sha256": "a447e27ea7cf84a145c18ddd009b9404351eaff3aa5aa771fffc8285b7d70f2b"
+}

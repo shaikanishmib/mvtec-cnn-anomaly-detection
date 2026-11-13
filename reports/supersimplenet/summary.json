@@ -1,0 +1,213 @@
+{
+  "categories": 15,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "development_runs": 16,
+  "macro": {
+    "image_auroc": {
+      "mean": 0.9647826753129016,
+      "seed_std": 0.0009746541158944099,
+      "image_bootstrap_95ci": [
+        0.9565968839072393,
+        0.9725931444101079
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    },
+    "image_ap": {
+      "mean": 0.9862386361849099,
+      "seed_std": 0.0004641424348333521,
+      "image_bootstrap_95ci": [
+        0.9818928435587281,
+        0.9901502513611683
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    },
+    "pixel_auroc": {
+      "mean": 0.9528496961587244,
+      "seed_std": 0.0021207463787771214,
+      "image_bootstrap_95ci": [
+        0.9480145506964613,
+        0.9575742379377465
+      ],
+      "bootstrap_target": "fixed sigmoid4096-bin pixel approximation"
+    },
+    "pixel_ap": {
+      "mean": 0.43607732038540453,
+      "seed_std": 0.001889408186453507,
+      "image_bootstrap_95ci": [
+        0.41449306484047116,
+        0.45571700248668356
+      ],
+      "bootstrap_target": "fixed sigmoid4096-bin pixel approximation"
+    },
+    "au_pro": {
+      "mean": 0.85650195201007,
+      "seed_std": 0.004413983413616862,
+      "image_bootstrap_95ci": [
+        0.8470435148824454,
+        0.8664127829324693
+      ],
+      "bootstrap_target": "fixed sigmoid4096-bin pixel approximation"
+    },
+    "recall": {
+      "mean": 0.8920118683720771,
+      "seed_std": 0.01161615750705609,
+      "image_bootstrap_95ci": [
+        0.8781207126255873,
+        0.9063105158438884
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    },
+    "fpr": {
+      "mean": 0.166248902901901,
+      "seed_std": 0.03271884566534169,
+      "image_bootstrap_95ci": [
+        0.13969643532670453,
+        0.19506479392741766
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    },
+    "precision": {
+      "mean": 0.9412348235230055,
+      "seed_std": 0.01054019231171218,
+      "image_bootstrap_95ci": [
+        0.9280994675272589,
+        0.9531049114476746
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    },
+    "f1": {
+      "mean": 0.9098917349002921,
+      "seed_std": 0.0019780487343742164,
+      "image_bootstrap_95ci": [
+        0.898588004445417,
+        0.9201337939272184
+      ],
+      "bootstrap_target": "exact image metric; fitted models fixed"
+    }
+  },
+  "frozen_configuration_sha256": "ebd8b682c83b0d8f94b7cdc85958912b32cd88cbaef3296a5a473c3dd3068791",
+  "total_fit_wall_seconds": 5348.88879189999,
+  "total_training_loop_seconds": 5139.450544299994,
+  "total_evaluation_seconds": 2697.5955114999524,
+  "deterministic_feature_images": 5354,
+  "deterministic_feature_cache_bytes": 33685140736,
+  "new_final_cache_stage_seconds": 184.5642568999392,
+  "cache_scope": "Per-image compatible SSN cache; seeds and overlapping splits reuse extraction; final-stage time excludes already completed pilot/development extraction",
+  "mean_model_p50_ms": 9.688543333322741,
+  "mean_model_p95_ms": 17.338962889172958,
+  "mean_end_to_end_p50_ms": 28.793411111271578,
+  "mean_end_to_end_p95_ms": 39.421789110557356,
+  "mean_extraction_p50_ms": 8.291698888287,
+  "mean_heads_p50_ms": 1.1849455545113112,
+  "peak_training_gpu_allocated_gib": 0.7091813087463379,
+  "peak_inference_allocated_gib": 0.08186006546020508,
+  "peak_evaluation_cpu_rss_gib": 5.517704010009766,
+  "parameters": 3338115,
+  "max_head_checkpoint_bytes": 2230175,
+  "pixel_bootstrap_quantization_bias": {
+    "pixel_auroc": {
+      "mean_binned_minus_exact": -8.997337730730513e-07,
+      "maximum_absolute_run_difference": 2.0976939533401406e-05
+    },
+    "pixel_ap": {
+      "mean_binned_minus_exact": -0.0016882167635412972,
+      "maximum_absolute_run_difference": 0.029890224443245184
+    },
+    "au_pro": {
+      "mean_binned_minus_exact": -2.52230935850781e-06,
+      "maximum_absolute_run_difference": 6.075796827120783e-05
+    }
+  },
+  "image_runs_with_no_alarms": 0,
+  "precision_convention": "shared zero_division=0",
+  "configuration_changed_after_test": false,
+  "test_evaluations_per_category_seed": 1,
+  "uncertainty_limit": "Image bootstrap conditions on fitted models and reserved-calibration thresholds. It does not quantify training-seed or calibration-sampling variation.",
+  "seed_budget_decision": {
+    "selected_configuration": {
+      "backbone": "resnet18",
+      "channels": 384,
+      "seg_width": 256,
+      "det_width": 32,
+      "adapter_trainable": true,
+      "noise_std": 0.05,
+      "loss": "margin_focal",
+      "seed": 2026,
+      "batch_size": 8,
+      "extraction_batch": 8,
+      "epochs": 40,
+      "validation_every": 10,
+      "hypothesis": "Frozen selected Lite feature-space anomaly discrimination; no further development or test-driven changes",
+      "aggregation": "top1pct",
+      "resolution": 256
+    },
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "models": 45,
+    "measured_train_step_seconds": 0.13084763136028094,
+    "projected_training_seconds": 5118.7593388141895,
+    "projected_three_seed_training_seconds": 5118.7593388141895,
+    "measured_development_peak_gpu_bytes": 761477632,
+    "measured_development_peak_rss_bytes": 2294018048,
+    "expected_total_feature_cache_bytes": 33684455424,
+    "expected_native_evaluation_minutes": 75.0,
+    "decision": "Use three seeds within90-minute measured training budget; otherwise retain one predefined seed2026 and report missing seed uncertainty",
+    "learning_evidence": {
+      "common_proxy_image_auroc": 0.9986979166666667,
+      "common_proxy_pixel_ap": 0.9297983477628408,
+      "objective": 0.9548461925595813
+    },
+    "official_test_accessed": false
+  },
+  "shared_backbone_storage": {
+    "path": "checkpoints/supersimplenet/shared-resnet18-features.pt",
+    "sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949",
+    "bytes": 11179957,
+    "parameters": 2782784,
+    "trainable_parameters": 0,
+    "original_weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "scope": "One shared frozen layer1-3 extractor; category-specific heads are stored separately; feature caches are not needed at inference"
+  },
+  "observed_training_monitor_segments": [
+    {
+      "pid": 15948,
+      "start_utc": "2026-11-13T05:07:37.216587+00:00",
+      "end_utc": "2026-11-13T06:34:53.995591+00:00",
+      "sample_interval_seconds": 5.0,
+      "samples": 1035,
+      "path": "outputs/supersimplenet/training-monitor-001.csv",
+      "scope": "Observed segment only, starting after fitting began; NVIDIA fields are whole-device, including other applications; primary per-fit CUDA allocator peaks are recorded separately",
+      "maximum_process_rss_bytes": 2046189568,
+      "gpu_util_percent": {
+        "mean": 32.445410628019324,
+        "maximum": 84.0
+      },
+      "device_memory_used_mib": {
+        "mean": 1095.0,
+        "maximum": 1095.0
+      },
+      "gpu_temperature_c": {
+        "mean": 71.54589371980677,
+        "maximum": 87.0
+      },
+      "device_power_w": {
+        "mean": 38.751932367149756,
+        "maximum": 86.27
+      }
+    }
+  ],
+  "pixel_operating_macro": {
+    "pixel_recall": 0.8091883661565695,
+    "pixel_fpr": 0.06855046535405314,
+    "pixel_precision": 0.28818212238089386,
+    "pixel_f1": 0.38204049446325183
+  }
+}

@@ -1,0 +1,1053 @@
+{
+  "category": "screw",
+  "images": 48,
+  "image_threshold": 0.25715386867523193,
+  "secondary_image_threshold_q99": 0.5679858326911926,
+  "pixel_threshold": -0.03473960608243942,
+  "image_quantile": 0.95,
+  "pixel_quantile": 0.995,
+  "pixel_calibration_samples": 3145728,
+  "pixel_score_resolution": 256,
+  "calibration_scores": [
+    -0.3978230655193329,
+    -0.15034829080104828,
+    -0.1435175985097885,
+    -0.19050796329975128,
+    -0.0033431868068873882,
+    -0.08084027469158173,
+    0.10184209048748016,
+    -0.31048285961151123,
+    -0.379137247800827,
+    -0.01088396180421114,
+    0.21904240548610687,
+    -0.09286946058273315,
+    -0.033737096935510635,
+    -0.1641719937324524,
+    -0.10781639069318771,
+    -0.013015475124120712,
+    -0.11704361438751221,
+    -0.2757315933704376,
+    -0.2376231849193573,
+    -0.3212399184703827,
+    -0.19778238236904144,
+    0.14252321422100067,
+    -0.05491812527179718,
+    -0.05503220111131668,
+    0.1333416998386383,
+    0.5679858326911926,
+    -0.2504504919052124,
+    -0.17341399192810059,
+    0.25715386867523193,
+    -0.15296930074691772,
+    0.027405982837080956,
+    -0.10600413382053375,
+    0.12349298596382141,
+    0.053950339555740356,
+    -0.09770011901855469,
+    -0.09338732063770294,
+    -0.2695445120334625,
+    0.5464040040969849,
+    -0.11913345754146576,
+    -0.04746827483177185,
+    -0.17304980754852295,
+    0.1600561887025833,
+    0.22142882645130157,
+    -0.0305608082562685,
+    -0.1285533457994461,
+    0.18467247486114502,
+    -0.09000614285469055,
+    0.00012104013148928061
+  ],
+  "image_threshold_bootstrap_95ci": [
+    0.14252321422100067,
+    0.5679858326911926
+  ],
+  "histogram_transform": "fixed sigmoid(raw logits), 4096 bins; primary raw scores never clipped",
+  "method": "Reserved unmodified normals; higher image q95 and pooled pixel q99.5; strict >",
+  "source_paths_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01",
+  "feature_cache": {
+    "category": "screw",
+    "profile": {
+      "backbone": "resnet18",
+      "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+      "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+      "dtype": "float32"
+    },
+    "images": [
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/17ed86e8648a474b19ea6b975b6cf82412a1246e39cf7521db1744c74d905904.npy",
+        "sha256": "874e003757b6b2ecefeea8617a54c2c66c184b21812a6f3001ade2aa32e35841",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/006.png",
+        "source_image_sha256": "17ed86e8648a474b19ea6b975b6cf82412a1246e39cf7521db1744c74d905904",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/5c5eb556ee8603b488342cf45a5d1f1044fbac3334d09cf74026436c57f5a13f.npy",
+        "sha256": "72b9c3c4d0f00c7735069fa8ad8d7b8f5d4cd3851adef18a9b25f603ddb6185e",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/029.png",
+        "source_image_sha256": "5c5eb556ee8603b488342cf45a5d1f1044fbac3334d09cf74026436c57f5a13f",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/6ab100b4652f2fdb8c69c61ca0cd73899f1773ca0885e18ea64876854bfb7bff.npy",
+        "sha256": "ca305586e1324467498c4051a530a15859bdfdfc8f997f8da7f9ebf1570c75e2",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/036.png",
+        "source_image_sha256": "6ab100b4652f2fdb8c69c61ca0cd73899f1773ca0885e18ea64876854bfb7bff",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7a82f8f4a19a0de1ed573d8ef7764812dc8cbc3330d9c957a369f9cc2518ca46.npy",
+        "sha256": "8555fb6df0ef744512a9e00588bc6c66e5fc2e50829fe57d53cdb2540aee164a",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/050.png",
+        "source_image_sha256": "7a82f8f4a19a0de1ed573d8ef7764812dc8cbc3330d9c957a369f9cc2518ca46",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f318650b3f2a5ae4e115a815104a36aedddb026a92e14d2d72691daae42e5ee5.npy",
+        "sha256": "ef5aa8eb6394a02e8fd7f421c4f4c21f36dca289a007bb69c2487da313574846",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/055.png",
+        "source_image_sha256": "f318650b3f2a5ae4e115a815104a36aedddb026a92e14d2d72691daae42e5ee5",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7b6d49132809b7bf71a2f23092584bd024bea71cbc2b38abb544df0b7733e06b.npy",
+        "sha256": "ea6feb2d615e256bb778619cbb596aedea6534654a2b78860902f9ca08ff44ba",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/065.png",
+        "source_image_sha256": "7b6d49132809b7bf71a2f23092584bd024bea71cbc2b38abb544df0b7733e06b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/9d086bc66cf2a29bc66bca304d6ec9fac4d3d3e6f88e3f9e63a9203bc1fd33e2.npy",
+        "sha256": "37b0bfa78aaaf4baf9280b9073c7178dae3286029b96073d1109404150d00b37",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/069.png",
+        "source_image_sha256": "9d086bc66cf2a29bc66bca304d6ec9fac4d3d3e6f88e3f9e63a9203bc1fd33e2",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0971aa58e654d977a5cbed5aa05bbbbdf6ce4fe73f559e0480d0d5de654cf292.npy",
+        "sha256": "a7c0d16d5448fa0df919266a7afed4195fe277e83121f6355a32914e9325e57f",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/076.png",
+        "source_image_sha256": "0971aa58e654d977a5cbed5aa05bbbbdf6ce4fe73f559e0480d0d5de654cf292",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/74931ff5df6c97febfa7b9183a477f285f64e9057b5a7b5bd03bdd21033b595c.npy",
+        "sha256": "bb64aacbbbbf857681491a84cabbc21a09667f513c8b674bf2b085db9d3d59e7",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/079.png",
+        "source_image_sha256": "74931ff5df6c97febfa7b9183a477f285f64e9057b5a7b5bd03bdd21033b595c",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/cd5bb3d12e66122091fd8f9f45189494257973d8245ffb08d997faf74ed5ff5f.npy",
+        "sha256": "35e9cc1c8ccd4a948eae4e1434e3b8a9e8f75f39f9fc94641d40465cd1d78be7",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/080.png",
+        "source_image_sha256": "cd5bb3d12e66122091fd8f9f45189494257973d8245ffb08d997faf74ed5ff5f",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f1a87559727b982463e169e715d3a77a31733f5946c198e2267df3643702640d.npy",
+        "sha256": "37f2a2a3d77b5a2dade734b790d7b5dd26e65393ed095175188d565c9d3465b0",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/087.png",
+        "source_image_sha256": "f1a87559727b982463e169e715d3a77a31733f5946c198e2267df3643702640d",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/be862191af07d9c83277a64385f6a703531498a9d09d15990d7477910946caa9.npy",
+        "sha256": "2edf565e5ef1ac928966a02f33c665323f9890efb9501cc41a43f09d802e8274",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/088.png",
+        "source_image_sha256": "be862191af07d9c83277a64385f6a703531498a9d09d15990d7477910946caa9",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/e3e3469034e7c246eeb0e382e339445e0e5443d5845e0a99bb53367530ce29fd.npy",
+        "sha256": "985baffb47ad6a4258689502ae9af2803c26d66be4883f5b8cf6e5114bd70e0c",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/095.png",
+        "source_image_sha256": "e3e3469034e7c246eeb0e382e339445e0e5443d5845e0a99bb53367530ce29fd",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/18dc3583e56080a50ff85926289b894969fa66ce2165704d5a0481a87f57799c.npy",
+        "sha256": "8a24822a8e338715cf9dea60f77e8458a2418d3f053b1844c74d6eadfb793241",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/096.png",
+        "source_image_sha256": "18dc3583e56080a50ff85926289b894969fa66ce2165704d5a0481a87f57799c",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7f797bd21c3c8223fc531e6eb273b62b1f355256a577562fcd5f2acf33e31f26.npy",
+        "sha256": "8fa82f7f3b32ccc84f41418fa367423c80f9d95f180555a9c59451cb8e100eac",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/098.png",
+        "source_image_sha256": "7f797bd21c3c8223fc531e6eb273b62b1f355256a577562fcd5f2acf33e31f26",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/d5a3ae4f59559f2ce748ab8c2faeb64c0d782ba1a3ea3bcef93e6aa7405bf062.npy",
+        "sha256": "3d5fff41ffdd64fdce7fb175381b82371183df6779e24a62461bab4c6481f955",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/102.png",
+        "source_image_sha256": "d5a3ae4f59559f2ce748ab8c2faeb64c0d782ba1a3ea3bcef93e6aa7405bf062",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f6b059d966348c16bcfddb66fbe021a490b50ae0abf257cad9d1e98c0df76ffb.npy",
+        "sha256": "ead10c2f4ec3ce24970db9ba4e275c32ab01db85e23a27c26d81469b2495023d",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/116.png",
+        "source_image_sha256": "f6b059d966348c16bcfddb66fbe021a490b50ae0abf257cad9d1e98c0df76ffb",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/d8da4ca6f97fd5e50467c0a0906d42604a335be71c389b6a6b64442d52dc0c5f.npy",
+        "sha256": "013708eed9068d3f3ffa2f0a1d71c0482e643cb058416f351fae1eb2eb6382a0",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/123.png",
+        "source_image_sha256": "d8da4ca6f97fd5e50467c0a0906d42604a335be71c389b6a6b64442d52dc0c5f",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/71d1e981a1a3167ffbbd5497549247e874408142f0acba5a5165d77e74ce68d0.npy",
+        "sha256": "67f732d7cc8ed87d620777ab361e8b8afb9c5c0f19e26de5be1817034a18b302",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/138.png",
+        "source_image_sha256": "71d1e981a1a3167ffbbd5497549247e874408142f0acba5a5165d77e74ce68d0",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/8cace71edfd1c622fb8102d6e54b30485ff5e5b866c90177b853a0ede64f87e3.npy",
+        "sha256": "a2000212e7b445f2bb68e6612c2a89f7a41fce82b9385849a0ed0ed0f9801522",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/148.png",
+        "source_image_sha256": "8cace71edfd1c622fb8102d6e54b30485ff5e5b866c90177b853a0ede64f87e3",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/e4404cf67543fd86775e25f074fa9e1ffc15fb3394e15b77f942814499cb2eb1.npy",
+        "sha256": "ee15beb80a47adf349e8ce520d80bac392689ed1a31042e5943828fe666d76eb",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/153.png",
+        "source_image_sha256": "e4404cf67543fd86775e25f074fa9e1ffc15fb3394e15b77f942814499cb2eb1",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/c2364bfe9af97be9af08a02d3b20ddfd98207b0f132f0aaa0b46da63c08c6e72.npy",
+        "sha256": "9ce6eb6517439f48b60b3872a88ffdc11083c4cc41bb70b341691b7b87160ee8",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/166.png",
+        "source_image_sha256": "c2364bfe9af97be9af08a02d3b20ddfd98207b0f132f0aaa0b46da63c08c6e72",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/c9e34e79c3a44bd8f34c7757ef4787cd4efe4f7c7cf4122337266d4e71146f31.npy",
+        "sha256": "6064845b899365a8425962894e672421723e09c4bbf1fd42649d279565c98897",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/167.png",
+        "source_image_sha256": "c9e34e79c3a44bd8f34c7757ef4787cd4efe4f7c7cf4122337266d4e71146f31",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/a92bf877f6c22e0ee09261362b5420790bdaac2c4899794aa551cdc09687d637.npy",
+        "sha256": "4f14f6564292f03262a40da405367b5f120bc55cf945fb049de6e93a3ca9bd58",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/168.png",
+        "source_image_sha256": "a92bf877f6c22e0ee09261362b5420790bdaac2c4899794aa551cdc09687d637",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/88d664b85ad5b47f1db85687a53c444c67054234326c57250bf3365eca09bc14.npy",
+        "sha256": "5311fc7c3cf53a7fee8f8a69eb93a87279b13e661c976aadac59d563c8b9aa9d",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/171.png",
+        "source_image_sha256": "88d664b85ad5b47f1db85687a53c444c67054234326c57250bf3365eca09bc14",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f7add8b756608d2235efa0ff77929d9a31781e0f2450ee7f432866b664d79593.npy",
+        "sha256": "0251a6915818dd75d893d502133de70bc45f4bb6e240da9c34ccd22de9e39a7d",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/172.png",
+        "source_image_sha256": "f7add8b756608d2235efa0ff77929d9a31781e0f2450ee7f432866b664d79593",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/62f8da3bfdfec5108fe201b5a4889cda2e605290c4de61c66e43d85393f766d2.npy",
+        "sha256": "939280e0e827c68a89bc8c0b3c7dffccd26f504a33316e6a857b24be021d4c13",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/176.png",
+        "source_image_sha256": "62f8da3bfdfec5108fe201b5a4889cda2e605290c4de61c66e43d85393f766d2",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/c8857ed2dcdfafb6edbebfc21540d351e67eceb594de90abe4fb69f967f94e7b.npy",
+        "sha256": "9cb909d976b1cd7ee6575120188c51b84c5f181785ce529062af1979d9b255d0",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/193.png",
+        "source_image_sha256": "c8857ed2dcdfafb6edbebfc21540d351e67eceb594de90abe4fb69f967f94e7b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/91467a63c45bfdc3cd65efdc376e66181505340a9ec5d5c48aff48a9e709165a.npy",
+        "sha256": "38fd540d92549265fa5e6f63e3dcde2fbc3e39f0fcd35d8b43bf81f8f7b423ef",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/210.png",
+        "source_image_sha256": "91467a63c45bfdc3cd65efdc376e66181505340a9ec5d5c48aff48a9e709165a",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7650653745b36eb0681d316aea13a663aa2278905c8d940b6701acfd50e8ce6b.npy",
+        "sha256": "5dfb0f26a3439bf1de95495878ca1b520157061984d4fcfcff5e4237b15b0dd9",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/214.png",
+        "source_image_sha256": "7650653745b36eb0681d316aea13a663aa2278905c8d940b6701acfd50e8ce6b",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/3e9fcfd836c19e59931ae3519ff514b34f51d94a356aa0f648a5a4ee087f7d66.npy",
+        "sha256": "b096d71848b0dabe72ce684c5db904a42daa380b91f431e102269e93347df238",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/215.png",
+        "source_image_sha256": "3e9fcfd836c19e59931ae3519ff514b34f51d94a356aa0f648a5a4ee087f7d66",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/f64d7e942d8871acd07f14bbf605895b67f4a7580bc151755443a765b1386ba2.npy",
+        "sha256": "6f5f0a4865c24c3fa699efc158bae6aa0c0b99f1e4c803ae9458bf2981651552",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/228.png",
+        "source_image_sha256": "f64d7e942d8871acd07f14bbf605895b67f4a7580bc151755443a765b1386ba2",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/c1b88f3f6c83ad369fdf64bee216ed83acba504f100a2388adc92ae566daa7b7.npy",
+        "sha256": "1da3024a19e90b62ebbcf1335188878140e60ba1165f5f69c457e8ede3c1cd01",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/231.png",
+        "source_image_sha256": "c1b88f3f6c83ad369fdf64bee216ed83acba504f100a2388adc92ae566daa7b7",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/a291496a37c10ebd9e848f10c3a90cf34742405d899aa80be4cb6864fba3ef91.npy",
+        "sha256": "44291d58f989b2a1bf2e5600635ac6a4a17255d7e7f3b239c611aef5142c3f33",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/234.png",
+        "source_image_sha256": "a291496a37c10ebd9e848f10c3a90cf34742405d899aa80be4cb6864fba3ef91",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/ee33eb8265fb9eacedee3e9b9db53483fec212487ecd0a0a6f15b4a80972b785.npy",
+        "sha256": "2e5499123f1efb6df967bff5029d6b55aba36d8b6f832284b19537d4a03f821e",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/240.png",
+        "source_image_sha256": "ee33eb8265fb9eacedee3e9b9db53483fec212487ecd0a0a6f15b4a80972b785",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/9a71de3dea0b299b2483292b9cc5f17a0b383309b45aec02e8b0553d79cd9b90.npy",
+        "sha256": "b94593580f055ce5d4ad70e1323c930bf01e3ed5b7b629890233f0b0fd22a6fa",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/254.png",
+        "source_image_sha256": "9a71de3dea0b299b2483292b9cc5f17a0b383309b45aec02e8b0553d79cd9b90",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/503da305f23b27bab09b40c90b15b8b14e1c495b074b777ce4fc797dd45df6a7.npy",
+        "sha256": "50d2d953668988a82d731ab13232e429fec6df8cebfea5b531daf59a87a0b101",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/255.png",
+        "source_image_sha256": "503da305f23b27bab09b40c90b15b8b14e1c495b074b777ce4fc797dd45df6a7",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/6973079741a0da5d8d6547bf657f1d4428db1245768d38ccdf01425cfd0f3861.npy",
+        "sha256": "0314c7efe20d22791b46df809e6bda59fb59c1e327386347ef09679a74d58a6f",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/258.png",
+        "source_image_sha256": "6973079741a0da5d8d6547bf657f1d4428db1245768d38ccdf01425cfd0f3861",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/25db81f509d15ee1cd94c7c6e860e10281d938a1201520ba9e544d3e667c59b7.npy",
+        "sha256": "32b217b20151d695f03eb30ec52de998571bbac53e10e98e757e206ee5dcbe8b",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/263.png",
+        "source_image_sha256": "25db81f509d15ee1cd94c7c6e860e10281d938a1201520ba9e544d3e667c59b7",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0e6491f449ba1106b457331a32e92b4b4a6e851e564049a72b5f8aef37488829.npy",
+        "sha256": "afc3c33b7929e9951f9a04e8dc40319265696c651cbb6213eb6987f838102eb2",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/267.png",
+        "source_image_sha256": "0e6491f449ba1106b457331a32e92b4b4a6e851e564049a72b5f8aef37488829",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/7b2877f1897da0488eea8739f7ea3ccad40062b06e495840c58d6a02daf90056.npy",
+        "sha256": "3b58dc32b22ee19b5c31ed3b36154ddc7546623b830f1957dc515418928bacc8",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/274.png",
+        "source_image_sha256": "7b2877f1897da0488eea8739f7ea3ccad40062b06e495840c58d6a02daf90056",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/050b0a0a76ab2e73e285f4a08d36087c30d8d1313944afc33e9bfa461b8f34d8.npy",
+        "sha256": "a8fed0befc76b22271f9bff91fd7a096ffe714f15f63a796edde97fde272f543",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/276.png",
+        "source_image_sha256": "050b0a0a76ab2e73e285f4a08d36087c30d8d1313944afc33e9bfa461b8f34d8",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/0645498debd1b994224a3b496eb561a4dfcb0601fb756a43281ef037ba4efde0.npy",
+        "sha256": "6ad3073a749cf5854e39fb7c12ac5cd6a851154023a6faee429e34b5f6938f8b",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/287.png",
+        "source_image_sha256": "0645498debd1b994224a3b496eb561a4dfcb0601fb756a43281ef037ba4efde0",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/be8298220eb00c4fe46c0e61d2f0f358dbc1fd0e85ef957d07db1b1fce121223.npy",
+        "sha256": "5b5add297f1cb6f539531535aa74e14b927206a78a03d551b8de3acc20efc338",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/296.png",
+        "source_image_sha256": "be8298220eb00c4fe46c0e61d2f0f358dbc1fd0e85ef957d07db1b1fce121223",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/2339c60a0c877d6c5de4c97a928905c66b932a428560a244105bdd08474fa1f1.npy",
+        "sha256": "67754fe264befebf90f0974bb8f5224c825deb67e9f404ad521672a44a5022d7",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/301.png",
+        "source_image_sha256": "2339c60a0c877d6c5de4c97a928905c66b932a428560a244105bdd08474fa1f1",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/defd7259a49525d56f1933e0d44c6b93103a3b29b2ccef1ab5e2640799341b78.npy",
+        "sha256": "5e093d546eec17a99faad49d8580d58176e7155d4ad9f601d95ce9162c012b9b",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/305.png",
+        "source_image_sha256": "defd7259a49525d56f1933e0d44c6b93103a3b29b2ccef1ab5e2640799341b78",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/2366a020c495fbf5010c65342b84e0509c0d0e07f9cb891d8fb072d819ea3f4c.npy",
+        "sha256": "79ef64d575083c43654065c1f1efaa09fcb8ab592bab79a2a1db75560ebd35a1",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/311.png",
+        "source_image_sha256": "2366a020c495fbf5010c65342b84e0509c0d0e07f9cb891d8fb072d819ea3f4c",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      },
+      {
+        "path": "outputs/supersimplenet/features/4ea2b615fa7634c2714d5d8e1bb85adc468e2fe8492605dfa77d827a9cdba7f6/20b88b45f7b0c1bdfa288d39fcd80c1da05b1a1de0f6597cbb990dac7e72de65.npy",
+        "sha256": "6251a570fdd744cf03a1b6b27077970c52123c09e11f0c173bfdf0b328011ff8",
+        "shape": [
+          384,
+          64,
+          64
+        ],
+        "bytes": 6291584,
+        "source_image": "screw/train/good/312.png",
+        "source_image_sha256": "20b88b45f7b0c1bdfa288d39fcd80c1da05b1a1de0f6597cbb990dac7e72de65",
+        "profile": {
+          "backbone": "resnet18",
+          "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+          "source_sha256": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+          "preprocessing": "PIL-RGB-bilinear-256 + V1 ImageNet normalization; whole image",
+          "aggregation": "layer2/3 bilinear align_corners=True to 64, concatenate, then avg3 pad1",
+          "dtype": "float32"
+        }
+      }
+    ],
+    "input_rows_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01",
+    "cache_misses": 48,
+    "cache_hits": 0,
+    "resources": {
+      "seconds": 1.5525764000049094,
+      "cpu_initial_rss_bytes": 1697566720,
+      "cpu_peak_rss_bytes": 1709592576,
+      "cpu_peak_increment_bytes": 12025856,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 312184832,
+      "peak_gpu_reserved_bytes": 578813952
+    }
+  }
+}

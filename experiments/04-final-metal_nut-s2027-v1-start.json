@@ -1,0 +1,59 @@
+{
+  "experiment_id": "04-final-metal_nut-s2027-v1-start",
+  "model_family": "SuperSimpleNetLite",
+  "categories": [
+    "metal_nut"
+  ],
+  "hypothesis": "Frozen selected Lite feature-space anomaly discrimination; no further development or test-driven changes",
+  "preprocessing": "Whole RGB256, ImageNet V1; layer2/3 aligned64 before pooling; no RGB training corruption",
+  "hyperparameters": {
+    "backbone": "resnet18",
+    "channels": 384,
+    "seg_width": 256,
+    "det_width": 32,
+    "adapter_trainable": true,
+    "noise_std": 0.05,
+    "loss": "margin_focal",
+    "seed": 2027,
+    "batch_size": 8,
+    "extraction_batch": 8,
+    "epochs": 40,
+    "validation_every": 10,
+    "hypothesis": "Frozen selected Lite feature-space anomaly discrimination; no further development or test-driven changes",
+    "aggregation": "top1pct",
+    "resolution": 256
+  },
+  "seed": 2027,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "source_sha256": {
+      "src/anomaly_detection/supersimplenet.py": "a1e7e948190435243719d1b8e81c0b3f8a669702c912b49bca84b968ef870ab5",
+      "src/anomaly_detection/ssn_research.py": "efe18fbe73bc7fffc4129b3a9120b93b06921e3bf80c11c63d08bc95eb5d4d51",
+      "src/anomaly_detection/ssn_evaluation.py": "afee929d8e818c6eb61348227422258acc62848e5655029d6ffd12477c06fe6e",
+      "src/anomaly_detection/ssn_final.py": "791e00ed5c1175da8dd14cfd03751c70304ca120082012c43d0869fa0ef71bb0",
+      "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+      "src/anomaly_detection/metrics.py": "2559d72429f2d3e7b60c584f778e97f2971c675e51b7025548d0fe74ebb6d783",
+      "src/anomaly_detection/pixel_metrics.py": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294",
+      "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+      "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+      "scripts/benchmark_supersimplenet.py": "ee2d6d2db829b8ea0eaf9bfcf5de5d6a5b721e4439200cddcd37dfc11e3afef3"
+    },
+    "git_sha": "d1ca8cd3c48d549423ac9c6903d12378f94f4065"
+  },
+  "training": {
+    "phase": "final",
+    "freeze_sha256": "ebd8b682c83b0d8f94b7cdc85958912b32cd88cbaef3296a5a473c3dd3068791"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "local": "outputs/supersimplenet/04-final-metal_nut-s2027-v1"
+  },
+  "interpretation": "Frozen normal-only fit; original development normals used solely for checkpoint replay",
+  "decision": "Fixed final epoch; persist recovery after every epoch",
+  "status": "started",
+  "recorded_at": "2026-11-13T05:50:47.522704+00:00",
+  "config_sha256": "6bf54b3ea2ee388add9312fa10f21dc554200793dc4741973ccd75d07dd5e998"
+}

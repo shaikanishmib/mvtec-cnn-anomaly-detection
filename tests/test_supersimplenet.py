@@ -127,6 +127,27 @@ def test_durable_resume_matches_uninterrupted_optimization(tmp_path,monkeypatch)
     assert len(list(path.parent.glob('interrupted-write-*.pt')))==1
 
 
+def test_negative_native_logits_use_shared_exact_ranking_metrics():
+    import numpy as np
+    from sklearn.metrics import roc_auc_score,average_precision_score
+    from anomaly_detection.pixel_metrics import exact_pixel_metrics
+    from anomaly_detection.metrics import au_pro
+    maps=(np.arange(32,dtype=np.float32)/32-2).reshape(2,4,4)
+    truth=np.zeros_like(maps,dtype=np.uint8);truth[1,1,1:3]=1;truth[1,2,2]=1
+    maps[1,1,1:3]=-1.5
+    region=truth.astype(np.float64)/truth.sum()
+    raw=exact_pixel_metrics(maps.ravel(),truth.ravel(),region.ravel(),1,chunk_size=3)
+    shifted=exact_pixel_metrics((maps+7).ravel(),truth.ravel(),region.ravel(),1,chunk_size=3)
+    probability=1/(1+np.exp(-maps.astype(np.float64)))
+    transformed=exact_pixel_metrics(probability.ravel(),truth.ravel(),region.ravel(),1,chunk_size=3)
+    for key in ['pixel_auroc','pixel_ap','au_pro']:
+        assert raw[key]==pytest.approx(shifted[key],abs=1e-12)
+        assert raw[key]==pytest.approx(transformed[key],abs=1e-12)
+    assert raw['pixel_auroc']==pytest.approx(roc_auc_score(truth.ravel(),maps.ravel()),abs=1e-12)
+    assert raw['pixel_ap']==pytest.approx(average_precision_score(truth.ravel(),maps.ravel()),abs=1e-12)
+    assert raw['au_pro']==pytest.approx(au_pro(truth,maps),abs=1e-12)
+
+
 def test_extractor_shapes_and_frozen_statistics():
     torch.set_num_threads(4)
     model=SSNExtractor(pretrained=False);model.train()
