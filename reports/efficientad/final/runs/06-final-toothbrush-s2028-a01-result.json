@@ -1,0 +1,495 @@
+{
+  "identity": {
+    "category": "toothbrush",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-toothbrush-s2028-a01",
+  "category": "toothbrush",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.6972222222222222,
+  "image_ap": 0.8835041075014641,
+  "recall": 0.5,
+  "fpr": 0.16666666666666666,
+  "precision": 0.8823529411764706,
+  "f1": 0.6382978723404256,
+  "confusion_matrix": [
+    [
+      10,
+      2
+    ],
+    [
+      15,
+      15
+    ]
+  ],
+  "pixel_auroc": 0.9278554429272641,
+  "pixel_ap": 0.1935425676799754,
+  "au_pro": 0.695720147894836,
+  "positive_pixels": 673493,
+  "negative_pixels": 43366699,
+  "regions": 66,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.5233469099598133,
+        0.853062818877551
+      ],
+      "image_ap": [
+        0.7794644362011096,
+        0.9608717922578728
+      ],
+      "recall": [
+        0.3225806451612903,
+        0.6875
+      ],
+      "fpr": [
+        0.0,
+        0.40029411764705725
+      ],
+      "precision": [
+        0.7,
+        1.0
+      ],
+      "f1": [
+        0.4680851063829787,
+        0.7843137254901961
+      ],
+      "pixel_auroc": [
+        0.909835575873299,
+        0.942216639738516
+      ],
+      "pixel_ap": [
+        0.13499865253330767,
+        0.2536988687064519
+      ],
+      "au_pro": [
+        0.6210362830021535,
+        0.7686057941060811
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      42939280,
+      427419
+    ],
+    [
+      516719,
+      156774
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9278553520159339,
+    "pixel_ap": 0.19311808488550097,
+    "au_pro": 0.6957194323184306
+  },
+  "tn": 10,
+  "fp": 2,
+  "fn": 15,
+  "tp": 15,
+  "calibration": {
+    "threshold": 0.24108149111270905,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 9,
+      "min": 0.22236919403076172,
+      "median": 0.23505091667175293,
+      "mean": 0.2328833821747038,
+      "std": 0.006750769716707315,
+      "q90": 0.241032937169075,
+      "q95": 0.24105721414089204,
+      "max": 0.24108149111270905
+    },
+    "observed_calibration_fpr": 0.0,
+    "exceedances": 0,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0,
+      0.3362671168799428
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.1,
+    "future_fpr_order_statistic_95": [
+      0.0028091367465992146,
+      0.3362671168799428
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.2376610230654478,
+      0.24108149111270905,
+      0.24108149111270905
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.2410207986831665,
+      0.24108149111270905
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.24108149111270905,
+      "0.05": 0.24108149111270905,
+      "0.1": 0.24108149111270905
+    },
+    "development_exceedance_fraction": 0.0,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 9,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e",
+    "paths": [
+      "toothbrush/train/good/007.png",
+      "toothbrush/train/good/013.png",
+      "toothbrush/train/good/015.png",
+      "toothbrush/train/good/023.png",
+      "toothbrush/train/good/030.png",
+      "toothbrush/train/good/031.png",
+      "toothbrush/train/good/049.png",
+      "toothbrush/train/good/051.png",
+      "toothbrush/train/good/057.png"
+    ],
+    "scores": [
+      0.23762980103492737,
+      0.23505091667175293,
+      0.22825887799263,
+      0.228854238986969,
+      0.22236919403076172,
+      0.22402329742908478,
+      0.23766182363033295,
+      0.2410207986831665,
+      0.24108149111270905
+    ],
+    "pixel_threshold": 0.10313095152378082,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.0365352276712656,
+    "histogram_scale": 0.01848079962655902
+  },
+  "training": {
+    "identity": {
+      "category": "toothbrush",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-toothbrush-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "bd53ea4d5a0f392ee4b0f2c371085733eee7551e42ac27e1074f2d7b77225df0"
+    },
+    "fit_n": 42,
+    "fit_source_sha256": "bbd0769c18f609f517d2d3f9f0b0870003fa32bbf9615c2edb8206cb62c9a0f5",
+    "development_n": 9,
+    "development_source_sha256": "fd5192c492be852cd3b0ee0f592a7eebf66a513b9bd0c15f41a2f85e45c601a8",
+    "development_scores": [
+      0.22980326414108276,
+      0.23647579550743103,
+      0.22346994280815125,
+      0.22442853450775146,
+      0.2228337675333023,
+      0.22248665988445282,
+      0.2251424640417099,
+      0.24015851318836212,
+      0.23654678463935852
+    ],
+    "training_seconds": 46.04956089996267,
+    "preparation_seconds": 0.0038255999970715493,
+    "map_normalization_seconds": 0.5544388999987859,
+    "serialization_seconds": 0.17226880000089295,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 42,
+        "seconds": 5.240785400004825,
+        "hard": 17.867498624892463,
+        "penalty": 0.0,
+        "autoencoder": 0.9799385383015587,
+        "student_autoencoder": 0.0065002607020904265,
+        "total": 18.85393744423276
+      },
+      {
+        "epoch": 2,
+        "steps": 84,
+        "seconds": 4.866071299999021,
+        "hard": 12.872425987606956,
+        "penalty": 0.0,
+        "autoencoder": 0.7671077762331281,
+        "student_autoencoder": 0.044012615168910654,
+        "total": 13.683546338762556
+      },
+      {
+        "epoch": 3,
+        "steps": 126,
+        "seconds": 4.856463799980702,
+        "hard": 10.196139630817232,
+        "penalty": 0.0,
+        "autoencoder": 0.6805870490414756,
+        "student_autoencoder": 0.037921802850351446,
+        "total": 10.914648396628243
+      },
+      {
+        "epoch": 4,
+        "steps": 168,
+        "seconds": 4.9107302999764215,
+        "hard": 8.347459588732038,
+        "penalty": 0.0,
+        "autoencoder": 0.6544840577102843,
+        "student_autoencoder": 0.04754562347772576,
+        "total": 9.049489248366584
+      },
+      {
+        "epoch": 5,
+        "steps": 210,
+        "seconds": 4.884401399991475,
+        "hard": 7.228589636938913,
+        "penalty": 0.0,
+        "autoencoder": 0.5536687218007588,
+        "student_autoencoder": 0.04223193742689632,
+        "total": 7.824490320114863
+      },
+      {
+        "epoch": 6,
+        "steps": 252,
+        "seconds": 4.971559600002365,
+        "hard": 6.480646246955509,
+        "penalty": 0.0,
+        "autoencoder": 0.48456582994688124,
+        "student_autoencoder": 0.059293310113606,
+        "total": 7.024505376815796
+      },
+      {
+        "epoch": 7,
+        "steps": 294,
+        "seconds": 5.0454220000247005,
+        "hard": 5.997652825855074,
+        "penalty": 0.0,
+        "autoencoder": 0.43143344422181445,
+        "student_autoencoder": 0.05591859038741816,
+        "total": 6.485004845119658
+      },
+      {
+        "epoch": 8,
+        "steps": 336,
+        "seconds": 5.08688919999986,
+        "hard": 5.594859486534482,
+        "penalty": 0.0,
+        "autoencoder": 0.40212227404117584,
+        "student_autoencoder": 0.05035202630928585,
+        "total": 6.047333762759254
+      },
+      {
+        "epoch": 9,
+        "steps": 378,
+        "seconds": 6.187237899983302,
+        "hard": 5.3677940255119685,
+        "penalty": 0.0,
+        "autoencoder": 0.3830470343430837,
+        "student_autoencoder": 0.05283038238329547,
+        "total": 5.803671416782198
+      }
+    ],
+    "resources": {
+      "seconds": 48.12151560001075,
+      "cpu_initial_rss_bytes": 892928000,
+      "cpu_peak_rss_bytes": 1698377728,
+      "cpu_peak_increment_bytes": 805449728,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 471859200
+    },
+    "map_quantiles": [
+      [
+        0.6712775826454163,
+        1.2749592065811157
+      ],
+      [
+        0.07029178738594055,
+        0.1891143023967743
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T06:21:28.414922+00:00"
+  },
+  "training_seconds": 46.04956089996267,
+  "calibration_seconds": 0.6258573000086471,
+  "inference_seconds": 2.7511286000080872,
+  "native_metrics_bootstrap_seconds": 14.520094199979212,
+  "latency_seconds": 11.328081200015731,
+  "evaluation_seconds": 28.59930400000303,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.255599982570857,
+      "p95_ms": 4.771874977450352
+    },
+    "host_to_device": {
+      "p50_ms": 0.3183000080753118,
+      "p95_ms": 0.43379998533055186
+    },
+    "model": {
+      "p50_ms": 21.94465001230128,
+      "p95_ms": 26.122040006157476
+    },
+    "postprocessing": {
+      "p50_ms": 3.8776000001234934,
+      "p95_ms": 5.100974987726656
+    },
+    "end_to_end": {
+      "p50_ms": 30.603000006522052,
+      "p95_ms": 34.64470998151228
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 65.31090001226403,
+    "decode_inclusive_p95_ms": 69.61586001270916,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 165675008,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "73",
+      "utilization.gpu": "45",
+      "utilization.memory": "6",
+      "power.draw": "56.31",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1920",
+      "memory.used": "263"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-toothbrush-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "bd53ea4d5a0f392ee4b0f2c371085733eee7551e42ac27e1074f2d7b77225df0"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-toothbrush-s2028-a01-images.csv",
+  "test_source_sha256": "e31ff8241166ff988561bda6e85d6b039fa82d6c59c2325156a8bd347bad7ddf",
+  "per_defect": [
+    {
+      "category": "toothbrush",
+      "seed": 2028,
+      "defect": "defective",
+      "auroc": 0.6972222222222222,
+      "ap": 0.8835041075014641,
+      "recall": 0.5,
+      "fpr": 0.16666666666666666,
+      "precision": 0.8823529411764706,
+      "f1": 0.6382978723404256,
+      "confusion_matrix": [
+        [
+          10,
+          2
+        ],
+        [
+          15,
+          15
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T06:21:57.852896+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-toothbrush-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "bd53ea4d5a0f392ee4b0f2c371085733eee7551e42ac27e1074f2d7b77225df0"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2028-a01-history.csv",
+      "bytes": 1019,
+      "sha256": "5c841207c2c0de9e19ae99c231ae75542bfc976d53d4b8c07bd54712985dc7a0"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2028-a01-calibration-scores.csv",
+      "bytes": 457,
+      "sha256": "2e54b25475f7f788be52c01ad7fcbfae1f59b741b2c15e7d8fb7b06e337e43e7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2028-a01-calibration.json",
+      "bytes": 2601,
+      "sha256": "b6cd6ff10acabc6dfc375ecac221610c721751ed81d93c68f2f9b6f941b31bb3"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2028-a01-images.csv",
+      "bytes": 6797,
+      "sha256": "fd96eb8e41312be10432c61af3fbd96023622f52a9d20ecef243d4e6fe789b80"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/raw_branch_maps.npy",
+      "bytes": 22020224,
+      "sha256": "4496eb95835aa62899f8ecb8e546cc28d393c6d05d0f5d5530c601a8f0bb9d1b"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/selected_maps.npy",
+      "bytes": 11010176,
+      "sha256": "328ef949fa61223bfdf7a3561b3a1fa1f8d3773ad6fd8b87d3b9f1815880e44c"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 82299,
+      "sha256": "d2c1174859d7a07b02d695ecdb7ca6a0f63a07d145a44b217d0470a00d34e775"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/native_image_histograms.npz",
+      "bytes": 316707,
+      "sha256": "385f7699ac76bc17c199c4ce5c8ae3345634c1fa11f9ca217eb631314f0ed231"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/latency_ms.csv",
+      "bytes": 19141,
+      "sha256": "7a997a1f345646ad33baabe7ef51951af16459323208d277ef2ea8eb363b5eb8"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2028-a01/trained.json",
+      "bytes": 4718,
+      "sha256": "8abb450477463cb0bdfd8d7f86647337414760cdc2d4a667712b611010897d3d"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 79.65608449999127,
+    "cpu_initial_rss_bytes": 706113536,
+    "cpu_peak_rss_bytes": 2812334080,
+    "cpu_peak_increment_bytes": 2106220544,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 165675008
+  },
+  "wall_seconds": 79.71435850000125,
+  "disk_free_bytes": 530266796032,
+  "completed_at_utc": "2026-11-14T06:21:58.163830+00:00"
+}

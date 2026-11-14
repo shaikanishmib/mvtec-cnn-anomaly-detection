@@ -1,5 +1,30 @@
 # Milestone 8 progress
 
+## Frozen final benchmark — active
+
+Baseline 664e106dbdd25104ea4e3c3be192fc8be7a0b772 verified, initially clean.
+Current phase: Milestone 8 research execution and validation complete. Publication
+package is being sealed and audited for the completion commit/push. Do not rerun
+completed fits. The completion record below supersedes historical pending actions.
+Readiness checks passed: exact project .venv, RTX 4060 / torch 2.11.0+cu128,
+15 categories, all frozen source/teacher/partition hashes, ~502 GiB free disk,
+no competing runner and no preexisting final run artifacts. Ten focused tests passed.
+Frozen identity d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321.
+See docs/efficientad_final_protocol.md for pre-test execution/evaluation rules.
+No pilot/development reruns. No Notebook 07 or personal-project access.
+
+Recovery: inspect reports/efficientad/final/benchmark_manifest.json and
+experiments/06-final-*.json, then use project Python scripts/run_efficientad_final.py
+--all. Per-epoch snapshots permit interrupted fitting recovery. Verified complete
+category-seed attempts are skipped; a result is complete only after evaluation
+and artifact verification. Final progress will be updated by the manager below.
+
+Safe restart/status wrapper: project Python scripts/resume_efficientad_final.py
+--status, then scripts/resume_efficientad_final.py only if no manager is live.
+See docs/efficientad_final_recovery.md. On the user's resume message the original
+manager remained active; no second manager or worker was launched and no completed
+run was repeated. Continue monitoring execution session and saved manifest.
+
 ## Bounded development continuation
 
 Baseline verified: ee19ec85e914bd0b8cda8c6fb1c0c8768c1557a1, initially clean.
@@ -141,3 +166,82 @@ Measured model latency p50/p95 33.472/145.272 ms (20 warmups/100 measurements, d
 Focused core tests: 3 passed in 17.50 s. Notebook replay executed successfully, but IPython attempted its default read-only history path and ZMQ printed a shutdown socket warning; builder corrected to use project-local ignored IPython/Jupyter directories. No training rerun. Final benchmark count 0/45, development fits 0; nine final macro metrics, comparisons, calibrated thresholds and category failure observations remain unavailable.
 
 Final verification: full suite ` .\.venv\Scripts\python.exe -m pytest -q --basetemp=.pytest-tmp` passed 107 tests in 62.32 s. `scripts/validate_efficientad.py` passed deep teacher/checkpoint/registry/input identities and Notebook 06 validation (20 sections, five executed replay cells). Staged audit: 15 text/notebook files, no dataset pixels, weights, caches or temporary files. `git diff --cached --check` passed. Previous milestone files/results preserved except README roadmap status. Git staging required escalation because .git is read-only in sandbox. Recovery: do not rerun pilot; replay saved report and run validator. Model-only latency measured; end-to-end latency, final evaluation time, calibration and failure examples await later phases.
+
+<!-- efficientad-final-live -->
+
+## Live final benchmark progress
+
+UTC 2026-11-14T06:35:24.662066+00:00: 45/45 verified complete. All 45 run artifacts verified. Aggregation, failure analysis, notebook, final tests and publication remain.
+
+Manifest: reports/efficientad/final/benchmark_manifest.json. Recovery: project Python scripts/run_efficientad_final.py --all. Complete outputs are hashed before skipping; each epoch saves model/optimizer/RNG state.
+
+## Milestone 8 final completion record
+
+Execution complete: 1 pilot, 4 bounded development fits, 45 fresh final models
+(15 categories x seeds 2026/2027/2028), 68,877 optimizer steps, nine full epochs
+per final model. All final attempts a01 completed without execution failure or
+training recovery. The user's resume reused the existing live manager; no
+completed run was repeated. No post-test model/threshold changes and no seed or
+category omissions. Notebook 07 and the engineering application remain unstarted.
+
+Final macro metrics: image AUROC .816297536, image AP .918592537, pixel AUROC
+.919887356, pixel AP .498475624, AU-PRO .818373389, recall .665639183, FPR
+.220080859, precision .885938659, F1 .740084396. Exact native primary pixel
+metrics; 2,000 shared whole-image bootstrap draws, approximate pixel intervals
+with reported binning bias; paired category and exact-image comparisons retained.
+All five previous models use their exact stored results, unmodified.
+
+Actual training 8,575.551 s (2.382 h), calibration 110.507 s, evaluation 2,814.064 s
+(46.901 min), final checkpoint serialization/replay 9.244 s. Complete run
+pipelines 12,045.302 s (3.346 h), within 12 h; historical projections 2.68/10.16 h
+were not substituted for measurements. No resource stop. Mean per-run model
+p50/p95 23.066/27.601 ms, decoded-image E2E 31.663/36.494 ms, separate warm-cache
+file-decode-inclusive 61.160/66.308 ms. Full two-map eager forward timed; local
+map alone is selected for primary scoring. Training CUDA allocated/reserved peaks
+.308905/.458984 GiB; inference .107182/.189453 GiB; sampled worker RSS peak
+5.803856 GiB (native evaluation included). Maximum checkpoint 32,249,772 bytes.
+
+Calibration: frozen higher .95, strict greater, reserved normal sample sizes
+9–58; mean empirical calibration FPR .027368 versus test macro .220081. Six
+calibration sets have ties. Bottle response floor is retained, not cropped;
+continuous-score Beta intervals are inapplicable for tied samples. Screw mean
+image AUROC .057184/FPR .910569; carpet FPR .583333; leather FPR .802083 despite
+image AUROC .998755. Tile/wood rank well. There are 1,035 image FN seed-evaluations
+with at least one overlapping pixel alarm, not 1,035 independent new images.
+
+Genuine failure analysis: 67 case panels across all 15 categories plus small-defect
+GT-bounding-box zooms, original images, local/global/combined maps and masks.
+All-category contact sheet and screw/leather detail were visually inspected;
+actual observations and hypotheses are separated in docs/efficientad_visual_review.md.
+Local full executed image-output notebook is under outputs/efficientad/final/.
+Git notebook retains all aggregate plots/numerics and executed panel code, clearing
+only licensed dataset-derived image outputs. Pilot/development cells and outputs
+were verified unchanged.
+
+Validation complete: full suite 121 passed, 0 failed/errors/skipped (44.36 s;
+JUnit reports/efficientad/final/pytest.xml). Deep validator passed in 22.81 s:
+45 checkpoints, 495 run artifacts, 15 teacher-normalization identities, 111
+registry records, 2,655 protected prior files byte-identical (zero line-ending
+fallbacks required), Notebook 06 95 cells / 25 executed code cells. No duplicate
+long-running native metric sweep or feature extraction was used for validation.
+Published notebook is 1,178,160 bytes after Git-compatible LF normalization.
+
+Sealed publication manifest: reports/efficientad/final/publication_manifest.json
+contains 587 artifact identities. Verification summary, resource guard, all run
+histories/scores and final scientific reports are retained. New frozen-evaluator
+sources and threshold policy remain pinned. The public teacher is the same
+unofficial PDN-S, SHA256 b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337;
+repository Apache-2.0 does not resolve separate weight licensing/training history.
+Missing penalty, nine-epoch budget, optimistic two-category proxy selection,
+local-only score and calibration failures prevent paper-equivalence/deployment
+claims. The compute goal was met; universal anomaly detection quality was not.
+
+Publication staging audit passed: 365 text/notebook files, largest 1,178,160 bytes;
+271 Git-checkout-filtered identities matched the sealed publication manifest.
+`git diff --cached --check` passed. No weights, raw images/maps, caches, temporary
+data or previous milestone result changes are staged. Finish/verification complete;
+the completion commit and push follow.
+The completion commit includes this record. Obtain its identity with
+`git log -1 --format=%H` and verify origin/main using `git ls-remote origin refs/heads/main`.
+The final response records the actual published SHA. Do not rerun the successful
+benchmark; use the deep validator and saved artifacts for later review.

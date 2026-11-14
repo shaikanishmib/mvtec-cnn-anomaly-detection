@@ -1,0 +1,47 @@
+{
+  "experiment_id": "06-final-toothbrush-s2026-a01-start",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "Frozen 45-model confirmation; no test-guided selection",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet",
+    "maps": "signed; native bilinear align_corners=False"
+  },
+  "hyperparameters": {
+    "category": "toothbrush",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "664e106dbdd25104ea4e3c3be192fc8be7a0b772",
+    "dirty": true
+  },
+  "training": {
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Reserved before fitting/calibration/test access",
+  "decision": "frozen final evaluation",
+  "status": "started",
+  "recorded_at": "2026-11-14T04:00:37.088556+00:00",
+  "config_sha256": "7f7eecc89da74adc14f9e50db1c6dbcd42743aa810528df075e59ff1099c3ec7"
+}

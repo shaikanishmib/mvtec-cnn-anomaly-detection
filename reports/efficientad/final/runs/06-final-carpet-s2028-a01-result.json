@@ -1,0 +1,678 @@
+{
+  "identity": {
+    "category": "carpet",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-carpet-s2028-a01",
+  "category": "carpet",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9209470304975922,
+  "image_ap": 0.9774339924381175,
+  "recall": 0.9438202247191011,
+  "fpr": 0.5714285714285714,
+  "precision": 0.84,
+  "f1": 0.888888888888889,
+  "confusion_matrix": [
+    [
+      12,
+      16
+    ],
+    [
+      5,
+      84
+    ]
+  ],
+  "pixel_auroc": 0.9609906652208592,
+  "pixel_ap": 0.6443164863043911,
+  "au_pro": 0.8848691020035722,
+  "positive_pixels": 1965794,
+  "negative_pixels": 120717598,
+  "regions": 97,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8681733066151016,
+        0.9617229040981902
+      ],
+      "image_ap": [
+        0.958965314056269,
+        0.990319177645724
+      ],
+      "recall": [
+        0.8876404494382022,
+        0.9883720930232558
+      ],
+      "fpr": [
+        0.39285714285714285,
+        0.7586206896551724
+      ],
+      "precision": [
+        0.7653061224489796,
+        0.9072164948453608
+      ],
+      "f1": [
+        0.8369565217391305,
+        0.9320539262538355
+      ],
+      "pixel_auroc": [
+        0.9484072739008402,
+        0.971340382406931
+      ],
+      "pixel_ap": [
+        0.5767370052088958,
+        0.7038956532863977
+      ],
+      "au_pro": [
+        0.8470969091847426,
+        0.9184850656669366
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      98936316,
+      21781282
+    ],
+    [
+      143524,
+      1822270
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9609902110102438,
+    "pixel_ap": 0.6428842231911304,
+    "au_pro": 0.8848679456444655
+  },
+  "tn": 12,
+  "fp": 16,
+  "fn": 5,
+  "tp": 84,
+  "calibration": {
+    "threshold": 0.3315525949001312,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 42,
+      "min": 0.05997655913233757,
+      "median": 0.13628993183374405,
+      "mean": 0.16783888238881314,
+      "std": 0.09481885910542179,
+      "q90": 0.25696324110031127,
+      "q95": 0.32963519692420945,
+      "max": 0.5291533470153809
+    },
+    "observed_calibration_fpr": 0.047619047619047616,
+    "exceedances": 2,
+    "calibration_exceedance_descriptive_cp95": [
+      0.005819824835509991,
+      0.1616419596916539
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.06976744186046512,
+    "future_fpr_order_statistic_95": [
+      0.01497969167071,
+      0.1616419596916539
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.25014662742614746,
+      0.3315525949001312,
+      0.5291533470153809
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.2932046353816986,
+      0.3315525949001312
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5291533470153809,
+      "0.05": 0.3315525949001312,
+      "0.1": 0.25711366534233093
+    },
+    "development_exceedance_fraction": 0.023809523809523808,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 42,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "877d856565283112996331d090d297f4461e1228052e84723501adbe2ca6b8fc",
+    "paths": [
+      "carpet/train/good/017.png",
+      "carpet/train/good/018.png",
+      "carpet/train/good/022.png",
+      "carpet/train/good/030.png",
+      "carpet/train/good/034.png",
+      "carpet/train/good/037.png",
+      "carpet/train/good/045.png",
+      "carpet/train/good/057.png",
+      "carpet/train/good/077.png",
+      "carpet/train/good/089.png",
+      "carpet/train/good/093.png",
+      "carpet/train/good/096.png",
+      "carpet/train/good/110.png",
+      "carpet/train/good/123.png",
+      "carpet/train/good/130.png",
+      "carpet/train/good/141.png",
+      "carpet/train/good/152.png",
+      "carpet/train/good/154.png",
+      "carpet/train/good/167.png",
+      "carpet/train/good/172.png",
+      "carpet/train/good/179.png",
+      "carpet/train/good/180.png",
+      "carpet/train/good/183.png",
+      "carpet/train/good/190.png",
+      "carpet/train/good/195.png",
+      "carpet/train/good/198.png",
+      "carpet/train/good/203.png",
+      "carpet/train/good/213.png",
+      "carpet/train/good/216.png",
+      "carpet/train/good/219.png",
+      "carpet/train/good/220.png",
+      "carpet/train/good/223.png",
+      "carpet/train/good/227.png",
+      "carpet/train/good/231.png",
+      "carpet/train/good/242.png",
+      "carpet/train/good/244.png",
+      "carpet/train/good/245.png",
+      "carpet/train/good/258.png",
+      "carpet/train/good/259.png",
+      "carpet/train/good/261.png",
+      "carpet/train/good/262.png",
+      "carpet/train/good/266.png"
+    ],
+    "scores": [
+      0.25014662742614746,
+      0.13269177079200745,
+      0.21766510605812073,
+      0.11902709305286407,
+      0.3315525949001312,
+      0.11308134347200394,
+      0.05997655913233757,
+      0.13988809287548065,
+      0.21015866100788116,
+      0.11590555310249329,
+      0.062178269028663635,
+      0.10401058942079544,
+      0.1755707710981369,
+      0.15497878193855286,
+      0.09042523801326752,
+      0.2556094229221344,
+      0.25711366534233093,
+      0.09718146920204163,
+      0.2327568531036377,
+      0.07045955955982208,
+      0.5291533470153809,
+      0.2932046353816986,
+      0.2272932529449463,
+      0.20207835733890533,
+      0.10432827472686768,
+      0.14687477052211761,
+      0.20929016172885895,
+      0.10089543461799622,
+      0.1142166405916214,
+      0.11075109988451004,
+      0.16732269525527954,
+      0.15061168372631073,
+      0.4033752679824829,
+      0.18625564873218536,
+      0.22301168739795685,
+      0.12480785697698593,
+      0.10503152757883072,
+      0.09025902301073074,
+      0.0693502426147461,
+      0.09812081605195999,
+      0.09667297452688217,
+      0.10594964027404785
+    ],
+    "pixel_threshold": 0.08080055564641953,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05359954573214054,
+    "histogram_scale": 0.04001261852681637
+  },
+  "training": {
+    "identity": {
+      "category": "carpet",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-carpet-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "4cceb7dbf22b843575e9e1aa7047a067c714f2500249b3c9772d53c0201a2be7"
+    },
+    "fit_n": 196,
+    "fit_source_sha256": "d8455693ad4ec18280bbb29b9e2217354d45c6fac018475ac194bb0701b50632",
+    "development_n": 42,
+    "development_source_sha256": "5ee4b2eb515737117650939f3ecbc06479f80a578242794b2583a17b74239241",
+    "development_scores": [
+      0.16317684948444366,
+      0.31628483533859253,
+      0.20408037304878235,
+      0.12071137130260468,
+      0.11167839169502258,
+      0.21080085635185242,
+      0.15402822196483612,
+      0.1311643123626709,
+      0.18917089700698853,
+      0.20780374109745026,
+      0.24479374289512634,
+      0.12385536730289459,
+      0.2340058535337448,
+      0.08487255871295929,
+      0.2721608579158783,
+      0.12859536707401276,
+      0.13639073073863983,
+      0.15408718585968018,
+      0.2782769501209259,
+      0.376434326171875,
+      0.1331334412097931,
+      0.07137593626976013,
+      0.13862261176109314,
+      0.1256844401359558,
+      0.1696711927652359,
+      0.19439920783042908,
+      0.1515795886516571,
+      0.08220439404249191,
+      0.19216789305210114,
+      0.1339455544948578,
+      0.11405643075704575,
+      0.12262772768735886,
+      0.12914328277111053,
+      0.10747206211090088,
+      0.23639538884162903,
+      0.19680391252040863,
+      0.2854293882846832,
+      0.15075983107089996,
+      0.1822366863489151,
+      0.1599029153585434,
+      0.20300903916358948,
+      0.16047388315200806
+    ],
+    "training_seconds": 208.45294730001478,
+    "preparation_seconds": 0.003983700007665902,
+    "map_normalization_seconds": 2.6957875000080094,
+    "serialization_seconds": 0.1820265999995172,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 196,
+        "seconds": 22.436665999994148,
+        "hard": 12.00021522872302,
+        "penalty": 0.0,
+        "autoencoder": 0.8467134121729403,
+        "student_autoencoder": 0.02329905613144974,
+        "total": 12.870227711541313
+      },
+      {
+        "epoch": 2,
+        "steps": 392,
+        "seconds": 21.93980410002405,
+        "hard": 8.598910769637751,
+        "penalty": 0.0,
+        "autoencoder": 0.5813006839277793,
+        "student_autoencoder": 0.030513399123803388,
+        "total": 9.210724830627441
+      },
+      {
+        "epoch": 3,
+        "steps": 588,
+        "seconds": 22.013961700024083,
+        "hard": 7.830243254194454,
+        "penalty": 0.0,
+        "autoencoder": 0.5772381546546002,
+        "student_autoencoder": 0.02093688929358459,
+        "total": 8.428418295724052
+      },
+      {
+        "epoch": 4,
+        "steps": 784,
+        "seconds": 22.322421699995175,
+        "hard": 7.220910748656915,
+        "penalty": 0.0,
+        "autoencoder": 0.572477825442139,
+        "student_autoencoder": 0.01958789818977215,
+        "total": 7.812976445470538
+      },
+      {
+        "epoch": 5,
+        "steps": 980,
+        "seconds": 22.49709599997732,
+        "hard": 6.791120694608105,
+        "penalty": 0.0,
+        "autoencoder": 0.5669028124943072,
+        "student_autoencoder": 0.015554124451413447,
+        "total": 7.373577606921294
+      },
+      {
+        "epoch": 6,
+        "steps": 1176,
+        "seconds": 22.90902150000329,
+        "hard": 6.509842417678055,
+        "penalty": 0.0,
+        "autoencoder": 0.5584131114336909,
+        "student_autoencoder": 0.013700897563058806,
+        "total": 7.081956427924487
+      },
+      {
+        "epoch": 7,
+        "steps": 1372,
+        "seconds": 23.69874169997638,
+        "hard": 6.257538287007079,
+        "penalty": 0.0,
+        "autoencoder": 0.560278658964196,
+        "student_autoencoder": 0.011944957818759948,
+        "total": 6.82976191627736
+      },
+      {
+        "epoch": 8,
+        "steps": 1568,
+        "seconds": 26.19708250000258,
+        "hard": 6.068783497323795,
+        "penalty": 0.0,
+        "autoencoder": 0.5574501635772842,
+        "student_autoencoder": 0.011406099243203596,
+        "total": 6.637639753672541
+      },
+      {
+        "epoch": 9,
+        "steps": 1764,
+        "seconds": 24.43815210001776,
+        "hard": 5.863836147347275,
+        "penalty": 0.0,
+        "autoencoder": 0.552091800740787,
+        "student_autoencoder": 0.01001789213671368,
+        "total": 6.4259458196406465
+      }
+    ],
+    "resources": {
+      "seconds": 214.11301909998292,
+      "cpu_initial_rss_bytes": 1013305344,
+      "cpu_peak_rss_bytes": 1917239296,
+      "cpu_peak_increment_bytes": 903933952,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 484442112
+    },
+    "map_quantiles": [
+      [
+        0.5053162574768066,
+        0.7553203105926514
+      ],
+      [
+        0.01428233366459608,
+        0.11950881034135818
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T05:44:48.802847+00:00"
+  },
+  "training_seconds": 208.45294730001478,
+  "calibration_seconds": 3.1473917000112124,
+  "inference_seconds": 8.504723499994725,
+  "native_metrics_bootstrap_seconds": 45.85042160001467,
+  "latency_seconds": 11.575240500009386,
+  "evaluation_seconds": 65.93038560001878,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.32780000846833,
+      "p95_ms": 4.783060014597139
+    },
+    "host_to_device": {
+      "p50_ms": 0.32479999936185777,
+      "p95_ms": 0.41018000774784014
+    },
+    "model": {
+      "p50_ms": 21.982399994158186,
+      "p95_ms": 26.537975015526168
+    },
+    "postprocessing": {
+      "p50_ms": 3.8899999926798046,
+      "p95_ms": 5.1999400020577005
+    },
+    "end_to_end": {
+      "p50_ms": 30.70754998771008,
+      "p95_ms": 35.21222501003649
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 68.64380001206882,
+    "decode_inclusive_p95_ms": 72.34276499220869,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 180355072,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "69",
+      "utilization.gpu": "46",
+      "utilization.memory": "6",
+      "power.draw": "32.42",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1800",
+      "memory.used": "277"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-carpet-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "4cceb7dbf22b843575e9e1aa7047a067c714f2500249b3c9772d53c0201a2be7"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-carpet-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-carpet-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-carpet-s2028-a01-images.csv",
+  "test_source_sha256": "2e03c2d04445e0f1521c19302809b0bb0096371e90918377aaf235469342d7fe",
+  "per_defect": [
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "color",
+      "auroc": 0.768796992481203,
+      "ap": 0.7701462275335136,
+      "recall": 0.8421052631578947,
+      "fpr": 0.5714285714285714,
+      "precision": 0.5,
+      "f1": 0.6274509803921569,
+      "confusion_matrix": [
+        [
+          12,
+          16
+        ],
+        [
+          3,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "cut",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.5714285714285714,
+      "precision": 0.5151515151515151,
+      "f1": 0.6799999999999999,
+      "confusion_matrix": [
+        [
+          12,
+          16
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "hole",
+      "auroc": 0.9852941176470589,
+      "ap": 0.982843137254902,
+      "recall": 1.0,
+      "fpr": 0.5714285714285714,
+      "precision": 0.5151515151515151,
+      "f1": 0.6799999999999999,
+      "confusion_matrix": [
+        [
+          12,
+          16
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "metal_contamination",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.5714285714285714,
+      "precision": 0.5151515151515151,
+      "f1": 0.6799999999999999,
+      "confusion_matrix": [
+        [
+          12,
+          16
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2028,
+      "defect": "thread",
+      "auroc": 0.8740601503759399,
+      "ap": 0.8937860350399047,
+      "recall": 0.8947368421052632,
+      "fpr": 0.5714285714285714,
+      "precision": 0.5151515151515151,
+      "f1": 0.6538461538461537,
+      "confusion_matrix": [
+        [
+          12,
+          16
+        ],
+        [
+          2,
+          17
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T05:45:58.126323+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-carpet-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "4cceb7dbf22b843575e9e1aa7047a067c714f2500249b3c9772d53c0201a2be7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-carpet-s2028-a01-history.csv",
+      "bytes": 1026,
+      "sha256": "b17bd5950a1247308fc50c550e127eab00d4f0673218b0042525d2f80e1489eb"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-carpet-s2028-a01-calibration-scores.csv",
+      "bytes": 1947,
+      "sha256": "e1d6f2c6a6fb43f1e0def9741f860a8759c94e3674189096fa7d87ab779a518d"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-carpet-s2028-a01-calibration.json",
+      "bytes": 4603,
+      "sha256": "b061b67f86cab4b71edec79d67321758827f60ffee72bdfff7688bebf033d498"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-carpet-s2028-a01-images.csv",
+      "bytes": 17660,
+      "sha256": "3174550117e878a232b495380b7b4536e9ab3f51c5f1b77897d8bf09617b6889"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/raw_branch_maps.npy",
+      "bytes": 61341824,
+      "sha256": "8ab73376e3468c776420aab60e225a422b092444dff6c7f0d574a65c5f70c080"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/selected_maps.npy",
+      "bytes": 30670976,
+      "sha256": "7bd4be183442e43a7f3b95c9f71ff78e2d4f493cacad0946fc1c0bf630a49db3"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 89941,
+      "sha256": "92f5e83599f72e7a21b8e09e9e14496692e3a8adbaa5a84de5153e3358dd4d2e"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/native_image_histograms.npz",
+      "bytes": 690740,
+      "sha256": "9a5683be82c6d101860c8053de627fb4bb02bb4b17b98d76514f64cb48500a6c"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/latency_ms.csv",
+      "bytes": 19137,
+      "sha256": "598ef61cd2126f41c9ab26cb40777555cd27b7f0704affb4d7c77fbcf4ef42f4"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-carpet-s2028-a01/trained.json",
+      "bytes": 5560,
+      "sha256": "a8c71109319193f4f79554c566730c905bcd281c5355445b694656ea99954707"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 292.07182720000856,
+    "cpu_initial_rss_bytes": 706088960,
+    "cpu_peak_rss_bytes": 4879847424,
+    "cpu_peak_increment_bytes": 4173758464,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 180355072
+  },
+  "wall_seconds": 292.1210116999864,
+  "disk_free_bytes": 531860238336,
+  "completed_at_utc": "2026-11-14T05:45:58.547737+00:00"
+}

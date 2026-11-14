@@ -16,18 +16,55 @@ the remaining model families and engineering application are planned.
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
 | [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
 | [05](notebooks/05_padim.ipynb) | PaDiM | Complete: verified GPU pilot, bounded development and all 15 categories across three seeds |
-| [06](notebooks/06_efficientad.ipynb) | EfficientAD | Pilot and four bounded development fits verified; reduced nine-epoch local-score protocol selected; 45-model benchmark remains unstarted |
+| [06](notebooks/06_efficientad.ipynb) | EfficientAD | Complete: pilot, four bounded development fits and 45 frozen reduced-budget evaluations; all 15 categories and three seeds |
 | 07 | Cross-model comparison | Planned |
 
-EfficientAD bounded development compared four fresh fits on bottle/carpet at
-3/9 full epochs. The selected **EfficientAD-S reduced-budget variant** uses nine
-epochs and normalized local-map maximum; the autoencoder remains trained but
-its map is excluded from the selected image score. The conservative 45-model
-forecast is **10.16 hours**, including CPU evaluation and a factor-two margin;
-the benchmark has not started. See the [measured development report](docs/efficientad_development_results.md),
-[fidelity audit](docs/efficientad_fidelity_audit.md) and [locked configuration](configs/efficientad_reduced_frozen.json).
-Synthetic proxy success does not establish real-defect accuracy. Bottle's clean
-scores show a border-driven floor; calibration uncertainty is qualified explicitly.
+The **EfficientAD-S reduced-budget variant** completed 45 fresh models on all 15
+categories and seeds 2026/2027/2028, nine epochs each. Both student heads and the
+autoencoder are trained; the selected image/pixel map is the normalized local
+teacher/student discrepancy. The global map is retained for analysis only.
+There is no external-image penalty or paper-equivalence claim.
+
+| EfficientAD macro metric | Measured mean |
+|---|---:|
+| Image AUROC | 0.816298 |
+| Image AP | 0.918593 |
+| Pixel AUROC | 0.919887 |
+| Pixel AP | 0.498476 |
+| AU-PRO | 0.818373 |
+| Recall | 0.665639 |
+| FPR | 0.220081 |
+| Precision | 0.885939 |
+| F1 | 0.740084 |
+
+Measured training took **2.38 hours**; completed run pipelines took **3.35 hours**,
+within the 12-hour target (the historical conservative forecast was 10.16 hours).
+Mean per-run model p50/p95 is **23.07/27.60 ms**; decoded-image end-to-end is
+**31.66/36.49 ms**. Peak sampled evaluation RSS is **5.80 GiB**, training CUDA
+allocated/reserved **0.309/0.459 GiB**, and checkpoints are **32.25 MB** including
+the teacher, student and AE. Timing includes the full two-map eager forward;
+upstream pretraining effort is not measured.
+
+The compute target was met, but operating-point behavior is unreliable across
+categories: screw image AUROC **0.0572**, carpet FPR **0.5833**, and leather FPR
+**0.8021**. Leather ranking remains strong despite false alarms. Tile and wood
+have high image ranking; localized responses can still miss the image threshold.
+Normal calibration FPR averages **0.0274**, versus test FPR **0.2201** at the frozen
+higher-95th-percentile, strict-greater threshold. Six calibration runs have ties;
+bottle's score floor and small-sample uncertainty remain explicit.
+
+See the [final measured report](docs/efficientad_final_results.md),
+[genuine visual review](docs/efficientad_visual_review.md),
+[exact six-model table](reports/efficientad/model_macro_comparison.csv),
+[paired uncertainty](reports/efficientad/paired_category_difference_intervals.csv),
+[development history](docs/efficientad_development_results.md),
+[fidelity audit](docs/efficientad_fidelity_audit.md),
+[locked configuration](configs/efficientad_reduced_frozen.json) and
+[recovery instructions](docs/efficientad_final_recovery.md).
+All 121 tests and the deep artifact/notebook validator passed. Dataset-derived
+panels and the full image-output notebook stay local; Git retains numeric results,
+aggregate plots, all histories and provenance. No prior model results were changed.
+Notebook 07 remains unstarted.
 
 ## Dataset
 

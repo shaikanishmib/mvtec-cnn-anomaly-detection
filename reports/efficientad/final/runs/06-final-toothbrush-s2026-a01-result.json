@@ -1,0 +1,495 @@
+{
+  "identity": {
+    "category": "toothbrush",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-toothbrush-s2026-a01",
+  "category": "toothbrush",
+  "seed": 2026,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.725,
+  "image_ap": 0.8993447317408789,
+  "recall": 0.5333333333333333,
+  "fpr": 0.08333333333333333,
+  "precision": 0.9411764705882353,
+  "f1": 0.6808510638297872,
+  "confusion_matrix": [
+    [
+      11,
+      1
+    ],
+    [
+      14,
+      16
+    ]
+  ],
+  "pixel_auroc": 0.9284806119008514,
+  "pixel_ap": 0.19402405416102553,
+  "au_pro": 0.6937060272509888,
+  "positive_pixels": 673493,
+  "negative_pixels": 43366699,
+  "regions": 66,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.5662446136812497,
+        0.875
+      ],
+      "image_ap": [
+        0.8023320811920824,
+        0.9661859119745156
+      ],
+      "recall": [
+        0.35714285714285715,
+        0.70979262672811
+      ],
+      "fpr": [
+        0.0,
+        0.2727272727272727
+      ],
+      "precision": [
+        0.8,
+        1.0
+      ],
+      "f1": [
+        0.5116279069767442,
+        0.8235294117647058
+      ],
+      "pixel_auroc": [
+        0.9112819118763078,
+        0.9424851299868705
+      ],
+      "pixel_ap": [
+        0.13355627008248955,
+        0.2549972503694774
+      ],
+      "au_pro": [
+        0.6153816158950356,
+        0.768284196845112
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      42936493,
+      430206
+    ],
+    [
+      514887,
+      158606
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9284805835229034,
+    "pixel_ap": 0.1936509579309387,
+    "au_pro": 0.693706620770788
+  },
+  "tn": 11,
+  "fp": 1,
+  "fn": 14,
+  "tp": 16,
+  "calibration": {
+    "threshold": 0.2610650062561035,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 9,
+      "min": 0.2441336065530777,
+      "median": 0.25303295254707336,
+      "mean": 0.2522165858083301,
+      "std": 0.0063484310887088665,
+      "q90": 0.26022307872772216,
+      "q95": 0.26064404249191286,
+      "max": 0.2610650062561035
+    },
+    "observed_calibration_fpr": 0.0,
+    "exceedances": 0,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0,
+      0.3362671168799428
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.1,
+    "future_fpr_order_statistic_95": [
+      0.0028091367465992146,
+      0.3362671168799428
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.25924586281180384,
+      0.2610650062561035,
+      0.2610650062561035
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.26001259684562683,
+      0.2610650062561035
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.2610650062561035,
+      "0.05": 0.2610650062561035,
+      "0.1": 0.2610650062561035
+    },
+    "development_exceedance_fraction": 0.1111111111111111,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 9,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e",
+    "paths": [
+      "toothbrush/train/good/007.png",
+      "toothbrush/train/good/013.png",
+      "toothbrush/train/good/015.png",
+      "toothbrush/train/good/023.png",
+      "toothbrush/train/good/030.png",
+      "toothbrush/train/good/031.png",
+      "toothbrush/train/good/049.png",
+      "toothbrush/train/good/051.png",
+      "toothbrush/train/good/057.png"
+    ],
+    "scores": [
+      0.25319576263427734,
+      0.25303295254707336,
+      0.2475462555885315,
+      0.24624532461166382,
+      0.2453167736530304,
+      0.2441336065530777,
+      0.25940099358558655,
+      0.26001259684562683,
+      0.2610650062561035
+    ],
+    "pixel_threshold": 0.10406443476676941,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.03868359699845314,
+    "histogram_scale": 0.01912966137751937
+  },
+  "training": {
+    "identity": {
+      "category": "toothbrush",
+      "seed": 2026,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-toothbrush-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "6a3d33adf16e673ba226e197ebae95af5c9cd39718a4494d9ba3d55ba94cf5ef"
+    },
+    "fit_n": 42,
+    "fit_source_sha256": "bbd0769c18f609f517d2d3f9f0b0870003fa32bbf9615c2edb8206cb62c9a0f5",
+    "development_n": 9,
+    "development_source_sha256": "fd5192c492be852cd3b0ee0f592a7eebf66a513b9bd0c15f41a2f85e45c601a8",
+    "development_scores": [
+      0.2494485229253769,
+      0.254081130027771,
+      0.24457184970378876,
+      0.24541105329990387,
+      0.2497846633195877,
+      0.24610194563865662,
+      0.24600850045681,
+      0.2619784474372864,
+      0.25718143582344055
+    ],
+    "training_seconds": 42.41986859997269,
+    "preparation_seconds": 0.504206499987049,
+    "map_normalization_seconds": 0.4987191999971401,
+    "serialization_seconds": 0.1873220000125002,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 42,
+        "seconds": 4.956742399983341,
+        "hard": 17.772938024430047,
+        "penalty": 0.0,
+        "autoencoder": 0.99515861982391,
+        "student_autoencoder": 0.005977034225084242,
+        "total": 18.77407369159517
+      },
+      {
+        "epoch": 2,
+        "steps": 84,
+        "seconds": 4.671926799986977,
+        "hard": 12.990824881054106,
+        "penalty": 0.0,
+        "autoencoder": 0.7878652200812385,
+        "student_autoencoder": 0.04651189327151293,
+        "total": 13.825201829274496
+      },
+      {
+        "epoch": 3,
+        "steps": 126,
+        "seconds": 4.690948200004641,
+        "hard": 10.563183966137114,
+        "penalty": 0.0,
+        "autoencoder": 0.6943522038913909,
+        "student_autoencoder": 0.04310683107801846,
+        "total": 11.300642989930653
+      },
+      {
+        "epoch": 4,
+        "steps": 168,
+        "seconds": 4.700200699997367,
+        "hard": 8.698060750961304,
+        "penalty": 0.0,
+        "autoencoder": 0.655316622484298,
+        "student_autoencoder": 0.0324651464110329,
+        "total": 9.385842550368537
+      },
+      {
+        "epoch": 5,
+        "steps": 210,
+        "seconds": 4.657257100014249,
+        "hard": 7.467797733488537,
+        "penalty": 0.0,
+        "autoencoder": 0.61485384617533,
+        "student_autoencoder": 0.030527360692975066,
+        "total": 8.113178934369769
+      },
+      {
+        "epoch": 6,
+        "steps": 252,
+        "seconds": 4.698778599995421,
+        "hard": 6.6486822082882835,
+        "penalty": 0.0,
+        "autoencoder": 0.5290113339821497,
+        "student_autoencoder": 0.04447211560216688,
+        "total": 7.222165720803397
+      },
+      {
+        "epoch": 7,
+        "steps": 294,
+        "seconds": 4.6741594999912195,
+        "hard": 6.105134861809867,
+        "penalty": 0.0,
+        "autoencoder": 0.4582053181670961,
+        "student_autoencoder": 0.05321643049163478,
+        "total": 6.616556599026635
+      },
+      {
+        "epoch": 8,
+        "steps": 336,
+        "seconds": 4.680329900002107,
+        "hard": 5.721696796871367,
+        "penalty": 0.0,
+        "autoencoder": 0.4348536736908413,
+        "student_autoencoder": 0.05496920308186894,
+        "total": 6.211519718170166
+      },
+      {
+        "epoch": 9,
+        "steps": 378,
+        "seconds": 4.689525399997365,
+        "hard": 5.4241672811054045,
+        "penalty": 0.0,
+        "autoencoder": 0.4158517980859393,
+        "student_autoencoder": 0.053651223269601665,
+        "total": 5.893670263744536
+      }
+    ],
+    "resources": {
+      "seconds": 44.49593279999681,
+      "cpu_initial_rss_bytes": 1178783744,
+      "cpu_peak_rss_bytes": 1728012288,
+      "cpu_peak_increment_bytes": 549228544,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 329412096,
+      "peak_gpu_reserved_bytes": 432013312
+    },
+    "map_quantiles": [
+      [
+        0.671660840511322,
+        1.2564077377319336
+      ],
+      [
+        0.05361488088965416,
+        0.14955423772335052
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T04:01:24.027534+00:00"
+  },
+  "training_seconds": 42.41986859997269,
+  "calibration_seconds": 0.637953400000697,
+  "inference_seconds": 2.8522490999894217,
+  "native_metrics_bootstrap_seconds": 14.616056999977445,
+  "latency_seconds": 11.537105900002643,
+  "evaluation_seconds": 29.00541199996951,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.352799995103851,
+      "p95_ms": 4.854095021437388
+    },
+    "host_to_device": {
+      "p50_ms": 0.3309500025352463,
+      "p95_ms": 0.41796998120844364
+    },
+    "model": {
+      "p50_ms": 22.019550000550225,
+      "p95_ms": 26.848520000930872
+    },
+    "postprocessing": {
+      "p50_ms": 3.8176999951247126,
+      "p95_ms": 5.109744986111763
+    },
+    "end_to_end": {
+      "p50_ms": 30.687049991684034,
+      "p95_ms": 35.57192998705432
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 66.95844999921974,
+    "decode_inclusive_p95_ms": 73.89662999630673,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 180355072,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "66",
+      "utilization.gpu": "44",
+      "utilization.memory": "6",
+      "power.draw": "31.35",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1815",
+      "memory.used": "277"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 329412096,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-toothbrush-s2026-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "6a3d33adf16e673ba226e197ebae95af5c9cd39718a4494d9ba3d55ba94cf5ef"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-toothbrush-s2026-a01-images.csv",
+  "test_source_sha256": "e31ff8241166ff988561bda6e85d6b039fa82d6c59c2325156a8bd347bad7ddf",
+  "per_defect": [
+    {
+      "category": "toothbrush",
+      "seed": 2026,
+      "defect": "defective",
+      "auroc": 0.725,
+      "ap": 0.8993447317408789,
+      "recall": 0.5333333333333333,
+      "fpr": 0.08333333333333333,
+      "precision": 0.9411764705882353,
+      "f1": 0.6808510638297872,
+      "confusion_matrix": [
+        [
+          11,
+          1
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T04:01:53.891382+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-toothbrush-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "6a3d33adf16e673ba226e197ebae95af5c9cd39718a4494d9ba3d55ba94cf5ef"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2026-a01-history.csv",
+      "bytes": 1019,
+      "sha256": "3ddc7ee54f14531672da0e134f22d2ba8d73d1293dc35fa9c8871369365af855"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2026-a01-calibration-scores.csv",
+      "bytes": 459,
+      "sha256": "a279f3610490c28f3865faceb0b45cdfa07c8972d8dcdb5486c8d88786ed9b2e"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2026-a01-calibration.json",
+      "bytes": 2615,
+      "sha256": "8e5e62b54505c1f5e3cc527d8ae239c7bcd3739044cbaa527e92fbd9a38597ad"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-toothbrush-s2026-a01-images.csv",
+      "bytes": 6888,
+      "sha256": "2a8ce9503ea8b4e3cd24715e6920ef8a247705fd21f9ff2161dda484f5dcd4fb"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/raw_branch_maps.npy",
+      "bytes": 22020224,
+      "sha256": "0d4153b986191aba860a99ba591de072f58fcca518458e7e8453338c25fec203"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/selected_maps.npy",
+      "bytes": 11010176,
+      "sha256": "1b41e129ff75a472c140f018b1134b00cc6648f7bd133ce09a9365f455527a62"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/bootstrap_vectors.npz",
+      "bytes": 81391,
+      "sha256": "201987b83f6548921572fac519d84dcc87f580b888e7f4f3e67cf012cf9f5049"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/native_image_histograms.npz",
+      "bytes": 313545,
+      "sha256": "62435351ec5e04402f862d24b3f596f25b5c3468a32346b92c51263f1e280078"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/latency_ms.csv",
+      "bytes": 19149,
+      "sha256": "783933bafda0076efe991ece1ee8d5665ea2f7cc166398c11fb5f040ca884569"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-toothbrush-s2026-a01/trained.json",
+      "bytes": 4701,
+      "sha256": "474a44b59678320c2368db9edae692cd7e89552e4c4c08b871342c688cdf9170"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 77.04395280001336,
+    "cpu_initial_rss_bytes": 706260992,
+    "cpu_peak_rss_bytes": 2840969216,
+    "cpu_peak_increment_bytes": 2134708224,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 180355072
+  },
+  "wall_seconds": 77.10277860000497,
+  "disk_free_bytes": 536474390528,
+  "completed_at_utc": "2026-11-14T04:01:54.197496+00:00"
+}

@@ -1,0 +1,714 @@
+{
+  "identity": {
+    "category": "pill",
+    "seed": 2027,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-pill-s2027-a01",
+  "category": "pill",
+  "seed": 2027,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9075286415711948,
+  "image_ap": 0.9833377672021549,
+  "recall": 0.524822695035461,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.6883720930232557,
+  "confusion_matrix": [
+    [
+      26,
+      0
+    ],
+    [
+      67,
+      74
+    ]
+  ],
+  "pixel_auroc": 0.9319059507216324,
+  "pixel_ap": 0.6868740185614546,
+  "au_pro": 0.8789880399361614,
+  "positive_pixels": 3589160,
+  "negative_pixels": 103290840,
+  "regions": 245,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8588395235716664,
+        0.9489227895392279
+      ],
+      "image_ap": [
+        0.9716436901610639,
+        0.9924058495371257
+      ],
+      "recall": [
+        0.44366197183098594,
+        0.6058449458084495
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.6146341463414634,
+        0.75454974271012
+      ],
+      "pixel_auroc": [
+        0.905048606963614,
+        0.9529065273083336
+      ],
+      "pixel_ap": [
+        0.5296873642361843,
+        0.7843871237958298
+      ],
+      "au_pro": [
+        0.8470917143835239,
+        0.9045867959881145
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      101883494,
+      1407346
+    ],
+    [
+      1112638,
+      2476522
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9319059606302433,
+    "pixel_ap": 0.6868710867367683,
+    "au_pro": 0.8789879723949514
+  },
+  "tn": 26,
+  "fp": 0,
+  "fn": 67,
+  "tp": 74,
+  "calibration": {
+    "threshold": 0.5984322428703308,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 40,
+      "min": 0.17011713981628418,
+      "median": 0.26158057153224945,
+      "mean": 0.28455800488591193,
+      "std": 0.11382946998514647,
+      "q90": 0.38965408802032475,
+      "q95": 0.5380555003881453,
+      "max": 0.7139180302619934
+    },
+    "observed_calibration_fpr": 0.025,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0006327449320494191,
+      0.1315858584827657
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.04878048780487805,
+    "future_fpr_order_statistic_95": [
+      0.006113646599350836,
+      0.1315858584827657
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.350004106760025,
+      0.5984322428703308,
+      0.7139180302619934
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.5348777770996094,
+      0.5984322428703308
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.7139180302619934,
+      "0.05": 0.5984322428703308,
+      "0.1": 0.4291629195213318
+    },
+    "development_exceedance_fraction": 0.0,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 40,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad",
+    "paths": [
+      "pill/train/good/005.png",
+      "pill/train/good/013.png",
+      "pill/train/good/018.png",
+      "pill/train/good/019.png",
+      "pill/train/good/023.png",
+      "pill/train/good/025.png",
+      "pill/train/good/028.png",
+      "pill/train/good/039.png",
+      "pill/train/good/061.png",
+      "pill/train/good/068.png",
+      "pill/train/good/070.png",
+      "pill/train/good/075.png",
+      "pill/train/good/100.png",
+      "pill/train/good/103.png",
+      "pill/train/good/108.png",
+      "pill/train/good/117.png",
+      "pill/train/good/127.png",
+      "pill/train/good/129.png",
+      "pill/train/good/133.png",
+      "pill/train/good/138.png",
+      "pill/train/good/156.png",
+      "pill/train/good/169.png",
+      "pill/train/good/171.png",
+      "pill/train/good/186.png",
+      "pill/train/good/188.png",
+      "pill/train/good/189.png",
+      "pill/train/good/195.png",
+      "pill/train/good/201.png",
+      "pill/train/good/206.png",
+      "pill/train/good/211.png",
+      "pill/train/good/222.png",
+      "pill/train/good/223.png",
+      "pill/train/good/224.png",
+      "pill/train/good/234.png",
+      "pill/train/good/236.png",
+      "pill/train/good/237.png",
+      "pill/train/good/243.png",
+      "pill/train/good/256.png",
+      "pill/train/good/260.png",
+      "pill/train/good/265.png"
+    ],
+    "scores": [
+      0.20478977262973785,
+      0.24706359207630157,
+      0.24701714515686035,
+      0.2631687521934509,
+      0.2536691427230835,
+      0.24817299842834473,
+      0.25305867195129395,
+      0.27257731556892395,
+      0.5348777770996094,
+      0.25819632411003113,
+      0.2662268877029419,
+      0.26073259115219116,
+      0.17758561670780182,
+      0.30409011244773865,
+      0.311352401971817,
+      0.266458123922348,
+      0.2711885869503021,
+      0.33846381306648254,
+      0.4291629195213318,
+      0.2777261435985565,
+      0.26126760244369507,
+      0.31718653440475464,
+      0.32102447748184204,
+      0.7139180302619934,
+      0.32613441348075867,
+      0.26189354062080383,
+      0.350004106760025,
+      0.5984322428703308,
+      0.17131692171096802,
+      0.20033209025859833,
+      0.18298844993114471,
+      0.17011713981628418,
+      0.17607387900352478,
+      0.17603519558906555,
+      0.19097939133644104,
+      0.18038250505924225,
+      0.19611325860023499,
+      0.31314852833747864,
+      0.38526421785354614,
+      0.20412898063659668
+    ],
+    "pixel_threshold": 0.10214069485664368,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.12004566192626953,
+    "histogram_scale": 0.11655322555452585
+  },
+  "training": {
+    "identity": {
+      "category": "pill",
+      "seed": 2027,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-pill-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "93678892a7e5dc30049587f3c7f8beaf161d016e034ff14f78b49a0b6842d461"
+    },
+    "fit_n": 187,
+    "fit_source_sha256": "a1aed402873bad6e4b5de47168b2ad831726e37351e468a9f5dbdf24fb565836",
+    "development_n": 40,
+    "development_source_sha256": "77f7dae11abf4be434613638baad9aa7517662e3b2ccbf36a0abff90f008cbc4",
+    "development_scores": [
+      0.2673964202404022,
+      0.16240274906158447,
+      0.28865185379981995,
+      0.2722035050392151,
+      0.2852717638015747,
+      0.26120564341545105,
+      0.27048689126968384,
+      0.27861660718917847,
+      0.28372904658317566,
+      0.2812584340572357,
+      0.39990234375,
+      0.25795623660087585,
+      0.2605466842651367,
+      0.27348950505256653,
+      0.28300851583480835,
+      0.26407843828201294,
+      0.26883116364479065,
+      0.2735489308834076,
+      0.2521573603153229,
+      0.23247471451759338,
+      0.3033483624458313,
+      0.4329603910446167,
+      0.5464985966682434,
+      0.4184858798980713,
+      0.18520833551883698,
+      0.16333502531051636,
+      0.19615347683429718,
+      0.18920744955539703,
+      0.37536612153053284,
+      0.16073857247829437,
+      0.18238899111747742,
+      0.17899782955646515,
+      0.15870916843414307,
+      0.18130211532115936,
+      0.24810560047626495,
+      0.2079397737979889,
+      0.19925442337989807,
+      0.2707085907459259,
+      0.2521720230579376,
+      0.20097851753234863
+    ],
+    "training_seconds": 210.64809620004962,
+    "preparation_seconds": 0.027017599990358576,
+    "map_normalization_seconds": 2.4383159000135493,
+    "serialization_seconds": 0.16566580001381226,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 187,
+        "seconds": 22.23628509999253,
+        "hard": 11.56200443869606,
+        "penalty": 0.0,
+        "autoencoder": 0.8147312966897526,
+        "student_autoencoder": 0.018235096385463435,
+        "total": 12.394970763813365
+      },
+      {
+        "epoch": 2,
+        "steps": 374,
+        "seconds": 22.398592100013047,
+        "hard": 6.739450798952643,
+        "penalty": 0.0,
+        "autoencoder": 0.478079138433232,
+        "student_autoencoder": 0.04733156055251864,
+        "total": 7.264861476612601
+      },
+      {
+        "epoch": 3,
+        "steps": 561,
+        "seconds": 22.846243800013326,
+        "hard": 5.433600645014309,
+        "penalty": 0.0,
+        "autoencoder": 0.387031431982224,
+        "student_autoencoder": 0.03886420435127728,
+        "total": 5.859496274733926
+      },
+      {
+        "epoch": 4,
+        "steps": 748,
+        "seconds": 23.053043699997943,
+        "hard": 4.809807986499154,
+        "penalty": 0.0,
+        "autoencoder": 0.3621086208896841,
+        "student_autoencoder": 0.04020718020949772,
+        "total": 5.212123771402288
+      },
+      {
+        "epoch": 5,
+        "steps": 935,
+        "seconds": 24.0956162000075,
+        "hard": 4.3464643483493415,
+        "penalty": 0.0,
+        "autoencoder": 0.3416851400372816,
+        "student_autoencoder": 0.03639731074080748,
+        "total": 4.72454678438564
+      },
+      {
+        "epoch": 6,
+        "steps": 1122,
+        "seconds": 23.244737700006226,
+        "hard": 4.043331090141745,
+        "penalty": 0.0,
+        "autoencoder": 0.3199234824767087,
+        "student_autoencoder": 0.035469229358004374,
+        "total": 4.398723796089703
+      },
+      {
+        "epoch": 7,
+        "steps": 1309,
+        "seconds": 24.161229999997886,
+        "hard": 3.8218412934777573,
+        "penalty": 0.0,
+        "autoencoder": 0.3094459138611421,
+        "student_autoencoder": 0.034297088977885755,
+        "total": 4.1655842786166755
+      },
+      {
+        "epoch": 8,
+        "steps": 1496,
+        "seconds": 24.38374940000358,
+        "hard": 3.572850496373712,
+        "penalty": 0.0,
+        "autoencoder": 0.29864578626372595,
+        "student_autoencoder": 0.031069560852997443,
+        "total": 3.9025658426437784
+      },
+      {
+        "epoch": 9,
+        "steps": 1683,
+        "seconds": 24.228598200017586,
+        "hard": 3.3461537628887807,
+        "penalty": 0.0,
+        "autoencoder": 0.2905573165990452,
+        "student_autoencoder": 0.03176253345760113,
+        "total": 3.6684736007037646
+      }
+    ],
+    "resources": {
+      "seconds": 215.30341230001068,
+      "cpu_initial_rss_bytes": 1006395392,
+      "cpu_peak_rss_bytes": 1879928832,
+      "cpu_peak_increment_bytes": 873533440,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 484442112
+    },
+    "map_quantiles": [
+      [
+        0.38306528329849243,
+        0.471499502658844
+      ],
+      [
+        0.025693854317069054,
+        0.06391209363937378
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T05:01:01.797942+00:00"
+  },
+  "training_seconds": 210.64809620004962,
+  "calibration_seconds": 2.2722622000146657,
+  "inference_seconds": 8.510681099985959,
+  "native_metrics_bootstrap_seconds": 38.43173229999957,
+  "latency_seconds": 10.096865800005617,
+  "evaluation_seconds": 57.03927919999114,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 2.970500005176291,
+      "p95_ms": 3.3316250148345716
+    },
+    "host_to_device": {
+      "p50_ms": 0.2997499977936968,
+      "p95_ms": 0.36893998767482117
+    },
+    "model": {
+      "p50_ms": 22.105450014350936,
+      "p95_ms": 26.13942000753013
+    },
+    "postprocessing": {
+      "p50_ms": 3.1310000049415976,
+      "p95_ms": 3.82755001046462
+    },
+    "end_to_end": {
+      "p50_ms": 28.574650015798397,
+      "p95_ms": 32.5202999956673
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 49.628449996816926,
+    "decode_inclusive_p95_ms": 53.457769997476134,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 188743680,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "78",
+      "utilization.gpu": "37",
+      "utilization.memory": "7",
+      "power.draw": "54.91",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2520",
+      "memory.used": "285"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-pill-s2027-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "93678892a7e5dc30049587f3c7f8beaf161d016e034ff14f78b49a0b6842d461"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-pill-s2027-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-pill-s2027-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-pill-s2027-a01-images.csv",
+  "test_source_sha256": "7a70871cbc36bac419d74050b2b0aeb6da2eff08251df4238fb0b01eb02956ea",
+  "per_defect": [
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "color",
+      "auroc": 0.9815384615384615,
+      "ap": 0.9870270270270272,
+      "recall": 0.96,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9795918367346939,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          1,
+          24
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "combined",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 0.8235294117647058,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9032258064516129,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          3,
+          14
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "contamination",
+      "auroc": 0.8772893772893773,
+      "ap": 0.9059111138134022,
+      "recall": 0.2857142857142857,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.4444444444444445,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          15,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "crack",
+      "auroc": 0.8195266272189348,
+      "ap": 0.8690792840865244,
+      "recall": 0.23076923076923078,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.375,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          20,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "faulty_imprint",
+      "auroc": 0.8056680161943319,
+      "ap": 0.8121735360940181,
+      "recall": 0.21052631578947367,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.34782608695652173,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          15,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "pill_type",
+      "auroc": 1.0,
+      "ap": 1.0000000000000002,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          0,
+          9
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2027,
+      "defect": "scratch",
+      "auroc": 0.9326923076923077,
+      "ap": 0.9449587912087911,
+      "recall": 0.4583333333333333,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.6285714285714286,
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          13,
+          11
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T05:02:01.362648+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-pill-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "93678892a7e5dc30049587f3c7f8beaf161d016e034ff14f78b49a0b6842d461"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2027-a01-history.csv",
+      "bytes": 1023,
+      "sha256": "d47a67711de90f7f45a2e154ea63e661d82eb5216759ea2a02236732356a15f7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2027-a01-calibration-scores.csv",
+      "bytes": 1770,
+      "sha256": "225b2f7cef0197cbfd0426aa3b23620adf4e87a0bf1e04dafc966f997f1a1d1c"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2027-a01-calibration.json",
+      "bytes": 4366,
+      "sha256": "b53cb7c27c3e437eb91a27fb0e51d2335ec9c674bfcda39694e964133e3c94d2"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2027-a01-images.csv",
+      "bytes": 25299,
+      "sha256": "08557e2e9a2a80981d17646e311ff8ee8377c8843ca7f71d947ccd86e76f6171"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/raw_branch_maps.npy",
+      "bytes": 87556224,
+      "sha256": "3ccba1430d48105cac1cc273930801763291b2bf1a00511f8d6d40298de0c94c"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/selected_maps.npy",
+      "bytes": 43778176,
+      "sha256": "20c91b6786769278f6a9de663f8ee43cb83c6dba3e93bb993cf54dcec2d4af75"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/bootstrap_vectors.npz",
+      "bytes": 84163,
+      "sha256": "44502dbc7791de27c9faffc653dbfd06d29c071be422c248506f2bb6c57e5373"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/native_image_histograms.npz",
+      "bytes": 1120136,
+      "sha256": "5cce7593149ae4b3ef44b9ea124e75f56b60f4ce1fe0a6205e4e69a29c7fcd17"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/latency_ms.csv",
+      "bytes": 19153,
+      "sha256": "e4b1b947a0aeff67a147060b5b948b6e0c6bfeef506a9d03ff64b6ce9b7ec8b3"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2027-a01/trained.json",
+      "bytes": 5508,
+      "sha256": "bbaa0eea776f063d3ed59252385311f34404678bb635657fc172156620024f5a"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 280.09752519999165,
+    "cpu_initial_rss_bytes": 705523712,
+    "cpu_peak_rss_bytes": 4486918144,
+    "cpu_peak_increment_bytes": 3781394432,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 188743680
+  },
+  "wall_seconds": 280.1499497000186,
+  "disk_free_bytes": 534068363264,
+  "completed_at_utc": "2026-11-14T05:02:01.790030+00:00"
+}

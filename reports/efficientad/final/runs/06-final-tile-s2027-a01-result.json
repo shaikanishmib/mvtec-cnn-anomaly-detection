@@ -1,0 +1,654 @@
+{
+  "identity": {
+    "category": "tile",
+    "seed": 2027,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-tile-s2027-a01",
+  "category": "tile",
+  "seed": 2027,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9953102453102453,
+  "image_ap": 0.9981769147264916,
+  "recall": 0.6309523809523809,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.7737226277372262,
+  "confusion_matrix": [
+    [
+      33,
+      0
+    ],
+    [
+      31,
+      53
+    ]
+  ],
+  "pixel_auroc": 0.9840873413571486,
+  "pixel_ap": 0.8209517768084899,
+  "au_pro": 0.9595045047082977,
+  "positive_pixels": 5809846,
+  "negative_pixels": 76745354,
+  "regions": 86,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9843612368899725,
+        1.0
+      ],
+      "image_ap": [
+        0.9939233729482586,
+        1.0
+      ],
+      "recall": [
+        0.523242600422833,
+        0.7349397590361446
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.6870115073487525,
+        0.8472222222222222
+      ],
+      "pixel_auroc": [
+        0.9787408006137669,
+        0.9885488814324198
+      ],
+      "pixel_ap": [
+        0.7478914598317371,
+        0.8795123264948528
+      ],
+      "au_pro": [
+        0.9494933767949043,
+        0.9689958594854732
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      74349150,
+      2396204
+    ],
+    [
+      404851,
+      5404995
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.984087258404756,
+    "pixel_ap": 0.8204941766868151,
+    "au_pro": 0.9595043695304802
+  },
+  "tn": 33,
+  "fp": 0,
+  "fn": 31,
+  "tp": 53,
+  "calibration": {
+    "threshold": 1.166736364364624,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 34,
+      "min": 0.11085204035043716,
+      "median": 0.22279896587133408,
+      "mean": 0.31844323194202256,
+      "std": 0.2696891922976032,
+      "q90": 0.4788663178682327,
+      "q95": 0.7375994294881807,
+      "max": 1.438481092453003
+    },
+    "observed_calibration_fpr": 0.029411764705882353,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0007443642346902604,
+      0.15326766956031765
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05714285714285714,
+    "future_fpr_order_statistic_95": [
+      0.007204917439049714,
+      0.15326766956031765
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.4585990607738495,
+      1.166736364364624,
+      1.438481092453003
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.5065256953239441,
+      1.166736364364624
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 1.438481092453003,
+      "0.05": 1.166736364364624,
+      "0.1": 0.487552285194397
+    },
+    "development_exceedance_fraction": 0.0,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 34,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "cfb6df45aa28301e371b3c335f45e40599ef3a2dcdcd05c62054fd44de5ee403",
+    "paths": [
+      "tile/train/good/002.png",
+      "tile/train/good/006.png",
+      "tile/train/good/011.png",
+      "tile/train/good/031.png",
+      "tile/train/good/044.png",
+      "tile/train/good/048.png",
+      "tile/train/good/051.png",
+      "tile/train/good/054.png",
+      "tile/train/good/055.png",
+      "tile/train/good/059.png",
+      "tile/train/good/061.png",
+      "tile/train/good/064.png",
+      "tile/train/good/093.png",
+      "tile/train/good/102.png",
+      "tile/train/good/104.png",
+      "tile/train/good/108.png",
+      "tile/train/good/112.png",
+      "tile/train/good/122.png",
+      "tile/train/good/131.png",
+      "tile/train/good/141.png",
+      "tile/train/good/146.png",
+      "tile/train/good/155.png",
+      "tile/train/good/164.png",
+      "tile/train/good/171.png",
+      "tile/train/good/189.png",
+      "tile/train/good/191.png",
+      "tile/train/good/202.png",
+      "tile/train/good/203.png",
+      "tile/train/good/209.png",
+      "tile/train/good/216.png",
+      "tile/train/good/217.png",
+      "tile/train/good/218.png",
+      "tile/train/good/222.png",
+      "tile/train/good/224.png"
+    ],
+    "scores": [
+      0.11085204035043716,
+      0.17318549752235413,
+      0.4585990607738495,
+      0.17278116941452026,
+      0.14919307827949524,
+      0.28116416931152344,
+      0.14655718207359314,
+      0.3228120803833008,
+      0.19953306019306183,
+      0.22233827412128448,
+      0.13097774982452393,
+      0.2150059938430786,
+      0.487552285194397,
+      0.21695679426193237,
+      0.4427729547023773,
+      0.13976463675498962,
+      1.438481092453003,
+      0.16058972477912903,
+      0.331084668636322,
+      0.3175859749317169,
+      1.166736364364624,
+      0.35891997814178467,
+      0.5065256953239441,
+      0.322447806596756,
+      0.15971273183822632,
+      0.32785120606422424,
+      0.28954824805259705,
+      0.27216604351997375,
+      0.3600955903530121,
+      0.1548522710800171,
+      0.17367038130760193,
+      0.22325965762138367,
+      0.20550814270973206,
+      0.18798828125
+    ],
+    "pixel_threshold": 0.08760135620832443,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05314367823302746,
+    "histogram_scale": 0.046501241624355316
+  },
+  "training": {
+    "identity": {
+      "category": "tile",
+      "seed": 2027,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-tile-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "5cfc08eb504ccf4f22319069059aa6dfc1c0e6801add031a147d51ff19945a03"
+    },
+    "fit_n": 162,
+    "fit_source_sha256": "576f56414be6e68ee253424b725b6491588509085e074710a85ec03212fd4d5b",
+    "development_n": 34,
+    "development_source_sha256": "ca458170e77bb30a105b5de3e454d7d3826fcd6d6443f293629fc40e9e887416",
+    "development_scores": [
+      0.3595644533634186,
+      0.1995995193719864,
+      0.2024528980255127,
+      0.30417871475219727,
+      0.22355559468269348,
+      1.0974408388137817,
+      0.2685581147670746,
+      0.9481415748596191,
+      0.24195902049541473,
+      0.2767575681209564,
+      0.6482425332069397,
+      0.12083262950181961,
+      0.37809598445892334,
+      0.23517410457134247,
+      0.2080065906047821,
+      0.35303595662117004,
+      0.25171735882759094,
+      0.2013295739889145,
+      0.18039193749427795,
+      0.228097602725029,
+      0.3900200128555298,
+      0.3433903753757477,
+      0.29129758477211,
+      0.40097737312316895,
+      0.28221026062965393,
+      0.28924211859703064,
+      0.3860660791397095,
+      0.27157947421073914,
+      0.39671191573143005,
+      0.2953219711780548,
+      0.5911989808082581,
+      0.27791929244995117,
+      0.12834523618221283,
+      0.24391044676303864
+    ],
+    "training_seconds": 191.11029489999055,
+    "preparation_seconds": 0.028687299985904247,
+    "map_normalization_seconds": 2.3768448999908287,
+    "serialization_seconds": 0.17690660001244396,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 162,
+        "seconds": 19.505294700007653,
+        "hard": 12.171214645291553,
+        "penalty": 0.0,
+        "autoencoder": 0.87821309581215,
+        "student_autoencoder": 0.024121245965045404,
+        "total": 13.073548999833472
+      },
+      {
+        "epoch": 2,
+        "steps": 324,
+        "seconds": 19.91320910002105,
+        "hard": 8.526015723193133,
+        "penalty": 0.0,
+        "autoencoder": 0.6538721683584614,
+        "student_autoencoder": 0.030339652994348678,
+        "total": 9.210227536566464
+      },
+      {
+        "epoch": 3,
+        "steps": 486,
+        "seconds": 22.493155700009083,
+        "hard": 7.7613840662402875,
+        "penalty": 0.0,
+        "autoencoder": 0.6308036439212752,
+        "student_autoencoder": 0.02255650391848183,
+        "total": 8.414744197586437
+      },
+      {
+        "epoch": 4,
+        "steps": 648,
+        "seconds": 20.29149730000063,
+        "hard": 6.911130251707854,
+        "penalty": 0.0,
+        "autoencoder": 0.6246320160082829,
+        "student_autoencoder": 0.0217312777955315,
+        "total": 7.557493533617184
+      },
+      {
+        "epoch": 5,
+        "steps": 810,
+        "seconds": 21.77668989999802,
+        "hard": 6.134139602566942,
+        "penalty": 0.0,
+        "autoencoder": 0.6229765168678614,
+        "student_autoencoder": 0.01776759781771236,
+        "total": 6.774883700005802
+      },
+      {
+        "epoch": 6,
+        "steps": 972,
+        "seconds": 21.76707879998139,
+        "hard": 5.729248576694065,
+        "penalty": 0.0,
+        "autoencoder": 0.6179384824670391,
+        "student_autoencoder": 0.015036647524224756,
+        "total": 6.362223675221573
+      },
+      {
+        "epoch": 7,
+        "steps": 1134,
+        "seconds": 22.073217099998146,
+        "hard": 5.36293997882325,
+        "penalty": 0.0,
+        "autoencoder": 0.6174028475343445,
+        "student_autoencoder": 0.012860756695132565,
+        "total": 5.99320356639815
+      },
+      {
+        "epoch": 8,
+        "steps": 1296,
+        "seconds": 21.10106739998446,
+        "hard": 5.0997909322197055,
+        "penalty": 0.0,
+        "autoencoder": 0.6193752340328547,
+        "student_autoencoder": 0.011765962052676413,
+        "total": 5.730932135640839
+      },
+      {
+        "epoch": 9,
+        "steps": 1458,
+        "seconds": 22.18908489999012,
+        "hard": 4.904145782376513,
+        "penalty": 0.0,
+        "autoencoder": 0.6184776193565793,
+        "student_autoencoder": 0.011381644264070524,
+        "total": 5.534005035588771
+      }
+    ],
+    "resources": {
+      "seconds": 195.7358979000128,
+      "cpu_initial_rss_bytes": 986017792,
+      "cpu_peak_rss_bytes": 1874853888,
+      "cpu_peak_increment_bytes": 888836096,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 480247808
+    },
+    "map_quantiles": [
+      [
+        0.42750605940818787,
+        0.594441831111908
+      ],
+      [
+        0.012368599884212017,
+        0.06694170832633972
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T05:11:25.920802+00:00"
+  },
+  "training_seconds": 191.11029489999055,
+  "calibration_seconds": 2.1999125000147615,
+  "inference_seconds": 6.949818499997491,
+  "native_metrics_bootstrap_seconds": 30.965457800019067,
+  "latency_seconds": 10.98656389999087,
+  "evaluation_seconds": 48.90184020000743,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.1887499935692176,
+      "p95_ms": 3.6550900083966553
+    },
+    "host_to_device": {
+      "p50_ms": 0.31499998294748366,
+      "p95_ms": 0.42047999886563037
+    },
+    "model": {
+      "p50_ms": 23.180849995696917,
+      "p95_ms": 29.285080017871206
+    },
+    "postprocessing": {
+      "p50_ms": 3.292999987024814,
+      "p95_ms": 4.134724986215588
+    },
+    "end_to_end": {
+      "p50_ms": 30.282649997388944,
+      "p95_ms": 36.6736149866483
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 55.728149993228726,
+    "decode_inclusive_p95_ms": 59.430640007485636,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 176160768,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "79",
+      "utilization.gpu": "25",
+      "utilization.memory": "4",
+      "power.draw": "45.28",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2220",
+      "memory.used": "273"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-tile-s2027-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "5cfc08eb504ccf4f22319069059aa6dfc1c0e6801add031a147d51ff19945a03"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-tile-s2027-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-tile-s2027-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-tile-s2027-a01-images.csv",
+  "test_source_sha256": "98107d59b174dffea4c2fc604e5c33ea0df2c06e7c1a18ff122c228fb5effaf3",
+  "per_defect": [
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "crack",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "glue_strip",
+      "auroc": 0.9966329966329966,
+      "ap": 0.9939896036387266,
+      "recall": 0.4444444444444444,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.6153846153846153,
+      "confusion_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          10,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "gray_stroke",
+      "auroc": 0.9924242424242424,
+      "ap": 0.9837863270308124,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          16,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "oil",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2027,
+      "defect": "rough",
+      "auroc": 0.9858585858585858,
+      "ap": 0.9765079365079364,
+      "recall": 0.6666666666666666,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.8,
+      "confusion_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          5,
+          10
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T05:12:17.261294+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-tile-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "5cfc08eb504ccf4f22319069059aa6dfc1c0e6801add031a147d51ff19945a03"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-tile-s2027-a01-history.csv",
+      "bytes": 1024,
+      "sha256": "a0ddec266b78b6a6161ea6bcbc40f811fa0f52f0938c724f2cd006481a0c98b7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-tile-s2027-a01-calibration-scores.csv",
+      "bytes": 1498,
+      "sha256": "d2dd1aabec11b2622fc125c4d4342398c395e9529b97cfb7ae86327d26ea509a"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-tile-s2027-a01-calibration.json",
+      "bytes": 4018,
+      "sha256": "49be6899b02c56c04a6c9e04fff8bc57b11c0d35eb1b2a12934583d9f3a19c39"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-tile-s2027-a01-images.csv",
+      "bytes": 16535,
+      "sha256": "025ba2024180b25f590f3dd424042bafc5b21b65d7dbf1766130a64de558032b"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/raw_branch_maps.npy",
+      "bytes": 61341824,
+      "sha256": "d33edf2765186500a3be221770293a7a76064b9f0ff12a2ff01cdb5434c0d410"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/selected_maps.npy",
+      "bytes": 30670976,
+      "sha256": "a523c487dea14155d2cc04b0cbec294dee3662093436aac85cd7b5b98f3eb109"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/bootstrap_vectors.npz",
+      "bytes": 74509,
+      "sha256": "bb33081078d805cab47d0cd9550dac57778218affda1248c48b52b7664fa396f"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/native_image_histograms.npz",
+      "bytes": 823014,
+      "sha256": "ce6544e38c7372ff7c78317fe386fdf55f2bda9cca243d06f8e1b200fa4ad030"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/latency_ms.csv",
+      "bytes": 19154,
+      "sha256": "8b9e181208b9a145ba10be8e0c09f1a6410630809cdd22dd99c1c39456bbfa10"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-tile-s2027-a01/trained.json",
+      "bytes": 5343,
+      "sha256": "e9cb69fb95345fe40b099dd7dd7ae6f54b39ede0ba97200e4ac4082bebbd3e9c"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 252.62996140000178,
+    "cpu_initial_rss_bytes": 705851392,
+    "cpu_peak_rss_bytes": 3912212480,
+    "cpu_peak_increment_bytes": 3206361088,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 176160768
+  },
+  "wall_seconds": 252.68488460002118,
+  "disk_free_bytes": 533399592960,
+  "completed_at_utc": "2026-11-14T05:12:17.684695+00:00"
+}

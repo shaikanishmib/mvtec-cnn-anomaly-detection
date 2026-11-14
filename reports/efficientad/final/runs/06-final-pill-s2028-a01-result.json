@@ -1,0 +1,714 @@
+{
+  "identity": {
+    "category": "pill",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-pill-s2028-a01",
+  "category": "pill",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.8955264593562465,
+  "image_ap": 0.979915485157798,
+  "recall": 0.6028368794326241,
+  "fpr": 0.038461538461538464,
+  "precision": 0.9883720930232558,
+  "f1": 0.748898678414097,
+  "confusion_matrix": [
+    [
+      25,
+      1
+    ],
+    [
+      56,
+      85
+    ]
+  ],
+  "pixel_auroc": 0.9328342298176803,
+  "pixel_ap": 0.6625094532721534,
+  "au_pro": 0.8810633094290359,
+  "positive_pixels": 3589160,
+  "negative_pixels": 103290840,
+  "regions": 245,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8360089599505658,
+        0.9449022707674618
+      ],
+      "image_ap": [
+        0.9646250573346569,
+        0.9916613668868339
+      ],
+      "recall": [
+        0.5223798287971905,
+        0.6815052552552551
+      ],
+      "fpr": [
+        0.0,
+        0.13333333333333333
+      ],
+      "precision": [
+        0.9615259740259741,
+        1.0
+      ],
+      "f1": [
+        0.68223760713209,
+        0.8081632653061225
+      ],
+      "pixel_auroc": [
+        0.907440320913217,
+        0.9533165866918065
+      ],
+      "pixel_ap": [
+        0.5147230518654438,
+        0.7591275237860327
+      ],
+      "au_pro": [
+        0.848075577509075,
+        0.906611585714175
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      101251576,
+      2039264
+    ],
+    [
+      1083490,
+      2505670
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9328342201848512,
+    "pixel_ap": 0.6625284141328344,
+    "au_pro": 0.8810632102621435
+  },
+  "tn": 25,
+  "fp": 1,
+  "fn": 56,
+  "tp": 85,
+  "calibration": {
+    "threshold": 0.5100620985031128,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 40,
+      "min": 0.14220859110355377,
+      "median": 0.25964587926864624,
+      "mean": 0.2748201943933964,
+      "std": 0.09169115955758775,
+      "q90": 0.3683105677366257,
+      "q95": 0.41673436462879154,
+      "max": 0.6141870617866516
+    },
+    "observed_calibration_fpr": 0.025,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0006327449320494191,
+      0.1315858584827657
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.04878048780487805,
+    "future_fpr_order_statistic_95": [
+      0.006113646599350836,
+      0.1315858584827657
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.3629975914955139,
+      0.5100620985031128,
+      0.6141870617866516
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.4118223786354065,
+      0.5100620985031128
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.6141870617866516,
+      "0.05": 0.5100620985031128,
+      "0.1": 0.3729732930660248
+    },
+    "development_exceedance_fraction": 0.025,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 40,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "3f777ff0a25486a5248a8a1e5613503538831ac4abe4d64ee18add83b3e413ad",
+    "paths": [
+      "pill/train/good/005.png",
+      "pill/train/good/013.png",
+      "pill/train/good/018.png",
+      "pill/train/good/019.png",
+      "pill/train/good/023.png",
+      "pill/train/good/025.png",
+      "pill/train/good/028.png",
+      "pill/train/good/039.png",
+      "pill/train/good/061.png",
+      "pill/train/good/068.png",
+      "pill/train/good/070.png",
+      "pill/train/good/075.png",
+      "pill/train/good/100.png",
+      "pill/train/good/103.png",
+      "pill/train/good/108.png",
+      "pill/train/good/117.png",
+      "pill/train/good/127.png",
+      "pill/train/good/129.png",
+      "pill/train/good/133.png",
+      "pill/train/good/138.png",
+      "pill/train/good/156.png",
+      "pill/train/good/169.png",
+      "pill/train/good/171.png",
+      "pill/train/good/186.png",
+      "pill/train/good/188.png",
+      "pill/train/good/189.png",
+      "pill/train/good/195.png",
+      "pill/train/good/201.png",
+      "pill/train/good/206.png",
+      "pill/train/good/211.png",
+      "pill/train/good/222.png",
+      "pill/train/good/223.png",
+      "pill/train/good/224.png",
+      "pill/train/good/234.png",
+      "pill/train/good/236.png",
+      "pill/train/good/237.png",
+      "pill/train/good/243.png",
+      "pill/train/good/256.png",
+      "pill/train/good/260.png",
+      "pill/train/good/265.png"
+    ],
+    "scores": [
+      0.25984448194503784,
+      0.25081902742385864,
+      0.2535666227340698,
+      0.2316722720861435,
+      0.25912535190582275,
+      0.2411961853504181,
+      0.24571563303470612,
+      0.24664276838302612,
+      0.3111099600791931,
+      0.236575186252594,
+      0.26989614963531494,
+      0.2594911754131317,
+      0.17379719018936157,
+      0.32747071981430054,
+      0.266886442899704,
+      0.25980058312416077,
+      0.26609596610069275,
+      0.3729732930660248,
+      0.3316895067691803,
+      0.2956283986568451,
+      0.2608630955219269,
+      0.33476677536964417,
+      0.3028585612773895,
+      0.6141870617866516,
+      0.3629975914955139,
+      0.32699254155158997,
+      0.4118223786354065,
+      0.5100620985031128,
+      0.14220859110355377,
+      0.20192743837833405,
+      0.2103806883096695,
+      0.17906728386878967,
+      0.1879904568195343,
+      0.19737564027309418,
+      0.17277804017066956,
+      0.17872905731201172,
+      0.1825142800807953,
+      0.30550646781921387,
+      0.3677924871444702,
+      0.18199032545089722
+    ],
+    "pixel_threshold": 0.10048169642686844,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.11452505737543106,
+    "histogram_scale": 0.10962504986673594
+  },
+  "training": {
+    "identity": {
+      "category": "pill",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-pill-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "f8efed482a7671adde8b1de797032bb74bac551c9a34ef7b06864ef1be9f7ed9"
+    },
+    "fit_n": 187,
+    "fit_source_sha256": "a1aed402873bad6e4b5de47168b2ad831726e37351e468a9f5dbdf24fb565836",
+    "development_n": 40,
+    "development_source_sha256": "77f7dae11abf4be434613638baad9aa7517662e3b2ccbf36a0abff90f008cbc4",
+    "development_scores": [
+      0.24689613282680511,
+      0.17412397265434265,
+      0.2757486402988434,
+      0.256764680147171,
+      0.24570707976818085,
+      0.24799540638923645,
+      0.2604901194572449,
+      0.27257922291755676,
+      0.35805264115333557,
+      0.33912986516952515,
+      0.4124598205089569,
+      0.27429109811782837,
+      0.3084673583507538,
+      0.25703808665275574,
+      0.2970482409000397,
+      0.24633155763149261,
+      0.24989113211631775,
+      0.2538830041885376,
+      0.24930529296398163,
+      0.19741803407669067,
+      0.3341214954853058,
+      0.49863284826278687,
+      0.6004601120948792,
+      0.4736635088920593,
+      0.27463436126708984,
+      0.16538621485233307,
+      0.18367105722427368,
+      0.19385811686515808,
+      0.39192599058151245,
+      0.15754088759422302,
+      0.18579548597335815,
+      0.2047213464975357,
+      0.17926156520843506,
+      0.18744271993637085,
+      0.3865787982940674,
+      0.24321410059928894,
+      0.22341123223304749,
+      0.30011484026908875,
+      0.3143896162509918,
+      0.18612205982208252
+    ],
+    "training_seconds": 209.5080743000144,
+    "preparation_seconds": 0.004580499982694164,
+    "map_normalization_seconds": 2.486420100001851,
+    "serialization_seconds": 0.16963920000125654,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 187,
+        "seconds": 22.092620999988867,
+        "hard": 11.526858531217524,
+        "penalty": 0.0,
+        "autoencoder": 0.8067875214439025,
+        "student_autoencoder": 0.020419818362878525,
+        "total": 12.354065833882215
+      },
+      {
+        "epoch": 2,
+        "steps": 374,
+        "seconds": 22.65631449999637,
+        "hard": 6.597790725728407,
+        "penalty": 0.0,
+        "autoencoder": 0.4785012709584466,
+        "student_autoencoder": 0.046892406040414135,
+        "total": 7.123184395346412
+      },
+      {
+        "epoch": 3,
+        "steps": 561,
+        "seconds": 22.726796900009504,
+        "hard": 5.303083475898294,
+        "penalty": 0.0,
+        "autoencoder": 0.3941828160681189,
+        "student_autoencoder": 0.04081880230516355,
+        "total": 5.738085071033335
+      },
+      {
+        "epoch": 4,
+        "steps": 748,
+        "seconds": 23.011716899985913,
+        "hard": 4.670484206255744,
+        "penalty": 0.0,
+        "autoencoder": 0.37253660808272543,
+        "student_autoencoder": 0.037243179976940155,
+        "total": 5.080263999694171
+      },
+      {
+        "epoch": 5,
+        "steps": 935,
+        "seconds": 23.401082399999723,
+        "hard": 4.240128696921038,
+        "penalty": 0.0,
+        "autoencoder": 0.34603148109135146,
+        "student_autoencoder": 0.03443089770003755,
+        "total": 4.620591052713241
+      },
+      {
+        "epoch": 6,
+        "steps": 1122,
+        "seconds": 24.338852400018368,
+        "hard": 3.922415746087059,
+        "penalty": 0.0,
+        "autoencoder": 0.3242541956391564,
+        "student_autoencoder": 0.03189354987546084,
+        "total": 4.278563481601164
+      },
+      {
+        "epoch": 7,
+        "steps": 1309,
+        "seconds": 23.545264699991094,
+        "hard": 3.7264030119952034,
+        "penalty": 0.0,
+        "autoencoder": 0.3175307407098658,
+        "student_autoencoder": 0.033800664332939344,
+        "total": 4.077734415543908
+      },
+      {
+        "epoch": 8,
+        "steps": 1496,
+        "seconds": 24.504259300010744,
+        "hard": 3.4739474051776416,
+        "penalty": 0.0,
+        "autoencoder": 0.30326964208149015,
+        "student_autoencoder": 0.03185749673508705,
+        "total": 3.809074537001829
+      },
+      {
+        "epoch": 9,
+        "steps": 1683,
+        "seconds": 23.23116620001383,
+        "hard": 3.2864536066106296,
+        "penalty": 0.0,
+        "autoencoder": 0.2912536343151235,
+        "student_autoencoder": 0.03141339619290383,
+        "total": 3.609120629050515
+      }
+    ],
+    "resources": {
+      "seconds": 214.201177800016,
+      "cpu_initial_rss_bytes": 1006743552,
+      "cpu_peak_rss_bytes": 1879515136,
+      "cpu_peak_increment_bytes": 872771584,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 484442112
+    },
+    "map_quantiles": [
+      [
+        0.36673596501350403,
+        0.45319291949272156
+      ],
+      [
+        0.028970535844564438,
+        0.07964405417442322
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T06:09:24.726033+00:00"
+  },
+  "training_seconds": 209.5080743000144,
+  "calibration_seconds": 2.302584199991543,
+  "inference_seconds": 8.550952099991264,
+  "native_metrics_bootstrap_seconds": 39.372944800008554,
+  "latency_seconds": 10.076272100006463,
+  "evaluation_seconds": 58.00016900000628,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 2.9291000100784004,
+      "p95_ms": 3.212430006533395
+    },
+    "host_to_device": {
+      "p50_ms": 0.2970999921672046,
+      "p95_ms": 0.420480000320822
+    },
+    "model": {
+      "p50_ms": 21.886000002268702,
+      "p95_ms": 24.260579991096165
+    },
+    "postprocessing": {
+      "p50_ms": 3.124249997199513,
+      "p95_ms": 3.846479988715145
+    },
+    "end_to_end": {
+      "p50_ms": 28.394899985869415,
+      "p95_ms": 31.277654999576043
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 49.47734999586828,
+    "decode_inclusive_p95_ms": 55.82115500001237,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 188743680,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "75",
+      "utilization.gpu": "38",
+      "utilization.memory": "7",
+      "power.draw": "54.54",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2400",
+      "memory.used": "285"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-pill-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "f8efed482a7671adde8b1de797032bb74bac551c9a34ef7b06864ef1be9f7ed9"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-pill-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-pill-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-pill-s2028-a01-images.csv",
+  "test_source_sha256": "7a70871cbc36bac419d74050b2b0aeb6da2eff08251df4238fb0b01eb02956ea",
+  "per_defect": [
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "color",
+      "auroc": 0.9892307692307694,
+      "ap": 0.9912500000000002,
+      "recall": 0.96,
+      "fpr": 0.038461538461538464,
+      "precision": 0.96,
+      "f1": 0.96,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          1,
+          24
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "combined",
+      "auroc": 0.9864253393665158,
+      "ap": 0.9809640522875818,
+      "recall": 0.8823529411764706,
+      "fpr": 0.038461538461538464,
+      "precision": 0.9375,
+      "f1": 0.9090909090909091,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          2,
+          15
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "contamination",
+      "auroc": 0.9010989010989011,
+      "ap": 0.8922492771816408,
+      "recall": 0.47619047619047616,
+      "fpr": 0.038461538461538464,
+      "precision": 0.9090909090909091,
+      "f1": 0.6249999999999999,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          11,
+          10
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "crack",
+      "auroc": 0.7751479289940828,
+      "ap": 0.8113966652207057,
+      "recall": 0.3076923076923077,
+      "fpr": 0.038461538461538464,
+      "precision": 0.8888888888888888,
+      "f1": 0.4571428571428572,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          18,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "faulty_imprint",
+      "auroc": 0.791497975708502,
+      "ap": 0.7775690447965173,
+      "recall": 0.2631578947368421,
+      "fpr": 0.038461538461538464,
+      "precision": 0.8333333333333334,
+      "f1": 0.39999999999999997,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          14,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "pill_type",
+      "auroc": 1.0,
+      "ap": 1.0000000000000002,
+      "recall": 1.0,
+      "fpr": 0.038461538461538464,
+      "precision": 0.9,
+      "f1": 0.9473684210526316,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          0,
+          9
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "scratch",
+      "auroc": 0.9022435897435898,
+      "ap": 0.912536332420767,
+      "recall": 0.5833333333333334,
+      "fpr": 0.038461538461538464,
+      "precision": 0.9333333333333333,
+      "f1": 0.7179487179487181,
+      "confusion_matrix": [
+        [
+          25,
+          1
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T06:10:25.276095+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-pill-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "f8efed482a7671adde8b1de797032bb74bac551c9a34ef7b06864ef1be9f7ed9"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2028-a01-history.csv",
+      "bytes": 1026,
+      "sha256": "69d78cc7d5387f194330eed41b30991c89d80f6cf02f98973fac042cefac8cc0"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2028-a01-calibration-scores.csv",
+      "bytes": 1769,
+      "sha256": "5c3e2a9afd34595d5238efa56d4f271226d8779e4b1b12a00bfc5545fc27bee7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2028-a01-calibration.json",
+      "bytes": 4361,
+      "sha256": "ce1b1a676ec070fc09d771b4796121631ce33d38f6e30a0f2dd4e1f282e66476"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-pill-s2028-a01-images.csv",
+      "bytes": 25207,
+      "sha256": "df4e6121e765d876db1f004d628c6d35738eda179f98eeee34fe8e44cdefd5d9"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/raw_branch_maps.npy",
+      "bytes": 87556224,
+      "sha256": "103c8bbbc453c997d36d2244dee062f7aac565ec9b600069c8f6511d65313999"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/selected_maps.npy",
+      "bytes": 43778176,
+      "sha256": "3e52cf879360021d1a998abe96591169e60908924632c46d5135ea11cdb9dfba"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 91174,
+      "sha256": "0d9395bca210ef06367c2649d25ab658642952fe4e585ed1bac0a797cb2bd23f"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/native_image_histograms.npz",
+      "bytes": 1110096,
+      "sha256": "7b979e000547f98f27ec845b3470cf4dcc80b14abf4557de10decde8171ca6bb"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/latency_ms.csv",
+      "bytes": 19155,
+      "sha256": "4a9efc1aa3c72d1a23548ff14883fac47206507af382812cd7a3feb9979fee78"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-pill-s2028-a01/trained.json",
+      "bytes": 5517,
+      "sha256": "58bcd146010fdf440d32aceb32d9308a5c3501816252d7e16674a20e11d48815"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 279.9654210000008,
+    "cpu_initial_rss_bytes": 706641920,
+    "cpu_peak_rss_bytes": 4539330560,
+    "cpu_peak_increment_bytes": 3832688640,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 188743680
+  },
+  "wall_seconds": 280.02072899998166,
+  "disk_free_bytes": 530846629888,
+  "completed_at_utc": "2026-11-14T06:10:25.696803+00:00"
+}

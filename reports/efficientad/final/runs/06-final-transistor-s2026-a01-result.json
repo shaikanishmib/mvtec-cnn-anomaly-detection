@@ -1,0 +1,624 @@
+{
+  "identity": {
+    "category": "transistor",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-transistor-s2026-a01",
+  "category": "transistor",
+  "seed": 2026,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.81125,
+  "image_ap": 0.7972074212878493,
+  "recall": 0.525,
+  "fpr": 0.06666666666666667,
+  "precision": 0.84,
+  "f1": 0.6461538461538462,
+  "confusion_matrix": [
+    [
+      56,
+      4
+    ],
+    [
+      19,
+      21
+    ]
+  ],
+  "pixel_auroc": 0.6757076058473513,
+  "pixel_ap": 0.2740462431179837,
+  "au_pro": 0.5576486036186267,
+  "positive_pixels": 5026033,
+  "negative_pixels": 99831567,
+  "regions": 44,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7109902885858658,
+        0.8952773899528463
+      ],
+      "image_ap": [
+        0.678910067943852,
+        0.8937046487657572
+      ],
+      "recall": [
+        0.3720764119601329,
+        0.6774193548387096
+      ],
+      "fpr": [
+        0.015384615384615385,
+        0.13793103448275862
+      ],
+      "precision": [
+        0.6875,
+        0.9615384615384616
+      ],
+      "f1": [
+        0.5,
+        0.763157894736842
+      ],
+      "pixel_auroc": [
+        0.5528810360565498,
+        0.7813426495899436
+      ],
+      "pixel_ap": [
+        0.14786848679726966,
+        0.3906092488121405
+      ],
+      "au_pro": [
+        0.4506692592709559,
+        0.6643166107108639
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      99219045,
+      612522
+    ],
+    [
+      4153794,
+      872239
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.6757074887588967,
+    "pixel_ap": 0.27378837042825405,
+    "au_pro": 0.5576484532131577
+  },
+  "tn": 56,
+  "fp": 4,
+  "fn": 19,
+  "tp": 21,
+  "calibration": {
+    "threshold": 0.2919740378856659,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 31,
+      "min": 0.18990832567214966,
+      "median": 0.26715078949928284,
+      "mean": 0.2591561348207535,
+      "std": 0.02966763982788833,
+      "q90": 0.2911613881587982,
+      "q95": 0.291716068983078,
+      "max": 0.33272650837898254
+    },
+    "observed_calibration_fpr": 0.03225806451612903,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.000816370071846613,
+      0.16702111623022775
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.0625,
+    "future_fpr_order_statistic_95": [
+      0.007910983461854705,
+      0.16702111623022775
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.28370121121406555,
+      0.2919740378856659,
+      0.33272650837898254
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.2914581000804901,
+      0.2919740378856659
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.33272650837898254,
+      "0.05": 0.2919740378856659,
+      "0.1": 0.2911613881587982
+    },
+    "development_exceedance_fraction": 0.12903225806451613,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 31,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "b97022d7f200231e65abad2a14102fea70c1e179010e3e0f3be5b5317554392b",
+    "paths": [
+      "transistor/train/good/000.png",
+      "transistor/train/good/010.png",
+      "transistor/train/good/018.png",
+      "transistor/train/good/037.png",
+      "transistor/train/good/041.png",
+      "transistor/train/good/042.png",
+      "transistor/train/good/046.png",
+      "transistor/train/good/053.png",
+      "transistor/train/good/057.png",
+      "transistor/train/good/065.png",
+      "transistor/train/good/075.png",
+      "transistor/train/good/078.png",
+      "transistor/train/good/087.png",
+      "transistor/train/good/101.png",
+      "transistor/train/good/104.png",
+      "transistor/train/good/105.png",
+      "transistor/train/good/113.png",
+      "transistor/train/good/115.png",
+      "transistor/train/good/122.png",
+      "transistor/train/good/142.png",
+      "transistor/train/good/144.png",
+      "transistor/train/good/149.png",
+      "transistor/train/good/160.png",
+      "transistor/train/good/161.png",
+      "transistor/train/good/163.png",
+      "transistor/train/good/165.png",
+      "transistor/train/good/168.png",
+      "transistor/train/good/169.png",
+      "transistor/train/good/186.png",
+      "transistor/train/good/205.png",
+      "transistor/train/good/210.png"
+    ],
+    "scores": [
+      0.20646680891513824,
+      0.22068935632705688,
+      0.2914581000804901,
+      0.26715078949928284,
+      0.18990832567214966,
+      0.25447705388069153,
+      0.27181971073150635,
+      0.2817772924900055,
+      0.24025081098079681,
+      0.2755742073059082,
+      0.24691987037658691,
+      0.2919740378856659,
+      0.22843796014785767,
+      0.26896074414253235,
+      0.2787449061870575,
+      0.25166893005371094,
+      0.24311870336532593,
+      0.28370121121406555,
+      0.2717548608779907,
+      0.2698564827442169,
+      0.2911613881587982,
+      0.33272650837898254,
+      0.21184508502483368,
+      0.22417263686656952,
+      0.26655954122543335,
+      0.22913417220115662,
+      0.2523598372936249,
+      0.27134594321250916,
+      0.287429541349411,
+      0.2631872892379761,
+      0.26920807361602783
+    ],
+    "pixel_threshold": 0.10257396101951599,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.051759254187345505,
+    "histogram_scale": 0.043818555772304535
+  },
+  "training": {
+    "identity": {
+      "category": "transistor",
+      "seed": 2026,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-transistor-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "97aa9d13d4f98870df8c3e950a75d52a2048989849f9a3cceae6ee5e6268be7c"
+    },
+    "fit_n": 151,
+    "fit_source_sha256": "2eab48a7e345a6202e3b7ba61adda26efac0ed8e6e777343412792d4fde30388",
+    "development_n": 31,
+    "development_source_sha256": "89f8e5da26c4da0fcf4e810d0f5d4548542503a552db7e01a5122b00c6cf6061",
+    "development_scores": [
+      0.2719765901565552,
+      0.31101199984550476,
+      0.2676772475242615,
+      0.22283577919006348,
+      0.2416711002588272,
+      0.22185812890529633,
+      0.19660113751888275,
+      0.24749614298343658,
+      0.2735636532306671,
+      0.27580374479293823,
+      0.2732089161872864,
+      0.29288190603256226,
+      0.2506040930747986,
+      0.24304643273353577,
+      0.274585485458374,
+      0.2840246260166168,
+      0.27838897705078125,
+      0.2685353755950928,
+      0.2694413363933563,
+      0.25945982336997986,
+      0.3416079878807068,
+      0.27209803462028503,
+      0.24274155497550964,
+      0.2595556676387787,
+      0.21747790277004242,
+      0.24359729886054993,
+      0.17704403400421143,
+      0.25726282596588135,
+      0.2920963168144226,
+      0.26606494188308716,
+      0.2776533365249634
+    ],
+    "training_seconds": 202.09693479994894,
+    "preparation_seconds": 1.3247846000012942,
+    "map_normalization_seconds": 3.4513634000031743,
+    "serialization_seconds": 0.42257309998967685,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 151,
+        "seconds": 17.21977060000063,
+        "hard": 11.047678552715984,
+        "penalty": 0.0,
+        "autoencoder": 0.9277191209477305,
+        "student_autoencoder": 0.016607735126390313,
+        "total": 11.992005423994254
+      },
+      {
+        "epoch": 2,
+        "steps": 302,
+        "seconds": 22.96355310000945,
+        "hard": 7.173729574443489,
+        "penalty": 0.0,
+        "autoencoder": 0.7099597588280179,
+        "student_autoencoder": 0.04881148666932883,
+        "total": 7.932500795023331
+      },
+      {
+        "epoch": 3,
+        "steps": 453,
+        "seconds": 23.019674199982546,
+        "hard": 5.9687210929314825,
+        "penalty": 0.0,
+        "autoencoder": 0.6185959301247502,
+        "student_autoencoder": 0.05294640500419187,
+        "total": 6.640263418488155
+      },
+      {
+        "epoch": 4,
+        "steps": 604,
+        "seconds": 23.919476699986262,
+        "hard": 5.323167769324701,
+        "penalty": 0.0,
+        "autoencoder": 0.5810681443340731,
+        "student_autoencoder": 0.051704736044075314,
+        "total": 5.95594064447264
+      },
+      {
+        "epoch": 5,
+        "steps": 755,
+        "seconds": 23.130380299990065,
+        "hard": 4.873002513354977,
+        "penalty": 0.0,
+        "autoencoder": 0.5592998226746818,
+        "student_autoencoder": 0.052674860847706825,
+        "total": 5.484977191647157
+      },
+      {
+        "epoch": 6,
+        "steps": 906,
+        "seconds": 22.767265100002987,
+        "hard": 4.545315193024692,
+        "penalty": 0.0,
+        "autoencoder": 0.5405962394168046,
+        "student_autoencoder": 0.05231087313138491,
+        "total": 5.138222296506364
+      },
+      {
+        "epoch": 7,
+        "steps": 1057,
+        "seconds": 22.923729999980424,
+        "hard": 4.273905548828327,
+        "penalty": 0.0,
+        "autoencoder": 0.5271766598256219,
+        "student_autoencoder": 0.053256823625785626,
+        "total": 4.8543389996155994
+      },
+      {
+        "epoch": 8,
+        "steps": 1208,
+        "seconds": 23.046962199994596,
+        "hard": 4.041096576791725,
+        "penalty": 0.0,
+        "autoencoder": 0.5070190331004313,
+        "student_autoencoder": 0.05374585013121169,
+        "total": 4.601861453214228
+      },
+      {
+        "epoch": 9,
+        "steps": 1359,
+        "seconds": 23.10612260000198,
+        "hard": 3.8471997763147416,
+        "penalty": 0.0,
+        "autoencoder": 0.4873655162110234,
+        "student_autoencoder": 0.05100127617945734,
+        "total": 4.385566575637716
+      }
+    ],
+    "resources": {
+      "seconds": 209.99020630001905,
+      "cpu_initial_rss_bytes": 1263898624,
+      "cpu_peak_rss_bytes": 1881313280,
+      "cpu_peak_increment_bytes": 617414656,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 329412096,
+      "peak_gpu_reserved_bytes": 438304768
+    },
+    "map_quantiles": [
+      [
+        0.40377259254455566,
+        0.604926347732544
+      ],
+      [
+        0.07730871438980103,
+        0.24111007153987885
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T04:05:41.644247+00:00"
+  },
+  "training_seconds": 202.09693479994894,
+  "calibration_seconds": 4.172643099998822,
+  "inference_seconds": 12.361617699993076,
+  "native_metrics_bootstrap_seconds": 95.09180990001187,
+  "latency_seconds": 12.06498530000681,
+  "evaluation_seconds": 119.51841290001175,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.419150005560368,
+      "p95_ms": 5.32946500898106
+    },
+    "host_to_device": {
+      "p50_ms": 0.33695000456646085,
+      "p95_ms": 0.4460449912585318
+    },
+    "model": {
+      "p50_ms": 22.14060000551399,
+      "p95_ms": 26.10922501335153
+    },
+    "postprocessing": {
+      "p50_ms": 3.8890999858267605,
+      "p95_ms": 5.265850014984608
+    },
+    "end_to_end": {
+      "p50_ms": 31.01135000179056,
+      "p95_ms": 35.23544999334263
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 70.19579999905545,
+    "decode_inclusive_p95_ms": 75.58868000196526,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 188743680,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "52",
+      "utilization.gpu": "32",
+      "utilization.memory": "5",
+      "power.draw": "25.90",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1725",
+      "memory.used": "285"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 329412096,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-transistor-s2026-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "97aa9d13d4f98870df8c3e950a75d52a2048989849f9a3cceae6ee5e6268be7c"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-transistor-s2026-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-transistor-s2026-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-images.csv",
+  "test_source_sha256": "23fe1a0c2352a5b55730d9d5019c3a0518dbe86f8f20f90b0cd8a32df5ebf5b0",
+  "per_defect": [
+    {
+      "category": "transistor",
+      "seed": 2026,
+      "defect": "bent_lead",
+      "auroc": 0.7416666666666667,
+      "ap": 0.4631143279467772,
+      "recall": 0.3,
+      "fpr": 0.06666666666666667,
+      "precision": 0.42857142857142855,
+      "f1": 0.3529411764705882,
+      "confusion_matrix": [
+        [
+          56,
+          4
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2026,
+      "defect": "cut_lead",
+      "auroc": 0.7566666666666667,
+      "ap": 0.5093001959281029,
+      "recall": 0.6,
+      "fpr": 0.06666666666666667,
+      "precision": 0.6,
+      "f1": 0.6,
+      "confusion_matrix": [
+        [
+          56,
+          4
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2026,
+      "defect": "damaged_case",
+      "auroc": 0.8800000000000001,
+      "ap": 0.7353221288515406,
+      "recall": 0.7,
+      "fpr": 0.06666666666666667,
+      "precision": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "confusion_matrix": [
+        [
+          56,
+          4
+        ],
+        [
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2026,
+      "defect": "misplaced",
+      "auroc": 0.8666666666666667,
+      "ap": 0.6788367080415135,
+      "recall": 0.5,
+      "fpr": 0.06666666666666667,
+      "precision": 0.5555555555555556,
+      "f1": 0.5263157894736842,
+      "confusion_matrix": [
+        [
+          56,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T04:07:45.742138+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-transistor-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "97aa9d13d4f98870df8c3e950a75d52a2048989849f9a3cceae6ee5e6268be7c"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-history.csv",
+      "bytes": 1024,
+      "sha256": "34142f34baf1319be56d81c83d809d0db35c8e02569a06d7d7d7b23edea9d509"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-calibration-scores.csv",
+      "bytes": 1559,
+      "sha256": "44d5110a936f56dc98b00693e6b36a4f3d811767a855120805abf23f72f25de7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-calibration.json",
+      "bytes": 4055,
+      "sha256": "c59922c0e8f76fb9512b11514a062aa55ee4075d7c9bed3595319dc21a2175ad"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-images.csv",
+      "bytes": 13353,
+      "sha256": "178b1079143dbe6388909e332fcbf9a9e8bff3a4d80432a2b7f85011b88201bd"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/raw_branch_maps.npy",
+      "bytes": 52428928,
+      "sha256": "f97287f04eac396339fdd7f05020df60a0ef1c5359c74613ecd190d72a55cd3d"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/selected_maps.npy",
+      "bytes": 26214528,
+      "sha256": "5429ad9bcdce8fe14148eedca4a7c00b2b2a6b1b2f00b668d356e7f8ab008c7a"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/bootstrap_vectors.npz",
+      "bytes": 91004,
+      "sha256": "db8a6c0a06061e3598dac6b1449e8edb14bf34a405a33ad36773f19d19a63a9d"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/native_image_histograms.npz",
+      "bytes": 700012,
+      "sha256": "47b769a16a7ea364c2809f82f94b67f8b1336a01396679829403ca530958d3f8"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/latency_ms.csv",
+      "bytes": 19143,
+      "sha256": "8f5f1b4efe0545c500e65b7b623163bc4fd3bbe3d0ee88789221a2297b0d7599"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-transistor-s2026-a01/trained.json",
+      "bytes": 5287,
+      "sha256": "a851f191237e840a0676a38b44f50d6f605f452e1c7192c34982382311e46973"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 342.72377169999527,
+    "cpu_initial_rss_bytes": 706359296,
+    "cpu_peak_rss_bytes": 4413485056,
+    "cpu_peak_increment_bytes": 3707125760,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 188743680
+  },
+  "wall_seconds": 342.7793492000201,
+  "disk_free_bytes": 536284811264,
+  "completed_at_utc": "2026-11-14T04:07:46.126446+00:00"
+}

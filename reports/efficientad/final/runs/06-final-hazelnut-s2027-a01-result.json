@@ -1,0 +1,705 @@
+{
+  "identity": {
+    "category": "hazelnut",
+    "seed": 2027,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-hazelnut-s2027-a01",
+  "category": "hazelnut",
+  "seed": 2027,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9528571428571428,
+  "image_ap": 0.9809055241309688,
+  "recall": 0.7714285714285715,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.870967741935484,
+  "confusion_matrix": [
+    [
+      40,
+      0
+    ],
+    [
+      16,
+      54
+    ]
+  ],
+  "pixel_auroc": 0.9504228487501692,
+  "pixel_ap": 0.5553212578372273,
+  "au_pro": 0.9331705314365256,
+  "positive_pixels": 2462314,
+  "negative_pixels": 112881046,
+  "regions": 136,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9020550995587263,
+        0.9921896001344085
+      ],
+      "image_ap": [
+        0.959399231054674,
+        0.9962244757265168
+      ],
+      "recall": [
+        0.6712283705839942,
+        0.8666666666666667
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.8032754614689557,
+        0.9285714285714286
+      ],
+      "pixel_auroc": [
+        0.9278064835465799,
+        0.9780470088936276
+      ],
+      "pixel_ap": [
+        0.5081410013927938,
+        0.6211329469227884
+      ],
+      "au_pro": [
+        0.8981339420589849,
+        0.9588303279365669
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      111120207,
+      1760839
+    ],
+    [
+      745466,
+      1716848
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9504227862222925,
+    "pixel_ap": 0.5547120309050171,
+    "au_pro": 0.9331701305682923
+  },
+  "tn": 40,
+  "fp": 0,
+  "fn": 16,
+  "tp": 54,
+  "calibration": {
+    "threshold": 0.3895067572593689,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 58,
+      "min": 0.15556275844573975,
+      "median": 0.20148178189992905,
+      "mean": 0.21605561750716176,
+      "std": 0.06238235408409044,
+      "q90": 0.24826546013355258,
+      "q95": 0.33491974771022787,
+      "max": 0.5403183698654175
+    },
+    "observed_calibration_fpr": 0.034482758620689655,
+    "exceedances": 2,
+    "calibration_exceedance_descriptive_cp95": [
+      0.004203647239867673,
+      0.11907731088039217
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05084745762711865,
+    "future_fpr_order_statistic_95": [
+      0.010796478084294733,
+      0.11907731088039217
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.24398736655712128,
+      0.3895067572593689,
+      0.5403183698654175
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.32528674602508545,
+      0.3895067572593689
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5403183698654175,
+      "0.05": 0.3895067572593689,
+      "0.1": 0.25125399231910706
+    },
+    "development_exceedance_fraction": 0.034482758620689655,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 58,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928",
+    "paths": [
+      "hazelnut/train/good/019.png",
+      "hazelnut/train/good/033.png",
+      "hazelnut/train/good/035.png",
+      "hazelnut/train/good/041.png",
+      "hazelnut/train/good/055.png",
+      "hazelnut/train/good/065.png",
+      "hazelnut/train/good/071.png",
+      "hazelnut/train/good/075.png",
+      "hazelnut/train/good/079.png",
+      "hazelnut/train/good/099.png",
+      "hazelnut/train/good/101.png",
+      "hazelnut/train/good/103.png",
+      "hazelnut/train/good/106.png",
+      "hazelnut/train/good/108.png",
+      "hazelnut/train/good/109.png",
+      "hazelnut/train/good/128.png",
+      "hazelnut/train/good/131.png",
+      "hazelnut/train/good/138.png",
+      "hazelnut/train/good/146.png",
+      "hazelnut/train/good/155.png",
+      "hazelnut/train/good/160.png",
+      "hazelnut/train/good/163.png",
+      "hazelnut/train/good/183.png",
+      "hazelnut/train/good/187.png",
+      "hazelnut/train/good/193.png",
+      "hazelnut/train/good/197.png",
+      "hazelnut/train/good/214.png",
+      "hazelnut/train/good/228.png",
+      "hazelnut/train/good/231.png",
+      "hazelnut/train/good/240.png",
+      "hazelnut/train/good/250.png",
+      "hazelnut/train/good/266.png",
+      "hazelnut/train/good/267.png",
+      "hazelnut/train/good/269.png",
+      "hazelnut/train/good/272.png",
+      "hazelnut/train/good/274.png",
+      "hazelnut/train/good/282.png",
+      "hazelnut/train/good/293.png",
+      "hazelnut/train/good/294.png",
+      "hazelnut/train/good/297.png",
+      "hazelnut/train/good/304.png",
+      "hazelnut/train/good/310.png",
+      "hazelnut/train/good/324.png",
+      "hazelnut/train/good/328.png",
+      "hazelnut/train/good/333.png",
+      "hazelnut/train/good/338.png",
+      "hazelnut/train/good/342.png",
+      "hazelnut/train/good/348.png",
+      "hazelnut/train/good/350.png",
+      "hazelnut/train/good/351.png",
+      "hazelnut/train/good/352.png",
+      "hazelnut/train/good/357.png",
+      "hazelnut/train/good/367.png",
+      "hazelnut/train/good/368.png",
+      "hazelnut/train/good/369.png",
+      "hazelnut/train/good/375.png",
+      "hazelnut/train/good/380.png",
+      "hazelnut/train/good/381.png"
+    ],
+    "scores": [
+      0.24698466062545776,
+      0.21399153769016266,
+      0.2018880993127823,
+      0.1853758841753006,
+      0.2642652690410614,
+      0.16600565612316132,
+      0.1613190621137619,
+      0.1819625347852707,
+      0.1688842624425888,
+      0.20320600271224976,
+      0.173903226852417,
+      0.17909426987171173,
+      0.19047141075134277,
+      0.21831195056438446,
+      0.4090009033679962,
+      0.18699319660663605,
+      0.166981041431427,
+      0.1718112677335739,
+      0.15556275844573975,
+      0.17848820984363556,
+      0.3895067572593689,
+      0.5403183698654175,
+      0.19322438538074493,
+      0.1979859173297882,
+      0.20081758499145508,
+      0.17071515321731567,
+      0.20401060581207275,
+      0.2404526025056839,
+      0.2010754644870758,
+      0.1925085484981537,
+      0.2033076137304306,
+      0.21169307827949524,
+      0.21094335615634918,
+      0.20954471826553345,
+      0.21403151750564575,
+      0.2062414586544037,
+      0.19641029834747314,
+      0.18977855145931244,
+      0.22241772711277008,
+      0.1970711201429367,
+      0.32528674602508545,
+      0.18850895762443542,
+      0.2425527423620224,
+      0.2341645061969757,
+      0.24398736655712128,
+      0.21656379103660583,
+      0.19757604598999023,
+      0.20885907113552094,
+      0.18398219347000122,
+      0.19513338804244995,
+      0.20423032343387604,
+      0.193628191947937,
+      0.19199694693088531,
+      0.21867366135120392,
+      0.20075565576553345,
+      0.25125399231910706,
+      0.2045629471540451,
+      0.21295325458049774
+    ],
+    "pixel_threshold": 0.09504073113203049,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.04842269420623779,
+    "histogram_scale": 0.03489159420132637
+  },
+  "training": {
+    "identity": {
+      "category": "hazelnut",
+      "seed": 2027,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-hazelnut-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "35533ab1ffcd3629cef3ba7d891f7b281f5ca9b5662938d4fa3fccb84f2be777"
+    },
+    "fit_n": 275,
+    "fit_source_sha256": "70638be9e11d5d55800586d095fe6cda37dadc3f32018ab2c3e30bdc140d1316",
+    "development_n": 58,
+    "development_source_sha256": "e1a8e43605d059869ce3f9ad22f315f5606576ced088f30a814174df976647d6",
+    "development_scores": [
+      0.19509419798851013,
+      0.19821324944496155,
+      0.19211235642433167,
+      0.20821093022823334,
+      0.2189255654811859,
+      0.2025982290506363,
+      0.2141118347644806,
+      0.19941943883895874,
+      0.1978752613067627,
+      0.1914026141166687,
+      0.32460862398147583,
+      0.2278735637664795,
+      0.17552833259105682,
+      0.166440948843956,
+      0.17638425529003143,
+      0.18564742803573608,
+      0.17371252179145813,
+      0.22348546981811523,
+      0.1661767214536667,
+      0.16915497183799744,
+      0.16617438197135925,
+      0.1656494289636612,
+      0.19779905676841736,
+      0.5724872946739197,
+      0.2448694258928299,
+      0.32120221853256226,
+      0.19135887920856476,
+      0.19725137948989868,
+      0.20095089077949524,
+      0.20637938380241394,
+      0.21073833107948303,
+      0.22197645902633667,
+      0.20786689221858978,
+      0.2042238414287567,
+      0.19536958634853363,
+      0.2065875232219696,
+      0.20765292644500732,
+      0.17270010709762573,
+      0.22296755015850067,
+      0.20523500442504883,
+      0.18057239055633545,
+      0.1919662356376648,
+      0.2000012844800949,
+      0.5124719142913818,
+      0.18897807598114014,
+      0.2128029465675354,
+      0.2520454525947571,
+      0.16299927234649658,
+      0.17030707001686096,
+      0.18250489234924316,
+      0.23175334930419922,
+      0.19267268478870392,
+      0.23077726364135742,
+      0.20944230258464813,
+      0.18529008328914642,
+      0.197212815284729,
+      0.22197039425373077,
+      0.19747570157051086
+    ],
+    "training_seconds": 311.0497787000786,
+    "preparation_seconds": 0.043075299996417016,
+    "map_normalization_seconds": 3.6876543999824207,
+    "serialization_seconds": 0.30070900000282563,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 275,
+        "seconds": 32.42737640000996,
+        "hard": 13.997579938715154,
+        "penalty": 0.0,
+        "autoencoder": 0.7699948781186884,
+        "student_autoencoder": 0.03381636111108078,
+        "total": 14.801391168074174
+      },
+      {
+        "epoch": 2,
+        "steps": 550,
+        "seconds": 32.86210760002723,
+        "hard": 10.889030061201616,
+        "penalty": 0.0,
+        "autoencoder": 0.5139368216557936,
+        "student_autoencoder": 0.04906910848211159,
+        "total": 11.452035994096235
+      },
+      {
+        "epoch": 3,
+        "steps": 825,
+        "seconds": 34.41625720000593,
+        "hard": 9.927993323586204,
+        "penalty": 0.0,
+        "autoencoder": 0.46566978573799134,
+        "student_autoencoder": 0.047427177788181736,
+        "total": 10.441090285561302
+      },
+      {
+        "epoch": 4,
+        "steps": 1100,
+        "seconds": 34.84686910000164,
+        "hard": 9.307650933699174,
+        "penalty": 0.0,
+        "autoencoder": 0.4476771969144995,
+        "student_autoencoder": 0.046659918014298786,
+        "total": 9.80198802427812
+      },
+      {
+        "epoch": 5,
+        "steps": 1375,
+        "seconds": 34.16800169998896,
+        "hard": 8.614956722259521,
+        "penalty": 0.0,
+        "autoencoder": 0.43439920566298745,
+        "student_autoencoder": 0.045468550778248094,
+        "total": 9.094824433760209
+      },
+      {
+        "epoch": 6,
+        "steps": 1650,
+        "seconds": 36.38176430002204,
+        "hard": 8.04902545408769,
+        "penalty": 0.0,
+        "autoencoder": 0.4198685339364139,
+        "student_autoencoder": 0.04182087016376582,
+        "total": 8.510714874267578
+      },
+      {
+        "epoch": 7,
+        "steps": 1925,
+        "seconds": 34.72647749999305,
+        "hard": 7.485759025920522,
+        "penalty": 0.0,
+        "autoencoder": 0.4079537867416035,
+        "student_autoencoder": 0.042294751825657756,
+        "total": 7.936007553447377
+      },
+      {
+        "epoch": 8,
+        "steps": 2200,
+        "seconds": 34.94144900000538,
+        "hard": 6.930692017295144,
+        "penalty": 0.0,
+        "autoencoder": 0.40558415293693545,
+        "student_autoencoder": 0.04166768975555897,
+        "total": 7.377943845228716
+      },
+      {
+        "epoch": 9,
+        "steps": 2475,
+        "seconds": 36.27947590002441,
+        "hard": 6.447572633569891,
+        "penalty": 0.0,
+        "autoencoder": 0.39940280838446185,
+        "student_autoencoder": 0.04061498194255612,
+        "total": 6.887590418728915
+      }
+    ],
+    "resources": {
+      "seconds": 318.34942090002005,
+      "cpu_initial_rss_bytes": 1075437568,
+      "cpu_peak_rss_bytes": 2018017280,
+      "cpu_peak_increment_bytes": 942579712,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 492830720
+    },
+    "map_quantiles": [
+      [
+        0.5899646878242493,
+        0.865574836730957
+      ],
+      [
+        0.08727417141199112,
+        0.3850696384906769
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T04:47:37.915177+00:00"
+  },
+  "training_seconds": 311.0497787000786,
+  "calibration_seconds": 4.1772395000152756,
+  "inference_seconds": 7.676160200004233,
+  "native_metrics_bootstrap_seconds": 40.46473049998167,
+  "latency_seconds": 11.52151080002659,
+  "evaluation_seconds": 59.66240150001249,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.300149987102486,
+      "p95_ms": 4.722869987017475
+    },
+    "host_to_device": {
+      "p50_ms": 0.3316999936942011,
+      "p95_ms": 0.4905749796307644
+    },
+    "model": {
+      "p50_ms": 21.826600001077168,
+      "p95_ms": 26.242640000418756
+    },
+    "postprocessing": {
+      "p50_ms": 3.860299999359995,
+      "p95_ms": 5.268139998952392
+    },
+    "end_to_end": {
+      "p50_ms": 30.58335000241641,
+      "p95_ms": 35.397125004965346
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 66.36389999766834,
+    "decode_inclusive_p95_ms": 71.21832000702852,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 197132288,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "69",
+      "utilization.gpu": "47",
+      "utilization.memory": "7",
+      "power.draw": "33.96",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1875",
+      "memory.used": "293"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-hazelnut-s2027-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "35533ab1ffcd3629cef3ba7d891f7b281f5ca9b5662938d4fa3fccb84f2be777"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-hazelnut-s2027-a01-images.csv",
+  "test_source_sha256": "b0b0cf559fce2738225c63fc80aa41776bbda7aa00753efbb8671ade3e1a02d0",
+  "per_defect": [
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "crack",
+      "auroc": 0.8972222222222221,
+      "ap": 0.9245604190048635,
+      "recall": 0.8333333333333334,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9090909090909091,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          3,
+          15
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "cut",
+      "auroc": 0.9147058823529411,
+      "ap": 0.9051120448179272,
+      "recall": 0.29411764705882354,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.45454545454545453,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          12,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "hole",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 0.9444444444444444,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.9714285714285714,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          1,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2027,
+      "defect": "print",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          40,
+          0
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T04:48:42.009481+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-hazelnut-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "35533ab1ffcd3629cef3ba7d891f7b281f5ca9b5662938d4fa3fccb84f2be777"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2027-a01-history.csv",
+      "bytes": 1026,
+      "sha256": "0066d56f5a0347fe45575e3c39d0e405f68bb58dea358d33a214c30048e6c6d7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2027-a01-calibration-scores.csv",
+      "bytes": 2785,
+      "sha256": "b832f26f392c9fc0e21124cd5b982183175fa29a61269d14a6ed6c8ece2487d0"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2027-a01-calibration.json",
+      "bytes": 5669,
+      "sha256": "79b8c97a91842e643ce7c84fd60813f36b9178ca83ed637c937a3b1e958244f1"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2027-a01-images.csv",
+      "bytes": 15583,
+      "sha256": "076234c5f550990bc30f070ad61d4297692fa2d9beb601537778c307836ca52b"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/raw_branch_maps.npy",
+      "bytes": 57671808,
+      "sha256": "5b9e450b92797e738cff8ea6cef9511b4e8d78fb6ef326f5c5d4e912051f5564"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/selected_maps.npy",
+      "bytes": 28835968,
+      "sha256": "9327701f4c5fe1f6ef7f3c653429cad6f87a9cd51b25e22a64ab58a88e97506d"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/bootstrap_vectors.npz",
+      "bytes": 81702,
+      "sha256": "52e4d0b430dcc8b888aad6de8e1387185a1b7dc4990e127c0c5cd98c23e29c98"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/native_image_histograms.npz",
+      "bytes": 771092,
+      "sha256": "82074a049497153a5f886dead2fa8c8c91568d3d8f4fb2a50fe0a1d3b27904c2"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/latency_ms.csv",
+      "bytes": 19140,
+      "sha256": "df8561c80d831e196439d42fc51109496e2087ed685d7abeb4c9004a691ca6d5"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2027-a01/trained.json",
+      "bytes": 5978,
+      "sha256": "274866002f2b3379ce85b7c94c419ac6afec5d33afe11e015138cd49ad05bd4d"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 393.90909460000694,
+    "cpu_initial_rss_bytes": 705478656,
+    "cpu_peak_rss_bytes": 4771495936,
+    "cpu_peak_increment_bytes": 4066017280,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 197132288
+  },
+  "wall_seconds": 393.96568679998745,
+  "disk_free_bytes": 534706896896,
+  "completed_at_utc": "2026-11-14T04:48:42.436758+00:00"
+}

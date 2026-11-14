@@ -1,0 +1,83 @@
+{
+  "threshold": 0.2610650062561035,
+  "nominal_fpr": 0.05,
+  "strict_greater": true,
+  "quantile_method": "higher",
+  "calibration_distribution": {
+    "n": 9,
+    "min": 0.2441336065530777,
+    "median": 0.25303295254707336,
+    "mean": 0.2522165858083301,
+    "std": 0.0063484310887088665,
+    "q90": 0.26022307872772216,
+    "q95": 0.26064404249191286,
+    "max": 0.2610650062561035
+  },
+  "observed_calibration_fpr": 0.0,
+  "exceedances": 0,
+  "calibration_exceedance_descriptive_cp95": [
+    0.0,
+    0.3362671168799428
+  ],
+  "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+  "future_fpr_order_statistic_mean": 0.1,
+  "future_fpr_order_statistic_95": [
+    0.0028091367465992146,
+    0.3362671168799428
+  ],
+  "bootstrap_threshold_p025_p50_p975": [
+    0.25924586281180384,
+    0.2610650062561035,
+    0.2610650062561035
+  ],
+  "bootstrap_replicates": 1000,
+  "leave_one_out_threshold_range": [
+    0.26001259684562683,
+    0.2610650062561035
+  ],
+  "sensitivity_diagnostic_only": {
+    "0.01": 0.2610650062561035,
+    "0.05": 0.2610650062561035,
+    "0.1": 0.2610650062561035
+  },
+  "development_exceedance_fraction": 0.1111111111111111,
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "unique_calibration_scores": 9,
+  "largest_tie_count": 1,
+  "ties_at_threshold": 1,
+  "continuous_order_statistic_applicable": true,
+  "source_sha256": "7606e07fe4e9ba32c417718d556a44385d9cedc6a056ba8958e863bff795205e",
+  "paths": [
+    "toothbrush/train/good/007.png",
+    "toothbrush/train/good/013.png",
+    "toothbrush/train/good/015.png",
+    "toothbrush/train/good/023.png",
+    "toothbrush/train/good/030.png",
+    "toothbrush/train/good/031.png",
+    "toothbrush/train/good/049.png",
+    "toothbrush/train/good/051.png",
+    "toothbrush/train/good/057.png"
+  ],
+  "scores": [
+    0.25319576263427734,
+    0.25303295254707336,
+    0.2475462555885315,
+    0.24624532461166382,
+    0.2453167736530304,
+    0.2441336065530777,
+    0.25940099358558655,
+    0.26001259684562683,
+    0.2610650062561035
+  ],
+  "pixel_threshold": 0.10406443476676941,
+  "pixel_quantile": 0.995,
+  "histogram_center": -0.03868359699845314,
+  "histogram_scale": 0.01912966137751937
+}

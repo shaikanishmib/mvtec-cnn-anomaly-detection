@@ -1,0 +1,195 @@
+{
+  "experiment_id": "06-final-cable-s2028-a01-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "cable"
+  ],
+  "hypothesis": "Frozen 45-model confirmation; no test-guided selection",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet",
+    "maps": "signed; native bilinear align_corners=False"
+  },
+  "hyperparameters": {
+    "category": "cable",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "seed": 2028,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "664e106dbdd25104ea4e3c3be192fc8be7a0b772",
+    "dirty": true
+  },
+  "training": {
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321"
+  },
+  "metrics": {
+    "image_auroc": 0.6206896551724138,
+    "image_ap": 0.8006516414214361,
+    "pixel_auroc": 0.8920952068358827,
+    "pixel_ap": 0.4787120232073942,
+    "au_pro": 0.7579412208789333,
+    "recall": 0.45652173913043476,
+    "fpr": 0.08620689655172414,
+    "precision": 0.8936170212765957,
+    "f1": 0.6043165467625898
+  },
+  "calibration": {
+    "threshold": 0.4538584351539612,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 33,
+      "min": 0.15618360042572021,
+      "median": 0.3404017984867096,
+      "mean": 0.33209249964266113,
+      "std": 0.08624145260434204,
+      "q90": 0.4394632399082184,
+      "q95": 0.4473725140094757,
+      "max": 0.49111121892929077
+    },
+    "observed_calibration_fpr": 0.030303030303030304,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0007669120750481087,
+      0.15759397227249683
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.058823529411764705,
+    "future_fpr_order_statistic_95": [
+      0.007425837742259803,
+      0.15759397227249683
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.43104812502861023,
+      0.4538584351539612,
+      0.49111121892929077
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.4430485665798187,
+      0.4538584351539612
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.49111121892929077,
+      "0.05": 0.4538584351539612,
+      "0.1": 0.4413106143474579
+    },
+    "development_exceedance_fraction": 0.0,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 33,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "2b5697fa109f81bcce3830d93cd2dd075a4e258d8215207c6967c19c0eb717f4",
+    "paths": [
+      "cable/train/good/002.png",
+      "cable/train/good/007.png",
+      "cable/train/good/018.png",
+      "cable/train/good/021.png",
+      "cable/train/good/024.png",
+      "cable/train/good/025.png",
+      "cable/train/good/028.png",
+      "cable/train/good/038.png",
+      "cable/train/good/061.png",
+      "cable/train/good/067.png",
+      "cable/train/good/080.png",
+      "cable/train/good/093.png",
+      "cable/train/good/103.png",
+      "cable/train/good/117.png",
+      "cable/train/good/119.png",
+      "cable/train/good/120.png",
+      "cable/train/good/122.png",
+      "cable/train/good/123.png",
+      "cable/train/good/136.png",
+      "cable/train/good/142.png",
+      "cable/train/good/146.png",
+      "cable/train/good/148.png",
+      "cable/train/good/149.png",
+      "cable/train/good/157.png",
+      "cable/train/good/171.png",
+      "cable/train/good/189.png",
+      "cable/train/good/191.png",
+      "cable/train/good/192.png",
+      "cable/train/good/194.png",
+      "cable/train/good/198.png",
+      "cable/train/good/208.png",
+      "cable/train/good/209.png",
+      "cable/train/good/212.png"
+    ],
+    "scores": [
+      0.2301052361726761,
+      0.37230411171913147,
+      0.3014273941516876,
+      0.32732710242271423,
+      0.2595486640930176,
+      0.3979513645172119,
+      0.4070107638835907,
+      0.43104812502861023,
+      0.3032521903514862,
+      0.42047321796417236,
+      0.3404017984867096,
+      0.4430485665798187,
+      0.49111121892929077,
+      0.41384410858154297,
+      0.35427772998809814,
+      0.32748138904571533,
+      0.21649397909641266,
+      0.3325121998786926,
+      0.35707229375839233,
+      0.4413106143474579,
+      0.3452111780643463,
+      0.4320737421512604,
+      0.35007786750793457,
+      0.4538584351539612,
+      0.21619568765163422,
+      0.23272457718849182,
+      0.24837113916873932,
+      0.1802818328142166,
+      0.28986069560050964,
+      0.21602895855903625,
+      0.29550260305404663,
+      0.15618360042572021,
+      0.3746801018714905
+    ],
+    "pixel_threshold": 0.10218304395675659,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05927869863808155,
+    "histogram_scale": 0.052689382806420326
+  },
+  "paths": {
+    "result": "reports/efficientad/final/runs/06-final-cable-s2028-a01-result.json",
+    "result_sha256": "34fd67952b19468932dbd3712db4b26ee6f93030f38531498e7ae8b832fefeb2",
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-cable-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "e7c49ff08d618834d67ceeae4c7bdb35789ad221685794d33e389be95a4e8456"
+    }
+  },
+  "interpretation": "All test metrics and required artifacts verified before completion",
+  "decision": "frozen final evaluation",
+  "status": "completed",
+  "recorded_at": "2026-11-14T05:36:47.150827+00:00",
+  "config_sha256": "1c9fb790283d341dbbd6302bb83d15160d5dfcc8413e425e17eb93912e107a24"
+}

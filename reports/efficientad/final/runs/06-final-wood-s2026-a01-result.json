@@ -1,0 +1,663 @@
+{
+  "identity": {
+    "category": "wood",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-wood-s2026-a01",
+  "category": "wood",
+  "seed": 2026,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.980701754385965,
+  "image_ap": 0.9939143744954794,
+  "recall": 0.9666666666666667,
+  "fpr": 0.15789473684210525,
+  "precision": 0.9508196721311475,
+  "f1": 0.9586776859504132,
+  "confusion_matrix": [
+    [
+      16,
+      3
+    ],
+    [
+      2,
+      58
+    ]
+  ],
+  "pixel_auroc": 0.9542997128221646,
+  "pixel_ap": 0.6136743415862,
+  "au_pro": 0.9291444761838252,
+  "positive_pixels": 3199416,
+  "negative_pixels": 79638088,
+  "regions": 168,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9487666034155597,
+        1.0
+      ],
+      "image_ap": [
+        0.9819021028217666,
+        1.0
+      ],
+      "recall": [
+        0.9137931034482759,
+        1.0
+      ],
+      "fpr": [
+        0.0,
+        0.3333333333333333
+      ],
+      "precision": [
+        0.8888440860215053,
+        1.0
+      ],
+      "f1": [
+        0.9180327868852458,
+        0.9919999999999999
+      ],
+      "pixel_auroc": [
+        0.9321399878698872,
+        0.9750614795664214
+      ],
+      "pixel_ap": [
+        0.518747665667036,
+        0.7285578694684653
+      ],
+      "au_pro": [
+        0.9059600304883808,
+        0.9496997948746428
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      77011448,
+      2626640
+    ],
+    [
+      750625,
+      2448791
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9542996871273932,
+    "pixel_ap": 0.6129859476674979,
+    "au_pro": 0.9291440043611351
+  },
+  "tn": 16,
+  "fp": 3,
+  "fn": 2,
+  "tp": 58,
+  "calibration": {
+    "threshold": 0.37322068214416504,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 37,
+      "min": 0.1276569813489914,
+      "median": 0.25397616624832153,
+      "mean": 0.25943712205500213,
+      "std": 0.06909913948586689,
+      "q90": 0.333507889509201,
+      "q95": 0.3519845247268676,
+      "max": 0.5150575041770935
+    },
+    "observed_calibration_fpr": 0.02702702702702703,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0006840310246946647,
+      0.14160309561115803
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05263157894736842,
+    "future_fpr_order_statistic_95": [
+      0.0066145704115288225,
+      0.14160309561115803
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.3187263011932373,
+      0.37322068214416504,
+      0.5150575041770935
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.34667548537254333,
+      0.37322068214416504
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5150575041770935,
+      "0.05": 0.37322068214416504,
+      "0.1": 0.3439960777759552
+    },
+    "development_exceedance_fraction": 0.05405405405405406,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 37,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "fc3182b4dd8f1ea44b212d49830d71454226e8af3d86650934a580416447ca6b",
+    "paths": [
+      "wood/train/good/002.png",
+      "wood/train/good/004.png",
+      "wood/train/good/017.png",
+      "wood/train/good/023.png",
+      "wood/train/good/027.png",
+      "wood/train/good/034.png",
+      "wood/train/good/047.png",
+      "wood/train/good/057.png",
+      "wood/train/good/067.png",
+      "wood/train/good/080.png",
+      "wood/train/good/081.png",
+      "wood/train/good/083.png",
+      "wood/train/good/089.png",
+      "wood/train/good/096.png",
+      "wood/train/good/098.png",
+      "wood/train/good/103.png",
+      "wood/train/good/105.png",
+      "wood/train/good/116.png",
+      "wood/train/good/125.png",
+      "wood/train/good/127.png",
+      "wood/train/good/136.png",
+      "wood/train/good/138.png",
+      "wood/train/good/143.png",
+      "wood/train/good/170.png",
+      "wood/train/good/172.png",
+      "wood/train/good/185.png",
+      "wood/train/good/188.png",
+      "wood/train/good/195.png",
+      "wood/train/good/203.png",
+      "wood/train/good/205.png",
+      "wood/train/good/213.png",
+      "wood/train/good/219.png",
+      "wood/train/good/228.png",
+      "wood/train/good/231.png",
+      "wood/train/good/234.png",
+      "wood/train/good/241.png",
+      "wood/train/good/245.png"
+    ],
+    "scores": [
+      0.259418249130249,
+      0.25912904739379883,
+      0.1276569813489914,
+      0.2987016439437866,
+      0.231264129281044,
+      0.24547608196735382,
+      0.20245321094989777,
+      0.2506173849105835,
+      0.22361242771148682,
+      0.2455298900604248,
+      0.26558253169059753,
+      0.5150575041770935,
+      0.3439960777759552,
+      0.17655670642852783,
+      0.16930396854877472,
+      0.16334719955921173,
+      0.236136332154274,
+      0.27416378259658813,
+      0.29445910453796387,
+      0.19961746037006378,
+      0.22336067259311676,
+      0.29769086837768555,
+      0.27747705578804016,
+      0.2988958954811096,
+      0.34667548537254333,
+      0.37322068214416504,
+      0.250151127576828,
+      0.2781279981136322,
+      0.2623331844806671,
+      0.16210539638996124,
+      0.23756122589111328,
+      0.3187263011932373,
+      0.19185897707939148,
+      0.28597092628479004,
+      0.2324460744857788,
+      0.25397616624832153,
+      0.3265157639980316
+    ],
+    "pixel_threshold": 0.12948764860630035,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05264880508184433,
+    "histogram_scale": 0.050608493853360415
+  },
+  "training": {
+    "identity": {
+      "category": "wood",
+      "seed": 2026,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-wood-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "5d37c80cf8eb7951f31068db7777d32aa741e6d2ae4d291affb6498a352802c2"
+    },
+    "fit_n": 173,
+    "fit_source_sha256": "53b288a2b67233e1c866f64e9e7dac587d7bacff651b8b16c5d034ffb74a2e2a",
+    "development_n": 37,
+    "development_source_sha256": "ad4dc26813da35e75502a75ed66e4f8db558a8103936062746bff7910e7dde65",
+    "development_scores": [
+      0.23102203011512756,
+      0.24757541716098785,
+      0.17837046086788177,
+      0.18887928128242493,
+      0.2303837537765503,
+      0.24186971783638,
+      0.27826228737831116,
+      0.22271840274333954,
+      0.2433762550354004,
+      0.2514176666736603,
+      0.3403841555118561,
+      0.30104300379753113,
+      0.30217981338500977,
+      0.29982990026474,
+      0.2517703175544739,
+      0.2521165609359741,
+      0.2640688419342041,
+      0.24027647078037262,
+      0.2602798044681549,
+      0.3198094367980957,
+      0.2767094671726227,
+      0.23398761451244354,
+      0.26640602946281433,
+      0.2324468493461609,
+      0.3042653501033783,
+      0.2878453731536865,
+      0.23521777987480164,
+      0.24147137999534607,
+      0.36017748713493347,
+      0.24644160270690918,
+      0.24278010427951813,
+      0.41100144386291504,
+      0.18285849690437317,
+      0.38728469610214233,
+      0.3380112051963806,
+      0.2738286554813385,
+      0.21013765037059784
+    ],
+    "training_seconds": 174.44678630001727,
+    "preparation_seconds": 1.4653257000027224,
+    "map_normalization_seconds": 2.358630400005495,
+    "serialization_seconds": 0.1790888000105042,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 173,
+        "seconds": 19.417287799995393,
+        "hard": 13.430475350749285,
+        "penalty": 0.0,
+        "autoencoder": 0.8982423120151365,
+        "student_autoencoder": 0.020441215602506755,
+        "total": 14.349158865868011
+      },
+      {
+        "epoch": 2,
+        "steps": 346,
+        "seconds": 19.198205700027756,
+        "hard": 9.901735082527116,
+        "penalty": 0.0,
+        "autoencoder": 0.662259342353468,
+        "student_autoencoder": 0.024362409621950864,
+        "total": 10.58835678982597
+      },
+      {
+        "epoch": 3,
+        "steps": 519,
+        "seconds": 19.239535799977602,
+        "hard": 9.222279849079992,
+        "penalty": 0.0,
+        "autoencoder": 0.6282574181267292,
+        "student_autoencoder": 0.019939208720848395,
+        "total": 9.87047648016428
+      },
+      {
+        "epoch": 4,
+        "steps": 692,
+        "seconds": 19.245267199992668,
+        "hard": 8.71853566307553,
+        "penalty": 0.0,
+        "autoencoder": 0.6232678495735102,
+        "student_autoencoder": 0.015988189237181507,
+        "total": 9.357791655325476
+      },
+      {
+        "epoch": 5,
+        "steps": 865,
+        "seconds": 19.340836699993815,
+        "hard": 8.370880556933452,
+        "penalty": 0.0,
+        "autoencoder": 0.6142708459341457,
+        "student_autoencoder": 0.013259349498531721,
+        "total": 8.998410756877393
+      },
+      {
+        "epoch": 6,
+        "steps": 1038,
+        "seconds": 19.299007099994924,
+        "hard": 8.053245729104631,
+        "penalty": 0.0,
+        "autoencoder": 0.6051444650729957,
+        "student_autoencoder": 0.012318493120070826,
+        "total": 8.670708653554751
+      },
+      {
+        "epoch": 7,
+        "steps": 1211,
+        "seconds": 19.354933200025698,
+        "hard": 7.845042118447364,
+        "penalty": 0.0,
+        "autoencoder": 0.6002839534957974,
+        "student_autoencoder": 0.011564054311053945,
+        "total": 8.456890158570571
+      },
+      {
+        "epoch": 8,
+        "steps": 1384,
+        "seconds": 19.567953799996758,
+        "hard": 7.592062059854497,
+        "penalty": 0.0,
+        "autoencoder": 0.6122049718578427,
+        "student_autoencoder": 0.011240260193738118,
+        "total": 8.215507286821486
+      },
+      {
+        "epoch": 9,
+        "steps": 1557,
+        "seconds": 19.78375900001265,
+        "hard": 7.3814497986280845,
+        "penalty": 0.0,
+        "autoencoder": 0.6130923208473735,
+        "student_autoencoder": 0.010664580492141274,
+        "total": 8.005206681400365
+      }
+    ],
+    "resources": {
+      "seconds": 179.77462819998618,
+      "cpu_initial_rss_bytes": 1281060864,
+      "cpu_peak_rss_bytes": 1910128640,
+      "cpu_peak_increment_bytes": 629067776,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 329412096,
+      "peak_gpu_reserved_bytes": 442499072
+    },
+    "map_quantiles": [
+      [
+        0.7040820121765137,
+        1.0284076929092407
+      ],
+      [
+        0.009008295834064484,
+        0.04990465193986893
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T04:11:05.140311+00:00"
+  },
+  "training_seconds": 174.44678630001727,
+  "calibration_seconds": 2.9298024000017904,
+  "inference_seconds": 6.12601320000249,
+  "native_metrics_bootstrap_seconds": 30.315862099989317,
+  "latency_seconds": 11.682569600001443,
+  "evaluation_seconds": 48.12444489999325,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.251650010701269,
+      "p95_ms": 4.725235006480943
+    },
+    "host_to_device": {
+      "p50_ms": 0.3220999933546409,
+      "p95_ms": 0.44806500518461684
+    },
+    "model": {
+      "p50_ms": 21.69500000309199,
+      "p95_ms": 26.82564500719309
+    },
+    "postprocessing": {
+      "p50_ms": 3.7510500114876777,
+      "p95_ms": 4.942844973993488
+    },
+    "end_to_end": {
+      "p50_ms": 30.26605000195559,
+      "p95_ms": 35.57278002117528
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 70.19134999427479,
+    "decode_inclusive_p95_ms": 75.7511399948271,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 192937984,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "67",
+      "utilization.gpu": "30",
+      "utilization.memory": "5",
+      "power.draw": "33.94",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1740",
+      "memory.used": "289"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 329412096,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-wood-s2026-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "5d37c80cf8eb7951f31068db7777d32aa741e6d2ae4d291affb6498a352802c2"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-wood-s2026-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-wood-s2026-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-wood-s2026-a01-images.csv",
+  "test_source_sha256": "4d65fe877f9461418051d3c2524ad914a3f5e1ffbd862e590d09af170bb7f712",
+  "per_defect": [
+    {
+      "category": "wood",
+      "seed": 2026,
+      "defect": "color",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.15789473684210525,
+      "precision": 0.7272727272727273,
+      "f1": 0.8421052631578948,
+      "confusion_matrix": [
+        [
+          16,
+          3
+        ],
+        [
+          0,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "wood",
+      "seed": 2026,
+      "defect": "combined",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.15789473684210525,
+      "precision": 0.7857142857142857,
+      "f1": 0.88,
+      "confusion_matrix": [
+        [
+          16,
+          3
+        ],
+        [
+          0,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "wood",
+      "seed": 2026,
+      "defect": "hole",
+      "auroc": 0.9947368421052633,
+      "ap": 0.9909090909090909,
+      "recall": 1.0,
+      "fpr": 0.15789473684210525,
+      "precision": 0.7692307692307693,
+      "f1": 0.8695652173913044,
+      "confusion_matrix": [
+        [
+          16,
+          3
+        ],
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "category": "wood",
+      "seed": 2026,
+      "defect": "liquid",
+      "auroc": 0.9473684210526316,
+      "ap": 0.8868650793650793,
+      "recall": 0.9,
+      "fpr": 0.15789473684210525,
+      "precision": 0.75,
+      "f1": 0.8181818181818182,
+      "confusion_matrix": [
+        [
+          16,
+          3
+        ],
+        [
+          1,
+          9
+        ]
+      ]
+    },
+    {
+      "category": "wood",
+      "seed": 2026,
+      "defect": "scratch",
+      "auroc": 0.9724310776942355,
+      "ap": 0.9797089192603841,
+      "recall": 0.9523809523809523,
+      "fpr": 0.15789473684210525,
+      "precision": 0.8695652173913043,
+      "f1": 0.909090909090909,
+      "confusion_matrix": [
+        [
+          16,
+          3
+        ],
+        [
+          1,
+          20
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T04:11:56.447115+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-wood-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "5d37c80cf8eb7951f31068db7777d32aa741e6d2ae4d291affb6498a352802c2"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-wood-s2026-a01-history.csv",
+      "bytes": 1029,
+      "sha256": "88bbb0ba4a2699e22a6d1376fa098e64eaf86779bff9756ce45f862f59cd25a0"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-wood-s2026-a01-calibration-scores.csv",
+      "bytes": 1632,
+      "sha256": "1d4b8a8ae4913abe923b1273ec33f70426dc9b0aedaafbd11292c2c17a929f89"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-wood-s2026-a01-calibration.json",
+      "bytes": 4224,
+      "sha256": "0be545f11161b551fc99280e37b1b2f97eed38e41722a5967b5570dcf613f8b7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-wood-s2026-a01-images.csv",
+      "bytes": 11342,
+      "sha256": "9f56549f9aaf7bd857e86ef71082e89b9874e59c270e8d1b388716a1d9df487d"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/raw_branch_maps.npy",
+      "bytes": 41418880,
+      "sha256": "18e1d4e58ace96e10084ad91974197153b6a64b88f0786d60fe7f7ab36e33027"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/selected_maps.npy",
+      "bytes": 20709504,
+      "sha256": "56aa99a4e7194beca107ae72ccf1c59b9084912dc24fbf226f3e595b99bf5bcf"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/bootstrap_vectors.npz",
+      "bytes": 81196,
+      "sha256": "c56f5cdb286a93a5edd53c64faf427309c2ce8c6d9a3f08cb7efe15b325c7c63"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/native_image_histograms.npz",
+      "bytes": 666716,
+      "sha256": "cd8f86d0c4001c0eedde5c9a6f0d364210386919d672f408b1fa992151fd0d9f"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/latency_ms.csv",
+      "bytes": 19152,
+      "sha256": "859a55415db83c79d919b2afebe6fa3abf7432feecc782450653656b7b69a737"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-wood-s2026-a01/trained.json",
+      "bytes": 5428,
+      "sha256": "36ee86fe8bf6fef9a3b642e4847ecfcc66d51ff067306e488464cf2042857156"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 241.11367419999442,
+    "cpu_initial_rss_bytes": 705945600,
+    "cpu_peak_rss_bytes": 3854495744,
+    "cpu_peak_increment_bytes": 3148550144,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 192937984
+  },
+  "wall_seconds": 241.1634749000077,
+  "disk_free_bytes": 536115253248,
+  "completed_at_utc": "2026-11-14T04:11:56.814898+00:00"
+}

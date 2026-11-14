@@ -1,0 +1,195 @@
+{
+  "experiment_id": "06-final-bottle-s2026-a01-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Frozen 45-model confirmation; no test-guided selection",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet",
+    "maps": "signed; native bilinear align_corners=False"
+  },
+  "hyperparameters": {
+    "category": "bottle",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "664e106dbdd25104ea4e3c3be192fc8be7a0b772",
+    "dirty": true
+  },
+  "training": {
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321"
+  },
+  "metrics": {
+    "image_auroc": 0.9682539682539683,
+    "image_ap": 0.9847007075922736,
+    "pixel_auroc": 0.9263464723893119,
+    "pixel_ap": 0.6707882999233887,
+    "au_pro": 0.8294707558328556,
+    "recall": 0.9365079365079365,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9672131147540983
+  },
+  "calibration": {
+    "threshold": 0.5066908597946167,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 31,
+      "min": 0.5066908597946167,
+      "median": 0.5066908597946167,
+      "mean": 0.5066908597946167,
+      "std": 0.0,
+      "q90": 0.5066908597946167,
+      "q95": 0.5066908597946167,
+      "max": 0.5066908597946167
+    },
+    "observed_calibration_fpr": 0.0,
+    "exceedances": 0,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0,
+      0.11218874692236996
+    ],
+    "uncertainty_note": "Tied calibration scores violate the continuous-score assumption: Beta future-FPR interval is not asserted. The retained hypothetical interval is reference only; degenerate bootstrap tails do not establish certainty. CP calibration interval is descriptive because threshold was fitted on those samples.",
+    "bootstrap_threshold_p025_p50_p975": [
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5066908597946167,
+      "0.05": 0.5066908597946167,
+      "0.1": 0.5066908597946167
+    },
+    "development_exceedance_fraction": 0.03225806451612903,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 1,
+    "largest_tie_count": 31,
+    "ties_at_threshold": 31,
+    "continuous_order_statistic_applicable": false,
+    "continuous_iid_hypothetical": {
+      "mean": 0.0625,
+      "interval": [
+        0.007910983461854705,
+        0.16702111623022775
+      ]
+    },
+    "future_fpr_order_statistic_mean": null,
+    "future_fpr_order_statistic_95": null,
+    "source_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8",
+    "paths": [
+      "bottle/train/good/017.png",
+      "bottle/train/good/028.png",
+      "bottle/train/good/031.png",
+      "bottle/train/good/044.png",
+      "bottle/train/good/054.png",
+      "bottle/train/good/057.png",
+      "bottle/train/good/061.png",
+      "bottle/train/good/069.png",
+      "bottle/train/good/083.png",
+      "bottle/train/good/096.png",
+      "bottle/train/good/098.png",
+      "bottle/train/good/106.png",
+      "bottle/train/good/121.png",
+      "bottle/train/good/125.png",
+      "bottle/train/good/134.png",
+      "bottle/train/good/143.png",
+      "bottle/train/good/155.png",
+      "bottle/train/good/166.png",
+      "bottle/train/good/167.png",
+      "bottle/train/good/169.png",
+      "bottle/train/good/175.png",
+      "bottle/train/good/176.png",
+      "bottle/train/good/180.png",
+      "bottle/train/good/183.png",
+      "bottle/train/good/184.png",
+      "bottle/train/good/192.png",
+      "bottle/train/good/195.png",
+      "bottle/train/good/199.png",
+      "bottle/train/good/203.png",
+      "bottle/train/good/206.png",
+      "bottle/train/good/207.png"
+    ],
+    "scores": [
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "pixel_threshold": 0.1092187911272049,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.10241984948515892,
+    "histogram_scale": 0.11723759397864342
+  },
+  "paths": {
+    "result": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-result.json",
+    "result_sha256": "568871d1b9fb6076f1671ad0a2152ce21ee54045a777e0e9be7000639b38b0ab",
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-bottle-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "2d3324e41ba57b3663571c6d092700140a58d604d7dfd43f28f0283f63a43eb5"
+    }
+  },
+  "interpretation": "All test metrics and required artifacts verified before completion",
+  "decision": "frozen final evaluation",
+  "status": "completed",
+  "recorded_at": "2026-11-14T03:10:42.805416+00:00",
+  "config_sha256": "66913977e0e242380875d94d2757ce5ad18c7d1dcb6c244fd5b650204dc92171"
+}

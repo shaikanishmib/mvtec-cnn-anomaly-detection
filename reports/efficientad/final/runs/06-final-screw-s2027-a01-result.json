@@ -1,0 +1,696 @@
+{
+  "identity": {
+    "category": "screw",
+    "seed": 2027,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-screw-s2027-a01",
+  "category": "screw",
+  "seed": 2027,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.04714080754252921,
+  "image_ap": 0.5596467078153133,
+  "recall": 0.08403361344537816,
+  "fpr": 0.975609756097561,
+  "precision": 0.2,
+  "f1": 0.11834319526627221,
+  "confusion_matrix": [
+    [
+      1,
+      40
+    ],
+    [
+      109,
+      10
+    ]
+  ],
+  "pixel_auroc": 0.8901393858857145,
+  "pixel_ap": 0.04803113059682364,
+  "au_pro": 0.6992650468839087,
+  "positive_pixels": 418611,
+  "negative_pixels": 167353549,
+  "regions": 135,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.016313577027862743,
+        0.0844519649384706
+      ],
+      "image_ap": [
+        0.48985262216809816,
+        0.651965980275873
+      ],
+      "recall": [
+        0.040642210857592447,
+        0.13675213675213677
+      ],
+      "fpr": [
+        0.9166223404255319,
+        1.0
+      ],
+      "precision": [
+        0.0975609756097561,
+        0.32077156334231793
+      ],
+      "f1": [
+        0.0606060606060606,
+        0.19209039548022597
+      ],
+      "pixel_auroc": [
+        0.8648718312324379,
+        0.9135257141397078
+      ],
+      "pixel_ap": [
+        0.033756167979969595,
+        0.06858326024962023
+      ],
+      "au_pro": [
+        0.6449036409743987,
+        0.7520127634025148
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      166218452,
+      1135097
+    ],
+    [
+      315506,
+      103105
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.8901394070227657,
+    "pixel_ap": 0.04799441358759187,
+    "au_pro": 0.699265262223596
+  },
+  "tn": 1,
+  "fp": 40,
+  "fn": 109,
+  "tp": 10,
+  "calibration": {
+    "threshold": 0.36990776658058167,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 48,
+      "min": 0.1619691699743271,
+      "median": 0.2836114764213562,
+      "mean": 0.27927500785638887,
+      "std": 0.06040791435435303,
+      "q90": 0.3298818349838258,
+      "q95": 0.36296053230762476,
+      "max": 0.5243203639984131
+    },
+    "observed_calibration_fpr": 0.041666666666666664,
+    "exceedances": 2,
+    "calibration_exceedance_descriptive_cp95": [
+      0.005086467930032977,
+      0.14254097320137743
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.061224489795918366,
+    "future_fpr_order_statistic_95": [
+      0.013079244409552646,
+      0.14254097320137743
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.31856560707092285,
+      0.36990776658058167,
+      0.5243203639984131
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.35005852580070496,
+      0.36990776658058167
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5243203639984131,
+      "0.05": 0.36990776658058167,
+      "0.1": 0.34375277161598206
+    },
+    "development_exceedance_fraction": 0.041666666666666664,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 48,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01",
+    "paths": [
+      "screw/train/good/006.png",
+      "screw/train/good/029.png",
+      "screw/train/good/036.png",
+      "screw/train/good/050.png",
+      "screw/train/good/055.png",
+      "screw/train/good/065.png",
+      "screw/train/good/069.png",
+      "screw/train/good/076.png",
+      "screw/train/good/079.png",
+      "screw/train/good/080.png",
+      "screw/train/good/087.png",
+      "screw/train/good/088.png",
+      "screw/train/good/095.png",
+      "screw/train/good/096.png",
+      "screw/train/good/098.png",
+      "screw/train/good/102.png",
+      "screw/train/good/116.png",
+      "screw/train/good/123.png",
+      "screw/train/good/138.png",
+      "screw/train/good/148.png",
+      "screw/train/good/153.png",
+      "screw/train/good/166.png",
+      "screw/train/good/167.png",
+      "screw/train/good/168.png",
+      "screw/train/good/171.png",
+      "screw/train/good/172.png",
+      "screw/train/good/176.png",
+      "screw/train/good/193.png",
+      "screw/train/good/210.png",
+      "screw/train/good/214.png",
+      "screw/train/good/215.png",
+      "screw/train/good/228.png",
+      "screw/train/good/231.png",
+      "screw/train/good/234.png",
+      "screw/train/good/240.png",
+      "screw/train/good/254.png",
+      "screw/train/good/255.png",
+      "screw/train/good/258.png",
+      "screw/train/good/263.png",
+      "screw/train/good/267.png",
+      "screw/train/good/274.png",
+      "screw/train/good/276.png",
+      "screw/train/good/287.png",
+      "screw/train/good/296.png",
+      "screw/train/good/301.png",
+      "screw/train/good/305.png",
+      "screw/train/good/311.png",
+      "screw/train/good/312.png"
+    ],
+    "scores": [
+      0.2908271849155426,
+      0.2094084620475769,
+      0.5243203639984131,
+      0.35005852580070496,
+      0.2962808310985565,
+      0.27995747327804565,
+      0.31856560707092285,
+      0.36990776658058167,
+      0.2669163644313812,
+      0.27433305978775024,
+      0.27285924553871155,
+      0.2812248468399048,
+      0.25201570987701416,
+      0.31542298197746277,
+      0.23990243673324585,
+      0.19449160993099213,
+      0.20570042729377747,
+      0.2361261248588562,
+      0.2897966206073761,
+      0.2040555626153946,
+      0.20899394154548645,
+      0.32393714785575867,
+      0.204433411359787,
+      0.314065158367157,
+      0.22148430347442627,
+      0.23957102000713348,
+      0.23466867208480835,
+      0.2745925486087799,
+      0.2725357711315155,
+      0.30443716049194336,
+      0.2859981060028076,
+      0.2746155858039856,
+      0.28746888041496277,
+      0.34375277161598206,
+      0.4016450047492981,
+      0.27192217111587524,
+      0.1619691699743271,
+      0.2920477092266083,
+      0.3026227056980133,
+      0.2904447913169861,
+      0.2873539328575134,
+      0.31340253353118896,
+      0.2933330535888672,
+      0.181327223777771,
+      0.31584975123405457,
+      0.2862585783004761,
+      0.23209644854068756,
+      0.3122016191482544
+    ],
+    "pixel_threshold": 0.09754527360200882,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.03785072639584541,
+    "histogram_scale": 0.02718466706573963
+  },
+  "training": {
+    "identity": {
+      "category": "screw",
+      "seed": 2027,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-screw-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "dbe461c48cd562bce0f9a35e14d6768b03843cdddec55d0986b5e3ef21f628cf"
+    },
+    "fit_n": 224,
+    "fit_source_sha256": "9467e9ab7b9a68370bf926c7f4432ba99add9adff443cd63fa5f775f4539ba1a",
+    "development_n": 48,
+    "development_source_sha256": "d9886f5becc9801ae7edcadba3bee249f6d7f988377abadd88a9dd447d5dafe3",
+    "development_scores": [
+      0.27184775471687317,
+      0.2867942750453949,
+      0.17908023297786713,
+      0.2813977599143982,
+      0.2589615285396576,
+      0.2723318338394165,
+      0.27493372559547424,
+      0.334065705537796,
+      0.29038193821907043,
+      0.28065943717956543,
+      0.27440959215164185,
+      0.23243258893489838,
+      0.18930469453334808,
+      0.24123509228229523,
+      0.21481652557849884,
+      0.24255341291427612,
+      0.1836344301700592,
+      0.19535332918167114,
+      0.2586665749549866,
+      0.24172520637512207,
+      0.22008953988552094,
+      0.251101016998291,
+      0.30421707034111023,
+      0.24881984293460846,
+      0.1552959382534027,
+      0.2587972581386566,
+      0.27470725774765015,
+      0.35967493057250977,
+      0.28227150440216064,
+      0.3572051525115967,
+      0.3546367883682251,
+      0.2560442388057709,
+      0.1718207448720932,
+      0.25057774782180786,
+      0.2949455678462982,
+      0.280579149723053,
+      0.36713269352912903,
+      0.40780606865882874,
+      0.28760045766830444,
+      0.21214790642261505,
+      0.27589431405067444,
+      0.16500426828861237,
+      0.30512791872024536,
+      0.27144455909729004,
+      0.28537920117378235,
+      0.33243265748023987,
+      0.39994823932647705,
+      0.31033915281295776
+    ],
+    "training_seconds": 252.1365634999529,
+    "preparation_seconds": 0.02824099999270402,
+    "map_normalization_seconds": 3.0597344000125304,
+    "serialization_seconds": 0.26608249999117106,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 224,
+        "seconds": 26.18674109998392,
+        "hard": 19.869377813168935,
+        "penalty": 0.0,
+        "autoencoder": 0.8462002476943391,
+        "student_autoencoder": 0.03513709317017596,
+        "total": 20.750715136528015
+      },
+      {
+        "epoch": 2,
+        "steps": 448,
+        "seconds": 26.678954299975885,
+        "hard": 14.765301985400063,
+        "penalty": 0.0,
+        "autoencoder": 0.6595486367919615,
+        "student_autoencoder": 0.04919277331958126,
+        "total": 15.474043454442706
+      },
+      {
+        "epoch": 3,
+        "steps": 672,
+        "seconds": 28.18945440000971,
+        "hard": 12.405569366046361,
+        "penalty": 0.0,
+        "autoencoder": 0.6312757924731288,
+        "student_autoencoder": 0.042131646461452225,
+        "total": 13.078976835523333
+      },
+      {
+        "epoch": 4,
+        "steps": 896,
+        "seconds": 27.651677899993956,
+        "hard": 10.367460093327932,
+        "penalty": 0.0,
+        "autoencoder": 0.619092059986932,
+        "student_autoencoder": 0.0404151031980291,
+        "total": 11.026967274291176
+      },
+      {
+        "epoch": 5,
+        "steps": 1120,
+        "seconds": 27.748924199986504,
+        "hard": 8.75437245624406,
+        "penalty": 0.0,
+        "autoencoder": 0.5256800368162138,
+        "student_autoencoder": 0.06349937414051965,
+        "total": 9.343551859259605
+      },
+      {
+        "epoch": 6,
+        "steps": 1344,
+        "seconds": 30.080143200000748,
+        "hard": 7.506265478474753,
+        "penalty": 0.0,
+        "autoencoder": 0.4737772402752723,
+        "student_autoencoder": 0.05967108729860878,
+        "total": 8.039713787181038
+      },
+      {
+        "epoch": 7,
+        "steps": 1568,
+        "seconds": 28.36256310000317,
+        "hard": 6.804836015616145,
+        "penalty": 0.0,
+        "autoencoder": 0.44227297524256365,
+        "student_autoencoder": 0.0523560361554181,
+        "total": 7.299465007015637
+      },
+      {
+        "epoch": 8,
+        "steps": 1792,
+        "seconds": 28.47516000000178,
+        "hard": 6.281659847923687,
+        "penalty": 0.0,
+        "autoencoder": 0.4159769489030753,
+        "student_autoencoder": 0.04919014106105481,
+        "total": 6.746826912675585
+      },
+      {
+        "epoch": 9,
+        "steps": 2016,
+        "seconds": 28.762945299997227,
+        "hard": 5.8239684253931046,
+        "penalty": 0.0,
+        "autoencoder": 0.39289717602410484,
+        "student_autoencoder": 0.04504416772397235,
+        "total": 6.261909759470394
+      }
+    ],
+    "resources": {
+      "seconds": 257.44744690001244,
+      "cpu_initial_rss_bytes": 1035927552,
+      "cpu_peak_rss_bytes": 1951727616,
+      "cpu_peak_increment_bytes": 915800064,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 486539264
+    },
+    "map_quantiles": [
+      [
+        0.5688880681991577,
+        0.8976123332977295
+      ],
+      [
+        0.05981232970952988,
+        0.23466230928897858
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T05:06:33.420182+00:00"
+  },
+  "training_seconds": 252.1365634999529,
+  "calibration_seconds": 2.44836400001077,
+  "inference_seconds": 7.582353300007526,
+  "native_metrics_bootstrap_seconds": 60.961134900018806,
+  "latency_seconds": 10.569173800002318,
+  "evaluation_seconds": 79.11266200002865,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.303100009565242,
+      "p95_ms": 4.810255012125708
+    },
+    "host_to_device": {
+      "p50_ms": 0.32560000545345247,
+      "p95_ms": 0.42313499143347144
+    },
+    "model": {
+      "p50_ms": 22.21609999833163,
+      "p95_ms": 27.103074992191978
+    },
+    "postprocessing": {
+      "p50_ms": 4.136750008910894,
+      "p95_ms": 4.735040015657431
+    },
+    "end_to_end": {
+      "p50_ms": 31.102649998501875,
+      "p95_ms": 36.01722999155754
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 45.058549992972985,
+    "decode_inclusive_p95_ms": 49.82772000803379,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 184549376,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "78",
+      "utilization.gpu": "43",
+      "utilization.memory": "8",
+      "power.draw": "53.68",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2460",
+      "memory.used": "281"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-screw-s2027-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "dbe461c48cd562bce0f9a35e14d6768b03843cdddec55d0986b5e3ef21f628cf"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-screw-s2027-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-screw-s2027-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-screw-s2027-a01-images.csv",
+  "test_source_sha256": "f182c02c1b0bbc20bfa38fff6b4f4704ab7ca5470c32b984dbc380ba6368df6a",
+  "per_defect": [
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "manipulated_front",
+      "auroc": 0.041666666666666664,
+      "ap": 0.2610899495781721,
+      "recall": 0.041666666666666664,
+      "fpr": 0.975609756097561,
+      "precision": 0.024390243902439025,
+      "f1": 0.030769230769230767,
+      "confusion_matrix": [
+        [
+          1,
+          40
+        ],
+        [
+          23,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "scratch_head",
+      "auroc": 0.0,
+      "ap": 0.2204153464035689,
+      "recall": 0.0,
+      "fpr": 0.975609756097561,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          1,
+          40
+        ],
+        [
+          24,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "scratch_neck",
+      "auroc": 0.11121951219512195,
+      "ap": 0.26902054155014216,
+      "recall": 0.2,
+      "fpr": 0.975609756097561,
+      "precision": 0.1111111111111111,
+      "f1": 0.14285714285714285,
+      "confusion_matrix": [
+        [
+          1,
+          40
+        ],
+        [
+          20,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "thread_side",
+      "auroc": 0.004241781548250264,
+      "ap": 0.21405407870082807,
+      "recall": 0.043478260869565216,
+      "fpr": 0.975609756097561,
+      "precision": 0.024390243902439025,
+      "f1": 0.03125000000000001,
+      "confusion_matrix": [
+        [
+          1,
+          40
+        ],
+        [
+          22,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "thread_top",
+      "auroc": 0.0752916224814422,
+      "ap": 0.230321134335134,
+      "recall": 0.13043478260869565,
+      "fpr": 0.975609756097561,
+      "precision": 0.06976744186046512,
+      "f1": 0.09090909090909091,
+      "confusion_matrix": [
+        [
+          1,
+          40
+        ],
+        [
+          20,
+          3
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T05:07:55.236032+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-screw-s2027-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "dbe461c48cd562bce0f9a35e14d6768b03843cdddec55d0986b5e3ef21f628cf"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2027-a01-history.csv",
+      "bytes": 1028,
+      "sha256": "eac46e88b3d99641aa5db1a2377dd1a678bd902a4d0717cfc2fe3180c6987d80"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2027-a01-calibration-scores.csv",
+      "bytes": 2162,
+      "sha256": "46fc7ab0103cbc65597bae504f36c307e4f311dcace6497c829617d8a849daaa"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2027-a01-calibration.json",
+      "bytes": 4905,
+      "sha256": "512a64ab3a005205e7fa928d2c6aac0a21ba7ba95336955c1fbefddc354c1ef7"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2027-a01-images.csv",
+      "bytes": 25254,
+      "sha256": "084983c6471275d9275ca2824d6caea46ead61d6ff08d313359c3246899673cd"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/raw_branch_maps.npy",
+      "bytes": 83886208,
+      "sha256": "2ef986292638259e6ed3dfb63e06176a9a62171371d44df87b4ab4ad45e501f3"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/selected_maps.npy",
+      "bytes": 41943168,
+      "sha256": "c20a007a0863fe8773572c5ddba35ffd019413fe92dfa7843b0aca0a8e5f3b88"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/bootstrap_vectors.npz",
+      "bytes": 89083,
+      "sha256": "c45b7ccec277aea0fd76b22d75d41d211ca9bee0b3ec299ffd362f3accf13704"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/native_image_histograms.npz",
+      "bytes": 999601,
+      "sha256": "9b5c9b431de3d7f68782b1681dff6f4a34937dbae2efa0408a19658e94d66067"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/latency_ms.csv",
+      "bytes": 19156,
+      "sha256": "32373dcc9f4b613796b991459f3025b254312ce7bf3829c1be8ed3f8747ca871"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2027-a01/trained.json",
+      "bytes": 5716,
+      "sha256": "77dc4cab8abc10735ce94e0d2fb3daf6601502c7fb0311dd8cc8a460e352c01d"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 344.22737090001465,
+    "cpu_initial_rss_bytes": 706387968,
+    "cpu_peak_rss_bytes": 6027186176,
+    "cpu_peak_increment_bytes": 5320798208,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 184549376
+  },
+  "wall_seconds": 344.27908279999974,
+  "disk_free_bytes": 533597405184,
+  "completed_at_utc": "2026-11-14T05:07:55.668610+00:00"
+}

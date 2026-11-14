@@ -1,0 +1,660 @@
+{
+  "identity": {
+    "category": "leather",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-leather-s2028-a01",
+  "category": "leather",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9993206521739131,
+  "image_ap": 0.9997687326549493,
+  "recall": 1.0,
+  "fpr": 0.8125,
+  "precision": 0.7796610169491526,
+  "f1": 0.8761904761904762,
+  "confusion_matrix": [
+    [
+      6,
+      26
+    ],
+    [
+      0,
+      92
+    ]
+  ],
+  "pixel_auroc": 0.99566551097167,
+  "pixel_ap": 0.5860127972136615,
+  "au_pro": 0.9865096982473109,
+  "positive_pixels": 843352,
+  "negative_pixels": 129180072,
+  "regions": 99,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9965635738831615,
+        1.0
+      ],
+      "image_ap": [
+        0.9988794262662483,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0
+      ],
+      "fpr": [
+        0.65625,
+        0.9393939393939394
+      ],
+      "precision": [
+        0.7008547008547008,
+        0.853448275862069
+      ],
+      "f1": [
+        0.8241206030150754,
+        0.9209302325581395
+      ],
+      "pixel_auroc": [
+        0.9942567265575742,
+        0.996936564153709
+      ],
+      "pixel_ap": [
+        0.5497455404366491,
+        0.6220986250576191
+      ],
+      "au_pro": [
+        0.9802312439650668,
+        0.9911785970163619
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      117091376,
+      12088696
+    ],
+    [
+      2999,
+      840353
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9956653943966516,
+    "pixel_ap": 0.5836295467171083,
+    "au_pro": 0.986509104665888
+  },
+  "tn": 6,
+  "fp": 26,
+  "fn": 0,
+  "tp": 92,
+  "calibration": {
+    "threshold": 0.27939391136169434,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 36,
+      "min": 0.08496301621198654,
+      "median": 0.16097313165664673,
+      "mean": 0.17162466856340566,
+      "std": 0.05766322504072785,
+      "q90": 0.2530399188399315,
+      "q95": 0.27603500336408615,
+      "max": 0.31132858991622925
+    },
+    "observed_calibration_fpr": 0.027777777777777776,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0007030252059047799,
+      0.14528926474685325
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05405405405405406,
+    "future_fpr_order_statistic_95": [
+      0.006800300654022817,
+      0.14528926474685325
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.2429989129304886,
+      0.27939391136169434,
+      0.31132858991622925
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.2749153673648834,
+      0.27939391136169434
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.31132858991622925,
+      "0.05": 0.27939391136169434,
+      "0.1": 0.2591093182563782
+    },
+    "development_exceedance_fraction": 0.1111111111111111,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 36,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "d718774b6715c1b94afacc52d2a05e1b56d86b27a91ff065ff33a8499fb42b04",
+    "paths": [
+      "leather/train/good/028.png",
+      "leather/train/good/038.png",
+      "leather/train/good/052.png",
+      "leather/train/good/058.png",
+      "leather/train/good/060.png",
+      "leather/train/good/062.png",
+      "leather/train/good/064.png",
+      "leather/train/good/071.png",
+      "leather/train/good/072.png",
+      "leather/train/good/073.png",
+      "leather/train/good/090.png",
+      "leather/train/good/093.png",
+      "leather/train/good/099.png",
+      "leather/train/good/103.png",
+      "leather/train/good/109.png",
+      "leather/train/good/116.png",
+      "leather/train/good/118.png",
+      "leather/train/good/134.png",
+      "leather/train/good/136.png",
+      "leather/train/good/142.png",
+      "leather/train/good/144.png",
+      "leather/train/good/156.png",
+      "leather/train/good/160.png",
+      "leather/train/good/163.png",
+      "leather/train/good/164.png",
+      "leather/train/good/172.png",
+      "leather/train/good/178.png",
+      "leather/train/good/180.png",
+      "leather/train/good/187.png",
+      "leather/train/good/189.png",
+      "leather/train/good/195.png",
+      "leather/train/good/196.png",
+      "leather/train/good/203.png",
+      "leather/train/good/210.png",
+      "leather/train/good/242.png",
+      "leather/train/good/244.png"
+    ],
+    "scores": [
+      0.2020464837551117,
+      0.10735377669334412,
+      0.12261250615119934,
+      0.14606204628944397,
+      0.1288786232471466,
+      0.19526566565036774,
+      0.21401789784431458,
+      0.15940992534160614,
+      0.1228332445025444,
+      0.1250963658094406,
+      0.13851940631866455,
+      0.11010657250881195,
+      0.16253633797168732,
+      0.15302789211273193,
+      0.2749153673648834,
+      0.18944799900054932,
+      0.24225172400474548,
+      0.27939391136169434,
+      0.2135234922170639,
+      0.31132858991622925,
+      0.2469705194234848,
+      0.2591093182563782,
+      0.17402981221675873,
+      0.18493065237998962,
+      0.12033724039793015,
+      0.21715594828128815,
+      0.2429989129304886,
+      0.11360307037830353,
+      0.16835437715053558,
+      0.10873518139123917,
+      0.1358082890510559,
+      0.08496301621198654,
+      0.10997305810451508,
+      0.14441704750061035,
+      0.16396784782409668,
+      0.10450594872236252
+    ],
+    "pixel_threshold": 0.08200771361589432,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05003941059112549,
+    "histogram_scale": 0.042729903012514114
+  },
+  "training": {
+    "identity": {
+      "category": "leather",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-leather-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "8f983739d6cf262f9e733b5dd9172585b5488bb1540f4e0a3abd25eda05793f5"
+    },
+    "fit_n": 173,
+    "fit_source_sha256": "4195f4754dca16b66ce78b271f91e0f6c660bb50ee5ae56d3fc1f82362ad6c91",
+    "development_n": 36,
+    "development_source_sha256": "44f682a096ddc4f13dde6d2d5b1553e6f9680ab6fc9960c36f467a170bb2b070",
+    "development_scores": [
+      0.15604712069034576,
+      0.09942319989204407,
+      0.3915487825870514,
+      0.0788433626294136,
+      0.13802364468574524,
+      0.4069262146949768,
+      0.1349395513534546,
+      0.20525875687599182,
+      0.13582323491573334,
+      0.5399958491325378,
+      0.18169032037258148,
+      0.20906537771224976,
+      0.2152957171201706,
+      0.2714655101299286,
+      0.20812803506851196,
+      0.0894717425107956,
+      0.21776005625724792,
+      0.19162167608737946,
+      0.1850014626979828,
+      0.17115874588489532,
+      0.35152408480644226,
+      0.12200722843408585,
+      0.15112456679344177,
+      0.12216080725193024,
+      0.10564448684453964,
+      0.19476811587810516,
+      0.13404031097888947,
+      0.11317205429077148,
+      0.13741660118103027,
+      0.14660826325416565,
+      0.11563579738140106,
+      0.2042659968137741,
+      0.16661995649337769,
+      0.17761743068695068,
+      0.1315595656633377,
+      0.17304497957229614
+    ],
+    "training_seconds": 187.65882839995902,
+    "preparation_seconds": 0.00422999999136664,
+    "map_normalization_seconds": 2.178928299981635,
+    "serialization_seconds": 0.16774050000822172,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 173,
+        "seconds": 19.901368699996965,
+        "hard": 11.594262101057637,
+        "penalty": 0.0,
+        "autoencoder": 0.8227310456292478,
+        "student_autoencoder": 0.02798389645886871,
+        "total": 12.444977038168494
+      },
+      {
+        "epoch": 2,
+        "steps": 346,
+        "seconds": 19.739091600000393,
+        "hard": 8.50021679277365,
+        "penalty": 0.0,
+        "autoencoder": 0.5267325663842217,
+        "student_autoencoder": 0.030177953163151108,
+        "total": 9.057127293823772
+      },
+      {
+        "epoch": 3,
+        "steps": 519,
+        "seconds": 20.156459299993003,
+        "hard": 8.225848175886739,
+        "penalty": 0.0,
+        "autoencoder": 0.4975747323105101,
+        "student_autoencoder": 0.02602042549025978,
+        "total": 8.74944332155878
+      },
+      {
+        "epoch": 4,
+        "steps": 692,
+        "seconds": 20.72066549997544,
+        "hard": 7.6182465360343805,
+        "penalty": 0.0,
+        "autoencoder": 0.4820796673353008,
+        "student_autoencoder": 0.02017913659162432,
+        "total": 8.120505330190493
+      },
+      {
+        "epoch": 5,
+        "steps": 865,
+        "seconds": 21.177882799995132,
+        "hard": 7.253645257453698,
+        "penalty": 0.0,
+        "autoencoder": 0.47449669224678437,
+        "student_autoencoder": 0.018287853693126598,
+        "total": 7.746429812701451
+      },
+      {
+        "epoch": 6,
+        "steps": 1038,
+        "seconds": 21.120479000004707,
+        "hard": 7.0592711316367796,
+        "penalty": 0.0,
+        "autoencoder": 0.47517964864052786,
+        "student_autoencoder": 0.017747204809993332,
+        "total": 7.552197977297568
+      },
+      {
+        "epoch": 7,
+        "steps": 1211,
+        "seconds": 21.160214200004702,
+        "hard": 6.8452796908472315,
+        "penalty": 0.0,
+        "autoencoder": 0.4713064323615477,
+        "student_autoencoder": 0.016830276552523147,
+        "total": 7.333416401306328
+      },
+      {
+        "epoch": 8,
+        "steps": 1384,
+        "seconds": 21.414422399975592,
+        "hard": 6.663339736144667,
+        "penalty": 0.0,
+        "autoencoder": 0.47199331680474255,
+        "student_autoencoder": 0.015237625171511159,
+        "total": 7.150570654455637
+      },
+      {
+        "epoch": 9,
+        "steps": 1557,
+        "seconds": 22.268244900013087,
+        "hard": 6.480550925855692,
+        "penalty": 0.0,
+        "autoencoder": 0.4660925410386455,
+        "student_autoencoder": 0.014315969509885491,
+        "total": 6.960959412459004
+      }
+    ],
+    "resources": {
+      "seconds": 192.29291139999987,
+      "cpu_initial_rss_bytes": 995168256,
+      "cpu_peak_rss_bytes": 1881190400,
+      "cpu_peak_increment_bytes": 886022144,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 482344960
+    },
+    "map_quantiles": [
+      [
+        0.5759096741676331,
+        0.8523761034011841
+      ],
+      [
+        0.00942075252532959,
+        0.06260141730308533
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T06:00:42.849826+00:00"
+  },
+  "training_seconds": 187.65882839995902,
+  "calibration_seconds": 2.435371600004146,
+  "inference_seconds": 8.58561860001646,
+  "native_metrics_bootstrap_seconds": 50.322111799992854,
+  "latency_seconds": 11.385461700003361,
+  "evaluation_seconds": 70.29319210001267,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.201499992632307,
+      "p95_ms": 4.803890013135969
+    },
+    "host_to_device": {
+      "p50_ms": 0.3126499941572547,
+      "p95_ms": 0.4149550135480239
+    },
+    "model": {
+      "p50_ms": 22.026350008673035,
+      "p95_ms": 26.984044983692
+    },
+    "postprocessing": {
+      "p50_ms": 3.7911999970674515,
+      "p95_ms": 4.887740002595819
+    },
+    "end_to_end": {
+      "p50_ms": 30.541849992005154,
+      "p95_ms": 35.448684995935764
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 64.36205000500195,
+    "decode_inclusive_p95_ms": 70.21389501169324,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 186646528,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "67",
+      "utilization.gpu": "26",
+      "utilization.memory": "4",
+      "power.draw": "32.77",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1890",
+      "memory.used": "283"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-leather-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "8f983739d6cf262f9e733b5dd9172585b5488bb1540f4e0a3abd25eda05793f5"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-leather-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-leather-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-leather-s2028-a01-images.csv",
+  "test_source_sha256": "d55f7d310a0669442605d3038112e2f0c48af2f5b5c0396007c21cc5b90a2bc3",
+  "per_defect": [
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "color",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.8125,
+      "precision": 0.4222222222222222,
+      "f1": 0.59375,
+      "confusion_matrix": [
+        [
+          6,
+          26
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "cut",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.8125,
+      "precision": 0.4222222222222222,
+      "f1": 0.59375,
+      "confusion_matrix": [
+        [
+          6,
+          26
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "fold",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.8125,
+      "precision": 0.3953488372093023,
+      "f1": 0.5666666666666667,
+      "confusion_matrix": [
+        [
+          6,
+          26
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "glue",
+      "auroc": 0.9967105263157895,
+      "ap": 0.9949874686716791,
+      "recall": 1.0,
+      "fpr": 0.8125,
+      "precision": 0.4222222222222222,
+      "f1": 0.59375,
+      "confusion_matrix": [
+        [
+          6,
+          26
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2028,
+      "defect": "poke",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.8125,
+      "precision": 0.4090909090909091,
+      "f1": 0.5806451612903226,
+      "confusion_matrix": [
+        [
+          6,
+          26
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T06:01:55.825413+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-leather-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "8f983739d6cf262f9e733b5dd9172585b5488bb1540f4e0a3abd25eda05793f5"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-leather-s2028-a01-history.csv",
+      "bytes": 1024,
+      "sha256": "bc2526df3a63331406ca4648597bd81510b2a3888121f3844f25becbeb5f6245"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-leather-s2028-a01-calibration-scores.csv",
+      "bytes": 1701,
+      "sha256": "b9cdfcc8a02072f3239d8d502325cce3ad9f27e040734851179208302b9808f1"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-leather-s2028-a01-calibration.json",
+      "bytes": 4288,
+      "sha256": "00fa2e78454d641c3cb8b623a5b42e4e69a99b9e9a12d0d4112ebcbad3f98287"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-leather-s2028-a01-images.csv",
+      "bytes": 17842,
+      "sha256": "893847e6ed6f33f99a1ea2a15be8cad9059af2a5b5f9587bdda839bfdb1d1b2d"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/raw_branch_maps.npy",
+      "bytes": 65011840,
+      "sha256": "8dcf53aa8e06881344d18902637458f5d02fa63ac00c85ed6831829bf7658b03"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/selected_maps.npy",
+      "bytes": 32505984,
+      "sha256": "6654240593e340ed9b13e91d9598bd8d6f1fa83b72434bce9903874e21eea2fa"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 66063,
+      "sha256": "b25d63ad1788de2163257125ba0e4f461b8c992d48b34393c4a9464e8e067c41"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/native_image_histograms.npz",
+      "bytes": 666953,
+      "sha256": "55aedf59b4beeb881174a36502c4b7a8040e6a750e3de0c174e52dec1fadb17a"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/latency_ms.csv",
+      "bytes": 19144,
+      "sha256": "cb5338dc409c5075e2f1cf6098dc7de5e52163aedcab0c1194aed20914e127e6"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-leather-s2028-a01/trained.json",
+      "bytes": 5421,
+      "sha256": "2a44377978fe31923f1d0cdaea4cae61a997d436a8f97cb15277696ff435c076"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 271.89144499998656,
+    "cpu_initial_rss_bytes": 705970176,
+    "cpu_peak_rss_bytes": 5140197376,
+    "cpu_peak_increment_bytes": 4434227200,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 186646528
+  },
+  "wall_seconds": 271.9405996000278,
+  "disk_free_bytes": 531283849216,
+  "completed_at_utc": "2026-11-14T06:01:56.229285+00:00"
+}

@@ -1,0 +1,197 @@
+{
+  "experiment_id": "06-final-tile-s2028-a01-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "tile"
+  ],
+  "hypothesis": "Frozen 45-model confirmation; no test-guided selection",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet",
+    "maps": "signed; native bilinear align_corners=False"
+  },
+  "hyperparameters": {
+    "category": "tile",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "seed": 2028,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "664e106dbdd25104ea4e3c3be192fc8be7a0b772",
+    "dirty": true
+  },
+  "training": {
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321"
+  },
+  "metrics": {
+    "image_auroc": 0.9981962481962482,
+    "image_ap": 0.9993171511028651,
+    "pixel_auroc": 0.9861016450845688,
+    "pixel_ap": 0.8233315753836392,
+    "au_pro": 0.9641406239532134,
+    "recall": 0.6428571428571429,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.782608695652174
+  },
+  "calibration": {
+    "threshold": 1.215880036354065,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 34,
+      "min": 0.08356782048940659,
+      "median": 0.26243583858013153,
+      "mean": 0.3283276910729268,
+      "std": 0.29725364072278554,
+      "q90": 0.4305230617523193,
+      "q95": 0.7335610628128035,
+      "max": 1.6725168228149414
+    },
+    "observed_calibration_fpr": 0.029411764705882353,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0007443642346902604,
+      0.15326766956031765
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05714285714285714,
+    "future_fpr_order_statistic_95": [
+      0.007204917439049714,
+      0.15326766956031765
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.35793355107307434,
+      1.215880036354065,
+      1.6725168228149414
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.4738508462905884,
+      1.215880036354065
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 1.6725168228149414,
+      "0.05": 1.215880036354065,
+      "0.1": 0.4525942802429199
+    },
+    "development_exceedance_fraction": 0.0,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 34,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "cfb6df45aa28301e371b3c335f45e40599ef3a2dcdcd05c62054fd44de5ee403",
+    "paths": [
+      "tile/train/good/002.png",
+      "tile/train/good/006.png",
+      "tile/train/good/011.png",
+      "tile/train/good/031.png",
+      "tile/train/good/044.png",
+      "tile/train/good/048.png",
+      "tile/train/good/051.png",
+      "tile/train/good/054.png",
+      "tile/train/good/055.png",
+      "tile/train/good/059.png",
+      "tile/train/good/061.png",
+      "tile/train/good/064.png",
+      "tile/train/good/093.png",
+      "tile/train/good/102.png",
+      "tile/train/good/104.png",
+      "tile/train/good/108.png",
+      "tile/train/good/112.png",
+      "tile/train/good/122.png",
+      "tile/train/good/131.png",
+      "tile/train/good/141.png",
+      "tile/train/good/146.png",
+      "tile/train/good/155.png",
+      "tile/train/good/164.png",
+      "tile/train/good/171.png",
+      "tile/train/good/189.png",
+      "tile/train/good/191.png",
+      "tile/train/good/202.png",
+      "tile/train/good/203.png",
+      "tile/train/good/209.png",
+      "tile/train/good/216.png",
+      "tile/train/good/217.png",
+      "tile/train/good/218.png",
+      "tile/train/good/222.png",
+      "tile/train/good/224.png"
+    ],
+    "scores": [
+      0.11469347774982452,
+      0.2831195592880249,
+      0.30007630586624146,
+      0.1774643063545227,
+      0.16232195496559143,
+      0.1720374971628189,
+      0.16175532341003418,
+      0.37902355194091797,
+      0.22715477645397186,
+      0.21141308546066284,
+      0.08356782048940659,
+      0.28375527262687683,
+      0.4525942802429199,
+      0.16921855509281158,
+      0.4738508462905884,
+      0.16040293872356415,
+      1.6725168228149414,
+      0.1880999207496643,
+      0.2796548008918762,
+      0.2525852918624878,
+      1.215880036354065,
+      0.3575279414653778,
+      0.3388754427433014,
+      0.29161515831947327,
+      0.2545520067214966,
+      0.34239885210990906,
+      0.35793355107307434,
+      0.27077725529670715,
+      0.3230679929256439,
+      0.2703196704387665,
+      0.22442001104354858,
+      0.2534712255001068,
+      0.21227332949638367,
+      0.2447226345539093
+    ],
+    "pixel_threshold": 0.08572912961244583,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.05241062678396702,
+    "histogram_scale": 0.044448583386838436
+  },
+  "paths": {
+    "result": "reports/efficientad/final/runs/06-final-tile-s2028-a01-result.json",
+    "result_sha256": "db63fe669868d91699020184cea7505647e221d35d94b0566db38ed668449f5b",
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-tile-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "8b6c14f9188545de6434f3e0b235dfbc2c0500f3ececfbbdba79d91f279ee72b"
+    }
+  },
+  "interpretation": "All test metrics and required artifacts verified before completion",
+  "decision": "frozen final evaluation",
+  "status": "completed",
+  "recorded_at": "2026-11-14T06:20:29.471231+00:00",
+  "config_sha256": "26f2882110c1e8a540bc004a3d76c13b33c4f9d2bab6365d2da4aceba4d6e030"
+}

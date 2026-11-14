@@ -1,0 +1,191 @@
+{
+  "experiment_id": "06-final-transistor-s2026-a01-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "transistor"
+  ],
+  "hypothesis": "Frozen 45-model confirmation; no test-guided selection",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet",
+    "maps": "signed; native bilinear align_corners=False"
+  },
+  "hyperparameters": {
+    "category": "transistor",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "664e106dbdd25104ea4e3c3be192fc8be7a0b772",
+    "dirty": true
+  },
+  "training": {
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321"
+  },
+  "metrics": {
+    "image_auroc": 0.81125,
+    "image_ap": 0.7972074212878493,
+    "pixel_auroc": 0.6757076058473513,
+    "pixel_ap": 0.2740462431179837,
+    "au_pro": 0.5576486036186267,
+    "recall": 0.525,
+    "fpr": 0.06666666666666667,
+    "precision": 0.84,
+    "f1": 0.6461538461538462
+  },
+  "calibration": {
+    "threshold": 0.2919740378856659,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 31,
+      "min": 0.18990832567214966,
+      "median": 0.26715078949928284,
+      "mean": 0.2591561348207535,
+      "std": 0.02966763982788833,
+      "q90": 0.2911613881587982,
+      "q95": 0.291716068983078,
+      "max": 0.33272650837898254
+    },
+    "observed_calibration_fpr": 0.03225806451612903,
+    "exceedances": 1,
+    "calibration_exceedance_descriptive_cp95": [
+      0.000816370071846613,
+      0.16702111623022775
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.0625,
+    "future_fpr_order_statistic_95": [
+      0.007910983461854705,
+      0.16702111623022775
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.28370121121406555,
+      0.2919740378856659,
+      0.33272650837898254
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.2914581000804901,
+      0.2919740378856659
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.33272650837898254,
+      "0.05": 0.2919740378856659,
+      "0.1": 0.2911613881587982
+    },
+    "development_exceedance_fraction": 0.12903225806451613,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 31,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "b97022d7f200231e65abad2a14102fea70c1e179010e3e0f3be5b5317554392b",
+    "paths": [
+      "transistor/train/good/000.png",
+      "transistor/train/good/010.png",
+      "transistor/train/good/018.png",
+      "transistor/train/good/037.png",
+      "transistor/train/good/041.png",
+      "transistor/train/good/042.png",
+      "transistor/train/good/046.png",
+      "transistor/train/good/053.png",
+      "transistor/train/good/057.png",
+      "transistor/train/good/065.png",
+      "transistor/train/good/075.png",
+      "transistor/train/good/078.png",
+      "transistor/train/good/087.png",
+      "transistor/train/good/101.png",
+      "transistor/train/good/104.png",
+      "transistor/train/good/105.png",
+      "transistor/train/good/113.png",
+      "transistor/train/good/115.png",
+      "transistor/train/good/122.png",
+      "transistor/train/good/142.png",
+      "transistor/train/good/144.png",
+      "transistor/train/good/149.png",
+      "transistor/train/good/160.png",
+      "transistor/train/good/161.png",
+      "transistor/train/good/163.png",
+      "transistor/train/good/165.png",
+      "transistor/train/good/168.png",
+      "transistor/train/good/169.png",
+      "transistor/train/good/186.png",
+      "transistor/train/good/205.png",
+      "transistor/train/good/210.png"
+    ],
+    "scores": [
+      0.20646680891513824,
+      0.22068935632705688,
+      0.2914581000804901,
+      0.26715078949928284,
+      0.18990832567214966,
+      0.25447705388069153,
+      0.27181971073150635,
+      0.2817772924900055,
+      0.24025081098079681,
+      0.2755742073059082,
+      0.24691987037658691,
+      0.2919740378856659,
+      0.22843796014785767,
+      0.26896074414253235,
+      0.2787449061870575,
+      0.25166893005371094,
+      0.24311870336532593,
+      0.28370121121406555,
+      0.2717548608779907,
+      0.2698564827442169,
+      0.2911613881587982,
+      0.33272650837898254,
+      0.21184508502483368,
+      0.22417263686656952,
+      0.26655954122543335,
+      0.22913417220115662,
+      0.2523598372936249,
+      0.27134594321250916,
+      0.287429541349411,
+      0.2631872892379761,
+      0.26920807361602783
+    ],
+    "pixel_threshold": 0.10257396101951599,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.051759254187345505,
+    "histogram_scale": 0.043818555772304535
+  },
+  "paths": {
+    "result": "reports/efficientad/final/runs/06-final-transistor-s2026-a01-result.json",
+    "result_sha256": "8aa6765a5966da7b25c0a6c6a1ecaa19e736a9c535bad624f4791e6038803a49",
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-transistor-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "97aa9d13d4f98870df8c3e950a75d52a2048989849f9a3cceae6ee5e6268be7c"
+    }
+  },
+  "interpretation": "All test metrics and required artifacts verified before completion",
+  "decision": "frozen final evaluation",
+  "status": "completed",
+  "recorded_at": "2026-11-14T04:07:46.375860+00:00",
+  "config_sha256": "c5f135555310015a5ef86c0d212d467e5406271d87766901d06785c3ebe97ab0"
+}

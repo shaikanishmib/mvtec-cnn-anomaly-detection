@@ -1,0 +1,696 @@
+{
+  "identity": {
+    "category": "screw",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-screw-s2028-a01",
+  "category": "screw",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.08280385324861653,
+  "image_ap": 0.5791197965952308,
+  "recall": 0.09243697478991597,
+  "fpr": 0.8048780487804879,
+  "precision": 0.25,
+  "f1": 0.13496932515337423,
+  "confusion_matrix": [
+    [
+      8,
+      33
+    ],
+    [
+      108,
+      11
+    ]
+  ],
+  "pixel_auroc": 0.9166642933677543,
+  "pixel_ap": 0.07776791344719515,
+  "au_pro": 0.7591645969585594,
+  "positive_pixels": 418611,
+  "negative_pixels": 167353549,
+  "regions": 135,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.04057971014492754,
+        0.13298673231177538
+      ],
+      "image_ap": [
+        0.5054344421666359,
+        0.674598099670157
+      ],
+      "recall": [
+        0.04310344827586207,
+        0.15127363445378142
+      ],
+      "fpr": [
+        0.6756587837837837,
+        0.9210526315789473
+      ],
+      "precision": [
+        0.12759308510638298,
+        0.38461538461538464
+      ],
+      "f1": [
+        0.0641025641025641,
+        0.21301775147928995
+      ],
+      "pixel_auroc": [
+        0.8961407874304173,
+        0.9362095749025309
+      ],
+      "pixel_ap": [
+        0.053699996104476455,
+        0.11158940276042004
+      ],
+      "au_pro": [
+        0.7101350361961707,
+        0.8058755751040038
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      166202066,
+      1151483
+    ],
+    [
+      275915,
+      142696
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9166642055973662,
+    "pixel_ap": 0.07768161316531333,
+    "au_pro": 0.7591640100386937
+  },
+  "tn": 8,
+  "fp": 33,
+  "fn": 108,
+  "tp": 11,
+  "calibration": {
+    "threshold": 0.3998550772666931,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 48,
+      "min": 0.13366323709487915,
+      "median": 0.2688358873128891,
+      "mean": 0.26602331704149645,
+      "std": 0.0796185504715159,
+      "q90": 0.35287622511386874,
+      "q95": 0.3908176958560943,
+      "max": 0.5657854676246643
+    },
+    "observed_calibration_fpr": 0.041666666666666664,
+    "exceedances": 2,
+    "calibration_exceedance_descriptive_cp95": [
+      0.005086467930032977,
+      0.14254097320137743
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.061224489795918366,
+    "future_fpr_order_statistic_95": [
+      0.013079244409552646,
+      0.14254097320137743
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.339489708840847,
+      0.3998550772666931,
+      0.5657854676246643
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.37403398752212524,
+      0.3998550772666931
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5657854676246643,
+      "0.05": 0.3998550772666931,
+      "0.1": 0.3539426922798157
+    },
+    "development_exceedance_fraction": 0.041666666666666664,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 48,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "85a121c24c1c3c84ba5fe1fede8f0f325ef587a8e2cc15fe7a70cdc813e52b01",
+    "paths": [
+      "screw/train/good/006.png",
+      "screw/train/good/029.png",
+      "screw/train/good/036.png",
+      "screw/train/good/050.png",
+      "screw/train/good/055.png",
+      "screw/train/good/065.png",
+      "screw/train/good/069.png",
+      "screw/train/good/076.png",
+      "screw/train/good/079.png",
+      "screw/train/good/080.png",
+      "screw/train/good/087.png",
+      "screw/train/good/088.png",
+      "screw/train/good/095.png",
+      "screw/train/good/096.png",
+      "screw/train/good/098.png",
+      "screw/train/good/102.png",
+      "screw/train/good/116.png",
+      "screw/train/good/123.png",
+      "screw/train/good/138.png",
+      "screw/train/good/148.png",
+      "screw/train/good/153.png",
+      "screw/train/good/166.png",
+      "screw/train/good/167.png",
+      "screw/train/good/168.png",
+      "screw/train/good/171.png",
+      "screw/train/good/172.png",
+      "screw/train/good/176.png",
+      "screw/train/good/193.png",
+      "screw/train/good/210.png",
+      "screw/train/good/214.png",
+      "screw/train/good/215.png",
+      "screw/train/good/228.png",
+      "screw/train/good/231.png",
+      "screw/train/good/234.png",
+      "screw/train/good/240.png",
+      "screw/train/good/254.png",
+      "screw/train/good/255.png",
+      "screw/train/good/258.png",
+      "screw/train/good/263.png",
+      "screw/train/good/267.png",
+      "screw/train/good/274.png",
+      "screw/train/good/276.png",
+      "screw/train/good/287.png",
+      "screw/train/good/296.png",
+      "screw/train/good/301.png",
+      "screw/train/good/305.png",
+      "screw/train/good/311.png",
+      "screw/train/good/312.png"
+    ],
+    "scores": [
+      0.3539426922798157,
+      0.18726977705955505,
+      0.5657854676246643,
+      0.3115498721599579,
+      0.29400745034217834,
+      0.23187969624996185,
+      0.27466079592704773,
+      0.408120721578598,
+      0.29193565249443054,
+      0.23622745275497437,
+      0.2253251075744629,
+      0.3524191677570343,
+      0.222140833735466,
+      0.2802928388118744,
+      0.24115434288978577,
+      0.15583795309066772,
+      0.16488781571388245,
+      0.20635785162448883,
+      0.286304235458374,
+      0.14684422314167023,
+      0.15909934043884277,
+      0.27967923879623413,
+      0.2663629353046417,
+      0.37403398752212524,
+      0.16918666660785675,
+      0.18704789876937866,
+      0.20823636651039124,
+      0.26903215050697327,
+      0.26785311102867126,
+      0.28262630105018616,
+      0.28515392541885376,
+      0.2381497472524643,
+      0.3245164752006531,
+      0.33962300419807434,
+      0.3998550772666931,
+      0.2872680127620697,
+      0.1395227313041687,
+      0.26852354407310486,
+      0.2817583978176117,
+      0.3322368562221527,
+      0.3342911899089813,
+      0.28162726759910583,
+      0.24629417061805725,
+      0.13366323709487915,
+      0.2740151584148407,
+      0.25576910376548767,
+      0.17810975015163422,
+      0.26863962411880493
+    ],
+    "pixel_threshold": 0.09153721481561661,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.033559827134013176,
+    "histogram_scale": 0.02463378245010972
+  },
+  "training": {
+    "identity": {
+      "category": "screw",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-screw-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "1f1ffbec28d906108b6d2bed754497f93438730f79e9e37d4be8625701f3283e"
+    },
+    "fit_n": 224,
+    "fit_source_sha256": "9467e9ab7b9a68370bf926c7f4432ba99add9adff443cd63fa5f775f4539ba1a",
+    "development_n": 48,
+    "development_source_sha256": "d9886f5becc9801ae7edcadba3bee249f6d7f988377abadd88a9dd447d5dafe3",
+    "development_scores": [
+      0.24723859131336212,
+      0.23737624287605286,
+      0.20243912935256958,
+      0.2392760068178177,
+      0.23736244440078735,
+      0.2262151539325714,
+      0.22863996028900146,
+      0.36003223061561584,
+      0.2422792613506317,
+      0.23395207524299622,
+      0.22871042788028717,
+      0.17822813987731934,
+      0.21704503893852234,
+      0.18751946091651917,
+      0.18358194828033447,
+      0.3053710162639618,
+      0.16773462295532227,
+      0.2527216374874115,
+      0.2818067669868469,
+      0.2893733084201813,
+      0.17627444863319397,
+      0.2906287610530853,
+      0.2612876296043396,
+      0.23258785903453827,
+      0.13747718930244446,
+      0.2649175226688385,
+      0.26956647634506226,
+      0.35533803701400757,
+      0.2773202359676361,
+      0.3169892728328705,
+      0.3519427180290222,
+      0.29802316427230835,
+      0.24508848786354065,
+      0.24021010100841522,
+      0.26432591676712036,
+      0.23315219581127167,
+      0.34519055485725403,
+      0.40852227807044983,
+      0.3291623890399933,
+      0.2722289562225342,
+      0.30722880363464355,
+      0.17295902967453003,
+      0.2899198532104492,
+      0.31343337893486023,
+      0.2997366786003113,
+      0.29876708984375,
+      0.5382998585700989,
+      0.3878793716430664
+    ],
+    "training_seconds": 252.9490523999266,
+    "preparation_seconds": 0.005083900003228337,
+    "map_normalization_seconds": 2.9612067000125535,
+    "serialization_seconds": 0.2638286000001244,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 224,
+        "seconds": 26.16257129999576,
+        "hard": 19.868042234863555,
+        "penalty": 0.0,
+        "autoencoder": 0.8861360768122333,
+        "student_autoencoder": 0.03068840397099848,
+        "total": 20.784866631031036
+      },
+      {
+        "epoch": 2,
+        "steps": 448,
+        "seconds": 26.664656899985857,
+        "hard": 15.068713997091566,
+        "penalty": 0.0,
+        "autoencoder": 0.6712502520531416,
+        "student_autoencoder": 0.049881543772893826,
+        "total": 15.789845841271537
+      },
+      {
+        "epoch": 3,
+        "steps": 672,
+        "seconds": 27.47662869998021,
+        "hard": 12.402200498751231,
+        "penalty": 0.0,
+        "autoencoder": 0.6450793429144791,
+        "student_autoencoder": 0.04194986347075818,
+        "total": 13.0892296901771
+      },
+      {
+        "epoch": 4,
+        "steps": 896,
+        "seconds": 28.825433399993926,
+        "hard": 10.510605211768832,
+        "penalty": 0.0,
+        "autoencoder": 0.6240966799003738,
+        "student_autoencoder": 0.0376341231333624,
+        "total": 11.172336012125015
+      },
+      {
+        "epoch": 5,
+        "steps": 1120,
+        "seconds": 28.77107960000285,
+        "hard": 8.886802366801671,
+        "penalty": 0.0,
+        "autoencoder": 0.5808458702106561,
+        "student_autoencoder": 0.049848795452687354,
+        "total": 9.517497015850884
+      },
+      {
+        "epoch": 6,
+        "steps": 1344,
+        "seconds": 28.011906500003533,
+        "hard": 7.6128761768341064,
+        "penalty": 0.0,
+        "autoencoder": 0.4940828128850886,
+        "student_autoencoder": 0.06169006408890709,
+        "total": 8.168649015682083
+      },
+      {
+        "epoch": 7,
+        "steps": 1568,
+        "seconds": 28.043187999981456,
+        "hard": 6.899661636778286,
+        "penalty": 0.0,
+        "autoencoder": 0.4294617714892541,
+        "student_autoencoder": 0.053911586674595516,
+        "total": 7.383035014782633
+      },
+      {
+        "epoch": 8,
+        "steps": 1792,
+        "seconds": 28.950923900003545,
+        "hard": 6.3748432504279275,
+        "penalty": 0.0,
+        "autoencoder": 0.40871427514191183,
+        "student_autoencoder": 0.05066003314485507,
+        "total": 6.834217561142785
+      },
+      {
+        "epoch": 9,
+        "steps": 2016,
+        "seconds": 30.042664099979447,
+        "hard": 5.932287910154888,
+        "penalty": 0.0,
+        "autoencoder": 0.39605070650577545,
+        "student_autoencoder": 0.04862532947611596,
+        "total": 6.3769639411142895
+      }
+    ],
+    "resources": {
+      "seconds": 258.1112085999921,
+      "cpu_initial_rss_bytes": 1035522048,
+      "cpu_peak_rss_bytes": 1951285248,
+      "cpu_peak_increment_bytes": 915763200,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 486539264
+    },
+    "map_quantiles": [
+      [
+        0.53685462474823,
+        0.8650814294815063
+      ],
+      [
+        0.06724206358194351,
+        0.29181599617004395
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T06:14:58.027657+00:00"
+  },
+  "training_seconds": 252.9490523999266,
+  "calibration_seconds": 2.518745300010778,
+  "inference_seconds": 7.349902099987958,
+  "native_metrics_bootstrap_seconds": 62.917003399983514,
+  "latency_seconds": 10.263902400009101,
+  "evaluation_seconds": 80.53080789998057,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.2317000043112785,
+      "p95_ms": 4.673285006720106
+    },
+    "host_to_device": {
+      "p50_ms": 0.31600000511389226,
+      "p95_ms": 0.3977799991844221
+    },
+    "model": {
+      "p50_ms": 21.604800000204705,
+      "p95_ms": 25.603074999526136
+    },
+    "postprocessing": {
+      "p50_ms": 3.862000012304634,
+      "p95_ms": 5.000810005003585
+    },
+    "end_to_end": {
+      "p50_ms": 30.18709998286795,
+      "p95_ms": 34.020329997292706
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 44.32490000908729,
+    "decode_inclusive_p95_ms": 47.09568499820307,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 184549376,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "77",
+      "utilization.gpu": "37",
+      "utilization.memory": "6",
+      "power.draw": "55.11",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2415",
+      "memory.used": "281"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-screw-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "1f1ffbec28d906108b6d2bed754497f93438730f79e9e37d4be8625701f3283e"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-screw-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-screw-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-screw-s2028-a01-images.csv",
+  "test_source_sha256": "f182c02c1b0bbc20bfa38fff6b4f4704ab7ca5470c32b984dbc380ba6368df6a",
+  "per_defect": [
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "manipulated_front",
+      "auroc": 0.04878048780487805,
+      "ap": 0.26148022892346984,
+      "recall": 0.041666666666666664,
+      "fpr": 0.8048780487804879,
+      "precision": 0.029411764705882353,
+      "f1": 0.034482758620689655,
+      "confusion_matrix": [
+        [
+          8,
+          33
+        ],
+        [
+          23,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "scratch_head",
+      "auroc": 0.0,
+      "ap": 0.2204153464035689,
+      "recall": 0.0,
+      "fpr": 0.8048780487804879,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          8,
+          33
+        ],
+        [
+          24,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "scratch_neck",
+      "auroc": 0.1834146341463415,
+      "ap": 0.30672794622364075,
+      "recall": 0.2,
+      "fpr": 0.8048780487804879,
+      "precision": 0.13157894736842105,
+      "f1": 0.1587301587301587,
+      "confusion_matrix": [
+        [
+          8,
+          33
+        ],
+        [
+          20,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "thread_side",
+      "auroc": 0.045599151643690355,
+      "ap": 0.224072310695006,
+      "recall": 0.043478260869565216,
+      "fpr": 0.8048780487804879,
+      "precision": 0.029411764705882353,
+      "f1": 0.035087719298245605,
+      "confusion_matrix": [
+        [
+          8,
+          33
+        ],
+        [
+          22,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "thread_top",
+      "auroc": 0.13255567338282076,
+      "ap": 0.2453628558985947,
+      "recall": 0.17391304347826086,
+      "fpr": 0.8048780487804879,
+      "precision": 0.10810810810810811,
+      "f1": 0.13333333333333333,
+      "confusion_matrix": [
+        [
+          8,
+          33
+        ],
+        [
+          19,
+          4
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T06:16:21.319163+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-screw-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "1f1ffbec28d906108b6d2bed754497f93438730f79e9e37d4be8625701f3283e"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2028-a01-history.csv",
+      "bytes": 1027,
+      "sha256": "756d70e6bb38e9be307a3ca7c698c143a517776a226b3b13102a5f2c3fbee941"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2028-a01-calibration-scores.csv",
+      "bytes": 2165,
+      "sha256": "4163a03a48bca12c56e63214c2b19ab94204d9d51257b6bb5d09b92409ff94c5"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2028-a01-calibration.json",
+      "bytes": 4905,
+      "sha256": "b51aec5497e3599e67ee36869b99363f220a624c574317c8ce89b41ea864ff74"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-screw-s2028-a01-images.csv",
+      "bytes": 24978,
+      "sha256": "1413384dee3abb6d3b7a2ddd75a28f6e85f83cc709051ecdb1ea492e3480cc65"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/raw_branch_maps.npy",
+      "bytes": 83886208,
+      "sha256": "1feecc53e9bba7e95d852baf5494f730acb9fc850d6cdf861a8ce592a94269a5"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/selected_maps.npy",
+      "bytes": 41943168,
+      "sha256": "2b53b6ba25afeaf544d96c28102c0a58519553036223bf4246fa9d3bf9bb8037"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 92361,
+      "sha256": "5015b21f088c8bdfc1d764b636262b6e67ef3fa6a970834350a0865313e59ad2"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/native_image_histograms.npz",
+      "bytes": 986479,
+      "sha256": "02647127451d1333f184fed9116cdd75878e2683a2c27e4396bba722a873a472"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/latency_ms.csv",
+      "bytes": 19140,
+      "sha256": "f2adfae34e614744a386a85f4e52f326a030bbb75335c4c44f3a1fa4c5106959"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-screw-s2028-a01/trained.json",
+      "bytes": 5716,
+      "sha256": "c359d6ae4c0fbe9764efd77076a1c47fcfaff3d6d6e2567eb60320a2a4cbb183"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 346.3709252999979,
+    "cpu_initial_rss_bytes": 706281472,
+    "cpu_peak_rss_bytes": 6231842816,
+    "cpu_peak_increment_bytes": 5525561344,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 184549376
+  },
+  "wall_seconds": 346.42901550000533,
+  "disk_free_bytes": 530609938432,
+  "completed_at_utc": "2026-11-14T06:16:21.748426+00:00"
+}

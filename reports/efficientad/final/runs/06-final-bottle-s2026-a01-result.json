@@ -1,0 +1,607 @@
+{
+  "identity": {
+    "category": "bottle",
+    "seed": 2026,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-bottle-s2026-a01",
+  "category": "bottle",
+  "seed": 2026,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.9682539682539683,
+  "image_ap": 0.9847007075922736,
+  "recall": 0.9365079365079365,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.9672131147540983,
+  "confusion_matrix": [
+    [
+      20,
+      0
+    ],
+    [
+      4,
+      59
+    ]
+  ],
+  "pixel_auroc": 0.9263464723893119,
+  "pixel_ap": 0.6707882999233887,
+  "au_pro": 0.8294707558328556,
+  "positive_pixels": 3886731,
+  "negative_pixels": 63343269,
+  "regions": 68,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9344262295081966,
+        0.9925373134328358
+      ],
+      "image_ap": [
+        0.965576592082616,
+        0.9971228196367561
+      ],
+      "recall": [
+        0.8688524590163934,
+        0.9850746268656716
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.9298245614035088,
+        0.9924812030075187
+      ],
+      "pixel_auroc": [
+        0.9007841002455982,
+        0.9485389720154478
+      ],
+      "pixel_ap": [
+        0.594913381184941,
+        0.7422452016796494
+      ],
+      "au_pro": [
+        0.7833612025819042,
+        0.8729552422400745
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      61865923,
+      1477346
+    ],
+    [
+      1353595,
+      2533136
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9263444954542281,
+    "pixel_ap": 0.6705934801165497,
+    "au_pro": 0.8294658112145906
+  },
+  "tn": 20,
+  "fp": 0,
+  "fn": 4,
+  "tp": 59,
+  "calibration": {
+    "threshold": 0.5066908597946167,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 31,
+      "min": 0.5066908597946167,
+      "median": 0.5066908597946167,
+      "mean": 0.5066908597946167,
+      "std": 0.0,
+      "q90": 0.5066908597946167,
+      "q95": 0.5066908597946167,
+      "max": 0.5066908597946167
+    },
+    "observed_calibration_fpr": 0.0,
+    "exceedances": 0,
+    "calibration_exceedance_descriptive_cp95": [
+      0.0,
+      0.11218874692236996
+    ],
+    "uncertainty_note": "Tied calibration scores violate the continuous-score assumption: Beta future-FPR interval is not asserted. The retained hypothetical interval is reference only; degenerate bootstrap tails do not establish certainty. CP calibration interval is descriptive because threshold was fitted on those samples.",
+    "bootstrap_threshold_p025_p50_p975": [
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.5066908597946167,
+      "0.05": 0.5066908597946167,
+      "0.1": 0.5066908597946167
+    },
+    "development_exceedance_fraction": 0.03225806451612903,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 1,
+    "largest_tie_count": 31,
+    "ties_at_threshold": 31,
+    "continuous_order_statistic_applicable": false,
+    "continuous_iid_hypothetical": {
+      "mean": 0.0625,
+      "interval": [
+        0.007910983461854705,
+        0.16702111623022775
+      ]
+    },
+    "future_fpr_order_statistic_mean": null,
+    "future_fpr_order_statistic_95": null,
+    "source_sha256": "f7fe553ecb5afe77c07a310749c20b737282cbb79d2ff41a836211772fc70bb8",
+    "paths": [
+      "bottle/train/good/017.png",
+      "bottle/train/good/028.png",
+      "bottle/train/good/031.png",
+      "bottle/train/good/044.png",
+      "bottle/train/good/054.png",
+      "bottle/train/good/057.png",
+      "bottle/train/good/061.png",
+      "bottle/train/good/069.png",
+      "bottle/train/good/083.png",
+      "bottle/train/good/096.png",
+      "bottle/train/good/098.png",
+      "bottle/train/good/106.png",
+      "bottle/train/good/121.png",
+      "bottle/train/good/125.png",
+      "bottle/train/good/134.png",
+      "bottle/train/good/143.png",
+      "bottle/train/good/155.png",
+      "bottle/train/good/166.png",
+      "bottle/train/good/167.png",
+      "bottle/train/good/169.png",
+      "bottle/train/good/175.png",
+      "bottle/train/good/176.png",
+      "bottle/train/good/180.png",
+      "bottle/train/good/183.png",
+      "bottle/train/good/184.png",
+      "bottle/train/good/192.png",
+      "bottle/train/good/195.png",
+      "bottle/train/good/199.png",
+      "bottle/train/good/203.png",
+      "bottle/train/good/206.png",
+      "bottle/train/good/207.png"
+    ],
+    "scores": [
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "pixel_threshold": 0.1092187911272049,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.10241984948515892,
+    "histogram_scale": 0.11723759397864342
+  },
+  "training": {
+    "identity": {
+      "category": "bottle",
+      "seed": 2026,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-bottle-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "2d3324e41ba57b3663571c6d092700140a58d604d7dfd43f28f0283f63a43eb5"
+    },
+    "fit_n": 147,
+    "fit_source_sha256": "5d7c5886d36b258e5aff30236fa2b39f7546aec2b5291c23e9a81b4f4a9addc8",
+    "development_n": 31,
+    "development_source_sha256": "4f1a9a7349551ca05a2f784d14ddac452c23d8085b32366688331a97fe1b7fd9",
+    "development_scores": [
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.6161565184593201,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167,
+      0.5066908597946167
+    ],
+    "training_seconds": 146.19411219996982,
+    "preparation_seconds": 1.2515129999956116,
+    "map_normalization_seconds": 1.730642699985765,
+    "serialization_seconds": 0.17113519998383708,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 147,
+        "seconds": 16.4355254000111,
+        "hard": 8.89969930194673,
+        "penalty": 0.0,
+        "autoencoder": 0.8304479341117703,
+        "student_autoencoder": 0.01669040542304972,
+        "total": 9.746837628941957
+      },
+      {
+        "epoch": 2,
+        "steps": 294,
+        "seconds": 16.13834730000235,
+        "hard": 5.745411314931856,
+        "penalty": 0.0,
+        "autoencoder": 0.610115299216744,
+        "student_autoencoder": 0.03944500044089596,
+        "total": 6.3949715912747545
+      },
+      {
+        "epoch": 3,
+        "steps": 441,
+        "seconds": 16.183457399980398,
+        "hard": 4.643071067576506,
+        "penalty": 0.0,
+        "autoencoder": 0.45921140037426333,
+        "student_autoencoder": 0.04358678371930609,
+        "total": 5.145869248578338
+      },
+      {
+        "epoch": 4,
+        "steps": 588,
+        "seconds": 16.20798459998332,
+        "hard": 3.9760259819679518,
+        "penalty": 0.0,
+        "autoencoder": 0.4025449395990696,
+        "student_autoencoder": 0.04298465408790274,
+        "total": 4.421555574248437
+      },
+      {
+        "epoch": 5,
+        "steps": 735,
+        "seconds": 16.28983639998478,
+        "hard": 3.5122255192321985,
+        "penalty": 0.0,
+        "autoencoder": 0.35348299368709124,
+        "student_autoencoder": 0.04810003371161668,
+        "total": 3.913808538800194
+      },
+      {
+        "epoch": 6,
+        "steps": 882,
+        "seconds": 16.223100000002887,
+        "hard": 3.1584231593981893,
+        "penalty": 0.0,
+        "autoencoder": 0.30679718450624116,
+        "student_autoencoder": 0.04361136426173505,
+        "total": 3.508831705365862
+      },
+      {
+        "epoch": 7,
+        "steps": 1029,
+        "seconds": 16.220871800003806,
+        "hard": 2.937907483302006,
+        "penalty": 0.0,
+        "autoencoder": 0.2892737041930763,
+        "student_autoencoder": 0.045182060196894365,
+        "total": 3.272363236161316
+      },
+      {
+        "epoch": 8,
+        "steps": 1176,
+        "seconds": 16.27676439998322,
+        "hard": 2.7170020544610054,
+        "penalty": 0.0,
+        "autoencoder": 0.2701641400249637,
+        "student_autoencoder": 0.04235333448820779,
+        "total": 3.0295195287587693
+      },
+      {
+        "epoch": 9,
+        "steps": 1323,
+        "seconds": 16.218224900017958,
+        "hard": 2.577233444265768,
+        "penalty": 0.0,
+        "autoencoder": 0.25925203559755466,
+        "student_autoencoder": 0.04354771077126062,
+        "total": 2.880033181638134
+      }
+    ],
+    "resources": {
+      "seconds": 149.8338718000159,
+      "cpu_initial_rss_bytes": 1261391872,
+      "cpu_peak_rss_bytes": 1881169920,
+      "cpu_peak_increment_bytes": 619778048,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 329412096,
+      "peak_gpu_reserved_bytes": 440401920
+    },
+    "map_quantiles": [
+      [
+        0.32809463143348694,
+        0.4000188112258911
+      ],
+      [
+        0.04300509765744209,
+        0.10654941201210022
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T03:10:03.264865+00:00"
+  },
+  "training_seconds": 146.19411219996982,
+  "calibration_seconds": 1.6357449000061024,
+  "inference_seconds": 3.9889948000200093,
+  "native_metrics_bootstrap_seconds": 23.055721099983202,
+  "latency_seconds": 10.024354499997571,
+  "evaluation_seconds": 37.06907040000078,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.498349993606098,
+      "p95_ms": 3.936789996805601
+    },
+    "host_to_device": {
+      "p50_ms": 0.31614999170415103,
+      "p95_ms": 0.4222499832394532
+    },
+    "model": {
+      "p50_ms": 21.28524999716319,
+      "p95_ms": 25.6529750113259
+    },
+    "postprocessing": {
+      "p50_ms": 3.38914999156259,
+      "p95_ms": 4.236185003537685
+    },
+    "end_to_end": {
+      "p50_ms": 28.674249988398515,
+      "p95_ms": 33.16807999071898
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 46.47830000612885,
+    "decode_inclusive_p95_ms": 49.474329997610766,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 188743680,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "64",
+      "utilization.gpu": "43",
+      "utilization.memory": "8",
+      "power.draw": "51.67",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "2550",
+      "memory.used": "285"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 329412096,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-bottle-s2026-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "2d3324e41ba57b3663571c6d092700140a58d604d7dfd43f28f0283f63a43eb5"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-bottle-s2026-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-bottle-s2026-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-images.csv",
+  "test_source_sha256": "df2cae02d0aa3a2dc2428b0f41a249ccd160fefcc5cbec7370486cb4211af643",
+  "per_defect": [
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_large",
+      "auroc": 1.0,
+      "ap": 1.0000000000000002,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          0,
+          20
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "broken_small",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          0,
+          22
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2026,
+      "defect": "contamination",
+      "auroc": 0.9047619047619048,
+      "ap": 0.9070847851335657,
+      "recall": 0.8095238095238095,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.8947368421052632,
+      "confusion_matrix": [
+        [
+          20,
+          0
+        ],
+        [
+          4,
+          17
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T03:10:42.215060+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-bottle-s2026-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "2d3324e41ba57b3663571c6d092700140a58d604d7dfd43f28f0283f63a43eb5"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-history.csv",
+      "bytes": 1022,
+      "sha256": "28cbea129bae00b5c36e5f729dfaba84a910bccd79e80012d2a1e8002266324c"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-calibration-scores.csv",
+      "bytes": 1406,
+      "sha256": "55539c82450cf186351a804af78c2f2c375a719147f7323889ba5f15dfcda53b"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-calibration.json",
+      "bytes": 4067,
+      "sha256": "4fefab706291278f440d705723656bedfa8670f84646ec9d958c1dbad52d0881"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-bottle-s2026-a01-images.csv",
+      "bytes": 13428,
+      "sha256": "a3252ec3762ededf84992b2261e1078834e075a75fe4aebe21923d12b9d3e850"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/raw_branch_maps.npy",
+      "bytes": 43516032,
+      "sha256": "b8861c70589c6ec4bddeececa328e1037db9cef0bba3e912595eb4991d6c6e95"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/selected_maps.npy",
+      "bytes": 21758080,
+      "sha256": "e9248b0588a398569d3a990814fb467b61f5305567b64189481fab0330ecc59a"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/bootstrap_vectors.npz",
+      "bytes": 62634,
+      "sha256": "46692d219a693491237c6c6c3ae9ff56765ae611e7298bf9fc5ceae68ce7100a"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/native_image_histograms.npz",
+      "bytes": 675503,
+      "sha256": "e28e464145e4a9adb8412ba791a607277f23ca47d2d65f577af9e0f56b66eec2"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/latency_ms.csv",
+      "bytes": 19150,
+      "sha256": "8bd30b1e010a8bf742cd2b31f85adf2e6dd248a232831a79bbf7b00859cb0d19"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-bottle-s2026-a01/trained.json",
+      "bytes": 5260,
+      "sha256": "18951e95678a902b300270d3be23b18b56ad7ffc3c7d4fb2ebee38fd8e247e72"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 193.84501809999347,
+    "cpu_initial_rss_bytes": 706105344,
+    "cpu_peak_rss_bytes": 3516747776,
+    "cpu_peak_increment_bytes": 2810642432,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 188743680
+  },
+  "wall_seconds": 194.37942820001626,
+  "disk_free_bytes": 538705321984,
+  "completed_at_utc": "2026-11-14T03:10:42.572525+00:00"
+}

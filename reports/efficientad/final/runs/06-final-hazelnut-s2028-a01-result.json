@@ -1,0 +1,705 @@
+{
+  "identity": {
+    "category": "hazelnut",
+    "seed": 2028,
+    "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+      "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+    },
+    "epochs": 9,
+    "score": "local_max",
+    "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+  },
+  "experiment_id": "06-final-hazelnut-s2028-a01",
+  "category": "hazelnut",
+  "seed": 2028,
+  "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "image_auroc": 0.8292857142857143,
+  "image_ap": 0.9252956170537436,
+  "recall": 0.7428571428571429,
+  "fpr": 0.05,
+  "precision": 0.9629629629629629,
+  "f1": 0.8387096774193549,
+  "confusion_matrix": [
+    [
+      38,
+      2
+    ],
+    [
+      18,
+      52
+    ]
+  ],
+  "pixel_auroc": 0.9200011696755445,
+  "pixel_ap": 0.4937583007699902,
+  "au_pro": 0.889672795308018,
+  "positive_pixels": 2462314,
+  "negative_pixels": 112881046,
+  "regions": 136,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7485554899645808,
+        0.9031486076319236
+      ],
+      "image_ap": [
+        0.8801951659959788,
+        0.9610991004603605
+      ],
+      "recall": [
+        0.6388586956521739,
+        0.843760146103896
+      ],
+      "fpr": [
+        0.0,
+        0.12506648936170175
+      ],
+      "precision": [
+        0.9069438350153576,
+        1.0
+      ],
+      "f1": [
+        0.7646722047597666,
+        0.9032258064516129
+      ],
+      "pixel_auroc": [
+        0.888520383679731,
+        0.957994331905371
+      ],
+      "pixel_ap": [
+        0.44580415368506143,
+        0.5609792647263646
+      ],
+      "au_pro": [
+        0.8368630735816934,
+        0.9295388617946545
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 monotone arctangent bins from calibration center/IQR; primary native metrics exact"
+  },
+  "pixel_confusion_matrix": [
+    [
+      111478581,
+      1402465
+    ],
+    [
+      952210,
+      1510104
+    ]
+  ],
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9200011521825247,
+    "pixel_ap": 0.49307874552244285,
+    "au_pro": 0.8896731157041514
+  },
+  "tn": 38,
+  "fp": 2,
+  "fn": 18,
+  "tp": 52,
+  "calibration": {
+    "threshold": 0.3614264130592346,
+    "nominal_fpr": 0.05,
+    "strict_greater": true,
+    "quantile_method": "higher",
+    "calibration_distribution": {
+      "n": 58,
+      "min": 0.24033716320991516,
+      "median": 0.30243411660194397,
+      "mean": 0.29755327362438727,
+      "std": 0.040911054928875056,
+      "q90": 0.33123135864734654,
+      "q95": 0.3607788011431694,
+      "max": 0.4532772898674011
+    },
+    "observed_calibration_fpr": 0.034482758620689655,
+    "exceedances": 2,
+    "calibration_exceedance_descriptive_cp95": [
+      0.004203647239867673,
+      0.11907731088039217
+    ],
+    "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+    "future_fpr_order_statistic_mean": 0.05084745762711865,
+    "future_fpr_order_statistic_95": [
+      0.010796478084294733,
+      0.11907731088039217
+    ],
+    "bootstrap_threshold_p025_p50_p975": [
+      0.32933926582336426,
+      0.3614264130592346,
+      0.4532772898674011
+    ],
+    "bootstrap_replicates": 1000,
+    "leave_one_out_threshold_range": [
+      0.3606645166873932,
+      0.3614264130592346
+    ],
+    "sensitivity_diagnostic_only": {
+      "0.01": 0.4532772898674011,
+      "0.05": 0.3614264130592346,
+      "0.1": 0.33564624190330505
+    },
+    "development_exceedance_fraction": 0.017241379310344827,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    },
+    "unique_calibration_scores": 58,
+    "largest_tie_count": 1,
+    "ties_at_threshold": 1,
+    "continuous_order_statistic_applicable": true,
+    "source_sha256": "89c081fbcf866167ae4ac674cdb5ce1029b9f6bc17fa9b6917d6738629fdd928",
+    "paths": [
+      "hazelnut/train/good/019.png",
+      "hazelnut/train/good/033.png",
+      "hazelnut/train/good/035.png",
+      "hazelnut/train/good/041.png",
+      "hazelnut/train/good/055.png",
+      "hazelnut/train/good/065.png",
+      "hazelnut/train/good/071.png",
+      "hazelnut/train/good/075.png",
+      "hazelnut/train/good/079.png",
+      "hazelnut/train/good/099.png",
+      "hazelnut/train/good/101.png",
+      "hazelnut/train/good/103.png",
+      "hazelnut/train/good/106.png",
+      "hazelnut/train/good/108.png",
+      "hazelnut/train/good/109.png",
+      "hazelnut/train/good/128.png",
+      "hazelnut/train/good/131.png",
+      "hazelnut/train/good/138.png",
+      "hazelnut/train/good/146.png",
+      "hazelnut/train/good/155.png",
+      "hazelnut/train/good/160.png",
+      "hazelnut/train/good/163.png",
+      "hazelnut/train/good/183.png",
+      "hazelnut/train/good/187.png",
+      "hazelnut/train/good/193.png",
+      "hazelnut/train/good/197.png",
+      "hazelnut/train/good/214.png",
+      "hazelnut/train/good/228.png",
+      "hazelnut/train/good/231.png",
+      "hazelnut/train/good/240.png",
+      "hazelnut/train/good/250.png",
+      "hazelnut/train/good/266.png",
+      "hazelnut/train/good/267.png",
+      "hazelnut/train/good/269.png",
+      "hazelnut/train/good/272.png",
+      "hazelnut/train/good/274.png",
+      "hazelnut/train/good/282.png",
+      "hazelnut/train/good/293.png",
+      "hazelnut/train/good/294.png",
+      "hazelnut/train/good/297.png",
+      "hazelnut/train/good/304.png",
+      "hazelnut/train/good/310.png",
+      "hazelnut/train/good/324.png",
+      "hazelnut/train/good/328.png",
+      "hazelnut/train/good/333.png",
+      "hazelnut/train/good/338.png",
+      "hazelnut/train/good/342.png",
+      "hazelnut/train/good/348.png",
+      "hazelnut/train/good/350.png",
+      "hazelnut/train/good/351.png",
+      "hazelnut/train/good/352.png",
+      "hazelnut/train/good/357.png",
+      "hazelnut/train/good/367.png",
+      "hazelnut/train/good/368.png",
+      "hazelnut/train/good/369.png",
+      "hazelnut/train/good/375.png",
+      "hazelnut/train/good/380.png",
+      "hazelnut/train/good/381.png"
+    ],
+    "scores": [
+      0.3099869191646576,
+      0.32933926582336426,
+      0.3089906871318817,
+      0.290108859539032,
+      0.2899421453475952,
+      0.2456335723400116,
+      0.252316415309906,
+      0.24079641699790955,
+      0.26199638843536377,
+      0.30780351161956787,
+      0.25069674849510193,
+      0.2681381106376648,
+      0.2487349808216095,
+      0.2833074629306793,
+      0.4187423884868622,
+      0.24033716320991516,
+      0.2540769875049591,
+      0.2488989681005478,
+      0.24723756313323975,
+      0.24871312081813812,
+      0.3033543825149536,
+      0.4532772898674011,
+      0.27325376868247986,
+      0.30837664008140564,
+      0.30862417817115784,
+      0.2741645574569702,
+      0.3110547959804535,
+      0.33564624190330505,
+      0.3015138506889343,
+      0.2953971028327942,
+      0.3124033808708191,
+      0.32220008969306946,
+      0.3166615664958954,
+      0.31691423058509827,
+      0.32335513830184937,
+      0.3152458071708679,
+      0.29801347851753235,
+      0.25801533460617065,
+      0.2541036903858185,
+      0.2719035744667053,
+      0.25186023116111755,
+      0.25985491275787354,
+      0.3606645166873932,
+      0.35246872901916504,
+      0.3614264130592346,
+      0.32647618651390076,
+      0.30604982376098633,
+      0.31706756353378296,
+      0.2882137596607208,
+      0.30372828245162964,
+      0.31238460540771484,
+      0.2981707751750946,
+      0.3002091348171234,
+      0.3286517560482025,
+      0.3098812699317932,
+      0.30719682574272156,
+      0.2562127113342285,
+      0.31829559803009033
+    ],
+    "pixel_threshold": 0.09404023736715317,
+    "pixel_quantile": 0.995,
+    "histogram_center": -0.06473823636770248,
+    "histogram_scale": 0.04322752356529236
+  },
+  "training": {
+    "identity": {
+      "category": "hazelnut",
+      "seed": 2028,
+      "freeze_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+      "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+      "partition_sha256": {
+        "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+        "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+        "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+        "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+      },
+      "epochs": 9,
+      "score": "local_max",
+      "evaluator_sha256": "5719e177c8d6bd14f218b9258b9eda425c893265530777c9b564d4dd76a50c79"
+    },
+    "checkpoint": {
+      "path": "checkpoints/efficientad/final/06-final-hazelnut-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "808bc4b088228f66045bc760f47f116238fae18538f54465aedcd0c4f611b67d"
+    },
+    "fit_n": 275,
+    "fit_source_sha256": "70638be9e11d5d55800586d095fe6cda37dadc3f32018ab2c3e30bdc140d1316",
+    "development_n": 58,
+    "development_source_sha256": "e1a8e43605d059869ce3f9ad22f315f5606576ced088f30a814174df976647d6",
+    "development_scores": [
+      0.30278241634368896,
+      0.28334927558898926,
+      0.29607558250427246,
+      0.31691768765449524,
+      0.330491304397583,
+      0.3113648593425751,
+      0.323754221200943,
+      0.2940753400325775,
+      0.3085884153842926,
+      0.25775420665740967,
+      0.26133230328559875,
+      0.25488168001174927,
+      0.27939850091934204,
+      0.26012951135635376,
+      0.26938003301620483,
+      0.25945332646369934,
+      0.2657647430896759,
+      0.23960910737514496,
+      0.24907426536083221,
+      0.26173362135887146,
+      0.2637404799461365,
+      0.25380462408065796,
+      0.3060905635356903,
+      0.4606028199195862,
+      0.29904666543006897,
+      0.3128790855407715,
+      0.27836987376213074,
+      0.30417364835739136,
+      0.3081839978694916,
+      0.31059613823890686,
+      0.31837522983551025,
+      0.3299972414970398,
+      0.32078710198402405,
+      0.31385689973831177,
+      0.29842063784599304,
+      0.27363598346710205,
+      0.3168467879295349,
+      0.2787533700466156,
+      0.3354535400867462,
+      0.3155108690261841,
+      0.2810687720775604,
+      0.3081245422363281,
+      0.31191447377204895,
+      0.28265878558158875,
+      0.2836249768733978,
+      0.2997622489929199,
+      0.2938843071460724,
+      0.23842793703079224,
+      0.2547542452812195,
+      0.26436835527420044,
+      0.3379489481449127,
+      0.2740879952907562,
+      0.34660983085632324,
+      0.320162832736969,
+      0.2819226384162903,
+      0.29776230454444885,
+      0.33204883337020874,
+      0.2856995165348053
+    ],
+    "training_seconds": 309.81748239998706,
+    "preparation_seconds": 0.004727999999886379,
+    "map_normalization_seconds": 3.8068052000016905,
+    "serialization_seconds": 0.2994311999937054,
+    "history": [
+      {
+        "epoch": 1,
+        "steps": 275,
+        "seconds": 32.87044960001367,
+        "hard": 13.937671293778854,
+        "penalty": 0.0,
+        "autoencoder": 0.7687539492953908,
+        "student_autoencoder": 0.03561719320037148,
+        "total": 14.742042423595082
+      },
+      {
+        "epoch": 2,
+        "steps": 550,
+        "seconds": 33.29736470000353,
+        "hard": 10.91877183047208,
+        "penalty": 0.0,
+        "autoencoder": 0.4971746216037057,
+        "student_autoencoder": 0.05279134942726656,
+        "total": 11.468737786032937
+      },
+      {
+        "epoch": 3,
+        "steps": 825,
+        "seconds": 33.86513280001236,
+        "hard": 9.987325212305242,
+        "penalty": 0.0,
+        "autoencoder": 0.45431905854832044,
+        "student_autoencoder": 0.05223559273914857,
+        "total": 10.493879873102362
+      },
+      {
+        "epoch": 4,
+        "steps": 1100,
+        "seconds": 35.64269000000786,
+        "hard": 9.350757836428556,
+        "penalty": 0.0,
+        "autoencoder": 0.43132014133713464,
+        "student_autoencoder": 0.04927683218636296,
+        "total": 9.831354803605514
+      },
+      {
+        "epoch": 5,
+        "steps": 1375,
+        "seconds": 35.197188899997855,
+        "hard": 8.759393131949684,
+        "penalty": 0.0,
+        "autoencoder": 0.4194931208003651,
+        "student_autoencoder": 0.04806986333294348,
+        "total": 9.226956129941073
+      },
+      {
+        "epoch": 6,
+        "steps": 1650,
+        "seconds": 34.527077499980805,
+        "hard": 8.177845313332298,
+        "penalty": 0.0,
+        "autoencoder": 0.4103327448801561,
+        "student_autoencoder": 0.0470255758003755,
+        "total": 8.635203638943759
+      },
+      {
+        "epoch": 7,
+        "steps": 1925,
+        "seconds": 34.41413319998537,
+        "hard": 7.626364024769176,
+        "penalty": 0.0,
+        "autoencoder": 0.4072690465233543,
+        "student_autoencoder": 0.0472598305886442,
+        "total": 8.080892894051292
+      },
+      {
+        "epoch": 8,
+        "steps": 2200,
+        "seconds": 36.1236968000012,
+        "hard": 7.1226198473843665,
+        "penalty": 0.0,
+        "autoencoder": 0.40566851475022053,
+        "student_autoencoder": 0.04530614614486694,
+        "total": 7.573594486930154
+      },
+      {
+        "epoch": 9,
+        "steps": 2475,
+        "seconds": 33.879748899984406,
+        "hard": 6.636572504910556,
+        "penalty": 0.0,
+        "autoencoder": 0.4019088985703208,
+        "student_autoencoder": 0.04458742621947419,
+        "total": 7.08306882164695
+      }
+    ],
+    "resources": {
+      "seconds": 317.28313160000835,
+      "cpu_initial_rss_bytes": 1055330304,
+      "cpu_peak_rss_bytes": 2016587776,
+      "cpu_peak_increment_bytes": 961257472,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 331683840,
+      "peak_gpu_reserved_bytes": 492830720
+    },
+    "map_quantiles": [
+      [
+        0.7378590703010559,
+        1.0131504535675049
+      ],
+      [
+        0.08433055132627487,
+        0.3260818123817444
+      ]
+    ],
+    "trained_at_utc": "2026-11-14T05:56:09.726958+00:00"
+  },
+  "training_seconds": 309.81748239998706,
+  "calibration_seconds": 4.13214760000119,
+  "inference_seconds": 7.739518100017449,
+  "native_metrics_bootstrap_seconds": 40.96877190002124,
+  "latency_seconds": 11.483868299983442,
+  "evaluation_seconds": 60.19215830002213,
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 4.310999982408248,
+      "p95_ms": 4.704630015476139
+    },
+    "host_to_device": {
+      "p50_ms": 0.32774999272078276,
+      "p95_ms": 0.44490501022664825
+    },
+    "model": {
+      "p50_ms": 21.782349998829886,
+      "p95_ms": 25.64910001528915
+    },
+    "postprocessing": {
+      "p50_ms": 3.7904499913565814,
+      "p95_ms": 5.026980012189596
+    },
+    "end_to_end": {
+      "p50_ms": 30.31810000538826,
+      "p95_ms": 34.431155017227866
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "decode_iterations": 50,
+    "decode_inclusive_p50_ms": 65.75724999129307,
+    "decode_inclusive_p95_ms": 70.60313499969197,
+    "precision": "deterministic FP32",
+    "batch_size": 1,
+    "scope": "decoded RGB to native CPU signed map; disk decode excluded except separate series; GPU model is full raw local/global forward",
+    "peak_inference_allocated_bytes": 115085312,
+    "peak_inference_reserved_bytes": 197132288,
+    "power_context": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "pstate": "P0",
+      "temperature.gpu": "67",
+      "utilization.gpu": "36",
+      "utilization.memory": "5",
+      "power.draw": "33.47",
+      "power.limit": "[N/A]",
+      "clocks.current.sm": "1875",
+      "memory.used": "293"
+    }
+  },
+  "evaluation_peak_allocated_bytes": 331683840,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/final/06-final-hazelnut-s2028-a01/model.pt",
+    "bytes": 32249772,
+    "sha256": "808bc4b088228f66045bc760f47f116238fae18538f54465aedcd0c4f611b67d"
+  },
+  "local_maps": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/selected_maps.npy",
+  "raw_branch_maps": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/raw_branch_maps.npy",
+  "images_csv": "reports/efficientad/final/runs/06-final-hazelnut-s2028-a01-images.csv",
+  "test_source_sha256": "b0b0cf559fce2738225c63fc80aa41776bbda7aa00753efbb8671ade3e1a02d0",
+  "per_defect": [
+    {
+      "category": "hazelnut",
+      "seed": 2028,
+      "defect": "crack",
+      "auroc": 0.8500000000000001,
+      "ap": 0.8867826412270857,
+      "recall": 0.8333333333333334,
+      "fpr": 0.05,
+      "precision": 0.8823529411764706,
+      "f1": 0.8571428571428571,
+      "confusion_matrix": [
+        [
+          38,
+          2
+        ],
+        [
+          3,
+          15
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2028,
+      "defect": "cut",
+      "auroc": 0.5397058823529413,
+      "ap": 0.4824520328789877,
+      "recall": 0.23529411764705882,
+      "fpr": 0.05,
+      "precision": 0.6666666666666666,
+      "f1": 0.3478260869565218,
+      "confusion_matrix": [
+        [
+          38,
+          2
+        ],
+        [
+          13,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2028,
+      "defect": "hole",
+      "auroc": 0.9208333333333333,
+      "ap": 0.9322612085769981,
+      "recall": 0.8888888888888888,
+      "fpr": 0.05,
+      "precision": 0.8888888888888888,
+      "f1": 0.8888888888888888,
+      "confusion_matrix": [
+        [
+          38,
+          2
+        ],
+        [
+          2,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2028,
+      "defect": "print",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.05,
+      "precision": 0.8947368421052632,
+      "f1": 0.9444444444444444,
+      "confusion_matrix": [
+        [
+          38,
+          2
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    }
+  ],
+  "evaluated_at_utc": "2026-11-14T05:57:14.317343+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/efficientad/final/06-final-hazelnut-s2028-a01/model.pt",
+      "bytes": 32249772,
+      "sha256": "808bc4b088228f66045bc760f47f116238fae18538f54465aedcd0c4f611b67d"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2028-a01-history.csv",
+      "bytes": 1027,
+      "sha256": "77fc37d3bfa552b2131042461f1d216d9fa70c1472e8584671cb2bd713be0440"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2028-a01-calibration-scores.csv",
+      "bytes": 2792,
+      "sha256": "03168ec33ba2a7d89302737f363b121dbcfeee78fcc877a0ec3c58ad56a24f70"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2028-a01-calibration.json",
+      "bytes": 5661,
+      "sha256": "2a9efd3dcfe941f1667ace2cafd93e78fa8c07607777d4be7fd59ec8f99d4c33"
+    },
+    {
+      "path": "reports/efficientad/final/runs/06-final-hazelnut-s2028-a01-images.csv",
+      "bytes": 15627,
+      "sha256": "a63c0c868484d4770f038e5aa1ca0cd0c024368363af20c44aaf7104de99b1f5"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/raw_branch_maps.npy",
+      "bytes": 57671808,
+      "sha256": "79d25d145b06555a9a590edd677856878e51c87ce78b467e1fe70c991a02dbe5"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/selected_maps.npy",
+      "bytes": 28835968,
+      "sha256": "366d1e17274ecafe2f837543ca9d312d0f02398e8c8231e8c3a2c964c6abede6"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/bootstrap_vectors.npz",
+      "bytes": 90703,
+      "sha256": "47c9527d2fa9ef895396f4f735474e73434d149ad7a095013dacdcd55da3507c"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/native_image_histograms.npz",
+      "bytes": 814466,
+      "sha256": "9a51cc883a38ba93ce1d56db7843e49f50de7c597e9ee917f28e96b7bbdd6ccd"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/latency_ms.csv",
+      "bytes": 19142,
+      "sha256": "1274fd5937aa457c8a93df1b4a00650ee2133c7f7dc571142e8aa93126e2546b"
+    },
+    {
+      "path": "outputs/efficientad/final/06-final-hazelnut-s2028-a01/trained.json",
+      "bytes": 5966,
+      "sha256": "dbf9b3f83b412b09f0f5db85f1bec9651e01b88abbc6c8c35b0dcc877b140a17"
+    }
+  ],
+  "status": "complete",
+  "resources": {
+    "seconds": 393.1312997000059,
+    "cpu_initial_rss_bytes": 705380352,
+    "cpu_peak_rss_bytes": 4794937344,
+    "cpu_peak_increment_bytes": 4089556992,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 115085312,
+    "peak_gpu_reserved_bytes": 197132288
+  },
+  "wall_seconds": 393.68966589999036,
+  "disk_free_bytes": 531491729408,
+  "completed_at_utc": "2026-11-14T05:57:14.710417+00:00"
+}

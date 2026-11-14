@@ -1,0 +1,148 @@
+{
+  "status": "all final evaluations complete; publication validation separate",
+  "categories": 15,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "pilot_runs": 1,
+  "development_runs": 4,
+  "macro": {
+    "image_auroc": {
+      "mean": 0.8162975357595923,
+      "seed_std": 0.011073885113182119,
+      "image_bootstrap_95ci": [
+        0.7974442492966791,
+        0.833745114472147
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    },
+    "image_ap": {
+      "mean": 0.9185925365334353,
+      "seed_std": 0.005765108353230445,
+      "image_bootstrap_95ci": [
+        0.906335351869489,
+        0.9312281457885065
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    },
+    "pixel_auroc": {
+      "mean": 0.9198873556062858,
+      "seed_std": 0.0016305837367555603,
+      "image_bootstrap_95ci": [
+        0.9111060189923964,
+        0.9286175006797192
+      ],
+      "bootstrap_target": "4096-bin signed arctangent pixel approximation"
+    },
+    "pixel_ap": {
+      "mean": 0.49847562361533315,
+      "seed_std": 0.007129902354773322,
+      "image_bootstrap_95ci": [
+        0.4787854046257724,
+        0.5174978542595174
+      ],
+      "bootstrap_target": "4096-bin signed arctangent pixel approximation"
+    },
+    "au_pro": {
+      "mean": 0.8183733888396848,
+      "seed_std": 0.005692284697028456,
+      "image_bootstrap_95ci": [
+        0.8057682937961282,
+        0.8314565445798301
+      ],
+      "bootstrap_target": "4096-bin signed arctangent pixel approximation"
+    },
+    "recall": {
+      "mean": 0.6656391828020274,
+      "seed_std": 0.010392390001349642,
+      "image_bootstrap_95ci": [
+        0.6434998602263353,
+        0.688881528652918
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    },
+    "fpr": {
+      "mean": 0.22008085875888417,
+      "seed_std": 0.010737635849673058,
+      "image_bootstrap_95ci": [
+        0.19489467161870913,
+        0.24749825547255624
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    },
+    "precision": {
+      "mean": 0.8859386593194322,
+      "seed_std": 0.0056987786150543935,
+      "image_bootstrap_95ci": [
+        0.8695880397131782,
+        0.9016992248397897
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    },
+    "f1": {
+      "mean": 0.7400843961144886,
+      "seed_std": 0.009945404379066668,
+      "image_bootstrap_95ci": [
+        0.719271503758892,
+        0.758412751255259
+      ],
+      "bootstrap_target": "exact image metric, fitted models/thresholds fixed"
+    }
+  },
+  "frozen_configuration_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "total_training_seconds": 8575.551280599611,
+  "total_optimizer_steps": 68877,
+  "min_optimizer_steps_per_model": 378,
+  "max_optimizer_steps_per_model": 2475,
+  "total_calibration_seconds": 110.50739029998658,
+  "total_evaluation_seconds": 2814.0643351002363,
+  "total_preparation_seconds": 23.59011809990625,
+  "total_map_normalization_seconds": 105.1905808999727,
+  "total_checkpoint_serialization_verification_seconds": 9.24421090001124,
+  "total_run_pipeline_seconds": 12045.302067900164,
+  "total_native_metrics_bootstrap_seconds": 1966.0687240000116,
+  "mean_model_p50_ms": 23.066017779314684,
+  "mean_model_p95_ms": 27.60057944561898,
+  "mean_end_to_end_p50_ms": 31.662801108258364,
+  "mean_end_to_end_p95_ms": 36.494015223644155,
+  "mean_decode_inclusive_p50_ms": 61.16039222138675,
+  "mean_decode_inclusive_p95_ms": 66.30826133267773,
+  "peak_training_gpu_allocated_gib": 0.30890464782714844,
+  "peak_training_gpu_reserved_gib": 0.458984375,
+  "peak_inference_allocated_gib": 0.10718154907226562,
+  "peak_inference_reserved_gib": 0.189453125,
+  "peak_evaluation_cpu_rss_gib": 5.803855895996094,
+  "max_checkpoint_bytes": 32249772,
+  "pixel_bootstrap_quantization_bias": {
+    "pixel_auroc": {
+      "mean_binned_minus_exact": -1.0938064436909971e-07,
+      "maximum_absolute_run_difference": 1.9769350837473e-06
+    },
+    "pixel_ap": {
+      "mean_binned_minus_exact": -0.0005322855944691275,
+      "maximum_absolute_run_difference": 0.002383250496553191
+    },
+    "au_pro": {
+      "mean_binned_minus_exact": -4.074715299050445e-07,
+      "maximum_absolute_run_difference": 5.311385895101495e-06
+    }
+  },
+  "calibration_runs_with_ties": 6,
+  "calibration_fpr_mean": 0.02736786473053894,
+  "test_fpr_macro": 0.22008085875888417,
+  "image_runs_with_no_alarms": 0,
+  "fn_with_pixel_overlap": 1035,
+  "configuration_changed_after_test": false,
+  "test_evaluations_per_category_seed": 1,
+  "uncertainty_limit": "Conditional image bootstrap uses same draws across seeds/models; does not include fitting/calibration uncertainty. Pixel intervals approximate, primary point metrics exact.",
+  "latency_scope": "Mean of 45 per-run percentiles, not pooled population percentiles; full two-map eager GPU forward, selected score local only; main E2E excludes disk decode",
+  "limitations": [
+    "Reduced budget, no external-image penalty, third-party teacher provenance/license uncertainty",
+    "Local-only selected score excludes global map despite AE training",
+    "Fit-background proxy selection is optimistic; only two development categories and one seed",
+    "Normal calibration ties and small samples limit nominal FPR guarantees"
+  ]
+}
