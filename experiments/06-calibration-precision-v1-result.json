@@ -1,0 +1,73 @@
+{
+  "experiment_id": "06-calibration-precision-v1-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "bottle",
+    "carpet"
+  ],
+  "hypothesis": "Exact score round-trip corrects false exceedances from decimal float32 CSV parsing; diagnose clean-score ties without selecting a new model",
+  "preprocessing": {},
+  "hyperparameters": {
+    "retraining": false,
+    "selection_changed": false,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    }
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8"
+  },
+  "training": {
+    "source_sha256": "65af332799e50da63bcbe232958f012510fbf9bf90a2c3ef30c2091289939c74",
+    "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974"
+  },
+  "metrics": {
+    "status": "corrected",
+    "elapsed_seconds": 9.824712800007546,
+    "selection_changed": false,
+    "retraining": false,
+    "original_reports_preserved": true,
+    "corrected_reports": [
+      "calibration-bottle-corrected.json",
+      "calibration-carpet-corrected.json"
+    ],
+    "findings": [
+      {
+        "category": "bottle",
+        "original_dev_exceedance": 1.0,
+        "corrected_dev_exceedance": 0.03225806451612903,
+        "unique_calibration_scores": 1
+      },
+      {
+        "category": "carpet",
+        "original_dev_exceedance": 0.047619047619047616,
+        "corrected_dev_exceedance": 0.047619047619047616,
+        "unique_calibration_scores": 42
+      }
+    ]
+  },
+  "calibration": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "paths": {
+    "checkpoint": null,
+    "results": null
+  },
+  "interpretation": "Score serialization repaired. Strong ties qualify uncertainty, not evidence of feature collapse or reliable future FPR.",
+  "decision": "Use corrected calibration reports; retain selected configuration and original threshold policy",
+  "status": "completed",
+  "recorded_at": "2026-11-14T02:43:36.343237+00:00",
+  "config_sha256": "b92d72e1316c9188a07f0c55dd7f62156bd8293971b123ab94a8d7c9a31cadad"
+}

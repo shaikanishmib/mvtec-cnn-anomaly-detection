@@ -1,0 +1,469 @@
+{
+  "experiment_id": "06-dev-bottle-e9-seed2026-v1",
+  "category": "bottle",
+  "epochs": 9,
+  "seed": 2026,
+  "fit_n": 147,
+  "development_n": 31,
+  "steps": 1323,
+  "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+  "finite": true,
+  "probe_before": {
+    "hard": 17.999706745147705,
+    "penalty": 0.0,
+    "autoencoder": 1.0037674754858017,
+    "student_autoencoder": 0.005622246069833636,
+    "total": 19.00909662246704
+  },
+  "probe_after": {
+    "hard": 2.399083197116852,
+    "penalty": 0.0,
+    "autoencoder": 0.2300088256597519,
+    "student_autoencoder": 0.02255857503041625,
+    "total": 2.651650607585907
+  },
+  "development_probe_losses": {
+    "hard": 2.379307448863983,
+    "penalty": 0.0,
+    "autoencoder": 0.22196530550718307,
+    "student_autoencoder": 0.021848079282790422,
+    "total": 2.6231207847595215
+  },
+  "training_seconds": 185.59732059994712,
+  "seconds_per_image_epoch": 0.14028520075581793,
+  "preparation_seconds": 0.14949420001357794,
+  "normalization_seconds": 1.2852030999783892,
+  "normalization_reused": true,
+  "diagnostic_seconds": 33.75390949999564,
+  "serialization_validation_seconds": 0.6212063999846578,
+  "elapsed_seconds": 223.65214030002244,
+  "curves": [
+    {
+      "epoch": 1,
+      "steps": 147,
+      "seconds": 22.088452999974834,
+      "hard": 8.89969930194673,
+      "penalty": 0.0,
+      "autoencoder": 0.8304479341117703,
+      "student_autoencoder": 0.01669040542304972,
+      "total": 9.746837628941957,
+      "raw_local_dev_max_median": 2.999878406524658,
+      "raw_global_dev_max_median": 0.19089582562446594
+    },
+    {
+      "epoch": 2,
+      "steps": 294,
+      "seconds": 21.991226399986772,
+      "hard": 5.745411314931856,
+      "penalty": 0.0,
+      "autoencoder": 0.610115299216744,
+      "student_autoencoder": 0.03944500044089596,
+      "total": 6.3949715912747545,
+      "raw_local_dev_max_median": 2.145048141479492,
+      "raw_global_dev_max_median": 0.2037094533443451
+    },
+    {
+      "epoch": 3,
+      "steps": 441,
+      "seconds": 21.555171799991513,
+      "hard": 4.643071067576506,
+      "penalty": 0.0,
+      "autoencoder": 0.45921140037426333,
+      "student_autoencoder": 0.04358678371930609,
+      "total": 5.145869248578338,
+      "raw_local_dev_max_median": 1.621924877166748,
+      "raw_global_dev_max_median": 0.583248496055603
+    },
+    {
+      "epoch": 4,
+      "steps": 588,
+      "seconds": 22.021568700001808,
+      "hard": 3.9760259819679518,
+      "penalty": 0.0,
+      "autoencoder": 0.4025449395990696,
+      "student_autoencoder": 0.04298465408790274,
+      "total": 4.421555574248437,
+      "raw_local_dev_max_median": 1.2877426147460938,
+      "raw_global_dev_max_median": 0.4127868115901947
+    },
+    {
+      "epoch": 5,
+      "steps": 735,
+      "seconds": 21.99047399999108,
+      "hard": 3.5122255192321985,
+      "penalty": 0.0,
+      "autoencoder": 0.35348299368709124,
+      "student_autoencoder": 0.04810003371161668,
+      "total": 3.913808538800194,
+      "raw_local_dev_max_median": 1.0901738405227661,
+      "raw_global_dev_max_median": 0.47964662313461304
+    },
+    {
+      "epoch": 6,
+      "steps": 882,
+      "seconds": 22.625422900018748,
+      "hard": 3.1584231593981893,
+      "penalty": 0.0,
+      "autoencoder": 0.30679718450624116,
+      "student_autoencoder": 0.04361136426173505,
+      "total": 3.508831705365862,
+      "raw_local_dev_max_median": 0.9008660316467285,
+      "raw_global_dev_max_median": 0.4126056134700775
+    },
+    {
+      "epoch": 7,
+      "steps": 1029,
+      "seconds": 19.295121400005883,
+      "hard": 2.937907483302006,
+      "penalty": 0.0,
+      "autoencoder": 0.2892737041930763,
+      "student_autoencoder": 0.045182060196894365,
+      "total": 3.272363236161316,
+      "raw_local_dev_max_median": 0.8509105443954468,
+      "raw_global_dev_max_median": 0.4363545775413513
+    },
+    {
+      "epoch": 8,
+      "steps": 1176,
+      "seconds": 17.0455704999913,
+      "hard": 2.7170020544610054,
+      "penalty": 0.0,
+      "autoencoder": 0.2701641400249637,
+      "student_autoencoder": 0.04235333448820779,
+      "total": 3.0295195287587693,
+      "raw_local_dev_max_median": 0.792536735534668,
+      "raw_global_dev_max_median": 0.3142927587032318
+    },
+    {
+      "epoch": 9,
+      "steps": 1323,
+      "seconds": 16.984311899985187,
+      "hard": 2.577233444265768,
+      "penalty": 0.0,
+      "autoencoder": 0.25925203559755466,
+      "student_autoencoder": 0.04354771077126062,
+      "total": 2.880033181638134,
+      "raw_local_dev_max_median": 0.6925278902053833,
+      "raw_global_dev_max_median": 0.2972124218940735
+    }
+  ],
+  "telemetry": [
+    {
+      "epoch": 1,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "70",
+        "utilization.gpu": "55",
+        "utilization.memory": "9",
+        "power.draw": "28.08",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2550",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 44.25
+    },
+    {
+      "epoch": 2,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "73",
+        "utilization.gpu": "60",
+        "utilization.memory": "11",
+        "power.draw": "64.42",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2475",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 42.8125
+    },
+    {
+      "epoch": 3,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "75",
+        "utilization.gpu": "50",
+        "utilization.memory": "8",
+        "power.draw": "62.89",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2370",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 43.046875
+    },
+    {
+      "epoch": 4,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "78",
+        "utilization.gpu": "49",
+        "utilization.memory": "8",
+        "power.draw": "58.24",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2475",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 43.6875
+    },
+    {
+      "epoch": 5,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "78",
+        "utilization.gpu": "59",
+        "utilization.memory": "11",
+        "power.draw": "73.11",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2190",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 43.15625
+    },
+    {
+      "epoch": 6,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "85",
+        "utilization.gpu": "51",
+        "utilization.memory": "8",
+        "power.draw": "55.40",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2460",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 43.828125
+    },
+    {
+      "epoch": 7,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "83",
+        "utilization.gpu": "76",
+        "utilization.memory": "12",
+        "power.draw": "67.11",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2325",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 55.0
+    },
+    {
+      "epoch": 8,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "87",
+        "utilization.gpu": "74",
+        "utilization.memory": "11",
+        "power.draw": "76.72",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2520",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 62.8125
+    },
+    {
+      "epoch": 9,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "87",
+        "utilization.gpu": "78",
+        "utilization.memory": "12",
+        "power.draw": "65.21",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2415",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 62.28125
+    }
+  ],
+  "proxy": {
+    "combined_max": {
+      "auroc": 0.9986979166666666,
+      "ap": 0.9995748299319727,
+      "per_edit": {
+        "scratch": 0.99609375,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 1.158616542816162,
+        "block": 0.5124341249465942,
+        "color_patch": 63.877052307128906
+      }
+    },
+    "local_max": {
+      "auroc": 0.9986979166666666,
+      "ap": 0.9995748299319729,
+      "per_edit": {
+        "scratch": 0.99609375,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 1.7311241626739502,
+        "block": 0.9810462594032288,
+        "color_patch": 84.12477111816406
+      }
+    },
+    "global_max": {
+      "auroc": 0.9036458333333334,
+      "ap": 0.9734211269475554,
+      "per_edit": {
+        "scratch": 0.9140625,
+        "block": 0.796875,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.5484502911567688,
+        "block": 0.1460495889186859,
+        "color_patch": 43.6311149597168
+      }
+    },
+    "raw_combined_max": {
+      "auroc": 0.9986979166666666,
+      "ap": 0.9995748299319727,
+      "per_edit": {
+        "scratch": 0.99609375,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.8122267723083496,
+        "block": 0.37016230821609497,
+        "color_patch": 44.117881774902344
+      }
+    },
+    "combined_top1pct": {
+      "auroc": 1.0,
+      "ap": 1.0,
+      "per_edit": {
+        "scratch": 1.0,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.9583551287651062,
+        "block": 0.6093785166740417,
+        "color_patch": 43.960906982421875
+      }
+    }
+  },
+  "development_score_distributions": {
+    "combined_max": {
+      "n": 31,
+      "min": 0.3911200761795044,
+      "median": 0.39733293652534485,
+      "mean": 0.3978438675403595,
+      "std": 0.004550579469650984,
+      "q90": 0.4028993844985962,
+      "q95": 0.40381675958633423,
+      "max": 0.41069382429122925
+    },
+    "local_max": {
+      "n": 31,
+      "min": 0.5066908597946167,
+      "median": 0.5066908597946167,
+      "mean": 0.5102220177650452,
+      "std": 0.019340910017490387,
+      "q90": 0.5066908597946167,
+      "q95": 0.5066908597946167,
+      "max": 0.6161565184593201
+    },
+    "global_max": {
+      "n": 31,
+      "min": 0.38762152194976807,
+      "median": 0.40004727244377136,
+      "mean": 0.4010690450668335,
+      "std": 0.009101161733269691,
+      "q90": 0.41118013858795166,
+      "q95": 0.4130149185657501,
+      "max": 0.4267690181732178
+    },
+    "raw_combined_max": {
+      "n": 31,
+      "min": 0.4506186842918396,
+      "median": 0.45456662774086,
+      "mean": 0.45489126443862915,
+      "std": 0.002891636686399579,
+      "q90": 0.4581037759780884,
+      "q95": 0.4586867094039917,
+      "max": 0.46305668354034424
+    },
+    "combined_top1pct": {
+      "n": 31,
+      "min": 0.06305715441703796,
+      "median": 0.07227325439453125,
+      "mean": 0.07595290243625641,
+      "std": 0.011542665772140026,
+      "q90": 0.08839605748653412,
+      "q95": 0.09655039012432098,
+      "max": 0.10934114456176758
+    }
+  },
+  "map_quantiles": [
+    [
+      0.32809463143348694,
+      0.4000188112258911
+    ],
+    [
+      0.04300509765744209,
+      0.10654941201210022
+    ]
+  ],
+  "leave_one_development_image_out_quantile_range": {
+    "min": [
+      [
+        0.327938973903656,
+        0.39909228682518005
+      ],
+      [
+        0.042487554252147675,
+        0.10404148697853088
+      ]
+    ],
+    "max": [
+      [
+        0.32814452052116394,
+        0.40020692348480225
+      ],
+      [
+        0.04335387796163559,
+        0.10717102885246277
+      ]
+    ]
+  },
+  "peak_gpu_allocated_bytes": 329565184,
+  "peak_gpu_reserved_bytes": 455081984,
+  "peak_process_rss_bytes": 1944440832,
+  "process_peak_working_set_bytes": 1974784000,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/development/06-dev-bottle-e9-seed2026-v1.pt",
+    "sha256": "e8b9152d6d8805cb937d47b4da1b81f10e7cec7ecc99792a1426bd0797ff88bf",
+    "bytes": 32253487
+  },
+  "artifacts": [
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e9-seed2026-v1-epochs.csv",
+      "sha256": "b91d77d06a3581cff3875bfed2bf48afbdbe7a58820c776ebe273edd1b50fe54",
+      "bytes": 1406
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e9-seed2026-v1-development.csv",
+      "sha256": "1d8a7097a9358c689815820d2943005c7d4dc1ff91bfa5904587e8ba70a3c40b",
+      "bytes": 2553
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e9-seed2026-v1-proxies.csv",
+      "sha256": "bd10bc07c3ef3d5b407f80a59e9ab4359309a3b82273c4e5fe415b54f547039f",
+      "bytes": 5654
+    }
+  ]
+}

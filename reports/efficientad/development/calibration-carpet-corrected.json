@@ -1,0 +1,422 @@
+{
+  "threshold": 0.3291548490524292,
+  "nominal_fpr": 0.05,
+  "strict_greater": true,
+  "quantile_method": "higher",
+  "calibration_distribution": {
+    "n": 42,
+    "min": 0.06781019270420074,
+    "median": 0.1347954198718071,
+    "mean": 0.158382041291112,
+    "std": 0.09100048752739316,
+    "q90": 0.24321821779012676,
+    "q95": 0.3252888590097424,
+    "max": 0.5222468376159668
+  },
+  "observed_calibration_fpr": 0.047619047619047616,
+  "exceedances": 2,
+  "calibration_exceedance_descriptive_cp95": [
+    0.005819824835509991,
+    0.1616419596916539
+  ],
+  "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+  "future_fpr_order_statistic_mean": 0.06976744186046512,
+  "future_fpr_order_statistic_95": [
+    0.01497969167071,
+    0.1616419596916539
+  ],
+  "bootstrap_threshold_p025_p50_p975": [
+    0.21083888411521912,
+    0.3291548490524292,
+    0.5222468376159668
+  ],
+  "bootstrap_replicates": 1000,
+  "leave_one_out_threshold_range": [
+    0.25183504819869995,
+    0.3291548490524292
+  ],
+  "sensitivity_diagnostic_only": {
+    "0.01": 0.5222468376159668,
+    "0.05": 0.3291548490524292,
+    "0.1": 0.24629327654838562
+  },
+  "development_exceedance_fraction": 0.047619047619047616,
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "unique_calibration_scores": 42,
+  "largest_tie_count": 1,
+  "ties_at_threshold": 1,
+  "continuous_order_statistic_applicable": true,
+  "category": "carpet",
+  "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974",
+  "checkpoint_sha256": "6cfbfa1b708fefd6f161ecbeabe1c7d77566584e2a3ef81910ca28ad717cf079",
+  "supersedes": "calibration-carpet.json",
+  "correction": "Promote exact float32 scores to float64 before 17-digit CSV; round_trip reader; no retraining, new threshold or model selection",
+  "original_development_exceedance_fraction": 0.047619047619047616,
+  "floor_diagnostics": {
+    "development": {
+      "unique_image_scores": 42,
+      "largest_tie_count": 1,
+      "peak_positions_yx": [
+        [
+          26,
+          242
+        ],
+        [
+          161,
+          194
+        ],
+        [
+          94,
+          41
+        ],
+        [
+          246,
+          9
+        ],
+        [
+          249,
+          21
+        ],
+        [
+          193,
+          221
+        ],
+        [
+          129,
+          158
+        ],
+        [
+          125,
+          0
+        ],
+        [
+          218,
+          94
+        ],
+        [
+          101,
+          226
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          166,
+          106
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          126,
+          102
+        ],
+        [
+          0,
+          254
+        ],
+        [
+          50,
+          30
+        ],
+        [
+          70,
+          122
+        ],
+        [
+          221,
+          101
+        ],
+        [
+          9,
+          234
+        ],
+        [
+          61,
+          46
+        ],
+        [
+          197,
+          69
+        ],
+        [
+          45,
+          41
+        ],
+        [
+          61,
+          14
+        ],
+        [
+          93,
+          61
+        ],
+        [
+          13,
+          70
+        ],
+        [
+          254,
+          0
+        ],
+        [
+          249,
+          254
+        ],
+        [
+          34,
+          226
+        ],
+        [
+          222,
+          13
+        ],
+        [
+          254,
+          245
+        ],
+        [
+          206,
+          29
+        ],
+        [
+          126,
+          246
+        ],
+        [
+          61,
+          190
+        ],
+        [
+          210,
+          142
+        ],
+        [
+          254,
+          0
+        ],
+        [
+          50,
+          77
+        ],
+        [
+          0,
+          254
+        ],
+        [
+          77,
+          213
+        ],
+        [
+          189,
+          66
+        ],
+        [
+          9,
+          38
+        ],
+        [
+          33,
+          69
+        ],
+        [
+          29,
+          218
+        ]
+      ],
+      "fraction_peaks_within_16px_border": 0.42857142857142855,
+      "mean_raw_map_spatial_std": 0.07947859913110733,
+      "mean_raw_map_across_image_std": 0.08899819105863571,
+      "raw_interior_max_std": 0.1452246904373169,
+      "interpretation": "Constant max can be a response floor even when spatial/inter-image maps vary; interior statistics are diagnosis only, no crop or alternate score selected."
+    },
+    "calibration": {
+      "unique_image_scores": 42,
+      "largest_tie_count": 1,
+      "peak_positions_yx": [
+        [
+          61,
+          130
+        ],
+        [
+          41,
+          137
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          125,
+          90
+        ],
+        [
+          53,
+          77
+        ],
+        [
+          45,
+          254
+        ],
+        [
+          53,
+          106
+        ],
+        [
+          241,
+          254
+        ],
+        [
+          94,
+          17
+        ],
+        [
+          74,
+          166
+        ],
+        [
+          65,
+          234
+        ],
+        [
+          41,
+          126
+        ],
+        [
+          173,
+          249
+        ],
+        [
+          18,
+          250
+        ],
+        [
+          149,
+          145
+        ],
+        [
+          74,
+          73
+        ],
+        [
+          0,
+          254
+        ],
+        [
+          109,
+          182
+        ],
+        [
+          37,
+          34
+        ],
+        [
+          241,
+          126
+        ],
+        [
+          234,
+          66
+        ],
+        [
+          254,
+          0
+        ],
+        [
+          189,
+          225
+        ],
+        [
+          0,
+          254
+        ],
+        [
+          126,
+          162
+        ],
+        [
+          213,
+          149
+        ],
+        [
+          138,
+          42
+        ],
+        [
+          22,
+          250
+        ],
+        [
+          118,
+          245
+        ],
+        [
+          0,
+          25
+        ],
+        [
+          74,
+          29
+        ],
+        [
+          113,
+          122
+        ],
+        [
+          166,
+          242
+        ],
+        [
+          197,
+          241
+        ],
+        [
+          0,
+          254
+        ],
+        [
+          49,
+          154
+        ],
+        [
+          129,
+          202
+        ],
+        [
+          189,
+          29
+        ],
+        [
+          254,
+          137
+        ],
+        [
+          73,
+          229
+        ],
+        [
+          0,
+          102
+        ],
+        [
+          170,
+          9
+        ]
+      ],
+      "fraction_peaks_within_16px_border": 0.42857142857142855,
+      "mean_raw_map_spatial_std": 0.07525702565908432,
+      "mean_raw_map_across_image_std": 0.08339076489210129,
+      "raw_interior_max_std": 0.21379847824573517,
+      "interpretation": "Constant max can be a response floor even when spatial/inter-image maps vary; interior statistics are diagnosis only, no crop or alternate score selected."
+    }
+  }
+}

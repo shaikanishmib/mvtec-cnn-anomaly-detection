@@ -1,0 +1,58 @@
+{
+  "threshold": 0.3291548490524292,
+  "nominal_fpr": 0.05,
+  "strict_greater": true,
+  "quantile_method": "higher",
+  "calibration_distribution": {
+    "n": 42,
+    "min": 0.06781019270420074,
+    "median": 0.1347954273223877,
+    "mean": 0.15838204324245453,
+    "std": 0.09100048989057541,
+    "q90": 0.24321815371513367,
+    "q95": 0.32528892159461975,
+    "max": 0.5222468376159668
+  },
+  "observed_calibration_fpr": 0.047619047619047616,
+  "exceedances": 2,
+  "calibration_exceedance_descriptive_cp95": [
+    0.005819824835509991,
+    0.1616419596916539
+  ],
+  "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+  "future_fpr_order_statistic_mean": 0.06976744186046512,
+  "future_fpr_order_statistic_95": [
+    0.01497969167071,
+    0.1616419596916539
+  ],
+  "bootstrap_threshold_p025_p50_p975": [
+    0.21083888411521912,
+    0.3291548490524292,
+    0.5222468376159668
+  ],
+  "bootstrap_replicates": 1000,
+  "leave_one_out_threshold_range": [
+    0.25183504819869995,
+    0.3291548490524292
+  ],
+  "sensitivity_diagnostic_only": {
+    "0.01": 0.5222468376159668,
+    "0.05": 0.3291548490524292,
+    "0.1": 0.24629327654838562
+  },
+  "development_exceedance_fraction": 0.047619047619047616,
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "category": "carpet",
+  "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974",
+  "checkpoint_sha256": "6cfbfa1b708fefd6f161ecbeabe1c7d77566584e2a3ef81910ca28ad717cf079",
+  "calibration_inference_seconds": 1.214055799995549,
+  "elapsed_seconds": 3.439835500001209,
+  "scores_sha256": "af22d765407ca23d2cf415787c94f08ab18bd50ec49e8bd04fae9215d674b0a5"
+}

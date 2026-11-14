@@ -28,7 +28,7 @@ def main():
     for row in table[table.path.isin(expected)].itertuples():
         assert sha256(ROOT/'data/mvtec_ad'/row.path)==row.sha256
     events=list((ROOT/'experiments').glob('06-*.json'))
-    assert len(events)==2
+    assert len(list((ROOT/'experiments').glob('06-pilot-*.json')))==2
     for p in events:
         event=json.loads(p.read_text()); identity=event.pop('config_sha256'); event.pop('recorded_at')
         assert config_hash(event)==identity

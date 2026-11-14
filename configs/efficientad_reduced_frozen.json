@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "name": "EfficientAD-S reduced-budget variant",
+  "development_gate": "GO",
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "epochs": 9,
+  "score": "local_max",
+  "batch_size": 1,
+  "size": 256,
+  "teacher": {
+    "path": "checkpoints/efficientad/assets/teacher_small.pth",
+    "source": "nelson1425/EfficientAD",
+    "revision": "fcab5146f84ae17597044ad5ddf1656ccf805401",
+    "sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "license": "repository Apache-2.0; separate weight license unconfirmed"
+  },
+  "teacher_normalization": "all fitting normals only; channel population moments",
+  "external_penalty": false,
+  "hard_quantile": 0.999,
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05
+  },
+  "lr_policy": "constant within each reduced budget",
+  "augmentation": "one uniformly random brightness/contrast/saturation, coefficient U(0.8,1.2), tensor RGB before ImageNet normalization",
+  "precision": "deterministic FP32; TF32 disabled",
+  "map_policy": "development-normal q90/q99.5, resized maps, no clipping",
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "inference_execution": "eager; graph diagnostic not adopted",
+  "score_serialization": "exact float32 scores promoted to float64 before 17-digit CSV; round_trip reader",
+  "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+  "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974",
+  "partition_sha256": {
+    "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+    "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+    "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6",
+    "test": "bf873b574776e11d2931d3c9004a2570a5362303f10206f0d2afa271274dcfa2"
+  },
+  "source_sha256": {
+    "src/anomaly_detection/efficientad.py": "faec224003393aa597c0d1f841b66b2fed065b1740c378358a7e2d121754c0c9",
+    "src/anomaly_detection/efficientad_research.py": "f90a53dee782fcdb057e20a6b6b57d273cd694a2c1d963130bef76138a41b23d",
+    "src/anomaly_detection/efficientad_calibration.py": "631724bb904136ab0a25d96c8c909b9cfdc468bae39dbc11746842c4702ae2cf",
+    "scripts/develop_efficientad.py": "3cfb7399517d2957382693b74e5df73f7c5ca5fc4f229afc1e14e8e1494e039e"
+  },
+  "package_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949",
+  "final_models_started": 0,
+  "final_evaluator_status": "not executed; must preserve native metric conventions and validate before final reporting"
+}

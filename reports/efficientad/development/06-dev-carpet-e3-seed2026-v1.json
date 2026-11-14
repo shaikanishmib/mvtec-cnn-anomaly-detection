@@ -1,0 +1,307 @@
+{
+  "experiment_id": "06-dev-carpet-e3-seed2026-v1",
+  "category": "carpet",
+  "epochs": 3,
+  "seed": 2026,
+  "fit_n": 196,
+  "development_n": 42,
+  "steps": 588,
+  "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+  "finite": true,
+  "probe_before": {
+    "hard": 21.076909065246582,
+    "penalty": 0.0,
+    "autoencoder": 1.0888743698596954,
+    "student_autoencoder": 0.0010120020306203514,
+    "total": 22.16679573059082
+  },
+  "probe_after": {
+    "hard": 8.21088969707489,
+    "penalty": 0.0,
+    "autoencoder": 0.6127157807350159,
+    "student_autoencoder": 0.013315781019628048,
+    "total": 8.836921453475952
+  },
+  "development_probe_losses": {
+    "hard": 9.347878456115723,
+    "penalty": 0.0,
+    "autoencoder": 0.6544092148542404,
+    "student_autoencoder": 0.015717095928266644,
+    "total": 10.018004894256592
+  },
+  "training_seconds": 65.86684979998972,
+  "seconds_per_image_epoch": 0.11201845204079885,
+  "preparation_seconds": 1.7086527000064962,
+  "normalization_seconds": 1.613518700003624,
+  "normalization_reused": false,
+  "diagnostic_seconds": 63.79281020001508,
+  "serialization_validation_seconds": 0.5516362999915145,
+  "elapsed_seconds": 133.04697029999807,
+  "curves": [
+    {
+      "epoch": 1,
+      "steps": 196,
+      "seconds": 21.710756299988134,
+      "hard": 12.3629059110369,
+      "penalty": 0.0,
+      "autoencoder": 0.8337570520079866,
+      "student_autoencoder": 0.02510197947279322,
+      "total": 13.22176489538076,
+      "raw_local_dev_max_median": 2.175133466720581,
+      "raw_global_dev_max_median": 2.024299144744873
+    },
+    {
+      "epoch": 2,
+      "steps": 392,
+      "seconds": 21.976505600003293,
+      "hard": 8.64363001317394,
+      "penalty": 0.0,
+      "autoencoder": 0.5876129345626248,
+      "student_autoencoder": 0.030855568154353877,
+      "total": 9.262098485109757,
+      "raw_local_dev_max_median": 1.3840782642364502,
+      "raw_global_dev_max_median": 1.9012229442596436
+    },
+    {
+      "epoch": 3,
+      "steps": 588,
+      "seconds": 22.179587899998296,
+      "hard": 7.8819248651971625,
+      "penalty": 0.0,
+      "autoencoder": 0.572273751910852,
+      "student_autoencoder": 0.02468932636690383,
+      "total": 8.478887952103907,
+      "raw_local_dev_max_median": 1.2719647884368896,
+      "raw_global_dev_max_median": 0.770565390586853
+    }
+  ],
+  "telemetry": [
+    {
+      "epoch": 1,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "79",
+        "utilization.gpu": "77",
+        "utilization.memory": "13",
+        "power.draw": "79.58",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2415",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 80.1875
+    },
+    {
+      "epoch": 2,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "84",
+        "utilization.gpu": "80",
+        "utilization.memory": "13",
+        "power.draw": "81.07",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2280",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 81.3125
+    },
+    {
+      "epoch": 3,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "81",
+        "utilization.gpu": "75",
+        "utilization.memory": "12",
+        "power.draw": "71.77",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2535",
+        "memory.used": "539"
+      },
+      "cpu_seconds": 81.765625
+    }
+  ],
+  "proxy": {
+    "combined_max": {
+      "auroc": 0.9127604166666666,
+      "ap": 0.9725896135434844,
+      "per_edit": {
+        "scratch": 0.73828125,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.06625271588563919,
+        "block": 0.55922931432724,
+        "color_patch": 3.231027126312256
+      }
+    },
+    "local_max": {
+      "auroc": 0.9791666666666667,
+      "ap": 0.9934245781392521,
+      "per_edit": {
+        "scratch": 0.9375,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.34823423624038696,
+        "block": 1.2701979875564575,
+        "color_patch": 6.652748107910156
+      }
+    },
+    "global_max": {
+      "auroc": 0.4778645833333333,
+      "ap": 0.7337326258886733,
+      "per_edit": {
+        "scratch": 0.46875,
+        "block": 0.4375,
+        "color_patch": 0.52734375
+      },
+      "mean_paired_score_delta": {
+        "scratch": -0.0017118342220783234,
+        "block": -0.02789556421339512,
+        "color_patch": 0.012453662231564522
+      }
+    },
+    "raw_combined_max": {
+      "auroc": 0.9414062499999999,
+      "ap": 0.9831071023502058,
+      "per_edit": {
+        "scratch": 0.82421875,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.3442767858505249,
+        "block": 1.793878436088562,
+        "color_patch": 9.492923736572266
+      }
+    },
+    "combined_top1pct": {
+      "auroc": 0.9765625,
+      "ap": 0.992978912432778,
+      "per_edit": {
+        "scratch": 0.9296875,
+        "block": 1.0,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.08648305386304855,
+        "block": 0.5467042922973633,
+        "color_patch": 2.982023239135742
+      }
+    }
+  },
+  "development_score_distributions": {
+    "combined_max": {
+      "n": 42,
+      "min": 0.16356125473976135,
+      "median": 0.2636905908584595,
+      "mean": 0.2623916268348694,
+      "std": 0.06209442391991615,
+      "q90": 0.33767423033714294,
+      "q95": 0.3506529927253723,
+      "max": 0.44669482111930847
+    },
+    "local_max": {
+      "n": 42,
+      "min": 0.0806141123175621,
+      "median": 0.17141307890415192,
+      "mean": 0.19034048914909363,
+      "std": 0.06664979457855225,
+      "q90": 0.29953518509864807,
+      "q95": 0.30478450655937195,
+      "max": 0.3738362491130829
+    },
+    "global_max": {
+      "n": 42,
+      "min": 0.2711874544620514,
+      "median": 0.54248046875,
+      "mean": 0.5476624369621277,
+      "std": 0.14047853648662567,
+      "q90": 0.7029534578323364,
+      "q95": 0.7274792790412903,
+      "max": 0.957202136516571
+    },
+    "raw_combined_max": {
+      "n": 42,
+      "min": 0.6498798131942749,
+      "median": 0.809419572353363,
+      "mean": 0.8122571110725403,
+      "std": 0.0898803099989891,
+      "q90": 0.9278632998466492,
+      "q95": 0.9637480974197388,
+      "max": 1.0713568925857544
+    },
+    "combined_top1pct": {
+      "n": 42,
+      "min": 0.03885379806160927,
+      "median": 0.06953088939189911,
+      "mean": 0.07000390440225601,
+      "std": 0.01746165193617344,
+      "q90": 0.08792884647846222,
+      "q95": 0.10497431457042694,
+      "max": 0.12134993076324463
+    }
+  },
+  "map_quantiles": [
+    [
+      0.7110917568206787,
+      0.9982115030288696
+    ],
+    [
+      0.02669523097574711,
+      0.19261056184768677
+    ]
+  ],
+  "leave_one_development_image_out_quantile_range": {
+    "min": [
+      [
+        0.7070162296295166,
+        0.9742593765258789
+      ],
+      [
+        0.02652372047305107,
+        0.19094634056091309
+      ]
+    ],
+    "max": [
+      [
+        0.7128231525421143,
+        1.0008981227874756
+      ],
+      [
+        0.026856910437345505,
+        0.19379080832004547
+      ]
+    ]
+  },
+  "peak_gpu_allocated_bytes": 329565184,
+  "peak_gpu_reserved_bytes": 455081984,
+  "peak_process_rss_bytes": 2085212160,
+  "process_peak_working_set_bytes": 2111066112,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/development/06-dev-carpet-e3-seed2026-v1.pt",
+    "sha256": "8933884f35e76bfb8819a6fd6619850ad65fda35f6fb7b9a62ff62bd795a9bd6",
+    "bytes": 32253487
+  },
+  "artifacts": [
+    {
+      "path": "reports/efficientad/development/06-dev-carpet-e3-seed2026-v1-epochs.csv",
+      "sha256": "9766ab02beff9b96f3d94bc593a6950be1d56310b4a2c8d62e46e6dec478bbdc",
+      "bytes": 544
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-carpet-e3-seed2026-v1-development.csv",
+      "sha256": "f01e48dba448fc2a5ff05ec697b7660e4d4f51c2f73da683620a739b442ace5c",
+      "bytes": 3432
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-carpet-e3-seed2026-v1-proxies.csv",
+      "sha256": "8307f846f0e79f3d05dcf22fb0218723144795ff93a0a933ce85ca27c9d28d44",
+      "bytes": 5732
+    }
+  ]
+}

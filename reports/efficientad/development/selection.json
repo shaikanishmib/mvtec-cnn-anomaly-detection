@@ -1,0 +1,50 @@
+{
+  "eligible": true,
+  "candidates": [
+    {
+      "epochs": 3,
+      "score": "combined_max",
+      "eligible": true,
+      "macro_proxy_auroc": 0.7936197916666666,
+      "worst_category_proxy_auroc": 0.6744791666666666
+    },
+    {
+      "epochs": 3,
+      "score": "local_max",
+      "eligible": true,
+      "macro_proxy_auroc": 0.9287109375000001,
+      "worst_category_proxy_auroc": 0.8782552083333335
+    },
+    {
+      "epochs": 9,
+      "score": "combined_max",
+      "eligible": true,
+      "macro_proxy_auroc": 0.97265625,
+      "worst_category_proxy_auroc": 0.9466145833333333
+    },
+    {
+      "epochs": 9,
+      "score": "local_max",
+      "eligible": true,
+      "macro_proxy_auroc": 0.9947916666666666,
+      "worst_category_proxy_auroc": 0.9908854166666666
+    }
+  ],
+  "selected": {
+    "epochs": 9,
+    "score": "local_max",
+    "eligible": true,
+    "macro_proxy_auroc": 0.9947916666666666,
+    "worst_category_proxy_auroc": 0.9908854166666666
+  },
+  "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "rationale": "Apply predeclared proxy eligibility, shorter-budget tolerance and combined-map preference. Calibration data not read before this file is locked."
+}

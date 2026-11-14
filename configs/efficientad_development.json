@@ -1,0 +1,32 @@
+{
+  "study_id": "06-development-v1",
+  "model_name": "EfficientAD-S reduced-budget variant",
+  "categories": ["bottle", "carpet"],
+  "seed": 2026,
+  "epoch_budgets": [3, 9],
+  "fresh_fits": 4,
+  "maximum_optimizer_steps": 4116,
+  "development_wall_time_cap_hours": 2,
+  "batch_size": 1,
+  "image_size": 256,
+  "precision": "deterministic FP32; TF32 disabled",
+  "optimizer": {"name": "Adam", "learning_rate": 0.0001, "weight_decay": 0.00001},
+  "lr_policy": "constant within each reduced budget",
+  "hard_quantile": 0.999,
+  "external_penalty": false,
+  "augmentation": "one uniformly random brightness/contrast/saturation, coefficient U(0.8,1.2), tensor RGB before ImageNet normalization",
+  "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+  "map_policy": "development-normal q90/q99.5, resized maps, no clipping",
+  "candidate_scores": ["combined_max", "local_max"],
+  "diagnostic_scores_only": ["global_max", "raw_combined_max", "combined_top1pct"],
+  "proxy": {"source_partition": "fit", "normal_count": 16, "types": ["scratch", "block", "color_patch"], "seed": 9006, "interpretation": "paired edits on training backgrounds; optimistic proxies, not held-out real-defect accuracy"},
+  "selection": {
+    "inputs": "development normals and fit-derived proxies only; never calibration or official test",
+    "technical_requirements": "finite losses, maps and gradients, fixed fitting probe teacher and AE losses reduced, all development scores finite, each category proxy AUROC >= 0.65",
+    "ranking": "macro paired fit-proxy image AUROC; choose 3 epochs if within 0.02 of best eligible 9-epoch candidate, else 9; prefer combined_max when within 0.02 of local_max at selected budget",
+    "no_eligible_candidate": "NO-GO, retain best diagnostic configuration without authorizing final benchmark"
+  },
+  "threshold_policy": {"target_fpr": 0.05, "quantile_method": "higher", "comparison": "strict_greater", "scope": "reserved calibration normals only after configuration selection", "bootstrap_replicates": 1000, "bootstrap_seed": 6806},
+  "latency": {"warmup": 50, "iterations_per_repeat": 100, "repeats": 3, "shape": [1,3,256,256], "methods": ["synchronized wall and CUDA events resident input", "host-to-device separately", "file decode through CPU map end-to-end", "unsynchronized burst throughput diagnostic"]},
+  "final_gate": {"categories": 15, "seeds": [2026,2027,2028], "models": 45, "target_gpu_hours": 12, "timing_safety_factor": 2, "fixed_overhead_seconds_per_model": 60, "policy": "GO only if technical proxy requirements and conservative total including CPU evaluation overhead <= 12h; no final models launched by development code"}
+}

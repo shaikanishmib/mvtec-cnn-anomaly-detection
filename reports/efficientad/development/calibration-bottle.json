@@ -1,0 +1,58 @@
+{
+  "threshold": 0.5066908597946167,
+  "nominal_fpr": 0.05,
+  "strict_greater": true,
+  "quantile_method": "higher",
+  "calibration_distribution": {
+    "n": 31,
+    "min": 0.5066908597946167,
+    "median": 0.5066908597946167,
+    "mean": 0.5066908597946167,
+    "std": 0.0,
+    "q90": 0.5066908597946167,
+    "q95": 0.5066908597946167,
+    "max": 0.5066908597946167
+  },
+  "observed_calibration_fpr": 0.0,
+  "exceedances": 0,
+  "calibration_exceedance_descriptive_cp95": [
+    0.0,
+    0.11218874692236996
+  ],
+  "uncertainty_note": "CP interval is descriptive; threshold fitted to these same samples. IID continuous future FPR follows the order-statistic Beta distribution; bootstrap is unstable with small tails.",
+  "future_fpr_order_statistic_mean": 0.0625,
+  "future_fpr_order_statistic_95": [
+    0.007910983461854705,
+    0.16702111623022775
+  ],
+  "bootstrap_threshold_p025_p50_p975": [
+    0.5066908597946167,
+    0.5066908597946167,
+    0.5066908597946167
+  ],
+  "bootstrap_replicates": 1000,
+  "leave_one_out_threshold_range": [
+    0.5066908597946167,
+    0.5066908597946167
+  ],
+  "sensitivity_diagnostic_only": {
+    "0.01": 0.5066908597946167,
+    "0.05": 0.5066908597946167,
+    "0.1": 0.5066908597946167
+  },
+  "development_exceedance_fraction": 1.0,
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "category": "bottle",
+  "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974",
+  "checkpoint_sha256": "e8b9152d6d8805cb937d47b4da1b81f10e7cec7ecc99792a1426bd0797ff88bf",
+  "calibration_inference_seconds": 0.7753167000191752,
+  "elapsed_seconds": 1.7681519000034314,
+  "scores_sha256": "94308f26868b6cc28cf811b198f40e42c187094b9b9cbb4261fe195b2132448d"
+}

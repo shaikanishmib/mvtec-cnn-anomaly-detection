@@ -1,0 +1,40 @@
+{
+  "experiment_id": "06-launch-control-v1-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Test host dispatch contribution with equivalent fixed-shape CUDA graph replay",
+  "preprocessing": {},
+  "hyperparameters": {
+    "warmup": 50,
+    "repeats": 3,
+    "iterations": 100
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8"
+  },
+  "training": {
+    "source_sha256": "c89e1f453a6f3cf172f019cb9d24fd0829442b7c4474417b34fa26eb03bb9941",
+    "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974"
+  },
+  "metrics": {
+    "eager_wall": {
+      "p50_ms": 25.9756000014022,
+      "p95_ms": 32.233160006580874,
+      "count": 300
+    },
+    "graph_status": "measured"
+  },
+  "calibration": {},
+  "paths": {
+    "results": "reports/efficientad/development/launch-control.json"
+  },
+  "interpretation": "Exploratory after-selection control; equality checked before graph measurement; never used for model selection.",
+  "decision": "Keep eager final-cost estimate conservative",
+  "status": "completed",
+  "recorded_at": "2026-11-14T02:41:10.177433+00:00",
+  "config_sha256": "78163db72ec96ba423a63d14fc4a2a54941d70c158973cc81946be6921c62445"
+}

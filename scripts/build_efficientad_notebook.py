@@ -2,6 +2,10 @@
 from pathlib import Path
 import nbformat as n
 ROOT=Path(__file__).resolve().parents[1]
+if (ROOT/'notebooks/06_efficientad.ipynb').exists():
+    existing=n.read(ROOT/'notebooks/06_efficientad.ipynb',4)
+    if existing.metadata.get('efficientad_development_replay'):
+        raise RuntimeError('Notebook contains preserved development history; use saved-artifact replay, not the pilot-only builder')
 sections=[
 ('Motivation','EfficientAD combines efficient local descriptors with global feature reconstruction. This notebook currently documents the reference review, implementation and real GPU pilot. Development and the frozen benchmark remain pending.'),
 ('Paper review','Read Batzner et al., WACV 2024, using https://arxiv.org/html/2303.14535v3 after CVF returned 403. Algorithms 1–2 and Tables 6–8 define this implementation. See docs/efficientad_protocol.md for the source links and detailed derivation.'),

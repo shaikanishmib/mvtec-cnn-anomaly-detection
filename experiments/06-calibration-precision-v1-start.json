@@ -1,0 +1,42 @@
+{
+  "experiment_id": "06-calibration-precision-v1-start",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "bottle",
+    "carpet"
+  ],
+  "hypothesis": "Exact score round-trip corrects false exceedances from decimal float32 CSV parsing; diagnose clean-score ties without selecting a new model",
+  "preprocessing": {},
+  "hyperparameters": {
+    "retraining": false,
+    "selection_changed": false,
+    "threshold_policy": {
+      "target_fpr": 0.05,
+      "quantile_method": "higher",
+      "comparison": "strict_greater",
+      "scope": "reserved calibration normals only after configuration selection",
+      "bootstrap_replicates": 1000,
+      "bootstrap_seed": 6806
+    }
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8"
+  },
+  "training": {
+    "source_sha256": "65af332799e50da63bcbe232958f012510fbf9bf90a2c3ef30c2091289939c74",
+    "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "checkpoint": null,
+    "results": null
+  },
+  "interpretation": null,
+  "decision": null,
+  "status": "started",
+  "recorded_at": "2026-11-14T02:43:26.510094+00:00",
+  "config_sha256": "afd1d2cd19c048adf1f34532b4bde36a5c1e01dd7e8864741b31e2b3074f69b6"
+}

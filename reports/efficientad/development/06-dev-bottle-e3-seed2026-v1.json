@@ -1,0 +1,307 @@
+{
+  "experiment_id": "06-dev-bottle-e3-seed2026-v1",
+  "category": "bottle",
+  "epochs": 3,
+  "seed": 2026,
+  "fit_n": 147,
+  "development_n": 31,
+  "steps": 441,
+  "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+  "finite": true,
+  "probe_before": {
+    "hard": 17.999706745147705,
+    "penalty": 0.0,
+    "autoencoder": 1.0037674754858017,
+    "student_autoencoder": 0.005622246069833636,
+    "total": 19.00909662246704
+  },
+  "probe_after": {
+    "hard": 4.2737135887146,
+    "penalty": 0.0,
+    "autoencoder": 0.42652397602796555,
+    "student_autoencoder": 0.02995906677097082,
+    "total": 4.730196595191956
+  },
+  "development_probe_losses": {
+    "hard": 4.18828159570694,
+    "penalty": 0.0,
+    "autoencoder": 0.41827185451984406,
+    "student_autoencoder": 0.02890788810327649,
+    "total": 4.6354615688323975
+  },
+  "training_seconds": 65.62068819999695,
+  "seconds_per_image_epoch": 0.14879974648525385,
+  "preparation_seconds": 1.4410823000071105,
+  "normalization_seconds": 1.2852030999783892,
+  "normalization_reused": false,
+  "diagnostic_seconds": 62.731987399980426,
+  "serialization_validation_seconds": 0.6380440999928396,
+  "elapsed_seconds": 133.17075620000833,
+  "curves": [
+    {
+      "epoch": 1,
+      "steps": 147,
+      "seconds": 21.90089559997432,
+      "hard": 8.89969930194673,
+      "penalty": 0.0,
+      "autoencoder": 0.8304479341117703,
+      "student_autoencoder": 0.01669040542304972,
+      "total": 9.746837628941957,
+      "raw_local_dev_max_median": 2.999878406524658,
+      "raw_global_dev_max_median": 0.19089582562446594
+    },
+    {
+      "epoch": 2,
+      "steps": 294,
+      "seconds": 22.08640950001427,
+      "hard": 5.745411314931856,
+      "penalty": 0.0,
+      "autoencoder": 0.610115299216744,
+      "student_autoencoder": 0.03944500044089596,
+      "total": 6.3949715912747545,
+      "raw_local_dev_max_median": 2.145048141479492,
+      "raw_global_dev_max_median": 0.2037094533443451
+    },
+    {
+      "epoch": 3,
+      "steps": 441,
+      "seconds": 21.63338310000836,
+      "hard": 4.643071067576506,
+      "penalty": 0.0,
+      "autoencoder": 0.45921140037426333,
+      "student_autoencoder": 0.04358678371930609,
+      "total": 5.145869248578338,
+      "raw_local_dev_max_median": 1.621924877166748,
+      "raw_global_dev_max_median": 0.583248496055603
+    }
+  ],
+  "telemetry": [
+    {
+      "epoch": 1,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "67",
+        "utilization.gpu": "55",
+        "utilization.memory": "10",
+        "power.draw": "64.58",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2550",
+        "memory.used": "513"
+      },
+      "cpu_seconds": 62.546875
+    },
+    {
+      "epoch": 2,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "72",
+        "utilization.gpu": "60",
+        "utilization.memory": "7",
+        "power.draw": "50.69",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2400",
+        "memory.used": "513"
+      },
+      "cpu_seconds": 45.09375
+    },
+    {
+      "epoch": 3,
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "77",
+        "utilization.gpu": "84",
+        "utilization.memory": "15",
+        "power.draw": "70.66",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2280",
+        "memory.used": "515"
+      },
+      "cpu_seconds": 41.359375
+    }
+  ],
+  "proxy": {
+    "combined_max": {
+      "auroc": 0.6744791666666666,
+      "ap": 0.8953212863181552,
+      "per_edit": {
+        "scratch": 0.6875,
+        "block": 0.3359375,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.07549706101417542,
+        "block": -0.0016382485628128052,
+        "color_patch": 31.136669158935547
+      }
+    },
+    "local_max": {
+      "auroc": 0.8782552083333335,
+      "ap": 0.9427083333333336,
+      "per_edit": {
+        "scratch": 0.833984375,
+        "block": 0.80078125,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.2643268406391144,
+        "block": 0.07223925739526749,
+        "color_patch": 20.223596572875977
+      }
+    },
+    "global_max": {
+      "auroc": 0.5924479166666666,
+      "ap": 0.8537322499228135,
+      "per_edit": {
+        "scratch": 0.44140625,
+        "block": 0.3359375,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": -0.0008839331567287445,
+        "block": -0.0032765045762062073,
+        "color_patch": 42.11472702026367
+      }
+    },
+    "raw_combined_max": {
+      "auroc": 0.7018229166666665,
+      "ap": 0.9067782382792109,
+      "per_edit": {
+        "scratch": 0.72265625,
+        "block": 0.3828125,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.24004849791526794,
+        "block": 0.0009313970804214478,
+        "color_patch": 39.74135971069336
+      }
+    },
+    "combined_top1pct": {
+      "auroc": 0.98046875,
+      "ap": 0.993287021681985,
+      "per_edit": {
+        "scratch": 0.9765625,
+        "block": 0.96484375,
+        "color_patch": 1.0
+      },
+      "mean_paired_score_delta": {
+        "scratch": 0.2134111225605011,
+        "block": 0.09184440970420837,
+        "color_patch": 22.135160446166992
+      }
+    }
+  },
+  "development_score_distributions": {
+    "combined_max": {
+      "n": 31,
+      "min": 0.5300742983818054,
+      "median": 0.5377715229988098,
+      "mean": 0.5384991765022278,
+      "std": 0.0041260202415287495,
+      "q90": 0.5432282090187073,
+      "q95": 0.543677806854248,
+      "max": 0.5478749871253967
+    },
+    "local_max": {
+      "n": 31,
+      "min": 0.4262549579143524,
+      "median": 0.4262549579143524,
+      "mean": 0.4262550175189972,
+      "std": 5.960464477539063e-08,
+      "q90": 0.4262549579143524,
+      "q95": 0.4262549579143524,
+      "max": 0.4262549579143524
+    },
+    "global_max": {
+      "n": 31,
+      "min": 0.6453888416290283,
+      "median": 0.6607832908630371,
+      "mean": 0.662238597869873,
+      "std": 0.008252040483057499,
+      "q90": 0.6716966032981873,
+      "q95": 0.6725959181785583,
+      "max": 0.6809902191162109
+    },
+    "raw_combined_max": {
+      "n": 31,
+      "min": 1.083667516708374,
+      "median": 1.0898990631103516,
+      "mean": 1.0904881954193115,
+      "std": 0.003340385388582945,
+      "q90": 1.0943167209625244,
+      "q95": 1.0946807861328125,
+      "max": 1.098078727722168
+    },
+    "combined_top1pct": {
+      "n": 31,
+      "min": 0.12001097947359085,
+      "median": 0.12335050106048584,
+      "mean": 0.12502260506153107,
+      "std": 0.006080289836972952,
+      "q90": 0.13812537491321564,
+      "q95": 0.1406320482492447,
+      "max": 0.14081192016601562
+    }
+  },
+  "map_quantiles": [
+    [
+      0.6625248789787292,
+      0.8876014351844788
+    ],
+    [
+      0.04878158122301102,
+      0.12974074482917786
+    ]
+  ],
+  "leave_one_development_image_out_quantile_range": {
+    "min": [
+      [
+        0.6620622277259827,
+        0.8860298991203308
+      ],
+      [
+        0.04832947999238968,
+        0.12510034441947937
+      ]
+    ],
+    "max": [
+      [
+        0.6630973815917969,
+        0.887628436088562
+      ],
+      [
+        0.04906534403562546,
+        0.1303740292787552
+      ]
+    ]
+  },
+  "peak_gpu_allocated_bytes": 329485312,
+  "peak_gpu_reserved_bytes": 455081984,
+  "peak_process_rss_bytes": 1941741568,
+  "process_peak_working_set_bytes": 1973071872,
+  "checkpoint": {
+    "path": "checkpoints/efficientad/development/06-dev-bottle-e3-seed2026-v1.pt",
+    "sha256": "3a10d4765c64b46336b30ab8fe64e8b0c86d619306e6e87e83827c221dbdc6d3",
+    "bytes": 32253487
+  },
+  "artifacts": [
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e3-seed2026-v1-epochs.csv",
+      "sha256": "7934924543e5b9df65818a7e946282c25b750589acbeb2938addea681abae6ef",
+      "bytes": 542
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e3-seed2026-v1-development.csv",
+      "sha256": "df78f33abd95b9c2ab8aa4ec2d8aa52230be4c2d21778b1fbca8d26239bc676c",
+      "bytes": 2510
+    },
+    {
+      "path": "reports/efficientad/development/06-dev-bottle-e3-seed2026-v1-proxies.csv",
+      "sha256": "115ee2235edd651345762ef91029285b0f0426aa21be1e7ee39c117479404689",
+      "bytes": 5686
+    }
+  ]
+}

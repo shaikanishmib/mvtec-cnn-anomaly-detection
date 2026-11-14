@@ -1,0 +1,34 @@
+{
+  "experiment_id": "06-launch-control-v1-start",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Test host dispatch contribution with equivalent fixed-shape CUDA graph replay",
+  "preprocessing": {},
+  "hyperparameters": {
+    "warmup": 50,
+    "repeats": 3,
+    "iterations": 100
+  },
+  "seed": 2026,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8"
+  },
+  "training": {
+    "source_sha256": "c89e1f453a6f3cf172f019cb9d24fd0829442b7c4474417b34fa26eb03bb9941",
+    "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974"
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "checkpoint": null,
+    "results": null
+  },
+  "interpretation": null,
+  "decision": null,
+  "status": "started",
+  "recorded_at": "2026-11-14T02:40:51.439883+00:00",
+  "config_sha256": "f02630a7765fab9526d9ce8a73f61cbbd82567b21b69ce4ff25205f739c656fc"
+}

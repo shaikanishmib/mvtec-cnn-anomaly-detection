@@ -1,0 +1,55 @@
+{
+  "experiment_id": "06-dev-carpet-e9-seed2026-v1-start",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "carpet"
+  ],
+  "hypothesis": "Full-epoch budget controls learning, normal score stability and paired synthetic discrimination",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet"
+  },
+  "hyperparameters": {
+    "categories": [
+      "carpet"
+    ],
+    "epochs": 9,
+    "steps": 1764,
+    "seed": 2026,
+    "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e"
+  },
+  "seed": 2026,
+  "environment": {
+    "python": "C:\\Users\\shaik\\mvtec-cnn-anomaly-detection\\.venv\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "ee19ec85e914bd0b8cda8c6fb1c0c8768c1557a1",
+    "dirty": true
+  },
+  "training": {
+    "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "source_sha256": {
+      "scripts/develop_efficientad.py": "3cfb7399517d2957382693b74e5df73f7c5ca5fc4f229afc1e14e8e1494e039e",
+      "src/anomaly_detection/efficientad.py": "faec224003393aa597c0d1f841b66b2fed065b1740c378358a7e2d121754c0c9",
+      "src/anomaly_detection/efficientad_research.py": "f90a53dee782fcdb057e20a6b6b57d273cd694a2c1d963130bef76138a41b23d"
+    },
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6"
+    }
+  },
+  "metrics": {},
+  "calibration": {},
+  "paths": {
+    "checkpoint": null,
+    "results": null
+  },
+  "interpretation": null,
+  "decision": null,
+  "status": "started",
+  "recorded_at": "2026-11-14T02:34:58.977798+00:00",
+  "config_sha256": "0f8968b7a89d6deacb22a3ce84a987acbfc03a980dbeaac8ec0c3683a01728cf"
+}

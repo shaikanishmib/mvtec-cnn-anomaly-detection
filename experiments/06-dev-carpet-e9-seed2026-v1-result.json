@@ -1,0 +1,147 @@
+{
+  "experiment_id": "06-dev-carpet-e9-seed2026-v1-result",
+  "model_family": "EfficientAD-S reduced-budget variant",
+  "categories": [
+    "carpet"
+  ],
+  "hypothesis": "Full-epoch budget controls learning, normal score stability and paired synthetic discrimination",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet"
+  },
+  "hyperparameters": {
+    "categories": [
+      "carpet"
+    ],
+    "epochs": 9,
+    "steps": 1764,
+    "seed": 2026,
+    "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e"
+  },
+  "seed": 2026,
+  "environment": {
+    "python": "C:\\Users\\shaik\\mvtec-cnn-anomaly-detection\\.venv\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "ee19ec85e914bd0b8cda8c6fb1c0c8768c1557a1",
+    "dirty": true
+  },
+  "training": {
+    "plan_sha256": "f6953af23b5bee0564c9ca1010191885ffa549013bbcfbd429d163383e994d8e",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "source_sha256": {
+      "scripts/develop_efficientad.py": "3cfb7399517d2957382693b74e5df73f7c5ca5fc4f229afc1e14e8e1494e039e",
+      "src/anomaly_detection/efficientad.py": "faec224003393aa597c0d1f841b66b2fed065b1740c378358a7e2d121754c0c9",
+      "src/anomaly_detection/efficientad_research.py": "f90a53dee782fcdb057e20a6b6b57d273cd694a2c1d963130bef76138a41b23d"
+    },
+    "partition_sha256": {
+      "fit": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+      "development": "e1e49dee7d8111b50409e49ab51a046d6888b3a4f82256a927c6b16ace33a4df",
+      "calibration": "dc46dd58419fc0dd32e20f174efe4e208df49bc25c65bdb06afe2dbd1a418ff6"
+    }
+  },
+  "metrics": {
+    "proxy": {
+      "combined_max": {
+        "auroc": 0.9466145833333333,
+        "ap": 0.9836328279437745,
+        "per_edit": {
+          "scratch": 0.83984375,
+          "block": 1.0,
+          "color_patch": 1.0
+        },
+        "mean_paired_score_delta": {
+          "scratch": 0.11747440695762634,
+          "block": 0.6122204065322876,
+          "color_patch": 3.7046895027160645
+        }
+      },
+      "local_max": {
+        "auroc": 0.9908854166666666,
+        "ap": 0.9968236972566441,
+        "per_edit": {
+          "scratch": 0.97265625,
+          "block": 1.0,
+          "color_patch": 1.0
+        },
+        "mean_paired_score_delta": {
+          "scratch": 0.36036059260368347,
+          "block": 1.1513135433197021,
+          "color_patch": 7.487034320831299
+        }
+      },
+      "global_max": {
+        "auroc": 0.625,
+        "ap": 0.8299142416918501,
+        "per_edit": {
+          "scratch": 0.50390625,
+          "block": 0.7265625,
+          "color_patch": 0.64453125
+        },
+        "mean_paired_score_delta": {
+          "scratch": -8.477270603179932e-05,
+          "block": 0.09015925228595734,
+          "color_patch": 0.02487141638994217
+        }
+      },
+      "raw_combined_max": {
+        "auroc": 0.9817708333333333,
+        "ap": 0.9939719115837065,
+        "per_edit": {
+          "scratch": 0.9453125,
+          "block": 1.0,
+          "color_patch": 1.0
+        },
+        "mean_paired_score_delta": {
+          "scratch": 0.3980361223220825,
+          "block": 1.3809878826141357,
+          "color_patch": 8.646410942077637
+        }
+      },
+      "combined_top1pct": {
+        "auroc": 0.96875,
+        "ap": 0.990008891797733,
+        "per_edit": {
+          "scratch": 0.90625,
+          "block": 1.0,
+          "color_patch": 1.0
+        },
+        "mean_paired_score_delta": {
+          "scratch": 0.0892987996339798,
+          "block": 0.5390779972076416,
+          "color_patch": 3.3351430892944336
+        }
+      }
+    },
+    "probe_before": {
+      "hard": 21.076909065246582,
+      "penalty": 0.0,
+      "autoencoder": 1.0888743698596954,
+      "student_autoencoder": 0.0010120020306203514,
+      "total": 22.16679573059082
+    },
+    "probe_after": {
+      "hard": 6.853803396224976,
+      "penalty": 0.0,
+      "autoencoder": 0.613261878490448,
+      "student_autoencoder": 0.00955805811099708,
+      "total": 7.4766234159469604
+    },
+    "training_seconds": 226.66399949995684
+  },
+  "calibration": {},
+  "paths": {
+    "checkpoint": {
+      "path": "checkpoints/efficientad/development/06-dev-carpet-e9-seed2026-v1.pt",
+      "sha256": "6cfbfa1b708fefd6f161ecbeabe1c7d77566584e2a3ef81910ca28ad717cf079",
+      "bytes": 32253487
+    },
+    "results": "reports/efficientad/development/06-dev-carpet-e9-seed2026-v1.json"
+  },
+  "interpretation": "Training losses and paired fitting-background proxy sensitivity must be assessed jointly; not real-defect performance.",
+  "decision": "Retain for predeclared selection",
+  "status": "completed",
+  "recorded_at": "2026-11-14T02:39:57.441994+00:00",
+  "config_sha256": "970fdd8e1ef100268ab5dfbd12bacb3b4221aab56b32cc2031c4a1d3eed73c92"
+}

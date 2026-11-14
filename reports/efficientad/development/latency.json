@@ -1,0 +1,2475 @@
+{
+  "methodology": "Same deterministic FP32 model, no semantic changes. 50 warmups/repeat, resident 1x3x256x256 input. Explicit synchronization and CUDA events; event time includes stream launch gaps. End-to-end includes file decode, CPU preprocessing, H2D, forward, D2H map and score.",
+  "resident_wall": {
+    "p50_ms": 41.98589999577962,
+    "p95_ms": 54.11163998651319,
+    "count": 300
+  },
+  "resident_gpu_event": {
+    "p50_ms": 41.916303634643555,
+    "p95_ms": 53.26419506072999,
+    "count": 300
+  },
+  "per_repeat": [
+    {
+      "repeat": 0,
+      "wall": {
+        "p50_ms": 42.76404999836814,
+        "p95_ms": 53.3351949925418,
+        "count": 100
+      },
+      "gpu": {
+        "p50_ms": 42.689537048339844,
+        "p95_ms": 53.01920394897461,
+        "count": 100
+      }
+    },
+    {
+      "repeat": 1,
+      "wall": {
+        "p50_ms": 41.30944999633357,
+        "p95_ms": 56.56145499669947,
+        "count": 100
+      },
+      "gpu": {
+        "p50_ms": 41.23852729797363,
+        "p95_ms": 56.4882827758789,
+        "count": 100
+      }
+    },
+    {
+      "repeat": 2,
+      "wall": {
+        "p50_ms": 41.997649997938424,
+        "p95_ms": 52.62845498218667,
+        "count": 100
+      },
+      "gpu": {
+        "p50_ms": 41.924015045166016,
+        "p95_ms": 52.528500175476076,
+        "count": 100
+      }
+    }
+  ],
+  "host_to_device": {
+    "p50_ms": 0.2736999886110425,
+    "p95_ms": 0.4022350040031597,
+    "count": 100
+  },
+  "end_to_end": {
+    "p50_ms": 47.13699998683296,
+    "p95_ms": 80.4417799867224,
+    "count": 100
+  },
+  "bursts": [
+    {
+      "images": 50,
+      "wall_ms_per_image": 42.9983600002015,
+      "gpu_stream_ms_per_image": 42.9943017578125
+    },
+    {
+      "images": 50,
+      "wall_ms_per_image": 41.67157599993516,
+      "gpu_stream_ms_per_image": 41.6700634765625
+    },
+    {
+      "images": 50,
+      "wall_ms_per_image": 40.546912000281736,
+      "gpu_stream_ms_per_image": 40.54554443359375
+    }
+  ],
+  "telemetry": [
+    {
+      "repeat": 0,
+      "gpu_before": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "54",
+        "utilization.gpu": "37",
+        "utilization.memory": "7",
+        "power.draw": "55.63",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2580",
+        "memory.used": "247"
+      },
+      "gpu_after": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "53",
+        "utilization.gpu": "45",
+        "utilization.memory": "8",
+        "power.draw": "57.65",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2565",
+        "memory.used": "247"
+      },
+      "elapsed_seconds": 4.415993000002345,
+      "cpu_process_seconds": 4.234375,
+      "cpu_percent_one_core": 95.88726703139591
+    },
+    {
+      "repeat": 1,
+      "gpu_before": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "56",
+        "utilization.gpu": "39",
+        "utilization.memory": "7",
+        "power.draw": "57.81",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2565",
+        "memory.used": "247"
+      },
+      "gpu_after": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "57",
+        "utilization.gpu": "44",
+        "utilization.memory": "8",
+        "power.draw": "59.69",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2565",
+        "memory.used": "247"
+      },
+      "elapsed_seconds": 4.367691099992953,
+      "cpu_process_seconds": 4.140625,
+      "cpu_percent_one_core": 94.80123262395274
+    },
+    {
+      "repeat": 2,
+      "gpu_before": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "58",
+        "utilization.gpu": "46",
+        "utilization.memory": "9",
+        "power.draw": "113.93",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2565",
+        "memory.used": "247"
+      },
+      "gpu_after": {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "pstate": "P0",
+        "temperature.gpu": "57",
+        "utilization.gpu": "43",
+        "utilization.memory": "8",
+        "power.draw": "57.05",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2565",
+        "memory.used": "247"
+      },
+      "elapsed_seconds": 4.297262300009606,
+      "cpu_process_seconds": 4.15625,
+      "cpu_percent_one_core": 96.71855497372616
+    }
+  ],
+  "samples": [
+    {
+      "repeat": 0,
+      "index": 0,
+      "scope": "resident",
+      "wall_ms": 65.50170000991784,
+      "gpu_ms": 51.174400329589844
+    },
+    {
+      "repeat": 0,
+      "index": 1,
+      "scope": "resident",
+      "wall_ms": 48.04409999633208,
+      "gpu_ms": 47.9365119934082
+    },
+    {
+      "repeat": 0,
+      "index": 2,
+      "scope": "resident",
+      "wall_ms": 48.07479999726638,
+      "gpu_ms": 47.98857498168945
+    },
+    {
+      "repeat": 0,
+      "index": 3,
+      "scope": "resident",
+      "wall_ms": 48.6864999984391,
+      "gpu_ms": 48.61030578613281
+    },
+    {
+      "repeat": 0,
+      "index": 4,
+      "scope": "resident",
+      "wall_ms": 45.099399983882904,
+      "gpu_ms": 45.024288177490234
+    },
+    {
+      "repeat": 0,
+      "index": 5,
+      "scope": "resident",
+      "wall_ms": 46.15680000279099,
+      "gpu_ms": 46.06892776489258
+    },
+    {
+      "repeat": 0,
+      "index": 6,
+      "scope": "resident",
+      "wall_ms": 45.41409999364987,
+      "gpu_ms": 45.33766555786133
+    },
+    {
+      "repeat": 0,
+      "index": 7,
+      "scope": "resident",
+      "wall_ms": 44.12230002344586,
+      "gpu_ms": 44.042240142822266
+    },
+    {
+      "repeat": 0,
+      "index": 8,
+      "scope": "resident",
+      "wall_ms": 41.733099991688505,
+      "gpu_ms": 41.663551330566406
+    },
+    {
+      "repeat": 0,
+      "index": 9,
+      "scope": "resident",
+      "wall_ms": 41.152200021315366,
+      "gpu_ms": 41.084129333496094
+    },
+    {
+      "repeat": 0,
+      "index": 10,
+      "scope": "resident",
+      "wall_ms": 44.73670001607388,
+      "gpu_ms": 44.67193603515625
+    },
+    {
+      "repeat": 0,
+      "index": 11,
+      "scope": "resident",
+      "wall_ms": 38.386199972592294,
+      "gpu_ms": 38.32118225097656
+    },
+    {
+      "repeat": 0,
+      "index": 12,
+      "scope": "resident",
+      "wall_ms": 38.2433999911882,
+      "gpu_ms": 38.17542266845703
+    },
+    {
+      "repeat": 0,
+      "index": 13,
+      "scope": "resident",
+      "wall_ms": 50.333699997281656,
+      "gpu_ms": 50.26201629638672
+    },
+    {
+      "repeat": 0,
+      "index": 14,
+      "scope": "resident",
+      "wall_ms": 47.13590000756085,
+      "gpu_ms": 47.04345703125
+    },
+    {
+      "repeat": 0,
+      "index": 15,
+      "scope": "resident",
+      "wall_ms": 49.649499997030944,
+      "gpu_ms": 49.522335052490234
+    },
+    {
+      "repeat": 0,
+      "index": 16,
+      "scope": "resident",
+      "wall_ms": 42.91469999589026,
+      "gpu_ms": 42.849952697753906
+    },
+    {
+      "repeat": 0,
+      "index": 17,
+      "scope": "resident",
+      "wall_ms": 41.41720000188798,
+      "gpu_ms": 41.34163284301758
+    },
+    {
+      "repeat": 0,
+      "index": 18,
+      "scope": "resident",
+      "wall_ms": 48.18039998644963,
+      "gpu_ms": 48.10956954956055
+    },
+    {
+      "repeat": 0,
+      "index": 19,
+      "scope": "resident",
+      "wall_ms": 49.89319999003783,
+      "gpu_ms": 49.810142517089844
+    },
+    {
+      "repeat": 0,
+      "index": 20,
+      "scope": "resident",
+      "wall_ms": 58.640999981435016,
+      "gpu_ms": 58.52876663208008
+    },
+    {
+      "repeat": 0,
+      "index": 21,
+      "scope": "resident",
+      "wall_ms": 53.100099990842864,
+      "gpu_ms": 53.001216888427734
+    },
+    {
+      "repeat": 0,
+      "index": 22,
+      "scope": "resident",
+      "wall_ms": 51.7130000225734,
+      "gpu_ms": 51.64851379394531
+    },
+    {
+      "repeat": 0,
+      "index": 23,
+      "scope": "resident",
+      "wall_ms": 41.84890000033192,
+      "gpu_ms": 41.77715301513672
+    },
+    {
+      "repeat": 0,
+      "index": 24,
+      "scope": "resident",
+      "wall_ms": 54.46200000005774,
+      "gpu_ms": 54.386688232421875
+    },
+    {
+      "repeat": 0,
+      "index": 25,
+      "scope": "resident",
+      "wall_ms": 44.35009998269379,
+      "gpu_ms": 44.27775955200195
+    },
+    {
+      "repeat": 0,
+      "index": 26,
+      "scope": "resident",
+      "wall_ms": 38.75460001290776,
+      "gpu_ms": 38.67228698730469
+    },
+    {
+      "repeat": 0,
+      "index": 27,
+      "scope": "resident",
+      "wall_ms": 53.07889997493476,
+      "gpu_ms": 53.008384704589844
+    },
+    {
+      "repeat": 0,
+      "index": 28,
+      "scope": "resident",
+      "wall_ms": 39.328299986664206,
+      "gpu_ms": 39.25503921508789
+    },
+    {
+      "repeat": 0,
+      "index": 29,
+      "scope": "resident",
+      "wall_ms": 46.30429999087937,
+      "gpu_ms": 46.232574462890625
+    },
+    {
+      "repeat": 0,
+      "index": 30,
+      "scope": "resident",
+      "wall_ms": 38.88030000962317,
+      "gpu_ms": 38.81062316894531
+    },
+    {
+      "repeat": 0,
+      "index": 31,
+      "scope": "resident",
+      "wall_ms": 40.820399997755885,
+      "gpu_ms": 40.74700927734375
+    },
+    {
+      "repeat": 0,
+      "index": 32,
+      "scope": "resident",
+      "wall_ms": 42.21420001704246,
+      "gpu_ms": 42.14467239379883
+    },
+    {
+      "repeat": 0,
+      "index": 33,
+      "scope": "resident",
+      "wall_ms": 40.346199995838106,
+      "gpu_ms": 40.276126861572266
+    },
+    {
+      "repeat": 0,
+      "index": 34,
+      "scope": "resident",
+      "wall_ms": 45.51789999823086,
+      "gpu_ms": 45.44512176513672
+    },
+    {
+      "repeat": 0,
+      "index": 35,
+      "scope": "resident",
+      "wall_ms": 41.64740000851452,
+      "gpu_ms": 41.571327209472656
+    },
+    {
+      "repeat": 0,
+      "index": 36,
+      "scope": "resident",
+      "wall_ms": 40.835099993273616,
+      "gpu_ms": 40.75519943237305
+    },
+    {
+      "repeat": 0,
+      "index": 37,
+      "scope": "resident",
+      "wall_ms": 47.15659999055788,
+      "gpu_ms": 47.06537628173828
+    },
+    {
+      "repeat": 0,
+      "index": 38,
+      "scope": "resident",
+      "wall_ms": 40.89650002424605,
+      "gpu_ms": 40.824703216552734
+    },
+    {
+      "repeat": 0,
+      "index": 39,
+      "scope": "resident",
+      "wall_ms": 49.59419998340309,
+      "gpu_ms": 49.47644805908203
+    },
+    {
+      "repeat": 0,
+      "index": 40,
+      "scope": "resident",
+      "wall_ms": 40.51689998595975,
+      "gpu_ms": 40.45606231689453
+    },
+    {
+      "repeat": 0,
+      "index": 41,
+      "scope": "resident",
+      "wall_ms": 41.309299995191395,
+      "gpu_ms": 41.23833465576172
+    },
+    {
+      "repeat": 0,
+      "index": 42,
+      "scope": "resident",
+      "wall_ms": 41.531399998348206,
+      "gpu_ms": 41.45884704589844
+    },
+    {
+      "repeat": 0,
+      "index": 43,
+      "scope": "resident",
+      "wall_ms": 34.98990001389757,
+      "gpu_ms": 34.92464065551758
+    },
+    {
+      "repeat": 0,
+      "index": 44,
+      "scope": "resident",
+      "wall_ms": 41.86620001564734,
+      "gpu_ms": 41.80275344848633
+    },
+    {
+      "repeat": 0,
+      "index": 45,
+      "scope": "resident",
+      "wall_ms": 41.73090000404045,
+      "gpu_ms": 41.648223876953125
+    },
+    {
+      "repeat": 0,
+      "index": 46,
+      "scope": "resident",
+      "wall_ms": 56.25160000636242,
+      "gpu_ms": 56.178688049316406
+    },
+    {
+      "repeat": 0,
+      "index": 47,
+      "scope": "resident",
+      "wall_ms": 49.55210001207888,
+      "gpu_ms": 49.47577667236328
+    },
+    {
+      "repeat": 0,
+      "index": 48,
+      "scope": "resident",
+      "wall_ms": 44.7967000072822,
+      "gpu_ms": 44.67433547973633
+    },
+    {
+      "repeat": 0,
+      "index": 49,
+      "scope": "resident",
+      "wall_ms": 44.07740000169724,
+      "gpu_ms": 43.97603225708008
+    },
+    {
+      "repeat": 0,
+      "index": 50,
+      "scope": "resident",
+      "wall_ms": 40.439700009301305,
+      "gpu_ms": 40.363006591796875
+    },
+    {
+      "repeat": 0,
+      "index": 51,
+      "scope": "resident",
+      "wall_ms": 40.270600002259016,
+      "gpu_ms": 40.19596862792969
+    },
+    {
+      "repeat": 0,
+      "index": 52,
+      "scope": "resident",
+      "wall_ms": 45.933300018077716,
+      "gpu_ms": 45.853694915771484
+    },
+    {
+      "repeat": 0,
+      "index": 53,
+      "scope": "resident",
+      "wall_ms": 40.860499982954934,
+      "gpu_ms": 40.77568054199219
+    },
+    {
+      "repeat": 0,
+      "index": 54,
+      "scope": "resident",
+      "wall_ms": 41.98720000567846,
+      "gpu_ms": 41.914398193359375
+    },
+    {
+      "repeat": 0,
+      "index": 55,
+      "scope": "resident",
+      "wall_ms": 42.91779999039136,
+      "gpu_ms": 42.838016510009766
+    },
+    {
+      "repeat": 0,
+      "index": 56,
+      "scope": "resident",
+      "wall_ms": 40.63329999917187,
+      "gpu_ms": 40.56166458129883
+    },
+    {
+      "repeat": 0,
+      "index": 57,
+      "scope": "resident",
+      "wall_ms": 45.36670001107268,
+      "gpu_ms": 45.289215087890625
+    },
+    {
+      "repeat": 0,
+      "index": 58,
+      "scope": "resident",
+      "wall_ms": 45.131899998523295,
+      "gpu_ms": 45.061153411865234
+    },
+    {
+      "repeat": 0,
+      "index": 59,
+      "scope": "resident",
+      "wall_ms": 40.770099993096665,
+      "gpu_ms": 40.68860626220703
+    },
+    {
+      "repeat": 0,
+      "index": 60,
+      "scope": "resident",
+      "wall_ms": 42.519799986621365,
+      "gpu_ms": 42.433536529541016
+    },
+    {
+      "repeat": 0,
+      "index": 61,
+      "scope": "resident",
+      "wall_ms": 37.526700005400926,
+      "gpu_ms": 37.452606201171875
+    },
+    {
+      "repeat": 0,
+      "index": 62,
+      "scope": "resident",
+      "wall_ms": 43.47599999164231,
+      "gpu_ms": 43.40214538574219
+    },
+    {
+      "repeat": 0,
+      "index": 63,
+      "scope": "resident",
+      "wall_ms": 39.31779999402352,
+      "gpu_ms": 39.248897552490234
+    },
+    {
+      "repeat": 0,
+      "index": 64,
+      "scope": "resident",
+      "wall_ms": 40.14230001484975,
+      "gpu_ms": 40.07014465332031
+    },
+    {
+      "repeat": 0,
+      "index": 65,
+      "scope": "resident",
+      "wall_ms": 46.062300010817125,
+      "gpu_ms": 45.99091339111328
+    },
+    {
+      "repeat": 0,
+      "index": 66,
+      "scope": "resident",
+      "wall_ms": 40.73209999478422,
+      "gpu_ms": 40.65465545654297
+    },
+    {
+      "repeat": 0,
+      "index": 67,
+      "scope": "resident",
+      "wall_ms": 42.61340000084601,
+      "gpu_ms": 42.54105758666992
+    },
+    {
+      "repeat": 0,
+      "index": 68,
+      "scope": "resident",
+      "wall_ms": 42.976199998520315,
+      "gpu_ms": 42.905601501464844
+    },
+    {
+      "repeat": 0,
+      "index": 69,
+      "scope": "resident",
+      "wall_ms": 40.84480000892654,
+      "gpu_ms": 40.77363204956055
+    },
+    {
+      "repeat": 0,
+      "index": 70,
+      "scope": "resident",
+      "wall_ms": 37.75280000991188,
+      "gpu_ms": 37.68217468261719
+    },
+    {
+      "repeat": 0,
+      "index": 71,
+      "scope": "resident",
+      "wall_ms": 39.87770000821911,
+      "gpu_ms": 39.80819320678711
+    },
+    {
+      "repeat": 0,
+      "index": 72,
+      "scope": "resident",
+      "wall_ms": 42.455899994820356,
+      "gpu_ms": 42.3875846862793
+    },
+    {
+      "repeat": 0,
+      "index": 73,
+      "scope": "resident",
+      "wall_ms": 42.244400014169514,
+      "gpu_ms": 42.16524887084961
+    },
+    {
+      "repeat": 0,
+      "index": 74,
+      "scope": "resident",
+      "wall_ms": 44.472599984146655,
+      "gpu_ms": 44.37635040283203
+    },
+    {
+      "repeat": 0,
+      "index": 75,
+      "scope": "resident",
+      "wall_ms": 54.09319998580031,
+      "gpu_ms": 54.01327896118164
+    },
+    {
+      "repeat": 0,
+      "index": 76,
+      "scope": "resident",
+      "wall_ms": 41.53930000029504,
+      "gpu_ms": 41.461761474609375
+    },
+    {
+      "repeat": 0,
+      "index": 77,
+      "scope": "resident",
+      "wall_ms": 40.39869998814538,
+      "gpu_ms": 40.31283187866211
+    },
+    {
+      "repeat": 0,
+      "index": 78,
+      "scope": "resident",
+      "wall_ms": 47.191399993607774,
+      "gpu_ms": 47.1082878112793
+    },
+    {
+      "repeat": 0,
+      "index": 79,
+      "scope": "resident",
+      "wall_ms": 39.930099999764934,
+      "gpu_ms": 39.85715103149414
+    },
+    {
+      "repeat": 0,
+      "index": 80,
+      "scope": "resident",
+      "wall_ms": 46.82180000236258,
+      "gpu_ms": 46.748863220214844
+    },
+    {
+      "repeat": 0,
+      "index": 81,
+      "scope": "resident",
+      "wall_ms": 39.4906000001356,
+      "gpu_ms": 39.41756820678711
+    },
+    {
+      "repeat": 0,
+      "index": 82,
+      "scope": "resident",
+      "wall_ms": 40.21119998651557,
+      "gpu_ms": 40.13663864135742
+    },
+    {
+      "repeat": 0,
+      "index": 83,
+      "scope": "resident",
+      "wall_ms": 38.73800000292249,
+      "gpu_ms": 38.66214370727539
+    },
+    {
+      "repeat": 0,
+      "index": 84,
+      "scope": "resident",
+      "wall_ms": 39.500099985161796,
+      "gpu_ms": 39.42534255981445
+    },
+    {
+      "repeat": 0,
+      "index": 85,
+      "scope": "resident",
+      "wall_ms": 44.9607000045944,
+      "gpu_ms": 44.7573127746582
+    },
+    {
+      "repeat": 0,
+      "index": 86,
+      "scope": "resident",
+      "wall_ms": 48.53490000823513,
+      "gpu_ms": 48.39427185058594
+    },
+    {
+      "repeat": 0,
+      "index": 87,
+      "scope": "resident",
+      "wall_ms": 41.79499999736436,
+      "gpu_ms": 41.72697448730469
+    },
+    {
+      "repeat": 0,
+      "index": 88,
+      "scope": "resident",
+      "wall_ms": 43.54440001770854,
+      "gpu_ms": 43.47702407836914
+    },
+    {
+      "repeat": 0,
+      "index": 89,
+      "scope": "resident",
+      "wall_ms": 37.76730000390671,
+      "gpu_ms": 37.68745422363281
+    },
+    {
+      "repeat": 0,
+      "index": 90,
+      "scope": "resident",
+      "wall_ms": 40.611700009321794,
+      "gpu_ms": 40.540096282958984
+    },
+    {
+      "repeat": 0,
+      "index": 91,
+      "scope": "resident",
+      "wall_ms": 47.71030001575127,
+      "gpu_ms": 47.6376953125
+    },
+    {
+      "repeat": 0,
+      "index": 92,
+      "scope": "resident",
+      "wall_ms": 43.65879998658784,
+      "gpu_ms": 43.58553695678711
+    },
+    {
+      "repeat": 0,
+      "index": 93,
+      "scope": "resident",
+      "wall_ms": 53.29529999289662,
+      "gpu_ms": 53.224769592285156
+    },
+    {
+      "repeat": 0,
+      "index": 94,
+      "scope": "resident",
+      "wall_ms": 38.36159998900257,
+      "gpu_ms": 38.29119873046875
+    },
+    {
+      "repeat": 0,
+      "index": 95,
+      "scope": "resident",
+      "wall_ms": 49.09630000474863,
+      "gpu_ms": 49.01580810546875
+    },
+    {
+      "repeat": 0,
+      "index": 96,
+      "scope": "resident",
+      "wall_ms": 43.16100000869483,
+      "gpu_ms": 43.057151794433594
+    },
+    {
+      "repeat": 0,
+      "index": 97,
+      "scope": "resident",
+      "wall_ms": 40.20329998456873,
+      "gpu_ms": 40.1346549987793
+    },
+    {
+      "repeat": 0,
+      "index": 98,
+      "scope": "resident",
+      "wall_ms": 45.68930002278648,
+      "gpu_ms": 45.617313385009766
+    },
+    {
+      "repeat": 0,
+      "index": 99,
+      "scope": "resident",
+      "wall_ms": 43.730200006393716,
+      "gpu_ms": 43.66048049926758
+    },
+    {
+      "repeat": 1,
+      "index": 0,
+      "scope": "resident",
+      "wall_ms": 40.65510001964867,
+      "gpu_ms": 40.36812973022461
+    },
+    {
+      "repeat": 1,
+      "index": 1,
+      "scope": "resident",
+      "wall_ms": 40.44760001124814,
+      "gpu_ms": 40.285152435302734
+    },
+    {
+      "repeat": 1,
+      "index": 2,
+      "scope": "resident",
+      "wall_ms": 56.24790000729263,
+      "gpu_ms": 56.16844940185547
+    },
+    {
+      "repeat": 1,
+      "index": 3,
+      "scope": "resident",
+      "wall_ms": 38.497200002893806,
+      "gpu_ms": 38.42252731323242
+    },
+    {
+      "repeat": 1,
+      "index": 4,
+      "scope": "resident",
+      "wall_ms": 43.80470002070069,
+      "gpu_ms": 43.72684860229492
+    },
+    {
+      "repeat": 1,
+      "index": 5,
+      "scope": "resident",
+      "wall_ms": 47.567700006766245,
+      "gpu_ms": 47.4439697265625
+    },
+    {
+      "repeat": 1,
+      "index": 6,
+      "scope": "resident",
+      "wall_ms": 40.64889997243881,
+      "gpu_ms": 40.56883239746094
+    },
+    {
+      "repeat": 1,
+      "index": 7,
+      "scope": "resident",
+      "wall_ms": 41.945000004488975,
+      "gpu_ms": 41.870079040527344
+    },
+    {
+      "repeat": 1,
+      "index": 8,
+      "scope": "resident",
+      "wall_ms": 45.54129997268319,
+      "gpu_ms": 45.444095611572266
+    },
+    {
+      "repeat": 1,
+      "index": 9,
+      "scope": "resident",
+      "wall_ms": 42.876899999100715,
+      "gpu_ms": 42.784767150878906
+    },
+    {
+      "repeat": 1,
+      "index": 10,
+      "scope": "resident",
+      "wall_ms": 40.244099975097924,
+      "gpu_ms": 40.162078857421875
+    },
+    {
+      "repeat": 1,
+      "index": 11,
+      "scope": "resident",
+      "wall_ms": 43.33879999467172,
+      "gpu_ms": 43.245567321777344
+    },
+    {
+      "repeat": 1,
+      "index": 12,
+      "scope": "resident",
+      "wall_ms": 43.28510002233088,
+      "gpu_ms": 43.217918395996094
+    },
+    {
+      "repeat": 1,
+      "index": 13,
+      "scope": "resident",
+      "wall_ms": 45.21719997865148,
+      "gpu_ms": 45.126625061035156
+    },
+    {
+      "repeat": 1,
+      "index": 14,
+      "scope": "resident",
+      "wall_ms": 82.93899998534471,
+      "gpu_ms": 82.71052551269531
+    },
+    {
+      "repeat": 1,
+      "index": 15,
+      "scope": "resident",
+      "wall_ms": 80.77219998813234,
+      "gpu_ms": 80.68505859375
+    },
+    {
+      "repeat": 1,
+      "index": 16,
+      "scope": "resident",
+      "wall_ms": 60.746700008166954,
+      "gpu_ms": 60.658687591552734
+    },
+    {
+      "repeat": 1,
+      "index": 17,
+      "scope": "resident",
+      "wall_ms": 66.51889998465776,
+      "gpu_ms": 66.44438171386719
+    },
+    {
+      "repeat": 1,
+      "index": 18,
+      "scope": "resident",
+      "wall_ms": 42.14760000468232,
+      "gpu_ms": 42.061824798583984
+    },
+    {
+      "repeat": 1,
+      "index": 19,
+      "scope": "resident",
+      "wall_ms": 40.77169997617602,
+      "gpu_ms": 40.69782257080078
+    },
+    {
+      "repeat": 1,
+      "index": 20,
+      "scope": "resident",
+      "wall_ms": 40.024899994023144,
+      "gpu_ms": 39.948577880859375
+    },
+    {
+      "repeat": 1,
+      "index": 21,
+      "scope": "resident",
+      "wall_ms": 42.810300015844405,
+      "gpu_ms": 42.73683166503906
+    },
+    {
+      "repeat": 1,
+      "index": 22,
+      "scope": "resident",
+      "wall_ms": 40.682799997739494,
+      "gpu_ms": 40.569854736328125
+    },
+    {
+      "repeat": 1,
+      "index": 23,
+      "scope": "resident",
+      "wall_ms": 38.12899999320507,
+      "gpu_ms": 38.05491256713867
+    },
+    {
+      "repeat": 1,
+      "index": 24,
+      "scope": "resident",
+      "wall_ms": 42.87960001965985,
+      "gpu_ms": 42.804481506347656
+    },
+    {
+      "repeat": 1,
+      "index": 25,
+      "scope": "resident",
+      "wall_ms": 39.92290000314824,
+      "gpu_ms": 39.83465576171875
+    },
+    {
+      "repeat": 1,
+      "index": 26,
+      "scope": "resident",
+      "wall_ms": 45.2610999927856,
+      "gpu_ms": 45.19356918334961
+    },
+    {
+      "repeat": 1,
+      "index": 27,
+      "scope": "resident",
+      "wall_ms": 42.11479998775758,
+      "gpu_ms": 42.04246520996094
+    },
+    {
+      "repeat": 1,
+      "index": 28,
+      "scope": "resident",
+      "wall_ms": 39.58859998965636,
+      "gpu_ms": 39.51852798461914
+    },
+    {
+      "repeat": 1,
+      "index": 29,
+      "scope": "resident",
+      "wall_ms": 43.860800011316314,
+      "gpu_ms": 43.78316879272461
+    },
+    {
+      "repeat": 1,
+      "index": 30,
+      "scope": "resident",
+      "wall_ms": 46.19620001176372,
+      "gpu_ms": 46.115840911865234
+    },
+    {
+      "repeat": 1,
+      "index": 31,
+      "scope": "resident",
+      "wall_ms": 38.87759998906404,
+      "gpu_ms": 38.81155014038086
+    },
+    {
+      "repeat": 1,
+      "index": 32,
+      "scope": "resident",
+      "wall_ms": 39.26980000687763,
+      "gpu_ms": 39.199745178222656
+    },
+    {
+      "repeat": 1,
+      "index": 33,
+      "scope": "resident",
+      "wall_ms": 39.34419999131933,
+      "gpu_ms": 39.272544860839844
+    },
+    {
+      "repeat": 1,
+      "index": 34,
+      "scope": "resident",
+      "wall_ms": 39.5217000041157,
+      "gpu_ms": 39.199520111083984
+    },
+    {
+      "repeat": 1,
+      "index": 35,
+      "scope": "resident",
+      "wall_ms": 55.116300005465746,
+      "gpu_ms": 55.052223205566406
+    },
+    {
+      "repeat": 1,
+      "index": 36,
+      "scope": "resident",
+      "wall_ms": 40.156500006560236,
+      "gpu_ms": 40.0882568359375
+    },
+    {
+      "repeat": 1,
+      "index": 37,
+      "scope": "resident",
+      "wall_ms": 39.40939999301918,
+      "gpu_ms": 39.337982177734375
+    },
+    {
+      "repeat": 1,
+      "index": 38,
+      "scope": "resident",
+      "wall_ms": 38.41539999120869,
+      "gpu_ms": 38.344703674316406
+    },
+    {
+      "repeat": 1,
+      "index": 39,
+      "scope": "resident",
+      "wall_ms": 37.731099990196526,
+      "gpu_ms": 37.65760040283203
+    },
+    {
+      "repeat": 1,
+      "index": 40,
+      "scope": "resident",
+      "wall_ms": 57.316799997352064,
+      "gpu_ms": 57.232383728027344
+    },
+    {
+      "repeat": 1,
+      "index": 41,
+      "scope": "resident",
+      "wall_ms": 41.98459998588078,
+      "gpu_ms": 41.918209075927734
+    },
+    {
+      "repeat": 1,
+      "index": 42,
+      "scope": "resident",
+      "wall_ms": 41.3367000001017,
+      "gpu_ms": 41.2672004699707
+    },
+    {
+      "repeat": 1,
+      "index": 43,
+      "scope": "resident",
+      "wall_ms": 40.593499987153336,
+      "gpu_ms": 40.52492904663086
+    },
+    {
+      "repeat": 1,
+      "index": 44,
+      "scope": "resident",
+      "wall_ms": 37.40739999921061,
+      "gpu_ms": 37.34617614746094
+    },
+    {
+      "repeat": 1,
+      "index": 45,
+      "scope": "resident",
+      "wall_ms": 39.89250000449829,
+      "gpu_ms": 39.827457427978516
+    },
+    {
+      "repeat": 1,
+      "index": 46,
+      "scope": "resident",
+      "wall_ms": 33.893999992869794,
+      "gpu_ms": 33.82921600341797
+    },
+    {
+      "repeat": 1,
+      "index": 47,
+      "scope": "resident",
+      "wall_ms": 38.09039999032393,
+      "gpu_ms": 38.02134323120117
+    },
+    {
+      "repeat": 1,
+      "index": 48,
+      "scope": "resident",
+      "wall_ms": 42.9782000137493,
+      "gpu_ms": 42.89436721801758
+    },
+    {
+      "repeat": 1,
+      "index": 49,
+      "scope": "resident",
+      "wall_ms": 45.0540000165347,
+      "gpu_ms": 44.98160171508789
+    },
+    {
+      "repeat": 1,
+      "index": 50,
+      "scope": "resident",
+      "wall_ms": 42.808600002899766,
+      "gpu_ms": 42.648929595947266
+    },
+    {
+      "repeat": 1,
+      "index": 51,
+      "scope": "resident",
+      "wall_ms": 40.86079998523928,
+      "gpu_ms": 40.78899383544922
+    },
+    {
+      "repeat": 1,
+      "index": 52,
+      "scope": "resident",
+      "wall_ms": 38.172800006577745,
+      "gpu_ms": 38.10201644897461
+    },
+    {
+      "repeat": 1,
+      "index": 53,
+      "scope": "resident",
+      "wall_ms": 40.903300017816946,
+      "gpu_ms": 40.82992172241211
+    },
+    {
+      "repeat": 1,
+      "index": 54,
+      "scope": "resident",
+      "wall_ms": 40.774399996735156,
+      "gpu_ms": 40.69075012207031
+    },
+    {
+      "repeat": 1,
+      "index": 55,
+      "scope": "resident",
+      "wall_ms": 39.68889999669045,
+      "gpu_ms": 39.613441467285156
+    },
+    {
+      "repeat": 1,
+      "index": 56,
+      "scope": "resident",
+      "wall_ms": 44.48700000648387,
+      "gpu_ms": 44.39449691772461
+    },
+    {
+      "repeat": 1,
+      "index": 57,
+      "scope": "resident",
+      "wall_ms": 40.44940002495423,
+      "gpu_ms": 40.370174407958984
+    },
+    {
+      "repeat": 1,
+      "index": 58,
+      "scope": "resident",
+      "wall_ms": 43.44350000610575,
+      "gpu_ms": 43.36812973022461
+    },
+    {
+      "repeat": 1,
+      "index": 59,
+      "scope": "resident",
+      "wall_ms": 40.09809999843128,
+      "gpu_ms": 40.021854400634766
+    },
+    {
+      "repeat": 1,
+      "index": 60,
+      "scope": "resident",
+      "wall_ms": 40.89030000614002,
+      "gpu_ms": 40.81388854980469
+    },
+    {
+      "repeat": 1,
+      "index": 61,
+      "scope": "resident",
+      "wall_ms": 47.79310000594705,
+      "gpu_ms": 47.69184112548828
+    },
+    {
+      "repeat": 1,
+      "index": 62,
+      "scope": "resident",
+      "wall_ms": 41.48159999749623,
+      "gpu_ms": 41.4126091003418
+    },
+    {
+      "repeat": 1,
+      "index": 63,
+      "scope": "resident",
+      "wall_ms": 40.89709999971092,
+      "gpu_ms": 40.822784423828125
+    },
+    {
+      "repeat": 1,
+      "index": 64,
+      "scope": "resident",
+      "wall_ms": 56.52169999666512,
+      "gpu_ms": 56.449119567871094
+    },
+    {
+      "repeat": 1,
+      "index": 65,
+      "scope": "resident",
+      "wall_ms": 39.31089999969117,
+      "gpu_ms": 39.239646911621094
+    },
+    {
+      "repeat": 1,
+      "index": 66,
+      "scope": "resident",
+      "wall_ms": 45.84969999268651,
+      "gpu_ms": 45.75734329223633
+    },
+    {
+      "repeat": 1,
+      "index": 67,
+      "scope": "resident",
+      "wall_ms": 41.236699995351955,
+      "gpu_ms": 41.12384033203125
+    },
+    {
+      "repeat": 1,
+      "index": 68,
+      "scope": "resident",
+      "wall_ms": 40.91420001350343,
+      "gpu_ms": 40.84310531616211
+    },
+    {
+      "repeat": 1,
+      "index": 69,
+      "scope": "resident",
+      "wall_ms": 39.04169998713769,
+      "gpu_ms": 38.96748733520508
+    },
+    {
+      "repeat": 1,
+      "index": 70,
+      "scope": "resident",
+      "wall_ms": 39.13560000364669,
+      "gpu_ms": 39.072574615478516
+    },
+    {
+      "repeat": 1,
+      "index": 71,
+      "scope": "resident",
+      "wall_ms": 42.93880000477657,
+      "gpu_ms": 42.865665435791016
+    },
+    {
+      "repeat": 1,
+      "index": 72,
+      "scope": "resident",
+      "wall_ms": 38.94850000506267,
+      "gpu_ms": 38.85782241821289
+    },
+    {
+      "repeat": 1,
+      "index": 73,
+      "scope": "resident",
+      "wall_ms": 41.39259998919442,
+      "gpu_ms": 41.322879791259766
+    },
+    {
+      "repeat": 1,
+      "index": 74,
+      "scope": "resident",
+      "wall_ms": 45.05009998683818,
+      "gpu_ms": 44.97926330566406
+    },
+    {
+      "repeat": 1,
+      "index": 75,
+      "scope": "resident",
+      "wall_ms": 41.28219999256544,
+      "gpu_ms": 41.20985412597656
+    },
+    {
+      "repeat": 1,
+      "index": 76,
+      "scope": "resident",
+      "wall_ms": 39.32139999233186,
+      "gpu_ms": 39.24991989135742
+    },
+    {
+      "repeat": 1,
+      "index": 77,
+      "scope": "resident",
+      "wall_ms": 39.698699984000996,
+      "gpu_ms": 39.62758255004883
+    },
+    {
+      "repeat": 1,
+      "index": 78,
+      "scope": "resident",
+      "wall_ms": 47.6976000063587,
+      "gpu_ms": 47.62419128417969
+    },
+    {
+      "repeat": 1,
+      "index": 79,
+      "scope": "resident",
+      "wall_ms": 40.08780000731349,
+      "gpu_ms": 40.0107536315918
+    },
+    {
+      "repeat": 1,
+      "index": 80,
+      "scope": "resident",
+      "wall_ms": 38.87129999930039,
+      "gpu_ms": 38.789119720458984
+    },
+    {
+      "repeat": 1,
+      "index": 81,
+      "scope": "resident",
+      "wall_ms": 43.85049999109469,
+      "gpu_ms": 43.76668930053711
+    },
+    {
+      "repeat": 1,
+      "index": 82,
+      "scope": "resident",
+      "wall_ms": 43.44200002378784,
+      "gpu_ms": 43.3520622253418
+    },
+    {
+      "repeat": 1,
+      "index": 83,
+      "scope": "resident",
+      "wall_ms": 39.896000002045184,
+      "gpu_ms": 39.80595016479492
+    },
+    {
+      "repeat": 1,
+      "index": 84,
+      "scope": "resident",
+      "wall_ms": 51.14180000964552,
+      "gpu_ms": 51.0333137512207
+    },
+    {
+      "repeat": 1,
+      "index": 85,
+      "scope": "resident",
+      "wall_ms": 44.668099988484755,
+      "gpu_ms": 44.581886291503906
+    },
+    {
+      "repeat": 1,
+      "index": 86,
+      "scope": "resident",
+      "wall_ms": 44.195499998750165,
+      "gpu_ms": 44.118080139160156
+    },
+    {
+      "repeat": 1,
+      "index": 87,
+      "scope": "resident",
+      "wall_ms": 38.3672000025399,
+      "gpu_ms": 38.29587173461914
+    },
+    {
+      "repeat": 1,
+      "index": 88,
+      "scope": "resident",
+      "wall_ms": 41.78690002299845,
+      "gpu_ms": 41.71779251098633
+    },
+    {
+      "repeat": 1,
+      "index": 89,
+      "scope": "resident",
+      "wall_ms": 50.53579999366775,
+      "gpu_ms": 50.46271896362305
+    },
+    {
+      "repeat": 1,
+      "index": 90,
+      "scope": "resident",
+      "wall_ms": 39.242500002728775,
+      "gpu_ms": 39.1517448425293
+    },
+    {
+      "repeat": 1,
+      "index": 91,
+      "scope": "resident",
+      "wall_ms": 49.10049997852184,
+      "gpu_ms": 49.01990509033203
+    },
+    {
+      "repeat": 1,
+      "index": 92,
+      "scope": "resident",
+      "wall_ms": 42.007100011687726,
+      "gpu_ms": 41.92070388793945
+    },
+    {
+      "repeat": 1,
+      "index": 93,
+      "scope": "resident",
+      "wall_ms": 40.59740001684986,
+      "gpu_ms": 40.524574279785156
+    },
+    {
+      "repeat": 1,
+      "index": 94,
+      "scope": "resident",
+      "wall_ms": 43.79600001266226,
+      "gpu_ms": 43.71558380126953
+    },
+    {
+      "repeat": 1,
+      "index": 95,
+      "scope": "resident",
+      "wall_ms": 37.274699978297576,
+      "gpu_ms": 37.20364761352539
+    },
+    {
+      "repeat": 1,
+      "index": 96,
+      "scope": "resident",
+      "wall_ms": 39.42889999598265,
+      "gpu_ms": 39.35532760620117
+    },
+    {
+      "repeat": 1,
+      "index": 97,
+      "scope": "resident",
+      "wall_ms": 42.89839998818934,
+      "gpu_ms": 42.80713653564453
+    },
+    {
+      "repeat": 1,
+      "index": 98,
+      "scope": "resident",
+      "wall_ms": 49.63510000379756,
+      "gpu_ms": 49.54220962524414
+    },
+    {
+      "repeat": 1,
+      "index": 99,
+      "scope": "resident",
+      "wall_ms": 43.50550001254305,
+      "gpu_ms": 43.4398078918457
+    },
+    {
+      "repeat": 2,
+      "index": 0,
+      "scope": "resident",
+      "wall_ms": 41.876900009810925,
+      "gpu_ms": 41.71878433227539
+    },
+    {
+      "repeat": 2,
+      "index": 1,
+      "scope": "resident",
+      "wall_ms": 38.64660000544973,
+      "gpu_ms": 38.578369140625
+    },
+    {
+      "repeat": 2,
+      "index": 2,
+      "scope": "resident",
+      "wall_ms": 36.0563000140246,
+      "gpu_ms": 35.9911994934082
+    },
+    {
+      "repeat": 2,
+      "index": 3,
+      "scope": "resident",
+      "wall_ms": 35.92130000470206,
+      "gpu_ms": 35.84000015258789
+    },
+    {
+      "repeat": 2,
+      "index": 4,
+      "scope": "resident",
+      "wall_ms": 43.786599999293685,
+      "gpu_ms": 43.713279724121094
+    },
+    {
+      "repeat": 2,
+      "index": 5,
+      "scope": "resident",
+      "wall_ms": 36.75460000522435,
+      "gpu_ms": 36.69196701049805
+    },
+    {
+      "repeat": 2,
+      "index": 6,
+      "scope": "resident",
+      "wall_ms": 44.63300001225434,
+      "gpu_ms": 44.56217575073242
+    },
+    {
+      "repeat": 2,
+      "index": 7,
+      "scope": "resident",
+      "wall_ms": 43.70089998701587,
+      "gpu_ms": 43.496734619140625
+    },
+    {
+      "repeat": 2,
+      "index": 8,
+      "scope": "resident",
+      "wall_ms": 38.2707999960985,
+      "gpu_ms": 38.184959411621094
+    },
+    {
+      "repeat": 2,
+      "index": 9,
+      "scope": "resident",
+      "wall_ms": 42.10980000789277,
+      "gpu_ms": 42.04012680053711
+    },
+    {
+      "repeat": 2,
+      "index": 10,
+      "scope": "resident",
+      "wall_ms": 39.98120001051575,
+      "gpu_ms": 39.914432525634766
+    },
+    {
+      "repeat": 2,
+      "index": 11,
+      "scope": "resident",
+      "wall_ms": 43.045600003097206,
+      "gpu_ms": 42.97216033935547
+    },
+    {
+      "repeat": 2,
+      "index": 12,
+      "scope": "resident",
+      "wall_ms": 47.491999983321875,
+      "gpu_ms": 47.41632080078125
+    },
+    {
+      "repeat": 2,
+      "index": 13,
+      "scope": "resident",
+      "wall_ms": 44.51589999371208,
+      "gpu_ms": 44.41779327392578
+    },
+    {
+      "repeat": 2,
+      "index": 14,
+      "scope": "resident",
+      "wall_ms": 41.88380000414327,
+      "gpu_ms": 41.810943603515625
+    },
+    {
+      "repeat": 2,
+      "index": 15,
+      "scope": "resident",
+      "wall_ms": 44.56810001283884,
+      "gpu_ms": 44.50201416015625
+    },
+    {
+      "repeat": 2,
+      "index": 16,
+      "scope": "resident",
+      "wall_ms": 48.669899988453835,
+      "gpu_ms": 48.59980773925781
+    },
+    {
+      "repeat": 2,
+      "index": 17,
+      "scope": "resident",
+      "wall_ms": 41.05420000269078,
+      "gpu_ms": 40.98124694824219
+    },
+    {
+      "repeat": 2,
+      "index": 18,
+      "scope": "resident",
+      "wall_ms": 40.09790002601221,
+      "gpu_ms": 40.02284622192383
+    },
+    {
+      "repeat": 2,
+      "index": 19,
+      "scope": "resident",
+      "wall_ms": 45.5163000151515,
+      "gpu_ms": 45.442752838134766
+    },
+    {
+      "repeat": 2,
+      "index": 20,
+      "scope": "resident",
+      "wall_ms": 40.93180000199936,
+      "gpu_ms": 40.85657501220703
+    },
+    {
+      "repeat": 2,
+      "index": 21,
+      "scope": "resident",
+      "wall_ms": 38.51020001457073,
+      "gpu_ms": 38.30255889892578
+    },
+    {
+      "repeat": 2,
+      "index": 22,
+      "scope": "resident",
+      "wall_ms": 43.62190002575517,
+      "gpu_ms": 43.533504486083984
+    },
+    {
+      "repeat": 2,
+      "index": 23,
+      "scope": "resident",
+      "wall_ms": 40.26510001858696,
+      "gpu_ms": 40.19113540649414
+    },
+    {
+      "repeat": 2,
+      "index": 24,
+      "scope": "resident",
+      "wall_ms": 36.98120001354255,
+      "gpu_ms": 36.911903381347656
+    },
+    {
+      "repeat": 2,
+      "index": 25,
+      "scope": "resident",
+      "wall_ms": 42.906700022285804,
+      "gpu_ms": 42.73766326904297
+    },
+    {
+      "repeat": 2,
+      "index": 26,
+      "scope": "resident",
+      "wall_ms": 37.59100000024773,
+      "gpu_ms": 37.52140808105469
+    },
+    {
+      "repeat": 2,
+      "index": 27,
+      "scope": "resident",
+      "wall_ms": 39.934600004926324,
+      "gpu_ms": 39.862911224365234
+    },
+    {
+      "repeat": 2,
+      "index": 28,
+      "scope": "resident",
+      "wall_ms": 40.857700019842014,
+      "gpu_ms": 40.783870697021484
+    },
+    {
+      "repeat": 2,
+      "index": 29,
+      "scope": "resident",
+      "wall_ms": 38.220399990677834,
+      "gpu_ms": 38.147071838378906
+    },
+    {
+      "repeat": 2,
+      "index": 30,
+      "scope": "resident",
+      "wall_ms": 41.965900018112734,
+      "gpu_ms": 41.88467025756836
+    },
+    {
+      "repeat": 2,
+      "index": 31,
+      "scope": "resident",
+      "wall_ms": 40.00929999165237,
+      "gpu_ms": 39.92262268066406
+    },
+    {
+      "repeat": 2,
+      "index": 32,
+      "scope": "resident",
+      "wall_ms": 40.46270000981167,
+      "gpu_ms": 40.391841888427734
+    },
+    {
+      "repeat": 2,
+      "index": 33,
+      "scope": "resident",
+      "wall_ms": 46.20539999450557,
+      "gpu_ms": 46.1146240234375
+    },
+    {
+      "repeat": 2,
+      "index": 34,
+      "scope": "resident",
+      "wall_ms": 44.58630000590347,
+      "gpu_ms": 44.51264190673828
+    },
+    {
+      "repeat": 2,
+      "index": 35,
+      "scope": "resident",
+      "wall_ms": 43.87489997316152,
+      "gpu_ms": 43.800254821777344
+    },
+    {
+      "repeat": 2,
+      "index": 36,
+      "scope": "resident",
+      "wall_ms": 45.966099976794794,
+      "gpu_ms": 45.88780975341797
+    },
+    {
+      "repeat": 2,
+      "index": 37,
+      "scope": "resident",
+      "wall_ms": 44.186600018292665,
+      "gpu_ms": 44.082847595214844
+    },
+    {
+      "repeat": 2,
+      "index": 38,
+      "scope": "resident",
+      "wall_ms": 52.76749999029562,
+      "gpu_ms": 52.689918518066406
+    },
+    {
+      "repeat": 2,
+      "index": 39,
+      "scope": "resident",
+      "wall_ms": 39.667499979259446,
+      "gpu_ms": 39.592960357666016
+    },
+    {
+      "repeat": 2,
+      "index": 40,
+      "scope": "resident",
+      "wall_ms": 36.07999999076128,
+      "gpu_ms": 36.019935607910156
+    },
+    {
+      "repeat": 2,
+      "index": 41,
+      "scope": "resident",
+      "wall_ms": 41.04139999253675,
+      "gpu_ms": 40.9620475769043
+    },
+    {
+      "repeat": 2,
+      "index": 42,
+      "scope": "resident",
+      "wall_ms": 40.34820001106709,
+      "gpu_ms": 40.274593353271484
+    },
+    {
+      "repeat": 2,
+      "index": 43,
+      "scope": "resident",
+      "wall_ms": 43.84249998838641,
+      "gpu_ms": 43.76976013183594
+    },
+    {
+      "repeat": 2,
+      "index": 44,
+      "scope": "resident",
+      "wall_ms": 44.56420001224615,
+      "gpu_ms": 44.48774337768555
+    },
+    {
+      "repeat": 2,
+      "index": 45,
+      "scope": "resident",
+      "wall_ms": 40.52800001227297,
+      "gpu_ms": 40.45625686645508
+    },
+    {
+      "repeat": 2,
+      "index": 46,
+      "scope": "resident",
+      "wall_ms": 44.99300001771189,
+      "gpu_ms": 44.91999816894531
+    },
+    {
+      "repeat": 2,
+      "index": 47,
+      "scope": "resident",
+      "wall_ms": 40.033500001300126,
+      "gpu_ms": 39.95948791503906
+    },
+    {
+      "repeat": 2,
+      "index": 48,
+      "scope": "resident",
+      "wall_ms": 38.03729999344796,
+      "gpu_ms": 37.958656311035156
+    },
+    {
+      "repeat": 2,
+      "index": 49,
+      "scope": "resident",
+      "wall_ms": 42.823499999940395,
+      "gpu_ms": 42.74483108520508
+    },
+    {
+      "repeat": 2,
+      "index": 50,
+      "scope": "resident",
+      "wall_ms": 39.35320000164211,
+      "gpu_ms": 39.27859115600586
+    },
+    {
+      "repeat": 2,
+      "index": 51,
+      "scope": "resident",
+      "wall_ms": 52.62499998207204,
+      "gpu_ms": 52.552574157714844
+    },
+    {
+      "repeat": 2,
+      "index": 52,
+      "scope": "resident",
+      "wall_ms": 40.578999993158504,
+      "gpu_ms": 40.4947509765625
+    },
+    {
+      "repeat": 2,
+      "index": 53,
+      "scope": "resident",
+      "wall_ms": 36.88870000769384,
+      "gpu_ms": 36.8166389465332
+    },
+    {
+      "repeat": 2,
+      "index": 54,
+      "scope": "resident",
+      "wall_ms": 63.43609999748878,
+      "gpu_ms": 63.36092758178711
+    },
+    {
+      "repeat": 2,
+      "index": 55,
+      "scope": "resident",
+      "wall_ms": 52.694099984364584,
+      "gpu_ms": 52.5272331237793
+    },
+    {
+      "repeat": 2,
+      "index": 56,
+      "scope": "resident",
+      "wall_ms": 36.89079999458045,
+      "gpu_ms": 36.812801361083984
+    },
+    {
+      "repeat": 2,
+      "index": 57,
+      "scope": "resident",
+      "wall_ms": 34.19999999459833,
+      "gpu_ms": 34.12822341918945
+    },
+    {
+      "repeat": 2,
+      "index": 58,
+      "scope": "resident",
+      "wall_ms": 43.04170000250451,
+      "gpu_ms": 42.9598388671875
+    },
+    {
+      "repeat": 2,
+      "index": 59,
+      "scope": "resident",
+      "wall_ms": 48.31650000414811,
+      "gpu_ms": 48.2239990234375
+    },
+    {
+      "repeat": 2,
+      "index": 60,
+      "scope": "resident",
+      "wall_ms": 43.76510001020506,
+      "gpu_ms": 43.70035171508789
+    },
+    {
+      "repeat": 2,
+      "index": 61,
+      "scope": "resident",
+      "wall_ms": 41.54529998777434,
+      "gpu_ms": 41.467071533203125
+    },
+    {
+      "repeat": 2,
+      "index": 62,
+      "scope": "resident",
+      "wall_ms": 40.81099998438731,
+      "gpu_ms": 40.742591857910156
+    },
+    {
+      "repeat": 2,
+      "index": 63,
+      "scope": "resident",
+      "wall_ms": 42.26139999809675,
+      "gpu_ms": 42.18368148803711
+    },
+    {
+      "repeat": 2,
+      "index": 64,
+      "scope": "resident",
+      "wall_ms": 38.98280000430532,
+      "gpu_ms": 38.90361785888672
+    },
+    {
+      "repeat": 2,
+      "index": 65,
+      "scope": "resident",
+      "wall_ms": 40.40509997867048,
+      "gpu_ms": 40.33020782470703
+    },
+    {
+      "repeat": 2,
+      "index": 66,
+      "scope": "resident",
+      "wall_ms": 48.47040001186542,
+      "gpu_ms": 48.40345764160156
+    },
+    {
+      "repeat": 2,
+      "index": 67,
+      "scope": "resident",
+      "wall_ms": 41.38700000476092,
+      "gpu_ms": 41.306175231933594
+    },
+    {
+      "repeat": 2,
+      "index": 68,
+      "scope": "resident",
+      "wall_ms": 46.01400002138689,
+      "gpu_ms": 45.918209075927734
+    },
+    {
+      "repeat": 2,
+      "index": 69,
+      "scope": "resident",
+      "wall_ms": 37.858800002140924,
+      "gpu_ms": 37.793697357177734
+    },
+    {
+      "repeat": 2,
+      "index": 70,
+      "scope": "resident",
+      "wall_ms": 43.541999999433756,
+      "gpu_ms": 43.47260665893555
+    },
+    {
+      "repeat": 2,
+      "index": 71,
+      "scope": "resident",
+      "wall_ms": 52.043700008653104,
+      "gpu_ms": 51.973121643066406
+    },
+    {
+      "repeat": 2,
+      "index": 72,
+      "scope": "resident",
+      "wall_ms": 43.60040000756271,
+      "gpu_ms": 43.51897430419922
+    },
+    {
+      "repeat": 2,
+      "index": 73,
+      "scope": "resident",
+      "wall_ms": 40.4098000144586,
+      "gpu_ms": 40.29625701904297
+    },
+    {
+      "repeat": 2,
+      "index": 74,
+      "scope": "resident",
+      "wall_ms": 47.95229999581352,
+      "gpu_ms": 47.84435272216797
+    },
+    {
+      "repeat": 2,
+      "index": 75,
+      "scope": "resident",
+      "wall_ms": 38.340099999913946,
+      "gpu_ms": 38.27692794799805
+    },
+    {
+      "repeat": 2,
+      "index": 76,
+      "scope": "resident",
+      "wall_ms": 45.50719997496344,
+      "gpu_ms": 45.37510299682617
+    },
+    {
+      "repeat": 2,
+      "index": 77,
+      "scope": "resident",
+      "wall_ms": 40.710800007218495,
+      "gpu_ms": 40.41215896606445
+    },
+    {
+      "repeat": 2,
+      "index": 78,
+      "scope": "resident",
+      "wall_ms": 40.793699998175725,
+      "gpu_ms": 40.72345733642578
+    },
+    {
+      "repeat": 2,
+      "index": 79,
+      "scope": "resident",
+      "wall_ms": 43.430799996713176,
+      "gpu_ms": 43.358943939208984
+    },
+    {
+      "repeat": 2,
+      "index": 80,
+      "scope": "resident",
+      "wall_ms": 41.30549999536015,
+      "gpu_ms": 41.238624572753906
+    },
+    {
+      "repeat": 2,
+      "index": 81,
+      "scope": "resident",
+      "wall_ms": 42.866399977356195,
+      "gpu_ms": 42.78681564331055
+    },
+    {
+      "repeat": 2,
+      "index": 82,
+      "scope": "resident",
+      "wall_ms": 48.18479999084957,
+      "gpu_ms": 48.10444641113281
+    },
+    {
+      "repeat": 2,
+      "index": 83,
+      "scope": "resident",
+      "wall_ms": 58.28950001159683,
+      "gpu_ms": 58.211647033691406
+    },
+    {
+      "repeat": 2,
+      "index": 84,
+      "scope": "resident",
+      "wall_ms": 43.22630001115613,
+      "gpu_ms": 43.11347198486328
+    },
+    {
+      "repeat": 2,
+      "index": 85,
+      "scope": "resident",
+      "wall_ms": 48.49319998174906,
+      "gpu_ms": 48.42124938964844
+    },
+    {
+      "repeat": 2,
+      "index": 86,
+      "scope": "resident",
+      "wall_ms": 44.64720000396483,
+      "gpu_ms": 44.55731201171875
+    },
+    {
+      "repeat": 2,
+      "index": 87,
+      "scope": "resident",
+      "wall_ms": 41.03600000962615,
+      "gpu_ms": 40.948734283447266
+    },
+    {
+      "repeat": 2,
+      "index": 88,
+      "scope": "resident",
+      "wall_ms": 44.77010000846349,
+      "gpu_ms": 44.697601318359375
+    },
+    {
+      "repeat": 2,
+      "index": 89,
+      "scope": "resident",
+      "wall_ms": 41.56359998160042,
+      "gpu_ms": 41.489566802978516
+    },
+    {
+      "repeat": 2,
+      "index": 90,
+      "scope": "resident",
+      "wall_ms": 41.087099991273135,
+      "gpu_ms": 41.011199951171875
+    },
+    {
+      "repeat": 2,
+      "index": 91,
+      "scope": "resident",
+      "wall_ms": 54.720999993151054,
+      "gpu_ms": 54.64166259765625
+    },
+    {
+      "repeat": 2,
+      "index": 92,
+      "scope": "resident",
+      "wall_ms": 39.84819998731837,
+      "gpu_ms": 39.74758529663086
+    },
+    {
+      "repeat": 2,
+      "index": 93,
+      "scope": "resident",
+      "wall_ms": 41.671000013593584,
+      "gpu_ms": 41.58745574951172
+    },
+    {
+      "repeat": 2,
+      "index": 94,
+      "scope": "resident",
+      "wall_ms": 42.029399977764115,
+      "gpu_ms": 41.96335983276367
+    },
+    {
+      "repeat": 2,
+      "index": 95,
+      "scope": "resident",
+      "wall_ms": 43.68760000215843,
+      "gpu_ms": 43.622398376464844
+    },
+    {
+      "repeat": 2,
+      "index": 96,
+      "scope": "resident",
+      "wall_ms": 45.290400012163445,
+      "gpu_ms": 45.219425201416016
+    },
+    {
+      "repeat": 2,
+      "index": 97,
+      "scope": "resident",
+      "wall_ms": 38.061900006141514,
+      "gpu_ms": 37.986656188964844
+    },
+    {
+      "repeat": 2,
+      "index": 98,
+      "scope": "resident",
+      "wall_ms": 44.89960000501014,
+      "gpu_ms": 44.82969665527344
+    },
+    {
+      "repeat": 2,
+      "index": 99,
+      "scope": "resident",
+      "wall_ms": 46.097799990093336,
+      "gpu_ms": 46.02342224121094
+    }
+  ],
+  "end_to_end_samples_ms": [
+    108.63080000854097,
+    77.86910000140779,
+    78.76860001124442,
+    78.0846000125166,
+    80.06279999972321,
+    77.52110000001267,
+    75.07590000750497,
+    77.60910000069998,
+    80.78289998229593,
+    77.63849999173544,
+    80.4354999854695,
+    76.84720001998357,
+    78.57890002196655,
+    76.23989999410696,
+    76.23199999216013,
+    73.7492999760434,
+    77.01539999106899,
+    73.56629997957498,
+    76.56859999406151,
+    76.08040000195615,
+    76.31640002364293,
+    79.28190001985058,
+    77.87610002560541,
+    76.07959999586456,
+    78.04900000337511,
+    80.5611000105273,
+    77.19310000538826,
+    79.10550001543015,
+    83.0642000073567,
+    78.29450001008809,
+    81.03619999019429,
+    77.11139999446459,
+    77.13620000868104,
+    76.19029999477789,
+    54.749100003391504,
+    51.5509000106249,
+    50.44540000380948,
+    51.294100005179644,
+    51.22779999510385,
+    49.4753000093624,
+    45.87339999852702,
+    48.13609999837354,
+    46.263800002634525,
+    46.50359999504872,
+    45.121499977540225,
+    45.03189999377355,
+    47.048999986145645,
+    47.61280000093393,
+    44.99660001602024,
+    44.68930000439286,
+    48.197299998719245,
+    45.88109999895096,
+    46.610400022473186,
+    45.30159998103045,
+    43.38259997894056,
+    45.099399983882904,
+    50.76549999648705,
+    44.43319997517392,
+    43.34899998502806,
+    44.7961000027135,
+    43.18860001512803,
+    43.46399998757988,
+    44.14420001558028,
+    45.64390002633445,
+    45.00400001415983,
+    43.12009998830035,
+    45.68680000375025,
+    46.50339999352582,
+    47.22499998752028,
+    47.37549999845214,
+    43.345199985196814,
+    43.51310001220554,
+    43.936300004133955,
+    43.5396000102628,
+    43.600100005278364,
+    42.971600021701306,
+    50.41779999737628,
+    43.18450001301244,
+    44.35680000460707,
+    46.0406000202056,
+    45.303599996259436,
+    44.8274000082165,
+    44.28110001026653,
+    44.45529999793507,
+    44.2691000062041,
+    44.09869998926297,
+    48.27689999365248,
+    47.73239998030476,
+    44.1389000043273,
+    49.169300007633865,
+    46.69920000014827,
+    44.826600002124906,
+    43.27429999830201,
+    44.26190000958741,
+    43.03949998575263,
+    44.488799991086125,
+    44.23379999934696,
+    43.88640000252053,
+    42.27929998887703,
+    42.17580001568422
+  ],
+  "transfer_samples_ms": [
+    0.4726999904960394,
+    0.3693000180646777,
+    0.3701999958138913,
+    0.36330000148154795,
+    0.3957000153604895,
+    0.34339999547228217,
+    0.3544999926816672,
+    0.39010000182315707,
+    0.4189999890513718,
+    0.3929999948013574,
+    0.40180000360123813,
+    0.3468999930191785,
+    0.36880001425743103,
+    0.32890000147745013,
+    0.36009997711516917,
+    0.3645999822765589,
+    0.32389999250881374,
+    0.3803999861702323,
+    0.3607999824453145,
+    0.3536999865900725,
+    0.3307000151835382,
+    0.3601000062189996,
+    0.3415000101085752,
+    0.3794000076595694,
+    0.33329997677356005,
+    0.33909999183379114,
+    0.3798999823629856,
+    0.46850001672282815,
+    0.41050001163966954,
+    0.36479998379945755,
+    0.43360001291148365,
+    0.3965000214520842,
+    0.40180000360123813,
+    0.34950001281686127,
+    0.20979999681003392,
+    0.2398999931756407,
+    0.22519999765791,
+    0.25179999647662044,
+    0.2671999973244965,
+    0.2623000182211399,
+    0.2358000201638788,
+    0.2452000044286251,
+    0.22470002295449376,
+    0.2685000072233379,
+    0.2722999779507518,
+    0.22570000146515667,
+    0.370699999621138,
+    0.31859998125582933,
+    0.20909999147988856,
+    0.30169999809004366,
+    0.2491000050213188,
+    0.31110001145862043,
+    0.22769998759031296,
+    0.27050002245232463,
+    0.21040000137872994,
+    0.22990000434219837,
+    0.3274999908171594,
+    0.24530000519007444,
+    0.28360000578686595,
+    0.23579999106004834,
+    0.2294000005349517,
+    0.24080000002868474,
+    0.3047000209335238,
+    0.22610000451095402,
+    0.2996999828610569,
+    0.2330999996047467,
+    0.22109999554231763,
+    0.2641000028233975,
+    0.3020000003743917,
+    0.2948000037577003,
+    0.235399988014251,
+    0.2750999992713332,
+    0.24449999909847975,
+    0.25839998852461576,
+    0.26130001060664654,
+    0.2772000152617693,
+    0.2694999857340008,
+    0.2699999895412475,
+    0.2796000044327229,
+    0.35050002043135464,
+    0.28199999360367656,
+    0.2682000049389899,
+    0.27069999487139285,
+    0.2914000069722533,
+    0.22869999520480633,
+    0.26259999140165746,
+    0.24540000595152378,
+    0.2508000179659575,
+    0.2294000005349517,
+    0.2562000008765608,
+    0.21960001322440803,
+    0.22299998090602458,
+    0.21019999985583127,
+    0.229199999012053,
+    0.23579999106004834,
+    0.21160001051612198,
+    0.23609999334439635,
+    0.22239997633732855,
+    0.23739997413940728,
+    0.2313000150024891
+  ],
+  "elapsed_seconds": 32.29209179998725,
+  "pilot_checkpoint_sha256": "4584f177c3f5ed5a1dc648e5cdaa05c455e4f6216420850fbfa94069ccdb375f"
+}

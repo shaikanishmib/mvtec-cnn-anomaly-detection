@@ -1,0 +1,20 @@
+{
+  "status": "development complete",
+  "frozen_sha256": "d728cf544ebc6f0c3d012adbca044a7aa5ddf4c0ced2e3210bef19b77a71d321",
+  "gate": "GO",
+  "development_fits": 4,
+  "final_models": 0,
+  "compute_accounting": {
+    "training_seconds": 543.7488580998906,
+    "fit_pipeline_seconds": 788.2120323000418,
+    "latency_audit_seconds": 32.29209179998725,
+    "exploratory_launch_control_seconds": 17.70486030000029,
+    "calibration_seconds": 5.20798740000464,
+    "metric_probe_seconds": 0.24927739999839105,
+    "initial_data_load_seconds": 17.706031299981987,
+    "calibration_precision_audit_seconds": 9.824712800007546,
+    "caveat": "Training is synchronized CUDA-active wall time, not energy or exclusive GPU busy-time. Fit pipeline includes training/preparation/diagnostics/checkpoint checks. Other fields are disjoint additional work; global phase wall also includes orchestration/documentation/tests.",
+    "measured_compute_pipeline_total_seconds": 871.1969933000219
+  },
+  "utc": "2026-11-14T02:44:44.880495+00:00"
+}

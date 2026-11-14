@@ -16,8 +16,18 @@ the remaining model families and engineering application are planned.
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
 | [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
 | [05](notebooks/05_padim.ipynb) | PaDiM | Complete: verified GPU pilot, bounded development and all 15 categories across three seeds |
-| [06](notebooks/06_efficientad.ipynb) | EfficientAD | Core PDN-S implementation and real-data CUDA pilot passed; development and full benchmark gated |
+| [06](notebooks/06_efficientad.ipynb) | EfficientAD | Pilot and four bounded development fits verified; reduced nine-epoch local-score protocol selected; 45-model benchmark remains unstarted |
 | 07 | Cross-model comparison | Planned |
+
+EfficientAD bounded development compared four fresh fits on bottle/carpet at
+3/9 full epochs. The selected **EfficientAD-S reduced-budget variant** uses nine
+epochs and normalized local-map maximum; the autoencoder remains trained but
+its map is excluded from the selected image score. The conservative 45-model
+forecast is **10.16 hours**, including CPU evaluation and a factor-two margin;
+the benchmark has not started. See the [measured development report](docs/efficientad_development_results.md),
+[fidelity audit](docs/efficientad_fidelity_audit.md) and [locked configuration](configs/efficientad_reduced_frozen.json).
+Synthetic proxy success does not establish real-defect accuracy. Bottle's clean
+scores show a border-driven floor; calibration uncertainty is qualified explicitly.
 
 ## Dataset
 

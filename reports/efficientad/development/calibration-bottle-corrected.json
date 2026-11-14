@@ -1,0 +1,338 @@
+{
+  "threshold": 0.5066908597946167,
+  "nominal_fpr": 0.05,
+  "strict_greater": true,
+  "quantile_method": "higher",
+  "calibration_distribution": {
+    "n": 31,
+    "min": 0.5066908597946167,
+    "median": 0.5066908597946167,
+    "mean": 0.5066908597946167,
+    "std": 0.0,
+    "q90": 0.5066908597946167,
+    "q95": 0.5066908597946167,
+    "max": 0.5066908597946167
+  },
+  "observed_calibration_fpr": 0.0,
+  "exceedances": 0,
+  "calibration_exceedance_descriptive_cp95": [
+    0.0,
+    0.11218874692236996
+  ],
+  "uncertainty_note": "Tied calibration scores violate the continuous-score assumption: Beta future-FPR interval is not asserted. The retained hypothetical interval is reference only; degenerate bootstrap tails do not establish certainty. CP calibration interval is descriptive because threshold was fitted on those samples.",
+  "bootstrap_threshold_p025_p50_p975": [
+    0.5066908597946167,
+    0.5066908597946167,
+    0.5066908597946167
+  ],
+  "bootstrap_replicates": 1000,
+  "leave_one_out_threshold_range": [
+    0.5066908597946167,
+    0.5066908597946167
+  ],
+  "sensitivity_diagnostic_only": {
+    "0.01": 0.5066908597946167,
+    "0.05": 0.5066908597946167,
+    "0.1": 0.5066908597946167
+  },
+  "development_exceedance_fraction": 0.03225806451612903,
+  "threshold_policy": {
+    "target_fpr": 0.05,
+    "quantile_method": "higher",
+    "comparison": "strict_greater",
+    "scope": "reserved calibration normals only after configuration selection",
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 6806
+  },
+  "unique_calibration_scores": 1,
+  "largest_tie_count": 31,
+  "ties_at_threshold": 31,
+  "continuous_order_statistic_applicable": false,
+  "continuous_iid_hypothetical": {
+    "mean": 0.0625,
+    "interval": [
+      0.007910983461854705,
+      0.16702111623022775
+    ]
+  },
+  "future_fpr_order_statistic_mean": null,
+  "future_fpr_order_statistic_95": null,
+  "category": "bottle",
+  "selection_sha256": "c2dc52cef8f6ba30e078b37fedaa11c96ef46aa2a1f70895899d1dd645b87974",
+  "checkpoint_sha256": "e8b9152d6d8805cb937d47b4da1b81f10e7cec7ecc99792a1426bd0797ff88bf",
+  "supersedes": "calibration-bottle.json",
+  "correction": "Promote exact float32 scores to float64 before 17-digit CSV; round_trip reader; no retraining, new threshold or model selection",
+  "original_development_exceedance_fraction": 1.0,
+  "floor_diagnostics": {
+    "development": {
+      "unique_image_scores": 2,
+      "largest_tie_count": 30,
+      "peak_positions_yx": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          133,
+          226
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "fraction_peaks_within_16px_border": 0.967741935483871,
+      "mean_raw_map_spatial_std": 0.052583009004592896,
+      "mean_raw_map_across_image_std": 0.018104568123817444,
+      "raw_interior_max_std": 0.0883796215057373,
+      "interpretation": "Constant max can be a response floor even when spatial/inter-image maps vary; interior statistics are diagnosis only, no crop or alternate score selected."
+    },
+    "calibration": {
+      "unique_image_scores": 1,
+      "largest_tie_count": 31,
+      "peak_positions_yx": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "fraction_peaks_within_16px_border": 1.0,
+      "mean_raw_map_spatial_std": 0.05253961682319641,
+      "mean_raw_map_across_image_std": 0.019111696630716324,
+      "raw_interior_max_std": 0.06947774440050125,
+      "interpretation": "Constant max can be a response floor even when spatial/inter-image maps vary; interior statistics are diagnosis only, no crop or alternate score selected."
+    }
+  }
+}
