@@ -1,0 +1,390 @@
+{
+  "experiment_id": "05-test-tile-s2027-v1-result",
+  "model_family": "PaDiM",
+  "categories": [
+    "tile"
+  ],
+  "hypothesis": "frozen confirmation; fit then normal calibration then test",
+  "preprocessing": {
+    "resolution": 256,
+    "normalization": "ImageNet V1"
+  },
+  "hyperparameters": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "seed": 2027,
+  "environment": {
+    "recorded_at_utc": "2026-11-14T01:02:48.919766+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "code": {
+      "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+        "src/anomaly_detection/padim.py": "733a4a9c5fa7d5522bb1aaa5326b009b68179fb88ac75492be25d9bb32ceb92a",
+        "src/anomaly_detection/padim_evaluation.py": "9a3997144992d121c53171536e8bf2029cad6a10672cd749205b3aeec190e76d",
+        "src/anomaly_detection/padim_research.py": "c28628965a7f9ce512dae3108810a18d966617dd8435054a178c08191dc13434"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "phase": "frozen confirmation; fit then normal calibration then test"
+  },
+  "metrics": {
+    "experiment_id": "05-test-tile-s2027-v1",
+    "category": "tile",
+    "seed": 2027,
+    "configuration": {
+      "dimension": 100,
+      "epsilon": 0.01,
+      "sigma": 4.0,
+      "resolution": 256,
+      "seed": 2027
+    },
+    "image_auroc": 0.9577922077922079,
+    "image_ap": 0.9829483616800854,
+    "recall": 0.8571428571428571,
+    "fpr": 0.06060606060606061,
+    "precision": 0.972972972972973,
+    "f1": 0.9113924050632912,
+    "confusion_matrix": [
+      [
+        31,
+        2
+      ],
+      [
+        12,
+        72
+      ]
+    ],
+    "tn": 31,
+    "fp": 2,
+    "fn": 12,
+    "tp": 72,
+    "pixel_auroc": 0.9114130123409464,
+    "pixel_ap": 0.3543189472711165,
+    "au_pro": 0.789491413682728,
+    "positive_pixels": 5809846,
+    "negative_pixels": 76745354,
+    "regions": 86,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        71320495,
+        5424859
+      ],
+      [
+        2532160,
+        3277686
+      ]
+    ],
+    "pixel_operating_point": {
+      "tn": 71320495,
+      "fp": 5424859,
+      "fn": 2532160,
+      "tp": 3277686,
+      "precision": 0.37663534058140463,
+      "recall": 0.5641605646690119,
+      "fpr": 0.0706864809041079,
+      "f1": 0.4517086123161924
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9203835055908673,
+          0.9857535109880411
+        ],
+        "image_ap": [
+          0.9641201681959495,
+          0.9952755907599526
+        ],
+        "recall": [
+          0.7789181286549708,
+          0.9259485094850948
+        ],
+        "fpr": [
+          0.0,
+          0.15151515151515152
+        ],
+        "precision": [
+          0.930531103286385,
+          1.0
+        ],
+        "f1": [
+          0.8608854549914152,
+          0.9534883720930233
+        ],
+        "pixel_auroc": [
+          0.8913438991094408,
+          0.9298469610295209
+        ],
+        "pixel_ap": [
+          0.2961984484862874,
+          0.42990503068464236
+        ],
+        "au_pro": [
+          0.7518799738756426,
+          0.8233944863998641
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9114125660926217,
+      "pixel_ap": 0.3541558559435111,
+      "au_pro": 0.7894904193746768
+    },
+    "calibration": {
+      "images": 34,
+      "image_threshold": 13.394331932067871,
+      "pixel_threshold": 10.221842765808105,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "strict_greater": true,
+      "histogram_scale": 7.223609924316406,
+      "scores": [
+        11.345195770263672,
+        12.109288215637207,
+        10.898407936096191,
+        10.470075607299805,
+        13.244075775146484,
+        11.289311408996582,
+        10.461977005004883,
+        10.192890167236328,
+        10.721232414245605,
+        10.312841415405273,
+        9.933201789855957,
+        12.33678150177002,
+        11.962482452392578,
+        11.086377143859863,
+        10.264520645141602,
+        10.575557708740234,
+        11.8411226272583,
+        12.64502239227295,
+        10.781513214111328,
+        13.28250789642334,
+        25.339099884033203,
+        10.48175048828125,
+        8.935449600219727,
+        11.645877838134766,
+        11.866430282592773,
+        12.833169937133789,
+        9.796749114990234,
+        11.695540428161621,
+        11.674858093261719,
+        11.821510314941406,
+        10.819235801696777,
+        10.944072723388672,
+        12.136578559875488,
+        13.394331932067871
+      ],
+      "source_sha256": "abb75978d0b1cd05907841241185159fef0347b33e7578400d59358c7e6787c6"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 2.7756000054068863,
+        "p95_ms": 3.3995950114331195
+      },
+      "host_to_device": {
+        "p50_ms": 0.24685000244062394,
+        "p95_ms": 0.2938500198069958
+      },
+      "feature_extraction": {
+        "p50_ms": 3.0758999928366393,
+        "p95_ms": 3.9519449928775425
+      },
+      "gaussian_scoring": {
+        "p50_ms": 9.81714999943506,
+        "p95_ms": 12.113254991709253
+      },
+      "model": {
+        "p50_ms": 12.944749993039295,
+        "p95_ms": 16.1122850026004
+      },
+      "postprocessing": {
+        "p50_ms": 3.749950003111735,
+        "p95_ms": 4.564914993534329
+      },
+      "end_to_end": {
+        "p50_ms": 19.880399995599873,
+        "p95_ms": 23.702950004371814
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+      "peak_inference_allocated_bytes": 236510720,
+      "peak_inference_reserved_bytes": 484442112
+    },
+    "training_seconds": 0.69698690000223,
+    "resources": {
+      "seconds": 31.430707599996822,
+      "cpu_initial_rss_bytes": 3308421120,
+      "cpu_peak_rss_bytes": 5400174592,
+      "cpu_peak_increment_bytes": 2091753472,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 236510720,
+      "peak_gpu_reserved_bytes": 484442112
+    },
+    "fitting_peak_allocated_bytes": 398222848,
+    "fitting_peak_reserved_bytes": 480247808,
+    "evaluation_peak_allocated_bytes": 398222848,
+    "evaluation_peak_reserved_bytes": 484442112,
+    "checkpoint": "checkpoints/padim/05-test-tile-s2027-v1.pt",
+    "checkpoint_sha256": "e96538d512a60849e631466975fa84c904fd66d2ae1f75152901dce72bec993d",
+    "checkpoint_bytes": 165480613,
+    "local_maps": "outputs/padim/05-test-tile-s2027-v1/model_resolution_maps.npy",
+    "maps_sha256": "656bff4f9bb703026e3285628c488096da347021cd29e96c37a1ce7f3b36784a",
+    "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+    "fit_source_sha256": "91539e5a76366f337db2bd34f1746d08e2e868b17a7a991d1bc684c700f3d210",
+    "test_source_sha256": "ff1a37e8ef569509475638ffc17ae47628be8a4fab816df684266dbff68c0da5",
+    "evaluated_at_utc": "2026-11-14T01:24:04.238721+00:00",
+    "image_rows": 117,
+    "per_defect": [
+      {
+        "category": "tile",
+        "seed": 2027,
+        "defect": "crack",
+        "auroc": 0.9982174688057042,
+        "ap": 0.9967320261437909,
+        "recall": 1.0,
+        "fpr": 0.06060606060606061,
+        "precision": 0.8947368421052632,
+        "f1": 0.9444444444444444,
+        "confusion_matrix": [
+          [
+            31,
+            2
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "tile",
+        "seed": 2027,
+        "defect": "glue_strip",
+        "auroc": 0.9915824915824916,
+        "ap": 0.9835457038565916,
+        "recall": 1.0,
+        "fpr": 0.06060606060606061,
+        "precision": 0.9,
+        "f1": 0.9473684210526316,
+        "confusion_matrix": [
+          [
+            31,
+            2
+          ],
+          [
+            0,
+            18
+          ]
+        ]
+      },
+      {
+        "category": "tile",
+        "seed": 2027,
+        "defect": "gray_stroke",
+        "auroc": 0.8484848484848484,
+        "ap": 0.6883948777186006,
+        "recall": 0.5,
+        "fpr": 0.06060606060606061,
+        "precision": 0.8,
+        "f1": 0.6153846153846154,
+        "confusion_matrix": [
+          [
+            31,
+            2
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "tile",
+        "seed": 2027,
+        "defect": "oil",
+        "auroc": 0.9865319865319866,
+        "ap": 0.9726723666674648,
+        "recall": 1.0,
+        "fpr": 0.06060606060606061,
+        "precision": 0.9,
+        "f1": 0.9473684210526316,
+        "confusion_matrix": [
+          [
+            31,
+            2
+          ],
+          [
+            0,
+            18
+          ]
+        ]
+      },
+      {
+        "category": "tile",
+        "seed": 2027,
+        "defect": "rough",
+        "auroc": 0.9535353535353536,
+        "ap": 0.9213888888888888,
+        "recall": 0.7333333333333333,
+        "fpr": 0.06060606060606061,
+        "precision": 0.8461538461538461,
+        "f1": 0.7857142857142856,
+        "confusion_matrix": [
+          [
+            31,
+            2
+          ],
+          [
+            4,
+            11
+          ]
+        ]
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Actual measured execution",
+  "decision": "retain",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:24:04.240749+00:00",
+  "config_sha256": "69546fc885e928f9341c530ce243ed114408788eb7ce63c915efc3446358877d"
+}

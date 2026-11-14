@@ -1,0 +1,71 @@
+{
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "seed": 2026,
+    "resolution": 256
+  },
+  "raw_layer_shapes": [
+    [
+      1,
+      64,
+      64,
+      64
+    ],
+    [
+      1,
+      128,
+      32,
+      32
+    ],
+    [
+      1,
+      256,
+      16,
+      16
+    ]
+  ],
+  "selected_fit_shape": [
+    24,
+    100,
+    64,
+    64
+  ],
+  "extraction_seconds": 0.3047970999905374,
+  "gaussian_fit_seconds": 0.1791529000038281,
+  "development_scoring_seconds": 0.1858897999918554,
+  "resources": {
+    "seconds": 0.9740356999973301,
+    "cpu_initial_rss_bytes": 687038464,
+    "cpu_peak_rss_bytes": 1582735360,
+    "cpu_peak_increment_bytes": 895696896,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 386889216,
+    "peak_gpu_reserved_bytes": 469762048
+  },
+  "score_min": 0.14926587045192719,
+  "score_max": 17.189489364624023,
+  "image_score_quantiles": [
+    9.646578788757324,
+    10.731116533279419,
+    12.392023086547852,
+    13.978654146194458,
+    17.189489364624023
+  ],
+  "image_scores": [
+    14.398673057556152,
+    12.21834945678711,
+    13.838647842407227,
+    12.565696716308594,
+    10.278752326965332,
+    9.646578788757324,
+    17.189489364624023,
+    10.881904602050781
+  ],
+  "fit_source_sha256": "f48bab0865cfd6655ce4e749466ead30fd5bdf88fe408f297b865e2b753bd5d3",
+  "development_source_sha256": "0659175912773f27324e94dfecf9e2c37c0e0e76b66be16535bdafa3ba0a3b92",
+  "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "passed": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

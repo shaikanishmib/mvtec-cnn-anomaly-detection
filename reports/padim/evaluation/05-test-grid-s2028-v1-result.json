@@ -1,0 +1,326 @@
+{
+  "experiment_id": "05-test-grid-s2028-v1",
+  "category": "grid",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.7903091060985798,
+  "image_ap": 0.9185960089992724,
+  "recall": 0.47368421052631576,
+  "fpr": 0.09523809523809523,
+  "precision": 0.9310344827586207,
+  "f1": 0.627906976744186,
+  "confusion_matrix": [
+    [
+      19,
+      2
+    ],
+    [
+      30,
+      27
+    ]
+  ],
+  "tn": 19,
+  "fp": 2,
+  "fn": 30,
+  "tp": 27,
+  "pixel_auroc": 0.9192585553996919,
+  "pixel_ap": 0.18853664475583523,
+  "au_pro": 0.7991698922169123,
+  "positive_pixels": 564944,
+  "negative_pixels": 81223984,
+  "regions": 170,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      79782725,
+      1441259
+    ],
+    [
+      276322,
+      288622
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 79782725,
+    "fp": 1441259,
+    "fn": 276322,
+    "tp": 288622,
+    "precision": 0.1668450026331291,
+    "recall": 0.5108860347220255,
+    "fpr": 0.017744253963213625,
+    "f1": 0.25154162082075976
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6742800661248106,
+        0.8905700449039263
+      ],
+      "image_ap": [
+        0.8498818942425891,
+        0.9655152163953872
+      ],
+      "recall": [
+        0.3442622950819672,
+        0.614068825910931
+      ],
+      "fpr": [
+        0.0,
+        0.23814285714285688
+      ],
+      "precision": [
+        0.8259704968944099,
+        1.0
+      ],
+      "f1": [
+        0.494368150922458,
+        0.7446808510638299
+      ],
+      "pixel_auroc": [
+        0.8824317934622373,
+        0.9532231517544133
+      ],
+      "pixel_ap": [
+        0.14060623418162374,
+        0.2458326337212127
+      ],
+      "au_pro": [
+        0.7403899520616761,
+        0.861598900099717
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9192580404632558,
+    "pixel_ap": 0.18817735989013426,
+    "au_pro": 0.7991694028017088
+  },
+  "calibration": {
+    "images": 39,
+    "image_threshold": 11.49765682220459,
+    "pixel_threshold": 8.893593788146973,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 6.673114776611328,
+    "scores": [
+      9.619208335876465,
+      11.49765682220459,
+      9.994559288024902,
+      10.559350967407227,
+      10.066774368286133,
+      10.171379089355469,
+      9.085880279541016,
+      8.819804191589355,
+      9.552367210388184,
+      9.137101173400879,
+      9.843535423278809,
+      11.756038665771484,
+      8.732921600341797,
+      9.261805534362793,
+      8.907317161560059,
+      8.499847412109375,
+      8.827592849731445,
+      9.847556114196777,
+      9.676161766052246,
+      8.898877143859863,
+      10.251070022583008,
+      9.336057662963867,
+      9.739426612854004,
+      8.898957252502441,
+      9.627978324890137,
+      9.952278137207031,
+      10.151456832885742,
+      10.145596504211426,
+      10.563316345214844,
+      10.457440376281738,
+      9.536026954650879,
+      9.081033706665039,
+      9.171759605407715,
+      9.039365768432617,
+      8.546759605407715,
+      9.582091331481934,
+      8.791091918945312,
+      8.966142654418945,
+      8.828062057495117
+    ],
+    "source_sha256": "a05c883712a462ab567291de4ced740f6964c2d23698b4a71bb36594ffc96e54"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.8055500044720247,
+      "p95_ms": 4.511994995118584
+    },
+    "host_to_device": {
+      "p50_ms": 0.2521999995224178,
+      "p95_ms": 0.3252350012189708
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0041999998502433,
+      "p95_ms": 4.042420018231493
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.55864999559708,
+      "p95_ms": 11.7477349951514
+    },
+    "model": {
+      "p50_ms": 12.635049992240965,
+      "p95_ms": 15.260074987600069
+    },
+    "postprocessing": {
+      "p50_ms": 3.8730500091332942,
+      "p95_ms": 4.486694994557183
+    },
+    "end_to_end": {
+      "p50_ms": 20.635150009184144,
+      "p95_ms": 24.18133500468683
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247608832,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.8208262999833096,
+  "resources": {
+    "seconds": 30.605156399979023,
+    "cpu_initial_rss_bytes": 3288752128,
+    "cpu_peak_rss_bytes": 5312344064,
+    "cpu_peak_increment_bytes": 2023591936,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247608832,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 400946688,
+  "fitting_peak_reserved_bytes": 480247808,
+  "evaluation_peak_allocated_bytes": 400946688,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-grid-s2028-v1.pt",
+  "checkpoint_sha256": "73a9f730a457641cf782b90c23f52b91177ba44e3c9feeeb4f29186b3ca3fcad",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-grid-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "457bcfb5865bff3d9a96e89497d644318182baaf69623ed55bc0383d4be5cc7f",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "505be61bf9ac83c70f415c90d0f83e26c4a9a2f06dcd10e76a1824f712f9157f",
+  "test_source_sha256": "9c58d03f8fc9a32898ad4c46f7cea69799197c70bc4deb5b54b629dd11d800e0",
+  "evaluated_at_utc": "2026-11-14T01:29:52.357390+00:00",
+  "image_rows": 78,
+  "per_defect": [
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "bent",
+      "auroc": 0.7698412698412699,
+      "ap": 0.7064742561024026,
+      "recall": 0.3333333333333333,
+      "fpr": 0.09523809523809523,
+      "precision": 0.6666666666666666,
+      "f1": 0.4444444444444444,
+      "confusion_matrix": [
+        [
+          19,
+          2
+        ],
+        [
+          8,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "broken",
+      "auroc": 0.9563492063492063,
+      "ap": 0.9336292792175146,
+      "recall": 0.9166666666666666,
+      "fpr": 0.09523809523809523,
+      "precision": 0.8461538461538461,
+      "f1": 0.8799999999999999,
+      "confusion_matrix": [
+        [
+          19,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "glue",
+      "auroc": 0.6883116883116883,
+      "ap": 0.6445371995225367,
+      "recall": 0.36363636363636365,
+      "fpr": 0.09523809523809523,
+      "precision": 0.6666666666666666,
+      "f1": 0.4705882352941177,
+      "confusion_matrix": [
+        [
+          19,
+          2
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "metal_contamination",
+      "auroc": 0.7965367965367965,
+      "ap": 0.770319388214125,
+      "recall": 0.45454545454545453,
+      "fpr": 0.09523809523809523,
+      "precision": 0.7142857142857143,
+      "f1": 0.5555555555555556,
+      "confusion_matrix": [
+        [
+          19,
+          2
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2028,
+      "defect": "thread",
+      "auroc": 0.7272727272727273,
+      "ap": 0.6676794872789289,
+      "recall": 0.2727272727272727,
+      "fpr": 0.09523809523809523,
+      "precision": 0.6,
+      "f1": 0.37499999999999994,
+      "confusion_matrix": [
+        [
+          19,
+          2
+        ],
+        [
+          8,
+          3
+        ]
+      ]
+    }
+  ]
+}

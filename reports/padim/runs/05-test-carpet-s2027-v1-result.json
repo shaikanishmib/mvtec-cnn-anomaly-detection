@@ -1,0 +1,329 @@
+{
+  "experiment_id": "05-test-carpet-s2027-v1",
+  "category": "carpet",
+  "seed": 2027,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "image_auroc": 0.9835473515248796,
+  "image_ap": 0.9949024264109445,
+  "recall": 0.9550561797752809,
+  "fpr": 0.14285714285714285,
+  "precision": 0.9550561797752809,
+  "f1": 0.9550561797752809,
+  "confusion_matrix": [
+    [
+      24,
+      4
+    ],
+    [
+      4,
+      85
+    ]
+  ],
+  "tn": 24,
+  "fp": 4,
+  "fn": 4,
+  "tp": 85,
+  "pixel_auroc": 0.9898266194678691,
+  "pixel_ap": 0.6220316285486542,
+  "au_pro": 0.9654413024620044,
+  "positive_pixels": 1965794,
+  "negative_pixels": 120717598,
+  "regions": 97,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      113869889,
+      6847709
+    ],
+    [
+      45750,
+      1920044
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 113869889,
+    "fp": 6847709,
+    "fn": 45750,
+    "tp": 1920044,
+    "precision": 0.21898928950211075,
+    "recall": 0.9767269612177064,
+    "fpr": 0.056725026950917294,
+    "f1": 0.3577650519441523
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9629590494975111,
+        0.9967634700525998
+      ],
+      "image_ap": [
+        0.9879540496335841,
+        0.9991119533520935
+      ],
+      "recall": [
+        0.9090677179962894,
+        0.9892501715854496
+      ],
+      "fpr": [
+        0.030303030303030304,
+        0.2759099616858235
+      ],
+      "precision": [
+        0.907210501078878,
+        0.9894736842105263
+      ],
+      "f1": [
+        0.9211931818181818,
+        0.9836065573770492
+      ],
+      "pixel_auroc": [
+        0.9864739706946095,
+        0.9926135385460569
+      ],
+      "pixel_ap": [
+        0.5202802006898893,
+        0.7192683648987948
+      ],
+      "au_pro": [
+        0.9541185335778515,
+        0.9750344621622911
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9898266150089587,
+    "pixel_ap": 0.6216946650036779,
+    "au_pro": 0.9654411519938672
+  },
+  "calibration": {
+    "images": 42,
+    "image_threshold": 10.494661331176758,
+    "pixel_threshold": 7.602480888366699,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 5.515761852264404,
+    "scores": [
+      8.805475234985352,
+      7.692893028259277,
+      8.139920234680176,
+      8.51630687713623,
+      8.925233840942383,
+      8.075242042541504,
+      7.908040523529053,
+      8.542037010192871,
+      9.53087043762207,
+      8.386287689208984,
+      7.438401699066162,
+      8.981650352478027,
+      8.461213111877441,
+      10.494661331176758,
+      8.394021987915039,
+      8.052507400512695,
+      7.513110637664795,
+      8.245272636413574,
+      8.616978645324707,
+      9.444185256958008,
+      12.652023315429688,
+      7.7418036460876465,
+      7.955037593841553,
+      8.08609676361084,
+      8.538702964782715,
+      8.156211853027344,
+      9.609417915344238,
+      7.869164943695068,
+      7.94765567779541,
+      8.574921607971191,
+      7.878378868103027,
+      8.042013168334961,
+      11.65235710144043,
+      8.183636665344238,
+      8.486200332641602,
+      8.512199401855469,
+      8.07085132598877,
+      8.637981414794922,
+      8.784698486328125,
+      8.309473037719727,
+      8.479094505310059,
+      8.22171401977539
+    ],
+    "source_sha256": "ff9e81b5ef6cd700a4a5092720ea81320080a4ffd0208239db842deb27f964ab"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.8775499851908535,
+      "p95_ms": 5.2093099962803535
+    },
+    "host_to_device": {
+      "p50_ms": 0.25934999575838447,
+      "p95_ms": 0.3202849911758675
+    },
+    "feature_extraction": {
+      "p50_ms": 3.065549986786209,
+      "p95_ms": 4.146859995671548
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.766899995156564,
+      "p95_ms": 13.007904996629799
+    },
+    "model": {
+      "p50_ms": 12.864699980127625,
+      "p95_ms": 17.037084985349793
+    },
+    "postprocessing": {
+      "p50_ms": 3.911549996701069,
+      "p95_ms": 4.746930001419968
+    },
+    "end_to_end": {
+      "p50_ms": 21.173950008233078,
+      "p95_ms": 27.120339992688965
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247879168,
+    "peak_inference_reserved_bytes": 505413632
+  },
+  "training_seconds": 0.8329790999996476,
+  "resources": {
+    "seconds": 44.25839510001242,
+    "cpu_initial_rss_bytes": 3015487488,
+    "cpu_peak_rss_bytes": 6016172032,
+    "cpu_peak_increment_bytes": 3000684544,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247879168,
+    "peak_gpu_reserved_bytes": 505413632
+  },
+  "fitting_peak_allocated_bytes": 405083648,
+  "fitting_peak_reserved_bytes": 501219328,
+  "evaluation_peak_allocated_bytes": 405083648,
+  "evaluation_peak_reserved_bytes": 505413632,
+  "checkpoint": "checkpoints/padim/05-test-carpet-s2027-v1.pt",
+  "checkpoint_sha256": "5f54bdea6de49663686ddcede46b2c2e5658890512b4db51bb8856284d93f303",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-carpet-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "9b4ffa88dba180cb57776d2eeae1ab316593b29caa26e42ade9ab97497fd9228",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "7ba1b5d7a06e40575a56d263c1f76547e6677d840840f5384f2662e7cc2d0a6b",
+  "test_source_sha256": "acd7e6d5d57adeccc16043242232c6cc7680d465f8f789400665ce228e4568c4",
+  "evaluated_at_utc": "2026-11-14T01:19:29.053252+00:00",
+  "image_rows": 117,
+  "per_defect": [
+    {
+      "category": "carpet",
+      "seed": 2027,
+      "defect": "color",
+      "auroc": 0.9718045112781954,
+      "ap": 0.9634423840693187,
+      "recall": 0.9473684210526315,
+      "fpr": 0.14285714285714285,
+      "precision": 0.8181818181818182,
+      "f1": 0.8780487804878049,
+      "confusion_matrix": [
+        [
+          24,
+          4
+        ],
+        [
+          1,
+          18
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2027,
+      "defect": "cut",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.14285714285714285,
+      "precision": 0.8095238095238095,
+      "f1": 0.8947368421052632,
+      "confusion_matrix": [
+        [
+          24,
+          4
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2027,
+      "defect": "hole",
+      "auroc": 0.9978991596638656,
+      "ap": 0.9967320261437909,
+      "recall": 1.0,
+      "fpr": 0.14285714285714285,
+      "precision": 0.8095238095238095,
+      "f1": 0.8947368421052632,
+      "confusion_matrix": [
+        [
+          24,
+          4
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2027,
+      "defect": "metal_contamination",
+      "auroc": 0.9831932773109244,
+      "ap": 0.97703081232493,
+      "recall": 0.9411764705882353,
+      "fpr": 0.14285714285714285,
+      "precision": 0.8,
+      "f1": 0.8648648648648648,
+      "confusion_matrix": [
+        [
+          24,
+          4
+        ],
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "carpet",
+      "seed": 2027,
+      "defect": "thread",
+      "auroc": 0.9680451127819549,
+      "ap": 0.9626470021206859,
+      "recall": 0.8947368421052632,
+      "fpr": 0.14285714285714285,
+      "precision": 0.8095238095238095,
+      "f1": 0.8500000000000001,
+      "confusion_matrix": [
+        [
+          24,
+          4
+        ],
+        [
+          2,
+          17
+        ]
+      ]
+    }
+  ]
+}

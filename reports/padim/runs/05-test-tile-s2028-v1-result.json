@@ -1,0 +1,321 @@
+{
+  "experiment_id": "05-test-tile-s2028-v1",
+  "category": "tile",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.9660894660894661,
+  "image_ap": 0.9856467246856933,
+  "recall": 0.6547619047619048,
+  "fpr": 0.030303030303030304,
+  "precision": 0.9821428571428571,
+  "f1": 0.7857142857142857,
+  "confusion_matrix": [
+    [
+      32,
+      1
+    ],
+    [
+      29,
+      55
+    ]
+  ],
+  "tn": 32,
+  "fp": 1,
+  "fn": 29,
+  "tp": 55,
+  "pixel_auroc": 0.9108829968052616,
+  "pixel_ap": 0.35120306767362186,
+  "au_pro": 0.7831911659303655,
+  "positive_pixels": 5809846,
+  "negative_pixels": 76745354,
+  "regions": 86,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      71382047,
+      5363307
+    ],
+    [
+      2647029,
+      3162817
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 71382047,
+    "fp": 5363307,
+    "fn": 2647029,
+    "tp": 3162817,
+    "precision": 0.37095601706003806,
+    "recall": 0.5443891283865355,
+    "fpr": 0.069884451897896,
+    "f1": 0.441242134295761
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9325963576653232,
+        0.9918497519489723
+      ],
+      "image_ap": [
+        0.9679938409321083,
+        0.9971200705989561
+      ],
+      "recall": [
+        0.5555555555555556,
+        0.7590361445783133
+      ],
+      "fpr": [
+        0.0,
+        0.10006410256410223
+      ],
+      "precision": [
+        0.9422794117647059,
+        1.0
+      ],
+      "f1": [
+        0.7096659803248685,
+        0.8571428571428571
+      ],
+      "pixel_auroc": [
+        0.8912613920991062,
+        0.9290744168118018
+      ],
+      "pixel_ap": [
+        0.29633014309182065,
+        0.42086028782035
+      ],
+      "au_pro": [
+        0.7458696287473778,
+        0.8181403268762193
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9108825209594831,
+    "pixel_ap": 0.35105452022703093,
+    "au_pro": 0.7831900836059396
+  },
+  "calibration": {
+    "images": 34,
+    "image_threshold": 17.682476043701172,
+    "pixel_threshold": 9.949605941772461,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 6.71845817565918,
+    "scores": [
+      11.198009490966797,
+      11.82228946685791,
+      17.682476043701172,
+      14.296666145324707,
+      12.719380378723145,
+      11.264307022094727,
+      10.583359718322754,
+      9.284969329833984,
+      10.374258995056152,
+      10.479013442993164,
+      11.154976844787598,
+      15.259355545043945,
+      12.169750213623047,
+      11.156048774719238,
+      10.195230484008789,
+      10.784013748168945,
+      15.471894264221191,
+      10.229852676391602,
+      9.97208023071289,
+      14.384675979614258,
+      29.253263473510742,
+      9.87155532836914,
+      10.039332389831543,
+      10.590095520019531,
+      10.5451078414917,
+      10.527973175048828,
+      11.447365760803223,
+      11.056146621704102,
+      13.282987594604492,
+      11.233722686767578,
+      11.352681159973145,
+      11.955816268920898,
+      12.622222900390625,
+      12.712470054626465
+    ],
+    "source_sha256": "abb75978d0b1cd05907841241185159fef0347b33e7578400d59358c7e6787c6"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 2.7321499946992844,
+      "p95_ms": 3.2451700113597317
+    },
+    "host_to_device": {
+      "p50_ms": 0.24280001525767148,
+      "p95_ms": 0.3047699894523247
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0041499994695187,
+      "p95_ms": 4.073360018082893
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.710999991511926,
+      "p95_ms": 12.270024999452286
+    },
+    "model": {
+      "p50_ms": 12.73675000993535,
+      "p95_ms": 16.500584990717456
+    },
+    "postprocessing": {
+      "p50_ms": 3.6757499910891056,
+      "p95_ms": 4.5886799969593985
+    },
+    "end_to_end": {
+      "p50_ms": 19.505250005749986,
+      "p95_ms": 24.227789985889103
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 237428224,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.6794454000191763,
+  "resources": {
+    "seconds": 31.419725100015057,
+    "cpu_initial_rss_bytes": 3307085824,
+    "cpu_peak_rss_bytes": 5399236608,
+    "cpu_peak_increment_bytes": 2092150784,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 237428224,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 399140352,
+  "fitting_peak_reserved_bytes": 480247808,
+  "evaluation_peak_allocated_bytes": 399140352,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-tile-s2028-v1.pt",
+  "checkpoint_sha256": "0d59ea0e76b1544df39ebc89a4130570ae2078d874b2c3b97f51b5f9969d63ae",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-tile-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "7a81522a27fdd6a011445e3d39dbabc3cea63a2df53658030467330e27ed59c5",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "91539e5a76366f337db2bd34f1746d08e2e868b17a7a991d1bc684c700f3d210",
+  "test_source_sha256": "ff1a37e8ef569509475638ffc17ae47628be8a4fab816df684266dbff68c0da5",
+  "evaluated_at_utc": "2026-11-14T01:34:00.943670+00:00",
+  "image_rows": 117,
+  "per_defect": [
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "crack",
+      "auroc": 0.9982174688057042,
+      "ap": 0.9967320261437909,
+      "recall": 1.0,
+      "fpr": 0.030303030303030304,
+      "precision": 0.9444444444444444,
+      "f1": 0.9714285714285714,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "glue_strip",
+      "auroc": 0.9882154882154882,
+      "ap": 0.9753039456148334,
+      "recall": 0.7777777777777778,
+      "fpr": 0.030303030303030304,
+      "precision": 0.9333333333333333,
+      "f1": 0.8484848484848485,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          4,
+          14
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "gray_stroke",
+      "auroc": 0.8749999999999999,
+      "ap": 0.7104239294667518,
+      "recall": 0.0625,
+      "fpr": 0.030303030303030304,
+      "precision": 0.5,
+      "f1": 0.1111111111111111,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          15,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "oil",
+      "auroc": 0.9882154882154882,
+      "ap": 0.9753039456148334,
+      "recall": 0.7222222222222222,
+      "fpr": 0.030303030303030304,
+      "precision": 0.9285714285714286,
+      "f1": 0.8125000000000001,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          5,
+          13
+        ]
+      ]
+    },
+    {
+      "category": "tile",
+      "seed": 2028,
+      "defect": "rough",
+      "auroc": 0.9737373737373737,
+      "ap": 0.9476814035637565,
+      "recall": 0.6666666666666666,
+      "fpr": 0.030303030303030304,
+      "precision": 0.9090909090909091,
+      "f1": 0.7692307692307692,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          5,
+          10
+        ]
+      ]
+    }
+  ]
+}

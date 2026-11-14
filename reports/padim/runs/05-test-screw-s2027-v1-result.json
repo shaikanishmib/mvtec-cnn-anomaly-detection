@@ -1,0 +1,335 @@
+{
+  "experiment_id": "05-test-screw-s2027-v1",
+  "category": "screw",
+  "seed": 2027,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "image_auroc": 0.7548678007788481,
+  "image_ap": 0.8814550206673399,
+  "recall": 0.2605042016806723,
+  "fpr": 0.07317073170731707,
+  "precision": 0.9117647058823529,
+  "f1": 0.40522875816993464,
+  "confusion_matrix": [
+    [
+      38,
+      3
+    ],
+    [
+      88,
+      31
+    ]
+  ],
+  "tn": 38,
+  "fp": 3,
+  "fn": 88,
+  "tp": 31,
+  "pixel_auroc": 0.9786180420684932,
+  "pixel_ap": 0.19149045234489043,
+  "au_pro": 0.9214547295035206,
+  "positive_pixels": 418611,
+  "negative_pixels": 167353549,
+  "regions": 135,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      165955897,
+      1397652
+    ],
+    [
+      217761,
+      200850
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 165955897,
+    "fp": 1397652,
+    "fn": 217761,
+    "tp": 200850,
+    "precision": 0.1256488887721129,
+    "recall": 0.47980105635064535,
+    "fpr": 0.00835149304183564,
+    "f1": 0.1991460071894832
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6599671803405115,
+        0.8385463056717294
+      ],
+      "image_ap": [
+        0.8126474244395556,
+        0.9416976967952859
+      ],
+      "recall": [
+        0.18460526315789474,
+        0.3442622950819672
+      ],
+      "fpr": [
+        0.0,
+        0.17073170731707318
+      ],
+      "precision": [
+        0.8,
+        1.0
+      ],
+      "f1": [
+        0.30378873854212135,
+        0.5030674846625766
+      ],
+      "pixel_auroc": [
+        0.9741137751383777,
+        0.9827146982713043
+      ],
+      "pixel_ap": [
+        0.13626605411065804,
+        0.25311358597717026
+      ],
+      "au_pro": [
+        0.9046120666464499,
+        0.9372528496747048
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9786178739998141,
+    "pixel_ap": 0.19090419243396994,
+    "au_pro": 0.9214541833780354
+  },
+  "calibration": {
+    "images": 48,
+    "image_threshold": 18.174686431884766,
+    "pixel_threshold": 13.854386329650879,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 5.198241233825684,
+    "scores": [
+      16.36031723022461,
+      13.58026123046875,
+      13.46720027923584,
+      11.217049598693848,
+      18.160844802856445,
+      14.452101707458496,
+      13.30284595489502,
+      14.008439064025879,
+      14.711224555969238,
+      16.316682815551758,
+      15.121443748474121,
+      13.053617477416992,
+      16.030805587768555,
+      12.927966117858887,
+      17.825559616088867,
+      11.17065143585205,
+      10.783551216125488,
+      16.857696533203125,
+      11.470885276794434,
+      13.107338905334473,
+      14.624618530273438,
+      15.20991325378418,
+      15.742941856384277,
+      15.657508850097656,
+      13.258784294128418,
+      12.107669830322266,
+      11.147787094116211,
+      12.3524808883667,
+      13.319947242736816,
+      12.535058975219727,
+      13.380012512207031,
+      12.281517028808594,
+      16.59703254699707,
+      14.847824096679688,
+      11.92133903503418,
+      14.233357429504395,
+      11.511697769165039,
+      17.251527786254883,
+      24.83058738708496,
+      26.046566009521484,
+      16.51453971862793,
+      11.49735164642334,
+      18.174686431884766,
+      12.605290412902832,
+      14.842436790466309,
+      13.165212631225586,
+      18.05037498474121,
+      14.951495170593262
+    ],
+    "source_sha256": "dc539569edfcae6a10c7c8afc2ceb5b36de9ab6c8a2c811f5e2dbd2655449dc4"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.896200010785833,
+      "p95_ms": 4.475999997521285
+    },
+    "host_to_device": {
+      "p50_ms": 0.2595999976620078,
+      "p95_ms": 0.3401300244149751
+    },
+    "feature_extraction": {
+      "p50_ms": 3.1082000059541315,
+      "p95_ms": 5.693135004548821
+    },
+    "gaussian_scoring": {
+      "p50_ms": 10.026149990153499,
+      "p95_ms": 14.39154499967116
+    },
+    "model": {
+      "p50_ms": 13.125900004524738,
+      "p95_ms": 19.221575009578356
+    },
+    "postprocessing": {
+      "p50_ms": 3.9731500000925735,
+      "p95_ms": 4.9491750018205485
+    },
+    "end_to_end": {
+      "p50_ms": 21.41954998660367,
+      "p95_ms": 27.861955003754694
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247657984,
+    "peak_inference_reserved_bytes": 480247808
+  },
+  "training_seconds": 0.9363514000142459,
+  "resources": {
+    "seconds": 57.99814140002127,
+    "cpu_initial_rss_bytes": 3304767488,
+    "cpu_peak_rss_bytes": 7316488192,
+    "cpu_peak_increment_bytes": 4011720704,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247657984,
+    "peak_gpu_reserved_bytes": 480247808
+  },
+  "fitting_peak_allocated_bytes": 405231104,
+  "fitting_peak_reserved_bytes": 473956352,
+  "evaluation_peak_allocated_bytes": 405231104,
+  "evaluation_peak_reserved_bytes": 480247808,
+  "checkpoint": "checkpoints/padim/05-test-screw-s2027-v1.pt",
+  "checkpoint_sha256": "3027052a9379d163dd0a1d8a973cf95fc611f433463656e1508761ba7cf4b5bc",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-screw-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "b7c28e8359ef216ab430de6cf3e5b279f52d3ff39a086a644990cb0a6f8f5d3a",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "e1676b4633defdd0bc51db65b7ba0dbead53470a23061816624558616629b3af",
+  "test_source_sha256": "7ed8095c49b242268c0a66a88388491406f88b212ef01c8774bdd92e2fed7ddd",
+  "evaluated_at_utc": "2026-11-14T01:23:32.390584+00:00",
+  "image_rows": 160,
+  "per_defect": [
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "manipulated_front",
+      "auroc": 0.8871951219512195,
+      "ap": 0.7618350683987672,
+      "recall": 0.5416666666666666,
+      "fpr": 0.07317073170731707,
+      "precision": 0.8125,
+      "f1": 0.65,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          11,
+          13
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "scratch_head",
+      "auroc": 0.7876016260162602,
+      "ap": 0.6180919106866898,
+      "recall": 0.20833333333333334,
+      "fpr": 0.07317073170731707,
+      "precision": 0.625,
+      "f1": 0.3125,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          19,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "scratch_neck",
+      "auroc": 0.7629268292682927,
+      "ap": 0.6849889241011631,
+      "recall": 0.32,
+      "fpr": 0.07317073170731707,
+      "precision": 0.7272727272727273,
+      "f1": 0.4444444444444444,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          17,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "thread_side",
+      "auroc": 0.6468716861081654,
+      "ap": 0.45844555357721595,
+      "recall": 0.043478260869565216,
+      "fpr": 0.07317073170731707,
+      "precision": 0.25,
+      "f1": 0.07407407407407408,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          22,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2027,
+      "defect": "thread_top",
+      "auroc": 0.6818663838812301,
+      "ap": 0.5114188139252139,
+      "recall": 0.17391304347826086,
+      "fpr": 0.07317073170731707,
+      "precision": 0.5714285714285714,
+      "f1": 0.26666666666666666,
+      "confusion_matrix": [
+        [
+          38,
+          3
+        ],
+        [
+          19,
+          4
+        ]
+      ]
+    }
+  ]
+}

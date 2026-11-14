@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-14T01:25:53.540750+00:00",
+  "interpreter": "C:\\Users\\shaik\\mvtec-cnn-anomaly-detection\\.venv\\Scripts\\python.exe",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp=outputs/padim/pytest-full-v1",
+    "passed": 104,
+    "failed": 0,
+    "exit_code": 0,
+    "duration_seconds": 33.22
+  },
+  "padim_numerical_and_native_integration": {
+    "command": ".venv/Scripts/python.exe -m pytest -q tests/test_padim.py --basetemp=outputs/padim/pytest-integration-v1",
+    "passed": 6,
+    "failed": 0,
+    "exit_code": 0,
+    "duration_seconds": 9.0
+  },
+  "source_sha256": {
+    "tests/test_padim.py": "ac9f8fec1f031722d1ef6035a37444fa3f10a4934a2b1d155defda512036c679"
+  },
+  "evidence_scope": "Transcribed from actual completed command outputs; no test rerun claimed"
+}

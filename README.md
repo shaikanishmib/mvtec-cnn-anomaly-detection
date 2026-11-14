@@ -3,7 +3,7 @@
 PyTorch research comparing normal-only industrial anomaly detection and defect
 localization across all 15 original MVTec AD categories. The scientific notebooks
 are the canonical experiment narrative; compact, append-only records preserve
-both successful and unsuccessful experiments. The Basic CNN, convolutional autoencoder, PatchCore variant and SuperSimpleNet Lite baselines are complete;
+both successful and unsuccessful experiments. The Basic CNN, convolutional autoencoder, PatchCore variant, SuperSimpleNet Lite and PaDiM baselines are complete;
 the remaining model families and engineering application are planned.
 
 ## Research roadmap
@@ -15,7 +15,7 @@ the remaining model families and engineering application are planned.
 | [02](notebooks/02_convolutional_autoencoder.ipynb) | Convolutional autoencoder | Complete: bounded development and all 15 categories across three seeds |
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
 | [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
-| 05 | PaDiM | Planned |
+| [05](notebooks/05_padim.ipynb) | PaDiM | Complete: verified GPU pilot, bounded development and all 15 categories across three seeds |
 | 06 | EfficientAD | Planned |
 | 07 | Cross-model comparison | Planned |
 
@@ -443,3 +443,11 @@ weights and caches remain local and ignored. No Notebook05 work was started.
 Read [Notebook04](notebooks/04_supersimplenet.ipynb), [all-category results](reports/supersimplenet/all_category_means.csv), [measured findings](reports/supersimplenet/findings.md), [frozen policy](configs/supersimplenet_frozen.json), [experiment registry](experiments/04-development-selection-v1.json) and [reproduction guide](docs/supersimplenet_reproduction.md).
 Image-quality differences versus PatchCore remain unresolved by the paired conditional intervals; localization is weaker. Median inference is faster, but end-to-end p95 is higher and texture false positives persist. Read the [visually checked panel analysis](reports/supersimplenet/observed_panel_analysis.md) and [matched frozen cases](reports/supersimplenet/matched_frozen_cases.csv).
 <!-- SUPERSIMPLENET_FINDINGS_END -->
+
+## Milestone 7 — PaDiM
+
+Notebook 05 completes the frozen ResNet18 spatial-Gaussian model on all 15 categories across seeds 2026/2027/2028. The real normal-image GPU pilot passed before the 16-run bounded development study. Configuration: 100 seeded channels, covariance +0.01 I, sigma-4 smoothed Mahalanobis maps.
+
+Macro image AUROC **0.897933**, pixel AUROC **0.965920**, pixel AP **0.453764**, AU-PRO **0.911929**; normal-q95 operating recall **0.696493**, FPR **0.144521**. Threshold transfer remains a material limitation; inspect category results and confusion counts alongside ranking.
+
+See [findings](reports/padim/findings.md), [full summary](reports/padim/summary.json), [all runs](reports/padim/all_runs.csv), [four-model comparison](reports/padim/model_macro_comparison.csv), [protocol](docs/padim_protocol.md) and [reproduction](docs/padim_reproduction.md). Original masks are evaluated at native resolution; only pixel bootstrap intervals use a disclosed histogram approximation. Checkpoints/maps/panels remain ignored locally. EfficientAD remains planned.

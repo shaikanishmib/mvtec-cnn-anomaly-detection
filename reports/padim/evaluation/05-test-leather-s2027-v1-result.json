@@ -1,0 +1,323 @@
+{
+  "experiment_id": "05-test-leather-s2027-v1",
+  "category": "leather",
+  "seed": 2027,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "image_auroc": 1.0,
+  "image_ap": 1.0000000000000002,
+  "recall": 1.0,
+  "fpr": 0.125,
+  "precision": 0.9583333333333334,
+  "f1": 0.9787234042553191,
+  "confusion_matrix": [
+    [
+      28,
+      4
+    ],
+    [
+      0,
+      92
+    ]
+  ],
+  "tn": 28,
+  "fp": 4,
+  "fn": 0,
+  "tp": 92,
+  "pixel_auroc": 0.9921429908540269,
+  "pixel_ap": 0.4573895485924684,
+  "au_pro": 0.981370866417063,
+  "positive_pixels": 843352,
+  "negative_pixels": 129180072,
+  "regions": 99,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      112875555,
+      16304517
+    ],
+    [
+      42,
+      843310
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 112875555,
+    "fp": 16304517,
+    "fn": 42,
+    "tp": 843310,
+    "precision": 0.049178825981857646,
+    "recall": 0.9999501987307791,
+    "fpr": 0.12621541966627794,
+    "f1": 0.0937470523749444
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9999999999999999,
+        1.0
+      ],
+      "image_ap": [
+        0.9999999999999999,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0
+      ],
+      "fpr": [
+        0.027777777777777776,
+        0.25
+      ],
+      "precision": [
+        0.9157894736842105,
+        0.9901960784313726
+      ],
+      "f1": [
+        0.956043956043956,
+        0.9950738916256158
+      ],
+      "pixel_auroc": [
+        0.9899302546874785,
+        0.9945512338629412
+      ],
+      "pixel_ap": [
+        0.40362018238047875,
+        0.5311544038832329
+      ],
+      "au_pro": [
+        0.977153092048008,
+        0.9853865899443885
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9921429619526178,
+    "pixel_ap": 0.4570316165911016,
+    "au_pro": 0.9813708869154233
+  },
+  "calibration": {
+    "images": 36,
+    "image_threshold": 9.81493854522705,
+    "pixel_threshold": 7.385739326477051,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 5.717681884765625,
+    "scores": [
+      9.81493854522705,
+      7.49791145324707,
+      7.309800148010254,
+      8.46101188659668,
+      8.20821762084961,
+      7.428564548492432,
+      7.849635601043701,
+      8.09655475616455,
+      8.107158660888672,
+      8.030226707458496,
+      7.67830228805542,
+      7.782240867614746,
+      7.643251419067383,
+      8.3306303024292,
+      7.718449592590332,
+      7.774624824523926,
+      8.364239692687988,
+      8.755977630615234,
+      8.329784393310547,
+      8.295450210571289,
+      8.362081527709961,
+      8.233223915100098,
+      7.432821750640869,
+      11.532787322998047,
+      7.87321138381958,
+      7.9737443923950195,
+      8.259394645690918,
+      7.757209777832031,
+      7.980109691619873,
+      7.7965168952941895,
+      7.763473033905029,
+      7.5334062576293945,
+      8.968992233276367,
+      8.068818092346191,
+      7.910436153411865,
+      8.000718116760254
+    ],
+    "source_sha256": "75fe0d0c846a83eeaed6c0ba6c2ae294db929c52ac0fdc7783a4b805344ec5a8"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.8739000156056136,
+      "p95_ms": 4.646770012914203
+    },
+    "host_to_device": {
+      "p50_ms": 0.2576999831944704,
+      "p95_ms": 0.34412000095471734
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0664500081911683,
+      "p95_ms": 4.171620016859378
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.875849995296448,
+      "p95_ms": 12.646355001197643
+    },
+    "model": {
+      "p50_ms": 13.024200001382269,
+      "p95_ms": 18.000324997410626
+    },
+    "postprocessing": {
+      "p50_ms": 3.9249499823199585,
+      "p95_ms": 4.637025007104966
+    },
+    "end_to_end": {
+      "p50_ms": 21.299950007232837,
+      "p95_ms": 27.12194499472388
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247176704,
+    "peak_inference_reserved_bytes": 463470592
+  },
+  "training_seconds": 0.7392284999950789,
+  "resources": {
+    "seconds": 46.571032699983334,
+    "cpu_initial_rss_bytes": 3286605824,
+    "cpu_peak_rss_bytes": 6490959872,
+    "cpu_peak_increment_bytes": 3204354048,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247176704,
+    "peak_gpu_reserved_bytes": 463470592
+  },
+  "fitting_peak_allocated_bytes": 400225792,
+  "fitting_peak_reserved_bytes": 457179136,
+  "evaluation_peak_allocated_bytes": 400225792,
+  "evaluation_peak_reserved_bytes": 463470592,
+  "checkpoint": "checkpoints/padim/05-test-leather-s2027-v1.pt",
+  "checkpoint_sha256": "7223c64ce90c60ae1fa3782b94533877ceeafeb65db5dc4f0ce40861b6beb349",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-leather-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "3a65e6f6f9aef7f2d0d57045d4c3e058649a8de401d26a5206fbf81461617c93",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "ee5fe494558053cef0621d0e1e9fdbbd1e96603d5b565d50014f76db27c5cada",
+  "test_source_sha256": "ef6a388139a19b609074184c0e84241a3c249346bfdf8f3151c33701fbe7cf0c",
+  "evaluated_at_utc": "2026-11-14T01:21:29.453777+00:00",
+  "image_rows": 124,
+  "per_defect": [
+    {
+      "category": "leather",
+      "seed": 2027,
+      "defect": "color",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.125,
+      "precision": 0.8260869565217391,
+      "f1": 0.9047619047619047,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2027,
+      "defect": "cut",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.125,
+      "precision": 0.8260869565217391,
+      "f1": 0.9047619047619047,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2027,
+      "defect": "fold",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.125,
+      "precision": 0.8095238095238095,
+      "f1": 0.8947368421052632,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2027,
+      "defect": "glue",
+      "auroc": 1.0,
+      "ap": 0.9999999999999998,
+      "recall": 1.0,
+      "fpr": 0.125,
+      "precision": 0.8260869565217391,
+      "f1": 0.9047619047619047,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "category": "leather",
+      "seed": 2027,
+      "defect": "poke",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.125,
+      "precision": 0.8181818181818182,
+      "f1": 0.9,
+      "confusion_matrix": [
+        [
+          28,
+          4
+        ],
+        [
+          0,
+          18
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "experiment_id": "05-test-capsule-s2028-v1-result",
+  "model_family": "PaDiM",
+  "categories": [
+    "capsule"
+  ],
+  "hypothesis": "frozen confirmation; fit then normal calibration then test",
+  "preprocessing": {
+    "resolution": 256,
+    "normalization": "ImageNet V1"
+  },
+  "hyperparameters": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-14T01:02:48.919766+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "code": {
+      "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+        "src/anomaly_detection/padim.py": "733a4a9c5fa7d5522bb1aaa5326b009b68179fb88ac75492be25d9bb32ceb92a",
+        "src/anomaly_detection/padim_evaluation.py": "9a3997144992d121c53171536e8bf2029cad6a10672cd749205b3aeec190e76d",
+        "src/anomaly_detection/padim_research.py": "c28628965a7f9ce512dae3108810a18d966617dd8435054a178c08191dc13434"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "phase": "frozen confirmation; fit then normal calibration then test"
+  },
+  "metrics": {
+    "experiment_id": "05-test-capsule-s2028-v1",
+    "category": "capsule",
+    "seed": 2028,
+    "configuration": {
+      "dimension": 100,
+      "epsilon": 0.01,
+      "sigma": 4.0,
+      "resolution": 256,
+      "seed": 2028
+    },
+    "image_auroc": 0.8954926206621461,
+    "image_ap": 0.9661007913647278,
+    "recall": 0.4954128440366973,
+    "fpr": 0.08695652173913043,
+    "precision": 0.9642857142857143,
+    "f1": 0.6545454545454545,
+    "confusion_matrix": [
+      [
+        21,
+        2
+      ],
+      [
+        55,
+        54
+      ]
+    ],
+    "tn": 21,
+    "fp": 2,
+    "fn": 55,
+    "tp": 54,
+    "pixel_auroc": 0.9853137531642365,
+    "pixel_ap": 0.39541062404542837,
+    "au_pro": 0.9340033934102887,
+    "positive_pixels": 1208676,
+    "negative_pixels": 130791324,
+    "regions": 114,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        126522121,
+        4269203
+      ],
+      [
+        141916,
+        1066760
+      ]
+    ],
+    "pixel_operating_point": {
+      "tn": 126522121,
+      "fp": 4269203,
+      "fn": 141916,
+      "tp": 1066760,
+      "precision": 0.19991892747382245,
+      "recall": 0.8825855729740641,
+      "fpr": 0.03264133177518717,
+      "f1": 0.3259950625236931
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.7932214953048288,
+          0.9735606377053745
+        ],
+        "image_ap": [
+          0.9266226605904553,
+          0.9946378856120119
+        ],
+        "recall": [
+          0.4038417431192661,
+          0.5892857142857143
+        ],
+        "fpr": [
+          0.0,
+          0.2222222222222222
+        ],
+        "precision": [
+          0.9074074074074074,
+          1.0
+        ],
+        "f1": [
+          0.5696969696969697,
+          0.7344632768361582
+        ],
+        "pixel_auroc": [
+          0.9819457957546047,
+          0.9882984885637655
+        ],
+        "pixel_ap": [
+          0.3196128708815753,
+          0.45737439268719693
+        ],
+        "au_pro": [
+          0.9197583939602803,
+          0.9473684865053311
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9853136964947948,
+      "pixel_ap": 0.3950839917243664,
+      "au_pro": 0.9340032041949625
+    },
+    "calibration": {
+      "images": 32,
+      "image_threshold": 18.54257583618164,
+      "pixel_threshold": 8.799355506896973,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "strict_greater": true,
+      "histogram_scale": 3.609297037124634,
+      "scores": [
+        11.178674697875977,
+        6.315251350402832,
+        11.086111068725586,
+        8.231330871582031,
+        8.394709587097168,
+        8.987907409667969,
+        18.54257583618164,
+        6.33634614944458,
+        10.273512840270996,
+        7.962018966674805,
+        7.766645908355713,
+        5.806766033172607,
+        9.30303955078125,
+        6.6439290046691895,
+        8.465089797973633,
+        11.244644165039062,
+        18.17683982849121,
+        7.579195499420166,
+        5.873456001281738,
+        14.213251113891602,
+        9.545951843261719,
+        12.425518989562988,
+        11.02237606048584,
+        7.658581733703613,
+        12.604913711547852,
+        16.278667449951172,
+        11.145221710205078,
+        18.046655654907227,
+        23.40471076965332,
+        12.54639720916748,
+        8.629911422729492,
+        11.037627220153809
+      ],
+      "source_sha256": "ba6bef8ad675ff9550be8ce01df4a5d97880d753d1a6693c2601911f6825b6ba"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.5213000082876533,
+        "p95_ms": 4.2313350146287085
+      },
+      "host_to_device": {
+        "p50_ms": 0.2489500038791448,
+        "p95_ms": 0.3051049949135631
+      },
+      "feature_extraction": {
+        "p50_ms": 3.0572500108974054,
+        "p95_ms": 4.173099987383466
+      },
+      "gaussian_scoring": {
+        "p50_ms": 9.951800006092526,
+        "p95_ms": 12.344009990920311
+      },
+      "model": {
+        "p50_ms": 13.051200003246777,
+        "p95_ms": 15.837480020127252
+      },
+      "postprocessing": {
+        "p50_ms": 3.9007000013953075,
+        "p95_ms": 4.579420019581447
+      },
+      "end_to_end": {
+        "p50_ms": 20.862350007519126,
+        "p95_ms": 24.487125000450757
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+      "peak_inference_allocated_bytes": 246055424,
+      "peak_inference_reserved_bytes": 463470592
+    },
+    "training_seconds": 0.6848699000256602,
+    "resources": {
+      "seconds": 46.17474840002251,
+      "cpu_initial_rss_bytes": 3305005056,
+      "cpu_peak_rss_bytes": 6632755200,
+      "cpu_peak_increment_bytes": 3327750144,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 246055424,
+      "peak_gpu_reserved_bytes": 463470592
+    },
+    "fitting_peak_allocated_bytes": 399549952,
+    "fitting_peak_reserved_bytes": 457179136,
+    "evaluation_peak_allocated_bytes": 399549952,
+    "evaluation_peak_reserved_bytes": 463470592,
+    "checkpoint": "checkpoints/padim/05-test-capsule-s2028-v1.pt",
+    "checkpoint_sha256": "29fc76a228704efb6d429ca220ae1c12d7192a56963cee734772dfd585080034",
+    "checkpoint_bytes": 165480613,
+    "local_maps": "outputs/padim/05-test-capsule-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "6be8b304de18ea8d96b0f36adf11640e7a297a58082166b59ee7b8ec0223f7d3",
+    "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+    "fit_source_sha256": "3fa97133d29e32024db0fb49e63d74e54116158bab898a6af8d5bc1e39c6a2d8",
+    "test_source_sha256": "2b54625e015c6882598185208a8cb36de48e1af8d0a44b75172f118b4b2bebc4",
+    "evaluated_at_utc": "2026-11-14T01:28:36.414725+00:00",
+    "image_rows": 132,
+    "per_defect": [
+      {
+        "category": "capsule",
+        "seed": 2028,
+        "defect": "crack",
+        "auroc": 0.9073724007561437,
+        "ap": 0.8926361553673439,
+        "recall": 0.5217391304347826,
+        "fpr": 0.08695652173913043,
+        "precision": 0.8571428571428571,
+        "f1": 0.6486486486486486,
+        "confusion_matrix": [
+          [
+            21,
+            2
+          ],
+          [
+            11,
+            12
+          ]
+        ]
+      },
+      {
+        "category": "capsule",
+        "seed": 2028,
+        "defect": "faulty_imprint",
+        "auroc": 0.8675889328063241,
+        "ap": 0.7756983526849939,
+        "recall": 0.2727272727272727,
+        "fpr": 0.08695652173913043,
+        "precision": 0.75,
+        "f1": 0.39999999999999997,
+        "confusion_matrix": [
+          [
+            21,
+            2
+          ],
+          [
+            16,
+            6
+          ]
+        ]
+      },
+      {
+        "category": "capsule",
+        "seed": 2028,
+        "defect": "poke",
+        "auroc": 0.8799171842650104,
+        "ap": 0.830347553570012,
+        "recall": 0.38095238095238093,
+        "fpr": 0.08695652173913043,
+        "precision": 0.8,
+        "f1": 0.5161290322580645,
+        "confusion_matrix": [
+          [
+            21,
+            2
+          ],
+          [
+            13,
+            8
+          ]
+        ]
+      },
+      {
+        "category": "capsule",
+        "seed": 2028,
+        "defect": "scratch",
+        "auroc": 0.8657844990548205,
+        "ap": 0.8238158632480982,
+        "recall": 0.391304347826087,
+        "fpr": 0.08695652173913043,
+        "precision": 0.8181818181818182,
+        "f1": 0.5294117647058824,
+        "confusion_matrix": [
+          [
+            21,
+            2
+          ],
+          [
+            14,
+            9
+          ]
+        ]
+      },
+      {
+        "category": "capsule",
+        "seed": 2028,
+        "defect": "squeeze",
+        "auroc": 0.9630434782608696,
+        "ap": 0.9360912780123811,
+        "recall": 0.95,
+        "fpr": 0.08695652173913043,
+        "precision": 0.9047619047619048,
+        "f1": 0.9268292682926829,
+        "confusion_matrix": [
+          [
+            21,
+            2
+          ],
+          [
+            1,
+            19
+          ]
+        ]
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Actual measured execution",
+  "decision": "retain",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:28:36.417683+00:00",
+  "config_sha256": "f5e47969ca8ad170c760d21c54ff0acb731d282596e1da34458619ee3b34454e"
+}

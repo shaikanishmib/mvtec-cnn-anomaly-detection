@@ -1,0 +1,138 @@
+{
+  "categories": 15,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "models": 45,
+  "development_runs": 16,
+  "macro": {
+    "image_auroc": {
+      "mean": 0.8979326607174457,
+      "seed_std": 0.007678436306300316,
+      "image_bootstrap_95ci": [
+        0.8789845045809254,
+        0.9158594732607404
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    },
+    "image_ap": {
+      "mean": 0.9463892484069012,
+      "seed_std": 0.0033557436550918384,
+      "image_bootstrap_95ci": [
+        0.9341845182125459,
+        0.9592080475095746
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    },
+    "pixel_auroc": {
+      "mean": 0.9659200873183952,
+      "seed_std": 0.001313870926499251,
+      "image_bootstrap_95ci": [
+        0.9626622431273472,
+        0.9694243161292442
+      ],
+      "bootstrap_target": "4096-bin calibration-scaled pixel approximation"
+    },
+    "pixel_ap": {
+      "mean": 0.45376403391381653,
+      "seed_std": 0.02076773809790458,
+      "image_bootstrap_95ci": [
+        0.4357236095632135,
+        0.4723762314253988
+      ],
+      "bootstrap_target": "4096-bin calibration-scaled pixel approximation"
+    },
+    "au_pro": {
+      "mean": 0.9119290317760625,
+      "seed_std": 0.003997972055656283,
+      "image_bootstrap_95ci": [
+        0.9054246615655347,
+        0.9180624610762464
+      ],
+      "bootstrap_target": "4096-bin calibration-scaled pixel approximation"
+    },
+    "recall": {
+      "mean": 0.6964932243004448,
+      "seed_std": 0.04529250906633338,
+      "image_bootstrap_95ci": [
+        0.6789027969187057,
+        0.714150709647356
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    },
+    "fpr": {
+      "mean": 0.14452137478309646,
+      "seed_std": 0.03518737581354875,
+      "image_bootstrap_95ci": [
+        0.11509630961671921,
+        0.17471192870174782
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    },
+    "precision": {
+      "mean": 0.9255119836502366,
+      "seed_std": 0.011029325019202054,
+      "image_bootstrap_95ci": [
+        0.908105803996494,
+        0.9423705461499535
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    },
+    "f1": {
+      "mean": 0.7553576071650093,
+      "seed_std": 0.030318693048412625,
+      "image_bootstrap_95ci": [
+        0.7374512809096904,
+        0.7702979019978489
+      ],
+      "bootstrap_target": "exact image metric, fixed fitted models/thresholds"
+    }
+  },
+  "frozen_backbone_parameters": 2782784,
+  "trainable_backbone_parameters": 0,
+  "spatial_gaussians": 4096,
+  "gaussian_dimension": 100,
+  "independent_gaussian_mean_covariance_parameters": 21094400,
+  "stored_gaussian_float32_values": 41369600,
+  "frozen_configuration_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "total_fit_wall_seconds": 35.806188200222095,
+  "total_evaluation_seconds": 1779.2243129001,
+  "mean_model_p50_ms": 12.930137776291101,
+  "mean_model_p95_ms": 16.40124033547989,
+  "mean_end_to_end_p50_ms": 20.692255556221223,
+  "mean_end_to_end_p95_ms": 25.041995778802725,
+  "peak_training_gpu_allocated_gib": 0.38389158248901367,
+  "peak_inference_allocated_gib": 0.2315382957458496,
+  "peak_training_gpu_reserved_gib": 0.466796875,
+  "peak_inference_reserved_gib": 0.513671875,
+  "peak_evaluation_cpu_rss_gib": 7.0003509521484375,
+  "max_checkpoint_bytes": 165480613,
+  "pixel_bootstrap_quantization_bias": {
+    "pixel_auroc": {
+      "mean_binned_minus_exact": -1.9932259706460324e-07,
+      "maximum_absolute_run_difference": 1.3292704094114427e-06
+    },
+    "pixel_ap": {
+      "mean_binned_minus_exact": -0.00027311493356242883,
+      "maximum_absolute_run_difference": 0.0005862599109204836
+    },
+    "au_pro": {
+      "mean_binned_minus_exact": -5.316606888146798e-07,
+      "maximum_absolute_run_difference": 5.1251999274581905e-06
+    }
+  },
+  "pixel_operating_macro": {
+    "pixel_recall": 0.7221196166143751,
+    "pixel_fpr": 0.044563490584755984,
+    "pixel_precision": 0.3391141995629317,
+    "pixel_f1": 0.4170777065051564
+  },
+  "image_runs_with_no_alarms": 0,
+  "precision_convention": "shared zero_division=0",
+  "configuration_changed_after_test": false,
+  "test_evaluations_per_category_seed": 1,
+  "uncertainty_limit": "Conditional on fitted models and calibration thresholds. Seed spread and calibration uncertainty are distinct.",
+  "storage_scope": "Category Gaussian checkpoints; shared cached ImageNet backbone; licensed maps and bootstrap vectors local and ignored"
+}

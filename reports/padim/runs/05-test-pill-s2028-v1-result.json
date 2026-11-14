@@ -1,0 +1,369 @@
+{
+  "experiment_id": "05-test-pill-s2028-v1",
+  "category": "pill",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.8930714675395527,
+  "image_ap": 0.9766321719345203,
+  "recall": 0.5602836879432624,
+  "fpr": 0.07692307692307693,
+  "precision": 0.9753086419753086,
+  "f1": 0.7117117117117119,
+  "confusion_matrix": [
+    [
+      24,
+      2
+    ],
+    [
+      62,
+      79
+    ]
+  ],
+  "tn": 24,
+  "fp": 2,
+  "fn": 62,
+  "tp": 79,
+  "pixel_auroc": 0.957628049482139,
+  "pixel_ap": 0.4984312006720747,
+  "au_pro": 0.9392739041391657,
+  "positive_pixels": 3589160,
+  "negative_pixels": 103290840,
+  "regions": 245,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      101850715,
+      1440125
+    ],
+    [
+      1743690,
+      1845470
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 101850715,
+    "fp": 1440125,
+    "fn": 1743690,
+    "tp": 1845470,
+    "precision": 0.5616851742226294,
+    "recall": 0.5141788050685955,
+    "fpr": 0.013942427034188123,
+    "f1": 0.5368831325625423
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8165431515671963,
+        0.9534405332876557
+      ],
+      "image_ap": [
+        0.9560588551139686,
+        0.9922837985879138
+      ],
+      "recall": [
+        0.4771008403361345,
+        0.6423357664233577
+      ],
+      "fpr": [
+        0.0,
+        0.2
+      ],
+      "precision": [
+        0.9358974358974359,
+        1.0
+      ],
+      "f1": [
+        0.6403940886699508,
+        0.7753348916659175
+      ],
+      "pixel_auroc": [
+        0.94653730143069,
+        0.9677293582538586
+      ],
+      "pixel_ap": [
+        0.3859144593962555,
+        0.5881552921026931
+      ],
+      "au_pro": [
+        0.9237478954969728,
+        0.9515330683969233
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9576279605650996,
+    "pixel_ap": 0.49812232048939753,
+    "au_pro": 0.9392735517904462
+  },
+  "calibration": {
+    "images": 40,
+    "image_threshold": 15.706561088562012,
+    "pixel_threshold": 10.36658763885498,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 4.627433776855469,
+    "scores": [
+      11.893723487854004,
+      11.459931373596191,
+      12.07691764831543,
+      9.710897445678711,
+      10.43288803100586,
+      10.481491088867188,
+      13.29788875579834,
+      16.94811248779297,
+      13.921740531921387,
+      14.031843185424805,
+      12.292913436889648,
+      11.779109954833984,
+      13.58191967010498,
+      11.022467613220215,
+      11.427901268005371,
+      13.453089714050293,
+      11.330584526062012,
+      13.194855690002441,
+      12.407244682312012,
+      13.936393737792969,
+      11.26704216003418,
+      15.601424217224121,
+      13.510187149047852,
+      13.915376663208008,
+      11.394678115844727,
+      11.724432945251465,
+      12.736467361450195,
+      14.328747749328613,
+      10.541110038757324,
+      11.08582878112793,
+      12.055120468139648,
+      11.183512687683105,
+      12.049737930297852,
+      11.042010307312012,
+      10.781039237976074,
+      12.089186668395996,
+      13.39680290222168,
+      15.706561088562012,
+      11.547355651855469,
+      9.30478572845459
+    ],
+    "source_sha256": "8f88955876487072f550e371dc17fa62b7ef33771324633761171e1c71c0d22f"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 2.6362000062363222,
+      "p95_ms": 3.1320999827585183
+    },
+    "host_to_device": {
+      "p50_ms": 0.24660001508891582,
+      "p95_ms": 0.3059249982470646
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0961500015109777,
+      "p95_ms": 3.785569997853599
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.887249994790182,
+      "p95_ms": 11.4630549956928
+    },
+    "model": {
+      "p50_ms": 13.03380000172183,
+      "p95_ms": 15.035094998893323
+    },
+    "postprocessing": {
+      "p50_ms": 3.7255499919410795,
+      "p95_ms": 4.485604984802194
+    },
+    "end_to_end": {
+      "p50_ms": 19.762099997024052,
+      "p95_ms": 22.269579976273235
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 234527232,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.7742998000176158,
+  "resources": {
+    "seconds": 39.29585969998152,
+    "cpu_initial_rss_bytes": 3301285888,
+    "cpu_peak_rss_bytes": 6022500352,
+    "cpu_peak_increment_bytes": 2721214464,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 234527232,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 400901632,
+  "fitting_peak_reserved_bytes": 478150656,
+  "evaluation_peak_allocated_bytes": 400901632,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-pill-s2028-v1.pt",
+  "checkpoint_sha256": "ba7bf359fcfd8e6783a9a2c2df1e9cc62bf1d3816c8f4502a59f80d7903fe62c",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-pill-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "518b6ce8361d2d1c1b97b9a7bed83b975580f244bf1594f2eaf02cd23432e42f",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "972f938c060927c642d1cfd0fcd1d85b847528efe835ec149ff2fb9fcc0e390c",
+  "test_source_sha256": "5ed9af77ed372e3be98bd1cde0a7bd037198502523dbafd5c8f2d531b7fa6482",
+  "evaluated_at_utc": "2026-11-14T01:32:24.405628+00:00",
+  "image_rows": 167,
+  "per_defect": [
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "color",
+      "auroc": 0.9215384615384615,
+      "ap": 0.9371616216650542,
+      "recall": 0.64,
+      "fpr": 0.07692307692307693,
+      "precision": 0.8888888888888888,
+      "f1": 0.7441860465116279,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          9,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "combined",
+      "auroc": 0.9819004524886878,
+      "ap": 0.9729987454218013,
+      "recall": 0.8235294117647058,
+      "fpr": 0.07692307692307693,
+      "precision": 0.875,
+      "f1": 0.8484848484848485,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          3,
+          14
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "contamination",
+      "auroc": 0.9047619047619047,
+      "ap": 0.8843589831685073,
+      "recall": 0.5714285714285714,
+      "fpr": 0.07692307692307693,
+      "precision": 0.8571428571428571,
+      "f1": 0.6857142857142857,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          9,
+          12
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "crack",
+      "auroc": 0.826923076923077,
+      "ap": 0.8265978902875988,
+      "recall": 0.3076923076923077,
+      "fpr": 0.07692307692307693,
+      "precision": 0.8,
+      "f1": 0.4444444444444444,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          18,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "faulty_imprint",
+      "auroc": 0.8522267206477733,
+      "ap": 0.7929680825005718,
+      "recall": 0.47368421052631576,
+      "fpr": 0.07692307692307693,
+      "precision": 0.8181818181818182,
+      "f1": 0.6,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          10,
+          9
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "pill_type",
+      "auroc": 0.9743589743589745,
+      "ap": 0.9328843995510663,
+      "recall": 0.7777777777777778,
+      "fpr": 0.07692307692307693,
+      "precision": 0.7777777777777778,
+      "f1": 0.7777777777777778,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          2,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "pill",
+      "seed": 2028,
+      "defect": "scratch",
+      "auroc": 0.8637820512820513,
+      "ap": 0.8451005383595082,
+      "recall": 0.5416666666666666,
+      "fpr": 0.07692307692307693,
+      "precision": 0.8666666666666667,
+      "f1": 0.6666666666666667,
+      "confusion_matrix": [
+        [
+          24,
+          2
+        ],
+        [
+          11,
+          13
+        ]
+      ]
+    }
+  ]
+}

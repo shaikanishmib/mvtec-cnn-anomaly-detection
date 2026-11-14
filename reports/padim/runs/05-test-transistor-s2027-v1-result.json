@@ -1,0 +1,297 @@
+{
+  "experiment_id": "05-test-transistor-s2027-v1",
+  "category": "transistor",
+  "seed": 2027,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "image_auroc": 0.9066666666666666,
+  "image_ap": 0.8954356861717567,
+  "recall": 0.725,
+  "fpr": 0.1,
+  "precision": 0.8285714285714286,
+  "f1": 0.7733333333333333,
+  "confusion_matrix": [
+    [
+      54,
+      6
+    ],
+    [
+      11,
+      29
+    ]
+  ],
+  "tn": 54,
+  "fp": 6,
+  "fn": 11,
+  "tp": 29,
+  "pixel_auroc": 0.9694864828723525,
+  "pixel_ap": 0.6238266697321548,
+  "au_pro": 0.9077957799601196,
+  "positive_pixels": 5026033,
+  "negative_pixels": 99831567,
+  "regions": 44,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      97687136,
+      2144431
+    ],
+    [
+      1681251,
+      3344782
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 97687136,
+    "fp": 2144431,
+    "fn": 1681251,
+    "tp": 3344782,
+    "precision": 0.6093372583647236,
+    "recall": 0.6654914522049498,
+    "fpr": 0.02148049023411603,
+    "f1": 0.6361776034531195
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.8451319241441847,
+        0.9543666294642857
+      ],
+      "image_ap": [
+        0.8199541971174236,
+        0.9515865204204066
+      ],
+      "recall": [
+        0.5853658536585366,
+        0.8571428571428571
+      ],
+      "fpr": [
+        0.031746031746031744,
+        0.1774193548387097
+      ],
+      "precision": [
+        0.696969696969697,
+        0.9473684210526315
+      ],
+      "f1": [
+        0.6666666666666666,
+        0.8674698795180723
+      ],
+      "pixel_auroc": [
+        0.9584325770163317,
+        0.9791006017471662
+      ],
+      "pixel_ap": [
+        0.4449823885687373,
+        0.7380064448618711
+      ],
+      "au_pro": [
+        0.873442894499817,
+        0.9362086855012629
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.969486427557284,
+    "pixel_ap": 0.6236022155604873,
+    "au_pro": 0.9077956351477284
+  },
+  "calibration": {
+    "images": 31,
+    "image_threshold": 17.714820861816406,
+    "pixel_threshold": 12.504098892211914,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 5.790946960449219,
+    "scores": [
+      16.803176879882812,
+      17.231855392456055,
+      11.754989624023438,
+      14.28649616241455,
+      13.495550155639648,
+      15.668280601501465,
+      10.822830200195312,
+      11.420949935913086,
+      14.916159629821777,
+      17.714820861816406,
+      11.801092147827148,
+      13.113079071044922,
+      13.44072151184082,
+      12.662368774414062,
+      11.357844352722168,
+      14.994504928588867,
+      14.99266242980957,
+      11.382749557495117,
+      12.788186073303223,
+      12.498469352722168,
+      9.349756240844727,
+      12.662825584411621,
+      12.347349166870117,
+      13.965218544006348,
+      10.597146987915039,
+      10.566961288452148,
+      11.010478973388672,
+      10.333996772766113,
+      12.178143501281738,
+      21.112123489379883,
+      14.376340866088867
+    ],
+    "source_sha256": "698cb2832176d4ae6c523a1905ce8fb715dd79ad4940dff2a4b4f4629540b21f"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.841649988316931,
+      "p95_ms": 4.459789986140095
+    },
+    "host_to_device": {
+      "p50_ms": 0.25224999990314245,
+      "p95_ms": 0.3172450000420213
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0491999932564795,
+      "p95_ms": 4.2092850024346165
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.726400006911717,
+      "p95_ms": 11.985425006423608
+    },
+    "model": {
+      "p50_ms": 12.878499997896142,
+      "p95_ms": 15.519714982656295
+    },
+    "postprocessing": {
+      "p50_ms": 3.886249993229285,
+      "p95_ms": 4.803420011012349
+    },
+    "end_to_end": {
+      "p50_ms": 20.976849991711788,
+      "p95_ms": 25.02925500593846
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247408128,
+    "peak_inference_reserved_bytes": 522190848
+  },
+  "training_seconds": 0.6492937000002712,
+  "resources": {
+    "seconds": 38.37574379998841,
+    "cpu_initial_rss_bytes": 3301134336,
+    "cpu_peak_rss_bytes": 5936939008,
+    "cpu_peak_increment_bytes": 2635804672,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247408128,
+    "peak_gpu_reserved_bytes": 522190848
+  },
+  "fitting_peak_allocated_bytes": 397958656,
+  "fitting_peak_reserved_bytes": 457179136,
+  "evaluation_peak_allocated_bytes": 397958656,
+  "evaluation_peak_reserved_bytes": 522190848,
+  "checkpoint": "checkpoints/padim/05-test-transistor-s2027-v1.pt",
+  "checkpoint_sha256": "dfd3420be99aa8057c64971eba9829bdd08a6d1e20cc3459ba077624d6d3c7ab",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-transistor-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "838be3b1c91df95f0a40afc1f61f48ac5bc7cd69a6cc8843650c1167d7efaa13",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "8b92a631d24bca72ba9cba014926d6bd15bc09a47fcde96cc1a59e28ee725d8a",
+  "test_source_sha256": "10fc84906cad0574827a4b1e665c430093ebb0436db0192249af497f75328748",
+  "evaluated_at_utc": "2026-11-14T01:25:02.271390+00:00",
+  "image_rows": 100,
+  "per_defect": [
+    {
+      "category": "transistor",
+      "seed": 2027,
+      "defect": "bent_lead",
+      "auroc": 0.9933333333333333,
+      "ap": 0.9572979797979798,
+      "recall": 1.0,
+      "fpr": 0.1,
+      "precision": 0.625,
+      "f1": 0.7692307692307693,
+      "confusion_matrix": [
+        [
+          54,
+          6
+        ],
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2027,
+      "defect": "cut_lead",
+      "auroc": 0.7283333333333333,
+      "ap": 0.4054523624442843,
+      "recall": 0.3,
+      "fpr": 0.1,
+      "precision": 0.3333333333333333,
+      "f1": 0.3157894736842105,
+      "confusion_matrix": [
+        [
+          54,
+          6
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2027,
+      "defect": "damaged_case",
+      "auroc": 0.905,
+      "ap": 0.7042808661926308,
+      "recall": 0.6,
+      "fpr": 0.1,
+      "precision": 0.5,
+      "f1": 0.5454545454545454,
+      "confusion_matrix": [
+        [
+          54,
+          6
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "transistor",
+      "seed": 2027,
+      "defect": "misplaced",
+      "auroc": 1.0,
+      "ap": 0.9999999999999999,
+      "recall": 1.0,
+      "fpr": 0.1,
+      "precision": 0.625,
+      "f1": 0.7692307692307693,
+      "confusion_matrix": [
+        [
+          54,
+          6
+        ],
+        [
+          0,
+          10
+        ]
+      ]
+    }
+  ]
+}

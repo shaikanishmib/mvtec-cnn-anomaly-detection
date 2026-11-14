@@ -1,0 +1,276 @@
+{
+  "experiment_id": "05-test-bottle-s2028-v1",
+  "category": "bottle",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.9944444444444445,
+  "image_ap": 0.9982662377724514,
+  "recall": 1.0,
+  "fpr": 0.45,
+  "precision": 0.875,
+  "f1": 0.9333333333333333,
+  "confusion_matrix": [
+    [
+      11,
+      9
+    ],
+    [
+      0,
+      63
+    ]
+  ],
+  "tn": 11,
+  "fp": 9,
+  "fn": 0,
+  "tp": 63,
+  "pixel_auroc": 0.9811484972867109,
+  "pixel_ap": 0.7016688670528826,
+  "au_pro": 0.9460185633963745,
+  "positive_pixels": 3886731,
+  "negative_pixels": 63343269,
+  "regions": 68,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      57013653,
+      6329616
+    ],
+    [
+      60794,
+      3825937
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 57013653,
+    "fp": 6329616,
+    "fn": 60794,
+    "tp": 3825937,
+    "precision": 0.37673349742746653,
+    "recall": 0.9843585779412056,
+    "fpr": 0.09992562903565966,
+    "f1": 0.5449166246744476
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.9821162444113264,
+        1.0
+      ],
+      "image_ap": [
+        0.9942690603068711,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0
+      ],
+      "fpr": [
+        0.2222222222222222,
+        0.6666666666666666
+      ],
+      "precision": [
+        0.7916666666666666,
+        0.9444634703196346
+      ],
+      "f1": [
+        0.8837209302325582,
+        0.9714386317907444
+      ],
+      "pixel_auroc": [
+        0.9758491700078571,
+        0.9865258121393358
+      ],
+      "pixel_ap": [
+        0.6468612266171541,
+        0.7607902082939966
+      ],
+      "au_pro": [
+        0.9302992159224772,
+        0.9609350515814369
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9811484487276771,
+    "pixel_ap": 0.7014824268001187,
+    "au_pro": 0.9460187594650495
+  },
+  "calibration": {
+    "images": 31,
+    "image_threshold": 10.946821212768555,
+    "pixel_threshold": 7.671890735626221,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 3.24509334564209,
+    "scores": [
+      6.833541393280029,
+      9.291667938232422,
+      10.591986656188965,
+      9.760993957519531,
+      6.010622978210449,
+      9.032180786132812,
+      9.166126251220703,
+      9.505327224731445,
+      9.121589660644531,
+      7.855517387390137,
+      8.505366325378418,
+      8.961061477661133,
+      8.843871116638184,
+      8.890528678894043,
+      10.667683601379395,
+      9.328264236450195,
+      8.802685737609863,
+      9.69827938079834,
+      8.60961627960205,
+      9.90833854675293,
+      10.946821212768555,
+      7.560486793518066,
+      9.209290504455566,
+      7.859653949737549,
+      8.68058967590332,
+      8.728490829467773,
+      8.894453048706055,
+      6.376592636108398,
+      7.6885151863098145,
+      12.62093448638916,
+      9.452845573425293
+    ],
+    "source_sha256": "db9f47f34db6d39a5f4f8548d212725dd8c76aa5d917e1da324bb342056d56b2"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.037900009076111,
+      "p95_ms": 3.6362150218337765
+    },
+    "host_to_device": {
+      "p50_ms": 0.24149999080691487,
+      "p95_ms": 0.304564986436162
+    },
+    "feature_extraction": {
+      "p50_ms": 3.013849986018613,
+      "p95_ms": 3.8082600032794285
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.735550003824756,
+      "p95_ms": 12.140760009060614
+    },
+    "model": {
+      "p50_ms": 12.8316000191262,
+      "p95_ms": 15.600370004540308
+    },
+    "postprocessing": {
+      "p50_ms": 3.797650002525188,
+      "p95_ms": 4.5450300196534945
+    },
+    "end_to_end": {
+      "p50_ms": 19.952550006564707,
+      "p95_ms": 23.178180016111583
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 240435712,
+    "peak_inference_reserved_bytes": 463470592
+  },
+  "training_seconds": 0.6655587999848649,
+  "resources": {
+    "seconds": 26.336670900025638,
+    "cpu_initial_rss_bytes": 3326922752,
+    "cpu_peak_rss_bytes": 5019316224,
+    "cpu_peak_increment_bytes": 1692393472,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 240435712,
+    "peak_gpu_reserved_bytes": 463470592
+  },
+  "fitting_peak_allocated_bytes": 400143872,
+  "fitting_peak_reserved_bytes": 457179136,
+  "evaluation_peak_allocated_bytes": 400143872,
+  "evaluation_peak_reserved_bytes": 463470592,
+  "checkpoint": "checkpoints/padim/05-test-bottle-s2028-v1.pt",
+  "checkpoint_sha256": "208d0c0f9567e9f7d86fdec2c49651b4c6592c0d0c8d9b8305ec8a788883eab5",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-bottle-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "2c73ec1fa1328191b1a5243e8e692f44d2e24333e7932cff6d3689bbb1ae9ab6",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "a30d1eb8078d22e75ef8e9b61ce7b508b283b31c743556cf1b004027fe17d7ab",
+  "test_source_sha256": "25c9671e3974131af8b924470d00ebb8f3d80f5e0b5894b5143f46ff5f504c8a",
+  "evaluated_at_utc": "2026-11-14T01:26:54.841461+00:00",
+  "image_rows": 83,
+  "per_defect": [
+    {
+      "category": "bottle",
+      "seed": 2028,
+      "defect": "broken_large",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.45,
+      "precision": 0.6896551724137931,
+      "f1": 0.8163265306122449,
+      "confusion_matrix": [
+        [
+          11,
+          9
+        ],
+        [
+          0,
+          20
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2028,
+      "defect": "broken_small",
+      "auroc": 1.0,
+      "ap": 1.0,
+      "recall": 1.0,
+      "fpr": 0.45,
+      "precision": 0.7096774193548387,
+      "f1": 0.8301886792452831,
+      "confusion_matrix": [
+        [
+          11,
+          9
+        ],
+        [
+          0,
+          22
+        ]
+      ]
+    },
+    {
+      "category": "bottle",
+      "seed": 2028,
+      "defect": "contamination",
+      "auroc": 0.9833333333333333,
+      "ap": 0.9848313966735021,
+      "recall": 1.0,
+      "fpr": 0.45,
+      "precision": 0.7,
+      "f1": 0.8235294117647058,
+      "confusion_matrix": [
+        [
+          11,
+          9
+        ],
+        [
+          0,
+          21
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "experiment_id": "05-test-screw-s2026-v1",
+  "category": "screw",
+  "seed": 2026,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2026
+  },
+  "image_auroc": 0.7353965976634557,
+  "image_ap": 0.8739187976251752,
+  "recall": 0.10084033613445378,
+  "fpr": 0.024390243902439025,
+  "precision": 0.9230769230769231,
+  "f1": 0.1818181818181818,
+  "confusion_matrix": [
+    [
+      40,
+      1
+    ],
+    [
+      107,
+      12
+    ]
+  ],
+  "tn": 40,
+  "fp": 1,
+  "fn": 107,
+  "tp": 12,
+  "pixel_auroc": 0.9757621714200979,
+  "pixel_ap": 0.11413197686899204,
+  "au_pro": 0.9155749325733598,
+  "positive_pixels": 418611,
+  "negative_pixels": 167353549,
+  "regions": 135,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      165922089,
+      1431460
+    ],
+    [
+      246316,
+      172295
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 165922089,
+    "fp": 1431460,
+    "fn": 246316,
+    "tp": 172295,
+    "precision": 0.10743224495013266,
+    "recall": 0.4115873687026858,
+    "fpr": 0.008553508476835468,
+    "f1": 0.17038953384303338
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6434619735640853,
+        0.826595744680851
+      ],
+      "image_ap": [
+        0.8072025412968962,
+        0.9356159130792673
+      ],
+      "recall": [
+        0.05217391304347826,
+        0.15967226890756298
+      ],
+      "fpr": [
+        0.0,
+        0.08163265306122448
+      ],
+      "precision": [
+        0.75,
+        1.0
+      ],
+      "f1": [
+        0.0983406637345062,
+        0.27338129496402874
+      ],
+      "pixel_auroc": [
+        0.9711314256808634,
+        0.9800395442263974
+      ],
+      "pixel_ap": [
+        0.08452375382089351,
+        0.1586270733103344
+      ],
+      "au_pro": [
+        0.8998619141548658,
+        0.9304905563323627
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9757619265631897,
+    "pixel_ap": 0.11390126311351889,
+    "au_pro": 0.9155740917543698
+  },
+  "calibration": {
+    "images": 48,
+    "image_threshold": 20.063032150268555,
+    "pixel_threshold": 14.19130802154541,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 4.960972785949707,
+    "scores": [
+      15.623846054077148,
+      13.321043014526367,
+      13.262105941772461,
+      12.07115364074707,
+      20.063032150268555,
+      16.08037757873535,
+      14.203807830810547,
+      16.533855438232422,
+      16.179828643798828,
+      16.658809661865234,
+      15.41144847869873,
+      13.553561210632324,
+      17.81831932067871,
+      14.188471794128418,
+      18.168323516845703,
+      12.906143188476562,
+      12.723828315734863,
+      16.286548614501953,
+      10.930346488952637,
+      15.446961402893066,
+      15.623170852661133,
+      15.105321884155273,
+      15.903861999511719,
+      15.582776069641113,
+      13.666229248046875,
+      14.349221229553223,
+      11.766409873962402,
+      12.516462326049805,
+      13.966338157653809,
+      12.212406158447266,
+      13.92835521697998,
+      13.467436790466309,
+      17.045337677001953,
+      17.081796646118164,
+      12.070432662963867,
+      13.95641803741455,
+      11.459657669067383,
+      16.738088607788086,
+      29.579580307006836,
+      29.190715789794922,
+      16.414138793945312,
+      12.414695739746094,
+      18.498287200927734,
+      13.069060325622559,
+      14.446555137634277,
+      13.642842292785645,
+      18.349058151245117,
+      12.65402889251709
+    ],
+    "source_sha256": "dc539569edfcae6a10c7c8afc2ceb5b36de9ab6c8a2c811f5e2dbd2655449dc4"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.8533000042662024,
+      "p95_ms": 4.556830003275536
+    },
+    "host_to_device": {
+      "p50_ms": 0.2609999937703833,
+      "p95_ms": 0.3279450218542479
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0265499954111874,
+      "p95_ms": 3.802909990190528
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.617849995265715,
+      "p95_ms": 12.282924997271037
+    },
+    "model": {
+      "p50_ms": 12.710099996183999,
+      "p95_ms": 16.07491501927143
+    },
+    "postprocessing": {
+      "p50_ms": 3.907999984221533,
+      "p95_ms": 4.674965002050158
+    },
+    "end_to_end": {
+      "p50_ms": 20.793899995624088,
+      "p95_ms": 24.798825026664414
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247395840,
+    "peak_inference_reserved_bytes": 467664896
+  },
+  "training_seconds": 1.0178207000135444,
+  "resources": {
+    "seconds": 58.651683600008255,
+    "cpu_initial_rss_bytes": 2777124864,
+    "cpu_peak_rss_bytes": 7236042752,
+    "cpu_peak_increment_bytes": 4458917888,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247395840,
+    "peak_gpu_reserved_bytes": 467664896
+  },
+  "fitting_peak_allocated_bytes": 405722624,
+  "fitting_peak_reserved_bytes": 461373440,
+  "evaluation_peak_allocated_bytes": 405722624,
+  "evaluation_peak_reserved_bytes": 467664896,
+  "checkpoint": "checkpoints/padim/05-test-screw-s2026-v1.pt",
+  "checkpoint_sha256": "73245e4b2c764bd141555041e0726b508f49f99cab84c126d425c5bc6c0b1cc7",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-screw-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "c097dbcb313cc021b28827224218e0cf8fda6d896e18cfe3b045b49da83feb4e",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "e1676b4633defdd0bc51db65b7ba0dbead53470a23061816624558616629b3af",
+  "test_source_sha256": "7ed8095c49b242268c0a66a88388491406f88b212ef01c8774bdd92e2fed7ddd",
+  "evaluated_at_utc": "2026-11-14T01:13:33.346400+00:00",
+  "image_rows": 160,
+  "per_defect": [
+    {
+      "category": "screw",
+      "seed": 2026,
+      "defect": "manipulated_front",
+      "auroc": 0.8810975609756098,
+      "ap": 0.8006720335233485,
+      "recall": 0.3333333333333333,
+      "fpr": 0.024390243902439025,
+      "precision": 0.8888888888888888,
+      "f1": 0.48484848484848486,
+      "confusion_matrix": [
+        [
+          40,
+          1
+        ],
+        [
+          16,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2026,
+      "defect": "scratch_head",
+      "auroc": 0.75,
+      "ap": 0.5663982185185381,
+      "recall": 0.0,
+      "fpr": 0.024390243902439025,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          40,
+          1
+        ],
+        [
+          24,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2026,
+      "defect": "scratch_neck",
+      "auroc": 0.6917073170731708,
+      "ap": 0.6117139608098645,
+      "recall": 0.12,
+      "fpr": 0.024390243902439025,
+      "precision": 0.75,
+      "f1": 0.20689655172413793,
+      "confusion_matrix": [
+        [
+          40,
+          1
+        ],
+        [
+          22,
+          3
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2026,
+      "defect": "thread_side",
+      "auroc": 0.6670201484623541,
+      "ap": 0.5042554815358604,
+      "recall": 0.043478260869565216,
+      "fpr": 0.024390243902439025,
+      "precision": 0.5,
+      "f1": 0.08,
+      "confusion_matrix": [
+        [
+          40,
+          1
+        ],
+        [
+          22,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2026,
+      "defect": "thread_top",
+      "auroc": 0.6839872746553552,
+      "ap": 0.5010500749881787,
+      "recall": 0.0,
+      "fpr": 0.024390243902439025,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          40,
+          1
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    }
+  ]
+}

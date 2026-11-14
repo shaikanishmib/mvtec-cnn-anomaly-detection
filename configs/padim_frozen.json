@@ -1,0 +1,75 @@
+{
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256
+  },
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "development": [
+    {
+      "dimension": 50,
+      "epsilon": 0.01,
+      "objective": 0.6787820386395036
+    },
+    {
+      "dimension": 50,
+      "epsilon": 0.1,
+      "objective": 0.6463229927479832
+    },
+    {
+      "dimension": 100,
+      "epsilon": 0.01,
+      "objective": 0.7161825818093985
+    },
+    {
+      "dimension": 100,
+      "epsilon": 0.1,
+      "objective": 0.6829739048710686
+    }
+  ],
+  "source_sha256": {
+    "src/anomaly_detection/padim.py": "733a4a9c5fa7d5522bb1aaa5326b009b68179fb88ac75492be25d9bb32ceb92a",
+    "src/anomaly_detection/padim_research.py": "c28628965a7f9ce512dae3108810a18d966617dd8435054a178c08191dc13434",
+    "src/anomaly_detection/padim_evaluation.py": "9a3997144992d121c53171536e8bf2029cad6a10672cd749205b3aeec190e76d",
+    "src/anomaly_detection/pixel_metrics.py": "384dd283421560f7d44618ca12f2cc25a1582e430e9e3cd8b4486a7afdaec294",
+    "src/anomaly_detection/patchcore.py": "8558267cbf0d1794bc5d5c78c6da4757fb7c959f605a47ff770a6cb836ff8d41",
+    "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+    "src/anomaly_detection/cnn_evaluation.py": "44464c2ccddd30aa7f1e3eb81f86bb6ecaf10d006e4bfa40ba529d7001834a58",
+    "docs/padim_protocol.md": "bf739803f9b9b0e43737f81470d03ab32a9b13a7f570ca48a3737788b2c20ae8"
+  },
+  "environment_sha256": "8c7592dd7177277ebb3082da9321a44216d608deded8169c596e45e329ef523d",
+  "dataset_validation_sha256": "dba510a81949afce789d9ce25a8dbe5d1a653d75e1c6669ecfd664cde63a2480",
+  "weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "code": {
+    "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+    "git_dirty": true,
+    "source_sha256": {
+      "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+      "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+    },
+    "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+  },
+  "selection": "mean synthetic objective; no real test access"
+}

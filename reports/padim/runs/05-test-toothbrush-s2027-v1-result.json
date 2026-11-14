@@ -1,0 +1,212 @@
+{
+  "experiment_id": "05-test-toothbrush-s2027-v1",
+  "category": "toothbrush",
+  "seed": 2027,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2027
+  },
+  "image_auroc": 0.8527777777777779,
+  "image_ap": 0.9303639893196556,
+  "recall": 1.0,
+  "fpr": 0.5,
+  "precision": 0.8333333333333334,
+  "f1": 0.9090909090909091,
+  "confusion_matrix": [
+    [
+      6,
+      6
+    ],
+    [
+      0,
+      30
+    ]
+  ],
+  "tn": 6,
+  "fp": 6,
+  "fn": 0,
+  "tp": 30,
+  "pixel_auroc": 0.9890790690323554,
+  "pixel_ap": 0.4919497923710853,
+  "au_pro": 0.9296436846471514,
+  "positive_pixels": 673493,
+  "negative_pixels": 43366699,
+  "regions": 66,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      41038037,
+      2328662
+    ],
+    [
+      13081,
+      660412
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 41038037,
+    "fp": 2328662,
+    "fn": 13081,
+    "tp": 660412,
+    "precision": 0.22094200411231038,
+    "recall": 0.9805773779385978,
+    "fpr": 0.05369700838885616,
+    "f1": 0.36062794209634935
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6920821114369501,
+        0.9889810715400218
+      ],
+      "image_ap": [
+        0.8411177775351961,
+        0.9955240864067337
+      ],
+      "recall": [
+        1.0,
+        1.0
+      ],
+      "fpr": [
+        0.2,
+        0.8
+      ],
+      "precision": [
+        0.696969696969697,
+        0.9459459459459459
+      ],
+      "f1": [
+        0.8214285714285715,
+        0.9722222222222222
+      ],
+      "pixel_auroc": [
+        0.9857388190461503,
+        0.9922954140940116
+      ],
+      "pixel_ap": [
+        0.4224067577234584,
+        0.5375727664681786
+      ],
+      "au_pro": [
+        0.8988805640327635,
+        0.9553896850577748
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9890789656627312,
+    "pixel_ap": 0.4916938771322394,
+    "au_pro": 0.929643019054589
+  },
+  "calibration": {
+    "images": 9,
+    "image_threshold": 13.191840171813965,
+    "pixel_threshold": 11.080414772033691,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 3.6946215629577637,
+    "scores": [
+      11.05107593536377,
+      11.293620109558105,
+      12.299429893493652,
+      13.191840171813965,
+      12.076314926147461,
+      11.586723327636719,
+      12.901124954223633,
+      11.64707088470459,
+      13.150575637817383
+    ],
+    "source_sha256": "97da83456e3cd80894351c778a9cd486474cc668553a2928dd786b197f8739da"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.8353499985532835,
+      "p95_ms": 4.563224990852177
+    },
+    "host_to_device": {
+      "p50_ms": 0.25615000049583614,
+      "p95_ms": 0.32575000368524326
+    },
+    "feature_extraction": {
+      "p50_ms": 3.073399988352321,
+      "p95_ms": 3.93052001018077
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.755299994139932,
+      "p95_ms": 11.61450998915825
+    },
+    "model": {
+      "p50_ms": 12.886650001746602,
+      "p95_ms": 15.180095011601225
+    },
+    "postprocessing": {
+      "p50_ms": 3.915599998435937,
+      "p95_ms": 4.626210000424178
+    },
+    "end_to_end": {
+      "p50_ms": 21.03530000022147,
+      "p95_ms": 24.010479995922644
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247358976,
+    "peak_inference_reserved_bytes": 421527552
+  },
+  "training_seconds": 0.21983539999928325,
+  "resources": {
+    "seconds": 18.916833600000245,
+    "cpu_initial_rss_bytes": 3288551424,
+    "cpu_peak_rss_bytes": 4448432128,
+    "cpu_peak_increment_bytes": 1159880704,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247358976,
+    "peak_gpu_reserved_bytes": 421527552
+  },
+  "fitting_peak_allocated_bytes": 387036672,
+  "fitting_peak_reserved_bytes": 417333248,
+  "evaluation_peak_allocated_bytes": 387036672,
+  "evaluation_peak_reserved_bytes": 421527552,
+  "checkpoint": "checkpoints/padim/05-test-toothbrush-s2027-v1.pt",
+  "checkpoint_sha256": "40b8e7888139950b7cf343fe8447ea15f9392e9aec8ed58e882c9c080e99660f",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-toothbrush-s2027-v1/model_resolution_maps.npy",
+  "maps_sha256": "75a23c2c75a7d25ff13c8b117ac3c4fb7cdff4b14708c7319e366ed670b371e4",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "b2db96f5d34e9c29f4c026b1dce54cd588b06155d33ad1de2a152f67b21f8cb6",
+  "test_source_sha256": "fda4dbbabea387d00cd13e60c23c3cd5565eaa8afa09642a597a4746ed61a0cb",
+  "evaluated_at_utc": "2026-11-14T01:24:23.510799+00:00",
+  "image_rows": 42,
+  "per_defect": [
+    {
+      "category": "toothbrush",
+      "seed": 2027,
+      "defect": "defective",
+      "auroc": 0.8527777777777779,
+      "ap": 0.9303639893196556,
+      "recall": 1.0,
+      "fpr": 0.5,
+      "precision": 0.8333333333333334,
+      "f1": 0.9090909090909091,
+      "confusion_matrix": [
+        [
+          6,
+          6
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  ]
+}

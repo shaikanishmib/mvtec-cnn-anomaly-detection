@@ -1,0 +1,383 @@
+{
+  "experiment_id": "05-test-cable-s2026-v1",
+  "category": "cable",
+  "seed": 2026,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2026
+  },
+  "image_auroc": 0.8467016491754124,
+  "image_ap": 0.8849258923810442,
+  "recall": 0.29347826086956524,
+  "fpr": 0.034482758620689655,
+  "precision": 0.9310344827586207,
+  "f1": 0.4462809917355372,
+  "confusion_matrix": [
+    [
+      56,
+      2
+    ],
+    [
+      65,
+      27
+    ]
+  ],
+  "tn": 56,
+  "fp": 2,
+  "fn": 65,
+  "tp": 27,
+  "pixel_auroc": 0.9641645931952845,
+  "pixel_ap": 0.38330412280624543,
+  "au_pro": 0.8911986007463775,
+  "positive_pixels": 4515876,
+  "negative_pixels": 152770524,
+  "regions": 151,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      150081083,
+      2689441
+    ],
+    [
+      2627797,
+      1888079
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 150081083,
+    "fp": 2689441,
+    "fn": 2627797,
+    "tp": 1888079,
+    "precision": 0.41246766808228036,
+    "recall": 0.4180980611513691,
+    "fpr": 0.01760444966464866,
+    "f1": 0.41526378044022283
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7782483952538415,
+        0.9089193306457738
+      ],
+      "image_ap": [
+        0.8164391892579812,
+        0.9395831925189114
+      ],
+      "recall": [
+        0.20196969696969697,
+        0.38752123786407755
+      ],
+      "fpr": [
+        0.0,
+        0.08771929824561403
+      ],
+      "precision": [
+        0.8214285714285714,
+        1.0
+      ],
+      "f1": [
+        0.3300477851941747,
+        0.5517241379310345
+      ],
+      "pixel_auroc": [
+        0.9594861824973873,
+        0.9688286122046282
+      ],
+      "pixel_ap": [
+        0.3412523098259552,
+        0.4222831226948405
+      ],
+      "au_pro": [
+        0.8648181276541038,
+        0.9151510124173189
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9641643247278451,
+    "pixel_ap": 0.3830373094163649,
+    "au_pro": 0.891197985105992
+  },
+  "calibration": {
+    "images": 33,
+    "image_threshold": 22.23621368408203,
+    "pixel_threshold": 12.600833892822266,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 7.01120662689209,
+    "scores": [
+      11.080254554748535,
+      14.395424842834473,
+      18.924362182617188,
+      14.632092475891113,
+      14.441884994506836,
+      12.856433868408203,
+      11.852602005004883,
+      12.523445129394531,
+      11.988061904907227,
+      12.732930183410645,
+      12.650090217590332,
+      12.08794116973877,
+      23.76926612854004,
+      15.450822830200195,
+      10.768796920776367,
+      13.81338119506836,
+      12.82619571685791,
+      11.826790809631348,
+      13.220477104187012,
+      12.30013656616211,
+      11.295278549194336,
+      20.83505630493164,
+      13.17902946472168,
+      12.875069618225098,
+      17.46232032775879,
+      15.514730453491211,
+      16.99275016784668,
+      14.634233474731445,
+      22.23621368408203,
+      21.100595474243164,
+      12.71714973449707,
+      13.453246116638184,
+      12.9097900390625
+    ],
+    "source_sha256": "3fcba53b923cb97f8782752ce84063b41c6f1ec9f0db7916a42d869f0dbf0d52"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.861349992803298,
+      "p95_ms": 4.603000005590729
+    },
+    "host_to_device": {
+      "p50_ms": 0.2615999837871641,
+      "p95_ms": 0.33585999481147144
+    },
+    "feature_extraction": {
+      "p50_ms": 3.075500004342757,
+      "p95_ms": 4.3707449978683135
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.73409999278374,
+      "p95_ms": 12.003550010558683
+    },
+    "model": {
+      "p50_ms": 12.87219999358058,
+      "p95_ms": 16.151130004436705
+    },
+    "postprocessing": {
+      "p50_ms": 3.9623500197194517,
+      "p95_ms": 4.723380002542398
+    },
+    "end_to_end": {
+      "p50_ms": 21.130399996764027,
+      "p95_ms": 25.153720007801894
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247526912,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.8204373000189662,
+  "resources": {
+    "seconds": 56.23620459999074,
+    "cpu_initial_rss_bytes": 1709932544,
+    "cpu_peak_rss_bytes": 5608538112,
+    "cpu_peak_increment_bytes": 3898605568,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247526912,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 397850112,
+  "fitting_peak_reserved_bytes": 478150656,
+  "evaluation_peak_allocated_bytes": 397850112,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-cable-s2026-v1.pt",
+  "checkpoint_sha256": "fc44faf249c3f83cbde664239345e3189c4f38d041d3fd77d244f9685edef4d8",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-cable-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "e06b4ebc4429e56a23dd03245f83ef36946c61568876366eb3dbcef198cff37d",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "d664713f20aed6f7f45c42e658719d2399df71f3a2abf709d94b5c88a581533b",
+  "test_source_sha256": "4bee1e9e6d2b750b115f5e3d24bb26946eb4105ed091fc68270fbed177cbb910",
+  "evaluated_at_utc": "2026-11-14T01:07:52.551353+00:00",
+  "image_rows": 150,
+  "per_defect": [
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "bent_wire",
+      "auroc": 0.9482758620689655,
+      "ap": 0.8356203165026692,
+      "recall": 0.6153846153846154,
+      "fpr": 0.034482758620689655,
+      "precision": 0.8,
+      "f1": 0.6956521739130435,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          5,
+          8
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "cable_swap",
+      "auroc": 0.764367816091954,
+      "ap": 0.408122705383861,
+      "recall": 0.08333333333333333,
+      "fpr": 0.034482758620689655,
+      "precision": 0.3333333333333333,
+      "f1": 0.13333333333333333,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "combined",
+      "auroc": 0.9482758620689655,
+      "ap": 0.8154606902049357,
+      "recall": 0.6363636363636364,
+      "fpr": 0.034482758620689655,
+      "precision": 0.7777777777777778,
+      "f1": 0.7000000000000001,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "cut_inner_insulation",
+      "auroc": 0.8879310344827587,
+      "ap": 0.6470279323850753,
+      "recall": 0.2857142857142857,
+      "fpr": 0.034482758620689655,
+      "precision": 0.6666666666666666,
+      "f1": 0.4,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "cut_outer_insulation",
+      "auroc": 0.9344827586206896,
+      "ap": 0.6571019258519258,
+      "recall": 0.4,
+      "fpr": 0.034482758620689655,
+      "precision": 0.6666666666666666,
+      "f1": 0.5,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          6,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "missing_cable",
+      "auroc": 0.6781609195402298,
+      "ap": 0.24978029323104844,
+      "recall": 0.0,
+      "fpr": 0.034482758620689655,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          12,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "missing_wire",
+      "auroc": 0.7879310344827587,
+      "ap": 0.3745233918128655,
+      "recall": 0.2,
+      "fpr": 0.034482758620689655,
+      "precision": 0.5,
+      "f1": 0.28571428571428575,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "cable",
+      "seed": 2026,
+      "defect": "poke_insulation",
+      "auroc": 0.8172413793103448,
+      "ap": 0.3555626399744046,
+      "recall": 0.1,
+      "fpr": 0.034482758620689655,
+      "precision": 0.3333333333333333,
+      "f1": 0.15384615384615383,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          9,
+          1
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "experiment_id": "05-test-toothbrush-s2028-v1-result",
+  "model_family": "PaDiM",
+  "categories": [
+    "toothbrush"
+  ],
+  "hypothesis": "frozen confirmation; fit then normal calibration then test",
+  "preprocessing": {
+    "resolution": 256,
+    "normalization": "ImageNet V1"
+  },
+  "hyperparameters": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-14T01:02:48.919766+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "code": {
+      "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+        "src/anomaly_detection/padim.py": "733a4a9c5fa7d5522bb1aaa5326b009b68179fb88ac75492be25d9bb32ceb92a",
+        "src/anomaly_detection/padim_evaluation.py": "9a3997144992d121c53171536e8bf2029cad6a10672cd749205b3aeec190e76d",
+        "src/anomaly_detection/padim_research.py": "c28628965a7f9ce512dae3108810a18d966617dd8435054a178c08191dc13434"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "phase": "frozen confirmation; fit then normal calibration then test"
+  },
+  "metrics": {
+    "experiment_id": "05-test-toothbrush-s2028-v1",
+    "category": "toothbrush",
+    "seed": 2028,
+    "configuration": {
+      "dimension": 100,
+      "epsilon": 0.01,
+      "sigma": 4.0,
+      "resolution": 256,
+      "seed": 2028
+    },
+    "image_auroc": 0.8194444444444444,
+    "image_ap": 0.9172708674531558,
+    "recall": 0.7,
+    "fpr": 0.3333333333333333,
+    "precision": 0.84,
+    "f1": 0.7636363636363636,
+    "confusion_matrix": [
+      [
+        8,
+        4
+      ],
+      [
+        9,
+        21
+      ]
+    ],
+    "tn": 8,
+    "fp": 4,
+    "fn": 9,
+    "tp": 21,
+    "pixel_auroc": 0.9873144428485495,
+    "pixel_ap": 0.4870612768120375,
+    "au_pro": 0.9135156758116746,
+    "positive_pixels": 673493,
+    "negative_pixels": 43366699,
+    "regions": 66,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        40888523,
+        2478176
+      ],
+      [
+        16990,
+        656503
+      ]
+    ],
+    "pixel_operating_point": {
+      "tn": 40888523,
+      "fp": 2478176,
+      "fn": 16990,
+      "tp": 656503,
+      "precision": 0.20943228955819718,
+      "recall": 0.9747733087055099,
+      "fpr": 0.05714467684063295,
+      "f1": 0.3447864224620106
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.655153397565923,
+          0.9583639705882352
+        ],
+        "image_ap": [
+          0.8141597986445995,
+          0.987434780094893
+        ],
+        "recall": [
+          0.53125,
+          0.857266009852216
+        ],
+        "fpr": [
+          0.07142857142857142,
+          0.625
+        ],
+        "precision": [
+          0.68,
+          0.9655172413793104
+        ],
+        "f1": [
+          0.6222222222222222,
+          0.8771929824561403
+        ],
+        "pixel_auroc": [
+          0.9833993730499385,
+          0.9908221419214005
+        ],
+        "pixel_ap": [
+          0.4248736478765569,
+          0.5302471415867758
+        ],
+        "au_pro": [
+          0.880039792569887,
+          0.9428245746330385
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9873143712626639,
+      "pixel_ap": 0.4867420713533352,
+      "au_pro": 0.9135156871284963
+    },
+    "calibration": {
+      "images": 9,
+      "image_threshold": 19.20812225341797,
+      "pixel_threshold": 9.794776916503906,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "strict_greater": true,
+      "histogram_scale": 3.4415230751037598,
+      "scores": [
+        10.448921203613281,
+        10.487902641296387,
+        10.552576065063477,
+        12.039584159851074,
+        19.20812225341797,
+        17.244136810302734,
+        13.240415573120117,
+        10.009739875793457,
+        10.940021514892578
+      ],
+      "source_sha256": "97da83456e3cd80894351c778a9cd486474cc668553a2928dd786b197f8739da"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.851300003589131,
+        "p95_ms": 4.672220002976246
+      },
+      "host_to_device": {
+        "p50_ms": 0.258100000792183,
+        "p95_ms": 0.321214999712538
+      },
+      "feature_extraction": {
+        "p50_ms": 3.0543999891960993,
+        "p95_ms": 4.300439999497028
+      },
+      "gaussian_scoring": {
+        "p50_ms": 10.045900009572506,
+        "p95_ms": 11.878279989468865
+      },
+      "model": {
+        "p50_ms": 13.26485000026878,
+        "p95_ms": 15.748540010827123
+      },
+      "postprocessing": {
+        "p50_ms": 3.931600003852509,
+        "p95_ms": 4.703854987747036
+      },
+      "end_to_end": {
+        "p50_ms": 21.432500012451783,
+        "p95_ms": 24.632600002223622
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+      "peak_inference_allocated_bytes": 248120832,
+      "peak_inference_reserved_bytes": 421527552
+    },
+    "training_seconds": 0.2059853000100702,
+    "resources": {
+      "seconds": 19.19957510000677,
+      "cpu_initial_rss_bytes": 3286024192,
+      "cpu_peak_rss_bytes": 4436529152,
+      "cpu_peak_increment_bytes": 1150504960,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 248120832,
+      "peak_gpu_reserved_bytes": 421527552
+    },
+    "fitting_peak_allocated_bytes": 387773952,
+    "fitting_peak_reserved_bytes": 417333248,
+    "evaluation_peak_allocated_bytes": 387773952,
+    "evaluation_peak_reserved_bytes": 421527552,
+    "checkpoint": "checkpoints/padim/05-test-toothbrush-s2028-v1.pt",
+    "checkpoint_sha256": "2c3c080b0d3d5ebc59ea9439d7de3e9e8dc937809f5ea0019263bc92aad0bbc0",
+    "checkpoint_bytes": 165480613,
+    "local_maps": "outputs/padim/05-test-toothbrush-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "1c23c2cec110e5bf3d209dbaef623ae84a9d55b801b73f2cecda744e66f4a3d8",
+    "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+    "fit_source_sha256": "b2db96f5d34e9c29f4c026b1dce54cd588b06155d33ad1de2a152f67b21f8cb6",
+    "test_source_sha256": "fda4dbbabea387d00cd13e60c23c3cd5565eaa8afa09642a597a4746ed61a0cb",
+    "evaluated_at_utc": "2026-11-14T01:34:20.494571+00:00",
+    "image_rows": 42,
+    "per_defect": [
+      {
+        "category": "toothbrush",
+        "seed": 2028,
+        "defect": "defective",
+        "auroc": 0.8194444444444444,
+        "ap": 0.9172708674531558,
+        "recall": 0.7,
+        "fpr": 0.3333333333333333,
+        "precision": 0.84,
+        "f1": 0.7636363636363636,
+        "confusion_matrix": [
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            21
+          ]
+        ]
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Actual measured execution",
+  "decision": "retain",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:34:20.497572+00:00",
+  "config_sha256": "c2c36028bb6d9bbdbd73946394aef835b598e1c3fe5d0c42051a2ed7df214a78"
+}

@@ -1,0 +1,398 @@
+{
+  "experiment_id": "05-test-carpet-s2028-v1-result",
+  "model_family": "PaDiM",
+  "categories": [
+    "carpet"
+  ],
+  "hypothesis": "frozen confirmation; fit then normal calibration then test",
+  "preprocessing": {
+    "resolution": 256,
+    "normalization": "ImageNet V1"
+  },
+  "hyperparameters": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "seed": 2028,
+  "environment": {
+    "recorded_at_utc": "2026-11-14T01:02:48.919766+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "code": {
+      "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae",
+        "src/anomaly_detection/padim.py": "733a4a9c5fa7d5522bb1aaa5326b009b68179fb88ac75492be25d9bb32ceb92a",
+        "src/anomaly_detection/padim_evaluation.py": "9a3997144992d121c53171536e8bf2029cad6a10672cd749205b3aeec190e76d",
+        "src/anomaly_detection/padim_research.py": "c28628965a7f9ce512dae3108810a18d966617dd8435054a178c08191dc13434"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "phase": "frozen confirmation; fit then normal calibration then test"
+  },
+  "metrics": {
+    "experiment_id": "05-test-carpet-s2028-v1",
+    "category": "carpet",
+    "seed": 2028,
+    "configuration": {
+      "dimension": 100,
+      "epsilon": 0.01,
+      "sigma": 4.0,
+      "resolution": 256,
+      "seed": 2028
+    },
+    "image_auroc": 0.9542536115569824,
+    "image_ap": 0.9865993509592726,
+    "recall": 0.9213483146067416,
+    "fpr": 0.07142857142857142,
+    "precision": 0.9761904761904762,
+    "f1": 0.9479768786127167,
+    "confusion_matrix": [
+      [
+        26,
+        2
+      ],
+      [
+        7,
+        82
+      ]
+    ],
+    "tn": 26,
+    "fp": 2,
+    "fn": 7,
+    "tp": 82,
+    "pixel_auroc": 0.9873271219737743,
+    "pixel_ap": 0.5272165804545663,
+    "au_pro": 0.9535983868951274,
+    "positive_pixels": 1965794,
+    "negative_pixels": 120717598,
+    "regions": 97,
+    "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+    "pixel_confusion_matrix": [
+      [
+        114836942,
+        5880656
+      ],
+      [
+        63103,
+        1902691
+      ]
+    ],
+    "pixel_operating_point": {
+      "tn": 114836942,
+      "fp": 5880656,
+      "fn": 63103,
+      "tp": 1902691,
+      "precision": 0.24445665855576013,
+      "recall": 0.9678994848900749,
+      "fpr": 0.04871415682078101,
+      "f1": 0.3903299788155695
+    },
+    "uncertainty": {
+      "replicates": 2000,
+      "invalid_single_class_replicates": 0,
+      "95ci": {
+        "image_auroc": [
+          0.9152838942760381,
+          0.9869004539367443
+        ],
+        "image_ap": [
+          0.9733500165668817,
+          0.9967006131941506
+        ],
+        "recall": [
+          0.863141447368421,
+          0.9772727272727273
+        ],
+        "fpr": [
+          0.0,
+          0.17857142857142858
+        ],
+        "precision": [
+          0.9404582616179001,
+          1.0
+        ],
+        "f1": [
+          0.912280701754386,
+          0.9782667134174848
+        ],
+        "pixel_auroc": [
+          0.9833116877844483,
+          0.9907523648183877
+        ],
+        "pixel_ap": [
+          0.4280875040032342,
+          0.6405576047349832
+        ],
+        "au_pro": [
+          0.9358707221760406,
+          0.9679361021912061
+        ]
+      },
+      "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+    },
+    "bootstrap_binned_pixel_point_estimates": {
+      "pixel_auroc": 0.9873270132195537,
+      "pixel_ap": 0.5269388766031278,
+      "au_pro": 0.9535979301908722
+    },
+    "calibration": {
+      "images": 42,
+      "image_threshold": 11.708252906799316,
+      "pixel_threshold": 7.563990592956543,
+      "image_quantile": 0.95,
+      "pixel_quantile": 0.995,
+      "strict_greater": true,
+      "histogram_scale": 5.20537805557251,
+      "scores": [
+        10.315589904785156,
+        7.602222442626953,
+        10.719958305358887,
+        8.955400466918945,
+        9.773592948913574,
+        8.231191635131836,
+        8.107962608337402,
+        8.221573829650879,
+        12.093817710876465,
+        11.708252906799316,
+        7.994302272796631,
+        8.782968521118164,
+        8.906756401062012,
+        12.348799705505371,
+        8.055285453796387,
+        8.125734329223633,
+        6.86277437210083,
+        8.599149703979492,
+        9.739036560058594,
+        8.985404014587402,
+        9.18443775177002,
+        7.786836624145508,
+        7.964820861816406,
+        8.293667793273926,
+        9.3467435836792,
+        8.423787117004395,
+        9.72242546081543,
+        8.699625015258789,
+        8.879570960998535,
+        8.128350257873535,
+        7.971817970275879,
+        9.07276725769043,
+        11.188535690307617,
+        9.188376426696777,
+        8.182323455810547,
+        8.348150253295898,
+        8.101083755493164,
+        9.400681495666504,
+        7.832089900970459,
+        8.241881370544434,
+        7.498734474182129,
+        8.45280647277832
+      ],
+      "source_sha256": "ff9e81b5ef6cd700a4a5092720ea81320080a4ffd0208239db842deb27f964ab"
+    },
+    "latency": {
+      "preprocessing": {
+        "p50_ms": 3.86844998865854,
+        "p95_ms": 4.667665004672017
+      },
+      "host_to_device": {
+        "p50_ms": 0.25984999956563115,
+        "p95_ms": 0.33904501906363294
+      },
+      "feature_extraction": {
+        "p50_ms": 3.04915000742767,
+        "p95_ms": 4.318080018856563
+      },
+      "gaussian_scoring": {
+        "p50_ms": 9.859650002908893,
+        "p95_ms": 15.437444996496197
+      },
+      "model": {
+        "p50_ms": 12.913099999423139,
+        "p95_ms": 18.6230499864905
+      },
+      "postprocessing": {
+        "p50_ms": 3.9217500016093254,
+        "p95_ms": 7.152880005014595
+      },
+      "end_to_end": {
+        "p50_ms": 21.19225001661107,
+        "p95_ms": 28.41550999728494
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "batch_size": 1,
+      "precision": "float32",
+      "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+      "peak_inference_allocated_bytes": 247608832,
+      "peak_inference_reserved_bytes": 543162368
+    },
+    "training_seconds": 0.8792173000110779,
+    "resources": {
+      "seconds": 44.60167390000424,
+      "cpu_initial_rss_bytes": 3305529344,
+      "cpu_peak_rss_bytes": 6243491840,
+      "cpu_peak_increment_bytes": 2937962496,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 247608832,
+      "peak_gpu_reserved_bytes": 543162368
+    },
+    "fitting_peak_allocated_bytes": 405304832,
+    "fitting_peak_reserved_bytes": 480247808,
+    "evaluation_peak_allocated_bytes": 405304832,
+    "evaluation_peak_reserved_bytes": 543162368,
+    "checkpoint": "checkpoints/padim/05-test-carpet-s2028-v1.pt",
+    "checkpoint_sha256": "ef46f7493dce5b0df3fb7f32674f2c8dfbb6cdd0fbe418b1a1673d1c129ffb38",
+    "checkpoint_bytes": 165480613,
+    "local_maps": "outputs/padim/05-test-carpet-s2028-v1/model_resolution_maps.npy",
+    "maps_sha256": "89ff026f3609d0b17c20cf4b915258e45b6909ce309b46bb6aba6b99a09f4864",
+    "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+    "fit_source_sha256": "7ba1b5d7a06e40575a56d263c1f76547e6677d840840f5384f2662e7cc2d0a6b",
+    "test_source_sha256": "acd7e6d5d57adeccc16043242232c6cc7680d465f8f789400665ce228e4568c4",
+    "evaluated_at_utc": "2026-11-14T01:29:21.398296+00:00",
+    "image_rows": 117,
+    "per_defect": [
+      {
+        "category": "carpet",
+        "seed": 2028,
+        "defect": "color",
+        "auroc": 0.9473684210526316,
+        "ap": 0.9188238579941435,
+        "recall": 0.8947368421052632,
+        "fpr": 0.07142857142857142,
+        "precision": 0.8947368421052632,
+        "f1": 0.8947368421052632,
+        "confusion_matrix": [
+          [
+            26,
+            2
+          ],
+          [
+            2,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2028,
+        "defect": "cut",
+        "auroc": 0.9915966386554622,
+        "ap": 0.9872721018231855,
+        "recall": 1.0,
+        "fpr": 0.07142857142857142,
+        "precision": 0.8947368421052632,
+        "f1": 0.9444444444444444,
+        "confusion_matrix": [
+          [
+            26,
+            2
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2028,
+        "defect": "hole",
+        "auroc": 0.9957983193277311,
+        "ap": 0.9938080495356038,
+        "recall": 1.0,
+        "fpr": 0.07142857142857142,
+        "precision": 0.8947368421052632,
+        "f1": 0.9444444444444444,
+        "confusion_matrix": [
+          [
+            26,
+            2
+          ],
+          [
+            0,
+            17
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2028,
+        "defect": "metal_contamination",
+        "auroc": 0.9285714285714285,
+        "ap": 0.9429777258496983,
+        "recall": 0.8823529411764706,
+        "fpr": 0.07142857142857142,
+        "precision": 0.8823529411764706,
+        "f1": 0.8823529411764706,
+        "confusion_matrix": [
+          [
+            26,
+            2
+          ],
+          [
+            2,
+            15
+          ]
+        ]
+      },
+      {
+        "category": "carpet",
+        "seed": 2028,
+        "defect": "thread",
+        "auroc": 0.9135338345864662,
+        "ap": 0.9214407574314691,
+        "recall": 0.8421052631578947,
+        "fpr": 0.07142857142857142,
+        "precision": 0.8888888888888888,
+        "f1": 0.8648648648648649,
+        "confusion_matrix": [
+          [
+            26,
+            2
+          ],
+          [
+            3,
+            16
+          ]
+        ]
+      }
+    ]
+  },
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Actual measured execution",
+  "decision": "retain",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:29:21.400307+00:00",
+  "config_sha256": "0a75daa909027868f5808c835ed3a809cc7c47773fb006cf17e74183d2bb1b56"
+}

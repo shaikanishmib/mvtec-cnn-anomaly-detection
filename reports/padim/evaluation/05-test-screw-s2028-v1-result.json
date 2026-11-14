@@ -1,0 +1,335 @@
+{
+  "experiment_id": "05-test-screw-s2028-v1",
+  "category": "screw",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.8083623693379791,
+  "image_ap": 0.9201420911379061,
+  "recall": 0.11764705882352941,
+  "fpr": 0.0,
+  "precision": 1.0,
+  "f1": 0.21052631578947367,
+  "confusion_matrix": [
+    [
+      41,
+      0
+    ],
+    [
+      105,
+      14
+    ]
+  ],
+  "tn": 41,
+  "fp": 0,
+  "fn": 105,
+  "tp": 14,
+  "pixel_auroc": 0.9758940443962896,
+  "pixel_ap": 0.1585461261827462,
+  "au_pro": 0.916604582922251,
+  "positive_pixels": 418611,
+  "negative_pixels": 167353549,
+  "regions": 135,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      165759470,
+      1594079
+    ],
+    [
+      216717,
+      201894
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 165759470,
+    "fp": 1594079,
+    "fn": 216717,
+    "tp": 201894,
+    "precision": 0.11241483028976494,
+    "recall": 0.48229501852555234,
+    "fpr": 0.009525217777126435,
+    "f1": 0.1823313091758994
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7321398502066117,
+        0.8806023949169112
+      ],
+      "image_ap": [
+        0.8718767715633241,
+        0.9617224249403179
+      ],
+      "recall": [
+        0.06557377049180328,
+        0.1794871794871795
+      ],
+      "fpr": [
+        0.0,
+        0.0
+      ],
+      "precision": [
+        1.0,
+        1.0
+      ],
+      "f1": [
+        0.12307692307692307,
+        0.30434782608695654
+      ],
+      "pixel_auroc": [
+        0.9708433855433988,
+        0.9803798335890098
+      ],
+      "pixel_ap": [
+        0.11984819775524454,
+        0.20772817732995233
+      ],
+      "au_pro": [
+        0.9002833096370729,
+        0.932000579980484
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9758941171759422,
+    "pixel_ap": 0.1582074255697184,
+    "au_pro": 0.9166046880362235
+  },
+  "calibration": {
+    "images": 48,
+    "image_threshold": 19.346622467041016,
+    "pixel_threshold": 12.853156089782715,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 5.17149543762207,
+    "scores": [
+      13.12558364868164,
+      12.857477188110352,
+      11.845754623413086,
+      12.637345314025879,
+      15.057989120483398,
+      12.51110553741455,
+      13.42492961883545,
+      12.429069519042969,
+      13.123584747314453,
+      15.51003646850586,
+      14.636030197143555,
+      13.550421714782715,
+      19.346622467041016,
+      14.954642295837402,
+      18.999263763427734,
+      12.14702033996582,
+      10.793752670288086,
+      15.893156051635742,
+      10.731287956237793,
+      13.106925964355469,
+      13.527036666870117,
+      11.895902633666992,
+      14.480854988098145,
+      13.616597175598145,
+      12.967548370361328,
+      12.093222618103027,
+      11.525650978088379,
+      11.840875625610352,
+      13.356024742126465,
+      11.008161544799805,
+      11.962748527526855,
+      13.019177436828613,
+      13.943459510803223,
+      14.43798828125,
+      11.91071891784668,
+      13.487116813659668,
+      10.097691535949707,
+      17.738237380981445,
+      26.134689331054688,
+      25.4921932220459,
+      18.000303268432617,
+      10.622183799743652,
+      15.759864807128906,
+      10.799731254577637,
+      14.256857872009277,
+      11.649027824401855,
+      14.621855735778809,
+      11.49232006072998
+    ],
+    "source_sha256": "dc539569edfcae6a10c7c8afc2ceb5b36de9ab6c8a2c811f5e2dbd2655449dc4"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.853200003504753,
+      "p95_ms": 4.534464978496544
+    },
+    "host_to_device": {
+      "p50_ms": 0.25784999888855964,
+      "p95_ms": 0.33124999026767904
+    },
+    "feature_extraction": {
+      "p50_ms": 3.0762999958824366,
+      "p95_ms": 3.875569989031646
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.725199997774325,
+      "p95_ms": 12.156204976781734
+    },
+    "model": {
+      "p50_ms": 12.895549996756017,
+      "p95_ms": 15.84850498038577
+    },
+    "postprocessing": {
+      "p50_ms": 3.922100004274398,
+      "p95_ms": 4.682789993239566
+    },
+    "end_to_end": {
+      "p50_ms": 21.015099991927855,
+      "p95_ms": 24.564560003636867
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 248313344,
+    "peak_inference_reserved_bytes": 467664896
+  },
+  "training_seconds": 0.9653530000068713,
+  "resources": {
+    "seconds": 64.36478760000318,
+    "cpu_initial_rss_bytes": 3305373696,
+    "cpu_peak_rss_bytes": 7516569600,
+    "cpu_peak_increment_bytes": 4211195904,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 248313344,
+    "peak_gpu_reserved_bytes": 467664896
+  },
+  "fitting_peak_allocated_bytes": 406640128,
+  "fitting_peak_reserved_bytes": 461373440,
+  "evaluation_peak_allocated_bytes": 406640128,
+  "evaluation_peak_reserved_bytes": 467664896,
+  "checkpoint": "checkpoints/padim/05-test-screw-s2028-v1.pt",
+  "checkpoint_sha256": "ae2898f052392f4ef2faf96d2e19c092a62507874489436029e65f1173caaa6a",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-screw-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "c59f9c84beff94ecc101aa8261fa7b0bece49e3d6f648b5e9d480a92d9f01ad4",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "e1676b4633defdd0bc51db65b7ba0dbead53470a23061816624558616629b3af",
+  "test_source_sha256": "7ed8095c49b242268c0a66a88388491406f88b212ef01c8774bdd92e2fed7ddd",
+  "evaluated_at_utc": "2026-11-14T01:33:29.163504+00:00",
+  "image_rows": 160,
+  "per_defect": [
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "manipulated_front",
+      "auroc": 0.9034552845528455,
+      "ap": 0.8625187455751401,
+      "recall": 0.2916666666666667,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.45161290322580644,
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          17,
+          7
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "scratch_head",
+      "auroc": 0.8648373983739838,
+      "ap": 0.7380594803744028,
+      "recall": 0.041666666666666664,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.07999999999999999,
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          23,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "scratch_neck",
+      "auroc": 0.7678048780487804,
+      "ap": 0.7502574957220529,
+      "recall": 0.24,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "f1": 0.3870967741935484,
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          19,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "thread_side",
+      "auroc": 0.7401908801696713,
+      "ap": 0.6101910606322128,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    },
+    {
+      "category": "screw",
+      "seed": 2028,
+      "defect": "thread_top",
+      "auroc": 0.7624602332979851,
+      "ap": 0.6083236503255048,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "experiment_id": "05-test-grid-s2026-v1",
+  "category": "grid",
+  "seed": 2026,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2026
+  },
+  "image_auroc": 0.8387635756056808,
+  "image_ap": 0.9314285581595758,
+  "recall": 0.38596491228070173,
+  "fpr": 0.047619047619047616,
+  "precision": 0.9565217391304348,
+  "f1": 0.5499999999999999,
+  "confusion_matrix": [
+    [
+      20,
+      1
+    ],
+    [
+      35,
+      22
+    ]
+  ],
+  "tn": 20,
+  "fp": 1,
+  "fn": 35,
+  "tp": 22,
+  "pixel_auroc": 0.9108800152572128,
+  "pixel_ap": 0.1729655035169817,
+  "au_pro": 0.7832223040429334,
+  "positive_pixels": 564944,
+  "negative_pixels": 81223984,
+  "regions": 170,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      79998363,
+      1225621
+    ],
+    [
+      317619,
+      247325
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 79998363,
+    "fp": 1225621,
+    "fn": 317619,
+    "tp": 247325,
+    "precision": 0.167911790384712,
+    "recall": 0.43778675408536066,
+    "fpr": 0.015089397732571208,
+    "f1": 0.24272654559372683
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.7283867662128531,
+        0.9305722990777336
+      ],
+      "image_ap": [
+        0.8688662627343722,
+        0.9773984478489012
+      ],
+      "recall": [
+        0.2641261171797418,
+        0.509090909090909
+      ],
+      "fpr": [
+        0.0,
+        0.15789473684210525
+      ],
+      "precision": [
+        0.8518518518518519,
+        1.0
+      ],
+      "f1": [
+        0.4109589041095891,
+        0.6666666666666667
+      ],
+      "pixel_auroc": [
+        0.8789982327368968,
+        0.9373510855991012
+      ],
+      "pixel_ap": [
+        0.12424734078598908,
+        0.23302992050475388
+      ],
+      "au_pro": [
+        0.712828082931044,
+        0.8401995729477008
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.9108786859868034,
+    "pixel_ap": 0.1725771604847536,
+    "au_pro": 0.7832193680944759
+  },
+  "calibration": {
+    "images": 39,
+    "image_threshold": 11.573739051818848,
+    "pixel_threshold": 9.087839126586914,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 6.780109405517578,
+    "scores": [
+      9.079267501831055,
+      11.601190567016602,
+      8.991384506225586,
+      11.573739051818848,
+      10.097982406616211,
+      10.013845443725586,
+      9.638114929199219,
+      9.785868644714355,
+      10.504877090454102,
+      10.288158416748047,
+      9.262627601623535,
+      10.5408935546875,
+      8.735410690307617,
+      8.288448333740234,
+      9.40654468536377,
+      8.882948875427246,
+      8.730491638183594,
+      10.620747566223145,
+      9.239692687988281,
+      9.633574485778809,
+      8.99553108215332,
+      9.463844299316406,
+      9.756893157958984,
+      9.99471378326416,
+      10.125948905944824,
+      10.187676429748535,
+      10.775099754333496,
+      8.672478675842285,
+      10.953542709350586,
+      10.263002395629883,
+      8.9464111328125,
+      10.168188095092773,
+      8.991713523864746,
+      9.6760892868042,
+      8.277396202087402,
+      10.656458854675293,
+      10.131858825683594,
+      10.696112632751465,
+      10.271738052368164
+    ],
+    "source_sha256": "a05c883712a462ab567291de4ced740f6964c2d23698b4a71bb36594ffc96e54"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.9044000004651025,
+      "p95_ms": 4.553505023068282
+    },
+    "host_to_device": {
+      "p50_ms": 0.27725001564249396,
+      "p95_ms": 0.3887299913913011
+    },
+    "feature_extraction": {
+      "p50_ms": 3.1247500010067597,
+      "p95_ms": 4.125120016396976
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.914499998558313,
+      "p95_ms": 12.229250017844604
+    },
+    "model": {
+      "p50_ms": 13.059100005193613,
+      "p95_ms": 16.860089998226606
+    },
+    "postprocessing": {
+      "p50_ms": 4.02705000306014,
+      "p95_ms": 4.901420017995405
+    },
+    "end_to_end": {
+      "p50_ms": 21.377400000346825,
+      "p95_ms": 25.65033500140997
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247526912,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.9014255999936722,
+  "resources": {
+    "seconds": 31.37212830001954,
+    "cpu_initial_rss_bytes": 1549008896,
+    "cpu_peak_rss_bytes": 3758649344,
+    "cpu_peak_increment_bytes": 2209640448,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247526912,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 400864768,
+  "fitting_peak_reserved_bytes": 480247808,
+  "evaluation_peak_allocated_bytes": 400864768,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-grid-s2026-v1.pt",
+  "checkpoint_sha256": "f2d905154da2b110b439ceed564f28069fd34f892e0fad0ed2e03c6caab4f765",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-grid-s2026-v1/model_resolution_maps.npy",
+  "maps_sha256": "fa4e69fa009683dc88c48dce0b0a6989e38273a27caa111fe6595253edb59f33",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "505be61bf9ac83c70f415c90d0f83e26c4a9a2f06dcd10e76a1824f712f9157f",
+  "test_source_sha256": "9c58d03f8fc9a32898ad4c46f7cea69799197c70bc4deb5b54b629dd11d800e0",
+  "evaluated_at_utc": "2026-11-14T01:09:57.979393+00:00",
+  "image_rows": 78,
+  "per_defect": [
+    {
+      "category": "grid",
+      "seed": 2026,
+      "defect": "bent",
+      "auroc": 0.7936507936507937,
+      "ap": 0.6639226715313672,
+      "recall": 0.16666666666666666,
+      "fpr": 0.047619047619047616,
+      "precision": 0.6666666666666666,
+      "f1": 0.26666666666666666,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          10,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2026,
+      "defect": "broken",
+      "auroc": 0.8849206349206348,
+      "ap": 0.8545366670366671,
+      "recall": 0.5,
+      "fpr": 0.047619047619047616,
+      "precision": 0.8571428571428571,
+      "f1": 0.631578947368421,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2026,
+      "defect": "glue",
+      "auroc": 0.6796536796536796,
+      "ap": 0.5880899544212237,
+      "recall": 0.18181818181818182,
+      "fpr": 0.047619047619047616,
+      "precision": 0.6666666666666666,
+      "f1": 0.28571428571428575,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2026,
+      "defect": "metal_contamination",
+      "auroc": 0.9177489177489178,
+      "ap": 0.8156994520630885,
+      "recall": 0.45454545454545453,
+      "fpr": 0.047619047619047616,
+      "precision": 0.8333333333333334,
+      "f1": 0.5882352941176471,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "grid",
+      "seed": 2026,
+      "defect": "thread",
+      "auroc": 0.9177489177489178,
+      "ap": 0.8834582084582085,
+      "recall": 0.6363636363636364,
+      "fpr": 0.047619047619047616,
+      "precision": 0.875,
+      "f1": 0.7368421052631579,
+      "confusion_matrix": [
+        [
+          20,
+          1
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    }
+  ]
+}

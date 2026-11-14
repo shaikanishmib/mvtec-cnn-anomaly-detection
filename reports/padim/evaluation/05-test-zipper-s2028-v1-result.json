@@ -1,0 +1,365 @@
+{
+  "experiment_id": "05-test-zipper-s2028-v1",
+  "category": "zipper",
+  "seed": 2028,
+  "configuration": {
+    "dimension": 100,
+    "epsilon": 0.01,
+    "sigma": 4.0,
+    "resolution": 256,
+    "seed": 2028
+  },
+  "image_auroc": 0.7531512605042017,
+  "image_ap": 0.8732428135404013,
+  "recall": 0.37815126050420167,
+  "fpr": 0.1875,
+  "precision": 0.8823529411764706,
+  "f1": 0.5294117647058822,
+  "confusion_matrix": [
+    [
+      26,
+      6
+    ],
+    [
+      74,
+      45
+    ]
+  ],
+  "tn": 26,
+  "fp": 6,
+  "fn": 74,
+  "tp": 45,
+  "pixel_auroc": 0.9800485182250751,
+  "pixel_ap": 0.42178977939211404,
+  "au_pro": 0.9301517958870996,
+  "positive_pixels": 3274311,
+  "negative_pixels": 155060665,
+  "regions": 177,
+  "method": "exact native-resolution score sweep, 8-connected equal-weight regions",
+  "pixel_confusion_matrix": [
+    [
+      149281990,
+      5778675
+    ],
+    [
+      463478,
+      2810833
+    ]
+  ],
+  "pixel_operating_point": {
+    "tn": 149281990,
+    "fp": 5778675,
+    "fn": 463478,
+    "tp": 2810833,
+    "precision": 0.32724027965280433,
+    "recall": 0.8584502205196758,
+    "fpr": 0.03726718829691592,
+    "f1": 0.47384960947229565
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "invalid_single_class_replicates": 0,
+    "95ci": {
+      "image_auroc": [
+        0.6304607430010657,
+        0.8623534024549727
+      ],
+      "image_ap": [
+        0.7961715671613653,
+        0.9515800305376451
+      ],
+      "recall": [
+        0.2892561983471074,
+        0.46459068693999445
+      ],
+      "fpr": [
+        0.06060606060606061,
+        0.34375
+      ],
+      "precision": [
+        0.7857142857142857,
+        0.9607843137254902
+      ],
+      "f1": [
+        0.4301910299003322,
+        0.6146033653846152
+      ],
+      "pixel_auroc": [
+        0.9762437351918051,
+        0.9834754564116629
+      ],
+      "pixel_ap": [
+        0.37917690707105994,
+        0.4717559338261273
+      ],
+      "au_pro": [
+        0.9171169068049673,
+        0.9428011968022499
+      ]
+    },
+    "pixel_ci_method": "Whole-image bootstrap; 4096 bins of d/(d+calibration median map value); primary native metrics exact"
+  },
+  "bootstrap_binned_pixel_point_estimates": {
+    "pixel_auroc": 0.980048412363625,
+    "pixel_ap": 0.421626039153138,
+    "au_pro": 0.9301514213165407
+  },
+  "calibration": {
+    "images": 36,
+    "image_threshold": 19.4310359954834,
+    "pixel_threshold": 8.163799285888672,
+    "image_quantile": 0.95,
+    "pixel_quantile": 0.995,
+    "strict_greater": true,
+    "histogram_scale": 4.431654453277588,
+    "scores": [
+      16.512004852294922,
+      14.962928771972656,
+      6.688724517822266,
+      18.238731384277344,
+      17.905282974243164,
+      6.9305033683776855,
+      16.770679473876953,
+      7.973628997802734,
+      19.4310359954834,
+      7.5500006675720215,
+      5.854998588562012,
+      8.086021423339844,
+      6.235616207122803,
+      9.885391235351562,
+      10.478814125061035,
+      13.503191947937012,
+      19.295480728149414,
+      7.1105875968933105,
+      8.385147094726562,
+      7.474328994750977,
+      12.78770637512207,
+      9.220035552978516,
+      6.489472389221191,
+      18.664445877075195,
+      17.312612533569336,
+      9.906889915466309,
+      8.051192283630371,
+      14.179390907287598,
+      8.137166976928711,
+      9.022851943969727,
+      7.964387893676758,
+      8.195897102355957,
+      10.196181297302246,
+      7.365840911865234,
+      23.061384201049805,
+      11.86563491821289
+    ],
+    "source_sha256": "96efbbdd78c2572bf1b4eda037427a66e21fb5e38e5f8e8fa633aa04000f28ef"
+  },
+  "latency": {
+    "preprocessing": {
+      "p50_ms": 3.864149999571964,
+      "p95_ms": 4.603479980141856
+    },
+    "host_to_device": {
+      "p50_ms": 0.25910000840667635,
+      "p95_ms": 0.33250999840674916
+    },
+    "feature_extraction": {
+      "p50_ms": 3.069450016482733,
+      "p95_ms": 3.852384997298941
+    },
+    "gaussian_scoring": {
+      "p50_ms": 9.758299987879582,
+      "p95_ms": 11.797090018808374
+    },
+    "model": {
+      "p50_ms": 12.962699984200299,
+      "p95_ms": 15.100840003287884
+    },
+    "postprocessing": {
+      "p50_ms": 3.879450014210306,
+      "p95_ms": 4.6791199856670564
+    },
+    "end_to_end": {
+      "p50_ms": 21.141199991689064,
+      "p95_ms": 23.827534982410725
+    },
+    "warmup": 50,
+    "iterations": 200,
+    "batch_size": 1,
+    "precision": "float32",
+    "scope": "Decoded RGB through native CPU map; file decode excluded; model=features+Mahalanobis; smoothing in postprocessing",
+    "peak_inference_allocated_bytes": 247813632,
+    "peak_inference_reserved_bytes": 484442112
+  },
+  "training_seconds": 0.7176266000024043,
+  "resources": {
+    "seconds": 54.82130519999191,
+    "cpu_initial_rss_bytes": 3308314624,
+    "cpu_peak_rss_bytes": 7371927552,
+    "cpu_peak_increment_bytes": 4063612928,
+    "cpu_sampling_seconds": 0.05,
+    "peak_gpu_allocated_bytes": 247813632,
+    "peak_gpu_reserved_bytes": 484442112
+  },
+  "fitting_peak_allocated_bytes": 401143296,
+  "fitting_peak_reserved_bytes": 478150656,
+  "evaluation_peak_allocated_bytes": 401143296,
+  "evaluation_peak_reserved_bytes": 484442112,
+  "checkpoint": "checkpoints/padim/05-test-zipper-s2028-v1.pt",
+  "checkpoint_sha256": "840e111716e3e5972eccc31805fa639b49b4fbd8caa0c68328dac378396e665c",
+  "checkpoint_bytes": 165480613,
+  "local_maps": "outputs/padim/05-test-zipper-s2028-v1/model_resolution_maps.npy",
+  "maps_sha256": "efefcab91e7f4adf5531becc12463998bbfbb17d7dd24ca51674cae02a9d4fbe",
+  "freeze_sha256": "8076545431166828cb606acead31d163aee80297a06ce174b4494a682b0053ad",
+  "fit_source_sha256": "050a49309db5718989418d9c6f2de1c9576792e8040415cf42b492bfc745467b",
+  "test_source_sha256": "f123121e5fed1ccfba045d3fbfc3a6dd498e6d921edce3bdcf3386446e6ca1db",
+  "evaluated_at_utc": "2026-11-14T01:36:23.280408+00:00",
+  "image_rows": 151,
+  "per_defect": [
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "broken_teeth",
+      "auroc": 0.7302631578947368,
+      "ap": 0.5204828362188925,
+      "recall": 0.2631578947368421,
+      "fpr": 0.1875,
+      "precision": 0.45454545454545453,
+      "f1": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          14,
+          5
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "combined",
+      "auroc": 0.82421875,
+      "ap": 0.5872899304642726,
+      "recall": 0.625,
+      "fpr": 0.1875,
+      "precision": 0.625,
+      "f1": 0.625,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          6,
+          10
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "fabric_border",
+      "auroc": 0.9007352941176471,
+      "ap": 0.7504140394316413,
+      "recall": 0.9411764705882353,
+      "fpr": 0.1875,
+      "precision": 0.7272727272727273,
+      "f1": 0.8205128205128205,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "fabric_interior",
+      "auroc": 0.5859375,
+      "ap": 0.3684921992270622,
+      "recall": 0.0625,
+      "fpr": 0.1875,
+      "precision": 0.14285714285714285,
+      "f1": 0.08695652173913043,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          15,
+          1
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "rough",
+      "auroc": 0.7830882352941175,
+      "ap": 0.5178284381249907,
+      "recall": 0.23529411764705882,
+      "fpr": 0.1875,
+      "precision": 0.4,
+      "f1": 0.29629629629629634,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          13,
+          4
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "split_teeth",
+      "auroc": 0.6875,
+      "ap": 0.4583095818645691,
+      "recall": 0.1111111111111111,
+      "fpr": 0.1875,
+      "precision": 0.25,
+      "f1": 0.15384615384615383,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "category": "zipper",
+      "seed": 2028,
+      "defect": "squeezed_teeth",
+      "auroc": 0.76171875,
+      "ap": 0.5039959715921138,
+      "recall": 0.4375,
+      "fpr": 0.1875,
+      "precision": 0.5384615384615384,
+      "f1": 0.4827586206896552,
+      "confusion_matrix": [
+        [
+          26,
+          6
+        ],
+        [
+          9,
+          7
+        ]
+      ]
+    }
+  ]
+}

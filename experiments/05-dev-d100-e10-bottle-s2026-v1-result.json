@@ -1,0 +1,93 @@
+{
+  "experiment_id": "05-dev-d100-e10-bottle-s2026-v1-result",
+  "model_family": "PaDiM",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "bounded synthetic development",
+  "preprocessing": {
+    "resolution": 256,
+    "normalization": "ImageNet V1"
+  },
+  "hyperparameters": {
+    "dimension": 100,
+    "epsilon": 0.1,
+    "sigma": 4.0,
+    "seed": 2026,
+    "resolution": 256
+  },
+  "seed": 2026,
+  "environment": {
+    "recorded_at_utc": "2026-11-14T01:02:48.919766+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "numpy": "2.2.6",
+      "pillow": "11.2.1",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.6.1",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.2",
+      "ipykernel": "6.29.5",
+      "jupyterlab": "4.4.3",
+      "pytest": "8.3.5"
+    },
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cuda_smoke": 4.0,
+    "nvidia_smi": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.91, 8188 MiB"
+  },
+  "training": {
+    "code": {
+      "git_sha": "5e3b520538e862dd275bded9abad9a0a8163b814",
+      "git_dirty": true,
+      "source_sha256": {
+        "src/anomaly_detection/cnn_research.py": "2694c2fb4474a539169696c0ac58182b629e99b7a8372aa97595d87b4bebfbc7",
+        "src/anomaly_detection/basic_cnn.py": "aa231521d877f824a4ff5f33fab67d4bff4fa646e2c4090d661b5d1d1031abae"
+      },
+      "environment_lock_sha256": "e7d05b4060f5359dcb93f69f8fead110416fe5536f52a82b45d0b016d800c949"
+    },
+    "phase": "bounded synthetic development"
+  },
+  "metrics": {
+    "category": "bottle",
+    "configuration": {
+      "dimension": 100,
+      "epsilon": 0.1,
+      "sigma": 4.0,
+      "seed": 2026,
+      "resolution": 256
+    },
+    "proxy_image_auroc": 1.0,
+    "proxy_pixel_ap": 0.8416250704833478,
+    "selection_objective": 0.9208125352416738,
+    "proxy_recall": 1.0,
+    "development_fpr": 0.03225806451612903,
+    "fit_source_sha256": "1b18e33432d687966dfaf1f2cc9cce89fbfa506d2cd0576d836796fde03aaa54",
+    "probe_source_sha256": "7f327a5255d5cb8fb17037fcb7704397c832133e9d234c16bba59f04683e32c6",
+    "development_source_sha256": "25db9ffd1f0b5a96837617f36141b6a52095e1c663058b5ec4ab3635fec413d7",
+    "resources": {
+      "seconds": 1.9534106999926735,
+      "cpu_initial_rss_bytes": 2353086464,
+      "cpu_peak_rss_bytes": 2516856832,
+      "cpu_peak_increment_bytes": 163770368,
+      "cpu_sampling_seconds": 0.05,
+      "peak_gpu_allocated_bytes": 577377792,
+      "peak_gpu_reserved_bytes": 650117120
+    }
+  },
+  "calibration": {},
+  "paths": {},
+  "interpretation": "Actual measured execution",
+  "decision": "retain",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:05:09.729386+00:00",
+  "config_sha256": "f8bdc7f57b759432fdea4999a0f2cd9f892251ef6cd2dc515b6de08ef1af89ce"
+}
