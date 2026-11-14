@@ -16,7 +16,7 @@ the remaining model families and engineering application are planned.
 | [03](notebooks/03_patchcore.ipynb) | PatchCore variant | Complete: bounded development and all 15 categories across three coreset seeds |
 | [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
 | [05](notebooks/05_padim.ipynb) | PaDiM | Complete: verified GPU pilot, bounded development and all 15 categories across three seeds |
-| 06 | EfficientAD | Planned |
+| [06](notebooks/06_efficientad.ipynb) | EfficientAD | Core PDN-S implementation and real-data CUDA pilot passed; development and full benchmark gated |
 | 07 | Cross-model comparison | Planned |
 
 ## Dataset

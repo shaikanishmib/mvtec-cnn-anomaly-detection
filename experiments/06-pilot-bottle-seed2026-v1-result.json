@@ -1,0 +1,78 @@
+{
+  "experiment_id": "06-pilot-bottle-seed2026-v1-result",
+  "model_family": "EfficientAD-S-no-penalty-pilot",
+  "categories": [
+    "bottle"
+  ],
+  "hypothesis": "Pretrained PDN permits finite student and AE learning on fitting normals",
+  "preprocessing": {
+    "size": 256,
+    "normalization": "ImageNet"
+  },
+  "hyperparameters": {
+    "steps": 32,
+    "batch": 1,
+    "lr": 0.0001,
+    "hard_quantile": 0.999
+  },
+  "seed": 2026,
+  "environment": {
+    "python": "C:\\Users\\shaik\\mvtec-cnn-anomaly-detection\\.venv\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "git": "632f26eb83a3c7092fe25c54eba51853c98e310c",
+    "dirty": true
+  },
+  "training": {
+    "partition_manifest_sha256": "f0549001ec7bbf124b67cb3979d2af64f593a2b5c9f420838f539938b4ade912",
+    "teacher_sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337",
+    "fit_paths": [
+      "bottle/train/good/000.png",
+      "bottle/train/good/001.png",
+      "bottle/train/good/002.png",
+      "bottle/train/good/003.png",
+      "bottle/train/good/004.png",
+      "bottle/train/good/005.png",
+      "bottle/train/good/006.png",
+      "bottle/train/good/007.png"
+    ],
+    "external_penalty": false
+  },
+  "metrics": {
+    "before": {
+      "hard": 17.107418060302734,
+      "penalty": 0.0,
+      "autoencoder": 0.9893844127655029,
+      "student_autoencoder": 0.005611773114651442,
+      "total": 18.102413177490234
+    },
+    "after": {
+      "hard": 9.376309394836426,
+      "penalty": 0.0,
+      "autoencoder": 0.956558883190155,
+      "student_autoencoder": 0.004149129614233971,
+      "total": 10.337018013000488
+    },
+    "model_latency_ms": {
+      "p50": 33.47220001160167,
+      "p95": 145.27197999705095,
+      "warmup": 20,
+      "iterations": 100
+    }
+  },
+  "calibration": {},
+  "paths": {
+    "checkpoint": {
+      "path": "checkpoints/efficientad/06-pilot-bottle-seed2026-v1.pt",
+      "sha256": "4584f177c3f5ed5a1dc648e5cdaa05c455e4f6216420850fbfa94069ccdb375f",
+      "bytes": 32253242
+    },
+    "results": "reports/efficientad/pilot.json"
+  },
+  "interpretation": "Both branches learned on real fitting normals; engineering gate only.",
+  "decision": "Review measured cost and bounded development budget before further training",
+  "status": "completed",
+  "recorded_at": "2026-11-14T01:52:53.514981+00:00",
+  "config_sha256": "7228782bee2d213e9ad5a159d970b5a9a2e030e769f6b11219f80d0585fed33d"
+}
