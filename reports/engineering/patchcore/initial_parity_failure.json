@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "sample": "bottle/test/good/000.png",
+  "device": "cpu",
+  "reference_atol": 0.0002,
+  "reference_rtol": 0.0002,
+  "max_model_map_error": 0.002136588,
+  "score": 1.33723783493042,
+  "reference_score": 1.3371484,
+  "decision_matched": true,
+  "diagnosis": "Original cached features were generated in CUDA batches of 16 with cuDNN TF32 permitted. CPU and full-FP32 batch-one CUDA differ from that cache.",
+  "decision": "Preserve failure; use explicit full-FP32 runtime, strict CPU/CUDA 2e-4 tolerances, historical-cache envelope atol .005 rtol .01. Report measured maxima; never alter thresholds."
+}

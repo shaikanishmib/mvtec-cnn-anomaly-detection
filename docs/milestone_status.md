@@ -1,5 +1,58 @@
 # Research milestone progress
 
+## Milestone 10 - PatchCore engineering foundation complete
+
+Completion evidence: 161 tests passed, zero failures/errors/skips; all 28 new
+engineering tests plus all 133 research tests. Real-image validation passed all
+15 categories on CPU/CUDA (30 images, 60 predictions, 60 identical repeats).
+Every sampled reference image decision matched. Max score/reference-map errors
+were .000194788/.00220728; max CPU/CUDA native-map error .00000464917.
+The earlier overly strict TF32-reference check and invalid-device error were
+corrected/disclosed in retained engineering history; frozen models were untouched.
+
+Validator passed: 15 selected banks, all 45 original banks available, pinned
+extractor/calibration/config identities, 3,065 prior research files unchanged.
+CLI smoke passed with JSON/raw-map/heatmap/overlay outputs kept local. Runtime:
+bottle CUDA model wall p50/p95 20.63/23.55 ms, decoded E2E 34.67/40.41 ms;
+20 warmups and 100 measurements, FP32, four CPU threads. Full measurements and
+memory are in `reports/engineering/patchcore/integration.json` and runtime CSV.
+
+Package/documentation and deployment v1 are complete. Publication follows seal,
+staged audit, commit, push, and `git ls-remote origin refs/heads/main` verification.
+Current completion SHA is obtained from Git, avoiding self-reference inside its
+own seal. Check the publication manifest before repeating any validation.
+Next milestone: FastAPI backend; no backend or frontend has been started.
+The active-phase notes below are historical and superseded by this completion.
+
+Core package, local CLI and versioned deployment manifest implemented. All 45
+original banks verified; seed 2026 selected uniformly before test inspection.
+Manifest SHA256: 58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa.
+Real-image validation complete: 15 categories, 30 images, 60 CPU/CUDA predictions
+and 60 repeats. All sampled original image decisions match; max score error
+.000194788, max historical model-map error .00220728, max CPU/CUDA native-map
+error .00000464917. Timing: 20 warmups/100 measurements, bottle/carpet, CPU/CUDA.
+Historical TF32/cache rounding discrepancy and corrected invalid CUDA-index error
+are retained in `reports/engineering/patchcore/recovery_history.json`.
+
+Completed: explicit project interpreter, CUDA/RTX4060 verification, exclusive
+deployment registration, core implementation and real-image measurement command.
+Remaining: full suite, saved-evidence/historical validator, CLI smoke, final docs
+and publication audit, commit/push and remote verification.
+Recovery: read engineering integration/parity/validation records and manifest
+before any command; do not rerun completed real-image timing or research fitting.
+`scripts/validate_patchcore_engineering.py` validates saved outputs and old file
+identities; it does not rerun inference. FastAPI and frontend remain unstarted.
+
+Baseline c8fd9fb6bf6ef9e0bfa5b63c9060350412df70ea; initially clean. Audited
+frozen PatchCore source, preprocessing, 45 original banks and calibration records.
+Deployment policy: use seed 2026 for every category (lowest preregistered seed;
+no selection from official test metrics). No fitting/calibration policy changes.
+Core package is under `src/anomaly_detection/inference/`; versioned deployment
+manifest `configs/patchcore_deployment_v1.json` registers existing artifacts.
+Progress/evidence: `reports/engineering/patchcore/`. Recovery: inspect manifest,
+artifact availability, integration outputs and Git status before repeat execution.
+Do not rerun completed research fits or start FastAPI/frontend.
+
 ## Milestone 9 — final research comparison complete
 
 Final verified research state (2026-11-17): 270 source-linked evaluations,

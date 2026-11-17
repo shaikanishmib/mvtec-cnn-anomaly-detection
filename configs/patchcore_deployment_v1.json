@@ -1,0 +1,575 @@
+{
+  "schema_version": 1,
+  "release": "patchcore-inference-v1",
+  "model_family": "Simplified PatchCore",
+  "baseline_commit": "c8fd9fb6bf6ef9e0bfa5b63c9060350412df70ea",
+  "seed": 2026,
+  "seed_policy": "Lowest preregistered seed 2026 for every category, independent of test metrics",
+  "configuration": {
+    "bank_budget": 2048,
+    "candidate_limit": 20000,
+    "projection_dim": 32,
+    "seed": 2026,
+    "backbone": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resolution": 256,
+    "normalize": false,
+    "query_chunk": 512,
+    "bank_chunk": 2048,
+    "aggregation": "top1pct"
+  },
+  "frozen_policy": {
+    "path": "configs/patchcore_frozen.json",
+    "bytes": 2473,
+    "sha256": "3c2bb5cf4026eda9209f05ded4469b757c44533241bf3cb690c38ebdba7caec1"
+  },
+  "extractor": {
+    "path": "checkpoints/patchcore/shared-resnet18-features.pt",
+    "bytes": 11179957,
+    "sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949",
+    "original_weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  },
+  "preprocessing": {
+    "version": "PIL-RGB-bilinear-v1",
+    "resolution": [
+      256,
+      256
+    ],
+    "resize": "PIL bilinear",
+    "orientation": "no EXIF rotation",
+    "range": "float32 RGB /255",
+    "normalization": "torchvision ImageNet V1",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "pooling": "3x3 average stride1 padding1",
+    "feature_alignment": "bilinear align_corners=False",
+    "map_resize": "32 -> 256 -> native bilinear align_corners=False",
+    "aggregation": "top ceil(1% of 1024) patch distances mean",
+    "distances": "raw unnormalized float32 L2; no Gaussian smoothing"
+  },
+  "preprocessing_sha256": "b51c1789044bda3d86e4f97ec43d91d37aade7baab23506225ae0d0ac76e7fe5",
+  "categories": {
+    "bottle": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-bottle-s2026-v1/bank.pt",
+        "bytes": 3182669,
+        "sha256": "3ba5cd63c23c742974e1dd5459928f32bc8b57e748d347afeb5b00176a79b3b1"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-bottle-s2026-v1-calibration.json",
+        "bytes": 7640,
+        "sha256": "5157591a539299faff0a1f7df2339bcd9ee910fd26e6907b1b4da66facf95796"
+      },
+      "thresholds": {
+        "image": 1.4268503189086914,
+        "pixel": 1.2806237936019897,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 31,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-bottle-s2026-v1-result.json",
+        "bytes": 28838,
+        "sha256": "66413f9ca9e95bc847a1b4c6869fc28d4f6db43c10bf782c23cd86c58fc600c8"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-bottle-s2026-v1-result.json",
+        "bytes": 25974,
+        "sha256": "1a792267bd717ce7b4f9cf4f08fe96acb5f91d56909a9cbb48b8cc52b7c2b4ee"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-bottle-s2026-v1-images.csv",
+        "bytes": 8771,
+        "sha256": "a7bad13e0fc2d1adf5fce0bdb0046de4429ab81ce3818a051782692ce20a384d"
+      }
+    },
+    "cable": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-cable-s2026-v1/bank.pt",
+        "bytes": 3183821,
+        "sha256": "d8a22d887bf57216f3a7908624b11bf27a105c72b98a8a6d07dff835e7f24536"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-cable-s2026-v1-calibration.json",
+        "bytes": 7966,
+        "sha256": "e7ef6649450870a1e7376bba0b79a372fb8bbf152a4fe5a88a35fe7d6d798110"
+      },
+      "thresholds": {
+        "image": 2.4987704753875732,
+        "pixel": 2.3142261505126953,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 33,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-cable-s2026-v1-result.json",
+        "bytes": 42413,
+        "sha256": "437e8ed6597c386d34c8e7a5379e103d6f2e0f3d0a47556221318da9f451070b"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-cable-s2026-v1-result.json",
+        "bytes": 27564,
+        "sha256": "196167eecb6e6ee0a36ed925153789663dd7f3022eb49bfc0ea4e262d244f2e3"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-cable-s2026-v1-images.csv",
+        "bytes": 14383,
+        "sha256": "29ab521fc1e60e65901c9f2db21115bfdd21591824eedc4e515cc8f66a2a67c7"
+      }
+    },
+    "capsule": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-capsule-s2026-v1/bank.pt",
+        "bytes": 3183757,
+        "sha256": "dd2c38a2245c35980e26fee59c8439dbed1d3293aabb9636898d60ca754b1917"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-capsule-s2026-v1-calibration.json",
+        "bytes": 7857,
+        "sha256": "7c06c5f559c195cdca9d1c51ea01077c4d68bb54fd92ff36a16fe4d10b0c275f"
+      },
+      "thresholds": {
+        "image": 1.4792132377624512,
+        "pixel": 1.1522821187973022,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 32,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-capsule-s2026-v1-result.json",
+        "bytes": 37748,
+        "sha256": "280b12874e733a4a0a451d1126b1ee11cfef2fc6c7c88753f1bbf584719f63e0"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-capsule-s2026-v1-result.json",
+        "bytes": 27407,
+        "sha256": "5577d4c9d9a892fbeaf09fa4d3330b1d454182b77a482fc9ce9486eaa993e4e8"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-capsule-s2026-v1-images.csv",
+        "bytes": 13275,
+        "sha256": "68b89412493b65cc2e99583613244f6a6767134df365db0dc6453fa542689117"
+      }
+    },
+    "carpet": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-carpet-s2026-v1/bank.pt",
+        "bytes": 3188621,
+        "sha256": "3398807e8a0d23a9d94add406ef186e374b6a3ef5628dac0a47872d35d2364c3"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-carpet-s2026-v1-calibration.json",
+        "bytes": 9659,
+        "sha256": "313c938922b701efbe32a76177c8173cf18035a3ce571c9db2ef9c1273c91daf"
+      },
+      "thresholds": {
+        "image": 1.256325602531433,
+        "pixel": 1.1343460083007812,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 42,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-carpet-s2026-v1-result.json",
+        "bytes": 37203,
+        "sha256": "b58d8ae71dcf7af6ad4df444d46a39c41dfe49b9af26b4c39abc8694401a3501"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-carpet-s2026-v1-result.json",
+        "bytes": 33769,
+        "sha256": "cc4bcb36b552463594ece1424c891abb09660b8bd044362b9a6dac26fe778250"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-carpet-s2026-v1-images.csv",
+        "bytes": 11018,
+        "sha256": "30f09f09e7ff30dcf3b6a84a737336498754a818627c94ffa6847a062444e1c0"
+      }
+    },
+    "grid": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-grid-s2026-v1/bank.pt",
+        "bytes": 3187021,
+        "sha256": "53691dbf2befdcb12b2bb5139099a37fdd397757fd2999f309db9a0376edb518"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-grid-s2026-v1-calibration.json",
+        "bytes": 9029,
+        "sha256": "112170e979188768fe512c0c9e9415879312e378c019344fdb2804e96c6294a2"
+      },
+      "thresholds": {
+        "image": 1.7387568950653076,
+        "pixel": 1.629202961921692,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 39,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-grid-s2026-v1-result.json",
+        "bytes": 30258,
+        "sha256": "e2bfe5eba5911c45d7e6bcedf90a2cf2cb8a9afc123b517597341e9fdaa10186"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-grid-s2026-v1-result.json",
+        "bytes": 31802,
+        "sha256": "598886610d739822e37b38e57c9e228bb48748f7f0e7eb42bc70e2b3d6618641"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-grid-s2026-v1-images.csv",
+        "bytes": 6921,
+        "sha256": "92dcc80c894719c5af7f6c74ae37172eab5ccc9129cb6332d938f7ea0975b295"
+      }
+    },
+    "hazelnut": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-hazelnut-s2026-v1/bank.pt",
+        "bytes": 3198733,
+        "sha256": "2ba141158aab81772788f936f286b2660f3b001ce525efee8f8509b4075aa5b5"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-hazelnut-s2026-v1-calibration.json",
+        "bytes": 12705,
+        "sha256": "1fbbaff24df3bf459cbcbce7fe3035161b8fda735f1c8fb356bd4fad3d7cbe0d"
+      },
+      "thresholds": {
+        "image": 2.4701874256134033,
+        "pixel": 2.258307695388794,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 58,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-hazelnut-s2026-v1-result.json",
+        "bytes": 38482,
+        "sha256": "242e70923b4f9b66d635bc78000d3bc789f583d6c6155bd0a8500f9fdaa9a51d"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-hazelnut-s2026-v1-result.json",
+        "bytes": 46884,
+        "sha256": "4575fa006fc265d96be81061bb19dbf14ea55a7645d2996d67c8f57a1ef2c9c5"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-hazelnut-s2026-v1-images.csv",
+        "bytes": 9677,
+        "sha256": "cd3cfa35089b6024dc8130cd96e829bcac484de5209b1ccfe763f111ff2c69cf"
+      }
+    },
+    "leather": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-leather-s2026-v1/bank.pt",
+        "bytes": 3185997,
+        "sha256": "6bc15615b4cfe5111b50e1d95eb22c1b3dd166cd03c4117524b759d609ea3f69"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-leather-s2026-v1-calibration.json",
+        "bytes": 8594,
+        "sha256": "aa90a3bff7eff3ebb5292b4870e08297e59dc4174b8d6e5fc4b4567de29fe36b"
+      },
+      "thresholds": {
+        "image": 1.1901620626449585,
+        "pixel": 1.1006852388381958,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 36,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-leather-s2026-v1-result.json",
+        "bytes": 36810,
+        "sha256": "35551d0402946d82ae167c03ef7a63034e9f416a5eb288f0153ff780c5437ebd"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-leather-s2026-v1-result.json",
+        "bytes": 30287,
+        "sha256": "76a17e7c9aede0a22cba4dc6b68e80a8d6efddf81d53da62c3812318140fe744"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-leather-s2026-v1-images.csv",
+        "bytes": 10978,
+        "sha256": "882f973c2546f21ea52972997dc126e3ea7c70d2d48879d6f26a07e6c4e71a0a"
+      }
+    },
+    "metal_nut": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-metal_nut-s2026-v1/bank.pt",
+        "bytes": 3183949,
+        "sha256": "1018155c547766b78b35c7b8384899c4093abbd56a0dd7ce2081692a203f3ba0"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-metal_nut-s2026-v1-calibration.json",
+        "bytes": 8101,
+        "sha256": "e0adb273cdb071f383a67385aed9a0ed875722178f2e3a6341d86bc05db8f071"
+      },
+      "thresholds": {
+        "image": 2.15067458152771,
+        "pixel": 1.9810404777526855,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 33,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-metal_nut-s2026-v1-result.json",
+        "bytes": 35008,
+        "sha256": "f34059a835289305f31f85a0f843588923e8e75142d9f8dac36a2200b980b668"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-metal_nut-s2026-v1-result.json",
+        "bytes": 27561,
+        "sha256": "c83d2197afe581d37cda306a820d3f21a53a5e84daabc3c6d0049856953234fd"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-metal_nut-s2026-v1-images.csv",
+        "bytes": 11391,
+        "sha256": "97b30d4a47aad86baaedf9f8ddb8f8fe4cab7ff416c713b5b74e8b5781e1455a"
+      }
+    },
+    "pill": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-pill-s2026-v1/bank.pt",
+        "bytes": 3187149,
+        "sha256": "ffe6124edba60e6b2bbbb9f21d22ffb348ccde19ee6fcd59bf571ad8535d155a"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-pill-s2026-v1-calibration.json",
+        "bytes": 9205,
+        "sha256": "b34bdfb4bb1498b5cc042e808071f73cadd1990bcaa19b8e16c5d76e8898788d"
+      },
+      "thresholds": {
+        "image": 1.9587912559509277,
+        "pixel": 1.7355625629425049,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 40,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-pill-s2026-v1-result.json",
+        "bytes": 45610,
+        "sha256": "dccb093c446ffe32f7ab6046e398e5fc29c7bd05cb2e0ede18395d3dec73dc8d"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-pill-s2026-v1-result.json",
+        "bytes": 31956,
+        "sha256": "8cf8975e8e2c414693b3f03a11a623f5a56b85d8360b42ec0359686293e475d5"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-pill-s2026-v1-images.csv",
+        "bytes": 15894,
+        "sha256": "d08b2f9697c2a439cc61e93b7ae6016a7da371868fc85c24aa67d6a70c7efdbe"
+      }
+    },
+    "screw": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-screw-s2026-v1/bank.pt",
+        "bytes": 3191757,
+        "sha256": "2914ae1ffcca2e67352630b9a3ff875aee03997cce1c58abf0e1c12b385e4d8f"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-screw-s2026-v1-calibration.json",
+        "bytes": 10709,
+        "sha256": "bc8a760e8379c4383fade3728928741ca7e141e3a10ce60260a46f7f5f1abfe8"
+      },
+      "thresholds": {
+        "image": 1.8780406713485718,
+        "pixel": 1.685307502746582,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 48,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-screw-s2026-v1-result.json",
+        "bytes": 45780,
+        "sha256": "6198efe139001434dfc040fcf4642e889df8644bb394c2e22e661ffe0dedf230"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-screw-s2026-v1-result.json",
+        "bytes": 37995,
+        "sha256": "323ca9a51c45d210adbf86fad5cf49fd9b9d1c36f6154c8cb30a23c8dea5af12"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-screw-s2026-v1-images.csv",
+        "bytes": 16383,
+        "sha256": "89f32687a6ce8f8e53ff6ad23c7aacdb9f781f1a7a3a73aadd2bf2e72772d356"
+      }
+    },
+    "tile": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-tile-s2026-v1/bank.pt",
+        "bytes": 3184141,
+        "sha256": "71e8ab4e3ad84d7e869afd71221dbd6c1ba5db45c183e7abf14ae33c00b4b3c6"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-tile-s2026-v1-calibration.json",
+        "bytes": 8122,
+        "sha256": "c681fc49bada39724e83b04130d76880d1c9e174ef42ed244047d96acd5e6e69"
+      },
+      "thresholds": {
+        "image": 1.8032866716384888,
+        "pixel": 1.624558448791504,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 34,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-tile-s2026-v1-result.json",
+        "bytes": 35218,
+        "sha256": "86dadb1d069bdef0aef02db9a1c2b1588f2d177794f81ebf8575da94d7b4860e"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-tile-s2026-v1-result.json",
+        "bytes": 28034,
+        "sha256": "f8585de8d3f49cfc75cf9a7354bcfcb2f4c7da3c384706a5212850ba800ce598"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-tile-s2026-v1-images.csv",
+        "bytes": 10032,
+        "sha256": "2a4f4aa4bb4021e7d8ce04b17a5a1cca38db9855a6a71688efa934cc63e65236"
+      }
+    },
+    "toothbrush": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-toothbrush-s2026-v1/bank.pt",
+        "bytes": 3170253,
+        "sha256": "ced66cdea5919877379682f215f808a274d5f0073ebece0f120722cf090047a8"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-toothbrush-s2026-v1-calibration.json",
+        "bytes": 3637,
+        "sha256": "0137921740ea826416922f901d88c023f3ca4abe20fd5fd1b4e8098b3a677ab3"
+      },
+      "thresholds": {
+        "image": 1.6520098447799683,
+        "pixel": 1.5515410900115967,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 9,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-toothbrush-s2026-v1-result.json",
+        "bytes": 17186,
+        "sha256": "a5984e4d410cba84465ed15f500f54b8c4635a1539f2fe3b4d8303d697a0d910"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-toothbrush-s2026-v1-result.json",
+        "bytes": 9461,
+        "sha256": "8ae249d1ac34808f9859871978e1db54487ed3eedc2b3c505004ab83bff94f37"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-toothbrush-s2026-v1-images.csv",
+        "bytes": 4503,
+        "sha256": "286fe17d8d2a950ab54a682222951627b66b26383f0972a17776c1436cf811f4"
+      }
+    },
+    "transistor": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-transistor-s2026-v1/bank.pt",
+        "bytes": 3183757,
+        "sha256": "bdd73c457fab5d750e980b6c37298d0613e340285dba163ddb557e3a416df5e4"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-transistor-s2026-v1-calibration.json",
+        "bytes": 7762,
+        "sha256": "794250ab96bd7e0ef3a86f98f950c142f23164f3b5b92e195fdd3d8f90a38491"
+      },
+      "thresholds": {
+        "image": 2.018568277359009,
+        "pixel": 1.8353564739227295,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 31,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-transistor-s2026-v1-result.json",
+        "bytes": 32440,
+        "sha256": "f3466900ff6d54f7b3a35ac4615a06f014f26854e6e3714efea189f4c3584063"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-transistor-s2026-v1-result.json",
+        "bytes": 27230,
+        "sha256": "15fbf80e86ca991758ae0dad1cf75ca5a6b694eaff8d215e6c38a91b9ab67a06"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-transistor-s2026-v1-images.csv",
+        "bytes": 8985,
+        "sha256": "2947325ce6a92bdf3c1cfc69b75bbc06d75bf1d7e89f6d9f219b89231586a0dc"
+      }
+    },
+    "wood": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-wood-s2026-v1/bank.pt",
+        "bytes": 3185485,
+        "sha256": "3f21f034320b4b45eec93e0300ab62fd7ad7c131e3c6ba132ce82213d74f6e0c"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-wood-s2026-v1-calibration.json",
+        "bytes": 8662,
+        "sha256": "d121cf26300b9369ae2e52b77848f06cb7beb08883d4d765070622bf4850eb6b"
+      },
+      "thresholds": {
+        "image": 1.671043038368225,
+        "pixel": 1.5608885288238525,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 37,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-wood-s2026-v1-result.json",
+        "bytes": 29768,
+        "sha256": "10b6fe0f72d46fbd35489d1cc3859e3126b4366958436d974f1d748de7799cfa"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-wood-s2026-v1-result.json",
+        "bytes": 29758,
+        "sha256": "4efa21a61b6dbde5e217f2402fc5f8d8e8c481ad5d9e2be45908a56cac48b558"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-wood-s2026-v1-images.csv",
+        "bytes": 6821,
+        "sha256": "66ec444f67f5dfb1afe0b4b56b25cef74fbaad653bbb89770097409bc7b4c655"
+      }
+    },
+    "zipper": {
+      "bank": {
+        "path": "checkpoints/patchcore/03-final-b2048-zipper-s2026-v1/bank.pt",
+        "bytes": 3185229,
+        "sha256": "c576f11dd20c6698dd301764698f81c76d7965aecb37b3664da51ecbd0a73c42"
+      },
+      "calibration": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-zipper-s2026-v1-calibration.json",
+        "bytes": 8548,
+        "sha256": "a0b5075a623644cfd33453876ccf23da8178a32656a5f62119ab7e2f2fe6befd"
+      },
+      "thresholds": {
+        "image": 1.3254988193511963,
+        "pixel": 1.1389210224151611,
+        "strict_greater": true
+      },
+      "calibration_normal_count": 36,
+      "result": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-zipper-s2026-v1-result.json",
+        "bytes": 42799,
+        "sha256": "028042f57f2e4349e29d22e83c3cf096e6563d65b91d2407da3f821eb42b8bdb"
+      },
+      "training_record": {
+        "path": "reports/patchcore/runs/03-final-b2048-zipper-s2026-v1-result.json",
+        "bytes": 29315,
+        "sha256": "58ab499f51b474a9279285e9b544877d6f428f97d975d090a1195b514e1f0389"
+      },
+      "predictions": {
+        "path": "reports/patchcore/evaluation/03-test-b2048-zipper-s2026-v1-images.csv",
+        "bytes": 15754,
+        "sha256": "0b9b9f7cd68872417e3a5f9f8645881772ce16dec09a45180ca9490b48360e8c"
+      }
+    }
+  },
+  "software": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.2.6",
+    "pillow": "11.2.1"
+  },
+  "limitations": [
+    "Frozen research thresholds have substantial category-dependent false alarms",
+    "ResNet18 variant; not paper-equivalent PatchCore",
+    "Code licensing does not establish pretrained weight/data commercial rights"
+  ]
+}

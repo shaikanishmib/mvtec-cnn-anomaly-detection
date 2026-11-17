@@ -1,0 +1,16 @@
+{
+  "initial_reference_tolerance_check": {
+    "status": "failed",
+    "atol": 0.0002,
+    "rtol": 0.0002,
+    "max_bottle_normal_map_difference": 0.002136588,
+    "decision_match": true,
+    "action": "Preserved full-FP32 scoring, disclosed historical TF32/batch-size difference; no threshold or score correction"
+  },
+  "initial_unit_suite": {
+    "passed": 27,
+    "failed": 1,
+    "reason": "Out-of-range CUDA index wrapped inside torch.device and produced misleading artifact error",
+    "action": "Validate original integer index before torch.device construction"
+  }
+}

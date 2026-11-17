@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "manifest_sha256": "58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa",
+  "categories": 15,
+  "real_images": 30,
+  "device_predictions": 60,
+  "repeats": 60,
+  "sample_policy": "Lexicographically first test normal and first defect per category, seed fixed before inspection",
+  "atol": 0.005,
+  "rtol": 0.01,
+  "tolerance_note": "Float32 batch-size/device GEMM, convolution and nearest-index roundoff; decisions must match exactly",
+  "max_score_error": 0.00019478797912597656,
+  "max_model_map_error": 0.0022072792053222656,
+  "max_cpu_gpu_native_map_error": 4.649162292480469e-06,
+  "timings": [
+    {
+      "category": "bottle",
+      "device": "cpu",
+      "model_wall": {
+        "p50_ms": 81.88884999253787,
+        "p95_ms": 90.55656000855377
+      },
+      "model_cuda_event": null,
+      "decoded_end_to_end": {
+        "p50_ms": 95.79540000413544,
+        "p95_ms": 106.23211500933394
+      },
+      "file_end_to_end": {
+        "p50_ms": 130.93510002363473,
+        "p95_ms": 146.86605001043063
+      },
+      "cpu_rss_bytes": 726728704,
+      "cpu_peak_rss_bytes": 739696640,
+      "gpu_peak_allocated_bytes": 0,
+      "gpu_peak_reserved_bytes": 0
+    },
+    {
+      "category": "bottle",
+      "device": "cuda",
+      "model_wall": {
+        "p50_ms": 20.633699983591214,
+        "p95_ms": 23.548070021206513
+      },
+      "model_cuda_event": {
+        "p50_ms": 20.39256000518799,
+        "p95_ms": 23.256134796142575
+      },
+      "decoded_end_to_end": {
+        "p50_ms": 34.668900014366955,
+        "p95_ms": 40.41170501732267
+      },
+      "file_end_to_end": {
+        "p50_ms": 68.35980000323616,
+        "p95_ms": 76.33485996339004
+      },
+      "cpu_rss_bytes": 1306652672,
+      "cpu_peak_rss_bytes": 1333182464,
+      "gpu_peak_allocated_bytes": 69377024,
+      "gpu_peak_reserved_bytes": 90177536
+    },
+    {
+      "category": "carpet",
+      "device": "cpu",
+      "model_wall": {
+        "p50_ms": 86.16739997523837,
+        "p95_ms": 96.71855499618687
+      },
+      "model_cuda_event": null,
+      "decoded_end_to_end": {
+        "p50_ms": 102.13834999012761,
+        "p95_ms": 113.34251505322754
+      },
+      "file_end_to_end": {
+        "p50_ms": 162.5991500040982,
+        "p95_ms": 180.6905950041255
+      },
+      "cpu_rss_bytes": 1338200064,
+      "cpu_peak_rss_bytes": 1366896640,
+      "gpu_peak_allocated_bytes": 0,
+      "gpu_peak_reserved_bytes": 0
+    },
+    {
+      "category": "carpet",
+      "device": "cuda",
+      "model_wall": {
+        "p50_ms": 22.149750002427027,
+        "p95_ms": 25.283964970731176
+      },
+      "model_cuda_event": {
+        "p50_ms": 21.8819522857666,
+        "p95_ms": 25.055025386810303
+      },
+      "decoded_end_to_end": {
+        "p50_ms": 41.265650012064725,
+        "p95_ms": 44.569390019751154
+      },
+      "file_end_to_end": {
+        "p50_ms": 102.13139999541454,
+        "p95_ms": 108.42908997437917
+      },
+      "cpu_rss_bytes": 1331777536,
+      "cpu_peak_rss_bytes": 1366896640,
+      "gpu_peak_allocated_bytes": 69377024,
+      "gpu_peak_reserved_bytes": 90177536
+    }
+  ],
+  "warmup": 20,
+  "iterations": 100,
+  "precision": "deterministic FP32; TF32 off",
+  "threads": 4,
+  "methodology": "Batch-one 3x256x256; model wall includes extractor+NN, resident input; CUDA events exclude CPU dispatch/transfers. Decoded E2E includes resize/transfer/CPU-native map/score. File E2E additionally opens/decodes a warm filesystem-cache PNG. Both exclude visualization and artifact loading. Synchronize CUDA at model boundaries; output transfer synchronizes E2E.",
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "os": "Windows-11-10.0.26300-SP0"
+  },
+  "software": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.2.6",
+    "pillow": "11.2.1",
+    "psutil": "7.2.2"
+  },
+  "frozen_research_modified": false
+}

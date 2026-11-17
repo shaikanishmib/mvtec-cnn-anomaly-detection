@@ -8,6 +8,25 @@ final saved-artifact research comparison are complete. Engineering is a later ph
 
 ## Research roadmap
 
+The **PatchCore engineering foundation (Milestone 10)** is complete. The reusable
+[`anomaly_detection.inference`](src/anomaly_detection/inference) package supports
+all 15 categories on CPU/CUDA with fixed seed 2026, verified local artifacts,
+original calibration thresholds, raw anomaly maps, structured predictions and
+display-only heatmaps/overlays. No frozen research model was retrained or changed.
+
+See the [inference guide](docs/patchcore_inference.md),
+[deployment manifest](configs/patchcore_deployment_v1.json), and
+[real-image measurements](reports/engineering/patchcore/integration.json).
+Thirty real images passed CPU/CUDA reference checks and repeatability; every
+sampled research image decision matched. Full-FP32 versus historical TF32/cache
+rounding differences and tolerances are documented. Bottle CUDA model p50/p95 was
+20.63/23.55 ms; decoded E2E was 34.67/40.41 ms (100 measurements after 20 warmups).
+These timings exclude visualization and artifact construction.
+
+Frozen research cutoffs retain their known false-alarm limitations. This package
+does not provide a production alarm guarantee. FastAPI/backend and frontend work
+have not started; the next milestone is the FastAPI backend.
+
 | Notebook | Focus | Status |
 |---|---|---|
 | [00](notebooks/00_dataset_eda.ipynb) | Dataset EDA and integrity | Complete real-data EDA and verified CUDA kernel |
