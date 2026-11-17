@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "assets": [
+    {
+      "path": "checkpoints/efficientad/assets/teacher_small.pth",
+      "bytes": 10779715,
+      "sha256": "b98a6a139087a0d743783ee59f367f0284af6003eb1a5fed0ce92bd9c0acd337"
+    },
+    {
+      "path": "checkpoints/patchcore/shared-resnet18-features.pt",
+      "bytes": 11179957,
+      "sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949"
+    },
+    {
+      "path": "checkpoints/supersimplenet/shared-resnet18-features.pt",
+      "bytes": 11179957,
+      "sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949"
+    }
+  ],
+  "scope": "Pinned third-party teacher and exported shared ImageNet feature trunks; no model loading or inference"
+}

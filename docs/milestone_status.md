@@ -1,4 +1,67 @@
-# Milestone 8 progress
+# Research milestone progress
+
+## Milestone 9 — final research comparison complete
+
+Final verified research state (2026-11-17): 270 source-linked evaluations,
+135 category-paired contrasts, ten figures, professional report and 20/20 executed
+Notebook 07 code cells. Fresh complete suite: 133 passed, 0 failed, 0 errors,
+0 skipped (152.08 s). Comparison validator passed: all original metrics and
+derived tables/report agree; 3,091 original source identities and 3,017 protected
+historical files preserved. Three additional teacher/shared-trunk assets verified.
+Public notebook excludes licensed panel outputs; complete replay remains local.
+
+Publication evidence: `reports/final_comparison/test_summary.json`, `validation.json`
+and `publication_manifest.json`. Use `scripts/seal_model_comparison.py --check`
+to verify compact publication bytes without rerunning expensive source checks.
+Git publication follows finish -> verify -> commit -> push. Obtain the completion
+commit from `git log -1 --format=%H` and verify it against
+`git ls-remote origin refs/heads/main`; a self-referential commit SHA is not stored
+inside its own manifest. Stage only the compact comparison, useful aggregate
+plots, notebook, source/tests, README, this progress log and checkout attributes.
+
+No scientific tasks remain incomplete. No training, inference, threshold tuning,
+new model registry events or engineering work were performed in this milestone.
+Next phase is Engineering and requires a separate user instruction.
+
+Recovery audit (2026-11-17): existing analyses were reused, not restarted. HEAD
+was still 815a14a81f30ccac4eb1b0678b3d1d2242da1ceb; no Milestone 9 commit or
+running benchmark remained. The saved full-suite log has 133 passed, zero failed
+and zero skipped. Notebook 07 replay passed again (20/20 cells). Additional
+pinned teacher/shared-backbone identities passed. See
+`reports/final_comparison/recovery_audit.md` for the task-by-task evidence.
+
+The original recovery/progress entries below are history, superseded by the
+verified completion record above. On interruption, inspect Git status and remote
+identity before any repeat command; preserve the sealed comparison and model files.
+
+Progress: all 270 final records reconciled exactly against saved image predictions
+and original source metrics. 3,091 source identities (~20.37 GB including local
+artifacts) audited; recovery reuses SHA256 entries only for unchanged size/mtime.
+Canonical tables, 135 category-paired contrasts, five category heatmaps, calibration,
+compute and seed figures, written report and Notebook 07 are built. Notebook replay
+executed 20/20 cells; local licensed panels are cleared in the public copy.
+No training, inference, threshold fitting or engineering performed.
+
+Completed commands:
+- `.\.venv\Scripts\python.exe scripts/build_model_comparison.py`
+- `.\.venv\Scripts\python.exe scripts/publish_model_comparison.py`
+- `.\.venv\Scripts\python.exe scripts/execute_model_comparison.py`
+
+Remaining: complete full pytest, comparison/historical validators, publication
+manifest and staged-content audit, commit/push and remote SHA verification.
+Recovery: inspect `reports/final_comparison/audit_summary.json`, source provenance,
+`outputs/final_comparison/hash_cache.json`, notebook execution and Git status before
+rerunning anything. Do not rerun prior model scripts. Rebuild compact analysis only
+if its inputs/code change; the builder preserves historical records.
+
+Baseline 815a14a81f30ccac4eb1b0678b3d1d2242da1ceb verified; initially clean.
+Current phase: source audit and canonical 270-row result construction. Read
+reports/final_comparison/analysis_plan.md for statistical/selection rules.
+No training, inference, threshold fitting or engineering work authorized here.
+All existing experimental records, datasets, splits, policies and checkpoints
+are read-only. Notebook 07 will execute saved-artifact comparison replay only.
+Recovery: inspect reports/final_comparison, its provenance/validation records,
+and this file before resuming. Existing Milestone 8 completion below is preserved.
 
 ## Frozen final benchmark — active
 

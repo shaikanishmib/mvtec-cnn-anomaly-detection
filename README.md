@@ -3,8 +3,8 @@
 PyTorch research comparing normal-only industrial anomaly detection and defect
 localization across all 15 original MVTec AD categories. The scientific notebooks
 are the canonical experiment narrative; compact, append-only records preserve
-both successful and unsuccessful experiments. The Basic CNN, convolutional autoencoder, PatchCore variant, SuperSimpleNet Lite and PaDiM baselines are complete;
-the remaining model families and engineering application are planned.
+both successful and unsuccessful experiments. All six model benchmarks and the
+final saved-artifact research comparison are complete. Engineering is a later phase.
 
 ## Research roadmap
 
@@ -17,7 +17,35 @@ the remaining model families and engineering application are planned.
 | [04](notebooks/04_supersimplenet.ipynb) | SuperSimpleNet Lite | Architecture, GPU pilots and bounded development verified; complete benchmark on all 15 categories × three seeds; reduced-budget ICPR-style variant |
 | [05](notebooks/05_padim.ipynb) | PaDiM | Complete: verified GPU pilot, bounded development and all 15 categories across three seeds |
 | [06](notebooks/06_efficientad.ipynb) | EfficientAD | Complete: pilot, four bounded development fits and 45 frozen reduced-budget evaluations; all 15 categories and three seeds |
-| 07 | Cross-model comparison | Planned |
+| [07](notebooks/07_model_comparison.ipynb) | Final six-model comparison | Complete: 270 audited evaluations, category-paired uncertainty, calibration and compute analysis |
+
+## Final research comparison
+
+[Notebook 07](notebooks/07_model_comparison.ipynb) and the
+[research report](reports/final_comparison/report.md) compare six methods across
+15 categories and three seeds, without new training, inference or threshold fitting.
+The [nine-metric table](reports/final_comparison/nine_metric_table.md),
+[canonical 270 rows](reports/final_comparison/all_runs.csv),
+[135 paired contrasts](reports/final_comparison/paired_comparisons.csv), and
+[provenance manifest](reports/final_comparison/source_provenance.json) retain the
+original experimental identities.
+
+Simplified PatchCore is the quality-first research prototype candidate: image
+AUROC **0.9676**, pixel AP **0.5402**, AU-PRO **0.9204**. Its image-AUROC difference
+from SuperSimpleNet Lite is uncertain under category-paired analysis; its pixel
+AP and AU-PRO advantages survive the predeclared Holm correction. SSN Lite is a
+faster balanced alternative with slightly higher frozen F1 (**0.9099** versus
+**0.9043**). These point estimates do not establish universal superiority.
+
+Calibration is a major limitation: a nominal 5% normal-only target yields macro
+test FPR from **9.39% to 22.01%** across methods. PatchCore and SSN Lite also have
+severe leather/carpet false alarms despite strong image ranking. No frozen
+policy was changed. Engineering needs independent validation, a justified alarm
+policy, and weight/data provenance review; no engineering application is started.
+
+Reproduce analysis with the existing `.venv` interpreter using the commands in
+the report. Compact analysis replays published tables; the deep audit additionally
+requires retained local weights/maps, which remain excluded from Git.
 
 The **EfficientAD-S reduced-budget variant** completed 45 fresh models on all 15
 categories and seeds 2026/2027/2028, nine epochs each. Both student heads and the

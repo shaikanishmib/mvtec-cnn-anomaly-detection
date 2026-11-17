@@ -25,3 +25,9 @@ experiments/*.json text eol=crlf
 # AE histories were emitted with the Windows CSV default; keep published hashes.
 reports/autoencoder/runs/*-history.csv text eol=crlf
 reports/autoencoder/02-pilot-*-history.csv text eol=crlf
+# Keep the new comparison publication reproducible across Windows checkouts.
+.gitattributes text eol=lf
+reports/final_comparison/*.md text eol=lf
+reports/final_comparison/*.xml text eol=lf
+README.md text eol=lf
+docs/milestone_status.md text eol=lf
