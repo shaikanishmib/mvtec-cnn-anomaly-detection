@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "prediction_id": "1997633b-9c1f-403d-a309-456168e8aef8",
+  "request_id": "afc963fe-4924-4765-87ac-ddad97f414f5",
+  "model": "patchcore",
+  "model_version": "patchcore-inference-v1",
+  "category": "bottle",
+  "anomaly_score": 1.33723783493042,
+  "threshold": 1.4268503189086914,
+  "is_anomaly": false,
+  "pixel_threshold": 1.2806237936019897,
+  "decision_rule": "score > threshold",
+  "score_semantics": "Raw L2 distance; higher is more anomalous; not a probability",
+  "input_width": 900,
+  "input_height": 900,
+  "device": "cpu",
+  "latency_ms": 1133.3437000284903,
+  "timings_ms": {
+    "decode": 121.49039999349043,
+    "model_load": 674.8853999888524,
+    "inference": 219.92110001156107,
+    "visualization": 0.002100015990436077,
+    "service_total": 1027.6162000373006
+  },
+  "provenance": {
+    "manifest_sha256": "58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa",
+    "bank_sha256": "3ba5cd63c23c742974e1dd5459928f32bc8b57e748d347afeb5b00176a79b3b1",
+    "extractor_sha256": "2192b8a31687274b2abcb7cc59cd35e1c3267ce09e9acbdb70f55291854b9949",
+    "pretrained_weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "calibration_sha256": "5157591a539299faff0a1f7df2339bcd9ee910fd26e6907b1b4da66facf95796",
+    "preprocessing_sha256": "b51c1789044bda3d86e4f97ec43d91d37aade7baab23506225ae0d0ac76e7fe5",
+    "seed": 2026
+  },
+  "visualizations": {
+    "heatmap_url": null,
+    "overlay_url": null,
+    "expires_in_seconds": null,
+    "scaling": null
+  },
+  "limitations": [
+    "Research use only. Raw anomaly distances are not probabilities; frozen normal-only cutoffs can have substantial category-dependent false alarms and misses."
+  ]
+}

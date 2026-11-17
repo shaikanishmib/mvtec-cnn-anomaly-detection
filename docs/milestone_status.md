@@ -1,5 +1,60 @@
 # Research milestone progress
 
+## Milestone 11 - FastAPI backend complete
+
+Final verified state: eight HTTP endpoints, unchanged M10 PatchCore adapter,
+all 15 categories, CPU/CUDA and fixed seed 2026. Lazy two-model LRU; one guarded
+inspection; memory-only bounded uploads; PNG cache 8 items/32 MiB/300 s.
+Thirty normal-image category/device API/direct checks and four object/texture
+defect checks passed with zero score error and matching thresholds/decisions;
+native heatmap/overlay arrays matched for all 30 normal-image checks.
+
+Complete suite: 203 passed, zero failures/errors/skips. A final OpenAPI-only error
+schema clarification was followed by 25 passing contract/security tests. The
+pinned Starlette/httpx test-client deprecation warning is documented. Backend
+completion validation passed. All 3,086 protected files, 15 selected bank and
+calibration identities, and eight notebooks/205 saved executed code cells remain
+unchanged and validated. No models were trained or historical benchmarks rerun.
+
+Isolated real loopback HTTP p50/p95 (ms): CPU bottle 288.00/299.18, carpet
+360.61/375.84; CUDA bottle 144.30/147.16, carpet 228.57/247.17. Cold category
+requests span 1.01-3.46 s; process startup-to-live 21.86/22.72 s. Stage timings,
+model loading, optional PNG cost and actual server memory are retained separately
+in reports/backend/performance.json and runtime_summary.csv. Loopback workers
+were stopped; no frontend was started. Earlier validation/cleanup failures are
+retained in recovery_history.json, and completed measurement reports are reused.
+
+Publication evidence: validation.json, completion_validation.json, test_summary.json,
+OpenAPI snapshot, genuine example response, performance and parity tables, and
+the publication seal. Finish -> verify -> commit -> push; verify current SHA with
+`git log -1 --format=%H` and `git ls-remote origin refs/heads/main`. The seal avoids
+a self-referential commit hash. Recovery must inspect the seal/Git state before
+repeating tests or measurement scripts. Next milestone: interactive inspection
+frontend, awaiting a separate instruction. The active-phase notes below are history.
+
+Baseline 3a4eac2237ca3e1a4c35b9c18974ba81d663c21e; initially clean. The M10
+adapter, manifest, banks, thresholds, seed and research files are unchanged.
+Backend-only dependencies are pinned in requirements-backend.txt; pip check
+passes and CUDA PyTorch remains 2.11.0+cu128. No frontend or model fitting.
+
+Implemented health/discovery/model-info/predict and TTL heatmap/overlay retrieval.
+Single admission gate, guarded model worker, bounded LRU model cache and bounded
+in-memory visualizations. Upload byte/pixel/dimension, MIME/extension/decoded
+format, multipart field and timeout checks are in place. No raw image persistence.
+Focused HTTP tests plus real CPU/CUDA integration tests: 41 passed. Initial six
+error-schema checks exposed duplicate X-Request-ID headers; fixed and rerun.
+Real uvicorn loopback launch on port 8000 passed and smoke process was stopped.
+
+Current commands/evidence: scripts/validate_backend_real.py is completing the
+bounded 15-category CPU/CUDA parity and timing report. Inspect
+reports/backend/parity.csv, integration.json, server_smoke.json and existing
+processes before rerunning. The completed integration report is exclusive-write.
+Remaining: final timing analysis/docs, full suite, artifact/notebook/protection
+validators, staged-content audit and finish -> verify -> commit -> push.
+Recovery uses reports/backend/research_protection.json to protect all prior
+tracked files except rolling README/progress/checkout metadata. Do not rerun
+earlier training/evaluation scripts or modify the inference package.
+
 ## Milestone 10 - PatchCore engineering foundation complete
 
 Completion evidence: 161 tests passed, zero failures/errors/skips; all 28 new

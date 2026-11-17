@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "categories": 15,
+  "devices": [
+    "cpu",
+    "cuda"
+  ],
+  "real_images": 15,
+  "category_device_checks": 30,
+  "maximum_api_direct_score_error": 0.0,
+  "all_decisions_match": true,
+  "all_visualization_arrays_equal": true,
+  "timings": [
+    {
+      "category": "bottle",
+      "device": "cpu",
+      "cold_api_ms": 1836.9530999916606,
+      "model_load_ms": 751.4991000061855,
+      "warm_prediction": {
+        "p50_ms": 207.859849993838,
+        "p95_ms": 220.87728498736396
+      },
+      "api_request": {
+        "p50_ms": 291.0983500187285,
+        "p95_ms": 310.17708499275614
+      },
+      "image_decode": {
+        "p50_ms": 68.52405000245199,
+        "p95_ms": 72.84753502754029
+      },
+      "visualization_png": {
+        "p50_ms": 698.1485500000417,
+        "p95_ms": 736.7400850052945
+      },
+      "preprocessing": {
+        "p50_ms": 12.591950013302267,
+        "p95_ms": 14.3802849954227
+      },
+      "feature_extraction": {
+        "p50_ms": 148.87960001942702,
+        "p95_ms": 174.21903496433515
+      },
+      "nearest_neighbor": {
+        "p50_ms": 58.352500025648624,
+        "p95_ms": 72.29144499870017
+      },
+      "cpu_rss_bytes": 775278592,
+      "cpu_peak_rss_bytes": 844902400,
+      "gpu_allocated_bytes": 0,
+      "gpu_peak_allocated_bytes": 0
+    },
+    {
+      "category": "carpet",
+      "device": "cpu",
+      "cold_api_ms": 2105.089299962856,
+      "model_load_ms": 897.6474000373855,
+      "warm_prediction": {
+        "p50_ms": 231.25959996832535,
+        "p95_ms": 278.5182349936802
+      },
+      "api_request": {
+        "p50_ms": 379.2390000016894,
+        "p95_ms": 434.1971199959515
+      },
+      "image_decode": {
+        "p50_ms": 123.08730001677759,
+        "p95_ms": 128.94764996308368
+      },
+      "visualization_png": {
+        "p50_ms": 825.2582999994047,
+        "p95_ms": 961.8859199807047
+      },
+      "preprocessing": {
+        "p50_ms": 14.848300023004413,
+        "p95_ms": 17.15989999647718
+      },
+      "feature_extraction": {
+        "p50_ms": 132.67385002109222,
+        "p95_ms": 139.20785002119374
+      },
+      "nearest_neighbor": {
+        "p50_ms": 55.28184998547658,
+        "p95_ms": 58.5861500032479
+      },
+      "cpu_rss_bytes": 817229824,
+      "cpu_peak_rss_bytes": 930361344,
+      "gpu_allocated_bytes": 0,
+      "gpu_peak_allocated_bytes": 0
+    },
+    {
+      "category": "bottle",
+      "device": "cuda",
+      "cold_api_ms": 5288.278400024865,
+      "model_load_ms": 2953.873799997382,
+      "warm_prediction": {
+        "p50_ms": 84.30345001397654,
+        "p95_ms": 92.4978749884758
+      },
+      "api_request": {
+        "p50_ms": 173.8737499981653,
+        "p95_ms": 186.84971002221573
+      },
+      "image_decode": {
+        "p50_ms": 74.7249499836471,
+        "p95_ms": 78.98091996030416
+      },
+      "visualization_png": {
+        "p50_ms": 793.5018999851309,
+        "p95_ms": 818.3552249683999
+      },
+      "preprocessing": {
+        "p50_ms": 12.245849968167022,
+        "p95_ms": 13.082744978601113
+      },
+      "feature_extraction": {
+        "p50_ms": 38.25220002909191,
+        "p95_ms": 43.159364981693216
+      },
+      "nearest_neighbor": {
+        "p50_ms": 7.280050020199269,
+        "p95_ms": 8.77738003327977
+      },
+      "cpu_rss_bytes": 1364844544,
+      "cpu_peak_rss_bytes": 1442934784,
+      "gpu_allocated_bytes": 81416704,
+      "gpu_peak_allocated_bytes": 116452864
+    },
+    {
+      "category": "carpet",
+      "device": "cuda",
+      "cold_api_ms": 2183.1311999703757,
+      "model_load_ms": 1003.7921000039205,
+      "warm_prediction": {
+        "p50_ms": 84.38750001369044,
+        "p95_ms": 91.27497997833416
+      },
+      "api_request": {
+        "p50_ms": 229.0223000163678,
+        "p95_ms": 239.84044500102755
+      },
+      "image_decode": {
+        "p50_ms": 120.10955001460388,
+        "p95_ms": 126.61926997825503
+      },
+      "visualization_png": {
+        "p50_ms": 819.8668500117492,
+        "p95_ms": 866.0167450172594
+      },
+      "preprocessing": {
+        "p50_ms": 16.344299976481125,
+        "p95_ms": 17.586945014772937
+      },
+      "feature_extraction": {
+        "p50_ms": 39.70014996593818,
+        "p95_ms": 42.81769999070093
+      },
+      "nearest_neighbor": {
+        "p50_ms": 7.58794997818768,
+        "p95_ms": 8.4072250087047
+      },
+      "cpu_rss_bytes": 1385947136,
+      "cpu_peak_rss_bytes": 1485660160,
+      "gpu_allocated_bytes": 110687744,
+      "gpu_peak_allocated_bytes": 146903552
+    }
+  ],
+  "methodology": "TestClient in-process ASGI round-trip, encoded PNG upload; 5 warmups, 30 warm requests without visualizations; 10 visualization requests. Stage observers: 20 direct adapter calls, synchronized CPU/GPU wall times; extra sync overhead, not additive latency components. Cold is first category request in a warm Python process, including validation/loading and visualization. Upload bytes already resident; no network transport. Four CPU threads. Model cache max2; PNG cache max8/32MiB/300s.",
+  "software": {
+    "fastapi": "0.163.1",
+    "starlette": "1.10.0",
+    "pydantic": "2.14.3",
+    "uvicorn": "0.54.0",
+    "python-multipart": "0.0.34",
+    "httpx": "0.28.1",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128"
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "manifest_sha256": "58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa",
+  "model_modified": false
+}

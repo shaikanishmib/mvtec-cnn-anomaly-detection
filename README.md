@@ -4,7 +4,35 @@ PyTorch research comparing normal-only industrial anomaly detection and defect
 localization across all 15 original MVTec AD categories. The scientific notebooks
 are the canonical experiment narrative; compact, append-only records preserve
 both successful and unsuccessful experiments. All six model benchmarks and the
-final saved-artifact research comparison are complete. Engineering is a later phase.
+final saved-artifact research comparison are complete. The PatchCore inference
+foundation and FastAPI backend are also complete; the inspection frontend is next.
+
+## FastAPI inspection backend
+
+Milestone 11 provides a [versioned research API](docs/backend_api.md) using the
+unchanged Milestone 10 PatchCore adapter. Only PatchCore is offered. All 15
+categories support CPU/CUDA, fixed seed 2026, original cutoffs and pinned artifacts.
+
+Endpoints cover live/readiness health, model/category discovery, model metadata,
+multipart prediction and optional native PNG heatmap/overlay retrieval. Model
+loading is lazy, the LRU holds two categories, and a single guarded worker prevents
+parallel CUDA execution. Uploads stay memory-backed; body, MIME/extension/decoded
+format, dimension/pixel, timeout and cache limits are enforced.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-backend.txt
+.\.venv\Scripts\python.exe -m uvicorn anomaly_detection.backend.app:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
+```
+
+This actual loopback launch was verified. OpenAPI is at `/openapi.json` and `/docs`.
+The full suite passes **203 tests**. Real HTTP/direct parity passed all 15 categories
+on CPU/CUDA, plus genuine bottle/carpet defects. No research model or inference
+source was changed. See [validation evidence](reports/backend/validation.json) and
+[loopback timing results](reports/backend/performance.json).
+
+This is a local research backend: scores are distances, not probabilities;
+frozen calibration retains false-alarm/miss limitations. Authentication, external
+deployment review and an interactive inspection frontend remain later work.
 
 ## Research roadmap
 
@@ -24,8 +52,8 @@ rounding differences and tolerances are documented. Bottle CUDA model p50/p95 wa
 These timings exclude visualization and artifact construction.
 
 Frozen research cutoffs retain their known false-alarm limitations. This package
-does not provide a production alarm guarantee. FastAPI/backend and frontend work
-have not started; the next milestone is the FastAPI backend.
+does not provide a production alarm guarantee. The FastAPI backend is complete
+as described above; the interactive inspection frontend is the next milestone.
 
 | Notebook | Focus | Status |
 |---|---|---|
@@ -248,12 +276,10 @@ auditable utilities; `configs/`, `experiments/`, `reports/`, `scripts/`, `tests/
 and `docs/` hold configuration, evidence and reproduction support. `data/`,
 `checkpoints/` and `outputs/` are local ignored storage; scripts recreate outputs.
 
-Notebooks 01, 02 and 03 are complete. SuperSimpleNet requires a separate request. Each future notebook
-must preserve its full experimental story, tried configurations, actual results,
-calibration, evaluation, failures and interpretations. After the research
-comparison, a separate engineering
-stage will add reusable PyTorch inference, FastAPI, a browser interface, tests,
-benchmarks and deployment. That application is not implemented in this milestone.
+Notebooks 00–07, the reusable PatchCore inference foundation and the FastAPI
+backend are complete. Their original experimental records, frozen policies,
+calibration and failure analyses remain preserved. The next phase is an
+interactive inspection frontend, followed by separately validated deployment work.
 
 <!-- AE_FINDINGS_START -->
 ## Convolutional autoencoder measured baseline
@@ -544,4 +570,4 @@ Notebook 05 completes the frozen ResNet18 spatial-Gaussian model on all 15 categ
 
 Macro image AUROC **0.897933**, pixel AUROC **0.965920**, pixel AP **0.453764**, AU-PRO **0.911929**; normal-q95 operating recall **0.696493**, FPR **0.144521**. Threshold transfer remains a material limitation; inspect category results and confusion counts alongside ranking.
 
-See [findings](reports/padim/findings.md), [full summary](reports/padim/summary.json), [all runs](reports/padim/all_runs.csv), [four-model comparison](reports/padim/model_macro_comparison.csv), [protocol](docs/padim_protocol.md) and [reproduction](docs/padim_reproduction.md). Original masks are evaluated at native resolution; only pixel bootstrap intervals use a disclosed histogram approximation. Checkpoints/maps/panels remain ignored locally. EfficientAD remains planned.
+See [findings](reports/padim/findings.md), [full summary](reports/padim/summary.json), [all runs](reports/padim/all_runs.csv), [four-model comparison](reports/padim/model_macro_comparison.csv), [protocol](docs/padim_protocol.md) and [reproduction](docs/padim_reproduction.md). Original masks are evaluated at native resolution; only pixel bootstrap intervals use a disclosed histogram approximation. Checkpoints/maps/panels remain ignored locally. EfficientAD and the final six-model research comparison are complete; see the roadmap and comparison report above.

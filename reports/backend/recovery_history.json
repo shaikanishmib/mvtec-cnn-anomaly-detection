@@ -1,0 +1,19 @@
+{
+  "initial_focused_tests": {
+    "passed": 15,
+    "failed": 6,
+    "reason": "Duplicate request-ID headers on error responses",
+    "resolution": "Middleware replaces rather than appends existing identity headers; subsequent focused suite passed"
+  },
+  "notebook_validator": {
+    "reason": "A generic 20-section template rejected an unchanged 27-section historical notebook",
+    "resolution": "Validate original nbformat/code/execution/error/output contracts plus immutable historical SHA identities; no notebook rewriting"
+  },
+  "dependency_acquisition": "Sandbox socket restriction recovered with authorized package metadata/install access; only pinned backend packages added",
+  "test_client_warning": "Pinned Starlette emits a deprecation warning for existing httpx TestClient compatibility. No network dependency in tests; real loopback HTTP separately verified.",
+  "loopback_cleanup": {
+    "observation": "First isolated timing attempt stopped because port 8000 still accepted connections immediately after prior worker shutdown; a later probe showed it free",
+    "resolution": "Stop only owned process-tree descendants, wait for listener release, preserve logs, save timing progress per case; final CPU/CUDA loopback measurements completed"
+  },
+  "openapi_error_schema": "Documented retrieval UUID-validation errors explicitly as ErrorResponse; targeted contract suite rechecked after this schema-only change"
+}
