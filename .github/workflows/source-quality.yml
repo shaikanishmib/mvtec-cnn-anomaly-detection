@@ -1,0 +1,60 @@
+name: Source quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: source-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-public:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: src:.
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      CUDA_VISIBLE_DEVICES: ''
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12.16'
+      - name: Install isolated CPU source-check dependencies
+        run: |
+          python -m venv .venv-ci
+          .venv-ci/bin/python -m pip install --no-deps -r deployment/requirements-runtime.txt -r ci/requirements.txt
+          .venv-ci/bin/python -m pip install --no-deps --index-url https://download.pytorch.org/whl/cpu torch==2.11.0+cpu torchvision==0.26.0+cpu
+          .venv-ci/bin/python -m pip check
+      - name: Public tests, documentation and configuration contracts
+        run: |
+          mkdir -p outputs/ci
+          .venv-ci/bin/python scripts/check_portfolio.py --require-asset-free
+          .venv-ci/bin/python scripts/run_public_tests.py --junitxml outputs/ci/pytest.xml
+
+  frontend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '26.13.0'
+      - run: npm ci --no-audit
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build

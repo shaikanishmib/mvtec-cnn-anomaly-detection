@@ -1,44 +1,26 @@
-# Fieldwork · Industrial visual anomaly inspection
+# Fieldwork — Industrial anomaly detection
 
-A reproducible MVTec AD research project and local inspection application: **eight notebooks, six architectures, 15 categories, three seeds and 270 final evaluations**. Frozen simplified PatchCore powers a reusable CPU/CUDA inference adapter, FastAPI backend and responsive React dashboard.
+Research and an inspection application for detecting unusual industrial images and locating model responses. This project compares **six CNN-based methods across all 15 original MVTec AD categories and three seeds (270 evaluations)**, then serves a frozen simplified PatchCore model through a Python adapter, FastAPI, React/TypeScript and CPU/CUDA containers.
 
-> Research use only. An anomaly distance is not a probability, and an anomaly decision is not a verified manufacturing defect. This release is not approved for unauthenticated public deployment.
+> **Research use only.** Raw anomaly distances are not probabilities, and an anomaly decision is not a verified manufacturing defect. False alarms and missed defects remain possible.
 
-![Actual Fieldwork dashboard with an authored synthetic illustration](docs/images/inspection-dashboard-desktop.png)
+![Actual Fieldwork dashboard using an original synthetic UI fixture](docs/images/inspection-dashboard-desktop.png)
 
-The screenshot contains an original procedural fixture and its genuine backend response, with no MVTec pixels. It illustrates the UI, not model accuracy. [Mobile view](docs/images/inspection-dashboard-mobile.png).
+This actual running-interface capture uses an original procedural fixture and a genuine backend response. It contains no MVTec pixels and is not an accuracy demonstration. [Mobile capture](docs/images/inspection-dashboard-mobile.png).
 
-## Run the packaged application
+[Research results](#main-research-results) · [Architecture](#architecture) · [Quick start](#quick-start) · [Documentation](docs/index.md) · [Project overview](docs/project_overview.md)
 
-Prerequisites: running Docker Desktop/WSL2 or a compatible Linux Docker host, the existing project `.venv`, and legitimately retained byte-identical model artifacts. Weights, banks and dataset images are intentionally not included. From the repository root in PowerShell:
+## What the project does
 
-```powershell
-.\.venv\Scripts\python.exe -m deployment.artifacts --root . --export outputs/deployment/artifacts
-.\.venv\Scripts\python.exe scripts/release_deployment.py build
-.\.venv\Scripts\python.exe scripts/release_deployment.py up
-```
+- Compares scratch baselines and pretrained representations through eight documented notebooks, bounded experiments and frozen all-category evaluations.
+- Separates image detection, pixel localization and calibrated operating-point metrics, with category-level and paired statistical analysis.
+- Provides an inspection workspace with model/category discovery, PNG/JPEG upload, original/heatmap/overlay comparison, zoom, raw score, threshold, provenance and timing.
+- Reuses the exact selected PatchCore artifacts: seed 2026, frozen ResNet18, 2,048-vector banks and original normal-calibration thresholds. Only PatchCore is implemented in the application.
+- Packages a loopback-only nginx frontend and private, guarded FastAPI worker. Uploaded images and ephemeral visualizations are not persisted as inspection history.
 
-Open **http://127.0.0.1:8080**. CPU is the portable default. See the [deployment guide](docs/deployment_guide.md) for artifact restoration, environment settings, verified commands, CUDA status, health checks, tests and shutdown. The backend has no published host port; only nginx binds loopback.
+## Main research results
 
-```mermaid
-flowchart LR
-    B[Browser / React] --> N[nginx: loopback 8080]
-    N --> A[FastAPI / guarded worker]
-    A --> P[Frozen PatchCore adapter]
-    P --> M[Read-only verified artifacts]
-```
-
-## Inspection features
-
-- Actual model/category discovery; PatchCore supports all 15 original MVTec categories.
-- PNG/JPEG drag/drop, preview and server-authoritative size/format checks: 8 MiB, four million pixels, 4,096 per side.
-- Raw score, original threshold and strict research decision; provenance, device, preprocessing and latency.
-- Original/heatmap/overlay comparison, zoom, keyboard controls, responsive layouts, reset and clear failure states.
-- Lazy two-category cache, guarded inference and ephemeral visualizations. No browser inference or persisted inspection history.
-
-## Research methodology and findings
-
-Normal-only fitting/development/calibration partitions are disjoint from official test evaluation. Category means average three seeds; macro means weight all 15 categories equally. Frozen selection/calibration policies and exact historical metric values are preserved. All scores increase with anomaly; cutoffs use strict comparisons. Simplified and reduced-budget architectures are labeled explicitly.
+Category means average three seeds; macro means give all 15 categories equal weight. The methods have documented differences in fitting, preprocessing and image aggregation. Several are simplified or reduced-budget variants rather than paper-equivalent implementations.
 
 | Model | Image AUROC | Image AP | Pixel AUROC | Pixel AP | AU-PRO | Recall | FPR | Precision | F1 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -49,26 +31,61 @@ Normal-only fitting/development/calibration partitions are disjoint from officia
 | PaDiM | 0.8979 | 0.9464 | 0.9659 | 0.4538 | 0.9119 | 0.6965 | 0.1445 | 0.9255 | 0.7554 |
 | EfficientAD-S reduced-budget | 0.8163 | 0.9186 | 0.9199 | 0.4985 | 0.8184 | 0.6656 | 0.2201 | 0.8859 | 0.7401 |
 
-Values are fractions rounded to four decimals from [the canonical macro table](reports/final_comparison/model_macro.csv). [The full research report](reports/final_comparison/report.md) documents protocol differences, category/seed uncertainty and paired comparisons. Small macro differences do not establish universal superiority.
+Values are fractions rounded to four decimals from the [unchanged canonical table](reports/final_comparison/model_macro.csv); lower FPR is preferable. The [full research report](reports/final_comparison/report.md) contains all nine metrics, per-category findings, paired uncertainty and protocol differences. Small macro differences do not establish universal superiority.
 
-Pretrained methods performed more strongly than the scratch baselines in this benchmark. PatchCore balances image ranking and localization; SuperSimpleNet Lite offers a competitive faster alternative, and PaDiM localizes well despite weaker image detection. The reduced-budget EfficientAD result does not represent full paper-length EfficientAD. These observations are not causal proof or a guarantee beyond MVTec.
+Pretrained methods performed more strongly than scratch baselines in this benchmark. PatchCore was selected for its balance of image detection, localization, fitting effort and traceability. SuperSimpleNet Lite is a competitive alternative with a different speed/localization tradeoff. PaDiM localized well despite weaker image detection. Reduced-budget EfficientAD results do not represent full-budget EfficientAD.
 
-Threshold transfer remains a key limitation: PatchCore macro test FPR is about 17.2% despite a nominal 5% normal-calibration target. Fine defects, screw image detection, texture false alarms and broad localization responses remain documented failure modes. No deployment recalibration or test-driven tuning was performed.
+**Calibration is a practical limitation:** PatchCore's recorded category-macro test FPR was about **17.2%**, despite a nominal 5% normal-calibration target. Small calibration sets, distribution changes and category-specific score behavior limit transfer. The deployed seed is fixed independently of test performance; thresholds were not tuned retrospectively. These MVTec observations do not establish generalization to a new factory.
 
-## Verified engineering and benchmarks
+## Architecture
 
-The release verification includes **220 Python tests, 39 frontend unit tests and 3 production-browser tests**, with zero failures/skips in final runs. Typecheck, lint, build, artifact identities, all-category parity and research protection passed. CPU container inference and real object/texture dashboard flows are verified.
+```mermaid
+flowchart LR
+    B[React inspection workspace] --> N[nginx: loopback 8080]
+    N --> A[FastAPI: one guarded worker]
+    A --> P[Frozen PatchCore adapter]
+    P --> M[Read-only checksum-verified artifacts]
+```
 
-| Device/category | Tensor model p50/p95 ms | HTTP p50/p95 ms |
-|---|---:|---:|
-| cpu/bottle | 26.88 / 29.68 | 58.64 / 69.47 |
-| cpu/carpet | 26.17 / 30.66 | 85.55 / 89.67 |
-| cuda/bottle | 4.84 / 7.16 | 56.29 / 59.79 |
-| cuda/carpet | 4.88 / 5.58 | 69.71 / 88.73 |
+The adapter preserves whole-image preprocessing, ResNet18 layer2/layer3 features, nearest-neighbor scoring and top-1% image aggregation. Lazy loading keeps two category models in an LRU cache; concurrent inference is bounded. Heatmap display scaling is separate from raw scores and calibration. See the [inference](docs/patchcore_inference.md), [API](docs/backend_api.md), [frontend](docs/frontend_guide.md) and [deployment](docs/deployment_guide.md) guides.
 
-Five warmups and 30 samples per category; model and HTTP boundaries differ. These Linux-container measurements are not directly interchangeable with earlier Windows, model-only GPU or browser timings. [Complete release evidence](reports/deployment/results.md) includes memory, startup, visualization, browser, reliability and GPU outcomes.
+## Quick start
 
-Known security findings remain in frozen-compatible Python dependencies and the development toolchain. Production React dependencies audit clear. Docker Scout image-CVE scanning is blocked by required authentication. This is a bounded local research release, not a claim of production security or availability.
+### Inspect and build without model assets
+
+A fresh clone supports frontend checks with Node **26.13.0** / npm **11.20.0**. From the repository root in PowerShell:
+
+```powershell
+npm.cmd --prefix frontend ci
+npm.cmd --prefix frontend run typecheck
+npm.cmd --prefix frontend run lint
+npm.cmd --prefix frontend test
+npm.cmd --prefix frontend run build
+```
+
+No existing Python environment or model download is assumed. [Asset-free Python checks](docs/reproducibility.md#b-build-source-and-run-checks-without-model-assets) use a clean public-source copy and CPU container, or the read-only [Source quality workflow](.github/workflows/source-quality.yml). Source checks do not claim real-model accuracy or deployment verification.
+
+### Run with retained release artifacts
+
+Serving requires legitimate, byte-identical retained extractor/bank/calibration files. Restore the 33 manifest-listed files under `outputs/deployment/artifacts/` first; they are **not distributed here**. With Docker/Compose running:
+
+```powershell
+docker compose -p fieldwork-public --env-file deployment/.env.example build
+docker compose -p fieldwork-public --env-file deployment/.env.example run --rm --no-deps --entrypoint python backend -m deployment.artifacts --root /artifacts
+docker compose -p fieldwork-public --env-file deployment/.env.example up -d --wait --wait-timeout 180
+```
+
+Open **http://127.0.0.1:8080**. CPU is the default; the backend has no published host port. To stop this project:
+
+```powershell
+docker compose -p fieldwork-public --env-file deployment/.env.example down --timeout 30
+```
+
+## Reproducibility and artifact limits
+
+The [reproducibility guide](docs/reproducibility.md) separates three paths: running with retained artifacts, source/tests without assets, and reproducing research from legitimate dataset/weight sources. A fresh clone contains no original `.venv`, MVTec images, weights, banks or large caches. No public download or retraining procedure is promised to recreate checksum-identical serialized artifacts. Original research locks include Windows/CUDA assumptions and are not portable CPU installers.
+
+No public CI job trains models, recalibrates thresholds, runs the 270 evaluations or accesses private artifacts. The research and deployment reports remain immutable. Historical publication scripts are archival tools, not commands to regenerate the current portfolio README or replace evidence.
 
 ## Notebooks and repository map
 
@@ -92,32 +109,25 @@ Known security findings remain in frozen-compatible Python dependencies and the 
 
 Raw MVTec images, model weights/banks, large maps, caches, environment secrets and build outputs stay outside Git and public container images. Detailed local measurements and any licensed screenshots remain under ignored outputs.
 
-## Local development and verification
+## Testing and deployment evidence
 
-The existing CUDA Python environment is preserved. In separate PowerShell terminals:
+The retained [Milestone 13 results](reports/deployment/results.md) record **220 Python tests, 39 frontend unit tests and three production-browser tests**, plus typecheck/lint/build, real CPU/CUDA inference across all 15 categories, object/texture dashboard flows, artifact parity, bounded concurrency, expiry and crash recovery. These are historical measurements, not newly rerun inference in this portfolio audit.
 
-```powershell
-$env:ANOMALY_DEVICE = 'cpu'
-.\.venv\Scripts\python.exe -m uvicorn anomaly_detection.backend.app:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
-# Second terminal: Node 26.13.0 / npm 11.20.0
-npm.cmd --prefix frontend ci
-npm.cmd --prefix frontend run dev
-```
+| Device/category | Tensor model p50/p95 ms | HTTP p50/p95 ms |
+|---|---:|---:|
+| CPU/bottle | 26.88 / 29.68 | 58.64 / 69.47 |
+| CPU/carpet | 26.17 / 30.66 | 85.55 / 89.67 |
+| CUDA/bottle | 4.84 / 7.16 | 56.29 / 59.79 |
+| CUDA/carpet | 4.88 / 5.58 | 69.71 / 88.73 |
 
-Development UI: http://127.0.0.1:5173; backend OpenAPI: http://127.0.0.1:8000/docs. Deployment uses compiled nginx assets on port 8080 instead.
+Five warmups and 30 samples per category. Tensor computation, backend/HTTP, visualization and browser timings have different boundaries; they are not interchangeable speed claims. Full hardware, memory, image sizes and methodology are in the linked report.
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest -q --basetemp=.pytest-tmp-release
-npm.cmd --prefix frontend run typecheck
-npm.cmd --prefix frontend run lint
-npm.cmd --prefix frontend test
-npm.cmd --prefix frontend run build
-```
+The separate [portfolio audit](reports/portfolio/audit.md) records current source-check results, fresh-clone scope and remaining blockers. A locally tested workflow is not labeled a successful remote CI run without checking GitHub's actual run.
 
-See the deployment guide for real-model integration, source protection, audit and benchmark commands. Do not retrain models to run the application.
+## Licensing, attribution and limitations
 
-## References and rights
+**No project-wide source license is currently declared.** Public source availability does not establish unrestricted reuse permission. MVTec AD is distributed by its authors under CC BY-NC-SA 4.0. Pretrained weights and dataset-derived models need separate rights review; the unofficial EfficientAD teacher's separate weight license remains unconfirmed. No datasets, weights or banks are published. See the [licensing and attribution review](docs/licensing_and_attribution.md).
 
-Research builds on MVTec AD, ImageNet/torchvision representations, PatchCore, PaDiM, SuperSimpleNet and EfficientAD; primary references and variant differences are documented in the notebooks and [final report](reports/final_comparison/report.md). Thanks to the dataset authors and open-source PyTorch, FastAPI, React, Vite, nginx and Docker communities.
+Primary methods, variants and references are documented in the notebooks and [final research report](reports/final_comparison/report.md). The work builds on MVTec AD, ImageNet/torchvision, PatchCore, SuperSimpleNet, PaDiM and EfficientAD, with retained upstream notices and acknowledgments.
 
-Review each dataset, pretrained weight, dependency and tool license before redistribution or commercial use. This repository does not invent a grant for MVTec images or ImageNet-derived weights, and no project-wide redistribution license is asserted here. See [weight provenance and reproduction](docs/patchcore_reproduction.md). No public release tag or Docker-registry publication was created.
+This is a local research prototype. Known Python findings and the development-tool picomatch advisory remain disclosed; a clear production npm audit does not clear the whole system. Image-CVE scanning remains unverified because Docker Scout required authentication. There is no production security, availability or industrial calibration guarantee. Read [SECURITY.md](SECURITY.md) before considering external deployment.

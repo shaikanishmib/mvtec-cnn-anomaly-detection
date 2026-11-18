@@ -1,5 +1,36 @@
 # Research milestone progress
 
+## Final portfolio review - source and presentation verified
+
+Baseline d6bc59753fa72ced09b027cf8cd89d0102c8df6e. Preserved 3,207 existing
+files excluding rolling README/status/attributes. A pre-existing local startup
+timing change was backed up to ignored outputs before restoring published up.json.
+No research, scores, calibration, notebooks, registries or runtime dependencies changed.
+README reorganized; added overview, docs index, three-path reproducibility, rights
+inventory and SECURITY.md. Existing genuine synthetic-fixture screenshots reused.
+Public GitHub description/topics were empty; exact manual recommendations recorded;
+no remote metadata edits or project-wide license grant applied.
+
+Verification: 90 public Python tests passed on host and in a fresh read-only Linux
+CPU source copy with no dataset/banks/extractor/GPU mounted. New CI uses verified
+pytest 9.0.3 and explicit test dependencies; host research environment unchanged.
+Fresh checks caught/fixed missing cloudpickle and inherited artifact-root settings.
+Frontend lock install, typecheck, lint, 39 unit tests and build passed.
+75 current-document links, 270 canonical rows, six exact macro rows, 20 API fields,
+eight notebooks/205 saved code cells and all 33 retained artifact identities checked.
+No real model inference, training, benchmark rerun or threshold calibration occurred.
+OSV refresh still returned all 100 prior runtime advisory records; npm production
+zero, development 12 affected packages. Docker Scout still blocked by authentication.
+ImageNet terms page fetch timed out; weight reuse rights are not presumed resolved.
+
+Read-only SHA-pinned GitHub Actions workflow added; local Linux-equivalent checks
+passed. Remote CI must be observed for the pushed commit; no pre-push pass claimed.
+Portfolio validation passed; publication uses staged-content audit, commit, push
+and remote SHA verification. Git/Actions history is authoritative for final states.
+Recovery: inspect reports/portfolio and outputs/portfolio/verified-results, Git
+status and CI run before repeating anything. Preserve failed source snapshots.
+Do not run historical report generators or model evaluations for this polish.
+
 ## Milestone 13 - local deployment verified; image-CVE audit externally blocked
 
 Baseline 30338ef7e2150569167d53c5950643b288415982; initially clean.
