@@ -1,5 +1,47 @@
 # Research milestone progress
 
+## Milestone 13 - local deployment verified; image-CVE audit externally blocked
+
+Baseline 30338ef7e2150569167d53c5950643b288415982; initially clean.
+Audit: Docker 29.9.2/Compose 5.6.1 installed; Docker Desktop was stopped,
+then successfully started. Linux daemon and WSL2 now respond; host RTX 4060
+Laptop driver 610.91. CPU packaging first; GPU verification separately gated.
+Protected 3,155 pre-existing tracked files (README/status/attributes excluded)
+in reports/deployment/research_protection.json. No research/inference policy changes.
+Created CPU/backend and static nginx frontend Dockerfiles, Compose limits and
+read-only artifact mount, fail-fast checksum preflight and artifact export helper.
+Export verified: 33 files / 59,115,891 bytes, all 15 seed-2026 categories.
+Completed CPU: non-root/read-only Compose stack, 15-category parity (max error
+1.19e-7, exact decisions/thresholds), 30-sample object/texture benchmarks, three
+compiled-asset Edge tests, cache/concurrency/input/restart/crash/TTL/corrupt-bank
+checks. Final full Python suite 220 passed; focused deployment 16 passed; frontend
+39 unit tests/typecheck/lint/build passed. Host pip check passed.
+Security: OSV runtime audit completed with unresolved records; compatible
+container-only Pillow 11.3.0/setuptools 78.1.1 patches. npm production zero,
+dev 12 affected packages. Docker Scout scan blocked by required authentication.
+GPU: NVIDIA container probe passed. Two direct cuDNN downloads timed out;
+official pinned PyTorch runtime succeeded after venv isolation and removing an
+unused spin build-helper conflict. Actual CUDA PyTorch 2.11.0+cu128 and RTX 4060
+inside the app container verified. GPU serving/parity passed all 15 categories,
+zero score error and exact thresholds/decisions. Both devices completed the same
+5-warmup/30-sample object/texture HTTP and tensor-path benchmark, visual timing,
+concurrency/cache/input/restart/crash recovery. CPU model p50/p95 (bottle) 26.88/
+29.68 ms, CUDA 4.84/7.16 ms; HTTP 58.64/69.47 vs 56.29/59.79 ms. Boundaries differ.
+Stopped-container readiness CPU 11.122 s, CUDA 13.967 s; no build/VM startup included.
+Final artifacts/research/notebook validator passed with 3,155 protected files and
+270 canonical research records intact. Reports reconcile real evidence; README
+is a current landing page. Public deployment remains NO-GO pending security,
+authentication/TLS/rate limits, licensing and industrial validation.
+Owned containers/networks stopped cleanly; artifacts/images retained. Publication
+uses staged-content audit, commit, push origin/main and exact remote/local SHA
+comparison. Git history is authoritative for the final commit identity.
+Recovery: inspect reports/deployment, outputs/deployment build logs, docker compose
+-p fieldwork-m13 ps, and Git before repeating anything. Build helper reuses matching
+completed images, including missing-image recovery on a fresh checkout. Independent
+rechecks use benchmark_release.py --output-dir outputs/deployment/recheck instead
+of overwriting final evidence. No refitting or threshold changes; no external image
+publication or public release tag. Personal project was not accessed.
+
 ## Milestone 12 - inspection frontend complete and verified
 
 Baseline 8e08412f1179b6d92b041efad840f1f296d62369; initially clean. Recovery

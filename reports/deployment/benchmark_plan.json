@@ -1,0 +1,45 @@
+{
+  "policy": "Frozen before measured loops in benchmark_release.py; no hyperparameter search",
+  "devices": [
+    "cpu",
+    "cuda if actual container inference succeeds"
+  ],
+  "categories": [
+    "bottle",
+    "carpet"
+  ],
+  "serial_warmups": 5,
+  "serial_samples_per_category": 30,
+  "tensor_warmups": 5,
+  "tensor_samples_per_category": 30,
+  "visual_samples_per_category": 5,
+  "png_gets_per_category": 10,
+  "concurrency": 4,
+  "parity_categories": 15,
+  "parity_atol": 0.0001,
+  "parity_rtol": 0.0001,
+  "exact_threshold_and_decision": true,
+  "fixtures": [
+    {
+      "category": "bottle",
+      "source": "Retained M10 normal-image parity sample",
+      "sha256": "9e7bfe658efe9b6db2607a96405b4ac6880936eaf93b89c85bcd311122ceb57b",
+      "bytes": 533399,
+      "width_height": [
+        900,
+        900
+      ]
+    },
+    {
+      "category": "carpet",
+      "source": "Retained M10 normal-image parity sample",
+      "sha256": "22c6a63be1eec01601689abb9e794b69ee0aefc1addd9233c63b7e02c70dc0b5",
+      "bytes": 1847987,
+      "width_height": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "boundary_note": "Tensor model, adapter inference, backend, HTTP, image retrieval and browser completion are separate. Builds/tests must not overlap measured phases. Browser sample count is two genuine categories, descriptive only."
+}

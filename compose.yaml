@@ -1,0 +1,55 @@
+name: fieldwork
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.backend
+    image: fieldwork-backend:local
+    environment:
+      ANOMALY_DEVICE: cpu
+      ANOMALY_CPU_THREADS: ${CPU_THREADS:-4}
+      ANOMALY_MODEL_CACHE_SIZE: 2
+      ANOMALY_MANIFEST_SHA256: 58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa
+    volumes:
+      - type: bind
+        source: ${ARTIFACT_DIR:-./outputs/deployment/artifacts}
+        target: /artifacts
+        read_only: true
+        bind:
+          create_host_path: false
+    networks: [inspection]
+    read_only: true
+    tmpfs: ["/tmp:size=128m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    restart: "on-failure:3"
+    stop_grace_period: 30s
+    cpus: 4
+    mem_limit: 3g
+    pids_limit: 128
+  frontend:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.frontend
+    image: fieldwork-frontend:local
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-8080}:8080"
+    networks: [inspection, edge]
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    restart: "on-failure:3"
+    stop_grace_period: 10s
+    cpus: 1
+    mem_limit: 128m
+    pids_limit: 64
+networks:
+  inspection:
+    internal: true
+  edge: {}

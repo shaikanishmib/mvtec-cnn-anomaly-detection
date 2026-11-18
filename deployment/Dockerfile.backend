@@ -1,0 +1,22 @@
+# syntax=docker/dockerfile:1
+FROM python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+ARG TORCH_FLAVOR=cpu
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
+    PYTHONPATH=/app/src:/app HOME=/tmp \
+    ANOMALY_ARTIFACT_ROOT=/artifacts ANOMALY_MANIFEST=/artifacts/configs/patchcore_deployment_v1.json \
+    ANOMALY_DEVICE=cpu ANOMALY_CPU_THREADS=4
+WORKDIR /app
+COPY deployment/requirements-runtime.txt /tmp/requirements-runtime.txt
+COPY deployment/requirements-cuda-runtime.txt /tmp/requirements-cuda-runtime.txt
+# Only explicit PyTorch indexes; no optional CUDA fallback for the CPU image.
+RUN python -m pip install --no-deps -r /tmp/requirements-runtime.txt \
+    && if [ "$TORCH_FLAVOR" != "cpu" ]; then python -m pip install -r /tmp/requirements-cuda-runtime.txt; fi \
+    && python -m pip install --no-deps --index-url https://download.pytorch.org/whl/${TORCH_FLAVOR} torch==2.11.0+${TORCH_FLAVOR} torchvision==0.26.0+${TORCH_FLAVOR} \
+    && python -m pip check \
+    && groupadd --gid 10001 inspection && useradd --uid 10001 --gid 10001 --no-create-home inspection
+COPY src/anomaly_detection /app/src/anomaly_detection
+COPY deployment/__init__.py deployment/artifacts.py deployment/runtime.py deployment/healthcheck.py /app/deployment/
+USER 10001:10001
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=25s --start-period=90s --retries=3 CMD ["python", "-m", "deployment.healthcheck"]
+CMD ["python", "-m", "deployment.runtime"]

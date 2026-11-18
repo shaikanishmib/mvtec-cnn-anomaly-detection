@@ -1,0 +1,475 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "readiness_probe_ms": 7.5116000371053815,
+  "records": [
+    {
+      "category": "bottle",
+      "cold_http_ms": 58.15110000548884,
+      "cold_model_load_ms": 0.0,
+      "model_only": {
+        "device": "cpu",
+        "category": "bottle",
+        "warmups": 5,
+        "model_tensor_wall": {
+          "n": 30,
+          "p50_ms": 26.87871199998426,
+          "p95_ms": 29.68274924986644
+        },
+        "cuda_events": null,
+        "cpu_rss_before": 417452032,
+        "cpu_rss_after": 426319872,
+        "cuda_peak_allocated_bytes": 0,
+        "scope": "Actual RGB image resized/preprocessed before timing; fixed batch-one device-resident 1x3x256x256 tensor; frozen extractor, feature alignment and nearest-neighbor distances. Excludes file decode, preprocessing, device transfer, CPU/native map assembly and visualization. CUDA wall uses explicit synchronization; CUDA events report GPU stream elapsed separately."
+      },
+      "warmups": 5,
+      "http": {
+        "n": 30,
+        "p50_ms": 58.64450000808574,
+        "p95_ms": 69.47123998543245,
+        "min_ms": 56.89520004671067,
+        "max_ms": 77.85559998592362
+      },
+      "adapter_inference": {
+        "n": 30,
+        "p50_ms": 30.07515299998431,
+        "p95_ms": 30.954493899946556,
+        "min_ms": 29.094359000055192,
+        "max_ms": 31.757769999785523
+      },
+      "backend_processing": {
+        "n": 30,
+        "p50_ms": 54.860009499975604,
+        "p95_ms": 65.78646604992852,
+        "min_ms": 52.848667000034766,
+        "max_ms": 74.16697899998326
+      },
+      "visual_http": {
+        "n": 5,
+        "p50_ms": 369.1443999996409,
+        "p95_ms": 370.72352000977844,
+        "min_ms": 360.37650000071153,
+        "max_ms": 371.0711000021547
+      },
+      "visual_generation": {
+        "n": 5,
+        "p50_ms": 310.3949870001088,
+        "p95_ms": 312.46915899996566,
+        "min_ms": 303.2735650001541,
+        "max_ms": 312.48067699993953
+      },
+      "png_retrieval": {
+        "n": 10,
+        "p50_ms": 3.9515500247944146,
+        "p95_ms": 5.750689993146806,
+        "min_ms": 2.821400004904717,
+        "max_ms": 6.259999994654208
+      }
+    },
+    {
+      "category": "carpet",
+      "cold_http_ms": 902.6269000023603,
+      "cold_model_load_ms": 794.4984929999919,
+      "model_only": {
+        "device": "cpu",
+        "category": "carpet",
+        "warmups": 5,
+        "model_tensor_wall": {
+          "n": 30,
+          "p50_ms": 26.165892500102927,
+          "p95_ms": 30.663752100076632
+        },
+        "cuda_events": null,
+        "cpu_rss_before": 426610688,
+        "cpu_rss_after": 431341568,
+        "cuda_peak_allocated_bytes": 0,
+        "scope": "Actual RGB image resized/preprocessed before timing; fixed batch-one device-resident 1x3x256x256 tensor; frozen extractor, feature alignment and nearest-neighbor distances. Excludes file decode, preprocessing, device transfer, CPU/native map assembly and visualization. CUDA wall uses explicit synchronization; CUDA events report GPU stream elapsed separately."
+      },
+      "warmups": 5,
+      "http": {
+        "n": 30,
+        "p50_ms": 85.54605001700111,
+        "p95_ms": 89.6683200233383,
+        "min_ms": 84.05299996957183,
+        "max_ms": 91.1504000541754
+      },
+      "adapter_inference": {
+        "n": 30,
+        "p50_ms": 31.09264499994424,
+        "p95_ms": 34.81321760011723,
+        "min_ms": 30.08651799996187,
+        "max_ms": 36.86726500018267
+      },
+      "backend_processing": {
+        "n": 30,
+        "p50_ms": 80.93279749994053,
+        "p95_ms": 85.24307184998177,
+        "min_ms": 79.91239200009659,
+        "max_ms": 86.94601899992449
+      },
+      "visual_http": {
+        "n": 5,
+        "p50_ms": 658.0573000246659,
+        "p95_ms": 675.6758399773389,
+        "min_ms": 652.0435000420548,
+        "max_ms": 675.7317999727093
+      },
+      "visual_generation": {
+        "n": 5,
+        "p50_ms": 574.8532150000756,
+        "p95_ms": 588.718530199867,
+        "min_ms": 569.9866740001198,
+        "max_ms": 590.9978309998678
+      },
+      "png_retrieval": {
+        "n": 10,
+        "p50_ms": 6.205399986356497,
+        "p95_ms": 10.719285029335877,
+        "min_ms": 3.0767000280320644,
+        "max_ms": 11.357700044754893
+      }
+    }
+  ],
+  "parity": [
+    {
+      "category": "bottle",
+      "score": 1.3372377157211304,
+      "direct_score": 1.33723783493042,
+      "absolute_error": 1.1920928955078125e-07,
+      "threshold": 1.4268503189086914,
+      "decision_matches": true
+    },
+    {
+      "category": "cable",
+      "score": 2.2532875537872314,
+      "direct_score": 2.2532875537872314,
+      "absolute_error": 0.0,
+      "threshold": 2.4987704753875732,
+      "decision_matches": true
+    },
+    {
+      "category": "capsule",
+      "score": 1.1247742176055908,
+      "direct_score": 1.1247742176055908,
+      "absolute_error": 0.0,
+      "threshold": 1.4792132377624512,
+      "decision_matches": true
+    },
+    {
+      "category": "carpet",
+      "score": 1.134422779083252,
+      "direct_score": 1.134422779083252,
+      "absolute_error": 0.0,
+      "threshold": 1.256325602531433,
+      "decision_matches": true
+    },
+    {
+      "category": "grid",
+      "score": 1.5888524055480957,
+      "direct_score": 1.5888524055480957,
+      "absolute_error": 0.0,
+      "threshold": 1.7387568950653076,
+      "decision_matches": true
+    },
+    {
+      "category": "hazelnut",
+      "score": 2.1524298191070557,
+      "direct_score": 2.1524298191070557,
+      "absolute_error": 0.0,
+      "threshold": 2.4701874256134033,
+      "decision_matches": true
+    },
+    {
+      "category": "leather",
+      "score": 1.1591639518737793,
+      "direct_score": 1.1591640710830688,
+      "absolute_error": 1.1920928955078125e-07,
+      "threshold": 1.1901620626449585,
+      "decision_matches": true
+    },
+    {
+      "category": "metal_nut",
+      "score": 1.970777988433838,
+      "direct_score": 1.970777988433838,
+      "absolute_error": 0.0,
+      "threshold": 2.15067458152771,
+      "decision_matches": true
+    },
+    {
+      "category": "pill",
+      "score": 1.7514046430587769,
+      "direct_score": 1.7514046430587769,
+      "absolute_error": 0.0,
+      "threshold": 1.9587912559509277,
+      "decision_matches": true
+    },
+    {
+      "category": "screw",
+      "score": 1.634246826171875,
+      "direct_score": 1.634246826171875,
+      "absolute_error": 0.0,
+      "threshold": 1.8780406713485718,
+      "decision_matches": true
+    },
+    {
+      "category": "tile",
+      "score": 1.6192626953125,
+      "direct_score": 1.6192626953125,
+      "absolute_error": 0.0,
+      "threshold": 1.8032866716384888,
+      "decision_matches": true
+    },
+    {
+      "category": "toothbrush",
+      "score": 1.4813710451126099,
+      "direct_score": 1.4813710451126099,
+      "absolute_error": 0.0,
+      "threshold": 1.6520098447799683,
+      "decision_matches": true
+    },
+    {
+      "category": "transistor",
+      "score": 1.8460181951522827,
+      "direct_score": 1.8460181951522827,
+      "absolute_error": 0.0,
+      "threshold": 2.018568277359009,
+      "decision_matches": true
+    },
+    {
+      "category": "wood",
+      "score": 1.5544257164001465,
+      "direct_score": 1.5544257164001465,
+      "absolute_error": 0.0,
+      "threshold": 1.671043038368225,
+      "decision_matches": true
+    },
+    {
+      "category": "zipper",
+      "score": 1.1096802949905396,
+      "direct_score": 1.109680414199829,
+      "absolute_error": 1.1920928955078125e-07,
+      "threshold": 1.3254988193511963,
+      "decision_matches": true
+    }
+  ],
+  "reliability": {
+    "cache": {
+      "capacity": 2,
+      "loaded_categories": [
+        "wood",
+        "zipper"
+      ],
+      "loads": 32,
+      "evictions": 30
+    },
+    "process_resources": {
+      "cpu_rss_bytes": 545628160,
+      "gpu_allocated_bytes": 0,
+      "gpu_reserved_bytes": 0,
+      "gpu_peak_allocated_bytes": 0
+    },
+    "input_errors": {
+      "empty": {
+        "status": 422,
+        "code": "empty_image"
+      },
+      "corrupt": {
+        "status": 422,
+        "code": "invalid_image"
+      },
+      "oversized": {
+        "status": 413,
+        "code": "upload_too_large"
+      }
+    },
+    "concurrent_4": {
+      "statuses": [
+        200,
+        503,
+        503,
+        503
+      ],
+      "bounded": true
+    },
+    "missing_artifacts_fail_fast": true,
+    "backend_restart": {
+      "before": 200,
+      "ready_wait_ms": 10388.202800008003,
+      "total_ms": 11312.517599959392
+    },
+    "frontend_restart_ms": 832.3065000004135,
+    "post_restart_prediction": true
+  },
+  "container_stats_samples": [
+    {
+      "CPUPerc": "205.48%",
+      "MemUsage": "592.6MiB / 3GiB",
+      "MemPerc": "19.29%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "225.12%",
+      "MemUsage": "592.6MiB / 3GiB",
+      "MemPerc": "19.29%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "172.29%",
+      "MemUsage": "656.4MiB / 3GiB",
+      "MemPerc": "21.37%",
+      "PIDs": "56"
+    },
+    {
+      "CPUPerc": "100.24%",
+      "MemUsage": "809.3MiB / 3GiB",
+      "MemPerc": "26.34%",
+      "PIDs": "56"
+    },
+    {
+      "CPUPerc": "374.73%",
+      "MemUsage": "886.4MiB / 3GiB",
+      "MemPerc": "28.85%",
+      "PIDs": "62"
+    },
+    {
+      "CPUPerc": "204.03%",
+      "MemUsage": "593.8MiB / 3GiB",
+      "MemPerc": "19.33%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "242.21%",
+      "MemUsage": "593.3MiB / 3GiB",
+      "MemPerc": "19.31%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "125.19%",
+      "MemUsage": "593.2MiB / 3GiB",
+      "MemPerc": "19.31%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "176.80%",
+      "MemUsage": "607.3MiB / 3GiB",
+      "MemPerc": "19.77%",
+      "PIDs": "56"
+    },
+    {
+      "CPUPerc": "99.83%",
+      "MemUsage": "794.6MiB / 3GiB",
+      "MemPerc": "25.87%",
+      "PIDs": "56"
+    },
+    {
+      "CPUPerc": "262.75%",
+      "MemUsage": "877MiB / 3GiB",
+      "MemPerc": "28.55%",
+      "PIDs": "62"
+    },
+    {
+      "CPUPerc": "47.61%",
+      "MemUsage": "594.6MiB / 3GiB",
+      "MemPerc": "19.35%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "42.24%",
+      "MemUsage": "594MiB / 3GiB",
+      "MemPerc": "19.34%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "50.03%",
+      "MemUsage": "593.9MiB / 3GiB",
+      "MemPerc": "19.33%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "55.50%",
+      "MemUsage": "594.1MiB / 3GiB",
+      "MemPerc": "19.34%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "48.34%",
+      "MemUsage": "593.7MiB / 3GiB",
+      "MemPerc": "19.33%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "54.29%",
+      "MemUsage": "593.6MiB / 3GiB",
+      "MemPerc": "19.32%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "56.44%",
+      "MemUsage": "593.8MiB / 3GiB",
+      "MemPerc": "19.33%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "50.85%",
+      "MemUsage": "593.9MiB / 3GiB",
+      "MemPerc": "19.33%",
+      "PIDs": "32"
+    },
+    {
+      "CPUPerc": "52.35%",
+      "MemUsage": "594MiB / 3GiB",
+      "MemPerc": "19.34%",
+      "PIDs": "33"
+    },
+    {
+      "CPUPerc": "0.14%",
+      "MemUsage": "594MiB / 3GiB",
+      "MemPerc": "19.34%",
+      "PIDs": "33"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemUsage": "4.805MiB / 3GiB",
+      "MemPerc": "0.16%",
+      "PIDs": "2"
+    },
+    {
+      "CPUPerc": "99.96%",
+      "MemUsage": "173.9MiB / 3GiB",
+      "MemPerc": "5.66%",
+      "PIDs": "25"
+    },
+    {
+      "CPUPerc": "5.50%",
+      "MemUsage": "244.9MiB / 3GiB",
+      "MemPerc": "7.97%",
+      "PIDs": "25"
+    },
+    {
+      "CPUPerc": "33.75%",
+      "MemUsage": "249MiB / 3GiB",
+      "MemPerc": "8.10%",
+      "PIDs": "25"
+    },
+    {
+      "CPUPerc": "129.93%",
+      "MemUsage": "147.8MiB / 3GiB",
+      "MemPerc": "4.81%",
+      "PIDs": "25"
+    },
+    {
+      "CPUPerc": "71.34%",
+      "MemUsage": "266.9MiB / 3GiB",
+      "MemPerc": "8.69%",
+      "PIDs": "29"
+    },
+    {
+      "CPUPerc": "22.25%",
+      "MemUsage": "319MiB / 3GiB",
+      "MemPerc": "10.38%",
+      "PIDs": "32"
+    }
+  ],
+  "successful_request_errors": 0,
+  "methodology": "Linux Docker Desktop, one guarded worker, 4 CPU threads. nginx loopback HTTP; 5 warmups and 30 serial no-visual predictions per category; 5 visual predictions and 10 PNG GETs per category. Adapter inference includes preprocessing, extraction, nearest-neighbor scoring and native map creation; it is not model-only CUDA event latency. Warm readiness loads bottle first. CPU percentage and memory are sampled docker stats, not exhaustive peaks. Direct parity tolerance atol=1e-4, rtol=1e-4 across OS/Pillow runtime; original thresholds/decisions must match exactly."
+}

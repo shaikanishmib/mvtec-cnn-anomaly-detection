@@ -1,0 +1,29 @@
+# syntax=docker/dockerfile:1
+# Separate GPU image: never substitute the portable +cpu wheels.
+FROM pytorch/pytorch:2.11.0-cuda12.8-cudnn9-runtime@sha256:eee11b3b3872a8c838e35ef48f08b2d5def2080902c7f666831310ca1a0ef2be
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PYTHONPATH=/app/src:/app HOME=/tmp \
+    ANOMALY_ARTIFACT_ROOT=/artifacts ANOMALY_MANIFEST=/artifacts/configs/patchcore_deployment_v1.json \
+    ANOMALY_DEVICE=cuda ANOMALY_CPU_THREADS=4
+WORKDIR /app
+COPY deployment/requirements-runtime.txt /tmp/
+# The official digest-pinned runtime supplies CUDA libraries. Direct installation
+# of its 657.9-MB cuDNN wheel timed out twice in this environment.
+RUN python -c "import sys,torch; assert sys.version_info[:2] == (3,12); assert torch.__version__.split('+')[0] == '2.11.0' and torch.version.cuda == '12.8'"
+# Isolate application pins from the base's externally managed system Python,
+# while legitimately reusing its exact, already installed CUDA torch runtime.
+RUN python -m venv --system-site-packages --without-pip /opt/inspection-venv
+ENV PATH=/opt/inspection-venv/bin:$PATH
+RUN --mount=type=cache,target=/root/.cache/pip python -m pip install --timeout 180 --retries 3 --no-deps -r /tmp/requirements-runtime.txt
+RUN --mount=type=cache,target=/root/.cache/pip python -m pip install --timeout 180 --retries 3 --no-deps --index-url https://download.pytorch.org/whl/cu128 torchvision==0.26.0+cu128 \
+    # Official base includes the unused spin build helper, whose old click cap
+    # conflicts with the verified API CLI pin. Remove only that container tool.
+    && /usr/bin/python3 -m pip uninstall --break-system-packages --yes spin \
+    && python -m pip check \
+    && groupadd --gid 10001 inspection && useradd --uid 10001 --gid 10001 --no-create-home inspection
+COPY src/anomaly_detection /app/src/anomaly_detection
+COPY deployment/__init__.py deployment/artifacts.py deployment/runtime.py deployment/healthcheck.py /app/deployment/
+USER 10001:10001
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=25s --start-period=90s --retries=3 CMD ["python", "-m", "deployment.healthcheck"]
+CMD ["python", "-m", "deployment.runtime"]

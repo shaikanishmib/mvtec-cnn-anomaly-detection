@@ -1,0 +1,26 @@
+# Deny all by default. No datasets, banks, checkpoints, reports, Git or credentials.
+**
+!deployment/
+!deployment/*.py
+!deployment/requirements-runtime.txt
+!deployment/requirements-cuda-runtime.txt
+!deployment/nginx.conf
+!src/
+!src/anomaly_detection/
+!src/anomaly_detection/__init__.py
+!src/anomaly_detection/data.py
+!src/anomaly_detection/tracking.py
+!src/anomaly_detection/patchcore.py
+!src/anomaly_detection/inference/
+!src/anomaly_detection/inference/*.py
+!src/anomaly_detection/backend/
+!src/anomaly_detection/backend/*.py
+!frontend/
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/.npmrc
+!frontend/index.html
+!frontend/tsconfig.json
+!frontend/vite.config.ts
+!frontend/src/
+!frontend/src/**

@@ -1,0 +1,1570 @@
+{
+  "status": "completed",
+  "timestamp_utc": "2026-11-18T01:07:08Z",
+  "python": {
+    "source": "OSV querybatch, exact Linux runtime pins plus upstream torch/vision versions; does not audit OS libraries or unknown vulnerabilities",
+    "packages": 35,
+    "findings": [
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-22hg-r758-rrw9",
+        "aliases": [
+          "BIT-pillow-2026-112390",
+          "CVE-2026-112390"
+        ],
+        "summary": "Pillow: Infinite loop in MIC n_frames when the embedded TIFF",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-24rc-8hj2-v98c",
+        "aliases": [
+          "BIT-pillow-2026-96638",
+          "CVE-2026-96638"
+        ],
+        "summary": "Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-254f-3936-288h",
+        "aliases": [
+          "BIT-pillow-2026-112391",
+          "CVE-2026-112391"
+        ],
+        "summary": "Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-27h8-gf7j-v5hc",
+        "aliases": [
+          "BIT-pillow-2026-112392",
+          "CVE-2026-112392",
+          "PYSEC-2026-4326"
+        ],
+        "summary": "Pillow: NULL dereference in ImagingExpand via rank filters on zero-size images",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-332p-7hrc-92wf",
+        "aliases": [
+          "BIT-pillow-2026-112393",
+          "CVE-2026-112393"
+        ],
+        "summary": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-3j72-p6qg-6xp7",
+        "aliases": [
+          "BIT-pillow-2026-96642",
+          "CVE-2026-96642",
+          "PYSEC-2026-4341"
+        ],
+        "summary": "Pillow: TarIO negative size field causes infinite CPU-spin loop",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-4558-3h8r-v8xp",
+        "aliases": [
+          "BIT-pillow-2026-112394",
+          "CVE-2026-112394",
+          "PYSEC-2026-4327"
+        ],
+        "summary": "Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-45hq-cxwh-f6vc",
+        "aliases": [
+          "BIT-pillow-2026-55379",
+          "CVE-2026-55379",
+          "PYSEC-2026-2255"
+        ],
+        "summary": "Pillow `BdfFontFile`: `Image.new()` called without `_decompression_bomb_check()` \u2014 bomb protection bypass via font loading",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-462x-pgg6-55fp",
+        "aliases": [
+          "BIT-pillow-2026-112395",
+          "CVE-2026-112395"
+        ],
+        "summary": "Pillow tiled-TIFF decoder reads past tile buffer in copy4 (Unpack.c:1290)",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-4rm8-3hmm-39fg",
+        "aliases": [
+          "BIT-pillow-2026-96641",
+          "CVE-2026-96641",
+          "PYSEC-2026-4340"
+        ],
+        "summary": "Pillow: Reachable undefined behavior in native integer operations, potentially leading to denial of service or logic integrity compromise",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-4x4j-2g7c-83w6",
+        "aliases": [
+          "BIT-pillow-2026-55798",
+          "CVE-2026-55798",
+          "PYSEC-2026-2257"
+        ],
+        "summary": "Pillow: WindowsViewer.get_command() OS command injection via unescaped shell path",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-58r4-6rv3-gfh8",
+        "aliases": [
+          "BIT-pillow-2026-112397",
+          "CVE-2026-112397",
+          "PYSEC-2026-4329"
+        ],
+        "summary": "Pillow: Out-of-bounds access in _imagingmorph on a zero-width image",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-5x8w-8jj5-q52h",
+        "aliases": [
+          "BIT-pillow-2026-112398",
+          "CVE-2026-112398",
+          "PYSEC-2026-4330"
+        ],
+        "summary": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-5x94-69rx-g8h2",
+        "aliases": [
+          "BIT-pillow-2026-54060",
+          "CVE-2026-54060",
+          "PYSEC-2026-2254"
+        ],
+        "summary": "Pillow: `FontFile.compile()`: `Image.new()` called without `_decompression_bomb_check()`",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-5xm2-6676-qcp9",
+        "aliases": [
+          "BIT-pillow-2026-112399",
+          "CVE-2026-112399"
+        ],
+        "summary": "Pillow: APNG background disposal allocates full canvas before decompression bomb check",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-5xmw-vc9v-4wf2",
+        "aliases": [
+          "BIT-pillow-2026-42309",
+          "CVE-2026-42309",
+          "PYSEC-2026-2251"
+        ],
+        "summary": "Pillow has a heap buffer overflow with nested list coordinates",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-62p4-gmf7-7g93",
+        "aliases": [
+          "BIT-pillow-2026-54058",
+          "CVE-2026-54058",
+          "PYSEC-2026-3493"
+        ],
+        "summary": "Pillow: Out-of-bounds read via attacker-controlled row stride on Pillow's mmap path (McIdas AREA files)",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-654x-cwwv-5j9c",
+        "aliases": [
+          "BIT-pillow-2026-114501",
+          "CVE-2026-114501",
+          "PYSEC-2026-4336"
+        ],
+        "summary": "Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-65qm-jvmh-6pqg",
+        "aliases": [
+          "BIT-pillow-2026-112400",
+          "CVE-2026-112400"
+        ],
+        "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-6r8x-57c9-28j4",
+        "aliases": [
+          "BIT-pillow-2026-59199",
+          "CVE-2026-59199",
+          "PYSEC-2026-3451"
+        ],
+        "summary": "Pillow: Heap out-of-bounds write `Image.paste()` / `Image.crop()` via signed coordinate overflow",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-74r2-7ff9-mjj2",
+        "aliases": [
+          "BIT-pillow-2026-112401",
+          "CVE-2026-112401"
+        ],
+        "summary": "Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-78g4-xqwv-q3g8",
+        "aliases": [],
+        "summary": "Pillow: Bundled libopenjp2 2.5.4 in all wheels since 11.1.0 carries OSV-2025-219 heap-buffer-overflow write reachable from Image.open().load()",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-7mwm-ghpf-9vrm",
+        "aliases": [
+          "BIT-pillow-2026-112402",
+          "CVE-2026-112402",
+          "PYSEC-2026-4331"
+        ],
+        "summary": "Pillow: Double free in ImagingScaleAffine on calloc failure via Image.transform",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-8g5g-8vmr-9782",
+        "aliases": [
+          "BIT-pillow-2026-112403",
+          "CVE-2026-112403",
+          "PYSEC-2026-4332"
+        ],
+        "summary": "Pillow: Heap buffer overflow in ImagingJpegDecode",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-8v84-f9pq-wr9x",
+        "aliases": [
+          "BIT-pillow-2026-54059",
+          "CVE-2026-54059",
+          "PYSEC-2026-2253"
+        ],
+        "summary": "Pillow `PcfFontFile._load_bitmaps()`: `Image.frombytes()` called without `_decompression_bomb_check()` \u2014 bomb protection bypass via PCF font loading",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-9hw9-ch79-4vh6",
+        "aliases": [
+          "BIT-pillow-2026-59205",
+          "CVE-2026-59205",
+          "PYSEC-2026-3453"
+        ],
+        "summary": "Pillow: Controlled heap out-of-bounds write in Pillow `ImageCmsTransform.apply()` via output mode mismatch",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-9v9v-9qvf-h2hj",
+        "aliases": [
+          "BIT-pillow-2026-96644",
+          "CVE-2026-96644",
+          "PYSEC-2026-4343"
+        ],
+        "summary": "Pillow: Heap over-read in WMF/EMF rendering via 16-bit dimension truncation (Windows builds)",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-c6hw-5grf-ff96",
+        "aliases": [
+          "BIT-pillow-2026-112404",
+          "CVE-2026-112404"
+        ],
+        "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-cfh3-3jmp-rvhc",
+        "aliases": [
+          "BIT-pillow-2026-25990",
+          "CVE-2026-25990",
+          "PYSEC-2026-2249"
+        ],
+        "summary": "Pillow affected by out-of-bounds write when loading PSD images",
+        "fixed_versions": [
+          "12.1.1"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-f2g6-542v-9j58",
+        "aliases": [
+          "BIT-pillow-2026-112406",
+          "CVE-2026-112406"
+        ],
+        "summary": "Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-fc9g-5qg7-mf45",
+        "aliases": [
+          "BIT-pillow-2026-112891",
+          "CVE-2026-112891"
+        ],
+        "summary": "Pillow: Quadratic GIF comment copying during save",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-fj7v-r99m-22gq",
+        "aliases": [
+          "BIT-pillow-2026-59198",
+          "CVE-2026-59198",
+          "PYSEC-2026-3494"
+        ],
+        "summary": "Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-g4qv-2jxx-769h",
+        "aliases": [
+          "BIT-pillow-2026-96643",
+          "CVE-2026-96643",
+          "PYSEC-2026-4342"
+        ],
+        "summary": "Pillow: PNG eXIf chunk makes EXIF parsing run in quadratic time",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-g7cr-3p24-7wf7",
+        "aliases": [
+          "BIT-pillow-2026-96778",
+          "CVE-2026-96778"
+        ],
+        "summary": "Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-g842-9rc4-69pw",
+        "aliases": [
+          "BIT-pillow-2026-96637",
+          "CVE-2026-96637",
+          "PYSEC-2026-4338"
+        ],
+        "summary": "Pillow: Decompression bomb check bypass in SpiderImagePlugin.seek() leads to unbounded allocation DoS",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-gg2r-wvfm-q9rx",
+        "aliases": [
+          "BIT-pillow-2026-112892",
+          "CVE-2026-112892"
+        ],
+        "summary": "Pillow: MSP RLE decoder expands a tiny file into unbounded memory",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-j4m9-6w36-pw47",
+        "aliases": [
+          "BIT-pillow-2026-112893",
+          "CVE-2026-112893"
+        ],
+        "summary": "Pillow: Invalid free in FreeType glyph rendering when a stroker is active",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-jg86-v3jv-hrpm",
+        "aliases": [
+          "BIT-pillow-2026-112894",
+          "CVE-2026-112894"
+        ],
+        "summary": "Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-jjj6-mw9f-p565",
+        "aliases": [
+          "BIT-pillow-2026-59200",
+          "CVE-2026-59200",
+          "PYSEC-2026-3495"
+        ],
+        "summary": "Pillow: Decompression Bomb DoS via PdfParser.PdfStream.decode()",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-mrfp-p49p-3hf2",
+        "aliases": [
+          "BIT-pillow-2026-96640",
+          "CVE-2026-96640"
+        ],
+        "summary": "Pillow PDF append accepts malformed shared page-tree DAG causing resource exhaustion",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-p4wg-p73j-c528",
+        "aliases": [
+          "BIT-pillow-2026-112895",
+          "CVE-2026-112895"
+        ],
+        "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-p8hx-v2p6-rp84",
+        "aliases": [
+          "BIT-pillow-2026-96636",
+          "CVE-2026-96636",
+          "PYSEC-2026-4337"
+        ],
+        "summary": "Pillow: Decompression-bomb protection bypass via multi-frame seek() in MPO and DCX (MpoImageFile.seek / DcxImageFile.seek)",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-pchr-8j38-3x4p",
+        "aliases": [
+          "BIT-pillow-2026-112896",
+          "CVE-2026-112896",
+          "PYSEC-2026-4334"
+        ],
+        "summary": "Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-phj9-mv4w-65pm",
+        "aliases": [
+          "BIT-pillow-2026-55380",
+          "CVE-2026-55380",
+          "PYSEC-2026-2256"
+        ],
+        "summary": "Pillow `GdImageFile._open()`: image dimensions accepted without `_decompression_bomb_check()`",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-pwv6-vv43-88gr",
+        "aliases": [
+          "BIT-pillow-2026-42311",
+          "CVE-2026-42311",
+          "PYSEC-2026-2252"
+        ],
+        "summary": "Pillow has an OOB Write with Invalid PSD Tile Extents (Integer Overflow)",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-q45j-58j2-45rg",
+        "aliases": [
+          "BIT-pillow-2026-112897",
+          "CVE-2026-112897"
+        ],
+        "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-r73j-pqj5-w3x7",
+        "aliases": [
+          "BIT-pillow-2026-42310",
+          "CVE-2026-42310",
+          "PYSEC-2026-2874"
+        ],
+        "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-rfgq-q3w2-pmv2",
+        "aliases": [
+          "BIT-pillow-2026-112898",
+          "CVE-2026-112898"
+        ],
+        "summary": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-v9pv-5gc8-w2m6",
+        "aliases": [
+          "BIT-pillow-2026-96639",
+          "CVE-2026-96639",
+          "PYSEC-2026-4339"
+        ],
+        "summary": "Pillow multi-frame loaders can reuse stale native image storage after mode transitions",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-vjc4-5qp5-m44j",
+        "aliases": [
+          "BIT-pillow-2026-59204",
+          "CVE-2026-59204",
+          "PYSEC-2026-3496"
+        ],
+        "summary": "Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-vx6w-vv9f-6gvg",
+        "aliases": [
+          "BIT-pillow-2026-112899",
+          "CVE-2026-112899"
+        ],
+        "summary": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-w889-685w-c8fh",
+        "aliases": [
+          "BIT-pillow-2026-112900",
+          "CVE-2026-112900"
+        ],
+        "summary": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-whj4-6x5x-4v2j",
+        "aliases": [
+          "BIT-pillow-2026-40192",
+          "CVE-2026-40192",
+          "PYSEC-2026-2250"
+        ],
+        "summary": "FITS GZIP decompression bomb in Pillow",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-wjx4-4jcj-g98j",
+        "aliases": [
+          "BIT-pillow-2026-42308",
+          "CVE-2026-42308",
+          "PYSEC-2026-165"
+        ],
+        "summary": "Pillow has an integer overflow when processing fonts",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-wqgw-9xfh-qf2g",
+        "aliases": [
+          "CVE-2026-128066"
+        ],
+        "summary": "Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-xcvg-w56q-r89m",
+        "aliases": [
+          "CVE-2026-128067"
+        ],
+        "summary": "Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-xg8h-j46f-w952",
+        "aliases": [
+          "BIT-pillow-2025-48379",
+          "CVE-2025-48379",
+          "PYSEC-2025-61"
+        ],
+        "summary": "Pillow vulnerability can cause write buffer overflow on BCn encoding",
+        "fixed_versions": [
+          "11.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-xgh8-jp6q-p5x8",
+        "aliases": [
+          "BIT-pillow-2026-112901",
+          "CVE-2026-112901",
+          "PYSEC-2026-4335"
+        ],
+        "summary": "Pillow: ReDoS in XbmImagePlugin: 512-byte file stalls Image.open() for minutes",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-xj96-63gp-2gmr",
+        "aliases": [
+          "BIT-pillow-2026-59197",
+          "CVE-2026-59197",
+          "PYSEC-2026-3454"
+        ],
+        "summary": "Pillow: Heap out-of-bounds write in `ImageFilter.RankFilter` via integer overflow in `ImagingExpand`",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "GHSA-xvh5-g6gv-559v",
+        "aliases": [
+          "BIT-pillow-2026-112902",
+          "CVE-2026-112902",
+          "PYSEC-2026-4363"
+        ],
+        "summary": " Pillow: Memory disclosure and segfault in libtiff encoder via crafted TIFF tags",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2025-61",
+        "aliases": [
+          "BIT-pillow-2025-48379",
+          "CVE-2025-48379",
+          "GHSA-xg8h-j46f-w952"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "11.3.0",
+          "89f1f4626a2aaf5f3d5ca6437f41def2998fbe09",
+          "ef98b3510e3e4f14b547762764813d7e5ca3c5a4"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-165",
+        "aliases": [
+          "BIT-pillow-2026-42308",
+          "CVE-2026-42308",
+          "GHSA-wjx4-4jcj-g98j"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2249",
+        "aliases": [
+          "BIT-pillow-2026-25990",
+          "CVE-2026-25990",
+          "GHSA-cfh3-3jmp-rvhc"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.1.1"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2250",
+        "aliases": [
+          "BIT-pillow-2026-40192",
+          "CVE-2026-40192",
+          "GHSA-whj4-6x5x-4v2j"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2251",
+        "aliases": [
+          "BIT-pillow-2026-42309",
+          "CVE-2026-42309",
+          "GHSA-5xmw-vc9v-4wf2"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2252",
+        "aliases": [
+          "BIT-pillow-2026-42311",
+          "CVE-2026-42311",
+          "GHSA-pwv6-vv43-88gr"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2253",
+        "aliases": [
+          "BIT-pillow-2026-54059",
+          "CVE-2026-54059",
+          "GHSA-8v84-f9pq-wr9x"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2254",
+        "aliases": [
+          "BIT-pillow-2026-54060",
+          "CVE-2026-54060",
+          "GHSA-5x94-69rx-g8h2"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2255",
+        "aliases": [
+          "BIT-pillow-2026-55379",
+          "CVE-2026-55379",
+          "GHSA-45hq-cxwh-f6vc"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2256",
+        "aliases": [
+          "BIT-pillow-2026-55380",
+          "CVE-2026-55380",
+          "GHSA-phj9-mv4w-65pm"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2257",
+        "aliases": [
+          "BIT-pillow-2026-55798",
+          "CVE-2026-55798",
+          "GHSA-4x4j-2g7c-83w6"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-2874",
+        "aliases": [
+          "BIT-pillow-2026-42310",
+          "CVE-2026-42310",
+          "GHSA-r73j-pqj5-w3x7"
+        ],
+        "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+        "fixed_versions": [
+          "12.2.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3451",
+        "aliases": [
+          "BIT-pillow-2026-59199",
+          "CVE-2026-59199",
+          "GHSA-6r8x-57c9-28j4"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3453",
+        "aliases": [
+          "BIT-pillow-2026-59205",
+          "CVE-2026-59205",
+          "GHSA-9hw9-ch79-4vh6"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3454",
+        "aliases": [
+          "BIT-pillow-2026-59197",
+          "CVE-2026-59197",
+          "GHSA-xj96-63gp-2gmr"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3493",
+        "aliases": [
+          "BIT-pillow-2026-54058",
+          "CVE-2026-54058",
+          "GHSA-62p4-gmf7-7g93"
+        ],
+        "summary": "Pillow: Out-of-bounds read via attacker-controlled row stride on Pillow's mmap path (McIdas AREA files)",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3494",
+        "aliases": [
+          "BIT-pillow-2026-59198",
+          "CVE-2026-59198",
+          "GHSA-fj7v-r99m-22gq"
+        ],
+        "summary": "Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3495",
+        "aliases": [
+          "BIT-pillow-2026-59200",
+          "CVE-2026-59200",
+          "GHSA-jjj6-mw9f-p565"
+        ],
+        "summary": "Pillow: Decompression Bomb DoS via PdfParser.PdfStream.decode()",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-3496",
+        "aliases": [
+          "BIT-pillow-2026-59204",
+          "CVE-2026-59204",
+          "GHSA-vjc4-5qp5-m44j"
+        ],
+        "summary": "Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service",
+        "fixed_versions": [
+          "12.3.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4326",
+        "aliases": [
+          "BIT-pillow-2026-112392",
+          "CVE-2026-112392",
+          "GHSA-27h8-gf7j-v5hc"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4327",
+        "aliases": [
+          "BIT-pillow-2026-112394",
+          "CVE-2026-112394",
+          "GHSA-4558-3h8r-v8xp"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4329",
+        "aliases": [
+          "BIT-pillow-2026-112397",
+          "CVE-2026-112397",
+          "GHSA-58r4-6rv3-gfh8"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4330",
+        "aliases": [
+          "BIT-pillow-2026-112398",
+          "CVE-2026-112398",
+          "GHSA-5x8w-8jj5-q52h"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4331",
+        "aliases": [
+          "BIT-pillow-2026-112402",
+          "CVE-2026-112402",
+          "GHSA-7mwm-ghpf-9vrm"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4332",
+        "aliases": [
+          "BIT-pillow-2026-112403",
+          "CVE-2026-112403",
+          "GHSA-8g5g-8vmr-9782"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4334",
+        "aliases": [
+          "BIT-pillow-2026-112896",
+          "CVE-2026-112896",
+          "GHSA-pchr-8j38-3x4p"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4335",
+        "aliases": [
+          "BIT-pillow-2026-112901",
+          "CVE-2026-112901",
+          "GHSA-xgh8-jp6q-p5x8"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4336",
+        "aliases": [
+          "BIT-pillow-2026-114501",
+          "CVE-2026-114501",
+          "GHSA-654x-cwwv-5j9c"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4337",
+        "aliases": [
+          "BIT-pillow-2026-96636",
+          "CVE-2026-96636",
+          "GHSA-p8hx-v2p6-rp84"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4338",
+        "aliases": [
+          "BIT-pillow-2026-96637",
+          "CVE-2026-96637",
+          "GHSA-g842-9rc4-69pw"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4339",
+        "aliases": [
+          "BIT-pillow-2026-96639",
+          "CVE-2026-96639",
+          "GHSA-v9pv-5gc8-w2m6"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4340",
+        "aliases": [
+          "BIT-pillow-2026-96641",
+          "CVE-2026-96641",
+          "GHSA-4rm8-3hmm-39fg"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4341",
+        "aliases": [
+          "BIT-pillow-2026-96642",
+          "CVE-2026-96642",
+          "GHSA-3j72-p6qg-6xp7"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4342",
+        "aliases": [
+          "BIT-pillow-2026-96643",
+          "CVE-2026-96643",
+          "GHSA-g4qv-2jxx-769h"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4343",
+        "aliases": [
+          "BIT-pillow-2026-96644",
+          "CVE-2026-96644",
+          "GHSA-9v9v-9qvf-h2hj"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "pillow",
+        "version": "11.2.1",
+        "id": "PYSEC-2026-4363",
+        "aliases": [
+          "BIT-pillow-2026-112902",
+          "CVE-2026-112902",
+          "GHSA-xvh5-g6gv-559v"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "13.0.0"
+        ]
+      },
+      {
+        "package": "setuptools",
+        "version": "78.1.0",
+        "id": "GHSA-5rjg-fvgr-3xxf",
+        "aliases": [
+          "BIT-setuptools-2025-47273",
+          "CVE-2025-47273",
+          "PYSEC-2025-49"
+        ],
+        "summary": "setuptools has a path traversal vulnerability in PackageIndex.download that leads to Arbitrary File Write",
+        "fixed_versions": [
+          "78.1.1"
+        ]
+      },
+      {
+        "package": "setuptools",
+        "version": "78.1.0",
+        "id": "GHSA-h35f-9h28-mq5c",
+        "aliases": [
+          "BIT-setuptools-2026-59890",
+          "CVE-2026-59890",
+          "PYSEC-2026-3447"
+        ],
+        "summary": "setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD) on macOS APFS/HFS+",
+        "fixed_versions": [
+          "83.0.0"
+        ]
+      },
+      {
+        "package": "setuptools",
+        "version": "78.1.0",
+        "id": "GHSA-xmj3-9gf7-h52w",
+        "aliases": [],
+        "summary": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
+        "fixed_versions": [
+          "84.1.0"
+        ]
+      },
+      {
+        "package": "setuptools",
+        "version": "78.1.0",
+        "id": "PYSEC-2025-49",
+        "aliases": [
+          "BIT-setuptools-2025-47273",
+          "CVE-2025-47273",
+          "GHSA-5rjg-fvgr-3xxf"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "250a6d17978f9f6ac3ac887091f2d32886fbbb0b",
+          "78.1.1"
+        ]
+      },
+      {
+        "package": "setuptools",
+        "version": "78.1.0",
+        "id": "PYSEC-2026-3447",
+        "aliases": [
+          "BIT-setuptools-2026-59890",
+          "CVE-2026-59890",
+          "GHSA-h35f-9h28-mq5c"
+        ],
+        "summary": "",
+        "fixed_versions": [
+          "83.0.0"
+        ]
+      },
+      {
+        "package": "torch",
+        "version": "2.11.0",
+        "id": "GHSA-rrmf-rvhw-rf47",
+        "aliases": [
+          "BIT-pytorch-2025-3000",
+          "CVE-2025-3000",
+          "PYSEC-2025-194"
+        ],
+        "summary": "PyTorch is vulnerable to memory corruption through its torch.jit.script function",
+        "fixed_versions": [
+          "2.13.0"
+        ]
+      }
+    ]
+  },
+  "npm": {
+    "all": {
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 12,
+        "critical": 0,
+        "total": 12
+      },
+      "packages": [
+        {
+          "name": "@typescript-eslint/eslint-plugin",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "@typescript-eslint/parser",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "@typescript-eslint/type-utils",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "@typescript-eslint/typescript-estree",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "@typescript-eslint/utils",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "@vitejs/plugin-react",
+          "severity": "high",
+          "fix_available": {
+            "name": "@vitejs/plugin-react",
+            "version": "5.2.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "fdir",
+          "severity": "high",
+          "fix_available": {
+            "name": "vitest",
+            "version": "3.1.4",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "picomatch",
+          "severity": "high",
+          "fix_available": {
+            "name": "vitest",
+            "version": "3.1.4",
+            "isSemVerMajor": true
+          },
+          "advisories": [
+            {
+              "source": 1247710,
+              "name": "picomatch",
+              "dependency": "picomatch",
+              "title": "picomatch vulnerable to ReDoS through single-branch repeated extglobs",
+              "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+              "severity": "high",
+              "cwe": [
+                "CWE-1333"
+              ],
+              "cvss": {
+                "score": 7.5,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+              },
+              "range": "<=4.0.7"
+            }
+          ]
+        },
+        {
+          "name": "tinyglobby",
+          "severity": "high",
+          "fix_available": {
+            "name": "vitest",
+            "version": "3.1.4",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "typescript-eslint",
+          "severity": "high",
+          "fix_available": {
+            "name": "typescript-eslint",
+            "version": "8.47.0",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "vite",
+          "severity": "high",
+          "fix_available": {
+            "name": "vite",
+            "version": "6.2.7",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        },
+        {
+          "name": "vitest",
+          "severity": "high",
+          "fix_available": {
+            "name": "vitest",
+            "version": "3.1.4",
+            "isSemVerMajor": true
+          },
+          "advisories": []
+        }
+      ]
+    },
+    "production": {
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "packages": []
+    }
+  }
+}

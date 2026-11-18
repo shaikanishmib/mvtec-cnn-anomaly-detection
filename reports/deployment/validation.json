@@ -1,0 +1,254 @@
+{
+  "status": "passed",
+  "protected_files": 3155,
+  "backend_validation": {
+    "status": "passed",
+    "protected_files": 3086,
+    "notebooks": {
+      "00_dataset_eda.ipynb": {
+        "code_cells": 19,
+        "executed_code_cells": 19,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "01_basic_cnn.ipynb": {
+        "code_cells": 27,
+        "executed_code_cells": 27,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "02_convolutional_autoencoder.ipynb": {
+        "code_cells": 20,
+        "executed_code_cells": 20,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "03_patchcore.ipynb": {
+        "code_cells": 30,
+        "executed_code_cells": 30,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "04_supersimplenet.ipynb": {
+        "code_cells": 43,
+        "executed_code_cells": 43,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "05_padim.ipynb": {
+        "code_cells": 21,
+        "executed_code_cells": 21,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "06_efficientad.ipynb": {
+        "code_cells": 25,
+        "executed_code_cells": 25,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "07_model_comparison.ipynb": {
+        "code_cells": 20,
+        "executed_code_cells": 20,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      }
+    },
+    "selected_banks_verified": 15,
+    "frozen_manifest_sha256": "58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa",
+    "api_category_device_checks": 30,
+    "maximum_api_direct_error": 0.0,
+    "thresholds_decisions_and_png_arrays_match": true,
+    "openapi_paths": 8,
+    "dependencies": "all pins match installed versions",
+    "inference_and_research_source_changed": false
+  },
+  "research_comparison": {
+    "status": "passed",
+    "records": 270,
+    "original_sources": 3091,
+    "protected_historical_files": 3017,
+    "statistics": 135,
+    "large_artifact_method": "deep SHA256 builder audit plus unchanged size/mtime cache; small files rehashed",
+    "no_training_or_inference": true,
+    "report_and_derived_tables": "source-consistent",
+    "dependency_assets": 3,
+    "notebook": {
+      "cells": 61,
+      "code_cells": 20,
+      "sections": 20,
+      "executed_code_cells": 20,
+      "committed_outputs": "compact tables/aggregate plots; dataset panels local"
+    }
+  },
+  "python_tests": {
+    "tests": 220,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "frontend_tests": {
+    "passed": 39,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser_tests": {
+    "startTime": "2026-11-18T01:36:14.245Z",
+    "duration": 6477.847,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_cases": [
+    {
+      "category": "bottle",
+      "device": "cpu",
+      "score": 1.3372377157211304,
+      "threshold": 1.4268503189086914,
+      "decision": false,
+      "backend_latency_ms": 387.32730100014123,
+      "driver_turnaround_ms": 479.45730000000003,
+      "measures": [
+        {
+          "name": "app:initial-render",
+          "duration_ms": 123.10000002384186
+        },
+        {
+          "name": "inspection:preview",
+          "duration_ms": 25.5
+        },
+        {
+          "name": "inspection:response",
+          "duration_ms": 395
+        },
+        {
+          "name": "inspection:complete",
+          "duration_ms": 418.7999999523163
+        },
+        {
+          "name": "inspection:submission",
+          "duration_ms": 0
+        },
+        {
+          "name": "inspection:heatmap",
+          "duration_ms": 21.80000001192093
+        },
+        {
+          "name": "inspection:overlay",
+          "duration_ms": 21.399999976158142
+        }
+      ],
+      "paint": [
+        {
+          "name": "first-paint",
+          "start_ms": 92
+        },
+        {
+          "name": "first-contentful-paint",
+          "start_ms": 300
+        }
+      ]
+    },
+    {
+      "category": "carpet",
+      "device": "cpu",
+      "score": 1.134422779083252,
+      "threshold": 1.256325602531433,
+      "decision": false,
+      "backend_latency_ms": 1348.3008399998653,
+      "driver_turnaround_ms": 1430.2699000000002,
+      "measures": [
+        {
+          "name": "app:initial-render",
+          "duration_ms": 127.10000002384186
+        },
+        {
+          "name": "inspection:preview",
+          "duration_ms": 37.5
+        },
+        {
+          "name": "inspection:response",
+          "duration_ms": 1357.5999999642372
+        },
+        {
+          "name": "inspection:complete",
+          "duration_ms": 1383.3999999761581
+        },
+        {
+          "name": "inspection:submission",
+          "duration_ms": 0
+        },
+        {
+          "name": "inspection:heatmap",
+          "duration_ms": 14.5
+        },
+        {
+          "name": "inspection:overlay",
+          "duration_ms": 23.200000047683716
+        }
+      ],
+      "paint": [
+        {
+          "name": "first-paint",
+          "start_ms": 32
+        },
+        {
+          "name": "first-contentful-paint",
+          "start_ms": 184
+        }
+      ]
+    }
+  ],
+  "images": {
+    "backend": {
+      "image_id": "sha256:2a2cae205742b099f519e459fdb56b8d2b4faf3af256a18d36ba6ad93b792151",
+      "bytes": 1596962785,
+      "user": "10001:10001"
+    },
+    "frontend": {
+      "image_id": "sha256:9b9bbbd02bc3dadf0ffbe4fc0360edc73fc3947b7d235237d99a2e1f87773289",
+      "bytes": 93067548,
+      "user": "101:101"
+    },
+    "backend-cuda": {
+      "image_id": "sha256:9ebfedb790ced744a0adaa7a63eb998e7c2b1c29fa905f058365fa6bca886d67",
+      "bytes": 12524680490,
+      "user": "10001:10001"
+    }
+  },
+  "runtime_software": {
+    "backend": {
+      "python": "3.12.16",
+      "torch": "2.11.0+cpu",
+      "pillow": "11.3.0",
+      "setuptools": "78.1.1",
+      "cuda_build": null
+    },
+    "backend-cuda": {
+      "python": "3.12.3",
+      "torch": "2.11.0+cu128",
+      "pillow": "11.3.0",
+      "setuptools": "78.1.1",
+      "cuda_build": "12.8"
+    }
+  },
+  "measurements": {
+    "cpu": {
+      "categories": 15,
+      "maximum_score_error": 1.1920928955078125e-07,
+      "warm_http_samples": 60,
+      "model_tensor_samples": 60,
+      "visual_http_samples": 10,
+      "png_get_samples": 20,
+      "reliability": "passed",
+      "startup": "passed"
+    },
+    "cuda": {
+      "categories": 15,
+      "maximum_score_error": 0.0,
+      "warm_http_samples": 60,
+      "model_tensor_samples": 60,
+      "visual_http_samples": 10,
+      "png_get_samples": 20,
+      "reliability": "passed",
+      "startup": "passed"
+    }
+  },
+  "schema_and_compose": "CPU and CUDA configuration validation passed; loopback-only frontend and private read-only backend verified",
+  "dependency_audit": "Completed with unresolved findings; not a security approval",
+  "image_vulnerability_scan": "Docker Scout 1.27.0 blocked: Docker Hub authentication required. No credentials requested or embedded; image CVE scan remains unverified.",
+  "external_publication": "No image registry push or public tagged release authorized or performed"
+}

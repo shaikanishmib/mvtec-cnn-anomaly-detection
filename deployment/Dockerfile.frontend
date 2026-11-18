@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1
+FROM node:26.13.0-alpine@sha256:8996bb5821d62a8fd9bb27c1cb07462f3fdce6e47d640c6a881ead0b064ce216 AS build
+WORKDIR /build
+COPY frontend/package.json frontend/package-lock.json frontend/.npmrc ./
+RUN npm ci --no-audit
+COPY frontend/index.html frontend/tsconfig.json frontend/vite.config.ts ./
+COPY frontend/src ./src
+# Same-origin API routing is provided by nginx, never a development URL.
+RUN npm run build
+
+FROM nginx:1.30.2-alpine@sha256:5f979dcfed4ce6461873f087e8c980d6e29b084b9e8776d9704a7e989b5f4898
+COPY deployment/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /build/dist /usr/share/nginx/html
+USER 101:101
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD wget -q -O /dev/null http://127.0.0.1:8080/frontend-health || exit 1
+CMD ["nginx", "-g", "daemon off;"]

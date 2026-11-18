@@ -1,0 +1,22 @@
+{
+  "status": "completed_with_unresolved_findings",
+  "python": "OSV release-runtime audit completed; baseline and patched pins retained in separate reports. Full project pip check passed. Larger incompatible dependency fixes deferred, not marked safe.",
+  "frontend": "Production dependency audit clear; 12 development packages affected by picomatch advisory. No forced major downgrade.",
+  "container_image_scan": {
+    "tool": "Docker Scout 1.27.0",
+    "status": "blocked",
+    "reason": "Docker Hub authentication required; local-image scan refused without credentials. No login or registry publication performed."
+  },
+  "configuration_review": {
+    "nonroot": true,
+    "readonly_root_and_artifact_mount": true,
+    "capabilities_dropped": true,
+    "single_worker_and_bounded_cache": true,
+    "loopback_frontend_only": true,
+    "backend_private_network_only": true,
+    "cors_not_broadened": true,
+    "upload_checks_preserved": true,
+    "dataset_weights_excluded_from_build_context": true
+  },
+  "readiness": "Local research only. Public deployment remains NO-GO until authentication/TLS/rate limits, dependency and image security review, licensing and industrial validation are completed."
+}

@@ -1,0 +1,11 @@
+# Opt-in CUDA deployment; verification scope/hardware are recorded in release results.
+services:
+  backend:
+    build:
+      dockerfile: deployment/Dockerfile.cuda
+    image: fieldwork-backend-cuda:local
+    environment:
+      ANOMALY_DEVICE: cuda
+      CUBLAS_WORKSPACE_CONFIG: ':4096:8'
+    gpus: all
+    mem_limit: 5g
