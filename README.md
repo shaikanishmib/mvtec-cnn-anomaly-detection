@@ -5,7 +5,43 @@ localization across all 15 original MVTec AD categories. The scientific notebook
 are the canonical experiment narrative; compact, append-only records preserve
 both successful and unsuccessful experiments. All six model benchmarks and the
 final saved-artifact research comparison are complete. The PatchCore inference
-foundation and FastAPI backend are also complete; the inspection frontend is next.
+foundation, FastAPI backend and interactive inspection frontend are complete.
+
+## Interactive inspection dashboard
+
+Milestone 12 delivers **Fieldwork**, a responsive React/TypeScript inspection
+workspace over the unchanged FastAPI API. Discover the actual PatchCore adapter
+and all 15 categories, upload PNG/JPEG, inspect the raw score and original cutoff,
+compare original/heatmap/overlay, zoom and inspect provenance. Research decisions
+are explicitly separated from verified manufacturing defects and probabilities.
+
+```powershell
+# Terminal one, repository root (existing project environment/artifacts)
+$env:ANOMALY_DEVICE = 'cpu'
+.\.venv\Scripts\python.exe -m uvicorn anomaly_detection.backend.app:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
+# Terminal two, repository root
+npm.cmd --prefix frontend ci
+npm.cmd --prefix frontend run dev
+```
+
+Open `http://127.0.0.1:5173`. Node 26.13.0/npm 11.20.0 and exact dependencies are
+pinned. See the [complete frontend guide](docs/frontend_guide.md),
+[measured results](reports/frontend/results.md) and
+[integrity evidence](reports/frontend/validation.json). Verification: **39 unit,
+six browser and 70 backend/inference regression tests passed**; typecheck, lint
+and production build passed. Genuine bottle/carpet cases match API display values
+and native PNG bytes. Historical research files and all selected banks remain unchanged.
+
+![Actual desktop inspection dashboard with an original synthetic UI fixture](docs/images/inspection-dashboard-desktop.png)
+
+This screenshot shows a genuine backend response to an original procedural,
+out-of-distribution UI fixture. It contains no MVTec imagery and is not an
+accuracy demonstration. A [mobile capture](docs/images/inspection-dashboard-mobile.png)
+is also available. Predictions and temporary visualization URLs are not persisted.
+
+This remains a local research prototype. Production dependencies have a clear npm
+audit; the pinned development toolchain has an unresolved picomatch advisory
+documented in the guide. Deployment review and benchmarking are the next milestone.
 
 ## FastAPI inspection backend
 
@@ -32,7 +68,7 @@ source was changed. See [validation evidence](reports/backend/validation.json) a
 
 This is a local research backend: scores are distances, not probabilities;
 frozen calibration retains false-alarm/miss limitations. Authentication, external
-deployment review and an interactive inspection frontend remain later work.
+deployment review remain later work. The local frontend is described above.
 
 ## Research roadmap
 
@@ -53,7 +89,7 @@ These timings exclude visualization and artifact construction.
 
 Frozen research cutoffs retain their known false-alarm limitations. This package
 does not provide a production alarm guarantee. The FastAPI backend is complete
-as described above; the interactive inspection frontend is the next milestone.
+as described above, together with the completed interactive inspection frontend.
 
 | Notebook | Focus | Status |
 |---|---|---|
@@ -164,7 +200,7 @@ Use PowerShell and CPython 3.12.10. This project's `.venv` is isolated and conta
 the verified CUDA-enabled scientific/Jupyter environment:
 
 ```powershell
-cd C:\Users\shaik\mvtec-cnn-anomaly-detection
+# Open PowerShell in your cloned repository root.
 python -m venv .venv
 New-Item -ItemType Directory -Force data,checkpoints,outputs | Out-Null
 .\.venv\Scripts\python.exe -m pip install pip==25.0.1

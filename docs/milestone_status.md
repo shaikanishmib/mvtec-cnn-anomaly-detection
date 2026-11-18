@@ -1,5 +1,48 @@
 # Research milestone progress
 
+## Milestone 12 - inspection frontend complete and verified
+
+Baseline 8e08412f1179b6d92b041efad840f1f296d62369; initially clean. Recovery
+after tool-server restart preserved the frontend scaffold, pinned package/lock,
+API client/types, upload checks, state hook, display components and CSS. No
+backend/research files changed. Baseline 3,118 tracked files are protected in
+reports/frontend/research_protection.json (rolling README/status/attributes excluded).
+Node 26.13.0/npm 11.20.0 and installed Edge are available. Frontend is isolated
+under frontend/. No neural inference is implemented in the browser.
+
+Completed: React/TypeScript/Vite dashboard, exact lockfile, safe API client,
+upload checks, state/cancellation, original/heatmap/overlay workspace, zoom,
+metadata, responsive CSS, accessibility, guide and safe synthetic public captures.
+Final checks: 39 unit tests, six real Edge browser checks and 70 backend/inference
+regressions passed (zero failed/skipped); typecheck/lint/build passed. npm ci
+offline succeeded. Browser script launched the documented backend/npm commands
+and stopped owned workers. Four genuine bottle/carpet normal/defect cases match
+API score/cutoff/decision and exact PNG bytes. Expired PNG handling passed.
+
+scripts/validate_frontend.py passed: 3,118 protected files unchanged, 15 banks and
+calibrations verified, OpenAPI fields/default limits match, eight notebooks/205
+saved executed code cells intact. No research or backend source changed.
+reports/frontend/validation.json and results.md reconcile exact source evidence.
+Production JS 249,892 bytes (Python gzip 76,508 bytes); descriptive four-case CPU/Vite
+UI complete p50/p95 1,070.10/1,596.04 ms, backend 957.975/1,489.363 ms.
+Small-sample developer timings are not production performance claims.
+
+Unresolved development-only dependency risk: full npm audit reports 12 high
+affected tooling packages from unpatched picomatch GHSA-fc5q-39xc-vjpf; production
+audit zero. No patched release listed; documented loopback/trusted-input scope.
+No unsafe forced downgrade. The research service is not production security approved.
+
+Publication audit passed for 40 staged files: index matches working bytes; no
+datasets, weights, caches, secrets or private machine paths are included. Only
+two hash-verified synthetic-fixture public screenshots are staged. A legacy README
+machine path was removed. Publication uses commit, push origin/main and exact
+local/remote SHA comparison; Git history is authoritative for the final SHA.
+Recovery: inspect Git status, reports/frontend/validation.json,
+outputs/frontend logs and active processes before repeating any expensive checks.
+Use .venv Python scripts/verify_frontend_browser.py only if browser code changes;
+then scripts/validate_frontend.py. Do not retrain or rerun historical notebooks.
+No M13 work has begun. Personal project was not accessed.
+
 ## Milestone 11 - FastAPI backend complete
 
 Final verified state: eight HTTP endpoints, unchanged M10 PatchCore adapter,

@@ -1,0 +1,279 @@
+{
+  "status": "passed",
+  "baseline_commit": "8e08412f1179b6d92b041efad840f1f296d62369",
+  "protected_files": 3118,
+  "backend_artifacts": {
+    "status": "passed",
+    "protected_files": 3086,
+    "notebooks": {
+      "00_dataset_eda.ipynb": {
+        "code_cells": 19,
+        "executed_code_cells": 19,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "01_basic_cnn.ipynb": {
+        "code_cells": 27,
+        "executed_code_cells": 27,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "02_convolutional_autoencoder.ipynb": {
+        "code_cells": 20,
+        "executed_code_cells": 20,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "03_patchcore.ipynb": {
+        "code_cells": 30,
+        "executed_code_cells": 30,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "04_supersimplenet.ipynb": {
+        "code_cells": 43,
+        "executed_code_cells": 43,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "05_padim.ipynb": {
+        "code_cells": 21,
+        "executed_code_cells": 21,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "06_efficientad.ipynb": {
+        "code_cells": 25,
+        "executed_code_cells": 25,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      },
+      "07_model_comparison.ipynb": {
+        "code_cells": 20,
+        "executed_code_cells": 20,
+        "scope": "nbformat, syntax, saved execution/error/image-output checks plus protected historical byte identity"
+      }
+    },
+    "selected_banks_verified": 15,
+    "frozen_manifest_sha256": "58be2eafb16ac012ac18e0feb69f11b2f510e7417464eaba5bd9797b423272fa",
+    "api_category_device_checks": 30,
+    "maximum_api_direct_error": 0.0,
+    "thresholds_decisions_and_png_arrays_match": true,
+    "openapi_paths": 8,
+    "dependencies": "all pins match installed versions",
+    "inference_and_research_source_changed": false
+  },
+  "prediction_fields": 20,
+  "unit_tests": 39,
+  "browser_tests": {
+    "startTime": "2026-11-18T00:32:13.003Z",
+    "duration": 28596.934999999998,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "backend_regression": {
+    "tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "real_cases": [
+    {
+      "category": "bottle",
+      "case": "normal",
+      "model": "patchcore",
+      "device": "cpu",
+      "score": 1.33723783493042,
+      "threshold": 1.4268503189086914,
+      "is_anomaly": false,
+      "backend_latency_ms": 791.9344999827445,
+      "backend_timings_ms": {
+        "decode": 58.55360004352406,
+        "model_load": 0,
+        "inference": 136.0751999891363,
+        "visualization": 590.7081000041217,
+        "service_total": 785.3517000330612
+      },
+      "total_browser_turnaround_ms": 1135.0169999999998,
+      "hashes": {
+        "heatmap": "18d789669e6b91989a9540e311cd68d02b3690354ac9ea445349e943d540fdae",
+        "overlay": "05c404c0fbefe340eb543406ad903b8e070a987a1c5ef0fe1f0c6d62960675d5"
+      },
+      "displayed_score": "1.337238",
+      "displayed_threshold": "1.426850",
+      "png_bytes_unchanged": true
+    },
+    {
+      "category": "bottle",
+      "case": "defect",
+      "model": "patchcore",
+      "device": "cpu",
+      "score": 3.250213384628296,
+      "threshold": 1.4268503189086914,
+      "is_anomaly": true,
+      "backend_latency_ms": 868.723499996122,
+      "backend_timings_ms": {
+        "decode": 56.88380001811311,
+        "model_load": 0,
+        "inference": 135.96280000638217,
+        "visualization": 667.636499973014,
+        "service_total": 860.4979999945499
+      },
+      "total_browser_turnaround_ms": 1222.2684000000008,
+      "hashes": {
+        "heatmap": "af82bb8c1b1ab562730254b566c263a64ddb824466eb7d7d6d5228cd4ffa37aa",
+        "overlay": "55b35e0b9692d676c89478b7716ccffef11aea57eee2fd5f8a15075af20e553b"
+      },
+      "displayed_score": "3.250213",
+      "displayed_threshold": "1.426850",
+      "png_bytes_unchanged": true
+    },
+    {
+      "category": "carpet",
+      "case": "normal",
+      "model": "patchcore",
+      "device": "cpu",
+      "score": 1.134422779083252,
+      "threshold": 1.256325602531433,
+      "is_anomaly": false,
+      "backend_latency_ms": 1567.3871000180952,
+      "backend_timings_ms": {
+        "decode": 99.69930001534522,
+        "model_load": 566.625399980694,
+        "inference": 168.0093000177294,
+        "visualization": 711.3580000004731,
+        "service_total": 1545.705900003668
+      },
+      "total_browser_turnaround_ms": 1945.801199999998,
+      "hashes": {
+        "heatmap": "d8e75878d452bf6d99a5fa2c1c09b1e6f445082f94b4bb21d82240dd3915bcc9",
+        "overlay": "4b06365820729e2c2460d059d8994992360f0d8f70e6cd3730b6cc430bd1f890"
+      },
+      "displayed_score": "1.134423",
+      "displayed_threshold": "1.256326",
+      "png_bytes_unchanged": true
+    },
+    {
+      "category": "carpet",
+      "case": "defect",
+      "model": "patchcore",
+      "device": "cpu",
+      "score": 2.255002021789551,
+      "threshold": 1.256325602531433,
+      "is_anomaly": true,
+      "backend_latency_ms": 1047.2258999943733,
+      "backend_timings_ms": {
+        "decode": 114.99189998721704,
+        "model_load": 0,
+        "inference": 159.46390002500266,
+        "visualization": 750.1051999861374,
+        "service_total": 1024.5822999859229
+      },
+      "total_browser_turnaround_ms": 1441.951799999999,
+      "hashes": {
+        "heatmap": "5ce79b26e67c97fbf1f6929e3b03e7b614de4b5c911f01c787df28345c59a7e9",
+        "overlay": "690dd9508976bec7094c63eac1978c74d38f39a198c40e2759a58254737c4f23"
+      },
+      "displayed_score": "2.255002",
+      "displayed_threshold": "1.256326",
+      "png_bytes_unchanged": true
+    }
+  ],
+  "public_capture": {
+    "source": "Original procedural canvas fixture; no MVTec pixels",
+    "input_sha256": "c5b22d35417e4b5493eb690d253beb1ffd35a643d35473b382c5af0b6582de02",
+    "actual_backend_result": true,
+    "desktop_axe_violations": 0,
+    "mobile_axe_violations": 0,
+    "mobile_horizontal_overflow": false
+  },
+  "screenshot_sha256": {
+    "inspection-dashboard-desktop.png": "15709b67a1891e54a39e63548f163a6ed6ece70e1dd0b67ea1bf0b1974e31984",
+    "inspection-dashboard-mobile.png": "a1a01b169377fcada2734bd09c6151700107bd78adaf33b7f1ba5bc26b0c8823"
+  },
+  "build_assets": [
+    {
+      "path": "assets/index-barjicEm.css",
+      "bytes": 16121,
+      "gzip_bytes": 4261
+    },
+    {
+      "path": "assets/index-YjsUVyn6.js",
+      "bytes": 249892,
+      "gzip_bytes": 76508
+    },
+    {
+      "path": "index.html",
+      "bytes": 521,
+      "gzip_bytes": 337
+    }
+  ],
+  "timings": {
+    "backend_latency_ms": {
+      "n": 4,
+      "p50_ms": 957.975,
+      "p95_ms": 1489.363,
+      "min_ms": 791.934,
+      "max_ms": 1567.387
+    },
+    "total_browser_turnaround_ms": {
+      "n": 4,
+      "p50_ms": 1332.11,
+      "p95_ms": 1870.224,
+      "min_ms": 1135.017,
+      "max_ms": 1945.801
+    },
+    "app:initial-render": {
+      "n": 4,
+      "p50_ms": 335.1,
+      "p95_ms": 359.545,
+      "min_ms": 302,
+      "max_ms": 362.2
+    },
+    "inspection:preview": {
+      "n": 4,
+      "p50_ms": 100.65,
+      "p95_ms": 127.795,
+      "min_ms": 80.7,
+      "max_ms": 130
+    },
+    "inspection:submission": {
+      "n": 4,
+      "p50_ms": 0.1,
+      "p95_ms": 0.1,
+      "min_ms": 0,
+      "max_ms": 0.1
+    },
+    "inspection:response": {
+      "n": 4,
+      "p50_ms": 975.5,
+      "p95_ms": 1507.695,
+      "min_ms": 809.6,
+      "max_ms": 1585.5
+    },
+    "inspection:heatmap": {
+      "n": 4,
+      "p50_ms": 42.55,
+      "p95_ms": 58.77,
+      "min_ms": 32,
+      "max_ms": 60.6
+    },
+    "inspection:overlay": {
+      "n": 4,
+      "p50_ms": 50.9,
+      "p95_ms": 75.32,
+      "min_ms": 43.9,
+      "max_ms": 79.4
+    },
+    "inspection:complete": {
+      "n": 4,
+      "p50_ms": 1070.1,
+      "p95_ms": 1596.04,
+      "min_ms": 896.2,
+      "max_ms": 1671.4
+    },
+    "first_contentful_paint": {
+      "n": 4,
+      "p50_ms": 752.0,
+      "p95_ms": 789.4,
+      "min_ms": 720,
+      "max_ms": 796
+    }
+  },
+  "methodology": "Edge headless, Windows, Vite development server, loopback FastAPI CPU/4 threads, warmed bottle readiness and two-category cache; four genuine bottle/carpet cases. Small descriptive sample; p95 interpolated, not a production guarantee. Initial-render excludes discovery; inspection:complete ends when both PNGs resolve, before guaranteed compositor presentation. Driver turnaround includes Playwright waits and assertions. Original data images and full local logs are excluded from publication."
+}
